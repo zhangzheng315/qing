@@ -10,3 +10,28 @@
 // +----------------------------------------------------------------------
 
 // 应用公共文件
+//layui框架table输出
+function layshow($code,$msg,$data=[],$count){
+	$result = [
+		'code'  => $code,
+		'msg' => $msg,
+		'count' => $count,
+		'data'    => $data,
+		
+	];
+	
+	return json($result);
+
+}
+
+/**
+ * josn输出
+ */
+function show($status,$message,$data=[]){
+    $data = [
+        'status' => $status,
+        'message' => $message,
+        'data' => $data
+    ];
+    return json($data);
+}
