@@ -23,7 +23,14 @@ class Common extends Controller{
     }
 
     /**
-     * 设置错误信息
+     * 获取指定数据
+     */
+    public static function data_one_info($map=[],$model){
+        $info = db("$model")->where($map)->find();
+        return $info;
+    }
+
+     /* 设置错误信息
      * @param $error
      */
     public function setError($error)
