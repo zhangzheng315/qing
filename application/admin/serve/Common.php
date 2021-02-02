@@ -20,4 +20,12 @@ class Common extends Controller{
         return ModelAdministrators::data_model_paging($contion,$form,$size,$model,$order);
     }
 
+    /**
+     * 获取指定数据
+     */
+    public static function data_one_info($map=[],$model){
+        $info = db("$model")->where($map)->find();
+        return $info;
+    }
+
 }
