@@ -55,7 +55,7 @@ class Common extends Controller{
     }
 
     /**
-     * menu
+     * navigation
      * 获取菜单列表
      * @return void
      */

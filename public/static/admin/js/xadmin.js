@@ -244,17 +244,17 @@ layui.use(['layer','element','jquery'],function() {
 
         $('.left-nav').find('a').removeClass('active');
         $(this).children('a').addClass('active');
-        if($(this).children('.sub-menu').length){
+        if($(this).children('.sub-navigation').length){
             if($(this).hasClass('open')){
                 $(this).removeClass('open');
                 $(this).find('.nav_right').html('&#xe697;');
-                $(this).children('.sub-menu').stop(true,true).slideUp();
-                $(this).siblings().children('.sub-menu').slideUp();
+                $(this).children('.sub-navigation').stop(true,true).slideUp();
+                $(this).siblings().children('.sub-navigation').slideUp();
             }else{
                 $(this).addClass('open');
                 $(this).children('a').find('.nav_right').html('&#xe6a6;');
-                $(this).children('.sub-menu').stop(true,true).slideDown();
-                $(this).siblings().children('.sub-menu').stop(true,true).slideUp();
+                $(this).children('.sub-navigation').stop(true,true).slideDown();
+                $(this).siblings().children('.sub-navigation').stop(true,true).slideUp();
                 $(this).siblings().find('.nav_right').html('&#xe697;');
                 $(this).siblings().removeClass('open');
             }

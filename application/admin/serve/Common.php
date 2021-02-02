@@ -40,6 +40,4 @@ class Common extends Controller{
         $this->message = $message;
     }
 
-//    public function
-
 }

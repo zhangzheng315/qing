@@ -1,18 +1,18 @@
 <?php
 namespace app\admin\serve;
-use app\admin\model\Menu;
+use app\admin\model\Navigation;
 use app\admin\serve\Common;
 use think\Log;
 use think\Request;
 
 
-class MenuService extends Common{
+class NavigationService extends Common{
 
-    public $menuModel;
+    public $navigationModel;
     public function __construct(Request $request = null)
     {
         parent::__construct($request);
-        $this->menuModel = new Menu();
+        $this->navigationModel = new Navigation();
 
     }
 
@@ -21,12 +21,12 @@ class MenuService extends Common{
      * @param $data
      * @return bool
      */
-    public function menuCreate($param){
+    public function navigationCreate($param){
 
         $data = [
             'menu_name' => $param['menu_name'],
-            'route' => $param['route'],
-            'pid' => $param['pid'],
+//            'route' => $param['route'],
+//            'pid' => $param['pid'],
             'status' => $param['status'],
             'order' => $param['order'],
             'created_time' => time(),
@@ -34,7 +34,7 @@ class MenuService extends Common{
             'deleted_time' => 0,
         ];
 
-        $add_id = $this->menuModel->insertGetId($data);
+        $add_id = $this->navigationModel->insertGetId($data);
         if(!$add_id){
             $this->setError('添加失败');
             return false;

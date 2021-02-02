@@ -138,7 +138,7 @@
               //监听提交
             form.on('submit(add)', function(data){
                 $.post('/admin/Administrators/addRule',data.field,(res)=>{
-                    if(res.status == 200){
+                    if(res.status === 200){
                         layer.msg(res.message);
                         setTimeout(()=>{
                             window.location.reload()
