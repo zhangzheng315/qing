@@ -13,11 +13,11 @@ return [
     // 数据库类型
     'type'            => 'mysql',
     // 服务器地址
-    'hostname'        => 'localhost',
+    'hostname'        => '172.16.160.251',
     // 数据库名
-    'database'        => 'qingtv',
+    'database'        => 'qingtv_www',
     // 用户名
-    'username'        => 'root',
+    'username'        => 'qingtv_www',
     // 密码
     'password'        => '19861016',
     // 端口
