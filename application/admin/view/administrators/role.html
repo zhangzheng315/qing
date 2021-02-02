@@ -58,33 +58,23 @@
                     <input type="text" name="title" placeholder="请输入" autocomplete="off" class="layui-input">
                   </div>
                 </div>
+               
                 <div class="layui-form-item">
-                    <label class="layui-form-label">路由</label>
-                    <div class="layui-input-block">
-                      <input type="text" name="href" placeholder="请输入(/admin/index/index)" autocomplete="off" class="layui-input">
-                    </div>
-                  </div>
-                <div class="layui-form-item">
-                  <label class="layui-form-label">选择父级</label>
+                  <label class="layui-form-label">权限选择</label>
                   <div class="layui-input-block">
-                    <select name="pid" lay-filter="aihao">
-                      <option value="0">根目录</option>
-                      
-                    </select>
+                    {foreach $rules as $key=>$val}
+                    <input type="checkbox" name="like{$val.rule_id}" value="{$val.rule_id}" title="{$val.title}">
+                    {/foreach}
                   </div>
                 </div>
+                
                 <div class="layui-form-item">
                   <label class="layui-form-label">启用</label>
                   <div class="layui-input-block">
                     <input name="status" value="1" type="checkbox" checked lay-skin="switch">
                   </div>
                 </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">排序</label>
-                    <div class="layui-input-block">
-                      <input type="text" name="sort" placeholder="请输入(数值越大，排序越靠前)" autocomplete="off" class="layui-input">
-                    </div>
-                  </div>
+               
                 <div class="layui-form-item">
                   <div class="layui-input-block">
                     <button class="layui-btn" lay-submit lay-filter="add">保存</button>

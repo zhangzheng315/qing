@@ -12,14 +12,16 @@ class Administrators extends Common{
      * 管理员列表
      */
     public function list(){
-        return $this->fetch();
+        $str = ModelAdministrators::getFieldList('auth_group','title,group_id',['status'=>1]);
+        return $this->fetch('',['group'=>$str]);
     }
 
     /**
      * 角色管理
      */
     public function role(){
-        return $this->fetch();
+        $str = ModelAdministrators::getFieldList('auth_rule','title,rule_id',['status'=>1]);
+        return $this->fetch('',['rules'=>$str]);
     }
 
     /**
