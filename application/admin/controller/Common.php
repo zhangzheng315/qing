@@ -1,6 +1,7 @@
 <?php
 namespace app\admin\controller;
 use think\Controller;
+use think\Session;
 
 
 class Common extends Controller{
@@ -12,6 +13,7 @@ class Common extends Controller{
     public $fail = 401;
     public $code = 0;
     public $user;
+    public $menu_list;
 
     /**
      * 初始化方法
@@ -19,7 +21,7 @@ class Common extends Controller{
     public function _initialize(){
         // $this->islogin();   //判断用户是否需要登录
         // $this->getuser();   //获取用户详细信息
-        // $this->menu();      //获取菜单列表
+         $this->menu();      //获取菜单列表
     }
 
     /**
@@ -28,7 +30,8 @@ class Common extends Controller{
      * @return void
      */
     public function islogin(){
-        if(empty(session('uid'))){
+        if(empty($_SESSION['uid'])){
+//        if(empty(Session::get('uid'))){
             $this->redirect('Login/index');
         }
     }
@@ -45,6 +48,12 @@ class Common extends Controller{
             return show($this->fail,$e->getMessage());
         }
         $this->user = $user;
+    }
+
+    public function menu()
+    {
+        $menu_admin_list = db('menu')->where(['deleted_time'=>0,'status'=>1])->field('menu_name,id')->select();
+        $this->assign('menu_admin_list',$menu_admin_list);
     }
 
 
