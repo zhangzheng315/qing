@@ -1,6 +1,7 @@
 <?php
 namespace app\admin\controller;
 use think\Controller;
+
 use app\admin\model\Admin;
 use app\admin\model\AuthRule;;
 
@@ -14,11 +15,13 @@ class Common extends Controller{
     public $fail = 401;
     public $code = 0;
     public $user;
+    public $menu_list;
 
     /**
      * 初始化方法
      */
     public function _initialize(){
+
         $this->islogin();   //判断用户是否需要登录
         $this->getuser();   //获取用户详细信息
         $this->menu();      //获取菜单列表
@@ -30,6 +33,7 @@ class Common extends Controller{
      * @return void
      */
     public function islogin(){
+
         if(empty(session('uid'))){
             $this->redirect('/admin/Login/index');
         }

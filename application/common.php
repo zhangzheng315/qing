@@ -35,3 +35,13 @@ function show($status,$message,$data=[]){
     ];
     return json($data);
 }
+
+/**
+ * 格式化打印数据
+ */
+function dd($array) {
+    echo '<pre>';
+    var_dump($array);
+    echo '<pre>';
+    die;
+}

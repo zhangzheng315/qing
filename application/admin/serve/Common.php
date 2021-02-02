@@ -5,6 +5,8 @@ use app\admin\model\ModelAdministrators;
 
 class Common extends Controller{
 
+    public $error;
+    public $message;
     /**
      * 获取权限数据
      * 分页处理
@@ -27,5 +29,24 @@ class Common extends Controller{
         $info = db("$model")->where($map)->find();
         return $info;
     }
+
+     /* 设置错误信息
+     * @param $error
+     */
+    public function setError($error)
+    {
+        $this->error = $error;
+    }
+
+    /**
+     * 设置返回信息
+     * @param $message
+     */
+    public function setMessage($message)
+    {
+        $this->message = $message;
+    }
+
+//    public function
 
 }
