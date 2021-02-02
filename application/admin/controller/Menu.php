@@ -58,4 +58,10 @@ class Menu extends Common{
         }
     }
 
+    public function menu()
+    {
+        $menu_admin_list = db('menu')->where(['deleted_time'=>0,'status'=>1])->field('menu_name,id')->select();
+        $this->assign('menu_admin_list',$menu_admin_list);
+    }
+
 }
