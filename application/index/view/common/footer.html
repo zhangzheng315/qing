@@ -4,8 +4,364 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .footer {
+            width: 100%;
+            box-sizing: border-box;
+            background: #252525;
+        }
+        .footer-top {
+            padding-bottom: 30px;
+            border: 1px solid rgba(221, 218, 211, .3);
+        }
+        .layui-container{
+            width: 1200px !important;
+            }
+        .footer-left{
+           text-align: left;
+        }
+        .footer-left-img{
+          width: 180px;
+          height: 67px;
+        }
+        .footer-left-img>img {
+            width: 100%;
+            height: 100%;
+        }
+        .footer-left-phone {
+            margin-top: 47px;
+        }
+        .span-dot {  
+            font-size: 16px;
+            font-family: Microsoft YaHei;
+            font-weight: 400;
+            color: #FFFFFF;
+        }
+        .span-doot {
+            display: inline-block;
+            font-size: 16px;
+            font-family: Microsoft YaHei;
+            font-weight: 400;
+            color: #FFFFFF;
+            margin-top: 26px;
+        } 
+        .yuyue {
+            margin-top: 100px;
+            display: flex;
+        }
+        .yanshi {
+            width: 152px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border: 1px solid #FFFFFF;
+            border-radius: 20px;
+            color: #FFFFFF;
+            font-size: 16px; 
+            font-family: Microsoft YaHei;
+            cursor: pointer;
+        }
+        .language {
+            width: 130px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border: 1px solid #FFFFFF;
+            border-radius: 20px;
+            color: #FFFFFF;
+            font-size: 16px; 
+            font-family: Microsoft YaHei;
+            cursor: pointer;
+            margin-left: 50px;
+        }
+        .footer-right {
+            display: flex;
+        }
+        .footer-right>dl {
+            color: #FFFFFF;
+            width: 125px;
+            margin-left: 40px;
+        }
+        .footer-right>dl>dt {       
+            font-size: 24px;
+            font-family: Microsoft YaHei;
+            font-weight: 400;
+            color: #FFFFFF;
+            margin-bottom: 50px;
+        }
+        .footer-right>dl>dd>a {
+            font-size: 16px;
+            font-family: Microsoft YaHei;
+            font-weight: 400;
+            color: #FFFFFF;
+            line-height: 40px;
+            height: 40px;
+        }
+        .flex {
+            display: flex;
+            justify-content: space-between;
+        }
+        .watchus {
+            margin-top: 100px;
+            color: #FFFFFF;
+            margin-left: 40px;
+        }
+        .watchus>h3 {     
+            font-size: 24px;
+            font-family: Microsoft YaHei;
+            font-weight: 400;
+            color: #FFFFFF;
+        }
+        .footer-bottom {
+            height: 50px;
+        }
+        .footer-bottom-left {
+            width: 40%;
+        }
+        .footer-bottom-right {
+            width: 60%;
+        }
+        .footer-bottom-left>span {
+            color: #FFFFFF;
+            font-size: 14px;
+            line-height: 50px;
+            height: 50px;
+        }
+        .footer-bottom-right>span {
+            color: #FFFFFF;
+            font-size: 14px;
+            line-height: 50px;
+            height: 50px;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="footer">
+      <div class="footer-top">
+      <div class="layui-container flex" style="padding-top: 75px;">
+        <div class="footer-left">
+            <div class="footer-left-img">
+              <img src="/static/image/logo_white.svg" alt="" />
+            </div>
+            <div class="footer-left-phone">
+              <span class="span-dot">服务热线: <span style="color: #00cc99"> 400-920-1599</span></span><br />
+              <span class="span-doot">商务合作：frank.fu@sicbon.com</span><br />
+              <span class="span-doot">投诉建议：frank.fu@sicbon.com</span>
+            </div>
+            <div class="yuyue">
+                <div class="yanshi">
+                    预约上门演示 >
+                </div>
+                <div class="language">
+                    China
+                </div>
+            </div>
+            <!-- <div class="footer-xia">
+              <h3>关注我们</h3>
+              <div class="footer-quan">
+                <div class="footer-quan-up">
+                </div>
+                <div class="footer-quan-down">
+                  <img src="../assets/icon/facebook.svg" alt="" />
+                  <img src="../assets/icon/twitter.svg" alt="" />
+                </div>
+              </div>
+            </div> -->
+          </div>
+         <div>
+             <div class="footer-right">
+              <dl>
+                  <dt>关于轻直播</dt>
+                  <dd>
+                      <a href="">关于我们</a>
+                  </dd>
+                  <dd>
+                      <a href="">
+                          服务案例
+                      </a>
+                  </dd>
+                  <dd>
+                      <a href="">
+                          团队风采
+                      </a>
+                  </dd>
+                  <dd>
+                      <a href="">
+                          新闻中心
+                      </a>
+                  </dd>
+                  <dd>
+                      <a href="">
+                          战略合作
+                      </a>
+                  </dd>
+              </dl>
+              <dl>
+                <dt>
+                    服务支持
+                </dt>
+                <dd>
+                    <a href="">轻直播</a>
+                </dd>
+                <dd>
+                    <a href="">
+                        轻会议
+                    </a>
+                </dd>
+                <dd>
+                    <a href="">
+                        轻课堂
+                    </a>
+                </dd>
+                <dd>
+                    <a href="">
+                        直播策划
+                    </a>
+                </dd>
+                <dd>
+                    <a href="">
+                        现场执行
+                    </a>
+                </dd>
+                <dd>
+                    <a href="">
+                        服务体系
+                    </a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    行业方案
+                </dt>
+                <dd>
+                    <a href="">医疗行业</a>
+                </dd>
+                <dd>
+                    <a href="">
+                        教育行业
+                    </a>
+                </dd>
+                <dd>
+                    <a href="">金融行业</a>
+                </dd>
+                <dd>
+                    <a href="">科技行业</a>
+                </dd>
+                <dd>
+                    <a href="">
+                        媒体行业
+                    </a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    场景方案
+                </dt>
+                <dd>
+                    <a href="">
+                        手术直播
+                    </a>
+                </dd>
+                <dd>
+                    <a href="">
+                        活动直播
+                    </a>
+                </dd>
+                <dd>
+                    <a href="">
+                        企业培训
+                    </a>
+                </dd>
+                <dd>
+                    <a href="">
+                        营销直播
+                    </a>
+                </dd>
+                <dd>
+                    <a href="">
+                        年会直播
+                    </a>
+                </dd>
+                <dd>
+                    <a href="">
+                        行业峰会直播
+                    </a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    轻学院
+                </dt>
+                <dd>
+                    <a href="">
+                        使用教程
+                    </a>
+                </dd>
+                <dd>
+                    <a href="">
+                        在线答疑
+                    </a>
+                </dd>
+                <dd>
+                    <a href="">
+                        直播课堂
+                    </a>
+                </dd>
+                <dd>
+                    <a href="">
+                        预约演示
+                    </a>
+                </dd>
+            </dl>
+            </div>
+            <!-- 关注我们 -->
+            <div class="watchus">
+                 <h3>关注我们</h3>
+                 <span>
+                     <!-- <img src="" alt=""> -->
+                 </span>
+                 <span></span>
+                 <span></span>
+                 <span></span>
+                 <span></span>
+                 <span></span>
+            </div>
+         </div>    
+              <!-- <div class="footer-footer">
+                <div class="map">
+                  <span class="span-left">
+                    <a href="">增值电信经营许可证</a>
+                  </span>
+                  <span class="span-content">网站地图</span>
+                  <span class="span-content">
+                    <a href="">法律声明</a>
+                  </span>
+                  <span class="span-content">
+                    <a href="">隐私协议</a>
+                  </span>
+                  <span class="span-content">
+                    <a href="">服务协议</a>
+                  </span>
+                </div>
+                <div class="copy">
+                  <span class="span-right">©2020 Copyright SHANGHAI BONWEY TECHNOLOGY CO. LTD；. All right</span>
+                  <span style="cursor:pointer;">沪ICP备20004241号-4</span>
+                </div>
+              </div>      -->
+      </div>  
+      </div>
+      <div class="footer-bottom">
+          <div class="layui-container flex">
+              <div class="footer-bottom-left">
+                   <span>增值电信经营许可证</span>
+                   <span style="margin-left: 150px;">网站地图</span>
+              </div>
+              <div class="footer-bottom-right">
+                  <span>©2020 Copyright SHANGHAI BONWEY TECHNOLOGY CO. LTD；. All right</span>
+                  <span>沪ICP备20004241号-4</span>
+              </div>
+          </div>
+      </div>
+    </div>
 </body>
 </html>

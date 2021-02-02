@@ -4,8 +4,288 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- jQuery and JavaScript Bundle with Popper -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        .header-nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: 0px 2px 3px 0px rgba(193, 193, 193, 0.3);
+        }
+        .layui-container {
+            width: 1200px !important;
+            padding: 0;
+         
+        }
+        .flex-item {
+            display: flex;
+            align-items: center;
+        }
+        .layui-container>.q-logo {
+            width: 124px;
+        }
+        .nav-menu {
+           margin-left: 91px;
+           margin-right: 121px;
+           
+        }
+        .menu {
+            display: flex;
+            height: 65px;
+            align-items: center;
+            width: 583px;
+            justify-content: space-between;
+        }
+        .menu>.menu-item {
+            /* margin: 0 20px; */
+            padding: 0 2px;
+            height: 65px;
+            line-height: 65px;
+        }
+        .menu>.menu-item>a {
+            font-size: 16px;
+            font-weight: 400;
+            color: #000000;
+        }
+        .menu>li.active {
+            border-bottom: 3px solid #00cc99;
+        }
+        .nav-btn>span {
+            display: inline-block;
+            width: 103px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 20px;
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .login {
+            border: 1px solid #00cc99;
+            color: #00cc99;
+            margin-right: 40px;
+        }
+        .free-use {
+            background: #00cc99;
+            color: #ffffff;
+        }
+        .pull-down-pannel-product {
+            position: fixed;
+            width: 100%;
+            left: 0;
+            top: 65px;
+            z-index: 999;
+            /* height: 225px; */
+            background: #ffffff;
+           box-shadow: 0px 2px 3px 0px rgba(193, 193, 193, 0.3);
+           display: none;
+        }
+        .product-pannel {
+            padding: 20px 0 33px;
+            display: flex;
+            margin-left:450px;
+        }
+        .product-pannel>dl {
+           padding-right: 160px;
+           position: relative;
+        }
+        .product-pannel>dl>dt {
+            font-size: 12px;
+            font-weight: 400;
+            color: #999999;
+            font-family: Microsoft YaHei;;
+        }
+        .product-pannel>dl.dl-border::after {
+            display: block;
+            position: absolute;
+            content: '';
+            width: 1px;
+            height: 170px;
+            background: #e5e5e5;
+            right: 90px;
+            top: 50px;
+        }
+        .product-pannel>dl>dd {
+            position: relative;
+        }
+        .product-pannel>dl>dd::after {
+            position: absolute;
+            content: '';
+            width: 20px;
+            height: 20px;
+            background-size: contain;
+            top: 6px;
+            left: -30px;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background: url('/static/image/logo-icon.png');
+        }
+        .product-pannel>dl>dt,dd {
+            line-height: 30px;
+        }
+        .product-pannel>dl>dd {
+            margin-top: 16px;
+        }
+        .product-pannel>dl>dt {
+            font-size: 12px;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+        .pink-item {
+            position: relative;
+            display: block;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            z-index: 2;
+        }
+        .pink-item>p {
+            line-height: 20px;
+            font-size: 14px;
+            font-weight: 400;
+        }
+        .pink-item>p.p-active {
+            color: #00cc99;
+        }
+        .pink-item>span {
+            font-size: 12px;
+            line-height: 20px;
+            font-weight: 400;
+            color: #666666;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="header-nav">
+         <div class="layui-container flex-item">
+           <div class="q-logo">
+               <h1>logo</h1>
+           </div>
+           <div class="nav-menu">
+                 <ul class="menu">
+                   <li class="menu-item">
+                    <a href="">首页</a>
+                   </li>
+                   <li class="menu-item">
+                       <a href="">产品与服务</a>
+                       <div class="pull-down-pannel pull-down-pannel-product">
+                           <div class="product-pannel">
+                               <dl class="dl-border">
+                                   <dt>视频云服务</dt>
+                                   <dd>
+                                       <a href="" class="pink-item">
+                                           <p class="p-active">轻直播平台</p>
+                                           <span>企业级视频云直播平台</span>
+                                       </a>
+                                   </dd>
+                                   <dd>
+                                    <a href="" class="pink-item">
+                                        <p>轻直播平台</p>
+                                        <span>企业级视频云直播平台</span>
+                                    </a> 
+                                   </dd>
+                                   <dd>
+                                    <a href="" class="pink-item">
+                                        <p>轻直播平台</p>
+                                        <span>企业级视频云直播平台</span>
+                                    </a> 
+                                   </dd>
+                               </dl>
+                               <dl class="dl-border">
+                                   <dt>
+                                       定制化服务
+                                   </dt>
+                                   <dd>
+                                    <a href="" class="pink-item">
+                                        <p>轻直播平台</p>
+                                        <span>企业级视频云直播平台</span>
+                                    </a>
+                                </dd>
+                                <dd>
+                                 <a href="" class="pink-item">
+                                     <p>轻直播平台</p>
+                                     <span>企业级视频云直播平台</span>
+                                 </a> 
+                                </dd>
+                                <dd>
+                                 <a href="" class="pink-item">
+                                     <p>轻直播平台</p>
+                                     <span>企业级视频云直播平台</span>
+                                 </a> 
+                                </dd>
+                               </dl>
+                               <dl>
+                                   <dt>现场服务</dt>
+                                   <dd>
+                                    <a href="" class="pink-item">
+                                        <p>轻直播平台</p>
+                                        <span>企业级视频云直播平台</span>
+                                    </a>
+                                </dd>
+                                <dd>
+                                 <a href="" class="pink-item">
+                                     <p>轻直播平台</p>
+                                     <span>企业级视频云直播平台</span>
+                                 </a> 
+                                </dd>
+                                <dd>
+                                 <a href="" class="pink-item">
+                                     <p>轻直播平台</p>
+                                     <span>企业级视频云直播平台</span>
+                                 </a> 
+                                </dd>
+                               </dl>
+                           </div>
+                       </div>
+                   </li>
+                   <li class="menu-item">
+                       <a href="">解决方案</a>
+                   </li>
+                   <li class="menu-item">
+                       <a href="">案列中心</a>
+                   </li>
+                   <li class="menu-item">
+                       <a href="">轻学院</a>
+                   </li>
+                   <li class="menu-item">
+                       <a href="">关于轻直播</a>
+                   </li>
+                 </ul>
+           </div>
+           <div class="nav-btn">
+              <span class="login">
+                  登录
+              </span>
+              <span class="free-use">
+                  免费试用
+              </span>
+           </div>
+         </div>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+     $('.menu li').hover(function() {
+         $(this).addClass('active');
+        //  $('.pull-down-pannel-product').css({
+        //      "top": '65px',
+        //      'z-index': 999
+        //  })
+     }, function() {
+         $(this).removeClass('active');
+        //  $('.pull-down-pannel-product').css({
+        //      "top": '-135px',
+        //      'z-index': -1
+        //  })
+     })
+
+
+
+    </script>
 </body>
 </html>

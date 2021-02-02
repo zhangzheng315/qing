@@ -12,14 +12,16 @@ class Administrators extends Common{
      * 管理员列表
      */
     public function list(){
-        return $this->fetch();
+        $str = ModelAdministrators::getFieldList('auth_group','title,group_id',['status'=>1]);
+        return $this->fetch('',['group'=>$str]);
     }
 
     /**
      * 角色管理
      */
     public function role(){
-        return $this->fetch();
+        $str = ModelAdministrators::getFieldList('auth_rule','title,rule_id',['status'=>1]);
+        return $this->fetch('',['rules'=>$str]);
     }
 
     /**
@@ -48,6 +50,21 @@ class Administrators extends Common{
         $data['status'] = 1;
         $str = ServeAdministrators::data_paging($data,'auth_group','group_id');
         return layshow($this->code,'ok',$str['data'],$str['count']);
+    }
+
+    /**
+     * 获取角色详情
+     */
+    public function getRoleInfo(){
+        $data = input('post.');
+        $str = ServeAdministrators::data_one_info($data,'auth_group');
+        if($str){
+            $str['rules'] = explode(',',$str['rules']);
+            $str['rules_all'] =  ModelAdministrators::getFieldList('auth_rule','title,rule_id',['status'=>1]);
+            return show($this->ok,'success',$str);
+        }else{
+            return show($this->fail,'error');
+        }
     }
 
     /**
@@ -89,6 +106,35 @@ class Administrators extends Common{
             return show($this->ok,'添加成功');
         }else{
             return show($this->fail,'添加失败');
+        }
+    }
+
+    /**
+     * 修改用户组
+     */
+    public function editGroup(){
+        $data = input('post.');
+        $rules =
+        [
+            'title' => 'require',
+            'status' => 'require',
+            'group_id' => 'require',
+        ];
+        $msg =
+        [
+            'title' => '缺少参数@title',
+            'status' => '缺少参数@status',
+            'group_id' => '缺少参数@group_id'
+        ];
+        $validate = new Validate($rules,$msg);
+        if(!$validate->check($data)){
+            return show($this->fail,$validate->getError());
+        }
+        $str = ServeAdministrators::editGroupServe($data);
+        if($str){
+            return show($this->ok,'修改成功');
+        }else{
+            return show($this->fail,'修改失败');
         }
     }
 
