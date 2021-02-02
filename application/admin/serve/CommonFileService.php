@@ -54,7 +54,7 @@ class CommonFileService extends Common{
         // 初始化 UploadManager 对象并进行文件的上传
         $uploadMgr = new UploadManager();
 
-        list($ret, $err) = $uploadMgr->putFile($token, $key, $filePath);
+        list($ret, $err) = $uploadMgr->putFile($token['token'], $key, $filePath);
         if ($err !== null) {
             $this->setError('上传失败');
             return false;
@@ -92,11 +92,12 @@ class CommonFileService extends Common{
         $auth = new Auth($accessKey, $secretKey);
         // 要上传的空间
         $bucket = config('qiniu.bucket');
+        $domain  = config('qiniu.domain');
         if (!$token = $auth->uploadToken($bucket)){
             $this->setError('上传失败!');
             return false;
         }
-        return $token;
+        return ['token'=>$token,'domain'=>$domain];
     }
 
 

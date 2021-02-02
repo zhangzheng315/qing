@@ -15,7 +15,6 @@ class Common extends Controller{
     public $fail = 401;
     public $code = 0;
     public $user;
-    public $menu_list;
 
     /**
      * 初始化方法

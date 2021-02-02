@@ -56,17 +56,34 @@
         <div id="add" style="display: none;">
             <form class="layui-form"> <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
                 <div class="layui-form-item">
-                  <label class="layui-form-label">菜单名称</label>
+                    <label class="layui-form-label">选择父级</label>
+                    <div class="layui-input-block">
+                        <select name="pid" lay-filter="aihao">
+                            <option value="0">根目录</option>
+                            {foreach $navigation_list as $item }
+                            <option value="{$item.id}">{$item.menu_name}</option>
+                            {/foreach}
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">标题</label>
                   <div class="layui-input-block">
-                    <input type="text" name="menu_name" placeholder="请输入" autocomplete="off" class="layui-input">
+                    <input type="text" name="title" placeholder="请输入" autocomplete="off" class="layui-input">
                   </div>
                 </div>
-<!--                <div class="layui-form-item">-->
-<!--                    <label class="layui-form-label">路由</label>-->
-<!--                    <div class="layui-input-block">-->
-<!--                      <input type="text" name="route" placeholder="请输入(/admin/index/index)" autocomplete="off" class="layui-input">-->
-<!--                    </div>-->
-<!--                </div>-->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">第二标题</label>
+                    <div class="layui-input-block">
+                      <input type="text" name="second_title" placeholder="请输入" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">内容</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="content" placeholder="请输入" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
                 <div class="layui-form-item">
                   <label class="layui-form-label">启用</label>
                   <div class="layui-input-block">
@@ -110,15 +127,16 @@
             table.render({
                 elem: '#table-rule'
                 ,height: 850
-                ,url: '/admin/navigation/getNavigationList' //数据接口
+                ,url: '/admin/article/getArticleList' //数据接口
                 ,page: true //开启分页
                 ,cols: [[ //表头
                 {
                     field: 'id', title: 'ID', width:80, sort: true, fixed: 'left'}
-                    ,{field: 'menu_name', title: '菜单名称' }
-                    // ,{field: 'route', title: '路由'}
+                    ,{field: 'title', title: '标题' }
+                    ,{field: 'second_title', title: '第二标题'}
+                    ,{field: 'content', title: '内容'}
                     ,{field: 'order', title: '排序'}
-                    ,{field: 'status', title: '当前状态'}
+                    ,{field: 'status', title: '状态'}
                     ,{fixed: 'right', width:150,title:'操作' , align:'center', toolbar: '#barDemo'}
                 ]]
             });
@@ -135,7 +153,7 @@
 
               //监听提交
             form.on('submit(add)', function(data){
-                $.post('/admin/navigation/navigationCreate',data.field,(res)=>{
+                $.post('/admin/article/articleCreate',data.field,(res)=>{
                     if(res.status === 200){
                         layer.msg(res.message);
                         setTimeout(()=>{

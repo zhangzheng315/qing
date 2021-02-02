@@ -4,7 +4,7 @@ use think\Controller;
 use app\admin\serve\ServeLogin;
 use think\Validate;
 
-class Login extends Controller{
+class Login extends Common{
 
     public function index(){
         return $this->fetch();

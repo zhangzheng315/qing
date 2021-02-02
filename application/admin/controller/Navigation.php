@@ -26,6 +26,9 @@ class Navigation extends Common{
         $data = input('get.');
         $data['status'] = 1;
         $str = NavigationService::data_paging($data,'navigation','order');
+        foreach ($str['data'] as &$value) {
+            $value['status'] = $value['status'] == 1 ? '显示' : '不显示';
+        }
         return layshow($this->code,'ok',$str['data'],$str['count']);
     }
 
