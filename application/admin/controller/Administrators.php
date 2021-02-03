@@ -13,7 +13,8 @@ class Administrators extends Common{
      */
     public function list(){
         $str = ModelAdministrators::getFieldList('auth_group','title,group_id',['status'=>1]);
-        return $this->fetch('',['group'=>$str]);
+        $add_url = '/admin/administrators/adminCreate';
+        return $this->fetch('',['group'=>$str,'add_url'=>$add_url]);
     }
 
     /**
@@ -21,7 +22,8 @@ class Administrators extends Common{
      */
     public function role(){
         $str = ModelAdministrators::getFieldList('auth_rule','title,rule_id',['status'=>1]);
-        return $this->fetch('',['rules'=>$str]);
+        $add_url = '/admin/administrators/roleCreate';
+        return $this->fetch('',['rules'=>$str,'add_url'=>$add_url]);
     }
 
     /**
@@ -29,7 +31,8 @@ class Administrators extends Common{
      */
     public function rule(){
         $str = ModelAdministrators::getFieldList('auth_rule','title,rule_id',['status'=>1]);
-        return $this->fetch('',['rules'=>$str]);
+        $add_url = '';
+        return $this->fetch('',['rules'=>$str,'add_url'=>$add_url]);
     }
 
     /**
@@ -135,6 +138,69 @@ class Administrators extends Common{
             return show($this->ok,'修改成功');
         }else{
             return show($this->fail,'修改失败');
+        }
+    }
+
+    /**
+     * 新增管理人员
+     */
+    public function adminCreate(){
+        $data = input('post.');
+        $rules =
+            [
+                'name' => 'require',
+                'email' => 'require',
+                'pwd' => 'require',
+                'group_id' => 'require',
+            ];
+        $msg =
+            [
+                'name' => '缺少参数@name',
+                'email' => '缺少参数@email',
+                'pwd' => '缺少参数@pwd',
+                'group_id' => '缺少参数@group_id'
+            ];
+        $validate = new Validate($rules,$msg);
+        if(!$validate->check($data)){
+            return show($this->fail,$validate->getError());
+        }
+        $str = ServeAdministrators::adminCreate($data);
+        if($str){
+            return show($this->ok,'添加成功');
+        }else{
+            return show($this->fail,'添加失败');
+        }
+    }
+
+    /**
+     * 新增角色
+     */
+    public function roleCreate(){
+        $data = input('post.');
+        dd($data);
+        $rules =
+            [
+                'name' => 'require',
+                'email' => 'require',
+                'pwd' => 'require',
+                'group_id' => 'require',
+            ];
+        $msg =
+            [
+                'name' => '缺少参数@name',
+                'email' => '缺少参数@email',
+                'pwd' => '缺少参数@pwd',
+                'group_id' => '缺少参数@group_id'
+            ];
+        $validate = new Validate($rules,$msg);
+        if(!$validate->check($data)){
+            return show($this->fail,$validate->getError());
+        }
+        $str = ServeAdministrators::adminCreate($data);
+        if($str){
+            return show($this->ok,'添加成功');
+        }else{
+            return show($this->fail,'添加失败');
         }
     }
 

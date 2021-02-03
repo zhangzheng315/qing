@@ -15,8 +15,9 @@ class Navigation extends Common{
 
     public function index()
     {
-//        $navigation_list = db('navigation')->where(['deleted_time'=>0,'status'=>1])->field('menu_name,id')->select();
-        return $this->fetch();
+        $add_url = '/admin/navigation/navigationCreate'; //添加
+        $del_url = '';
+        return $this->fetch('',compact('add_url'));
     }
 
     /**
@@ -33,7 +34,7 @@ class Navigation extends Common{
     }
 
     /**
-     * 添加菜单
+     * 添加导航栏
      * @return mixed
      */
     public function navigationCreate(Request $request){

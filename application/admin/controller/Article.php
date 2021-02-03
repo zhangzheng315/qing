@@ -19,7 +19,8 @@ class Article extends Common{
     public function index()
     {
         $navigation_list = $this->navigationService->navigationList();
-        return $this->fetch('',compact('navigation_list'));
+        $add_url = '/admin/article/articleCreate';
+        return $this->fetch('',compact('navigation_list','add_url'));
     }
 
     /**

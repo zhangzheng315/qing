@@ -4,7 +4,7 @@ use think\Controller;
 use app\admin\serve\ServeLogin;
 use think\Validate;
 
-class Login extends Common{
+class Login extends Controller{
 
     public function index(){
         return $this->fetch();
@@ -24,7 +24,7 @@ class Login extends Common{
         ];
         $validate = new Validate($rules,$msg);
         if(!$validate->check($data)){
-            return show($this->fail,$validate->getError());
+            return show(401,$validate->getError());
         }
         $str = ServeLogin::logining($data);
         return $str;
