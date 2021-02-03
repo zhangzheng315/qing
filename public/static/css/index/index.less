@@ -26,7 +26,7 @@
 }
 
 #banner {
-    margin-top: 65px;
+    // margin-top: 65px;
     height: 600px;
     position: relative;
 
@@ -101,7 +101,7 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: space-between;
-
+                cursor: pointer;
                 div {
                     display: flex;
                     align-items: center;
@@ -130,6 +130,11 @@
                 &:nth-child(6) {
                     border-right: 0;
                 }
+                &:hover {
+                    h6,p {
+                        color: #00cc99;
+                    }
+                }
             }
         }
     }
@@ -138,20 +143,20 @@
 // 产品与服务
 #product {
     // height: 619px;
-    padding-top: 161px;
+    padding-top: 129px;
     box-sizing: border-box;
 
     .product-content {
         width: 90%;
         margin: 0 auto;
-        margin-top: 66px;
+        margin-top: 46px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 100px;
+        margin-bottom: 70px;
 
         .product-item {
-            width: 31%;
+            width: 32%;
             height: 272px;
             background: #FFFFFF;
             box-shadow: 0px 4px 8px 0px rgba(193, 193, 193, 0.36);
@@ -271,7 +276,7 @@
     background: url('/static/image/index/youshi.png') no-repeat;
     background-size: cover;
     position: relative;
-    padding: 80px 0 80px;
+    padding: 65px 0 65px;
     box-sizing: border-box;
 
     .hover {
@@ -286,7 +291,7 @@
 
     .title {
         color: #fff;
-        margin-bottom: 80px;
+        margin-bottom: 60px;
     }
 
     .advantage-content {
@@ -305,6 +310,7 @@
                 height: 71px;
                 width: 269px;
                 border-bottom: 1px solid rgba(255, 255, 255, .3);
+                background-color: rgba(0,0,0,.2);
                 box-sizing: border-box;
                 cursor: pointer;
 
@@ -332,7 +338,7 @@
             }
 
             .active {
-                background-color: rgba(255, 255, 255, .3);
+                background-color: rgba(255, 255, 255, .2);
                 border-right: 3px solid #00cc99;
 
                 div {
@@ -348,9 +354,12 @@
         }
 
         .content-right {
-            height: 280px;
+            height: 320px;
             width: 60%;
-
+            background-color: rgba(0,0,0,.2);
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 5px;
             .right-item {
                 display: none;
 
@@ -358,7 +367,7 @@
                     font-size: 18px;
                     color: #FFFFFF;
                     font-weight: 700;
-                    margin-bottom: 59px;
+                    margin-bottom: 39px;
                 }
 
                 .text-box {
@@ -418,10 +427,9 @@
 
 // 「全行业」解决方案
 #solve {
-    padding-top: 96px;
-
+    padding-top: 76px;
     .title {
-        margin-bottom: 87px;
+        margin-bottom: 67px;
     }
 
     .solve-content {
@@ -508,15 +516,15 @@
 #qiye {
     // height: 829px;
     background-color: #fff;
-    padding: 80px 0 20px;
+    padding: 60px 0 20px;
 
     .title {
-        margin-bottom: 89px;
+        margin-bottom: 70px;
     }
 
     nav {
         width: 90%;
-        margin: 0 auto 90px;
+        margin: 0 auto 70px;
 
         .logo-title {
             width: 100%;
@@ -598,10 +606,10 @@
 // 轻学院
 #college {
     background-color: #f2f4f7;
-    padding: 98px 0 151px;
+    padding: 60px 0 75px;
 
     .title {
-        margin-bottom: 82px;
+        margin-bottom: 62px;
     }
 
     .college-content {
@@ -792,7 +800,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 110px 0 101px;
+        padding: 70px 0 0;
         box-sizing: border-box;
 
         h2 {

@@ -7,7 +7,6 @@
   text-align: center;
 }
 #solution #banner {
-  margin-top: 65px;
   height: 600px;
   position: relative;
 }
@@ -66,5 +65,165 @@
   color: #fff;
 }
 #solution #scene {
-  padding-top: 39px;
+  padding: 39px 0 50px;
+  background-color: #FBF8FB;
+}
+#solution #scene .title {
+  margin-bottom: 61px;
+}
+#solution #scene .scene-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#solution #scene .scene-content li {
+  width: 23%;
+  height: 230px;
+  margin: 0 auto 29px;
+  background: url('/static/image/solution/hangye.png') no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+}
+#solution #scene .scene-content li div {
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding-left: 8%;
+  box-sizing: border-box;
+  border-radius: 0 0 5px 5px;
+  padding-bottom: 4px;
+  padding-bottom: 10px;
+}
+#solution #scene .scene-content li div p {
+  font-size: 22px;
+  color: #fff;
+  padding-bottom: 4px;
+  border-bottom: 2px solid #00cc99;
+  margin-right: 45%;
+}
+#solution #scene .scene-content li div img {
+  display: none;
+}
+#solution #scene .scene-content li:hover div {
+  background-color: #00cc99;
+}
+#solution #scene .scene-content li:hover div img {
+  display: block;
+}
+#solution #qiye {
+  background-color: #fff;
+  padding: 60px 0 20px;
+}
+#solution #qiye .title {
+  margin-bottom: 70px;
+}
+#solution #qiye nav {
+  width: 90%;
+  margin: 0 auto 70px;
+}
+#solution #qiye nav .logo-title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#solution #qiye nav .logo-title .active {
+  background-color: #00cc99;
+  border-radius: 20px;
+}
+#solution #qiye nav .logo-title .active span {
+  color: #fff;
+}
+#solution #qiye nav .logo-title li {
+  cursor: pointer;
+  height: 32px;
+  width: 8%;
+  margin: 0 auto;
+  line-height: 32px;
+  text-align: center;
+  padding: 0 15px;
+}
+#solution #qiye nav .logo-title li:hover {
+  background-color: #00cc99;
+  border-radius: 20px;
+}
+#solution #qiye nav .logo-title li:hover span {
+  color: #fff;
+}
+#solution #qiye nav .logo-title li span {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 5px;
+  text-align: center;
+}
+#solution #qiye .logo-box .logo-imgs {
+  display: none;
+}
+#solution #qiye .logo-box .logo-imgs li {
+  width: 13.5%;
+  height: 67px;
+  display: inline-block;
+  margin-right: 35px;
+  margin-bottom: 62px;
+}
+#solution #qiye .logo-box .logo-imgs li:nth-child(6n) {
+  margin-right: 0px;
+}
+#solution #qiye .logo-box .logo-imgs li img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+#solution #qiye .logo-box .active {
+  display: block;
+}
+#solution #kefu {
+  height: 260px;
+  background: url('/static/image/index/fiveG.png') no-repeat;
+  background-size: cover;
+  position: relative;
+}
+#solution #kefu .hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 0;
+}
+#solution #kefu .kefu-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0 0;
+  box-sizing: border-box;
+}
+#solution #kefu .kefu-content h2 {
+  font-size: 60px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 30px;
+}
+#solution #kefu .kefu-content button {
+  width: 31%;
+  height: 60px;
+  border: 0;
+  border: 2px solid #FFFFFF;
+  border-radius: 30px;
+  outline: none;
+  background-color: transparent;
+  font-size: 30px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+#solution #kefu .kefu-content button:hover {
+  background-color: #00cc99;
+  color: #fff;
+  border: 0;
 }
