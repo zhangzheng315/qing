@@ -11,12 +11,13 @@
             background: #252525;
         }
         .footer-top {
-            padding:75px 0 30px;
-            border-bottom: 1px solid rgba(221, 218, 211, .3);
+            padding-bottom: 30px;
+            padding-top: 75px;
+            border: 1px solid rgba(221, 218, 211, .3);
         }
         .layui-container{
             width: 1200px !important;
-            }
+         }
         .footer-left{
            text-align: left;
         }
@@ -40,7 +41,7 @@
         .span-doot {
             display: inline-block;
             font-size: 16px;
-            font-family: Microsoft YaHei;
+            font-family: 'Microsoft YaHei';
             font-weight: 400;
             color: #FFFFFF;
             margin-top: 26px;
@@ -58,8 +59,13 @@
             border-radius: 20px;
             color: #FFFFFF;
             font-size: 16px; 
-            font-family: Microsoft YaHei;
+            font-family: 'Microsoft YaHei';
             cursor: pointer;
+        }
+        .yanshi:hover {
+            border: 1px solid #00cc99;
+            background: #00cc99;
+            color: #FFFFFF;
         }
         .language {
             width: 130px;
@@ -70,12 +76,21 @@
             border-radius: 20px;
             color: #FFFFFF;
             font-size: 16px; 
-            font-family: Microsoft YaHei;
+            font-family: 'Microsoft YaHei';
             cursor: pointer;
             margin-left: 50px;
+            position: relative;
         }
-        .language>span {
-            margin-left: 20px;
+        .language:hover {
+            background: #00cc99;
+            color: #FFFFFF;
+            border: 1px solid #00cc99;
+        }
+        .language>span.language-map {
+            margin-left: 10px;
+        }
+        .language>span.select-down {
+            margin-left: 10px;
         }
         .footer-right {
             display: flex;
@@ -92,6 +107,9 @@
             color: #FFFFFF;
             margin-bottom: 50px;
         }
+         .footer-right>dl>dd:hover a {
+             color: #00cc99;
+         }
         .footer-right>dl>dd>a {
             font-size: 16px;
             font-family: Microsoft YaHei;
@@ -156,23 +174,15 @@
                     预约上门演示 >
                 </div>
                 <div class="language">
-                   <span>
+                   <span class="language-map">
                        <img src="/static/image/map.png" alt="">
                    </span> 
                    China
+                   <span class="select-down">
+                       <img src="/static/image/down.png" alt="">
+                   </span>
                 </div>
             </div>
-            <!-- <div class="footer-xia">
-              <h3>关注我们</h3>
-              <div class="footer-quan">
-                <div class="footer-quan-up">
-                </div>
-                <div class="footer-quan-down">
-                  <img src="../assets/icon/facebook.svg" alt="" />
-                  <img src="../assets/icon/twitter.svg" alt="" />
-                </div>
-              </div>
-            </div> -->
           </div>
          <div>
              <div class="footer-right">
