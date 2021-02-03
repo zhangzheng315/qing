@@ -213,7 +213,6 @@ layui.use(['layer','element','jquery'],function() {
     });
     //左侧菜单
     $('.left-nav #nav').on('click', 'li', function(event) {
-
         if($(this).parent().attr('id')=='nav'){
           xadmin.set_cate_data({key:'f1',value:$('.left-nav #nav li').index($(this))})
           xadmin.set_cate_data({key:'f2',value:null})
@@ -244,17 +243,17 @@ layui.use(['layer','element','jquery'],function() {
 
         $('.left-nav').find('a').removeClass('active');
         $(this).children('a').addClass('active');
-        if($(this).children('.sub-navigation').length){
+        if($(this).children('.sub-menu').length){
             if($(this).hasClass('open')){
                 $(this).removeClass('open');
                 $(this).find('.nav_right').html('&#xe697;');
-                $(this).children('.sub-navigation').stop(true,true).slideUp();
-                $(this).siblings().children('.sub-navigation').slideUp();
+                $(this).children('.sub-menu').stop(true,true).slideUp();
+                $(this).siblings().children('.sub-menu').slideUp();
             }else{
                 $(this).addClass('open');
                 $(this).children('a').find('.nav_right').html('&#xe6a6;');
-                $(this).children('.sub-navigation').stop(true,true).slideDown();
-                $(this).siblings().children('.sub-navigation').stop(true,true).slideUp();
+                $(this).children('.sub-menu').stop(true,true).slideDown();
+                $(this).siblings().children('.sub-menu').stop(true,true).slideUp();
                 $(this).siblings().find('.nav_right').html('&#xe697;');
                 $(this).siblings().removeClass('open');
             }

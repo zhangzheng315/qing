@@ -7,19 +7,20 @@
                     <a href="<?php echo $val['href'] ? $val['href'] : 'javascript:;' ?>">
                         <i class="iconfont left-nav-li" lay-tips="{$val.title}">&#xe6b8;</i>
                         <cite>{$val.title}</cite>
-                        <i class="iconfont nav_right">&#xe697;</i></a>
-                        {if $val.list}
-                            <ul class="sub-menu">
-                                {foreach $val.list as $k => $v}
-                                    <li>
-                                        <a href="{$v.href}">
-                                        <i class="iconfont">&#xe6a7;</i>
-                                        <cite>{$v.title}</cite></a>
-                                    </li>
-                                {/foreach}
-                            </ul>
-                        {else /}
-                        {/if}
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    {if $val.list}
+                        <ul class="sub-menu">
+                            {foreach $val.list as $k => $v}
+                                <li>
+                                    <a href="{$v.href}">
+                                    <i class="iconfont">&#xe6a7;</i>
+                                    <cite>{$v.title}</cite></a>
+                                </li>
+                            {/foreach}
+                        </ul>
+                    {else /}
+                    {/if}
 
                 </li>
             {/foreach}
