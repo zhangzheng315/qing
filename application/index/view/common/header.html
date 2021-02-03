@@ -6,41 +6,36 @@
     <title>Document</title>
     <!-- jQuery and JavaScript Bundle with Popper -->
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            text-decoration: none;
-        }
-        .header-nav {
-            position: fixed;
+        /* @media screen and (min-width: 1200px) {
+        .layui-container {
+           width: 1200px !important;
+           padding: 0 !important;
+       }
+      } */
+       .header-nav {
+            position: sticky;
             top: 0;
             width: 100%;
             box-sizing: border-box;
             box-shadow: 0px 2px 3px 0px rgba(193, 193, 193, 0.3);
             background: #ffffff;
-        }
-        .layui-container {
-            width: 1200px !important;
-            padding: 0;
+            z-index: 999;
         }
         .flex-item {
             display: flex;
             align-items: center;
+            justify-content: space-between;
         }
-        .layui-container>.q-logo {
-            width: 124px;
+        .layui-container>.q-logo{
+            width: 10%;
         }
         .nav-menu {
-           margin-left: 91px;
-           margin-right: 121px;
-           
+            width: 50%;
         }
         .menu {
             display: flex;
             height: 65px;
             align-items: center;
-            width: 583px;
             justify-content: space-between;
         }
         .menu>.menu-item {
@@ -53,16 +48,24 @@
             font-size: 16px;
             font-weight: 400;
             color: #000000;
+            animation: all linear 5s;
+        }
+        .menu>.menu-item>a:hover {
+            text-decoration: none;
+            animation: all linear 5s;
         }
         .menu>li.active {
             border-bottom: 3px solid #00cc99;
         }
+        .menu>li.active>a {
+            color: #00cc99;
+        }
         .nav-btn>span {
             display: inline-block;
-            width: 103px;
-            height: 40px;
-            line-height: 40px;
-            border-radius: 20px;
+            width: 90px;
+            height: 36px;
+            line-height: 36px;
+            border-radius: 18px;
             font-size: 16px;
             text-align: center;
             cursor: pointer;
@@ -70,7 +73,7 @@
         .login {
             border: 1px solid #00cc99;
             color: #00cc99;
-            margin-right: 40px;
+            margin-right: 30px;
         }
         .free-use {
             background: #00cc99;
@@ -80,8 +83,8 @@
             position: fixed;
             width: 100%;
             left: 0;
-            top: 65px;
-            z-index: 999;
+            top: -280px;
+            z-index: -1;
             /* height: 225px; */
            background: #ffffff;
            box-shadow: 0px 2px 3px 0px rgba(193, 193, 193, 0.3);
@@ -90,7 +93,7 @@
         .product-pannel {
             padding: 20px 0 33px;
             display: flex;
-            margin-left:450px;
+            justify-content: center;
         }
         .product-pannel>dl {
            padding-right: 160px;
@@ -100,7 +103,7 @@
             font-size: 12px;
             font-weight: 400;
             color: #999999;
-            font-family: Microsoft YaHei;;
+            font-family: 'Microsoft YaHei';
         }
         .product-pannel>dl.dl-border::after {
             display: block;
@@ -274,16 +277,18 @@
     <script>
      $('.menu li').hover(function() {
          $(this).addClass('active');
-        //  $('.pull-down-pannel-product').css({
-        //      "top": '65px',
-        //      'z-index': 999
-        //  })
+         $('.pull-down-pannel-product').css({
+             "top": '65px',
+             'z-index': 999,
+             'display': 'block'
+         })
      }, function() {
          $(this).removeClass('active');
-        //  $('.pull-down-pannel-product').css({
-        //      "top": '-135px',
-        //      'z-index': -1
-        //  })
+         $('.pull-down-pannel-product').css({
+             "top": '-280px',
+             'z-index': -1,
+             'display': 'none'
+         })
      })
 
 
