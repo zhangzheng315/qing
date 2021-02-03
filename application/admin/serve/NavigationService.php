@@ -8,11 +8,11 @@ use think\Request;
 
 class NavigationService extends Common{
 
-    public $navigationModel;
+    public $navigation;
     public function __construct(Request $request = null)
     {
         parent::__construct($request);
-        $this->navigationModel = new Navigation();
+        $this->navigation = new Navigation();
 
     }
 
@@ -34,13 +34,23 @@ class NavigationService extends Common{
             'deleted_time' => 0,
         ];
 
-        $add_id = $this->navigationModel->insertGetId($data);
+        $add_id = $this->navigation->insertGetId($data);
         if(!$add_id){
             $this->setError('添加失败');
             return false;
         }
         $this->setMessage('添加成功');
         return true;
+    }
+
+    public function navigationList()
+    {
+        $where = [
+            'deleted_time' => 0,
+            'status' => 1,
+        ];
+        $navigation_list = $this->navigation->where($where)->select();
+        return $navigation_list;
     }
 
 }

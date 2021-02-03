@@ -2,20 +2,23 @@
 namespace app\admin\controller;
 
 use app\admin\serve\ArticleService;
+use app\admin\serve\NavigationService;
 use think\Request;
 use think\Validate;
 
 class Article extends Common{
     public $articleService;
-    public function __construct(ArticleService $articleService)
+    public $navigationService;
+    public function __construct(ArticleService $articleService, NavigationService $navigationService)
     {
         parent::__construct();
         $this->articleService = $articleService;
+        $this->navigationService = $navigationService;
     }
 
     public function index()
     {
-        $navigation_list = db('navigation')->where(['deleted_time'=>0,'status'=>1])->field('menu_name,id')->select();
+        $navigation_list = $this->navigationService->navigationList();
         return $this->fetch('',compact('navigation_list'));
     }
 
@@ -26,8 +29,14 @@ class Article extends Common{
         $data = input('get.');
         $data['status'] = 1;
         $str = ArticleService::data_paging($data,'article','order');
+        $navigation_list = $this->navigationService->navigationList();
         foreach ($str['data'] as &$value) {
             $value['status'] = $value['status'] == 1 ? '显示' : '不显示';
+            foreach ($navigation_list as $item) {
+                if ($item['id'] == $value['pid']) {
+                    $value['belong'] = $item['menu_name'];
+                }
+            }
         }
         return layshow($this->code,'ok',$str['data'],$str['count']);
     }

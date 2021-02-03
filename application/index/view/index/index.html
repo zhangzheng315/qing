@@ -1,25 +1,704 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>轻直播_企业直播服务平台,医疗直播领军者,营销直播定制服务商</title>
-	<meta name="keywords"  content="企业直播平台,医疗直播,营销直播,活动直播,直播定制服务" />
-	<meta name="description"  content="轻直播是国内知名的企业级直播定制化服务平台,服务全球500强,为企业提供医疗直播、手术直播、活动直播、会议直播、营销直播、年会直播等全场景解决方案,热线:400-920-1599。" />
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-LCPyFKQyML7mqtS+4XytolfqyqSlcbB3bvDuH9vX2sdQMxRonb/M3b9EmhCNNNrV" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/static/layui/css/layui.css">
-  <link rel="stylesheet" href="/static/css/index.css">
-  <style>
-      .content {
-          height: 1800px;
-      }
-  </style>
+    <meta name="keywords"  content="企业直播平台,医疗直播,营销直播,活动直播,直播定制服务" />
+    <meta name="description"
+         content="轻直播是国内知名的企业级直播定制化服务平台,服务全球500强,为企业提供医疗直播、手术直播、活动直播、会议直播、营销直播、年会直播等全场景解决方案,热线:400-920-1599。" />
+    <link rel="stylesheet" href="/static/css/index/index.css">
+    <link rel="stylesheet" href="/static/layui/css/layui.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script type='text/javascript' src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/static/layui/layui.js"></script>
 </head>
+
 <body>
-    {include file="common/header"}
-    <div class="content">
+    <!-- 首页 -->
+    <div id="index">
+        <!-- 头部 -->
+        {include file="common/header"}
+        <!-- 产品与服务 -->
+        <div id="product">
+            <div class="layui-container">
+                <h2 class="title">「轻」产品与服务</h2>
+                <div class="product-content">
+                    <div class="product-item">
+                        <div class="item-head">
+                            <img src="/static/image/index/product1.png" alt="">
+                            <h5>产品与服务</h5>
+                        </div>
+                        <div class="item-body">
+                            <p>轻直播平台全球化部署的企业级云视频平台 ，支持数百万并发，支持8K、4K、1080P 清晰度直播，300+增强功能，稳定可靠， 便捷易用。</p>
+                        </div>
+                        <div class="item-footer">
+                            <button class="more">了解更多</button>
+                            <button class="free">免费试用</button>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="item-head">
+                            <img src="/static/image/index/product1.png" alt="">
+                            <h5>定制化服务</h5>
+                        </div>
+                        <div class="item-body">
+                            <p>快捷响应，为用户提供深度定制服务，支持 与用户既有OA、CRM、视频会议系统等集 成化开发，打造用户专属直播平台。</p>
+                        </div>
+                        <div class="item-footer">
+                            <button class="more">了解更多</button>
+                            <button class="free">免费试用</button>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="item-head">
+                            <img src="/static/image/index/product1.png" alt="">
+                            <h5>现场服务</h5>
+                        </div>
+                        <div class="item-body">
+                            <p>基于长期深耕于企业直播领域的服务经验，
+                                从方案设计到现场硬件支持，全程跟进方
+                                案落地，为用户提供一站式的直播解决方
+                                案。</p>
+                        </div>
+                        <div class="item-footer">
+                            <button class="more">了解更多</button>
+                            <button class="free">免费试用</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 轻直播为您创造价值 -->
+        <div id="light-live">
+            <div class="layui-container">
+                <h2 class="title">轻量不轻质，简约不简单</h2>
+                <div class="live-content">
+                    <div class="live-item">
+                        <div class="item-top">
+                            <div class="nums">8</div>
+                            <span>年</span>
+                        </div>
+                        <p class="item-bottom">行业经验</p>
+                    </div>
+                    <div class="live-item">
+                        <div class="item-top">
+                            <div class="nums">10</div>
+                            <span>万</span>
+                            <span>+</span>
+                        </div>
+                        <p class="item-bottom">服务企业</p>
+                    </div>
+                    <div class="live-item">
+                        <div class="item-top">
+                            <div class="nums">100</div>
+                            <span>+</span>
+                        </div>
+                        <p class="item-bottom">行业解决方案</p>
+                    </div>
+                    <div class="live-item">
+                        <div class="item-top">
+                            <div class="nums">10</div>
+                            <!-- <div class="nums">%</div> -->
+                            <span>万</span>
+                            <span>+</span>
+                        </div>
+                        <p class="item-bottom">现场服务经验</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 轻直播的优势 -->
+        <div id="advantage">
+            <div class="hover"></div>
+            <div class="layui-container">
+                <h2 class="title">轻直播的优势</h2>
+                <div class="advantage-content">
+                    <div class="content-left">
+                        <div class="left-item active">
+                            <div>
+                                <img src="/static/image/index/wending.png" alt="">
+                                <h5>稳定</h5>
+                            </div>
+                        </div>
+                        <div class="left-item">
+                            <div>
+                                <img src="/static/image/index/wending.png" alt="">
+                                <h5>安全</h5>
+                            </div>
+                        </div>
+                        <div class="left-item">
+                            <div>
+                                <img src="/static/image/index/wending.png" alt="">
+                                <h5>快速</h5>
+                            </div>
+                        </div>
+                        <div class="left-item">
+                            <div>
+                                <img src="/static/image/index/wending.png" alt="">
+                                <h5>超清</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-right">
+                        <div class="right-item actives">
+                            <h6>强大的运营支持全球化部署，主流运营商全部支持，多直播中心运营，服务全球用户。</h6>
+                            <ul class="text-box">
+                                <li>
+                                    <img src="/static/image/index/success.png" alt="">
+                                    <p>1. 多“云”部署，负载均衡</p>
+                                </li>
+                                <li>
+                                    <img src="/static/image/index/success.png" alt="">
+                                    <p>2. 基于集群化的高可靠应用</p>
+                                </li>
+                                <li>
+                                    <img src="/static/image/index/success.png" alt="">
+                                    <p>3. 多副本异地容灾备份</p>
+                                </li>
+                                <li>
+                                    <img src="/static/image/index/success.png" alt="">
+                                    <p>4. 7X24小时人工支持</p>
+                                </li>
+                            </ul>
+                            <button>免费试用</button>
+                        </div>
+                        <div class="right-item">
+                            <h6>增强级安全保障</h6>
+                            <ul class="text-box">
+                                <li>
+                                    <img src="/static/image/index/success.png" alt="">
+                                    <p>1. 数据的存储与传输全程加密</p>
+                                </li>
+                                <li>
+                                    <img src="/static/image/index/success.png" alt="">
+                                    <p>2. 视频水印、防录屏</p>
+                                </li>
+                                <li>
+                                    <img src="/static/image/index/success.png" alt="">
+                                    <p>3. 自定义数据中心</p>
+                                </li>
+                                <li>
+                                    <img src="/static/image/index/success.png" alt="">
+                                    <p>4. Https安全加速，URL防盗链</p>
+                                </li>
+                            </ul>
+                            <button>免费试用</button>
+                        </div>
+                        <div class="right-item">
+                            <h6>多终端观看支持</h6>
+                            <ul class="text-box">
+                                <li>
+                                    <img src="/static/image/index/success.png" alt="">
+                                    <p>1. 基于Html5，观看多终端全平台支持</p>
+                                </li>
+                                <li>
+                                    <img src="/static/image/index/success.png" alt="">
+                                    <p>2. 支持嵌入用户App、小程序播放</p>
+                                </li>
+                                <li>
+                                    <img src="/static/image/index/success.png" alt="">
+                                    <p>3. 提供丰富的播放和采集SDK支持</p>
+                                </li>
+                                <li>
+                                    <img src="/static/image/index/success.png" alt="">
+                                    <p>4. 第三方授权播放开发支持</p>
+                                </li>
+                            </ul>
+                            <button>免费试用</button>
+                        </div>
+                        <div class="right-item">
+                            <h6>快捷的定制服务</h6>
+                            <ul class="text-box">
+                                <li>
+                                    <img src="/static/image/index/success.png" alt="">
+                                    <p>1. 轻量化定制实现24小时响应72小时交付</p>
+                                </li>
+                                <li>
+                                    <img src="/static/image/index/success.png" alt="">
+                                    <p>2. 提供完整的API&SDK支持</p>
+                                </li>
+                                <li>
+                                    <img src="/static/image/index/success.png" alt="">
+                                    <p>3. 丰富的外部授权功能</p>
+                                </li>
+                                <li>
+                                    <img src="/static/image/index/success.png" alt="">
+                                    <p>4. 专属产品经理对外支持</p>
+                                </li>
+                            </ul>
+                            <button>免费试用</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 全行业解决方案 -->
+        <div id="solve">
+            <div class="layui-container">
+                <h2 class="title">「全行业」解决方案</h2>
+                <div class="solve-content">
+                    <div class="solve-item">
+                        <img src="/static/image/index/jiesuo.png" alt="">
+                        <div class="text">
+                            <h6>教育行业案例</h6>
+                            <p>下载报告，选择符合您会议空间的商务电话</p>
+                            <img src="/static/image/index/jiantou.png" alt="">
+                        </div>
+                    </div>
+                    <div class="solve-item">
+                        <img src="/static/image/index/jiesuo.png" alt="">
+                        <div class="text">
+                            <h6>教育行业案例</h6>
+                            <p>下载报告，选择符合您会议空间的商务电话</p>
+                            <img src="/static/image/index/jiantou.png" alt="">
+                        </div>
+                    </div>
+                    <div class="solve-item">
+                        <img src="/static/image/index/jiesuo.png" alt="">
+                        <div class="text">
+                            <h6>教育行业案例</h6>
+                            <p>下载报告，选择符合您会议空间的商务电话</p>
+                            <img src="/static/image/index/jiantou.png" alt="">
+                        </div>
+                    </div>
+                    <div class="solve-item">
+                        <img src="/static/image/index/jiesuo.png" alt="">
+                        <div class="text">
+                            <h6>教育行业案例</h6>
+                            <p>下载报告，选择符合您会议空间的商务电话</p>
+                            <img src="/static/image/index/jiantou.png" alt="">
+                        </div>
+                    </div>
+                    <div class="solve-item">
+                        <img src="/static/image/index/jiesuo.png" alt="">
+                        <div class="text">
+                            <h6>教育行业案例</h6>
+                            <p>下载报告，选择符合您会议空间的商务电话</p>
+                            <img src="/static/image/index/jiantou.png" alt="">
+                        </div>
+                    </div>
+                    <div class="solve-item">
+                        <img src="/static/image/index/jiesuo.png" alt="">
+                        <div class="text">
+                            <h6>教育行业案例</h6>
+                            <p>下载报告，选择符合您会议空间的商务电话</p>
+                            <img src="/static/image/index/jiantou.png" alt="">
+                        </div>
+                    </div>
+                    <div class="solve-item">
+                        <img src="/static/image/index/jiesuo.png" alt="">
+                        <div class="text">
+                            <h6>教育行业案例</h6>
+                            <p>下载报告，选择符合您会议空间的商务电话</p>
+                            <img src="/static/image/index/jiantou.png" alt="">
+                        </div>
+                    </div>
+                    <div class="solve-item">
+                        <img src="/static/image/index/jiesuo.png" alt="">
+                        <div class="text">
+                            <h6>教育行业案例</h6>
+                            <p>下载报告，选择符合您会议空间的商务电话</p>
+                            <img src="/static/image/index/jiantou.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <button>获取解决方案</button>
+            </div>
+        </div>
+
+        <!-- 赋能「100,000+」企业 -->
+        <div id="qiye">
+            <div class="layui-container">
+                <h2 class="title">赋能「100,000+」企业</h2>
+                <nav>
+                    <ul class="logo-title">
+                        <li class="active"><span>全部</span></li>
+                        <li><span>医疗</span></li>
+                        <li><span>教育</span></li>
+                        <li><span>金融</span></li>
+                        <li><span>汽车</span></li>
+                        <li><span>科技</span></li>
+                        <li><span>地产</span></li>
+                    </ul>
+                </nav>
+                <div class="logo-box">
+                    <ul class="logo-imgs active">
+                        <li>
+                            <img src="/static/image/index/logo1.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo2.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo3.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo4.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo5.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/timg.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo6.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo7.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo8.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo9.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo9.png" alt="">
+                        </li>
+                    </ul>
+                    <ul class="logo-imgs">
+                        <li>
+                            <img src="/static/image/index/logo1.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo2.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo3.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo4.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo5.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo7.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo8.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo9.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo9.png" alt="">
+                        </li>
+                    </ul>
+                    <ul class="logo-imgs">
+                        <li>
+                            <img src="/static/image/index/logo2.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo3.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo4.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo5.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo7.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo9.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo9.png" alt="">
+                        </li>
+                    </ul>
+                    <ul class="logo-imgs">
+                        <li>
+                            <img src="/static/image/index/logo1.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo2.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo3.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo4.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo5.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/timg.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo6.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo7.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo8.png" alt="">
+                        </li>
+
+                    </ul>
+                    <ul class="logo-imgs">
+                        <li>
+                            <img src="/static/image/index/logo1.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo2.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo3.png" alt="">
+                        </li>
+
+                        <li>
+                            <img src="/static/image/index/logo5.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/timg.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo6.png" alt="">
+                        </li>
+
+                        <li>
+                            <img src="/static/image/index/logo8.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo9.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo9.png" alt="">
+                        </li>
+                    </ul>
+                    <ul class="logo-imgs">
+                        <li>
+                            <img src="/static/image/index/logo1.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo2.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo3.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo4.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo5.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/timg.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo6.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo7.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo9.png" alt="">
+                        </li>
+                    </ul>
+                    <ul class="logo-imgs active">
+                        <li>
+                            <img src="/static/image/index/logo1.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo2.png" alt="">
+                        </li>
+
+                        <li>
+                            <img src="/static/image/index/logo4.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo5.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/timg.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo6.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo7.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo8.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/index/logo9.png" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 解锁更多技能，尽在「轻学院」 -->
+        <div id="college">
+            <div class="layui-container">
+                <h2 class="title">赋能「100,000+」企业</h2>
+                <div class="college-content">
+                    <div class="college-left">
+                        <div class="layui-carousel" id="test1">
+                            <div carousel-item class="lunbo-box">
+                                <div class="lunbo-item">
+                                    <img src="/static/image/index/jiesuo.png" alt="">
+                                    <div class="text-box">
+                                        <h6>直播赋能”云会展“，轻直播助力会展伙伴”云上“复工</h6>
+                                        <p>”云会展“伊然成为目前整个行业破局的关键它可以
+                                            结合5G,AI,大数据直播等新技术...</p>
+                                    </div>
+                                </div>
+                                <div class="lunbo-item">
+                                    <img src="/static/image/index/jiesuo.png" alt="">
+                                    <div class="text-box">
+                                        <h6>直播赋能”云会展“，轻直播助力会展伙伴”云上“复工</h6>
+                                        <p>”云会展“伊然成为目前整个行业破局的关键它可以
+                                            结合5G,AI,大数据直播等新技术...</p>
+                                    </div>
+                                </div>
+                                <div class="lunbo-item">
+                                    <img src="/static/image/index/jiesuo.png" alt="">
+                                    <div class="text-box">
+                                        <h6>直播赋能”云会展“，轻直播助力会展伙伴”云上“复工</h6>
+                                        <p>”云会展“伊然成为目前整个行业破局的关键它可以
+                                            结合5G,AI,大数据直播等新技术...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="college-right">
+                        <div class="layui-carousel" id="test2">
+                            <div carousel-item>
+                                <ul>
+                                    <li>
+                                        <div class="type">案例解析</div>
+                                        <div class="titles">
+                                            <h6>如何使用轻直播开启企业视频云营销</h6>
+                                            <p>如何使用轻直播开启企业视频云营销如何使用轻直播开启
+                                                如何使用轻直播开启企业视频云营销...</p>
+                                            <span>2021-11-06</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="type">案例解析</div>
+                                        <div class="titles">
+                                            <h6>如何使用轻直播开启企业视频云营销</h6>
+                                            <p>如何使用轻直播开启企业视频云营销如何使用轻直播开启
+                                                如何使用轻直播开启企业视频云营销...</p>
+                                            <span>2021-11-06</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="type">案例解析</div>
+                                        <div class="titles">
+                                            <h6>如何使用轻直播开启企业视频云营销</h6>
+                                            <p>如何使用轻直播开启企业视频云营销如何使用轻直播开启
+                                                如何使用轻直播开启企业视频云营销...</p>
+                                            <span>2021-11-06</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <div class="type">案例解析</div>
+                                        <div class="titles">
+                                            <h6>如何使用轻直播开启企业视频云营销</h6>
+                                            <p>如何使用轻直播开启企业视频云营销如何使用轻直播开启
+                                                如何使用轻直播开启企业视频云营销...</p>
+                                            <span>2021-11-06</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="type">案例解析</div>
+                                        <div class="titles">
+                                            <h6>如何使用轻直播开启企业视频云营销</h6>
+                                            <p>如何使用轻直播开启企业视频云营销如何使用轻直播开启
+                                                如何使用轻直播开启企业视频云营销...</p>
+                                            <span>2021-11-06</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- “轻”装上阵，玩转企业数字营销5G时代 -->
+        <div id="fiveG">
+            <div class="hover"></div>
+            <div class="layui-container">
+                <div class="fiveg-content">
+                    <h2>“轻”装上阵，玩转企业数字营销5G时代</h2>
+                    <h5>「轻直播」为您提供一站式企业直播解决方案</h5>
+                    <button>免费使用</button>
+                </div>
+
+            </div>
+        </div>
+        <!-- 底部 -->
+        {include file="common/footer"}
     </div>
-    {include file="common/footer"}
+
 </body>
+<script type="text/javascript">
+    // 轻学院左侧轮播图
+    layui.use('carousel', function () {
+        var carousel = layui.carousel;
+        //建造实例
+        carousel.render({
+            elem: '#test1'
+            , width: '100%' // 设置容器宽度
+            , height: '100%'
+            , arrow: 'none' // 始终显示箭头
+            // ,anim: 'updown' // 切换动画方式
+        });
+    });
+
+    // 轻学院右侧轮播图
+    layui.use('carousel', function () {
+        var carousel = layui.carousel;
+        //建造实例
+        carousel.render({
+            elem: '#test2'
+            , width: '100%' // 设置容器宽度
+            , height: '100%'
+            , arrow: 'none' // 始终显示箭头
+            , anim: 'updown' // 切换动画方式
+            , interval: 5000 // 轮播间隔时间
+        });
+    });
+
+    // 轻直播的优势
+    $('.advantage-content').each(function (index, element) {
+        var obj = $(this);
+        obj.find('.content-left').children().on('mouseover .left-item', function () {
+            $(this).addClass('active').siblings().removeClass('active');
+            if (obj.find('.content-right').children().eq($(this).index()).length > 0)
+                obj.find('.content-right').children().hide().eq($(this).index()).show();
+        });
+        setTimeout(function () { obj.find('.content-left .active').trigger('.left-item'); }, 100);
+    });
+
+    // logo墙
+    $('#qiye').each(function (index, element) {
+        var obj = $(this);
+        obj.find('.logo-title').children().on('click li', function () {
+            $(this).addClass('active').siblings().removeClass('active');
+            if (obj.find('.logo-box').children().eq($(this).index()).length > 0)
+                obj.find('.logo-box').children().hide().eq($(this).index()).show();
+        });
+        setTimeout(function () { obj.find('.logo-title .active').trigger('li'); }, 100);
+    });
+</script>
+
 </html>
