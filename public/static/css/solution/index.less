@@ -1,0 +1,83 @@
+#solution {
+    .title {
+        font-size: 30px;
+        color: #333;
+        font-weight: bold;
+        letter-spacing: 2px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    #banner {
+        margin-top: 65px;
+        height: 600px;
+        position: relative;
+
+        .layui-carousel {
+            .layui-carousel-ind {
+                display: none !important;
+            }
+        }
+    }
+
+    #industry {
+        padding: 85px 0 87px;
+
+        .industry-content {
+            display: flex;
+            align-items: center;
+            margin-top: 55px;
+
+            li {
+                width: 24%;
+                margin: 0 auto 20px;
+                position: relative;
+
+                img {
+                    width: 100%;
+                }
+
+                .text {
+                    position: absolute;
+                    bottom: -24%;
+                    left: 50%;
+                    transform: translateY(50%);
+                    transform: translateX(-50%);
+                    width: 70%;
+                    height: 116px;
+                    border-radius: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    background: #FFFFFF;
+                    box-shadow: 0px 5px 10px 0px rgba(204, 204, 204, 0.29);
+                    border-radius: 6px;
+
+                    &:hover {
+                        background-color: #00cc99;
+                        color: #fff;
+                        p,h6 {
+                            color: #fff;
+                        }
+
+                    }
+
+                    h6 {
+                        font-size: 22px;
+                        margin-bottom: 13px;
+                        color: #333;
+
+                    }
+
+                    p {
+                        width: 85%;
+                        font-size: 14px;
+                        color: #666;
+
+                    }
+                }
+            }
+        }
+    }
+}

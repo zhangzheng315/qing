@@ -5,8 +5,16 @@
     }
 }
 
+.layui-container {
+    @media screen and(min-width:1195px) and (max-width:1250px) {
+        width: 1150px !important;
+    }
+}
+
 #index {
     background-color: #f2f4f7;
+    position: relative;
+
     .title {
         font-size: 30px;
         color: #333;
@@ -17,10 +25,115 @@
     }
 }
 
-// header {
-//     height: 665px;
-//     background-color: pink;
-// }
+#banner {
+    margin-top: 65px;
+    height: 600px;
+    position: relative;
+
+    .layui-carousel {
+        .layui-carousel-ind {
+            display: none !important;
+        }
+    }
+
+    .icons {
+        position: absolute;
+        top: 63%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 35%;
+
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            li {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                div {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    background-color: #fff;
+                    margin-bottom: 5px;
+
+                    img {
+                        width: 28px;
+                        height: 28px;
+                        object-fit: cover;
+                    }
+                }
+
+                p {
+                    font-size: 18px;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    // 亮点功能
+    #high-lights {
+        position: absolute;
+        bottom: -9.5%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 110px;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 8px 0px rgba(193, 193, 193, 0.36);
+        border-radius: 10px;
+
+        .stars {
+            display: flex;
+            padding: 30px 20px;
+            box-sizing: border-box;
+
+            li {
+                width: 16.6%;
+                border-right: 1px solid #E5E5E5;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+
+                div {
+                    display: flex;
+                    align-items: center;
+
+                    img {
+                        width: 26px;
+                        height: 23px;
+                        object-fit: cover;
+                        margin-right: 8px;
+                    }
+
+                    h6 {
+                        color: #333;
+                        font-size: 14px;
+                        font-weight: bold;
+                    }
+                }
+
+                p {
+                    color: #999;
+                    font-size: 12px;
+                    margin-top: 16px;
+                    letter-spacing: 1px;
+                }
+
+                &:nth-child(6) {
+                    border-right: 0;
+                }
+            }
+        }
+    }
+}
 
 // 产品与服务
 #product {
@@ -29,7 +142,7 @@
     box-sizing: border-box;
 
     .product-content {
-        width: 92%;
+        width: 90%;
         margin: 0 auto;
         margin-top: 66px;
         display: flex;
@@ -38,7 +151,7 @@
         margin-bottom: 100px;
 
         .product-item {
-            width: 339px;
+            width: 31%;
             height: 272px;
             background: #FFFFFF;
             box-shadow: 0px 4px 8px 0px rgba(193, 193, 193, 0.36);
@@ -110,7 +223,7 @@
 // 轻直播为您创造价值
 #light-live {
     background-color: #fff;
-    padding-top: 84px;
+    padding-top: 70px;
 
     .title {
         margin-bottom: 91px;
@@ -120,7 +233,7 @@
         display: flex;
         align-items: center;
         justify-content: space-around;
-        padding-bottom: 100px;
+        padding-bottom: 65px;
         box-sizing: border-box;
 
         .live-item {
@@ -128,6 +241,7 @@
                 color: #00cc99;
                 display: flex;
                 align-items: center;
+
                 .nums {
                     font-size: 60px;
                     font-weight: bold;
@@ -157,7 +271,7 @@
     background: url('/static/image/index/youshi.png') no-repeat;
     background-size: cover;
     position: relative;
-    padding: 90px 0 80px;
+    padding: 80px 0 80px;
     box-sizing: border-box;
 
     .hover {
@@ -172,7 +286,7 @@
 
     .title {
         color: #fff;
-        margin-bottom: 100px;
+        margin-bottom: 80px;
     }
 
     .advantage-content {
@@ -185,7 +299,7 @@
             flex-direction: column;
             align-items: center;
             margin-right: 120px;
-            
+
 
             .left-item {
                 height: 71px;
@@ -216,14 +330,17 @@
                 }
 
             }
+
             .active {
                 background-color: rgba(255, 255, 255, .3);
                 border-right: 3px solid #00cc99;
+
                 div {
                     h5 {
                         color: #00cc99;
                     }
                 }
+
                 span {
                     display: block;
                 }
@@ -236,6 +353,7 @@
 
             .right-item {
                 display: none;
+
                 h6 {
                     font-size: 18px;
                     color: #FFFFFF;
@@ -282,6 +400,12 @@
                     background-color: transparent;
                     border-radius: 20px;
                     cursor: pointer;
+
+                    &:hover {
+                        background-color: #00cc99;
+                        color: #fff;
+                        border: 0;
+                    }
                 }
             }
 
@@ -294,27 +418,28 @@
 
 // 「全行业」解决方案
 #solve {
-    // height: 950px;
-    padding-top: 126px;
+    padding-top: 96px;
 
     .title {
         margin-bottom: 87px;
     }
 
     .solve-content {
+        width: 92%;
         display: flex;
         align-items: center;
         flex-wrap: wrap;
         justify-content: space-between;
+        margin: 0 auto;
 
         .solve-item {
-            width: 260px;
+            width: 22%;
             display: flex;
             align-items: center;
             flex-direction: column;
             justify-content: space-between;
-            margin-bottom: 53px;
-            margin-right: 53px;
+            margin-bottom: 3%;
+            margin-right: 3%;
             box-shadow: 0px 4px 20px 1px rgba(193, 193, 193, 0.51);
             border-radius: 10px;
             cursor: pointer;
@@ -335,12 +460,12 @@
             }
 
             .text {
-                padding: 35px 30px 0;
+                padding: 15px 30px 0;
 
                 h6 {
                     font-size: 17px;
                     font-weight: bold;
-                    margin-bottom: 20px;
+                    margin-bottom: 15px;
                 }
 
                 p {
@@ -352,14 +477,14 @@
                     width: 20px;
                     height: 10px;
                     float: right;
-                    margin-bottom: 22px;
+                    margin-bottom: 13px;
                 }
             }
         }
     }
 
     button {
-        width: 172px;
+        width: 15%;
         height: 40px;
         display: block;
         font-size: 14px;
@@ -370,6 +495,12 @@
         border-radius: 20px;
         margin: 12px auto 46px;
         cursor: pointer;
+
+        &:hover {
+            background-color: #00cc99;
+            border: 0;
+            color: #fff;
+        }
     }
 }
 
@@ -394,26 +525,33 @@
             justify-content: space-around;
 
             .active {
-                border-bottom: 5px solid #00cc99;
+                background-color: #00cc99;
+                // padding: 0 15px;
+                border-radius: 20px;
 
                 span {
-                    color: #333;
-                    font-weight: bold;
+                    color: #fff;
+                    // font-weight: bold;
 
                 }
             }
 
             li {
-                // padding-bottom: 5px;
                 cursor: pointer;
-                height: 29px;
+                height: 32px;
+                width: 8%;
+                margin: 0 auto;
+                line-height: 32px;
+                text-align: center;
+                padding: 0 15px;
 
                 &:hover {
-                    border-bottom: 5px solid #00cc99;
+                    background-color: #00cc99;
+                    border-radius: 20px;
 
                     span {
-                        color: #333;
-                        font-weight: bold;
+                        color: #fff;
+                        // font-weight: bold;
 
                     }
                 }
@@ -422,6 +560,7 @@
                     font-size: 18px;
                     color: #666;
                     margin-bottom: 5px;
+                    text-align: center;
                 }
             }
         }
@@ -478,9 +617,12 @@
             margin-right: 46px;
 
             .layui-carousel {
+                border-radius: 10px;
+
                 .lunbo-box {
                     width: 100%;
                     height: 100%;
+                    border-radius: 10px;
 
                     .lunbo-item {
                         width: 100%;
@@ -542,12 +684,12 @@
         }
 
         .college-right {
-            width: 62%;
+            width: 57%;
             height: 448px;
             background: #FFFFFF;
             box-shadow: 0px 4px 20px 1px rgba(193, 193, 193, 0.3);
             border-radius: 10px;
-            padding: 26px 46px 0 20px;
+            padding: 26px 0 0 20px;
             box-sizing: border-box;
 
             ul {
@@ -577,7 +719,7 @@
                     }
 
                     .titles {
-                        width: 54%;
+                        width: 71%;
                         border-bottom: 1px solid #E5E5E5;
                         padding-bottom: 20px;
 
@@ -614,9 +756,15 @@
             }
 
             .layui-carousel {
+                border-radius: 10px;
+
                 .layui-carousel-ind {
                     display: none !important;
                 }
+            }
+
+            .layui-carousel>[carousel-item] {
+                border-radius: 10px;
             }
 
         }
@@ -661,7 +809,7 @@
         }
 
         button {
-            width: 375px;
+            width: 31%;
             height: 60px;
             border: 0;
             border: 2px solid #FFFFFF;
@@ -671,7 +819,904 @@
             font-size: 30px;
             color: #FFFFFF;
             cursor: pointer;
+
+            &:hover {
+                background-color: #00cc99;
+                color: #fff;
+                border: 0;
+            }
         }
     }
 
+}
+
+// 中屏
+@media screen and (min-width: 768px) and (max-width: 1300px) {
+
+    #banner {
+        height: 400px;
+
+        .icons {
+            width: 51%;
+
+            ul {
+                li {
+                    div {
+                        width: 40px;
+                        height: 40px;
+
+                        img {
+                            width: 20px;
+                            height: 20px;
+                        }
+                    }
+
+                    p {
+                        font-size: 14px;
+                    }
+
+                }
+            }
+
+        }
+
+        #high-lights {
+            height: 90px;
+            width: 80%;
+            bottom: -11.5%;
+
+            .layui-container {
+                width: 100% !important;
+
+                .stars {
+                    padding: 18px 20px;
+
+                    li {
+                        div {
+                            img {
+                                width: 22px;
+                                height: 20px;
+                            }
+                        }
+
+                        p {
+                            margin-top: 12px;
+                            letter-spacing: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    #product {
+        padding-top: 141px;
+
+        .product-content {
+            margin: 50px auto 70px;
+
+            .product-item {
+                height: 230px;
+
+                .item-head {
+                    height: 45px;
+
+                    img {
+                        width: 25px;
+                        height: 25px;
+
+                        h5 {
+                            font-size: 18px;
+                        }
+                    }
+                }
+
+                .item-body {
+                    height: 140px;
+                    padding: 20px 20px 0;
+                }
+
+                .item-footer {
+                    height: calc(100% - 186px);
+                }
+            }
+        }
+    }
+
+    #light-live {
+        padding-top: 50px;
+
+        .title {
+            margin-bottom: 60px;
+        }
+
+        .live-content {
+            width: 85%;
+            margin: 0 auto;
+            padding-bottom: 50px;
+
+            .live-item {
+                .item-top {
+                    .nums {
+                        font-size: 50px;
+
+                    }
+
+                    span {
+                        font-size: 25px;
+                    }
+                }
+
+                .item-bottom {
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+
+    #advantage {
+        padding: 60px 0 60px;
+
+        .title {
+            margin-bottom: 50px;
+        }
+
+        .advantage-content {
+            .content-left {
+                width: 230px;
+                margin-right: 70px;
+
+                .left-item {
+                    width: 230px;
+                    height: 61px;
+
+                    div {
+                        width: 230px;
+
+                        h5 {
+                            font-size: 22px;
+                        }
+                    }
+                }
+            }
+
+            .content-right {
+                width: 65%;
+
+                .right-item {
+                    h6 {
+                        font-size: 16px;
+                        margin-bottom: 45px;
+                    }
+
+                    .text-box {
+                        li {
+                            margin-bottom: 32px;
+
+                            img {
+                                width: 32px;
+                                height: 32px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #qiye {
+        nav {
+            margin: 0 auto 70px;
+
+            .logo-title {
+                li {
+                    span {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+
+        .logo-box {
+            .logo-imgs {
+
+                li {
+                    width: 18%;
+                    height: 55px;
+                    margin: 0 15px 50px 0;
+
+                }
+            }
+        }
+    }
+
+    #college {
+        padding: 88px 0 91px;
+    }
+
+    #fiveG {
+        height: 370px;
+
+        .fiveg-content {
+            padding: 60px 0 0;
+
+            h2 {
+                font-size: 45px;
+            }
+
+            h5 {
+                font-size: 32px;
+                margin: 21px auto 50px;
+            }
+
+            button {
+                width: 28%;
+                height: 50px;
+                font-size: 25px;
+            }
+        }
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1150px) {
+    #banner {
+        #high-lights {
+            width: 70%;
+            height: 135px;
+            bottom: -17%;
+
+            .layui-container {
+                .stars {
+                    padding: 15px 10px;
+                    flex-wrap: wrap;
+
+                    li {
+                        width: 30%;
+                        margin: 0 auto;
+                        border-right: 0;
+                        border-bottom: 1px solid #E5E5E5;
+                        padding-bottom: 12px;
+                        margin-bottom: 12px;
+
+                        p {
+                            margin-top: 8px;
+                        }
+
+                        &:nth-child(n + 4) {
+                            border-bottom: 0;
+                            padding-bottom: 0;
+                            margin-bottom: 0;
+
+                        }
+                    }
+
+                }
+            }
+
+        }
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    #solve {
+        .layui-container {
+            width: 98%;
+
+            .title {
+                margin-bottom: 70px;
+            }
+
+            .solve-content {
+                width: 100%;
+
+                .solve-item {
+                    width: 23%;
+                    margin-right: 2%;
+
+                    img {
+                        height: 100px;
+                    }
+
+                    .text {
+                        padding: 12px 20px 0;
+
+                        h6 {
+                            font-size: 16px;
+                            margin-bottom: 11px;
+                        }
+
+                        p {
+                            margin-bottom: 15px;
+                        }
+
+                        img {
+                            height: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #qiye {
+        .layui-container {
+            width: 90%;
+
+            .title {
+                margin-bottom: 75px;
+            }
+
+            nav {
+                width: 95%;
+
+                .logo-title {
+                    li {
+                        width: 10%;
+                    }
+                }
+            }
+
+            .logo-box {
+                .logo-imgs {
+                    li {
+                        width: 19%;
+                        margin: 0 auto 40px;
+                    }
+                }
+            }
+        }
+    }
+
+    #college {
+        .layui-container {
+            width: 95%;
+
+            .title {
+                margin-bottom: 60px;
+            }
+
+            .college-content {
+                .college-left {
+                    height: 350px;
+
+                    .layui-carousel {
+                        .lunbo-box {
+                            .lunbo-item {
+                                img {
+                                    height: 45%;
+                                    margin-bottom: 20px;
+                                }
+
+                                .text-box {
+                                    h6 {
+                                        font-size: 14px;
+                                        margin-bottom: 14px;
+                                    }
+                                }
+                            }
+                        }
+
+                        .layui-carousel-ind {
+                            top: 89%;
+                        }
+                    }
+                }
+
+                .college-right {
+                    height: 350px;
+                    padding: 12px 0 0 7px;
+
+                    .layui-carousel {
+                        border-radius: 10px;
+                    }
+
+                    .layui-carousel>[carousel-item] {
+                        border-radius: 10px;
+                    }
+
+                    ul {
+                        li {
+                            padding-bottom: 10px;
+
+                            .type {
+                                width: 75px;
+                                height: 30px;
+                                line-height: 30px;
+                                font-size: 14px;
+                                margin-right: 23px;
+                            }
+
+                            .titles {
+                                padding-bottom: 15px;
+
+                                h6 {
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    white-space: nowrap;
+                                    margin-bottom: 10px;
+
+                                }
+
+                                p {
+                                    margin-bottom: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #fiveG {
+        height: 330px;
+
+        .fiveg-content {
+            padding: 60px 0 0;
+
+            h2 {
+                font-size: 35px;
+            }
+
+            h5 {
+                font-size: 26px;
+                margin: 25px auto 40px;
+            }
+
+            button {
+                width: 28%;
+                height: 45px;
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1195px) {
+    #solve {
+        .layui-container {
+            .solve-content {
+                width: 95%;
+
+                .solve-item {
+                    width: 23%;
+                    margin-right: 2%;
+
+                    img {
+                        height: 110px;
+                    }
+
+                    .text {
+                        padding: 10px 20px 0;
+
+                        p {
+                            margin-bottom: 16px;
+                        }
+
+                        img {
+                            height: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #college {
+        .layui-container {
+            width: 95%;
+
+            .title {
+                margin-bottom: 70px;
+            }
+
+            .college-content {
+                .college-left {
+                    height: 380px;
+
+                    .layui-carousel {
+                        .lunbo-box {
+                            .lunbo-item {
+                                img {
+                                    height: 45%;
+                                    margin-bottom: 25px;
+                                }
+
+                                .text-box {
+                                    h6 {
+                                        font-size: 15px;
+                                        margin-bottom: 20px;
+                                    }
+                                }
+                            }
+                        }
+
+                        .layui-carousel-ind {
+                            top: 89%;
+                        }
+                    }
+                }
+
+                .college-right {
+                    height: 380px;
+                    padding: 18px 0 0 10px;
+
+                    .layui-carousel {
+                        border-radius: 10px;
+                    }
+
+                    .layui-carousel>[carousel-item] {
+                        border-radius: 10px;
+                    }
+
+                    ul {
+                        li {
+                            padding-bottom: 15px;
+
+                            .type {
+                                width: 85px;
+                                height: 30px;
+                                line-height: 30px;
+                                font-size: 14px;
+                                margin-right: 30px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #index {
+        .title {
+            font-size: 22px;
+        }
+    }
+
+    #banner {
+        height: 300px;
+
+        .icons {
+            top: 93%;
+            width: 95%;
+
+            ul {
+                li {
+                    div {
+                        width: 40px;
+                        height: 40px;
+                        background-color: #00cc99;
+
+                        img {
+                            width: 50%;
+                            height: 50%;
+                        }
+                    }
+
+                    p {
+                        font-size: 14px;
+                        color: #666;
+                    }
+                }
+            }
+        }
+
+        #high-lights {
+            width: 92%;
+            bottom: -92.5%;
+            height: 210px;
+
+            .layui-container {
+                padding: 0px;
+
+                .stars {
+                    padding: 12px 7px;
+                    flex-wrap: wrap;
+
+                    li {
+                        width: 30%;
+                        margin: 0 auto;
+                        border-right: 0;
+                        border-bottom: 1px solid #E5E5E5;
+                        padding-bottom: 12px;
+                        margin-bottom: 12px;
+                        justify-content: flex-start;
+
+                        div {
+                            flex-direction: column;
+
+                            img {
+                                width: 23px;
+                                height: 20px;
+                                margin-bottom: 3px;
+                            }
+                        }
+
+                        p {
+                            margin-top: 8px;
+                            text-align: center;
+                        }
+
+                        &:nth-child(n + 4) {
+                            border-bottom: 0;
+                            padding-bottom: 0;
+                            margin-bottom: 0;
+
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+    #product {
+        margin-top: 150px;
+
+        .product-content {
+            width: 93%;
+            margin-top: 36px;
+            flex-direction: column;
+            margin-bottom: 40px;
+
+            .product-item {
+                width: 100%;
+                height: 220px;
+                margin-bottom: 25px;
+
+                .item-head {
+                    height: 50px;
+
+                    img {
+                        width: 23px;
+                        height: 23px;
+                    }
+
+                    h5 {
+                        font-size: 16px;
+                    }
+                }
+
+                .item-body {
+                    height: 121px;
+                    padding: 21px 20px 0;
+                }
+
+                .item-footer {
+                    height: calc(100% - 171px);
+                }
+            }
+        }
+
+    }
+
+    #light-live {
+        padding-top: 40px;
+
+        .title {
+            margin-bottom: 35px;
+        }
+
+        .live-content {
+            padding-bottom: 20px;
+            flex-wrap: wrap;
+
+            .live-item {
+                width: 45%;
+                margin-bottom: 15px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+
+                .item-top {
+                    .nums {
+                        font-size: 35px;
+                    }
+
+                    span {
+                        font-size: 22px;
+                        margin: 0 4px;
+                    }
+                }
+
+                .item-bottom {
+                    margin-top: 7px;
+                }
+            }
+        }
+    }
+
+    #advantage {
+        display: none;
+    }
+
+    #solve {
+        padding-top: 40px;
+
+        .title {
+            margin-bottom: 35px;
+        }
+
+        .solve-content {
+            width: 100%;
+
+            .solve-item {
+                width: 49%;
+                margin-right: 2%;
+
+                img {
+                    height: 90px;
+                }
+
+                .text {
+                    padding: 10px 15px 0;
+
+                    h6 {
+                        font-size: 14px;
+                        margin-bottom: 8px;
+                    }
+
+                    p {
+                        font-size: 12px;
+                        margin-bottom: 10px;
+                    }
+                }
+
+                &:nth-child(2n) {
+                    margin-right: 0%;
+
+                }
+            }
+        }
+
+        button {
+            width: 130px;
+            font-size: 14px;
+            margin: 18px auto 40px;
+        }
+    }
+
+    #qiye {
+        padding: 40px 0 20px;
+
+        .title {
+            margin-bottom: 35px;
+        }
+
+        nav {
+            width: 100%;
+            overflow-x: auto;
+            margin: 0 auto 30px;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            .logo-title {
+                width: auto;
+
+                li {
+                    flex-shrink: 0;
+                    width: 14%;
+                    padding: 0px;
+                    // margin-bottom: 5px;
+                    height: 25px;
+                    line-height: 25px;
+
+                    span {
+                        margin: 0;
+                        // padding: 0 10px;
+                        font-size: 14px;
+
+                    }
+                }
+            }
+        }
+
+        .logo-box {
+            .logo-imgs {
+                li {
+                    width: 19%;
+                    height: 50px;
+                    margin-right: 20px;
+                    margin-bottom: 22px;
+                }
+            }
+        }
+    }
+
+    #college {
+        padding: 40px 0 50px;
+
+        .title {
+            margin-bottom: 35px;
+        }
+
+        .college-content {
+            display: flex;
+            flex-direction: column;
+
+            .college-left {
+                margin-right: 0;
+                margin-bottom: 20px;
+                width: 96%;
+                height: 300px;
+
+                .layui-carousel {
+                    .lunbo-box {
+                        .lunbo-item {
+                            img {
+                                margin-bottom: 15px;
+                            }
+
+                            .text-box {
+                                h6 {
+                                    font-size: 14px;
+                                    margin-bottom: 10px;
+                                }
+
+                                p {
+                                    font-size: 12px;
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .college-right {
+                width: 96%;
+                height: 365px;
+                padding: 16px 0 0 10px;
+
+                ul {
+                    li {
+                        .type {
+                            display: none;
+                        }
+
+                        .titles {
+                            width: 97%;
+                            padding-bottom: 10px;
+
+                            h6 {
+                                margin-bottom: 9px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #fiveG {
+        height: 260px;
+
+        .fiveg-content {
+            padding: 30px 0 20px;
+
+            h2 {
+                font-size: 22px;
+            }
+
+            h5 {
+                font-size: 18px;
+                text-align: center;
+                margin: 31px auto 40px;
+            }
+
+            button {
+                width: 46%;
+                height: 40px;
+                font-size: 14px;
+            }
+        }
+    }
 }
