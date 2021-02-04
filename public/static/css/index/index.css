@@ -22,7 +22,6 @@
   text-align: center;
 }
 #banner {
-  /* margin-top: 65px; */
   height: 600px;
   position: relative;
 }
@@ -87,6 +86,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
 }
 #banner #high-lights .stars li div {
   display: flex;
@@ -112,21 +112,25 @@
 #banner #high-lights .stars li:nth-child(6) {
   border-right: 0;
 }
+#banner #high-lights .stars li:hover h6,
+#banner #high-lights .stars li:hover p {
+  color: #00cc99;
+}
 #product {
-  padding-top: 161px;
+  padding-top: 129px;
   box-sizing: border-box;
 }
 #product .product-content {
   width: 90%;
   margin: 0 auto;
-  margin-top: 66px;
+  margin-top: 46px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 100px;
+  margin-bottom: 70px;
 }
 #product .product-content .product-item {
-  width: 31%;
+  width: 32%;
   height: 272px;
   background: #FFFFFF;
   box-shadow: 0px 4px 8px 0px rgba(193, 193, 193, 0.36);
@@ -221,7 +225,7 @@
   background: url('/static/image/index/youshi.png') no-repeat;
   background-size: cover;
   position: relative;
-  padding: 80px 0 80px;
+  padding: 65px 0 65px;
   box-sizing: border-box;
 }
 #advantage .hover {
@@ -235,7 +239,7 @@
 }
 #advantage .title {
   color: #fff;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 #advantage .advantage-content {
   display: flex;
@@ -252,6 +256,7 @@
   height: 71px;
   width: 269px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
   cursor: pointer;
 }
@@ -273,7 +278,7 @@
   margin-left: 30px;
 }
 #advantage .advantage-content .content-left .active {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.2);
   border-right: 3px solid #00cc99;
 }
 #advantage .advantage-content .content-left .active div h5 {
@@ -283,8 +288,12 @@
   display: block;
 }
 #advantage .advantage-content .content-right {
-  height: 280px;
+  height: 320px;
   width: 60%;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 5px;
 }
 #advantage .advantage-content .content-right .right-item {
   display: none;
@@ -293,7 +302,7 @@
   font-size: 18px;
   color: #FFFFFF;
   font-weight: 700;
-  margin-bottom: 59px;
+  margin-bottom: 39px;
 }
 #advantage .advantage-content .content-right .right-item .text-box {
   display: flex;
@@ -340,10 +349,10 @@
   display: block;
 }
 #solve {
-  padding-top: 96px;
+  padding-top: 76px;
 }
 #solve .title {
-  margin-bottom: 87px;
+  margin-bottom: 67px;
 }
 #solve .solve-content {
   width: 92%;
@@ -414,14 +423,14 @@
 }
 #qiye {
   background-color: #fff;
-  padding: 80px 0 20px;
+  padding: 60px 0 20px;
 }
 #qiye .title {
-  margin-bottom: 89px;
+  margin-bottom: 70px;
 }
 #qiye nav {
   width: 90%;
-  margin: 0 auto 90px;
+  margin: 0 auto 70px;
 }
 #qiye nav .logo-title {
   width: 100%;
@@ -481,10 +490,10 @@
 }
 #college {
   background-color: #f2f4f7;
-  padding: 98px 0 151px;
+  padding: 60px 0 75px;
 }
 #college .title {
-  margin-bottom: 82px;
+  margin-bottom: 62px;
 }
 #college .college-content {
   display: flex;
@@ -509,7 +518,7 @@
 #college .college-content .college-left .layui-carousel .lunbo-box .lunbo-item {
   width: 100%;
   height: 100%;
-  padding: 9px;
+  padding-bottom: 9px;
   box-sizing: border-box;
 }
 #college .college-content .college-left .layui-carousel .lunbo-box .lunbo-item img {
@@ -635,7 +644,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 110px 0 101px;
+  padding: 70px 0 0;
   box-sizing: border-box;
 }
 #fiveG .fiveg-content h2 {

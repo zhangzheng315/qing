@@ -1,0 +1,606 @@
+@media screen and (min-width: 1200px) {
+  .layui-container {
+    width: 1200px !important;
+    padding: 0 !important;
+  }
+}
+#service .title {
+  font-size: 30px;
+  color: #333;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 0 auto;
+  text-align: center;
+}
+#service #banner {
+  height: 600px;
+  position: relative;
+}
+#service #banner .layui-carousel .layui-carousel-ind {
+  display: none !important;
+}
+#service nav {
+  background-color: #252525;
+  height: 60px;
+}
+#service nav .layui-container {
+  height: 100%;
+}
+#service nav .layui-container .nav-content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#service nav .layui-container .nav-content li {
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+}
+#service nav .layui-container .nav-content li:hover {
+  color: #00cc99;
+}
+#service #module {
+  padding: 100px 0 110px;
+}
+#service #module .title {
+  margin-bottom: 50px;
+}
+#service #module .module-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#service #module .module-content li {
+  width: 370px;
+  height: 370px;
+  box-shadow: 0px 0px 29px 0px rgba(50, 50, 50, 0.11);
+  margin: 0 30px 40px 0;
+  cursor: pointer;
+}
+#service #module .module-content li .text {
+  padding: 24px 30px 0;
+  box-sizing: border-box;
+}
+#service #module .module-content li .text h5 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+#service #module .module-content li .text p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+}
+#service #module button {
+  width: 133px;
+  height: 40px;
+  display: block;
+  background: #00CC99;
+  border-radius: 20px;
+  font-size: 14px;
+  margin: 30px auto 0;
+  border: none;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+}
+#service #light-live {
+  height: 422px;
+  background-color: #fff;
+  padding: 70px 0 65px;
+  background: url('/static/image/site_service/green_bg.png') no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+}
+#service #light-live .title {
+  margin-bottom: 51px;
+  color: #fff;
+}
+#service #light-live .live-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box;
+}
+#service #light-live .live-content .live-item .item-top {
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+#service #light-live .live-content .live-item .item-top .nums {
+  font-size: 60px;
+  font-weight: bold;
+  margin: 0 5px;
+}
+#service #light-live .live-content .live-item .item-top span {
+  font-size: 30px;
+  margin: 0 10px;
+}
+#service #light-live .live-content .live-item .item-bottom {
+  padding-left: 8px;
+  margin-top: 30px;
+  font-size: 18px;
+  color: #fff;
+}
+#service #light-live button {
+  width: 133px;
+  height: 40px;
+  display: block;
+  background: transparent;
+  border-radius: 20px;
+  font-size: 14px;
+  margin: 30px auto 0;
+  border: 1px solid #F9F9F9;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+}
+#service .plans {
+  padding: 70px 0;
+}
+#service .plans:nth-child(2n - 1) {
+  background-color: #F9F9F9;
+}
+#service .plans .layui-container {
+  display: flex;
+  align-items: center;
+  padding-left: 70px !important;
+}
+#service .plans .layui-container .plans-text {
+  width: 400px;
+  margin-right: 150px;
+}
+#service .plans .layui-container .plans-text .text-head {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+#service .plans .layui-container .plans-text .text-head img {
+  width: 55px;
+  height: 55px;
+  margin-right: 30px;
+}
+#service .plans .layui-container .plans-text .text-head h6 {
+  font-size: 40px;
+  color: #333;
+}
+#service .plans .layui-container .plans-text p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 32px;
+}
+#service .plans .layui-container .plans-text button {
+  width: 133px;
+  height: 40px;
+  background: #00CC99;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+}
+#service .plans .layui-container .plans-img {
+  width: 470px;
+  height: 450px;
+}
+#service .plans .layui-container .plans-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#service .plans:nth-child(2n) .layui-container .plans-text {
+  margin-right: 0px;
+}
+#service .plans:nth-child(2n) .layui-container .plans-img {
+  margin-right: 150px;
+}
+#service #fiveG {
+  height: 500px;
+  background: url('/static/image/index/fiveG.png') no-repeat;
+  background-size: cover;
+  position: relative;
+}
+#service #fiveG .hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 47, 35, 0.7);
+  z-index: 0;
+}
+#service #fiveG .fiveg-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 0 0;
+  box-sizing: border-box;
+}
+#service #fiveG .fiveg-content h2 {
+  font-size: 60px;
+  color: #fff;
+  text-align: center;
+}
+#service #fiveG .fiveg-content h5 {
+  font-size: 40px;
+  color: #fff;
+  font-weight: 400;
+  margin: 45px auto 68px;
+}
+#service #fiveG .fiveg-content button {
+  width: 31%;
+  height: 60px;
+  border: 0;
+  border: 2px solid #FFFFFF;
+  border-radius: 30px;
+  outline: none;
+  background-color: transparent;
+  font-size: 30px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+#service #fiveG .fiveg-content button:hover {
+  background-color: #00cc99;
+  color: #fff;
+  border: 0;
+}
+@media screen and (min-width: 768px) and (max-width: 1300px) {
+  #service #banner {
+    height: 400px;
+  }
+  #service .layui-container {
+    width: 99% !important;
+  }
+  #service #module {
+    padding: 60px 0 70px;
+  }
+  #service #module .layui-container {
+    padding: 0 5px;
+  }
+  #service #module .layui-container .title {
+    margin-bottom: 30px;
+  }
+  #service #module .layui-container .module-content li {
+    width: 31%;
+    height: 350px;
+    margin: 0 20px 30px 0;
+  }
+  #service #module .layui-container .module-content li img {
+    width: 100%;
+  }
+  #service #module .layui-container .module-content li .text {
+    padding: 24px 30px 0;
+  }
+  #service #module .layui-container .module-content li .text h5 {
+    font-size: 18px;
+  }
+  #service #module .layui-container .module-content li .text p {
+    font-size: 14px;
+  }
+  #service #module .layui-container button {
+    width: 90px;
+  }
+  #service .plans {
+    padding: 50px 0;
+  }
+  #service .plans .layui-container {
+    display: flex;
+    align-items: center;
+    padding: 0 70px !important;
+  }
+  #service .plans .layui-container .plans-text {
+    width: 380px;
+    margin-right: 130px;
+  }
+  #service .plans .layui-container .plans-text .text-head {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  #service .plans .layui-container .plans-text .text-head img {
+    width: 45px;
+    height: 45px;
+    margin-right: 30px;
+  }
+  #service .plans .layui-container .plans-text .text-head h6 {
+    font-size: 32px;
+    color: #333;
+  }
+  #service .plans .layui-container .plans-text p {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 32px;
+  }
+  #service .plans .layui-container .plans-text button {
+    width: 133px;
+    height: 40px;
+    background: #00CC99;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+  }
+  #service .plans .layui-container .plans-img {
+    width: 350px;
+    height: 330px;
+  }
+  #service .plans .layui-container .plans-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  #service .plans:nth-child(2n) .layui-container .plans-text {
+    margin-right: 0px;
+  }
+  #service .plans:nth-child(2n) .layui-container .plans-img {
+    margin-right: 130px;
+  }
+  #service #fiveG {
+    height: 370px;
+  }
+  #service #fiveG .fiveg-content {
+    padding: 60px 0 0;
+  }
+  #service #fiveG .fiveg-content h2 {
+    font-size: 45px;
+  }
+  #service #fiveG .fiveg-content h5 {
+    font-size: 32px;
+    margin: 21px auto 50px;
+  }
+  #service #fiveG .fiveg-content button {
+    width: 28%;
+    height: 50px;
+    font-size: 25px;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1300px) {
+  #service .plans {
+    padding: 50px 0;
+  }
+  #service .plans .layui-container {
+    display: flex;
+    align-items: center;
+    padding-left: 100px !important;
+  }
+  #service .plans .layui-container .plans-text {
+    width: 380px;
+    margin-right: 160px;
+  }
+  #service .plans .layui-container .plans-img {
+    width: 370px;
+    height: 350px;
+  }
+  #service .plans:nth-child(2n) .layui-container .plans-text {
+    margin-right: 0px;
+  }
+  #service .plans:nth-child(2n) .layui-container .plans-img {
+    margin-right: 160px;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1300px) {
+  #service .title {
+    font-size: 26px;
+  }
+  #service nav .layui-container {
+    width: 810px !important;
+  }
+  #service nav .layui-container .nav-content li {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  #service .title {
+    font-size: 26px;
+  }
+  #service #fiveG {
+    height: 330px;
+  }
+  #service #fiveG .fiveg-content {
+    padding: 60px 0 0;
+  }
+  #service #fiveG .fiveg-content h2 {
+    font-size: 35px;
+  }
+  #service #fiveG .fiveg-content h5 {
+    font-size: 26px;
+    margin: 25px auto 40px;
+  }
+  #service #fiveG .fiveg-content button {
+    width: 28%;
+    height: 45px;
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 892px) {
+  #service #module {
+    padding: 60px 0 50px;
+  }
+  #service #module .layui-container {
+    padding: 0 5px;
+  }
+  #service #module .layui-container .title {
+    margin-bottom: 30px;
+  }
+  #service #module .layui-container .module-content li {
+    width: 31%;
+    height: 290px;
+    margin: 0 auto 20px;
+  }
+  #service #module .layui-container .module-content li:nth-child(n + 3) {
+    margin: 0 auto;
+  }
+  #service #module .layui-container .module-content li img {
+    width: 100%;
+  }
+  #service #module .layui-container .module-content li .text {
+    padding: 24px 30px 0;
+  }
+  #service #module .layui-container .module-content li .text h5 {
+    font-size: 18px;
+  }
+  #service #module .layui-container .module-content li .text p {
+    font-size: 14px;
+  }
+  #service #module .layui-container button {
+    width: 90px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #service .title {
+    font-size: 22px;
+  }
+  #service #banner {
+    height: 300px;
+  }
+  #service nav .layui-container {
+    width: 90%;
+  }
+  #service nav .layui-container .nav-content li {
+    font-size: 14px;
+  }
+  #service #module {
+    padding: 60px 0 50px;
+    width: 95%;
+    margin: 0 auto;
+  }
+  #service #module .layui-container {
+    padding: 0 5px;
+  }
+  #service #module .layui-container .title {
+    margin-bottom: 30px;
+  }
+  #service #module .layui-container .module-content li {
+    width: 48%;
+    height: 200px;
+    margin: 0 auto 20px;
+    border-radius: 5px;
+  }
+  #service #module .layui-container .module-content li:nth-child(n + 3) {
+    margin: 0 auto;
+  }
+  #service #module .layui-container .module-content li img {
+    width: 100%;
+    height: 55%;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+  }
+  #service #module .layui-container .module-content li .text {
+    padding: 10px 20px 0;
+  }
+  #service #module .layui-container .module-content li .text h5 {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  #service #module .layui-container .module-content li .text p {
+    font-size: 12px;
+  }
+  #service #module .layui-container button {
+    width: 90px;
+  }
+  #service #light-live {
+    padding-top: 30px;
+    height: 260px;
+  }
+  #service #light-live .title {
+    margin-bottom: 25px;
+  }
+  #service #light-live .live-content {
+    padding-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  #service #light-live .live-content .live-item {
+    width: 45%;
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  #service #light-live .live-content .live-item .item-top .nums {
+    font-size: 35px;
+  }
+  #service #light-live .live-content .live-item .item-top span {
+    font-size: 22px;
+    margin: 0 4px;
+  }
+  #service #light-live .live-content .live-item .item-bottom {
+    margin-top: 5px;
+    font-size: 14px;
+  }
+  #service .plans {
+    padding: 40px 0;
+  }
+  #service .plans .layui-container {
+    padding: 0 !important;
+    width: 98%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #service .plans .layui-container .plans-text,
+  #service .plans .layui-container .plans-img {
+    margin-right: 0px;
+  }
+  #service .plans .layui-container .plans-text {
+    margin-bottom: 30px;
+    width: 90%;
+  }
+  #service .plans .layui-container .plans-text .text-head,
+  #service .plans .layui-container .plans-text p {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 12px;
+  }
+  #service .plans .layui-container .plans-text .text-head {
+    margin-bottom: 15px;
+  }
+  #service .plans .layui-container .plans-text .text-head img {
+    width: 23px;
+    height: 23px;
+  }
+  #service .plans .layui-container .plans-text .text-head h6 {
+    font-size: 18px;
+  }
+  #service .plans .layui-container .plans-text button {
+    display: block;
+    width: 100px;
+    height: 35px;
+    margin: 20px auto 0;
+  }
+  #service .plans .layui-container .plans-img {
+    width: 230px;
+    height: 210px;
+  }
+  #service .plans:nth-child(2n) .layui-container .plans-text {
+    order: -1;
+  }
+  #service .plans:nth-child(2n) .layui-container .plans-img {
+    margin-right: 0px;
+  }
+  #service #fiveG {
+    height: 260px;
+  }
+  #service #fiveG .fiveg-content {
+    padding: 30px 0 20px;
+  }
+  #service #fiveG .fiveg-content h2 {
+    font-size: 22px;
+  }
+  #service #fiveG .fiveg-content h5 {
+    font-size: 18px;
+    text-align: center;
+    margin: 31px auto 40px;
+  }
+  #service #fiveG .fiveg-content button {
+    width: 46%;
+    height: 40px;
+    font-size: 14px;
+  }
+}
