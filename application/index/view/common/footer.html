@@ -5,33 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .footer {
-            width: 100%;
-            box-sizing: border-box;
-            background: #252525;
-        }
-        .footer-top {
+        @media screen and (min-width:1200px ) {
+            .mobile-footer-top {
+               display: none;
+            }
+            .mobile-footer-bottom {
+                display: none;
+            }
+            .pc-footer-top {
             padding-bottom: 30px;
             padding-top: 75px;
             border: 1px solid rgba(221, 218, 211, .3);
-        }
-        .layui-container{
-            width: 1200px !important;
-         }
-        .footer-left{
-           text-align: left;
-        }
-        .footer-left-img{
+           }
+           .footer-left-img{
           width: 180px;
           height: 67px;
-        }
-        .footer-left-img>img {
-            width: 100%;
-            height: 100%;
-        }
+        }   
         .footer-left-phone {
             margin-top: 47px;
-        }
+        } 
         .span-dot {  
             font-size: 16px;
             font-family: Microsoft YaHei;
@@ -62,11 +54,6 @@
             font-family: 'Microsoft YaHei';
             cursor: pointer;
         }
-        .yanshi:hover {
-            border: 1px solid #00cc99;
-            background: #00cc99;
-            color: #FFFFFF;
-        }
         .language {
             width: 130px;
             height: 40px;
@@ -81,19 +68,12 @@
             margin-left: 50px;
             position: relative;
         }
-        .language:hover {
-            background: #00cc99;
-            color: #FFFFFF;
-            border: 1px solid #00cc99;
-        }
+
         .language>span.language-map {
             margin-left: 10px;
         }
         .language>span.select-down {
             margin-left: 10px;
-        }
-        .footer-right {
-            display: flex;
         }
         .footer-right>dl {
             color: #FFFFFF;
@@ -107,9 +87,6 @@
             color: #FFFFFF;
             margin-bottom: 50px;
         }
-         .footer-right>dl>dd:hover a {
-             color: #00cc99;
-         }
         .footer-right>dl>dd>a {
             font-size: 16px;
             font-family: Microsoft YaHei;
@@ -118,10 +95,7 @@
             line-height: 40px;
             height: 40px;
         }
-        .flex {
-            display: flex;
-            justify-content: space-between;
-        }
+        
         .watchus {
             margin-top: 100px;
             color: #FFFFFF;
@@ -133,32 +107,388 @@
             font-weight: 400;
             color: #FFFFFF;
         }
-        .footer-bottom {
+        .pc-footer-bottom {
             height: 50px;
         }
-        .footer-bottom-left {
+        .pc-footer-bottom-left {
             width: 336px;
         }
-        .footer-bottom-right {
+        .pc-footer-bottom-right {
             width: 825px;
         }
-        .footer-bottom-left>span {
+        .pc-footer-bottom-left>span {
             color: #FFFFFF;
             font-size: 14px;
             line-height: 50px;
             height: 50px;
         }
-        .footer-bottom-right>span {
+        .pc-footer-bottom-right>span {
             color: #FFFFFF;
             font-size: 12px;
             line-height: 50px;
             height: 50px;
         }
+        }
+        @media screen and (max-width: 1200px) and (min-width: 1000px){
+            .mobile-footer-top {
+               display: none;
+            }
+            .mobile-footer-bottom {
+                display: none;
+            }
+            .pc-footer-top {
+            padding-bottom: 20px;
+            padding-top: 60px;
+            border: 1px solid rgba(221, 218, 211, .3);
+           }
+           .footer-left-img{
+          width: 160px;
+          height: 55px;
+        }   
+        .footer-left-phone {
+            margin-top: 35px;
+        } 
+        .span-dot {  
+            font-size: 16px;
+            font-family: Microsoft YaHei;
+            font-weight: 400;
+            color: #FFFFFF;
+        }
+        .span-doot {
+            display: inline-block;
+            font-size: 16px;
+            font-family: 'Microsoft YaHei';
+            font-weight: 400;
+            color: #FFFFFF;
+            margin-top: 26px;
+        } 
+        .yuyue {
+            margin-top: 85px;
+            display: flex;
+        }
+        .yanshi {
+            width: 130px;
+            height: 36px;
+            line-height: 36px;
+            text-align: center;
+            border: 1px solid #FFFFFF;
+            border-radius: 18px;
+            color: #FFFFFF;
+            font-size: 14px; 
+            font-family: 'Microsoft YaHei';
+            cursor: pointer;
+        }
+        .language {
+            width: 130px;
+            height: 36px;
+            line-height: 36px;
+            /* text-align: center; */
+            border: 1px solid #FFFFFF;
+            border-radius: 18px;
+            color: #FFFFFF;
+            font-size: 14px; 
+            font-family: 'Microsoft YaHei';
+            cursor: pointer;
+            margin-left: 30px;
+            position: relative;
+        }
+
+        .language>span.language-map {
+            margin-left: 10px;
+        }
+        .language>span.select-down {
+            margin-left: 10px;
+        }
+        .footer-right>dl {
+            color: #FFFFFF;
+            width: 100px;
+            margin-left: 30px;
+        }
+        .footer-right>dl>dt {       
+            font-size: 20px;
+            font-family: Microsoft YaHei;
+            font-weight: 400;
+            color: #FFFFFF;
+            margin-bottom: 40px;
+        }
+        .footer-right>dl>dd>a {
+            font-size: 14px;
+            font-family: Microsoft YaHei;
+            font-weight: 400;
+            color: #FFFFFF;
+            line-height: 30px;
+            height: 30px;
+        }
+        
+        .watchus {
+            margin-top: 80px;
+            color: #FFFFFF;
+            margin-left: 30px;
+        }
+        .watchus>h3 {     
+            font-size: 20px;
+            font-family: Microsoft YaHei;
+            font-weight: 400;
+            color: #FFFFFF;
+        }
+        .pc-footer-bottom {
+            height: 50px;
+        }
+        .pc-footer-bottom-left {
+            width: 336px;
+        }
+        .pc-footer-bottom-right {
+            width: 825px;
+        }
+        .pc-footer-bottom-left>span {
+            color: #FFFFFF;
+            font-size: 14px;
+            line-height: 50px;
+            height: 50px;
+        }
+        .pc-footer-bottom-right>span {
+            color: #FFFFFF;
+            font-size: 12px;
+            line-height: 50px;
+            height: 50px;
+        } 
+
+        }
+
+        @media screen and (max-width: 1000px) and (min-width: 820px) {
+            .mobile-footer-top {
+               display: none;
+            }
+            .mobile-footer-bottom {
+                display: none;
+            }
+            .pc-footer-top {
+            padding-bottom: 20px;
+            padding-top: 40px;
+            border: 1px solid rgba(221, 218, 211, .3);
+           }
+           .footer-left-img{
+          width: 100px;
+        }   
+        .footer-left-phone {
+            margin-top: 20px;
+        } 
+        .span-dot {  
+            font-size: 14px;
+            font-family: Microsoft YaHei;
+            font-weight: 400;
+            color: #FFFFFF;
+        }
+        .span-doot {
+            display: inline-block;
+            font-size: 14px;
+            font-family: 'Microsoft YaHei';
+            font-weight: 400;
+            color: #FFFFFF;
+            margin-top: 18px;
+        } 
+        .yuyue {
+            margin-top: 60px;
+            display: flex;
+        }
+        .yanshi {
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border: 1px solid #FFFFFF;
+            border-radius: 15px;
+            color: #FFFFFF;
+            font-size: 12px; 
+            font-family: 'Microsoft YaHei';
+            cursor: pointer;
+        }
+        .language {
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            /* text-align: center; */
+            border: 1px solid #FFFFFF;
+            border-radius: 15px;
+            color: #FFFFFF;
+            font-size: 12px; 
+            font-family: 'Microsoft YaHei';
+            cursor: pointer;
+            margin-left: 15px;
+            position: relative;
+        }
+
+        .language>span.language-map {
+            margin-left: 8px;
+        }
+        .language>span.select-down {
+            margin-left: 8px;
+        }
+        .footer-right>dl {
+            color: #FFFFFF;
+            width: 80px;
+            margin-left: 20px;
+        }
+        .footer-right>dl>dt {       
+            font-size: 16px;
+            font-family: Microsoft YaHei;
+            font-weight: 400;
+            color: #FFFFFF;
+            margin-bottom: 25px;
+        }
+        .footer-right>dl>dd>a {
+            font-size: 12px;
+            font-family: Microsoft YaHei;
+            font-weight: 400;
+            color: #FFFFFF;
+            line-height: 24px;
+            height: 24px;
+        }
+        
+        .watchus {
+            margin-top: 40px;
+            color: #FFFFFF;
+            margin-left: 20px;
+        }
+        .watchus>h3 {     
+            font-size: 16px;
+            font-family: Microsoft YaHei;
+            font-weight: 400;
+            color: #FFFFFF;
+        }
+        .pc-footer-bottom {
+            height: 40px;
+        }
+        .pc-footer-bottom-left {
+            width: 250px;
+        }
+        .map-span {
+            margin-left: 20px;
+        }
+        .pc-footer-bottom-right {
+            width: 500px;
+        }
+        .pc-footer-bottom-left>span {
+            color: #FFFFFF;
+            font-size: 12px;
+            line-height: 40px;
+            height: 40px;
+        }
+        .pc-footer-bottom-right>span {
+            color: #FFFFFF;
+            font-size: 12px;
+            line-height: 40px;
+            height: 40px;
+        } 
+        }
+
+        /* 移动端 */
+        @media screen and (max-width: 820px) and (min-width: 768px) {
+            .pc-footer-top {
+                display: none !important;
+            }
+            .pc-footer-bottom {
+                display: none !important;
+            }
+            .mobile-footer-top {
+               padding: 40px 15px 20px;
+            }
+            .mobile-footer-nav>li {
+                border-bottom: 1px solid #353535;
+                color: #FFFFFF;
+                position: relative;
+            }
+            .mobile-footer-nav>li>span {
+                display: inline-block;
+                width: 100%;
+                height: 52px;
+                line-height: 52px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+            .mobile-footer-nav>li>span>i {
+                position: absolute;
+                 font-size: 24px;
+                 top: 0px;
+                 right: 15px;
+            }
+            .mobile-footer-bottom>li {
+                height: 40px;
+                text-align: center;
+                color: #FFFFFF;
+            }
+            .footer-item {
+                padding: 10px 0;
+                display: none;
+            }
+            .footer-item.footer-item-show {
+                display: block;
+            }
+            .footer-item>a{
+              display: inline-block;
+              width: 100%;
+              height: 30px;
+              line-height: 30px;
+              font-size: 12px;
+              color: #fafafa;
+            }
+
+            .footer-item>a:hover {
+                color: #00cc99;
+            }
+            
+
+        }
+        .footer {
+            width: 100%;
+            box-sizing: border-box;
+            background: #252525;
+        }
+        /* .pc-footer-top {
+            padding-bottom: 30px;
+            padding-top: 75px;
+            border: 1px solid rgba(221, 218, 211, .3);
+        } */
+        .footer-left{
+           text-align: left;
+        }
+     
+        .footer-left-img>img {
+            width: 100%;
+            height: 100%;
+        }
+       
+        .yanshi:hover {
+            border: 1px solid #00cc99;
+            background: #00cc99;
+            color: #FFFFFF;
+        }
+       
+        .language:hover {
+            background: #00cc99;
+            color: #FFFFFF;
+            border: 1px solid #00cc99;
+        }
+     
+        .footer-right {
+            display: flex;
+        }
+       
+         .footer-right>dl>dd:hover a {
+             color: #00cc99;
+         }
+       
+        .flex {
+            display: flex;
+            justify-content: space-between;
+        }
+       
+     
     </style>
 </head>
 <body>
     <div class="footer">
-      <div class="footer-top">
+      <div class="pc-footer-top">
       <div class="layui-container flex" style="padding-top: 75px;">
         <div class="footer-left">
             <div class="footer-left-img">
@@ -366,18 +696,66 @@
               </div>      -->
       </div>  
       </div>
-      <div class="footer-bottom">
+      <div class="pc-footer-bottom">
           <div class="layui-container flex">
-              <div class="footer-bottom-left">
+              <div class="pc-footer-bottom-left">
                    <span>增值电信经营许可证</span>
-                   <span style="margin-left: 150px;">网站地图</span>
+                   <span class="map-span">网站地图</span>
               </div>
-              <div class="footer-bottom-right flex">
+              <div class="pc-footer-bottom-right flex">
                   <span>©2020 Copyright SHANGHAI BONWEY TECHNOLOGY CO. LTD；. All right</span>
                   <span>沪ICP备20004241号-4</span>
               </div>
           </div>
       </div>
+      <div class="mobile-footer-top">
+            <ul class="mobile-footer-nav">
+                <li>
+                    <span>关于轻直播<i>+</i></span>
+                    <div class="footer-item">
+                         <a href="">关于我们</a>
+                         <a href="">服务案例</a>
+                         <a href="">团队风采</a>
+                         <a href="">新闻中心</a>
+                         <a href="">战略合作</a>
+                    </div>
+                </li>
+                <li>
+                    <span>服务支持<i>+</i></span> 
+                    <!-- <div class="service-con">
+                        <a href="">轻直播</a>
+                        <a href="">轻会议</a>
+                        <a href="">轻课堂</a>
+                        <a href="">直播策划</a>
+                        <a href="">现场执行</a>
+                        <a href="">服务体系</a>
+                   </div> -->
+                </li>
+                <li><span>行业方案<i>+</i></span></li>
+                <li><span>场景方案<i>+</i></span></li>
+                <li>
+                   <span>轻学院<i>+</i></span>
+                </li>
+            </ul>
+      </div>
+      <div class="mobile-footer-bottom">
+          <li style="font-size: 14px;">
+              增值电信经营许可证
+          </li>
+          <li style="font-size: 12px;">
+            ©2020 Copyright SHANGHAI BONWEY TECHNOLOGY CO., LTD；. All rights reserved.         沪ICP备16029097号-7
+          </li>
+      </div>
     </div>
+    <script>
+        $('.mobile-footer-nav li').on('click', function() {
+             $(this).find('footer-item').toggleClass('footer-item-show')
+             if($('.footer-item').hasClass('footer-item-show')) {
+              $(this).find('span>i')[0].innerText = '-'
+             } else {
+               $(this).find('span>i')[0].innerText = '+'
+             }
+        })
+    </script>
 </body>
 </html>

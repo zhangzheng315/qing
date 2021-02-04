@@ -22,7 +22,7 @@
   text-align: center;
 }
 #banner {
-  margin-top: 65px;
+  /* margin-top: 65px; */
   height: 600px;
   position: relative;
 }

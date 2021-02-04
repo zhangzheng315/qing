@@ -12,55 +12,24 @@
            padding: 0 !important;
        }
       } */
-       .header-nav {
-            position: sticky;
-            top: 0;
-            width: 100%;
-            box-sizing: border-box;
-            box-shadow: 0px 2px 3px 0px rgba(193, 193, 193, 0.3);
-            background: #ffffff;
-            z-index: 999;
+        @media screen and (min-width: 1200px)  {
+            .layui-container {
+                width: 1200px !important;
+                padding: 0 !important;
+            }
+            .mobile-layui-container {
+              display: none !important;
         }
-        .flex-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+        .navbar-collpase {
+            display: none;
         }
-        .layui-container>.q-logo{
+            .layui-container>.q-logo{
             width: 10%;
-        }
-        .nav-menu {
-            width: 50%;
-        }
-        .menu {
-            display: flex;
-            height: 65px;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .menu>.menu-item {
-            /* margin: 0 20px; */
-            padding: 0 2px;
-            height: 65px;
-            line-height: 65px;
-        }
-        .menu>.menu-item>a {
-            font-size: 16px;
-            font-weight: 400;
-            color: #000000;
-            animation: all linear 5s;
-        }
-        .menu>.menu-item>a:hover {
-            text-decoration: none;
-            animation: all linear 5s;
-        }
-        .menu>li.active {
-            border-bottom: 3px solid #00cc99;
-        }
-        .menu>li.active>a {
-            color: #00cc99;
-        }
-        .nav-btn>span {
+            }
+            .nav-menu {
+              width: 50%;
+           }
+           .nav-btn>span {
             display: inline-block;
             width: 90px;
             height: 36px;
@@ -75,35 +44,14 @@
             color: #00cc99;
             margin-right: 30px;
         }
-        .free-use {
-            background: #00cc99;
-            color: #ffffff;
-        }
-        .pull-down-pannel-product {
-            position: fixed;
-            width: 100%;
-            left: 0;
-            top: -280px;
-            z-index: -1;
-            /* height: 225px; */
-           background: #ffffff;
-           box-shadow: 0px 2px 3px 0px rgba(193, 193, 193, 0.3);
-           display: none;
-        }
         .product-pannel {
             padding: 20px 0 33px;
             display: flex;
             justify-content: center;
         }
-        .product-pannel>dl {
+        .product-pannel>dl.dl-border {
            padding-right: 160px;
            position: relative;
-        }
-        .product-pannel>dl>dt {
-            font-size: 12px;
-            font-weight: 400;
-            color: #999999;
-            font-family: 'Microsoft YaHei';
         }
         .product-pannel>dl.dl-border::after {
             display: block;
@@ -115,6 +63,301 @@
             right: 90px;
             top: 50px;
         }
+        }
+        @media screen and (max-width: 1200px) and (min-width: 1000px) {
+              .layui-container {
+                  width: 960px !important;
+                  padding: 0 !important;
+              }
+              .navbar-collpase {
+            display: none;
+        }
+              .mobile-layui-container {
+              display: none !important;
+        }
+              .nav-menu {
+                  width: 60%;
+              }
+              .nav-btn>span {
+               display: inline-block;
+                width: 80px;
+               height: 30px;
+               line-height: 30px;
+               border-radius: 15px;
+                font-size: 14px;
+                text-align: center;
+                cursor: pointer;
+        }
+        .login {
+            border: 1px solid #00cc99;
+            color: #00cc99;
+            margin-right: 20px;
+        }
+        .product-pannel {
+            padding: 16px 0 30px;
+            display: flex;
+            justify-content: center;
+        }
+        .product-pannel>dl.dl-border {
+           padding-right: 140px;
+           position: relative;
+        }
+        .product-pannel>dl.dl-border::after {
+            display: block;
+            position: absolute;
+            content: '';
+            width: 1px;
+            height: 170px;
+            background: #e5e5e5;
+            right: 80px;
+            top: 50px;
+        }
+
+        }
+
+        @media screen and (max-width: 1000px) and (min-width: 820px) {
+            .layui-container {
+                  width: 780px !important;
+                  padding: 0 !important;
+              }
+              .navbar-collpase {
+            display: none;
+        }
+              .mobile-layui-container {
+              display: none !important;
+        }
+             .layui-container>.q-logo{
+                width: 20%;
+            }
+            .nav-menu {
+              width: 74%;
+           }
+           .nav-btn {
+               display: none;
+           }
+           /* .nav-btn>span {
+            display: inline-block;
+            width: 90px;
+            height: 36px;
+            line-height: 36px;
+            border-radius: 18px;
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .login {
+            border: 1px solid #00cc99;
+            color: #00cc99;
+            margin-right: 30px;
+        } */
+        .product-pannel {
+            padding: 16px 0 30px;
+            display: flex;
+            justify-content: center;
+        }
+        .product-pannel>dl.dl-border {
+           padding-right: 100px;
+           position: relative;
+        }
+        .product-pannel>dl.dl-border::after {
+            display: block;
+            position: absolute;
+            content: '';
+            width: 1px;
+            height: 170px;
+            background: #e5e5e5;
+            right: 60px;
+            top: 50px;
+        }
+        }
+
+        /* 移动端样式 */
+        @media screen and (max-width: 820px) and (min-width: 768px) {
+            /* .layui-container {
+                padding: 0 !important;
+            } */
+            .pc-layui-container {
+                display: none !important;
+               
+            }
+            .mobile-layui-container {
+                display: block;
+                height: 65px;
+                padding: 0 15px;
+                z-index: 999;
+            }
+            .q-logo {
+                width: 100px;
+            }
+            .q-logo>h1>img{
+                width: 100%;
+            }
+            .navbar-toggle {
+                text-align: right;
+                }
+             .navbar-collpase {
+                 position: absolute;
+                 width: 100%;
+                 top: -284px;
+                 max-height: 350px;
+                 overflow-y: auto;
+                 background: #ffffff;
+                 z-index: -1;
+                transition: all .5s linear;
+                border-top: 1px solid #d2d2d2;
+             }
+             .navbar-collpase.collpase-true {
+                 top: 65px;
+             }
+             .navbar-nav {
+                 margin: 7.5px 0;
+             }
+             .navbar-nav>li {
+                 padding: 10px 15px;
+                 position: relative;
+
+             }
+             .navbar-nav>li>a{
+                /* padding: 10px 15px; */
+                display: inline-block;
+                width: 100%;
+             }
+             .navbar-nav>li>a:hover {
+                 color: #00cc99;
+             }
+
+             .navbar-nav>li::after {
+                 content: '';
+                 display: block;
+                 right: 0;
+                 left: 0;
+                 bottom: 0;
+                 position: absolute;
+                 border-bottom: 1px solid  rgba(193, 193, 193, 0.6);
+             }
+             .navbar-nav>li>a>i{
+                 position: absolute;
+                 font-size: 24px;
+                 top: 7px;
+                 right: 15px;
+             }
+             .navbar-nav>li.nav-product-span {
+                display: inline-block;
+                width: 100%;
+                cursor: pointer;
+             }
+             .nav-product-span>i {
+                position: absolute;
+                 font-size: 24px;
+                 top: 7px;
+                 right: 15px;
+             }
+
+             .nav-pro-con {
+            display: none;
+            width: 100%;
+            margin-top: 10px;
+            /* height: 100px; */
+        }
+        
+        .nav-pro-con>span {
+            display: inline-block;
+            width: 100%;
+            height: 34px;
+            line-height: 34px;
+        }
+            
+        }
+
+       .header-nav {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: 0px 2px 3px 0px rgba(193, 193, 193, 0.3);
+            background: #ffffff;
+            z-index: 999;
+        }
+
+      
+        .flex-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+      
+        .menu {
+            display: flex;
+            height: 65px;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .menu>.menu-item {
+            /* margin: 0 20px; */
+            padding: 0 2px;
+            height: 65px;
+            line-height: 65px;
+        }
+        .menu-item:hover {
+            border-bottom: 2px solid #00cc99;
+        }
+        .menu>.menu-item>a {
+            font-size: 16px;
+            font-weight: 400;
+            color: #000000;
+        }
+        .menu>.menu-item>a:hover {
+            text-decoration: none;
+            color: #00cc99;
+        }
+        .menu>li.active {
+            border-bottom: 3px solid #00cc99;
+        }
+        .menu>li.active>a {
+            color: #00cc99;
+        }
+        /* .nav-btn>span {
+            display: inline-block;
+            width: 90px;
+            height: 36px;
+            line-height: 36px;
+            border-radius: 18px;
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .login {
+            border: 1px solid #00cc99;
+            color: #00cc99;
+            margin-right: 30px;
+        } */
+        .free-use {
+            background: #00cc99;
+            color: #ffffff;
+        }
+        .menu-item-product:hover .pull-down-pannel-product {
+            top: 65px;
+            
+        }
+        .pull-down-pannel-product {
+            position: fixed;
+            width: 100%;
+            left: 0;
+            top: -280px;
+            z-index: -1;
+            /* height: 225px; */
+           background: #ffffff;
+           box-shadow: 0px 2px 3px 0px rgba(193, 193, 193, 0.3);
+           transition: all .5s linear;
+        }
+      
+        .product-pannel>dl>dt {
+            font-size: 12px;
+            font-weight: 400;
+            color: #999999;
+            font-family: 'Microsoft YaHei';
+        }
+      
         .product-pannel>dl>dd {
             position: relative;
         }
@@ -162,11 +405,14 @@
             font-weight: 400;
             color: #666666;
         }
+      
+     
     </style>
 </head>
 <body>
     <div class="header-nav">
-         <div class="layui-container flex-item">
+        <!-- pc端 -->
+         <div class="layui-container flex-item pc-layui-container">
            <div class="q-logo">
                <h1>
                    <img src="/static/image/logo.png" alt="">
@@ -174,10 +420,10 @@
            </div>
            <div class="nav-menu">
                  <ul class="menu">
-                   <li class="menu-item">
+                   <li class="menu-item active">
                     <a href="">首页</a>
                    </li>
-                   <li class="menu-item">
+                   <li class="menu-item  menu-item-product">
                        <a href="">产品与服务</a>
                        <div class="pull-down-pannel pull-down-pannel-product">
                            <div class="product-pannel">
@@ -272,23 +518,59 @@
               </span>
            </div>
          </div>
+         <!-- 移动端 -->
+         <div class="mobile-layui-container flex-item">
+             <!-- 轻直播logo -->
+            <div class="q-logo">
+                <h1>
+                    <img src="/static/image/logo.png" alt="">
+                </h1>
+            </div>
+            <div class="navbar-toggle">
+                <i class="layui-icon layui-icon-align-center" style="font-size: 30px; color: #d2d2d2;"></i> 
+            </div>
+         </div>
+         <!-- 导航栏 -->
+         <div class="navbar-collpase">
+              <ul class="navbar-nav">
+                  <li><a href="">首页</a> </li>
+                  <li class="nav-product">
+                      <span class="nav-product-span" href="">产品与服务<i>+</i></span>
+                      <div class="nav-pro-con">
+                          <span><a href="">轻直播平台</a></span>
+                          <span><a href="">轻直播平台</a></span>
+                      </div>
+                    </li>
+                  <li><a href="">解决方案</a></li>
+                  <li><a href="">案列中心</a></li>
+                  <li><a href="">轻学院</a></li>
+                  <li><a href="">关于轻直播</a></li>
+              </ul>
+         </div>
+
     </div>
-    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-     $('.menu li').hover(function() {
-         $(this).addClass('active');
-         $('.pull-down-pannel-product').css({
-             "top": '65px',
-             'z-index': 999,
-             'display': 'block'
-         })
-     }, function() {
-         $(this).removeClass('active');
-         $('.pull-down-pannel-product').css({
-             "top": '-280px',
-             'z-index': -1,
-             'display': 'none'
-         })
+    //  $('.menu li').hover(function() {
+    //      $(this).addClass('active');
+    //  }, function() {
+    //      $(this).removeClass('active');
+       
+    //  })
+
+    //  $('.menu li').on('click', function() {
+    //      $(this).toggleClass('active');
+    //  })
+
+     $('.navbar-toggle').on('click', function() {
+        $('.navbar-collpase').toggleClass('collpase-true');
+     })
+
+     $('.nav-product').on('click', function() {
+        $(this).toggleClass('nav-product-selected');
+        $('.nav-pro-con').css({
+            'display': 'block'
+        })
+         
      })
 
 
