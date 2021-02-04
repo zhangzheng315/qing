@@ -227,3 +227,299 @@
   color: #fff;
   border: 0;
 }
+@media screen and (min-width: 768px) and (max-width: 1300px) {
+  #solution #banner {
+    height: 400px;
+  }
+  #solution #qiye nav {
+    margin: 0 auto 70px;
+  }
+  #solution #qiye nav .logo-title li span {
+    font-size: 16px;
+  }
+  #solution #qiye .logo-box .logo-imgs li {
+    width: 18%;
+    height: 55px;
+    margin: 0 15px 50px 0;
+  }
+  #solution #kefu {
+    height: 200px;
+  }
+  #solution #kefu .kefu-content {
+    padding: 30px 0 0;
+  }
+  #solution #kefu .kefu-content h2 {
+    font-size: 45px;
+    margin-bottom: 25px;
+  }
+  #solution #kefu .kefu-content button {
+    width: 28%;
+    height: 50px;
+    font-size: 25px;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1195px) {
+  #solution .title {
+    font-size: 26px;
+  }
+  #solution #industry {
+    padding: 65px 0 70px;
+  }
+  #solution #industry .layui-container {
+    width: 95%;
+  }
+  #solution #industry .layui-container .industry-content {
+    margin-top: 35px;
+  }
+  #solution #industry .layui-container .industry-content li {
+    width: 23%;
+    height: 170px;
+  }
+  #solution #industry .layui-container .industry-content li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  #solution #industry .layui-container .industry-content li .text {
+    width: 70%;
+    height: 90px;
+    bottom: -28%;
+  }
+  #solution #industry .layui-container .industry-content li .text h6 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  #solution #industry .layui-container .industry-content li .text p {
+    width: 90%;
+    font-size: 14px;
+  }
+  #solution #scene .layui-container {
+    width: 95%;
+  }
+  #solution #scene .layui-container .title {
+    margin-bottom: 35px;
+  }
+  #solution #scene .layui-container .scene-content li {
+    width: 24%;
+    height: 190px;
+    margin: 0 auto 5px;
+  }
+  #solution #scene .layui-container .scene-content li div {
+    height: 45px;
+    padding-bottom: 2px;
+  }
+  #solution #scene .layui-container .scene-content li div p {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  #solution #industry {
+    padding: 55px 0 60px;
+  }
+  #solution #industry .layui-container {
+    width: 97%;
+    padding: 0;
+  }
+  #solution #industry .layui-container .industry-content {
+    margin-top: 35px;
+  }
+  #solution #industry .layui-container .industry-content li {
+    width: 23%;
+    height: 140px;
+  }
+  #solution #industry .layui-container .industry-content li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  #solution #industry .layui-container .industry-content li .text {
+    width: 70%;
+    height: 80px;
+    bottom: -32%;
+  }
+  #solution #industry .layui-container .industry-content li .text h6 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  #solution #industry .layui-container .industry-content li .text p {
+    width: 90%;
+    font-size: 12px;
+  }
+  #solution #scene {
+    padding: 30px 0 40px;
+  }
+  #solution #scene .layui-container {
+    width: 97%;
+    padding: 0;
+  }
+  #solution #scene .layui-container .title {
+    margin-bottom: 25px;
+  }
+  #solution #scene .layui-container .scene-content li {
+    width: 24%;
+    height: 160px;
+    margin: 0 auto 10px;
+  }
+  #solution #scene .layui-container .scene-content li div {
+    height: 40px;
+    padding-bottom: 2px;
+  }
+  #solution #scene .layui-container .scene-content li div p {
+    font-size: 16px;
+  }
+  #solution #scene .layui-container .scene-content li div img {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+  }
+  #solution #qiye .layui-container {
+    width: 90%;
+  }
+  #solution #qiye .layui-container .title {
+    margin-bottom: 75px;
+  }
+  #solution #qiye .layui-container nav {
+    width: 95%;
+  }
+  #solution #qiye .layui-container nav .logo-title li {
+    width: 10%;
+  }
+  #solution #qiye .layui-container .logo-box .logo-imgs li {
+    width: 19%;
+    margin: 0 auto 40px;
+  }
+  #solution #kefu {
+    height: 170px;
+  }
+  #solution #kefu .kefu-content {
+    padding: 30px 0 0;
+  }
+  #solution #kefu .kefu-content h2 {
+    font-size: 35px;
+  }
+  #solution #kefu .kefu-content button {
+    width: 28%;
+    height: 45px;
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #solution .title {
+    font-size: 22px;
+  }
+  #solution #banner {
+    height: 300px;
+  }
+  #solution #industry {
+    padding: 35px 0 50px;
+  }
+  #solution #industry .layui-container {
+    width: 90%;
+    padding: 0;
+  }
+  #solution #industry .layui-container .industry-content {
+    margin-top: 35px;
+    flex-wrap: wrap;
+  }
+  #solution #industry .layui-container .industry-content li {
+    width: 45%;
+    height: 120px;
+    margin-bottom: 55px;
+  }
+  #solution #industry .layui-container .industry-content li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  #solution #industry .layui-container .industry-content li .text {
+    width: 80%;
+    height: 70px;
+    bottom: -30%;
+  }
+  #solution #industry .layui-container .industry-content li .text h6 {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  #solution #industry .layui-container .industry-content li .text p {
+    width: 90%;
+    font-size: 12px;
+  }
+  #solution #scene {
+    padding: 30px 0 40px;
+  }
+  #solution #scene .layui-container {
+    width: 95%;
+    padding: 0;
+  }
+  #solution #scene .layui-container .title {
+    margin-bottom: 25px;
+  }
+  #solution #scene .layui-container .scene-content li {
+    width: 47%;
+    height: 130px;
+    margin: 0 auto 10px;
+  }
+  #solution #scene .layui-container .scene-content li div {
+    height: 35px;
+    padding-bottom: 2px;
+  }
+  #solution #scene .layui-container .scene-content li div p {
+    font-size: 14px;
+  }
+  #solution #scene .layui-container .scene-content li div img {
+    width: 15px;
+    height: 15px;
+    object-fit: cover;
+  }
+  #solution #qiye {
+    padding: 40px 0 20px;
+  }
+  #solution #qiye .title {
+    margin-bottom: 35px;
+  }
+  #solution #qiye nav {
+    width: 100%;
+    overflow-x: auto;
+    margin: 0 auto 30px;
+  }
+  #solution #qiye nav::-webkit-scrollbar {
+    display: none;
+  }
+  #solution #qiye nav .logo-title {
+    width: auto;
+  }
+  #solution #qiye nav .logo-title li {
+    flex-shrink: 0;
+    width: 14%;
+    padding: 0px;
+    height: 25px;
+    line-height: 25px;
+  }
+  #solution #qiye nav .logo-title li span {
+    margin: 0;
+    font-size: 14px;
+  }
+  #solution #qiye .logo-box .logo-imgs li {
+    width: 19%;
+    height: 50px;
+    margin-right: 20px;
+    margin-bottom: 22px;
+  }
+  #solution #kefu {
+    height: 150px;
+  }
+  #solution #kefu .kefu-content {
+    padding: 25px 0 15px;
+  }
+  #solution #kefu .kefu-content h2 {
+    font-size: 22px;
+  }
+  #solution #kefu .kefu-content button {
+    width: 36%;
+    height: 40px;
+    font-size: 14px;
+  }
+}

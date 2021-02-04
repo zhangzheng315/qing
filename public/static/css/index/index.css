@@ -518,7 +518,7 @@
 #college .college-content .college-left .layui-carousel .lunbo-box .lunbo-item {
   width: 100%;
   height: 100%;
-  padding: 9px;
+  padding-bottom: 9px;
   box-sizing: border-box;
 }
 #college .college-content .college-left .layui-carousel .lunbo-box .lunbo-item img {
