@@ -1,117 +1,279 @@
 {extend name="common::layout"/}
 {block name="main-content"}
-        <style>
-            .layui-btn{
-                margin-top: 8px;
-                margin-left: 5px;
-            }
-            .btn{
-                margin-top: 0 !important;
-            }
-            #add{
-                padding-top: 20px;
-                padding-right: 30px;
-            }
-        </style>
-        <!-- 右侧主体开始 -->
-        <div class="page-content">
-            <div class="layui-fluid">
-                <div class="layui-row layui-col-space15">
-                    <div class="layui-col-md12">
-                        <div class="layui-card">
-                            <button class="layui-btn" onclick="add()"><i class="layui-icon"></i>增加</button>
-                            <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
-                            <!-- 动态表格 -->
-                            <table id="table-rule" lay-filter="table-rule"></table>
-                        </div>
-                    </div>
+<style>
+    .layui-btn {
+        margin-top: 8px;
+        margin-left: 5px;
+    }
+
+    .btn {
+        margin-top: 0 !important;
+    }
+
+    #add {
+        padding-top: 20px;
+        padding-right: 30px;
+    }
+
+</style>
+<!-- 右侧主体开始 -->
+<div class="page-content">
+    <div class="layui-fluid">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+                <div class="layui-card">
+                    <button class="layui-btn" onclick="add()"><i class="layui-icon"></i>增加</button>
+                    </button>
+                    <!-- 动态表格 -->
+                    <table id="table-rule" lay-filter="table-rule"></table>
                 </div>
             </div>
-
         </div>
-        <!-- 中部结束 -->
-        <div id="add" style="display: none;">
-            <form class="layui-form"> <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
-                <div class="layui-form-item">
-                    <label class="layui-form-label">选择父级</label>
-                    <div class="layui-input-block">
-                        <select name="pid" lay-filter="aihao">
-                            <option value="0">根目录</option>
-                            {if isset($navigation_list)}
-                            {foreach $navigation_list as $item }
-                            <option value="{$item.id}">{$item.menu_name}</option>
-                            {/foreach}
-                            {/if}
-                        </select>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                  <label class="layui-form-label">标题</label>
-                  <div class="layui-input-block">
-                    <input type="text" name="title" placeholder="请输入" autocomplete="off" class="layui-input">
-                  </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">第二标题</label>
-                    <div class="layui-input-block">
-                      <input type="text" name="second_title" placeholder="请输入" autocomplete="off" class="layui-input">
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                  <label class="layui-form-label">启用</label>
-                  <div class="layui-input-block">
-                    <input name="status" value="1" type="checkbox" checked lay-skin="switch">
-                  </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">排序</label>
-                    <div class="layui-input-block">
-                      <input type="text" name="order" placeholder="请输入(数值越大，排序越靠前)" autocomplete="off" class="layui-input">
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">内容</label>
-                    <div class="layui-input-block">
-                        <textarea type="text" id="myEdit" name="content" lay-verify="fu_content" style="width: 100%;height: 140px;">
+    </div>
+
+</div>
+<!-- 中部结束 -->
+<div id="add" style="display: none;">
+    <form class="layui-form"> <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
+        <div class="layui-form-item">
+            <label class="layui-form-label">选择父级</label>
+            <div class="layui-input-block">
+                <select name="pid">
+                    <option value="0">--请选择--</option>
+                    {if isset($navigation_list)}
+                    {foreach $navigation_list as $item }
+                    <option value="{$item.id}">{$item.menu_name}</option>
+                    {/foreach}
+                    {/if}
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">标题</label>
+            <div class="layui-input-block">
+                <input type="text" name="title" placeholder="请输入" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">第二标题</label>
+            <div class="layui-input-block">
+                <input type="text" name="second_title" placeholder="请输入" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">启用</label>
+            <div class="layui-input-block">
+                <input name="status" value="1" type="checkbox" checked lay-skin="switch">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">排序</label>
+            <div class="layui-input-block">
+                <input type="text" name="order" placeholder="请输入(数值越大，排序越靠前)" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">内容</label>
+            <div class="layui-input-block">
+                        <textarea type="text" name="content" id="myEdit" lay-verify="fu_content" style="width: 100%;height: 140px;">
                         </textarea>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <div class="layui-input-block">
-                        <button class="layui-btn" lay-submit lay-filter="add">保存</button>
-                    </div>
-                </div>
-                <!-- 更多表单结构排版请移步文档左侧【页面元素-表单】一项阅览 -->
-              </form>
+            </div>
         </div>
-        <script type="text/html" id="barDemo">
-            <a class="layui-btn btn layui-btn-xs" lay-event="info">详情</a>
-            <a class="layui-btn btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
-        </script>
-        <script>
-            layui.use(['form','table'], function(){
-                var table = layui.table;
-                var form = layui.form;
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="add">保存</button>
+            </div>
+        </div>
+        <!-- 更多表单结构排版请移步文档左侧【页面元素-表单】一项阅览 -->
+    </form>
+</div>
+<div id="edit" style="display: none;">
+    <div class="layui-form"> <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
+        <div class="layui-form-item">
+            <label class="layui-form-label">选择父级</label>
+            <div class="layui-input-block">
+                <select name="pid" id="pid">
+                    <option value="0">--请选择--</option>
+                    {if isset($navigation_list)}
+                    {foreach $navigation_list as $item }
+                    <option value="{$item.id}">{$item.menu_name}</option>
+                    {/foreach}
+                    {/if}
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">标题</label>
+            <div class="layui-input-block">
+                <input type="text" id="title" name="title" placeholder="请输入" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">第二标题</label>
+            <div class="layui-input-block">
+                <input type="text" id="second_title" name="second_title" placeholder="请输入" autocomplete="off"
+                       class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">启用</label>
+            <div class="layui-input-block">
+                <input name="status" id="status" value="1" type="checkbox" checked lay-skin="switch">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">排序</label>
+            <div class="layui-input-block">
+                <input type="text" id="order" name="order" placeholder="请输入(数值越大，排序越靠前)" autocomplete="off"
+                       class="layui-input">
+                <input type="hidden" id="id" name="id" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">内容</label>
+            <div class="layui-input-block">
+                        <textarea type="text" name="content" id="articleEdit" lay-verify="fu_content"
+                                  style="width: 100%;height: 140px;">
+                        </textarea>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="edit">保存</button>
+            </div>
+        </div>
+        <!-- 更多表单结构排版请移步文档左侧【页面元素-表单】一项阅览 -->
+    </div>
+</div>
 
-                    //创建动态表格
-                table.render({
-                    elem: '#table-rule'
-                    ,height: 850
-                    ,url: '/admin/article/getArticleList' //数据接口
-                    ,page: true //开启分页
-                    ,cols: [[ //表头
-                    {
-                        field: 'id', title: 'ID', width:80, sort: true, fixed: 'left'}
-                        ,{field: 'title', title: '标题' }
-                        ,{field: 'second_title', title: '第二标题'}
-                        ,{field: 'belong', title: '所属分类'}
-                        // ,{field: 'content', title: '内容'}
-                        ,{field: 'order', title: '排序'}
-                        ,{field: 'status', title: '状态'}
-                        ,{fixed: 'right', width:150,title:'操作' , align:'center', toolbar: '#barDemo'}
-                    ]]
-                });
+<script type="text/html" id="barDemo">
+    <a class="layui-btn btn layui-btn-xs" lay-event="info">详情</a>
+    <a class="layui-btn btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+<script>
+    layui.use(['form', 'table', 'layedit'], function () {
+        var table = layui.table;
+        var form = layui.form;
+        layedit = layui.layedit;
+
+        //创建动态表格
+        table.render({
+            elem: '#table-rule'
+            , height: 850
+            , url: '/admin/article/getArticleList' //数据接口
+            , page: true //开启分页
+            , cols: [[ //表头
+                {
+                    field: 'id', title: 'ID', width: 80, sort: true, fixed: 'left'
+                }
+                , {field: 'title', title: '标题'}
+                , {field: 'second_title', title: '第二标题'}
+                , {field: 'belong', title: '所属分类'}
+                // ,{field: 'content', title: '内容'}
+                , {field: 'order', title: '排序'}
+                , {field: 'status', title: '状态'}
+                , {fixed: 'right', width: 150, title: '操作', align: 'center', toolbar: '#barDemo'}
+            ]]
+        });
+
+        window.articleEdit = function () {
+            //设置图片上传接口
+            layedit.set({
+                uploadImage: {
+                    url: "{:url('admin/common_file/uploadFile')}" //接口url
+                    , type: 'post' //默认post
+                }
             });
+            //建立编辑器
+            var index = layedit.build('articleEdit', {
+                tool: ['strong' //加粗
+                    , 'italic' //斜体
+                    , 'underline' //下划线
+                    , 'del' //删除线
+                    , '|' //分割线
+                    , 'left' //左对齐
+                    , 'center' //居中对齐
+                    , 'right' //右对齐
+                    , 'link' //超链接
+                    , 'unlink' //清除链接
+                    , 'face' //表情
+                    , 'image' //插入图片
+                    , 'help' //帮助
+                ]
+            });
+            //同步富文本内容到textarea
+            form.verify({
+                fu_content: function (value) {
+                    return layedit.sync(index);
+                }
+            })
+            layedit.setContent(index, '');
+            return index;
+        }
 
-          </script>
+        //监听工具条
+        table.on('tool(table-rule)', function (obj) { //注：tool 是工具条事件名，test 是 table 原始容器的属性 lay-filter="对应的值"
+            var data = obj.data; //获得当前行数据
+            var layEvent = obj.event; //获得 lay-event 对应的值（也可以是表头的 event 参数对应的值）
+            var tr = obj.tr; //获得当前行 tr 的 DOM 对象（如果有的话）
+
+            if (layEvent === 'info') { //查看
+                $.post('/admin/article/articleInfo', {id: data.id}, (res) => {
+                    console.log(res)
+                    if (res.status === 200) {
+                        layer.open({
+                            type: 1,
+                            title: '新增',
+                            area: ['900px', '800px'],
+                            content: $('#edit'),
+                        });
+                        let index = articleEdit();
+
+                        $('#id').val(res.data.id);
+                        $('#title').val(res.data.title);
+                        $('#second_title').val(res.data.second_title);
+                        $('#order').val(res.data.order);
+                        $('#pid').empty();
+                        if (res.data.status === 0) {
+                            $('#status').removeAttr('checked');
+                        } else {
+                            $('#status').prop('checked', true);
+                        }
+                        for (let item of res.data.navigation_list) {
+                            if (res.data.pid === item.id) {
+                                $('#pid').append('<option value="' + item.id + '" selected>' + item.menu_name + '</option>')
+                            } else {
+                                $('#pid').append('<option value="' + item.id + '">' + item.menu_name + '</option>')
+                            }
+                        }
+
+                        form.render();
+                        layedit.setContent(index, res.data.content);
+
+                    }
+                })
+
+            } else if (layEvent === 'del') { //删除
+                layer.confirm('真的要删除吗？', {
+                    btn:['确定吧','取消'],
+                },function () {
+                    $.post('/admin/article/articleDelete',{id: data.id}, (res) => {
+                        if (res.status === 200) {
+                            layer.msg(res.message);
+                            setTimeout(()=>{
+                                window.location.reload()
+                            },500)
+                        }else{
+                            layer.msg(res.message);
+                        }
+                    })
+                    }
+                );
+            }
+        });
+
+    });
+
+
+</script>
 {/block}

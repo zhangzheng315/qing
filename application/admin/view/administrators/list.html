@@ -1,97 +1,100 @@
 {extend name="common::layout"/}
 {block name="main-content"}
-        <style>
-            .layui-btn{
-                margin-top: 8px;
-                margin-left: 5px;
-            }
-            #add{
-                padding-top: 20px;
-                padding-right: 30px;
-            }
-        </style>
+<style>
+    .layui-btn {
+        margin-top: 8px;
+        margin-left: 5px;
+    }
 
-        <!-- 右侧主体开始 -->
-        <div class="page-content">
-            <div class="layui-fluid">
-                <div class="layui-row layui-col-space15">
-                    <div class="layui-col-md12">
-                        <div class="layui-card">
-                            <button class="layui-btn" onclick="add()"><i class="layui-icon"></i>增加</button>
-                            <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
-                            <!-- 动态表格 -->
-                            <table id="table-rule" lay-filter="table-rule"></table>
-                        </div>
-                    </div>
+    #add {
+        padding-top: 20px;
+        padding-right: 30px;
+    }
+</style>
+
+<!-- 右侧主体开始 -->
+<div class="page-content">
+    <div class="layui-fluid">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+                <div class="layui-card">
+                    <button class="layui-btn" onclick="add()"><i class="layui-icon"></i>增加</button>
+                    <!--                            <button class="layui-btn layui-btn-danger" onclick="delAll()">-->
+                    <!--                                <i class="layui-icon"></i>批量删除-->
+                    <!--                            </button>-->
+                    <!-- 动态表格 -->
+                    <table id="table-rule" lay-filter="table-rule"></table>
                 </div>
-            </div> 
-           
+            </div>
         </div>
-        <!-- 中部结束 -->
-        <div id="add" style="display: none;">
-            <form class="layui-form"> <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
-                <div class="layui-form-item">
-                  <label class="layui-form-label">姓名</label>
-                  <div class="layui-input-block">
-                    <input type="text" name="name" placeholder="请输入" autocomplete="off" class="layui-input">
-                  </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">邮箱</label>
-                    <div class="layui-input-block">
-                      <input type="text" name="email" placeholder="请输入" autocomplete="off" class="layui-input">
-                    </div>
-                  </div>
-                  <div class="layui-form-item">
-                    <label class="layui-form-label">密码</label>
-                    <div class="layui-input-block">
-                      <input type="text" name="pwd" placeholder="请输入" autocomplete="off" class="layui-input">
-                    </div>
-                  </div>
-                <div class="layui-form-item">
-                  <label class="layui-form-label">选择权限组</label>
-                  <div class="layui-input-block">
-                    <select name="pid" lay-filter="aihao">
-                      {foreach $group as $key=>$val}
-                      <option value="{$val.group_id}">{$val.title}</option>
-                      {/foreach}
-                    </select>
-                  </div>
-                </div>
-                <div class="layui-form-item">
-                  <label class="layui-form-label">启用</label>
-                  <div class="layui-input-block">
-                    <input name="status" value="1" type="checkbox" checked lay-skin="switch">
-                  </div>
-                </div>
-                
-                <div class="layui-form-item">
-                  <div class="layui-input-block">
-                    <button class="layui-btn" lay-submit lay-filter="add">保存</button>
-                  </div>
-                </div>
-                <!-- 更多表单结构排版请移步文档左侧【页面元素-表单】一项阅览 -->
-              </form>
+    </div>
+
+</div>
+<!-- 中部结束 -->
+<div id="add" style="display: none;">
+    <form class="layui-form"> <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
+        <div class="layui-form-item">
+            <label class="layui-form-label">姓名</label>
+            <div class="layui-input-block">
+                <input type="text" name="name" placeholder="请输入" autocomplete="off" class="layui-input">
+            </div>
         </div>
-        <script>
-            layui.use(['laydate','form','table'], function() {
-                var laydate = layui.laydate;
-                var form = layui.form;
-                var table = layui.table;
-                //创建动态表格
-                table.render({
-                    elem: '#table-rule'
-                    , height: 850
-                    , url: '/admin/Administrators/getAdminList' //数据接口
-                    , page: true //开启分页
-                    , cols: [[ //表头
-                        {field: 'id', title: 'ID', width: 80, sort: true, fixed: 'left'}
-                        , {field: 'name', title: '姓名'}
-                        , {field: 'email', title: '邮箱'}
-                        , {field: 'group_id', title: '群组'}
-                        , {field: 'status', title: '状态'}
-                    ]]
-                });
-            });
-          </script>
+        <div class="layui-form-item">
+            <label class="layui-form-label">邮箱</label>
+            <div class="layui-input-block">
+                <input type="text" name="email" placeholder="请输入" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">密码</label>
+            <div class="layui-input-block">
+                <input type="text" name="pwd" placeholder="请输入" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">选择权限组</label>
+            <div class="layui-input-block">
+                <select name="pid" lay-filter="aihao">
+                    {foreach $group as $key=>$val}
+                    <option value="{$val.group_id}">{$val.title}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">启用</label>
+            <div class="layui-input-block">
+                <input name="status" value="1" type="checkbox" checked lay-skin="switch">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="add">保存</button>
+            </div>
+        </div>
+        <!-- 更多表单结构排版请移步文档左侧【页面元素-表单】一项阅览 -->
+    </form>
+</div>
+<script>
+    layui.use(['laydate', 'form', 'table'], function () {
+        var laydate = layui.laydate;
+        var form = layui.form;
+        var table = layui.table;
+        //创建动态表格
+        table.render({
+            elem: '#table-rule'
+            , height: 850
+            , url: '/admin/Administrators/getAdminList' //数据接口
+            , page: true //开启分页
+            , cols: [[ //表头
+                {field: 'id', title: 'ID', width: 80, sort: true, fixed: 'left'}
+                , {field: 'name', title: '姓名'}
+                , {field: 'email', title: '邮箱'}
+                , {field: 'group_id', title: '群组'}
+                , {field: 'status', title: '状态'}
+            ]]
+        });
+    });
+</script>
 {/block}

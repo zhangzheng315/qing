@@ -16,6 +16,9 @@ class Common extends Controller{
         if (isset($data['status']) && $data['status'] != "") {
             $contion['status'] = $data['status'];
         }
+        if (isset($data['deleted_time'])) {
+            $contion['deleted_time'] = $data['deleted_time'];
+        }
         $page = !empty($data['page']) ? $data['page'] : 1;
         $size = !empty($data['limit']) ? $data['limit'] : 20;
         $form = ($page - 1) * $size;
