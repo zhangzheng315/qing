@@ -1,40 +1,50 @@
 <?php
 namespace app\admin\serve;
-use app\admin\model\Article;
+use app\admin\model\Banner;
 use app\admin\model\Navigation;
+use app\admin\serve\NavigationService;
 use think\Request;
 
 
-class ArticleService extends Common{
+class BannerService extends Common{
 
-    public $article;
+    public $banner;
     public $navigation;
+    public $navigationService;
     public function __construct(Request $request = null)
     {
         parent::__construct($request);
-        $this->article = new Article();
+        $this->banner = new Banner();
         $this->navigation = new Navigation();
+        $this->navigationService = new NavigationService();
     }
 
     /**
-     * 创建文章
+     * 创建菜单
      * @param $data
      * @return bool
      */
-    public function articleCreate($param){
+    public function bannerCreate($param){
+        if ($param['pid'] == 0) {
+            $this->setError('请选择父类');
+            return false;
+        }
+        if(!isset($param['status'])) $param['status'] = 0;
+        $pid_name = $this->navigation->where(['id' => $param['pid']])->value('menu_name');
         $data = [
-            'title' => $param['title'],
-            'second_title' => $param['second_title'] ?: '',
+            'img_url' => $param['img_url'],
             'pid' => $param['pid'],
-            'content' => $param['content'],
-            'status' => $param['status'] ?:0,
-            'order' => $param['order'] ?:0,
+            'pid_name' => $pid_name,
+            'title' => $param['title'] ?: '',
+            'status' => $param['status'],
+            'order' => $param['order'] ?: 0,
             'created_time' => time(),
             'updated_time' => 0,
             'deleted_time' => 0,
         ];
-        $res = $this->article->insertGetId($data);
-        if(!$res){
+
+        $add_id = $this->banner->insertGetId($data);
+        if(!$add_id){
             $this->setError('添加失败');
             return false;
         }
@@ -42,21 +52,21 @@ class ArticleService extends Common{
         return true;
     }
 
+
     /**
-     * 文章详情
+     * 导航栏详情
      * @param $param
      * @return array|bool|false|\PDOStatement|string|\think\Model
      * @throws \think\db\exception\DataNotFoundException
      * @throws \think\db\exception\ModelNotFoundException
      * @throws \think\exception\DbException
      */
-    public function articleInfo($param)
+    public function bannerInfo($param)
     {
         $id = $param['id'];
         $where = ['id' => $id];
-        $info = $this->article->find($where);
-        $navigation = $this->navigation->where(['deleted_time' => 0])->select();
-        $info->navigation_list = $navigation;
+        $info = $this->banner->find($where);
+        $info->navigation_list = $this->navigationService->navigationList();
         if(!$info){
             $this->setError('查询失败');
             return false;
@@ -66,21 +76,28 @@ class ArticleService extends Common{
     }
 
     /**
-     * 文章修改
+     * 导航栏修改
      * @param $data
      * @return bool
      */
-    public function articleEdit($data)
+    public function bannerEdit($data)
     {
+        if ($data['pid'] == 0) {
+            $this->setError('请选择父类');
+            return false;
+        }
         if(!isset($data['status'])) $data['status'] = 0;
         if (isset($data['file'])) {
             //layui富文本自带file参数
             unset($data['file']);
         }
         $where = ['id' => $data['id']];
+        $pid_name = $this->navigation->where(['id' => $data['pid']])->value('menu_name');
+        $data['pid_name'] = $pid_name;
         $data['updated_time'] = time();
-        $res = $this->article->update($data,$where);
-        if(!$res){
+
+        $add_id = $this->banner->update($data,$where);
+        if(!$add_id){
             $this->setError('修改失败');
             return false;
         }
@@ -93,14 +110,14 @@ class ArticleService extends Common{
      * @param $param
      * @return bool
      */
-    public function articleDelete($param)
+    public function bannerDelete($param)
     {
         $where = ['id' => $param['id']];
         $data = [
             'updated_time' => time(),
             'deleted_time' => time(),
         ];
-        $res = $this->article->update($data,$where);
+        $res = $this->banner->update($data,$where);
         if(!$res){
             $this->setError('删除失败');
             return false;
@@ -108,4 +125,5 @@ class ArticleService extends Common{
         $this->setMessage('删除成功');
         return true;
     }
+
 }

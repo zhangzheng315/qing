@@ -139,6 +139,7 @@
         });
         //修改
         form.on('submit(edit)', function(data){
+            console.log(data.field);
             $.post(edit_url,data.field,(res)=>{
                 if(res.status === 200){
                     layer.msg(res.message);
