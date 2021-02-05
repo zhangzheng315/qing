@@ -1,0 +1,799 @@
+@media screen and (min-width: 1200px) {
+    .layui-container {
+        width: 1200px !important;
+        padding: 0 !important;
+    }
+}
+
+#service {
+    .title {
+        font-size: 30px;
+        color: #333;
+        font-weight: bold;
+        letter-spacing: 2px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    #banner {
+        height: 600px;
+        position: relative;
+
+        .layui-carousel {
+            .layui-carousel-ind {
+                display: none !important;
+            }
+        }
+    }
+
+    nav {
+        background-color: #252525;
+        height: 60px;
+
+        .layui-container {
+            height: 100%;
+
+            .nav-content {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                li {
+                    font-size: 16px;
+                    color: #fff;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: #00cc99;
+                    }
+                }
+            }
+        }
+
+    }
+
+    #module {
+        padding: 100px 0 110px;
+
+        .title {
+            margin-bottom: 50px;
+        }
+
+        .module-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+
+            li {
+                width: 370px;
+                height: 370px;
+                box-shadow: 0px 0px 29px 0px rgba(50, 50, 50, 0.11);
+                margin: 0 30px 40px 0;
+                cursor: pointer;
+                .text {
+                    padding: 24px 30px 0;
+                    box-sizing: border-box;
+
+                    h5 {
+                        font-size: 24px;
+                        font-weight: bold;
+                        color: #333;
+                        margin-bottom: 15px;
+                    }
+
+                    p {
+                        font-size: 16px;
+                        color: #333;
+                        line-height: 1.5;
+                    }
+                }
+            }
+        }
+
+        button {
+            width: 133px;
+            height: 40px;
+            display: block;
+            background: #00CC99;
+            border-radius: 20px;
+            font-size: 14px;
+            margin: 30px auto 0;
+            border: none;
+            outline: none;
+            color: #fff;
+            cursor: pointer;
+        }
+    }
+
+    // 轻直播为您创造价值
+    #light-live {
+        height: 422px;
+        background-color: #fff;
+        padding: 70px 0 65px;
+        background: url('/static/image/site_service/green_bg.png') no-repeat;
+        background-size: cover;
+        box-sizing: border-box;
+
+        .title {
+            margin-bottom: 51px;
+            color: #fff;
+        }
+
+        .live-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            box-sizing: border-box;
+
+            .live-item {
+                .item-top {
+                    color: #fff;
+                    display: flex;
+                    align-items: center;
+
+                    .nums {
+                        font-size: 60px;
+                        font-weight: bold;
+                        margin: 0 5px;
+                    }
+
+                    span {
+                        font-size: 30px;
+                        margin: 0 10px;
+                    }
+                }
+
+                .item-bottom {
+                    padding-left: 8px;
+                    margin-top: 30px;
+                    font-size: 18px;
+                    color: #fff;
+                }
+            }
+        }
+
+        button {
+            width: 133px;
+            height: 40px;
+            display: block;
+            background: transparent;
+            border-radius: 20px;
+            font-size: 14px;
+            margin: 30px auto 0;
+            border: 1px solid #F9F9F9;
+            outline: none;
+            color: #fff;
+            cursor: pointer;
+        }
+    }
+
+    .plans {
+        padding: 70px 0;
+
+        &:nth-child(2n - 1) {
+            background-color: #F9F9F9;
+        }
+
+        .layui-container {
+            display: flex;
+            align-items: center;
+            padding-left: 70px !important;
+
+            .plans-text {
+                width: 400px;
+                margin-right: 150px;
+
+                .text-head {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 40px;
+
+                    img {
+                        width: 55px;
+                        height: 55px;
+                        margin-right: 30px;
+                    }
+
+                    h6 {
+                        font-size: 40px;
+                        color: #333;
+                    }
+                }
+
+                p {
+                    font-size: 14px;
+                    color: #333;
+                    line-height: 1.5;
+                    margin-bottom: 32px;
+                }
+
+                button {
+                    width: 133px;
+                    height: 40px;
+                    background: #00CC99;
+                    border-radius: 20px;
+                    border: none;
+                    outline: none;
+                    color: #fff;
+                    cursor: pointer;
+                }
+            }
+
+            .plans-img {
+                width: 470px;
+                height: 450px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        &:nth-child(2n) {
+            .layui-container {
+                .plans-text {
+                    margin-right: 0px;
+
+                }
+
+                .plans-img {
+                    margin-right: 150px;
+                }
+            }
+
+        }
+
+    }
+
+    // 5g时代
+    #fiveG {
+        height: 500px;
+        background: url('/static/image/index/fiveG.png') no-repeat;
+        background-size: cover;
+        position: relative;
+
+        .hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 47, 35, .7);
+            z-index: 0;
+        }
+
+        .fiveg-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 80px 0 0;
+            box-sizing: border-box;
+
+            h2 {
+                font-size: 60px;
+                color: #fff;
+                text-align: center;
+            }
+
+            h5 {
+                font-size: 40px;
+                color: #fff;
+                font-weight: 400;
+                margin: 45px auto 68px;
+            }
+
+            button {
+                width: 31%;
+                height: 60px;
+                border: 0;
+                border: 2px solid #FFFFFF;
+                border-radius: 30px;
+                outline: none;
+                background-color: transparent;
+                font-size: 30px;
+                color: #FFFFFF;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #00cc99;
+                    color: #fff;
+                    border: 0;
+                }
+            }
+        }
+
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1300px) {
+        #banner {
+            height: 400px;
+        }
+
+        .layui-container {
+            width: 99% !important;
+        }
+
+        #module {
+            padding: 60px 0 70px;
+
+            .layui-container {
+                padding: 0 5px;
+
+                .title {
+                    margin-bottom: 30px;
+                }
+
+                .module-content {
+                    li {
+                        width: 31%;
+                        height: 350px;
+                        margin: 0 20px 30px 0;
+
+                        img {
+                            width: 100%;
+                        }
+
+                        .text {
+                            padding: 24px 30px 0;
+
+                            h5 {
+                                font-size: 18px;
+                            }
+
+                            p {
+                                font-size: 14px;
+
+                            }
+                        }
+                    }
+                }
+
+                button {
+                    width: 90px;
+                }
+            }
+        }
+
+        .plans {
+            padding: 50px 0;
+
+            .layui-container {
+                display: flex;
+                align-items: center;
+                padding: 0 70px !important;
+
+                .plans-text {
+                    width: 380px;
+                    margin-right: 130px;
+
+                    .text-head {
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 40px;
+
+                        img {
+                            width: 45px;
+                            height: 45px;
+                            margin-right: 30px;
+                        }
+
+                        h6 {
+                            font-size: 32px;
+                            color: #333;
+                        }
+                    }
+
+                    p {
+                        font-size: 14px;
+                        color: #333;
+                        line-height: 1.5;
+                        margin-bottom: 32px;
+                    }
+
+                    button {
+                        width: 133px;
+                        height: 40px;
+                        background: #00CC99;
+                        border-radius: 20px;
+                        border: none;
+                        outline: none;
+                        color: #fff;
+                        cursor: pointer;
+                    }
+                }
+
+                .plans-img {
+                    width: 350px;
+                    height: 330px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+
+            &:nth-child(2n) {
+                .layui-container {
+                    .plans-text {
+                        margin-right: 0px;
+
+                    }
+
+                    .plans-img {
+                        margin-right: 130px;
+                    }
+                }
+
+            }
+
+        }
+
+        #fiveG {
+            height: 370px;
+
+            .fiveg-content {
+                padding: 60px 0 0;
+
+                h2 {
+                    font-size: 45px;
+                }
+
+                h5 {
+                    font-size: 32px;
+                    margin: 21px auto 50px;
+                }
+
+                button {
+                    width: 28%;
+                    height: 50px;
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 1024px) and (max-width: 1300px) {
+        .plans {
+            padding: 50px 0;
+
+            .layui-container {
+                display: flex;
+                align-items: center;
+                padding-left: 100px !important;
+
+                .plans-text {
+                    width: 380px;
+                    margin-right: 160px;
+                }
+
+                .plans-img {
+                    width: 370px;
+                    height: 350px;
+                }
+            }
+
+            &:nth-child(2n) {
+                .layui-container {
+                    .plans-text {
+                        margin-right: 0px;
+
+                    }
+
+                    .plans-img {
+                        margin-right: 160px;
+                    }
+                }
+
+            }
+
+        }
+    }
+
+    @media screen and (min-width: 992px) and (max-width: 1300px) {
+        .title {
+            font-size: 26px;
+        }
+
+        nav {
+            .layui-container {
+                width: 810px !important;
+
+                .nav-content {
+                    li {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 992px) {
+        .title {
+            font-size: 26px;
+        }
+
+        #fiveG {
+            height: 330px;
+
+            .fiveg-content {
+                padding: 60px 0 0;
+
+                h2 {
+                    font-size: 35px;
+                }
+
+                h5 {
+                    font-size: 26px;
+                    margin: 25px auto 40px;
+                }
+
+                button {
+                    width: 28%;
+                    height: 45px;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) and (max-width:892px) {
+        #module {
+            padding: 60px 0 50px;
+
+            .layui-container {
+                padding: 0 5px;
+
+                .title {
+                    margin-bottom: 30px;
+                }
+
+                .module-content {
+                    li {
+                        width: 31%;
+                        height: 290px;
+                        margin: 0 auto 20px;
+
+                        &:nth-child(n + 3) {
+                            margin: 0 auto;
+                        }
+
+                        img {
+                            width: 100%;
+                        }
+
+                        .text {
+                            padding: 24px 30px 0;
+
+                            h5 {
+                                font-size: 18px;
+                            }
+
+                            p {
+                                font-size: 14px;
+
+                            }
+                        }
+                    }
+                }
+
+                button {
+                    width: 90px;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .title {
+            font-size: 22px;
+        }
+
+        #banner {
+            height: 300px;
+        }
+
+        nav {
+            .layui-container {
+                width: 90%;
+
+                .nav-content {
+                    li {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+
+        #module {
+            padding: 60px 0 50px;
+            width: 95%;
+            margin: 0 auto;
+
+            .layui-container {
+                padding: 0 5px;
+
+                .title {
+                    margin-bottom: 30px;
+                }
+
+                .module-content {
+                    li {
+                        width: 48%;
+                        height: 200px;
+                        margin: 0 auto 20px;
+                        border-radius: 5px;
+
+                        &:nth-child(n + 3) {
+                            margin: 0 auto;
+                        }
+
+                        img {
+                            width: 100%;
+                            height: 55%;
+                            object-fit: cover;
+                            border-radius: 5px 5px 0 0;
+                        }
+
+                        .text {
+                            padding: 10px 20px 0;
+
+                            h5 {
+                                font-size: 14px;
+                                margin-bottom: 8px;
+                            }
+
+                            p {
+                                font-size: 12px;
+
+                            }
+                        }
+                    }
+                }
+
+                button {
+                    width: 90px;
+                }
+            }
+        }
+
+        #light-live {
+            padding-top: 30px;
+            height: 260px;
+
+            .title {
+                margin-bottom: 25px;
+            }
+
+            .live-content {
+                padding-bottom: 12px;
+                flex-wrap: wrap;
+
+                .live-item {
+                    width: 45%;
+                    margin-bottom: 12px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    align-items: center;
+
+                    .item-top {
+                        .nums {
+                            font-size: 35px;
+                        }
+
+                        span {
+                            font-size: 22px;
+                            margin: 0 4px;
+                        }
+                    }
+
+                    .item-bottom {
+                        margin-top: 5px;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+
+
+        .plans {
+            padding: 40px 0;
+
+            .layui-container {
+                padding: 0 !important;
+                width: 98%;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .plans-text,
+                .plans-img {
+                    margin-right: 0px;
+                }
+
+                .plans-text {
+                    margin-bottom: 30px;
+                    width: 90%;
+
+                    .text-head,
+                    p {
+                        width: 80%;
+                        margin: 0 auto;
+                        font-size: 12px;
+
+                    }
+
+                    .text-head {
+                        margin-bottom: 15px;
+
+                        img {
+                            width: 23px;
+                            height: 23px;
+                        }
+
+                        h6 {
+                            font-size: 18px;
+                        }
+
+                    }
+
+                    button {
+                        display: block;
+                        width: 100px;
+                        height: 35px;
+                        margin: 20px auto 0;
+                    }
+                }
+
+                .plans-img {
+                    width: 230px;
+                    height: 210px;
+                }
+            }
+
+            &:nth-child(2n) {
+                .layui-container {
+                    .plans-text {
+                        order: -1;
+                    }
+
+                    .plans-img {
+                        margin-right: 0px;
+                    }
+                }
+
+            }
+
+        }
+
+        #fiveG {
+            height: 260px;
+
+            .fiveg-content {
+                padding: 30px 0 20px;
+
+                h2 {
+                    font-size: 22px;
+                }
+
+                h5 {
+                    font-size: 18px;
+                    text-align: center;
+                    margin: 31px auto 40px;
+                }
+
+                button {
+                    width: 46%;
+                    height: 40px;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

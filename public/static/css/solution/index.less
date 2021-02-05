@@ -1,0 +1,706 @@
+#solution {
+    .title {
+        font-size: 30px;
+        color: #333;
+        font-weight: bold;
+        letter-spacing: 2px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    #banner {
+        height: 600px;
+        position: relative;
+
+        .layui-carousel {
+            .layui-carousel-ind {
+                display: none !important;
+            }
+        }
+    }
+
+    #industry {
+        padding: 85px 0 87px;
+
+        .industry-content {
+            display: flex;
+            align-items: center;
+            margin-top: 55px;
+
+            li {
+                width: 24%;
+                margin: 0 auto 20px;
+                position: relative;
+                cursor: pointer;
+
+                img {
+                    width: 100%;
+                }
+
+                .text {
+                    position: absolute;
+                    bottom: -24%;
+                    left: 50%;
+                    transform: translateY(50%);
+                    transform: translateX(-50%);
+                    width: 70%;
+                    height: 116px;
+                    border-radius: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    background: #FFFFFF;
+                    box-shadow: 0px 5px 10px 0px rgba(204, 204, 204, 0.29);
+                    border-radius: 6px;
+
+
+
+                    h6 {
+                        font-size: 22px;
+                        margin-bottom: 13px;
+                        color: #333;
+
+                    }
+
+                    p {
+                        width: 85%;
+                        font-size: 14px;
+                        color: #666;
+
+                    }
+                }
+
+                &:hover {
+                    .text {
+                        background-color: #00cc99;
+
+                    }
+
+                    p,
+                    h6 {
+                        color: #fff;
+                    }
+
+                }
+
+            }
+        }
+    }
+
+    #scene {
+        padding: 39px 0 50px;
+        background-color: #FBF8FB;
+
+        .title {
+            margin-bottom: 61px;
+        }
+
+        .scene-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+
+            li {
+                width: 23%;
+                height: 230px;
+                margin: 0 auto 29px;
+                background: url('/static/image/solution/hangye.png') no-repeat;
+                background-size: cover;
+                border-radius: 5px;
+                position: relative;
+                cursor: pointer;
+
+                div {
+                    position: absolute;
+                    bottom: 0%;
+                    width: 100%;
+                    height: 60px;
+                    display: flex;
+                    align-items: center;
+                    // justify-content: space-around;
+                    padding-left: 8%;
+                    box-sizing: border-box;
+                    border-radius: 0 0 5px 5px;
+                    padding-bottom: 4px;
+                    padding-bottom: 10px;
+
+                    p {
+
+                        font-size: 22px;
+                        color: #fff;
+                        padding-bottom: 4px;
+                        border-bottom: 2px solid #00cc99;
+                        margin-right: 45%;
+                    }
+
+                    img {
+                        display: none;
+                    }
+                }
+
+                &:hover {
+                    div {
+                        background-color: #00cc99;
+
+                        img {
+                            display: block;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    // 赋能「100,000+」企业
+    #qiye {
+        // height: 829px;
+        background-color: #fff;
+        padding: 60px 0 20px;
+
+        .title {
+            margin-bottom: 70px;
+        }
+
+        nav {
+            width: 90%;
+            margin: 0 auto 70px;
+
+            .logo-title {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+
+                .active {
+                    background-color: #00cc99;
+                    // padding: 0 15px;
+                    border-radius: 20px;
+
+                    span {
+                        color: #fff;
+                        // font-weight: bold;
+
+                    }
+                }
+
+                li {
+                    cursor: pointer;
+                    height: 32px;
+                    width: 8%;
+                    margin: 0 auto;
+                    line-height: 32px;
+                    text-align: center;
+                    padding: 0 15px;
+
+                    &:hover {
+                        background-color: #00cc99;
+                        border-radius: 20px;
+
+                        span {
+                            color: #fff;
+                            // font-weight: bold;
+
+                        }
+                    }
+
+                    span {
+                        font-size: 18px;
+                        color: #666;
+                        margin-bottom: 5px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+        .logo-box {
+            .logo-imgs {
+                display: none;
+
+                li {
+                    width: 13.5%;
+                    height: 67px;
+                    display: inline-block;
+                    margin-right: 35px;
+                    margin-bottom: 62px;
+
+                    &:nth-child(6n) {
+                        margin-right: 0px;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+                }
+            }
+
+            .active {
+                display: block;
+            }
+        }
+    }
+
+    // 5g时代
+    #kefu {
+        height: 260px;
+        background: url('/static/image/index/fiveG.png') no-repeat;
+        background-size: cover;
+        position: relative;
+
+        .hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .8);
+            z-index: 0;
+        }
+
+        .kefu-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 0 0;
+            box-sizing: border-box;
+
+            h2 {
+                font-size: 60px;
+                color: #fff;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            button {
+                width: 31%;
+                height: 60px;
+                border: 0;
+                border: 2px solid #FFFFFF;
+                border-radius: 30px;
+                outline: none;
+                background-color: transparent;
+                font-size: 30px;
+                color: #FFFFFF;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #00cc99;
+                    color: #fff;
+                    border: 0;
+                }
+            }
+        }
+
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1300px) {
+        #banner {
+            height: 400px;
+        }
+
+        #qiye {
+            nav {
+                margin: 0 auto 70px;
+
+                .logo-title {
+                    li {
+                        span {
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+
+            .logo-box {
+                .logo-imgs {
+
+                    li {
+                        width: 18%;
+                        height: 55px;
+                        margin: 0 15px 50px 0;
+
+                    }
+                }
+            }
+        }
+
+        #kefu {
+            height: 200px;
+
+            .kefu-content {
+                padding: 30px 0 0;
+
+                h2 {
+                    font-size: 45px;
+                    margin-bottom: 25px;
+                }
+
+                button {
+                    width: 28%;
+                    height: 50px;
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 992px) and (max-width: 1195px) {
+        .title {
+            font-size: 26px;
+        }
+
+        #industry {
+            padding: 65px 0 70px;
+
+            .layui-container {
+                width: 95%;
+
+                .industry-content {
+                    margin-top: 35px;
+
+                    li {
+                        width: 23%;
+                        height: 170px;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            border-radius: 5px;
+                        }
+
+                        .text {
+                            width: 70%;
+                            height: 90px;
+                            bottom: -28%;
+
+                            h6 {
+                                font-size: 18px;
+                                margin-bottom: 5px;
+                            }
+
+                            p {
+                                width: 90%;
+                                font-size: 14px;
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #scene {
+            .layui-container {
+                width: 95%;
+
+                .title {
+                    margin-bottom: 35px;
+                }
+
+                .scene-content {
+                    li {
+                        width: 24%;
+                        height: 190px;
+                        margin: 0 auto 5px;
+
+                        div {
+                            height: 45px;
+                            padding-bottom: 2px;
+
+                            p {
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 992px) {
+        #industry {
+            padding: 55px 0 60px;
+
+            .layui-container {
+                width: 97%;
+                padding: 0;
+
+                .industry-content {
+                    margin-top: 35px;
+
+                    li {
+                        width: 23%;
+                        height: 140px;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            border-radius: 5px;
+                        }
+
+                        .text {
+                            width: 70%;
+                            height: 80px;
+                            bottom: -32%;
+
+                            h6 {
+                                font-size: 16px;
+                                margin-bottom: 5px;
+                            }
+
+                            p {
+                                width: 90%;
+                                font-size: 12px;
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #scene {
+            padding: 30px 0 40px;
+
+            .layui-container {
+                width: 97%;
+                padding: 0;
+
+                .title {
+                    margin-bottom: 25px;
+                }
+
+                .scene-content {
+                    li {
+                        width: 24%;
+                        height: 160px;
+                        margin: 0 auto 10px;
+
+                        div {
+                            height: 40px;
+                            padding-bottom: 2px;
+
+                            p {
+                                font-size: 16px;
+                            }
+
+                            img {
+                                width: 20px;
+                                height: 20px;
+                                object-fit: cover;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #qiye {
+            .layui-container {
+                width: 90%;
+
+                .title {
+                    margin-bottom: 75px;
+                }
+
+                nav {
+                    width: 95%;
+
+                    .logo-title {
+                        li {
+                            width: 10%;
+                        }
+                    }
+                }
+
+                .logo-box {
+                    .logo-imgs {
+                        li {
+                            width: 19%;
+                            margin: 0 auto 40px;
+                        }
+                    }
+                }
+            }
+        }
+
+        #kefu {
+            height: 170px;
+
+            .kefu-content {
+                padding: 30px 0 0;
+
+                h2 {
+                    font-size: 35px;
+                }
+
+                button {
+                    width: 28%;
+                    height: 45px;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .title {
+            font-size: 22px;
+        }
+
+        #banner {
+            height: 300px;
+        }
+
+        #industry {
+            padding: 35px 0 50px;
+            .layui-container {
+                width: 90%;
+                padding: 0;
+
+                .industry-content {
+                    margin-top: 35px;
+                    flex-wrap: wrap;
+                    li {
+                        width: 45%;
+                        height: 120px;
+                        margin-bottom: 55px;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            border-radius: 5px;
+                        }
+
+                        .text {
+                            width: 80%;
+                            height: 70px;
+                            bottom: -30%;
+
+                            h6 {
+                                font-size: 14px;
+                                margin-bottom: 5px;
+                            }
+
+                            p {
+                                width: 90%;
+                                font-size: 12px;
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #scene {
+            padding: 30px 0 40px;
+
+            .layui-container {
+                width: 95%;
+                padding: 0;
+
+                .title {
+                    margin-bottom: 25px;
+                }
+
+                .scene-content {
+
+                    li {
+                        width: 47%;
+                        height: 130px;
+                        margin: 0 auto 10px;
+
+                        div {
+                            height: 35px;
+                            padding-bottom: 2px;
+
+                            p {
+                                font-size: 14px;
+                            }
+
+                            img {
+                                width: 15px;
+                                height: 15px;
+                                object-fit: cover;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #qiye {
+            padding: 40px 0 20px;
+
+            .title {
+                margin-bottom: 35px;
+            }
+
+            nav {
+                width: 100%;
+                overflow-x: auto;
+                margin: 0 auto 30px;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                .logo-title {
+                    width: auto;
+
+                    li {
+                        flex-shrink: 0;
+                        width: 14%;
+                        padding: 0px;
+                        // margin-bottom: 5px;
+                        height: 25px;
+                        line-height: 25px;
+
+                        span {
+                            margin: 0;
+                            // padding: 0 10px;
+                            font-size: 14px;
+
+                        }
+                    }
+                }
+            }
+
+            .logo-box {
+                .logo-imgs {
+                    li {
+                        width: 19%;
+                        height: 50px;
+                        margin-right: 20px;
+                        margin-bottom: 22px;
+                    }
+                }
+            }
+        }
+
+        #kefu {
+            height: 150px;
+
+            .kefu-content {
+                padding: 25px 0 15px;
+
+                h2 {
+                    font-size: 22px;
+                }
+
+                button {
+                    width: 36%;
+                    height: 40px;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
