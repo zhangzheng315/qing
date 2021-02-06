@@ -7,7 +7,6 @@ use think\Validate;
 
 
 class Administrators extends Common{
-
     /**
      * 管理员列表
      */
@@ -30,9 +29,12 @@ class Administrators extends Common{
      * 权限管理
      */
     public function rule(){
-        $str = ModelAdministrators::getFieldList('auth_rule','title,rule_id',['status'=>1]);
-        $add_url = '';
-        return $this->fetch('',['rules'=>$str,'add_url'=>$add_url]);
+        $str = ModelAdministrators::getFieldList('auth_rule','title,rule_id',['deleted_time'=>0]);
+        $add_url = '/admin/administrators/addRule';
+        $edit_url = '/admin/administrators/ruleEdit';
+        $ser = new ServeAdministrators();
+        $str = $ser->authTree();
+        return $this->fetch('',['rules'=>$str,'add_url'=>$add_url,'edit_url'=>$edit_url,]);
     }
 
     /**
@@ -40,8 +42,8 @@ class Administrators extends Common{
      */
     public function getRuleList(){
         $data = input('get.');
-        $data['status'] = 1;
-        $str = ServeAdministrators::data_paging($data,'auth_rule','sort');
+        $data['deleted_time'] = 0;
+        $str = ServeAdministrators::data_paging($data,'auth_rule','order');
         return layshow($this->code,'ok',$str['data'],$str['count']);
     }
 
@@ -91,14 +93,14 @@ class Administrators extends Common{
             'title' => 'require',
             'status' => 'require',
             'pid' => 'require',
-            'sort' => 'require',
+            'order' => 'require',
         ];
         $msg =
         [
             'title' => '缺少参数@title',
             'status' => '缺少参数@status',
             'pid' => '缺少参数@pid',
-            'sort' => '缺少参数@sort'
+            'order' => '缺少参数@order'
         ];
         $validate = new Validate($rules,$msg);
         if(!$validate->check($data)){
@@ -109,6 +111,73 @@ class Administrators extends Common{
             return show($this->ok,'添加成功');
         }else{
             return show($this->fail,'添加失败');
+        }
+    }
+
+    /**
+     * 获取角色详情
+     */
+    public function ruleInfo(){
+        $data = input('post.');
+        $str = ServeAdministrators::data_one_info($data,'auth_rule');
+        $auth =  ModelAdministrators::getFieldList('auth_rule','title,rule_id',['status'=>1,'deleted_time'=>0]);
+        $str['auth'] = $auth;
+        if($str){
+            return show($this->ok,'获取成功',$str);
+        }else{
+            return show($this->fail,'获取失败');
+        }
+    }
+
+    /**
+     * 新增权限列表数据
+     */
+    public function ruleEdit(){
+        $data = input('post.');
+        $rules =
+            [
+                'title' => 'require',
+                'pid' => 'require',
+                'order' => 'require',
+            ];
+        $msg =
+            [
+                'title' => '缺少参数@title',
+                'pid' => '缺少参数@pid',
+                'order' => '缺少参数@order'
+            ];
+        $validate = new Validate($rules,$msg);
+        if(!$validate->check($data)){
+            return show($this->fail,$validate->getError());
+        }
+        $str = ServeAdministrators::ruleEdit($data);
+        if($str){
+            return show($this->ok,'修改成功');
+        }else{
+            return show($this->fail,'修改失败');
+        }
+    }
+
+    public function ruleDelete()
+    {
+        $data = input('post.');
+        $rules =
+            [
+                'rule_id' => 'require',
+            ];
+        $msg =
+            [
+                'rule_id' => '缺少参数@rule_id'
+            ];
+        $validate = new Validate($rules,$msg);
+        if(!$validate->check($data)){
+            return show($this->fail,$validate->getError());
+        }
+        $str = ServeAdministrators::ruleDelete($data);
+        if($str){
+            return show($this->ok,'修改成功');
+        }else{
+            return show($this->fail,'修改失败');
         }
     }
 
@@ -177,7 +246,6 @@ class Administrators extends Common{
      */
     public function roleCreate(){
         $data = input('post.');
-        dd($data);
         $rules =
             [
                 'name' => 'require',

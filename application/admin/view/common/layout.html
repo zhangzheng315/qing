@@ -29,7 +29,7 @@
             .btn{
                 margin-top: 0 !important;
             }
-            #add{
+            #add, #edit {
                 padding-top: 20px;
                 padding-right: 30px;
             }
@@ -47,13 +47,26 @@
         <!-- 中部结束 -->
     </body>
 </html>
-<script type="text/html" id="barDemo">
-    <a class="layui-btn btn layui-btn-xs" lay-event="edit">编辑</a>
-    <a class="layui-btn btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
-</script>
 <script>
-    var add_url = "{$add_url}" ? "{$add_url}" :'';
-    console.log(add_url);
+    //判断是否设置添加地址
+    {notempty name="$add_url"}
+    var add_url = "{$add_url}";
+    {else}
+    var add_url = "";
+    {/notempty}
+    //判断是否设置修改地址
+    {notempty name="$edit_url"}
+    var edit_url = "{$edit_url}";
+    {else}
+    var edit_url = "";
+    {/notempty}
+    //判断是否设置删除地址
+    {notempty name="$del_url"}
+    var del_url = "{$del_url}";
+    {else}
+    var del_url = "";
+    {/notempty}
+
     layui.use(['laydate','form','table','layedit'], function(){
         var laydate = layui.laydate;
         var form = layui.form;
@@ -69,21 +82,22 @@
             elem: '#end' //指定元素
         });
 
-
         //新增
         window.add = function(){
             layer.open({
                 type: 1,
                 title:'新增',
                 area: ['900px', '800px'],
-                content: $('#add') //这里content是一个DOM，注意：最好该元素要存放在body最外层，否则可能被其它的相对元素所影响
+                content: $('#add'),
             });
+            //设置图片上传接口
             layedit.set({
                 uploadImage: {
                     url: "{:url('admin/common_file/uploadFile')}" //接口url
                     ,type: 'post' //默认post
                 }
             });
+            //建立编辑器
             var index = layedit.build('myEdit',{
                 tool: ['strong' //加粗
                     ,'italic' //斜体
@@ -99,7 +113,8 @@
                     ,'image' //插入图片
                     ,'help' //帮助
                 ]
-            }); //建立编辑器
+            });
+            //同步富文本内容到textarea
             form.verify({
                 fu_content:function (value) {
                     return layedit.sync(index);
@@ -124,8 +139,9 @@
         });
         //修改
         form.on('submit(edit)', function(data){
-            $.post('/admin/Administrators/editGroup',data.field,(res)=>{
-                if(res.status == 200){
+            console.log(data.field);
+            $.post(edit_url,data.field,(res)=>{
+                if(res.status === 200){
                     layer.msg(res.message);
                     setTimeout(()=>{
                         window.location.reload()
@@ -136,6 +152,7 @@
             })
             return false;
         });
+
     });
 
     /*用户-停用*/

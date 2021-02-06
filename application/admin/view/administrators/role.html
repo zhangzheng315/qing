@@ -10,10 +10,6 @@
         margin-top: 0 !important;
     }
 
-    #add, #edit {
-        padding-top: 20px;
-        padding-right: 30px;
-    }
 </style>
 
 <!-- 右侧主体开始 -->
@@ -23,7 +19,6 @@
             <div class="layui-col-md12">
                 <div class="layui-card">
                     <button class="layui-btn" onclick="add()"><i class="layui-icon"></i>增加</button>
-                    <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除
                     </button>
                     <!-- 动态表格 -->
                     <table id="table-rule" lay-filter="table-rule"></table>
@@ -129,7 +124,6 @@
 
             if (layEvent === 'edit') { //查看
                 $.post('/admin/Administrators/getRoleInfo', {group_id: data.group_id}, (res) => {
-                    console.log(res)
                     if (res.status === 200) {
 
                         $('#title').val(res.data.title);
@@ -158,7 +152,7 @@
                 layer.open({
                     type: 1,
                     title: '编辑',
-                    area: ['700px', '450px'],
+                    area: ['900px', '800px'],
                     content: $('#edit') //这里content是一个DOM，注意：最好该元素要存放在body最外层，否则可能被其它的相对元素所影响
                 });
             } else if (layEvent === 'del') { //删除
