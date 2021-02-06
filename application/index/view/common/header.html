@@ -13,9 +13,14 @@
        }
       } */
         @media screen and (min-width: 1200px)  {
-            .layui-container {
+            /* .layui-container {
                 width: 1200px !important;
                 padding: 0 !important;
+            } */
+            .pc-layui-container {
+                width: 1200px;
+                margin: 0 auto;
+                background: #ffffff;
             }
             .mobile-layui-container {
               display: none !important;
@@ -44,10 +49,24 @@
             color: #00cc99;
             margin-right: 30px;
         }
+        .menu>.menu-item>a {
+            font-size: 16px;
+            font-weight: 400;
+            color: #000000;
+        }
         .product-pannel {
+            position: relative;
+            background: #ffffff;
             padding: 20px 0 33px;
             display: flex;
             justify-content: center;
+            /* visibility: hidden;
+            overflow: hidden;
+            z-index: 999;
+            margin-top: -80%;
+
+
+            transition: all .4s; */
         }
         .product-pannel>dl.dl-border {
            padding-right: 160px;
@@ -65,9 +84,10 @@
         }
         }
         @media screen and (max-width: 1200px) and (min-width: 1000px) {
-              .layui-container {
-                  width: 960px !important;
-                  padding: 0 !important;
+              .pc-layui-container {
+                  width: 960px ;
+                  margin: 0 auto;
+                  background: #ffffff;
               }
               .navbar-collpase {
             display: none;
@@ -78,6 +98,11 @@
               .nav-menu {
                   width: 60%;
               }
+              .menu>.menu-item>a {
+            font-size: 16px;
+            font-weight: 400;
+            color: #000000;
+        }
               .nav-btn>span {
                display: inline-block;
                 width: 80px;
@@ -116,40 +141,52 @@
         }
 
         @media screen and (max-width: 1000px) and (min-width: 820px) {
-            .layui-container {
-                  width: 780px !important;
-                  padding: 0 !important;
+            .pc-layui-container {
+                  width: 780px;
+                  margin: 0 auto;
+                  background: #ffffff;
               }
               .navbar-collpase {
-            display: none;
+              display: none;
         }
               .mobile-layui-container {
               display: none !important;
         }
-             .layui-container>.q-logo{
-                width: 20%;
+             .pc-layui-container>.q-logo{
+                width: 12%;
             }
+            .q-logo>h1>img{
+                width: 100%;
+            }
+
             .nav-menu {
-              width: 74%;
+              width: 60%;
            }
            .nav-btn {
-               display: none;
+               display: block;
            }
-           /* .nav-btn>span {
+
+           .menu>.menu-item>a {
+            font-size: 14px;
+            font-weight: 400;
+            color: #000000;
+        }
+           .nav-btn>span {
             display: inline-block;
-            width: 90px;
-            height: 36px;
-            line-height: 36px;
-            border-radius: 18px;
-            font-size: 16px;
+            width: 72px;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 15px;
+            font-size: 12px;
             text-align: center;
             cursor: pointer;
         }
+
         .login {
             border: 1px solid #00cc99;
             color: #00cc99;
-            margin-right: 30px;
-        } */
+            margin-right: 20px;
+        }
         .product-pannel {
             padding: 16px 0 30px;
             display: flex;
@@ -185,6 +222,7 @@
                 height: 65px;
                 padding: 0 15px;
                 z-index: 999;
+                background: #ffffff;
             }
             .q-logo {
                 width: 100px;
@@ -198,13 +236,12 @@
              .navbar-collpase {
                  position: absolute;
                  width: 100%;
-                 top: -284px;
-                 max-height: 350px;
-                 overflow-y: auto;
+                 top: -500px;
                  background: #ffffff;
                  z-index: -1;
                 transition: all .5s linear;
                 border-top: 1px solid #d2d2d2;
+                box-shadow: 0px 3px 4px 0px rgba(193, 193, 193, 0.5);
              }
              .navbar-collpase.collpase-true {
                  top: 65px;
@@ -254,11 +291,12 @@
              }
 
              .nav-pro-con {
-            display: none;
-            width: 100%;
-            margin-top: 10px;
+               width: 100%;
+               /* margin-top: 10px; */
+               overflow: hidden;
+               transition: height 0.5s;
             /* height: 100px; */
-        }
+            }
         
         .nav-pro-con>span {
             display: inline-block;
@@ -266,9 +304,147 @@
             height: 34px;
             line-height: 34px;
         }
+
+        .login-nav {
+           margin: 7.5px 0;
+            display: flex;
+            justify-content: space-around;
+        }
+        .login-nav>li {
+            width: 90px;
+            height: 36px;
+            line-height: 36px;
+            text-align: center;
+            border-radius: 18px;
+            cursor: pointer;
+        }
+        .mobile-freeuse {
+            color: #ffffff;
+            background: #00cc99;
+        }
+        .mobile-login {
+            color: #00cc99;
+            border: 1px solid #00cc99;
+        }
             
         }
 
+        @media screen and (max-width: 768px) {
+            .pc-layui-container {
+                display: none !important;
+               
+            }
+            .mobile-layui-container {
+                display: block;
+                height: 65px;
+                padding: 0 15px;
+                z-index: 999;
+                background: #ffffff;
+            }
+            .q-logo {
+                width: 100px;
+            }
+            .q-logo>h1>img{
+                width: 100%;
+            }
+            .navbar-toggle {
+                text-align: right;
+                }
+             .navbar-collpase {
+                 position: absolute;
+                 width: 100%;
+                 top: -500px;
+                 /* max-height: 350px; */
+                 background: #ffffff;
+                 z-index: -1;
+                transition: all .5s linear;
+                border-top: 1px solid #d2d2d2;
+                box-shadow: 0px 3px 4px 0px rgba(193, 193, 193, 0.5);
+             }
+             .navbar-collpase.collpase-true {
+                 top: 65px;
+             }
+             .navbar-nav {
+                 margin: 7.5px 0;
+             }
+             .navbar-nav>li {
+                 padding: 10px 15px;
+                 position: relative;
+
+             }
+             .navbar-nav>li>a{
+                /* padding: 10px 15px; */
+                display: inline-block;
+                width: 100%;
+             }
+             .navbar-nav>li>a:hover {
+                 color: #00cc99;
+             }
+
+             .navbar-nav>li::after {
+                 content: '';
+                 display: block;
+                 right: 0;
+                 left: 0;
+                 bottom: 0;
+                 position: absolute;
+                 border-bottom: 1px solid  rgba(193, 193, 193, 0.6);
+             }
+             .navbar-nav>li>a>i{
+                 position: absolute;
+                 font-size: 24px;
+                 top: 7px;
+                 right: 15px;
+             }
+             .navbar-nav>li.nav-product-span {
+                display: inline-block;
+                width: 100%;
+                cursor: pointer;
+             }
+             .nav-product-span>i {
+                position: absolute;
+                 font-size: 24px;
+                 top: 7px;
+                 right: 15px;
+             }
+
+             .nav-pro-con {
+               width: 100%;
+               overflow: hidden;
+               transition: height 0.5s;
+            }
+        
+        .nav-pro-con>span {
+            display: inline-block;
+            width: 100%;
+            height: 34px;
+            line-height: 34px;
+        }
+
+        .login-nav {
+           margin: 7.5px 0;
+           display: flex;
+           justify-content: space-around;
+        }
+        .login-nav>li {
+            width: 80px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        .mobile-freeuse {
+            color: #ffffff;
+            background: #00cc99;
+        }
+        .mobile-login {
+            color: #00cc99;
+            border: 1px solid #00cc99;
+        }    
+            
+        }
        .header-nav {
             position: sticky;
             top: 0;
@@ -278,14 +454,11 @@
             background: #ffffff;
             z-index: 999;
         }
-
-      
         .flex-item {
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
-      
         .menu {
             display: flex;
             height: 65px;
@@ -301,11 +474,7 @@
         .menu-item:hover {
             border-bottom: 2px solid #00cc99;
         }
-        .menu>.menu-item>a {
-            font-size: 16px;
-            font-weight: 400;
-            color: #000000;
-        }
+       
         .menu>.menu-item>a:hover {
             text-decoration: none;
             color: #00cc99;
@@ -337,19 +506,21 @@
         }
         .menu-item-product:hover .pull-down-pannel-product {
             top: 65px;
-            
+            visibility: visible;
         }
         .pull-down-pannel-product {
-            position: fixed;
+            position: absolute;
             width: 100%;
             left: 0;
-            top: -280px;
+            top: -350px;
             z-index: -1;
+            visibility: hidden;
             /* height: 225px; */
            background: #ffffff;
-           box-shadow: 0px 2px 3px 0px rgba(193, 193, 193, 0.3);
+           box-shadow: 0px -2px 2px 0px rgba(193, 193, 193, 0.3);
            transition: all .5s linear;
         }
+        
       
         .product-pannel>dl>dt {
             font-size: 12px;
@@ -399,6 +570,9 @@
         .pink-item>p.p-active {
             color: #00cc99;
         }
+        .pink-item>p:hover {
+            color: #00cc99;
+        }
         .pink-item>span {
             font-size: 12px;
             line-height: 20px;
@@ -412,7 +586,7 @@
 <body>
     <div class="header-nav">
         <!-- pc端 -->
-         <div class="layui-container flex-item pc-layui-container">
+         <div class="flex-item pc-layui-container">
            <div class="q-logo">
                <h1>
                    <img src="/static/image/logo.png" alt="">
@@ -421,7 +595,7 @@
            <div class="nav-menu">
                  <ul class="menu">
                    <li class="menu-item active">
-                    <a href="">首页</a>
+                    <a href="{:url('/')}">首页</a>
                    </li>
                    <li class="menu-item  menu-item-product">
                        <a href="">产品与服务</a>
@@ -430,7 +604,7 @@
                                <dl class="dl-border">
                                    <dt>视频云服务</dt>
                                    <dd>
-                                       <a href="" class="pink-item">
+                                       <a href="{:url('index/site_service/index')}" class="pink-item">
                                            <p class="p-active">轻直播平台</p>
                                            <span>企业级视频云直播平台</span>
                                        </a>
@@ -496,7 +670,7 @@
                        </div>
                    </li>
                    <li class="menu-item">
-                       <a href="">解决方案</a>
+                       <a href="{:url('index/solution/index')}">解决方案</a>
                    </li>
                    <li class="menu-item">
                        <a href="">案列中心</a>
@@ -527,14 +701,15 @@
                 </h1>
             </div>
             <div class="navbar-toggle">
-                <i class="layui-icon layui-icon-align-center" style="font-size: 30px; color: #d2d2d2;"></i> 
+                <!-- <i class="layui-icon layui-icon-align-center" style="font-size: 30px; color: #d2d2d2;"></i>  -->
+                <img src="/static/image/menu.svg" alt="">
             </div>
          </div>
          <!-- 导航栏 -->
          <div class="navbar-collpase">
               <ul class="navbar-nav">
                   <li><a href="">首页</a> </li>
-                  <li class="nav-product">
+                  <li class="nav-product" unfold="1">
                       <span class="nav-product-span" href="">产品与服务<i>+</i></span>
                       <div class="nav-pro-con">
                           <span><a href="">轻直播平台</a></span>
@@ -546,32 +721,72 @@
                   <li><a href="">轻学院</a></li>
                   <li><a href="">关于轻直播</a></li>
               </ul>
+              <ul class="login-nav">
+                  <li class="mobile-login">
+                     登录
+                  </li>
+                  <li class="mobile-freeuse">
+                      免费试用
+                  </li>
+              </ul>
          </div>
 
     </div>
     <script>
-    //  $('.menu li').hover(function() {
-    //      $(this).addClass('active');
-    //  }, function() {
-    //      $(this).removeClass('active');
-       
-    //  })
-
-    //  $('.menu li').on('click', function() {
-    //      $(this).toggleClass('active');
-    //  })
-
      $('.navbar-toggle').on('click', function() {
         $('.navbar-collpase').toggleClass('collpase-true');
      })
 
      $('.nav-product').on('click', function() {
-        $(this).toggleClass('nav-product-selected');
-        $('.nav-pro-con').css({
-            'display': 'block'
-        })
-         
+         const unfold = $(this).attr('unfold');
+        const realHeight = $('.nav-pro-con').attr('real-height');
+         if(unfold && unfold == '1') {
+            $('.nav-product-span>i')[0].innerText= '-';
+            $('.nav-pro-con').css({
+                'height':  realHeight + 'px',
+            });
+         } else {
+            $('.nav-pro-con').css({
+                'height': '0',
+            });
+            $('.nav-product-span>i')[0].innerText = '+'
+         }
+
+         $(this).attr('unfold', unfold === '0' ? '1' : '0');
+
      })
+     
+     $('.menu li').on('click', function() {
+        //  $(this).addClass('active');
+     })
+
+    //  (function init(win, doc){
+    //      const optionsNode = document.querySelector('.nav-product > .nav-pro-con');
+    //       optionsNode.setAttribute('real-height',win.getComputedStyle(optionsNode).height);
+    //       optionsNode.style.height = '0px';
+    //  })(window, document)
+
+    //  $(window).resize(function() {
+    //      const deviceWidth = $(window).width();
+    //      console.log(deviceWidth);
+    //      if(deviceWidth < 820) {
+    //         init();
+    //     }
+    //  })
+
+    //  function init(){
+    //      $('.nav-pro-con').attr('real-height', $('.nav-pro-con').height());
+    //      $('.nav-pro-con').css({
+    //          'height': '0px'
+    //      })
+    //  }
+
+    //  $(document).ready(function() {
+    //     const deviceWidth = $(window).width();
+    //     if(deviceWidth < 820) {
+    //         init();
+    //     }
+    //  })
 
 
 

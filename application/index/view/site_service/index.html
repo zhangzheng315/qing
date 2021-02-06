@@ -15,6 +15,7 @@
 <body>
     <div id="service">
         <!-- 头部 -->
+        {include file="common/header"}
         <!-- banner -->
         <div id="banner">
             <div class="layui-carousel" id="banners">
@@ -221,10 +222,11 @@
 
             </div>
         </div>
-
+        <!-- 底部 -->
+        {include file="common/footer"}
     </div>
 </body>
-
+<script src="/static/common/js/header-footer.js"></script>
 <script type="text/javascript">
     layui.use('carousel', function () {
         var carousel = layui.carousel;
