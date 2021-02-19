@@ -3,16 +3,17 @@ namespace app\admin\controller;
 
 use app\admin\serve\BannerService;
 use app\admin\serve\NavigationService;
+use app\admin\serve\VideoService;
 use think\Request;
 use think\Validate;
 
-class Banner extends Common{
-    public $bannerService;
+class Video extends Common{
+    public $videoService;
     public $navigationService;
-    public function __construct(BannerService $bannerService,NavigationService $navigationService)
+    public function __construct(VideoService $videoService,NavigationService $navigationService)
     {
         parent::__construct();
-        $this->bannerService = $bannerService;
+        $this->videoService = $videoService;
         $this->navigationService = $navigationService;
     }
 
@@ -20,19 +21,18 @@ class Banner extends Common{
     {
         $navigation_list = $this->navigationService->navigationList();
 
-        $add_url = '/admin/banner/bannerCreate'; //添加
-        $edit_url = '/admin/banner/bannerEdit';  //修改
-        $del_url = '/admin/banner/bannerDelete'; //删除
-        return $this->fetch('',compact('navigation_list','add_url','edit_url','del_url'));
+        $add_url = '/admin/video/videoCreate'; //添加
+        $edit_url = '/admin/video/videoEdit';  //修改
+        return $this->fetch('',compact('navigation_list','add_url','edit_url'));
     }
 
     /**
-     * 分页获取轮播图列表
+     * 分页获取视频列表
      */
-    public function getBannerList(){
+    public function getVideoList(){
         $data = input('get.');
         $data['deleted_time'] = 0;
-        $str = BannerService::data_paging($data,'banner','order');
+        $str = VideoService::data_paging($data,'video','order');
         foreach ($str['data'] as &$value) {
             $value['status'] = $value['status'] == 1 ? '显示' : '不显示';
         }
@@ -40,37 +40,41 @@ class Banner extends Common{
     }
 
     /**
-     * 添加轮播图
+     * 添加视频
      * @return mixed
      */
-    public function bannerCreate(Request $request){
+    public function videoCreate(Request $request){
         $rules =
             [
-                'img_url' => 'require',
                 'pid' => 'require',
+                'video_url' => 'require',
+                'title' => 'require',
+                'cover_img_url' => 'require',
             ];
         $msg =
             [
-                'img_url' => '缺少参数@img_url',
                 'pid' => '缺少参数@pid',
+                'video_url' => '缺少参数@video_url',
+                'title' => '缺少参数@title',
+                'cover_img_url' => '缺少参数@cover_img_url',
             ];
         $validate = new Validate($rules,$msg);
         if(!$validate->check($request->param())){
             return show($this->fail,$validate->getError());
         }
-        $res = $this->bannerService->bannerCreate($request->param());
+        $res = $this->videoService->videoCreate($request->param());
         if($res){
-            return show($this->ok,$this->bannerService->message);
+            return show($this->ok,$this->videoService->message);
         }else{
-            return show($this->fail,$this->bannerService->error);
+            return show($this->fail,$this->videoService->error);
         }
     }
 
     /**
-     * 轮播图详情
+     * 视频详情
      * @return mixed
      */
-    public function bannerInfo(Request $request){
+    public function videoInfo(Request $request){
         $rules =
             [
                 'id' => 'require',
@@ -83,47 +87,51 @@ class Banner extends Common{
         if(!$validate->check($request->param())){
             return show($this->fail,$validate->getError());
         }
-        $res = $this->bannerService->bannerInfo($request->param());
+        $res = $this->videoService->videoInfo($request->param());
         if($res){
-            return show($this->ok,$this->bannerService->message,$res);
+            return show($this->ok,$this->videoService->message,$res);
         }else{
-            return show($this->fail,$this->bannerService->error);
+            return show($this->fail,$this->videoService->error);
         }
     }
 
     /**
-     * 修改轮播图
+     * 修改视频
      * @return mixed
      */
-    public function bannerEdit(){
+    public function videoEdit(){
         $data = input('post.');
         $rules =
             [
-                'img_url' => 'require',
                 'pid' => 'require',
+                'video_url' => 'require',
+                'title' => 'require',
+                'cover_img_url' => 'require',
             ];
         $msg =
             [
-                'img_url' => '缺少参数@img_url',
                 'pid' => '缺少参数@pid',
+                'video_url' => '缺少参数@video_url',
+                'title' => '缺少参数@title',
+                'cover_img_url' => '缺少参数@cover_img_url',
             ];
         $validate = new Validate($rules,$msg);
         if(!$validate->check($data)){
             return show($this->fail,$validate->getError());
         }
-        $res = $this->bannerService->bannerEdit($data);
+        $res = $this->videoService->videoEdit($data);
         if($res){
-            return show($this->ok,$this->bannerService->message);
+            return show($this->ok,$this->videoService->message);
         }else{
-            return show($this->fail,$this->bannerService->error);
+            return show($this->fail,$this->videoService->error);
         }
     }
 
     /**
-     * 删除轮播图
+     * 删除视频
      * @return mixed
      */
-    public function bannerDelete(Request $request){
+    public function videoDelete(Request $request){
         $rules =
             [
                 'id' => 'require',
@@ -136,11 +144,11 @@ class Banner extends Common{
         if(!$validate->check($request->param())){
             return show($this->fail,$validate->getError());
         }
-        $res = $this->bannerService->bannerDelete($request->param());
+        $res = $this->videoService->videoDelete($request->param());
         if($res){
-            return show($this->ok,$this->bannerService->message);
+            return show($this->ok,$this->videoService->message);
         }else{
-            return show($this->fail,$this->bannerService->error);
+            return show($this->fail,$this->videoService->error);
         }
     }
 }

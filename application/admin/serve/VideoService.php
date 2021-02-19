@@ -2,29 +2,30 @@
 namespace app\admin\serve;
 use app\admin\model\Banner;
 use app\admin\model\Navigation;
+use app\admin\model\Video;
 use app\admin\serve\NavigationService;
 use think\Request;
 
 
-class BannerService extends Common{
+class VideoService extends Common{
 
-    public $banner;
+    public $video;
     public $navigation;
     public $navigationService;
     public function __construct(Request $request = null)
     {
         parent::__construct($request);
-        $this->banner = new Banner();
+        $this->video = new Video();
         $this->navigation = new Navigation();
         $this->navigationService = new NavigationService();
     }
 
     /**
-     * 创建轮播图
+     * 创建视频
      * @param $data
      * @return bool
      */
-    public function bannerCreate($param){
+    public function videoCreate($param){
         if ($param['pid'] == 0) {
             $this->setError('请选择父类');
             return false;
@@ -32,7 +33,8 @@ class BannerService extends Common{
         if(!isset($param['status'])) $param['status'] = 0;
         $pid_name = $this->navigation->where(['id' => $param['pid']])->value('menu_name');
         $data = [
-            'img_url' => $param['img_url'],
+            'video_url' => $param['video_url'],
+            'cover_img_url' => $param['cover_img_url'],
             'pid' => $param['pid'],
             'pid_name' => $pid_name,
             'title' => $param['title'] ?: '',
@@ -43,7 +45,7 @@ class BannerService extends Common{
             'deleted_time' => 0,
         ];
 
-        $add_id = $this->banner->insertGetId($data);
+        $add_id = $this->video->insertGetId($data);
         if(!$add_id){
             $this->setError('添加失败');
             return false;
@@ -54,18 +56,18 @@ class BannerService extends Common{
 
 
     /**
-     * 导航轮播图
+     * 视频详情
      * @param $param
      * @return array|bool|false|\PDOStatement|string|\think\Model
      * @throws \think\db\exception\DataNotFoundException
      * @throws \think\db\exception\ModelNotFoundException
      * @throws \think\exception\DbException
      */
-    public function bannerInfo($param)
+    public function videoInfo($param)
     {
         $id = $param['id'];
         $where = ['id' => $id];
-        $info = $this->banner->find($where);
+        $info = $this->video->find($where);
         $info->navigation_list = $this->navigationService->navigationList();
         if(!$info){
             $this->setError('查询失败');
@@ -76,11 +78,11 @@ class BannerService extends Common{
     }
 
     /**
-     * 轮播图修改
+     * 视频修改
      * @param $data
      * @return bool
      */
-    public function bannerEdit($data)
+    public function videoEdit($data)
     {
         if ($data['pid'] == 0) {
             $this->setError('请选择父类');
@@ -91,12 +93,15 @@ class BannerService extends Common{
             //layui富文本自带file参数
             unset($data['file']);
         }
+        if (isset($data['video_up'])) {
+            //layui富文本自带file参数
+            unset($data['video_up']);
+        }
         $where = ['id' => $data['id']];
         $pid_name = $this->navigation->where(['id' => $data['pid']])->value('menu_name');
         $data['pid_name'] = $pid_name;
         $data['updated_time'] = time();
-
-        $add_id = $this->banner->update($data,$where);
+        $add_id = $this->video->update($data,$where);
         if(!$add_id){
             $this->setError('修改失败');
             return false;
@@ -106,18 +111,18 @@ class BannerService extends Common{
     }
 
     /**
-     * 轮播图删除
+     * 视频删除
      * @param $param
      * @return bool
      */
-    public function bannerDelete($param)
+    public function videoDelete($param)
     {
         $where = ['id' => $param['id']];
         $data = [
             'updated_time' => time(),
             'deleted_time' => time(),
         ];
-        $res = $this->banner->update($data,$where);
+        $res = $this->video->update($data,$where);
         if(!$res){
             $this->setError('删除失败');
             return false;

@@ -29,4 +29,15 @@ class CommonFile extends Common{
             return show($this->fail,$this->commonFileService->error);
         }
     }
+
+    public function getToken()
+    {
+        $res = $this->commonFileService->getToken();
+        if($res){
+//            return show($this->ok,$this->commonFileService->message,$res);
+            return ['code' => 0, 'msg' => $this->commonFileService->message, 'data' => $res];
+        }else{
+            return show($this->fail,$this->commonFileService->error);
+        }
+    }
 }

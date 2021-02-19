@@ -5,13 +5,20 @@
         <title>后台管理-首页</title>
         <meta name="renderer" content="webkit|ie-comp|ie-stand">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+<!--        <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />-->
         <meta http-equiv="Cache-Control" content="no-siteapp" />
         <link rel="stylesheet" href="/static/admin/css/font.css">
         <link rel="stylesheet" href="/static/admin/css/xadmin.css">
         <!-- <link rel="stylesheet" href="./css/theme5.css"> -->
         <script src="/static/admin/lib/layui/layui.js" charset="utf-8"></script>
         <script type="text/javascript" src="/static/admin/js/xadmin.js"></script>
+
+<!--        <link rel="stylesheet" href="/static/plupload/jquery.plupload.queue.css" type="text/css" media="screen" />-->
+        <script type="text/javascript" src="/static/jquery-3.2.1.min.js"></script>
+<!--        <script type="text/javascript" src="/static/plupload/plupload.full.min.js"></script>-->
+<!--        <script type="text/javascript" src="/static/plupload/jquery.plupload.queue.js"></script>-->
+        <script type="text/javascript" src="/static/plupload/qiniu.min.js"></script>
+
         <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
         <!--[if lt IE 9]>
           <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
@@ -59,12 +66,6 @@
     var edit_url = "{$edit_url}";
     {else}
     var edit_url = "";
-    {/notempty}
-    //判断是否设置删除地址
-    {notempty name="$del_url"}
-    var del_url = "{$del_url}";
-    {else}
-    var del_url = "";
     {/notempty}
 
     layui.use(['laydate','form','table','layedit'], function(){

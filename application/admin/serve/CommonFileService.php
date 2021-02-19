@@ -56,7 +56,7 @@ class CommonFileService extends Common{
 
         list($ret, $err) = $uploadMgr->putFile($token['token'], $key, $filePath);
         if ($err !== null) {
-            $this->setError('上传失败1');
+            $this->setError('上传失败');
             return false;
         }
         $this->setMessage('上传成功!');
@@ -73,7 +73,7 @@ class CommonFileService extends Common{
 
         $add_id = $this->commonFile->insertGetId($data);
         if(!$add_id){
-            $this->setError('上传失败2');
+            $this->setError('上传失败');
             return false;
         }
         $this->setMessage('上传成功');
@@ -94,10 +94,11 @@ class CommonFileService extends Common{
         $bucket = config('qiniu.bucket');
         $domain  = config('qiniu.domain');
         if (!$token = $auth->uploadToken($bucket)){
-            $this->setError('上传失败3');
+            $this->setError('上传失败');
             return false;
         }
-        return ['token'=>$token,'domain'=>$domain];
+//        return $token;
+        return ['domain' => $domain, 'token' => $token];
     }
 
 
