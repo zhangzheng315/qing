@@ -361,11 +361,8 @@
                 //修改文件上传名称
                 var nameTou = dateFtt(new Date(), "yyyyMMddhhmmss")+"-"+randomn(6)+"-";
                 key = nameTou+key;
-                // console.log("文件名称："+domain+'/'+key);
-
                 // 调用sdk上传接口获得相应的observable，控制上传和暂停
                 observable = qiniu.upload(file, key, token, putExtra, config);
-
                 //
                 subscription = observable.subscribe(subObject);
 
@@ -442,7 +439,6 @@
                 $('.img-show').attr('src',res.data.src);
                 $('.img_url').val(res.data.src);
                 layer.msg(res.msg);
-                console.log(res); //上传成功返回值，必须为json格式
             }
         });
 

@@ -25,10 +25,6 @@ class BannerService extends Common{
      * @return bool
      */
     public function bannerCreate($param){
-        if ($param['pid'] == 0) {
-            $this->setError('请选择父类');
-            return false;
-        }
         if(!isset($param['status'])) $param['status'] = 0;
         $pid_name = $this->navigation->where(['id' => $param['pid']])->value('menu_name');
         $data = [
@@ -36,6 +32,7 @@ class BannerService extends Common{
             'pid' => $param['pid'],
             'pid_name' => $pid_name,
             'title' => $param['title'] ?: '',
+            'introduction' => $param['introduction'],
             'status' => $param['status'],
             'order' => $param['order'] ?: 0,
             'created_time' => time(),
@@ -82,10 +79,6 @@ class BannerService extends Common{
      */
     public function bannerEdit($data)
     {
-        if ($data['pid'] == 0) {
-            $this->setError('请选择父类');
-            return false;
-        }
         if(!isset($data['status'])) $data['status'] = 0;
         if (isset($data['file'])) {
             //layui富文本自带file参数
