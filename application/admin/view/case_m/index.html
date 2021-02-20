@@ -40,8 +40,8 @@
             <div class="layui-input-block">
                 <select name="pid">
                     <option value="0">--请选择--</option>
-                    {if isset($article_type_list)}
-                    {foreach $article_type_list as $item }
+                    {if isset($case_type_list)}
+                    {foreach $case_type_list as $item }
                     <option value="{$item.id}">{$item.name}</option>
                     {/foreach}
                     {/if}
@@ -71,9 +71,9 @@
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">热门文章</label>
+            <label class="layui-form-label">精选案例</label>
             <div class="layui-input-block">
-                <input name="hot_article" value="1" type="checkbox" lay-skin="switch">
+                <input name="case_selected" value="1" type="checkbox" lay-skin="switch">
             </div>
         </div>
         <div class="layui-form-item">
@@ -91,8 +91,8 @@
         <div class="layui-form-item">
             <label class="layui-form-label">内容</label>
             <div class="layui-input-block">
-                    <textarea type="text" name="content" id="myEdit" lay-verify="fu_content" style="width: 100%;height: 140px;">
-                    </textarea>
+                        <textarea type="text" name="content" id="myEdit" lay-verify="fu_content" style="width: 100%;height: 140px;">
+                        </textarea>
             </div>
         </div>
         <div class="layui-form-item">
@@ -110,8 +110,8 @@
             <div class="layui-input-block">
                 <select name="pid" id="pid">
                     <option value="0">--请选择--</option>
-                    {if isset($article_type_list)}
-                    {foreach $article_type_list as $item }
+                    {if isset($case_type_list)}
+                    {foreach $case_type_list as $item }
                     <option value="{$item.id}">{$item.name}</option>
                     {/foreach}
                     {/if}
@@ -142,9 +142,9 @@
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">热门文章</label>
+            <label class="layui-form-label">精选案例</label>
             <div class="layui-input-block">
-                <input name="hot_article" id="hot_article" value="1" type="checkbox" lay-skin="switch">
+                <input name="case_selected" id="case_selected" value="1" type="checkbox" lay-skin="switch">
             </div>
         </div>
         <div class="layui-form-item">
@@ -192,7 +192,7 @@
         table.render({
             elem: '#table-rule'
             , height: 850
-            , url: '/admin/article/getArticleList' //数据接口
+            , url: '/admin/case_m/getCaseList' //数据接口
             , page: true //开启分页
             , cols: [[ //表头
                 {
@@ -200,8 +200,8 @@
                 }
                 , {field: 'title', title: '标题'}
                 , {field: 'second_title', title: '第二标题'}
-                , {field: 'pid_name', title: '所属分类'}
-                , {field: 'hot_article', title: '热门文章'}
+                , {field: 'belong', title: '所属分类'}
+                , {field: 'case_selected', title: '精选案例'}
                 , {field: 'order', title: '排序'}
                 , {field: 'status', title: '状态'}
                 , {fixed: 'right', width: 150, title: '操作', align: 'center', toolbar: '#barDemo'}
@@ -250,7 +250,8 @@
             var tr = obj.tr; //获得当前行 tr 的 DOM 对象（如果有的话）
 
             if (layEvent === 'info') { //查看
-                $.post('/admin/article/articleInfo', {id: data.id}, (res) => {
+                $.post('/admin/case_m/caseInfo', {id: data.id}, (res) => {
+                    var valArr22 = Object.keys(res.data.label).map(function(i){return res.data.label[i]});
                     if (res.status === 200) {
                         layer.open({
                             type: 1,
@@ -271,12 +272,12 @@
                         } else {
                             $('#status').prop('checked', true);
                         }
-                        if (res.data.hot_article === 0) {
-                            $('#hot_article').removeAttr('checked');
+                        if (res.data.case_selected === 0) {
+                            $('#case_selected').removeAttr('checked');
                         } else {
-                            $('#hot_article').prop('checked', true);
+                            $('#case_selected').prop('checked', true);
                         }
-                        for (let item of res.data.article_type) {
+                        for (let item of res.data.case_type) {
                             if (res.data.pid === item.id) {
                                 $('#pid').append('<option value="' + item.id + '" selected>' + item.name + '</option>')
                             } else {
@@ -301,7 +302,7 @@
                 layer.confirm('真的要删除吗？', {
                     btn:['确定吧','取消'],
                 },function () {
-                    $.post('/admin/article/articleDelete',{id: data.id}, (res) => {
+                    $.post('/admin/case_m/caseDelete',{id: data.id}, (res) => {
                         if (res.status === 200) {
                             layer.msg(res.message);
                             setTimeout(()=>{

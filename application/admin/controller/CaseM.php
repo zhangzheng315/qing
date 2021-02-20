@@ -1,43 +1,49 @@
 <?php
 namespace app\admin\controller;
 
-use app\admin\serve\ArticleService;
-use app\admin\serve\ArticleTypeService;
+use app\admin\serve\CaseService;
+use app\admin\serve\CaseTypeService;
 use app\admin\serve\LabelService;
 use think\Request;
 use think\Validate;
 
-class Article extends Common{
-    public $articleService;
-    public $articleTypeService;
+class CaseM extends Common{
+    public $caseService;
+    public $caseTypeService;
     public $labelService;
-    public function __construct(ArticleService $articleService, ArticleTypeService $articleTypeService, LabelService $labelService)
+    public function __construct(CaseService $caseService, CaseTypeService $caseTypeService, LabelService $labelService)
     {
         parent::__construct();
-        $this->articleService = $articleService;
-        $this->articleTypeService = $articleTypeService;
+        $this->caseService = $caseService;
+        $this->caseTypeService = $caseTypeService;
         $this->labelService = $labelService;
     }
 
     public function index()
     {
-        $article_type_list = $this->articleTypeService->articleTypeList();
+        $case_type_list = $this->caseTypeService->caseTypeList();
         $label_list = $this->labelService->labelList();
-        $add_url = '/admin/article/articleCreate';
-        $edit_url = '/admin/article/articleEdit';
-        return $this->fetch('',compact('article_type_list','label_list','add_url','edit_url'));
+        $add_url = '/admin/case_m/caseCreate';
+        $edit_url = '/admin/case_m/caseEdit';
+        return $this->fetch('',compact('case_type_list','label_list','add_url','edit_url'));
     }
 
     /**
      * 分页获取文章列表
      */
-    public function getArticleList(){
+    public function getCaseList(){
         $data = input('get.');
         $data['deleted_time'] = 0;
-        $str = ArticleService::data_paging($data,'article','order');
+        $str = CaseService::data_paging($data,'case','order');
+        $case_type_list = $this->caseTypeService->caseTypeList();
         foreach ($str['data'] as &$value) {
             $value['status'] = $value['status'] == 1 ? '显示' : '不显示';
-            $value['hot_article'] = $value['hot_article'] == 1 ? '是' : '否';
+            $value['case_selected'] = $value['case_selected'] == 1 ? '是' : '否';
+            foreach ($case_type_list as $item) {
+                if ($item['id'] == $value['pid']) {
+                    $value['belong'] = $item['name'];
+                }
+            }
         }
         return layshow($this->code,'ok',$str['data'],$str['count']);
     }
@@ -46,7 +52,7 @@ class Article extends Common{
      * 添加文章
      * @return mixed
      */
-    public function articleCreate(Request $request){
+    public function caseCreate(Request $request){
         $rules =
             [
                 'title' => 'require',
@@ -63,11 +69,11 @@ class Article extends Common{
         if(!$validate->check($request->param())){
             return show($this->fail,$validate->getError());
         }
-        $res = $this->articleService->articleCreate($request->param());
+        $res = $this->caseService->caseCreate($request->param());
         if($res){
-            return show($this->ok,$this->articleService->message);
+            return show($this->ok,$this->caseService->message);
         }else{
-            return show($this->fail,$this->articleService->error);
+            return show($this->fail,$this->caseService->error);
         }
     }
 
@@ -75,7 +81,7 @@ class Article extends Common{
      * 文章详情
      * @return mixed
      */
-    public function articleInfo(Request $request){
+    public function caseInfo(Request $request){
         $rules =
             [
                 'id' => 'require',
@@ -88,11 +94,11 @@ class Article extends Common{
         if(!$validate->check($request->param())){
             return show($this->fail,$validate->getError());
         }
-        $res = $this->articleService->articleInfo($request->param());
+        $res = $this->caseService->caseInfo($request->param());
         if($res){
-            return show($this->ok,$this->articleService->message,$res);
+            return show($this->ok,$this->caseService->message,$res);
         }else{
-            return show($this->fail,$this->articleService->error);
+            return show($this->fail,$this->caseService->error);
         }
     }
 
@@ -100,7 +106,7 @@ class Article extends Common{
      * 文章修改
      * @return mixed
      */
-    public function articleEdit(){
+    public function caseEdit(){
         $data = input('post.');
         $rules =
             [
@@ -118,11 +124,11 @@ class Article extends Common{
         if(!$validate->check($data)){
             return show($this->fail,$validate->getError());
         }
-        $res = $this->articleService->articleEdit($data);
+        $res = $this->caseService->caseEdit($data);
         if($res){
-            return show($this->ok,$this->articleService->message,$res);
+            return show($this->ok,$this->caseService->message,$res);
         }else{
-            return show($this->fail,$this->articleService->error);
+            return show($this->fail,$this->caseService->error);
         }
     }
 
@@ -130,7 +136,7 @@ class Article extends Common{
      * 文章删除
      * @return mixed
      */
-    public function articleDelete(){
+    public function caseDelete(){
         $data = input('post.');
         $rules =
             [
@@ -144,11 +150,11 @@ class Article extends Common{
         if(!$validate->check($data)){
             return show($this->fail,$validate->getError());
         }
-        $res = $this->articleService->articleDelete($data);
+        $res = $this->caseService->caseDelete($data);
         if($res){
-            return show($this->ok,$this->articleService->message,$res);
+            return show($this->ok,$this->caseService->message,$res);
         }else{
-            return show($this->fail,$this->articleService->error);
+            return show($this->fail,$this->caseService->error);
         }
     }
 }

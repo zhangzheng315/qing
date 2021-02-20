@@ -2,28 +2,32 @@
 namespace app\admin\controller;
 
 use app\admin\serve\BannerService;
+use app\admin\serve\LabelService;
 use app\admin\serve\NavigationService;
 use app\admin\serve\VideoService;
+use app\admin\serve\VideoTypeService;
 use think\Request;
 use think\Validate;
 
 class Video extends Common{
     public $videoService;
-    public $navigationService;
-    public function __construct(VideoService $videoService,NavigationService $navigationService)
+    public $videoTypeService;
+    public $labelService;
+    public function __construct(VideoService $videoService,VideoTypeService $videoTypeService, LabelService $labelService)
     {
         parent::__construct();
         $this->videoService = $videoService;
-        $this->navigationService = $navigationService;
+        $this->videoTypeService = $videoTypeService;
+        $this->labelService = $labelService;
     }
 
     public function index()
     {
-        $navigation_list = $this->navigationService->navigationList();
-
+        $video_type_list = $this->videoTypeService->videoTypeList();
+        $label_list = $this->labelService->labelList();
         $add_url = '/admin/video/videoCreate'; //添加
         $edit_url = '/admin/video/videoEdit';  //修改
-        return $this->fetch('',compact('navigation_list','add_url','edit_url'));
+        return $this->fetch('',compact('video_type_list','label_list','add_url','edit_url'));
     }
 
     /**

@@ -33,7 +33,7 @@ class Cx extends Taglib
         'elseif'     => ['attr' => 'condition', 'close' => 0, 'expression' => true],
         'else'       => ['attr' => '', 'close' => 0],
         'switch'     => ['attr' => 'name', 'expression' => true],
-        'case'       => ['attr' => 'value,break', 'expression' => true],
+        'case_m'       => ['attr' => 'value,break', 'expression' => true],
         'default'    => ['attr' => '', 'close' => 0],
         'compare'    => ['attr' => 'name,value,type', 'alias' => ['eq,equal,notequal,neq,gt,lt,egt,elt,heq,nheq', 'type']],
         'range'      => ['attr' => 'name,value,type', 'alias' => ['in,notin,between,notbetween', 'type']],
@@ -252,8 +252,8 @@ class Cx extends Taglib
      * switch标签解析
      * 格式：
      * {switch name="a.name"}
-     * {case value="1" break="false"}1{/case}
-     * {case value="2" }2{/case}
+     * {case_m value="1" break="false"}1{/case_m}
+     * {case_m value="2" }2{/case_m}
      * {default /}other
      * {/switch}
      * @access public
@@ -282,15 +282,15 @@ class Cx extends Taglib
         $flag  = substr($value, 0, 1);
         if ('$' == $flag || ':' == $flag) {
             $value = $this->autoBuildVar($value);
-            $value = 'case ' . $value . ':';
+            $value = 'case_m ' . $value . ':';
         } elseif (strpos($value, '|')) {
             $values = explode('|', $value);
             $value  = '';
             foreach ($values as $val) {
-                $value .= 'case "' . addslashes($val) . '":';
+                $value .= 'case_m "' . addslashes($val) . '":';
             }
         } else {
-            $value = 'case "' . $value . '":';
+            $value = 'case_m "' . $value . '":';
         }
         $parseStr = '<?php ' . $value . ' ?>' . $content;
         $isBreak  = isset($tag['break']) ? $tag['break'] : '';

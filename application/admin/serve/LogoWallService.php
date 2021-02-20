@@ -1,48 +1,41 @@
 <?php
 namespace app\admin\serve;
+use app\admin\model\CaseType;
+use app\admin\model\LogoWall;
+use app\admin\model\Navigation;
 use app\admin\model\Video;
 use app\admin\model\VideoType;
 use think\Request;
 
 
-class VideoService extends Common{
+class LogoWallService extends Common{
 
-    public $video;
-    public $videoType;
-    public $labelService;
+    public $logoWall;
+    public $navigation;
+    public $caseType;
     public function __construct(Request $request = null)
     {
         parent::__construct($request);
-        $this->video = new Video();
-        $this->videoType = new VideoType();
-        $this->labelService = new LabelService();
+        $this->logoWall = new LogoWall();
+        $this->navigation = new Navigation();
+        $this->caseType = new CaseType();
     }
 
     /**
-     * 创建视频
+     * 创建logo
      * @param $data
      * @return bool
      */
-    public function videoCreate($param){
-        if ($param['pid'] == 0) {
-            $this->setError('请选择父类');
-            return false;
-        }
+    public function logoWallCreate($param){
         if(!isset($param['status'])) $param['status'] = 0;
-        $video_selected = isset($param['video_selected']) ? $param['video_selected'] : 0;
-        $label = '';
-        if (isset($param['label'])) {
-            $label = implode(',', $param['label']);
-        }
-        $pid_name = $this->videoType->where(['id' => $param['pid']])->value('name');
+        $pid_name = $this->navigation->where(['id' => $param['pid']])->value('menu_name');
+        $type_name = $this->caseType->where(['id'=>$param['type_id']])->value('name');
         $data = [
-            'video_url' => $param['video_url'],
-            'cover_img_url' => $param['cover_img_url'],
+            'img_url' => $param['img_url'],
             'pid' => $param['pid'],
             'pid_name' => $pid_name,
-            'title' => $param['title'] ?: '',
-            'video_selected' => $video_selected,
-            'label' => $label,
+            'type_id' => $param['type_id'],
+            'type_name' => $type_name,
             'status' => $param['status'],
             'order' => $param['order'] ?: 0,
             'created_time' => time(),
@@ -50,7 +43,7 @@ class VideoService extends Common{
             'deleted_time' => 0,
         ];
 
-        $add_id = $this->video->insertGetId($data);
+        $add_id = $this->logoWall->insertGetId($data);
         if(!$add_id){
             $this->setError('添加失败');
             return false;
@@ -61,21 +54,20 @@ class VideoService extends Common{
 
 
     /**
-     * 视频详情
+     * logo详情
      * @param $param
      * @return array|bool|false|\PDOStatement|string|\think\Model
      * @throws \think\db\exception\DataNotFoundException
      * @throws \think\db\exception\ModelNotFoundException
      * @throws \think\exception\DbException
      */
-    public function videoInfo($param)
+    public function logoWallInfo($param)
     {
         $id = $param['id'];
         $where = ['id' => $id];
-        $info = $this->video->find($where);
-        $info->label = explode(',', $info->label);
-        $info->video_type_list = $this->videoType->where(['deleted_time' => 0,'status'=>1])->select();
-        $info->label_list = $this->labelService->labelList();
+        $info = $this->logoWall->find($where);
+        $info->navigation_list = $this->navigation->where(['deleted_time' => 0,'status'=>1])->select();
+        $info->type_list = $this->caseType->where(['deleted_time' => 0,'status'=>1])->select();
         if(!$info){
             $this->setError('查询失败');
             return false;
@@ -85,11 +77,11 @@ class VideoService extends Common{
     }
 
     /**
-     * 视频修改
+     * logo修改
      * @param $data
      * @return bool
      */
-    public function videoEdit($data)
+    public function logoWallEdit($data)
     {
         if ($data['pid'] == 0) {
             $this->setError('请选择父类');
@@ -100,22 +92,14 @@ class VideoService extends Common{
             //layui富文本自带file参数
             unset($data['file']);
         }
-        if (isset($data['video_up'])) {
-            //layui富文本自带file参数
-            unset($data['video_up']);
-        }
-        if (isset($data['label'])) {
-            $data['label'] = implode(',', $data['label']);
-        }else{
-            $data['label'] = '';
-        }
-        if(!isset($data['video_selected'])) $data['video_selected'] = 0;
+        $pid_name = $this->navigation->where(['id' => $data['pid']])->value('menu_name');
+        $type_name = $this->caseType->where(['id'=>$data['type_id']])->value('name');
 
         $where = ['id' => $data['id']];
-        $pid_name = $this->videoType->where(['id' => $data['pid']])->value('name');
         $data['pid_name'] = $pid_name;
+        $data['type_name'] = $type_name;
         $data['updated_time'] = time();
-        $add_id = $this->video->update($data,$where);
+        $add_id = $this->logoWall->update($data,$where);
         if(!$add_id){
             $this->setError('修改失败');
             return false;
@@ -125,18 +109,18 @@ class VideoService extends Common{
     }
 
     /**
-     * 视频删除
+     * logo删除
      * @param $param
      * @return bool
      */
-    public function videoDelete($param)
+    public function logoWallDelete($param)
     {
         $where = ['id' => $param['id']];
         $data = [
             'updated_time' => time(),
             'deleted_time' => time(),
         ];
-        $res = $this->video->update($data,$where);
+        $res = $this->logoWall->update($data,$where);
         if(!$res){
             $this->setError('删除失败');
             return false;

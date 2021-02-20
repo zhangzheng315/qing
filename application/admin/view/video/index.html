@@ -63,9 +63,9 @@
             <div class="layui-input-block">
                 <select name="pid">
                     <option value="0">--请选择--</option>
-                    {if isset($navigation_list)}
-                    {foreach $navigation_list as $item }
-                    <option value="{$item.id}">{$item.menu_name}</option>
+                    {if isset($video_type_list)}
+                    {foreach $video_type_list as $item }
+                    <option value="{$item.id}">{$item.name}</option>
                     {/foreach}
                     {/if}
                 </select>
@@ -78,6 +78,22 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">标签选择</label>
+            <div class="layui-input-block">
+                {if isset($label_list)}
+                {foreach $label_list as $val}
+                <input type="checkbox" name="label[]" value="{$val.name}" title="{$val.name}">
+                {/foreach}
+                {/if}
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">内容中心</label>
+            <div class="layui-input-block">
+                <input name="video_selected" value="1" type="checkbox" lay-skin="switch">
+            </div>
+        </div>
+        <div class="layui-form-item">
             <label class="layui-form-label">启用</label>
             <div class="layui-input-block">
                 <input name="status" value="1" type="checkbox" checked lay-skin="switch">
@@ -87,6 +103,12 @@
             <label class="layui-form-label">排序</label>
             <div class="layui-input-block">
                 <input type="text" name="order" placeholder="请输入(数值越大，排序越靠前)" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">简介</label>
+            <div class="layui-input-block">
+                <textarea name="content" placeholder="请输入内容" class="layui-textarea"></textarea>
             </div>
         </div>
         <div class="layui-form-item">
@@ -144,9 +166,9 @@
             <div class="layui-input-block">
                 <select name="pid" id="pid">
                     <option value="0">--请选择--</option>
-                    {if isset($navigation_list)}
-                    {foreach $navigation_list as $item }
-                    <option value="{$item.id}">{$item.menu_name}</option>
+                    {if isset($video_type_list)}
+                    {foreach $video_type_list as $item }
+                    <option value="{$item.id}">{$item.name}</option>
                     {/foreach}
                     {/if}
                 </select>
@@ -159,16 +181,38 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">标签选择</label>
+            <div class="layui-input-block" id="label_check">
+                {if isset($label_list)}
+                {foreach $label_list as $val}
+                <input type="checkbox" name="like{$val.id}" value="{$val.id}" title="{$val.name}">
+                {/foreach}
+                {/if}
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">内容中心</label>
+            <div class="layui-input-block">
+                <input name="video_selected" id="video_selected" value="1" type="checkbox" lay-skin="switch">
+            </div>
+        </div>
+        <div class="layui-form-item">
             <label class="layui-form-label">启用</label>
             <input type="hidden" name="id" id="id">
             <div class="layui-input-block">
-                <input name="status" value="1" type="checkbox" checked lay-skin="switch">
+                <input name="status" id="status" value="1" type="checkbox" checked lay-skin="switch">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">排序</label>
             <div class="layui-input-block">
                 <input type="text" id="order" name="order" placeholder="请输入(数值越大，排序越靠前)" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">简介</label>
+            <div class="layui-input-block">
+                <textarea name="content" id="content" placeholder="请输入内容" class="layui-textarea"></textarea>
             </div>
         </div>
         <div class="layui-form-item">
@@ -236,8 +280,6 @@
         $.ajax({
             url: "{:url('admin/common_file/getToken')}",
             success: function(res){
-                console.log(res)
-
                 var token = res.data.token;
                 var domain = res.data.domain;
                 var config = {
@@ -250,7 +292,7 @@
                     params: {},
                     mimeType: null
                 };
-
+                //调用上传方法
                 uploadWithSDK(token, putExtra, config, domain);
             }
         })
@@ -263,9 +305,6 @@
         $(".select").unbind("change").bind("change",function(){
 
             //获取上传的input 的id用来区分多个上传时各自的进度及上传结果处理
-            var thisId= $(this).attr("id");
-            console.log("thisId："+thisId);
-
             var file = this.files[0];
             var finishedAttr = [];
             var compareChunks = [];
@@ -277,9 +316,7 @@
 
                 // 设置next,error,complete对应的操作，分别处理相应的进度信息，错误信息，以及完成后的操作
                 var error = function(err) {
-
-                    console.log(err);
-                    alert("上传出错")
+                    layer.msg("上传失败");
                 };
 
                 //上传完成后通知处理
@@ -324,7 +361,7 @@
                 //修改文件上传名称
                 var nameTou = dateFtt(new Date(), "yyyyMMddhhmmss")+"-"+randomn(6)+"-";
                 key = nameTou+key;
-                console.log("文件名称："+domain+'/'+key);
+                // console.log("文件名称："+domain+'/'+key);
 
                 // 调用sdk上传接口获得相应的observable，控制上传和暂停
                 observable = qiniu.upload(file, key, token, putExtra, config);
@@ -436,7 +473,6 @@
 
             if (layEvent === 'info') { //查看
                 $.post('/admin/video/videoInfo', {id: data.id}, (res) => {
-                    console.log(res)
                     if (res.status === 200) {
                         layer.open({
                             type: 1,
@@ -454,17 +490,35 @@
                         $('.video_url').val(res.data.video_url);
                         $('.img_url').val(res.data.cover_img_url);
                         $('#pid').empty();
+                        $('#label_check').empty();
+                        $('#content').val(res.data.content);
 
+                        //状态
                         if (res.data.status === 0) {
                             $('#status').removeAttr('checked');
                         } else {
                             $('#status').prop('checked', true);
                         }
-                        for (let item of res.data.navigation_list) {
+
+                        if (res.data.video_selected === 0) {
+                            $('#video_selected').removeAttr('checked');
+                        } else {
+                            $('#video_selected').prop('checked', true);
+                        }
+                        //父级
+                        for (let item of res.data.video_type_list) {
                             if (res.data.pid === item.id) {
-                                $('#pid').append('<option value="' + item.id + '" selected>' + item.menu_name + '</option>')
+                                $('#pid').append('<option value="' + item.id + '" selected>' + item.name + '</option>')
                             } else {
-                                $('#pid').append('<option value="' + item.id + '">' + item.menu_name + '</option>')
+                                $('#pid').append('<option value="' + item.id + '">' + item.name + '</option>')
+                            }
+                        }
+                        //标签
+                        for (let val of res.data.label_list) {
+                            if (res.data.label.indexOf(val.name) > -1) {
+                                $('#label_check').append('<input type="checkbox" name="label[]" checked value="'+ val.name+'" title="'+ val.name +'">')
+                            }else{
+                                $('#label_check').append('<input type="checkbox" name="label[]" value="'+ val.name+'" title="'+ val.name +'">')
                             }
                         }
 
