@@ -145,6 +145,9 @@ class LogoWallService extends Common{
             'pid' => $param['pid'],
             'type_id'=>$param['type_id']
         ];
+        if ($param['type_id'] == 0) {
+            unset($where['type_id']);
+        }
         $res = $this->logoWall->where($where)->select();
         if (!$res) {
             $this->setError('暂无数据');

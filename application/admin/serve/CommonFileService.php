@@ -97,7 +97,6 @@ class CommonFileService extends Common{
             $this->setError('上传失败');
             return false;
         }
-//        return $token;
         return ['domain' => $domain, 'token' => $token];
     }
 
