@@ -24,9 +24,14 @@
         <div id="banner">
             <div class="layui-carousel" id="banners">
                 <div carousel-item class="lunbo-box">
-                    <img src="/static/image/index/banner.png" alt="">
-                    <img src="/static/image/index/banner.png" alt="">
-                    <img src="/static/image/index/banner.png" alt="">
+<!--                    <img src="/static/image/index/banner.png" alt="">-->
+<!--                    <img src="/static/image/index/banner.png" alt="">-->
+<!--                    <img src="/static/image/index/banner.png" alt="">-->
+                    {if isset($banner_list)}
+                    {foreach $banner_list as $item}
+                    <img src="{$item.img_url}" alt="">
+                    {/foreach}
+                    {/if}
                 </div>
             </div>
 
@@ -404,13 +409,13 @@
                 <h2 class="title">赋能「100,000+」企业</h2>
                 <nav>
                     <ul class="logo-title">
-                        <li class="active"><span>全部</span></li>
-                        <li><span>医疗</span></li>
-                        <li><span>教育</span></li>
-                        <li><span>金融</span></li>
-                        <li><span>汽车</span></li>
-                        <li><span>科技</span></li>
-                        <li><span>地产</span></li>
+                        <li class="active" onclick="logoPoint(0)"><span>全部</span></li>
+                        <li onclick="logoPoint(1)"><span>医疗</span></li>
+                        <li onclick="logoPoint(2)"><span>教育</span></li>
+                        <li onclick="logoPoint(3)"><span>金融</span></li>
+                        <li onclick="logoPoint(4)"><span>汽车</span></li>
+                        <li onclick="logoPoint(5)"><span>科技</span></li>
+                        <li onclick="logoPoint(6)"><span>地产</span></li>
                     </ul>
                 </nav>
                 <div class="logo-box">
@@ -801,6 +806,20 @@
         });
         setTimeout(function () { obj.find('.logo-title .active').trigger('li'); }, 100);
     });
+
+    function logoPoint(index) {
+        $.ajax({
+            url: "{:url('/admin/logo_wall/getLogoByWhere')}",
+            data:{'pid':1,'type_id':index},
+            type:'get',
+            success:function (res) {
+                console.log(res)
+            },
+            error:function (err) {
+                console.log(err)
+            }
+        })
+    }
 </script>
 
 </html>

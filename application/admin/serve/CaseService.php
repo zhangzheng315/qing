@@ -71,8 +71,12 @@ class CaseService extends Common{
         $info->case_type = $case_type;
         $info->label_list = $label_list;
         if(!$info){
-            $this->setError('查询失败');
+            $this->setError('暂无数据');
             return false;
+        }
+        //前端点击的 增加浏览量
+        if (isset($param['browse'])) {
+            $this->case->where($where)->setInc('browse');
         }
         $this->setMessage('查询成功');
         return $info;

@@ -129,4 +129,29 @@ class LogoWallService extends Common{
         return true;
     }
 
+    /**
+     * 查询各种logo
+     * @param $param
+     * @return bool|false|\PDOStatement|string|\think\Collection
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
+    public function getLogoByWhere($param)
+    {
+        $where = [
+            'status'=>1,
+            'deleted_time' => 0,
+            'pid' => $param['pid'],
+            'type_id'=>$param['type_id']
+        ];
+        $res = $this->logoWall->where($where)->select();
+        if (!$res) {
+            $this->setError('暂无数据');
+            return false;
+        }
+        $this->setMessage('查询成功');
+        return $res;
+    }
+
 }

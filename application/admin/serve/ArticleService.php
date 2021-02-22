@@ -76,6 +76,10 @@ class ArticleService extends Common{
             $this->setError('查询失败');
             return false;
         }
+        //前端点击的 增加浏览量
+        if (isset($param['browse'])) {
+            $this->article->where($where)->setInc('browse');
+        }
         $this->setMessage('查询成功');
         return $info;
     }

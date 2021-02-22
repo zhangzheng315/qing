@@ -149,4 +149,31 @@ class LogoWall extends Common{
             return show($this->fail,$this->logoWallService->error);
         }
     }
+
+    /**
+     * 删除logo墙
+     * @return mixed
+     */
+    public function getLogoByWhere(Request $request){
+        $rules =
+            [
+                'pid' => 'require',
+                'type_id' => 'require',
+            ];
+        $msg =
+            [
+                'pid' => '缺少参数@pid',
+                'type_id' => '缺少参数@type_id',
+            ];
+        $validate = new Validate($rules,$msg);
+        if(!$validate->check($request->param())){
+            return show($this->fail,$validate->getError());
+        }
+        $res = $this->logoWallService->getLogoByWhere($request->param());
+        if($res){
+            return show($this->ok,$this->logoWallService->message,$res);
+        }else{
+            return show($this->fail,$this->logoWallService->error);
+        }
+    }
 }

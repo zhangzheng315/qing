@@ -36,44 +36,9 @@
 <div id="add" style="display: none;">
     <form class="layui-form"> <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
         <div class="layui-form-item">
-            <label class="layui-form-label">选择父级</label>
+            <label class="layui-form-label">时间线</label>
             <div class="layui-input-block">
-                <select name="pid">
-                    <option value="0">--请选择--</option>
-                    {if isset($case_type_list)}
-                    {foreach $case_type_list as $item }
-                    <option value="{$item.id}">{$item.name}</option>
-                    {/foreach}
-                    {/if}
-                </select>
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">标题</label>
-            <div class="layui-input-block">
-                <input type="text" name="title" placeholder="请输入" autocomplete="off" class="layui-input">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">第二标题</label>
-            <div class="layui-input-block">
-                <input type="text" name="second_title" placeholder="请输入" autocomplete="off" class="layui-input">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">标签选择</label>
-            <div class="layui-input-block">
-                {if isset($label_list)}
-                {foreach $label_list as $val}
-                <input type="checkbox" name="label[]" value="{$val.name}" title="{$val.name}">
-                {/foreach}
-                {/if}
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">精选案例</label>
-            <div class="layui-input-block">
-                <input name="case_selected" value="1" type="checkbox" lay-skin="switch">
+                <input type="text" name="time" placeholder="请输入" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
@@ -83,16 +48,10 @@
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">排序</label>
-            <div class="layui-input-block">
-                <input type="text" name="order" placeholder="请输入(数值越大，排序越靠前)" autocomplete="off" class="layui-input">
-            </div>
-        </div>
-        <div class="layui-form-item">
             <label class="layui-form-label">内容</label>
             <div class="layui-input-block">
-                        <textarea type="text" name="content" id="myEdit" lay-verify="fu_content" style="width: 100%;height: 140px;">
-                        </textarea>
+                    <textarea type="text" name="content" id="myEdit" lay-verify="fu_content" style="width: 100%;height: 140px;">
+                    </textarea>
             </div>
         </div>
         <div class="layui-form-item">
@@ -106,59 +65,16 @@
 <div id="edit" style="display: none;">
     <div class="layui-form"> <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
         <div class="layui-form-item">
-            <label class="layui-form-label">选择父级</label>
+            <label class="layui-form-label">时间线</label>
             <div class="layui-input-block">
-                <select name="pid" id="pid">
-                    <option value="0">--请选择--</option>
-                    {if isset($case_type_list)}
-                    {foreach $case_type_list as $item }
-                    <option value="{$item.id}">{$item.name}</option>
-                    {/foreach}
-                    {/if}
-                </select>
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">标题</label>
-            <div class="layui-input-block">
-                <input type="text" id="title" name="title" placeholder="请输入" autocomplete="off" class="layui-input">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">第二标题</label>
-            <div class="layui-input-block">
-                <input type="text" id="second_title" name="second_title" placeholder="请输入" autocomplete="off"
-                       class="layui-input">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">标签选择</label>
-            <div class="layui-input-block" id="label_check">
-                {if isset($label_list)}
-                {foreach $label_list as $val}
-                <input type="checkbox" name="like{$val.id}" value="{$val.id}" title="{$val.name}">
-                {/foreach}
-                {/if}
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">精选案例</label>
-            <div class="layui-input-block">
-                <input name="case_selected" id="case_selected" value="1" type="checkbox" lay-skin="switch">
+                <input type="text" id="time" name="time" placeholder="请输入" autocomplete="off" class="layui-input">
+                <input type="hidden" id="id" name="id" placeholder="请输入" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">启用</label>
             <div class="layui-input-block">
                 <input name="status" id="status" value="1" type="checkbox" checked lay-skin="switch">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">排序</label>
-            <div class="layui-input-block">
-                <input type="text" id="order" name="order" placeholder="请输入(数值越大，排序越靠前)" autocomplete="off"
-                       class="layui-input">
-                <input type="hidden" id="id" name="id" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
@@ -192,18 +108,14 @@
         table.render({
             elem: '#table-rule'
             , height: 850
-            , url: '/admin/case_m/getCaseList' //数据接口
+            , url: '/admin/development/getDevelopmentList' //数据接口
             , page: true //开启分页
             , cols: [[ //表头
                 {
                     field: 'id', title: 'ID', width: 80, sort: true, fixed: 'left'
                 }
-                , {field: 'title', title: '标题'}
-                , {field: 'second_title', title: '第二标题'}
-                , {field: 'belong', title: '所属分类'}
-                , {field: 'case_selected', title: '精选案例'}
-                , {field: 'browse', title: '浏览量'}
-                , {field: 'order', title: '排序'}
+                , {field: 'time', title: '时间'}
+                , {field: 'content', title: '内容'}
                 , {field: 'status', title: '状态'}
                 , {fixed: 'right', width: 150, title: '操作', align: 'center', toolbar: '#barDemo'}
             ]]
@@ -251,8 +163,7 @@
             var tr = obj.tr; //获得当前行 tr 的 DOM 对象（如果有的话）
 
             if (layEvent === 'info') { //查看
-                $.post('/admin/case_m/caseInfo', {id: data.id}, (res) => {
-                    var valArr22 = Object.keys(res.data.label).map(function(i){return res.data.label[i]});
+                $.post('/admin/development/developmentInfo', {id: data.id}, (res) => {
                     if (res.status === 200) {
                         layer.open({
                             type: 1,
@@ -263,36 +174,12 @@
                         let index = articleEdit();
 
                         $('#id').val(res.data.id);
-                        $('#title').val(res.data.title);
-                        $('#second_title').val(res.data.second_title);
-                        $('#order').val(res.data.order);
-                        $('#pid').empty();
-                        $('#label_check').empty();
+                        $('#time').val(res.data.time);
                         if (res.data.status === 0) {
                             $('#status').removeAttr('checked');
                         } else {
                             $('#status').prop('checked', true);
                         }
-                        if (res.data.case_selected === 0) {
-                            $('#case_selected').removeAttr('checked');
-                        } else {
-                            $('#case_selected').prop('checked', true);
-                        }
-                        for (let item of res.data.case_type) {
-                            if (res.data.pid === item.id) {
-                                $('#pid').append('<option value="' + item.id + '" selected>' + item.name + '</option>')
-                            } else {
-                                $('#pid').append('<option value="' + item.id + '">' + item.name + '</option>')
-                            }
-                        }
-                        for (let val of res.data.label_list) {
-                            if (res.data.label.indexOf(val.name) > -1) {
-                                $('#label_check').append('<input type="checkbox" name="label[]" checked value="'+ val.name+'" title="'+ val.name +'">')
-                            }else{
-                                $('#label_check').append('<input type="checkbox" name="label[]" value="'+ val.name+'" title="'+ val.name +'">')
-                            }
-                        }
-
                         form.render();
                         layedit.setContent(index, res.data.content);
 
@@ -303,7 +190,7 @@
                 layer.confirm('真的要删除吗？', {
                     btn:['确定吧','取消'],
                 },function () {
-                    $.post('/admin/case_m/caseDelete',{id: data.id}, (res) => {
+                    $.post('/admin/development/developmentDelete',{id: data.id}, (res) => {
                         if (res.status === 200) {
                             layer.msg(res.message);
                             setTimeout(()=>{
@@ -313,8 +200,7 @@
                             layer.msg(res.message);
                         }
                     })
-                    }
-                );
+                });
             }
         });
 
