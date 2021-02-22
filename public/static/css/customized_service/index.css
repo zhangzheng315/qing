@@ -1,0 +1,297 @@
+@media screen and (min-width: 1200px) {
+  .layui-container {
+    width: 1200px !important;
+    padding: 0 !important;
+  }
+}
+#customized .title {
+  font-size: 30px;
+  color: #333;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 0 auto;
+  text-align: center;
+}
+#customized #banner {
+  height: 600px;
+  position: relative;
+}
+#customized #banner .layui-carousel .layui-carousel-ind {
+  display: none !important;
+}
+#customized nav {
+  height: 60px;
+  line-height: 60px;
+  background-color: #26242F;
+  margin-bottom: 100px;
+}
+#customized nav .layui-container ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#customized nav .layui-container ul li {
+  color: #fff;
+  cursor: pointer;
+}
+#customized #zhibo .layui-container .title {
+  margin-bottom: 70px;
+}
+#customized #zhibo .zhibo-item {
+  padding: 40px 0;
+}
+#customized #zhibo .zhibo-item .layui-container {
+  width: 897px !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#customized #zhibo .zhibo-item .layui-container .item-text h5 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 25px;
+}
+#customized #zhibo .zhibo-item .layui-container .item-text ul li {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #333;
+}
+#customized #zhibo .zhibo-item .layui-container .item-text ul li i {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background: #232E3C;
+  margin-right: 10px;
+}
+#customized #zhibo .zhibo-item .layui-container .item-text button {
+  width: 133px;
+  height: 40px;
+  background: #00CC99;
+  border-radius: 20px;
+  border: 0;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+#customized #zhibo .zhibo-item:nth-child(2n - 1) {
+  background-color: #232E3C;
+}
+#customized #zhibo .zhibo-item:nth-child(2n - 1) .layui-container .item-text h5,
+#customized #zhibo .zhibo-item:nth-child(2n - 1) .layui-container .item-text ul > li {
+  color: #fff;
+}
+#customized #zhibo .zhibo-item:nth-child(2n - 1) .layui-container .item-text ul li i {
+  background-color: #fff;
+}
+#customized #fiveG {
+  height: 450px;
+  background: url('/static/image/index/fiveG.png') no-repeat;
+  background-size: cover;
+  position: relative;
+}
+#customized #fiveG .hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 47, 35, 0.7);
+  z-index: 0;
+}
+#customized #fiveG .fiveg-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 0 0;
+  box-sizing: border-box;
+}
+#customized #fiveG .fiveg-content h2 {
+  font-size: 60px;
+  color: #fff;
+  text-align: center;
+}
+#customized #fiveG .fiveg-content h5 {
+  font-size: 40px;
+  color: #fff;
+  font-weight: 400;
+  margin: 45px auto 68px;
+}
+#customized #fiveG .fiveg-content button {
+  width: 31%;
+  height: 60px;
+  border: 0;
+  border: 2px solid #FFFFFF;
+  border-radius: 30px;
+  outline: none;
+  background-color: transparent;
+  font-size: 30px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+#customized #fiveG .fiveg-content button:hover {
+  background-color: #00cc99;
+  color: #fff;
+  border: 0;
+}
+@media screen and (min-width: 768px) and (max-width: 1300px) {
+  #customized .layui-container {
+    width: 99% !important;
+  }
+  #customized .title {
+    font-size: 26px;
+  }
+  #customized #banner {
+    height: 400px;
+  }
+  #customized nav {
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 50px;
+  }
+  #customized nav .layui-container ul {
+    width: 85%;
+    margin: 0 auto;
+  }
+  #customized #zhibo .layui-container .title {
+    margin-bottom: 40px;
+  }
+  #customized #fiveG {
+    height: 370px;
+  }
+  #customized #fiveG .fiveg-content {
+    padding: 60px 0 0;
+  }
+  #customized #fiveG .fiveg-content h2 {
+    font-size: 45px;
+  }
+  #customized #fiveG .fiveg-content h5 {
+    font-size: 32px;
+    margin: 21px auto 50px;
+  }
+  #customized #fiveG .fiveg-content button {
+    width: 28%;
+    height: 50px;
+    font-size: 25px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 995px) {
+  #customized #zhibo .layui-container .title {
+    margin-bottom: 30px;
+  }
+  #customized #zhibo .zhibo-item .layui-container {
+    width: 80% !important;
+  }
+  #customized #zhibo .zhibo-item .layui-container .item-img {
+    width: 36%;
+  }
+  #customized #zhibo .zhibo-item .layui-container .active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #customized #zhibo .zhibo-item .layui-container .active img {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  #customized #fiveG {
+    height: 330px;
+  }
+  #customized #fiveG .fiveg-content {
+    padding: 60px 0 0;
+  }
+  #customized #fiveG .fiveg-content h2 {
+    font-size: 35px;
+  }
+  #customized #fiveG .fiveg-content h5 {
+    font-size: 26px;
+    margin: 25px auto 40px;
+  }
+  #customized #fiveG .fiveg-content button {
+    width: 28%;
+    height: 45px;
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #customized .title {
+    font-size: 22px;
+  }
+  #customized #banner {
+    height: 300px;
+  }
+  #customized nav {
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 40px;
+  }
+  #customized nav .layui-container ul li {
+    font-size: 12px;
+  }
+  #customized #zhibo .layui-container .title {
+    margin-bottom: 30px;
+  }
+  #customized #zhibo .zhibo-item {
+    padding: 20px 0;
+  }
+  #customized #zhibo .zhibo-item .layui-container {
+    width: 90% !important;
+    justify-content: space-around;
+  }
+  #customized #zhibo .zhibo-item .layui-container .item-img {
+    width: 42%;
+    margin-right: 20px;
+  }
+  #customized #zhibo .zhibo-item .layui-container .active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #customized #zhibo .zhibo-item .layui-container .active img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  #customized #zhibo .zhibo-item .layui-container .small-img {
+    height: 70%;
+    width: 40%;
+  }
+  #customized #zhibo .zhibo-item .layui-container .small-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  #customized #zhibo .zhibo-item .layui-container .item-text {
+    margin-right: 20px;
+  }
+  #customized #zhibo .zhibo-item .layui-container .item-text h5 {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  #customized #zhibo .zhibo-item .layui-container .item-text ul > li {
+    font-size: 12px;
+  }
+  #customized #fiveG {
+    height: 260px;
+  }
+  #customized #fiveG .fiveg-content {
+    padding: 30px 0 20px;
+  }
+  #customized #fiveG .fiveg-content h2 {
+    font-size: 22px;
+  }
+  #customized #fiveG .fiveg-content h5 {
+    font-size: 18px;
+    text-align: center;
+    margin: 31px auto 40px;
+  }
+  #customized #fiveG .fiveg-content button {
+    width: 46%;
+    height: 40px;
+    font-size: 14px;
+  }
+}

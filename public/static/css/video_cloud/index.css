@@ -1,0 +1,906 @@
+@media screen and (min-width: 1200px) {
+  .layui-container {
+    width: 1200px !important;
+    padding: 0 !important;
+  }
+}
+#video_cloud .title {
+  font-size: 30px;
+  color: #333;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 0 auto;
+  text-align: center;
+}
+#video_cloud #banner {
+  height: 600px;
+  position: relative;
+}
+#video_cloud #banner .layui-carousel .layui-carousel-ind {
+  display: none !important;
+}
+#video_cloud .navbar {
+  height: 60px;
+  line-height: 60px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 6px 0px rgba(193, 193, 193, 0.28);
+}
+#video_cloud .navbar .layui-container ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#video_cloud .navbar .layui-container ul li {
+  height: 60px;
+  color: #333;
+  cursor: pointer;
+}
+#video_cloud .navbar .layui-container ul li:hover {
+  color: #00cc99;
+  border-bottom: 3px solid #00cc99;
+}
+#video_cloud #tedian {
+  padding: 100px 0 100px;
+}
+#video_cloud #tedian .layui-container .title {
+  margin-bottom: 60px;
+}
+#video_cloud #tedian .layui-container .tedian-content {
+  display: flex;
+  align-items: center;
+}
+#video_cloud #tedian .layui-container .tedian-content li {
+  width: 21%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#video_cloud #tedian .layui-container .tedian-content li h5 {
+  margin: 20px 0 18px;
+  font-size: 20px;
+  color: #333;
+}
+#video_cloud #tedian .layui-container .tedian-content li p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.4;
+}
+#video_cloud #tedian .layui-container .btns {
+  display: flex;
+  width: 30%;
+  margin: 0 auto;
+  margin-top: 40px;
+  justify-content: space-around;
+}
+#video_cloud #tedian .layui-container .btns button {
+  width: 133px;
+  height: 40px;
+  background: #00CC99;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
+#video_cloud #tedian .layui-container .btns button:hover {
+  background: #FFFFFF;
+  border: 1px solid #00CC99;
+  color: #00cc99;
+}
+#video_cloud #tedian .layui-container .btns button:nth-child(2) {
+  background: #FFFFFF;
+  border: 1px solid #00CC99;
+  color: #00cc99;
+}
+#video_cloud #tedian .layui-container .btns button:nth-child(2):hover {
+  background: #00CC99;
+  border: none;
+  color: #fff;
+}
+#video_cloud #mature .layui-container .title {
+  margin-bottom: 70px;
+}
+#video_cloud #mature .layui-container .mature-nav {
+  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 15px;
+  margin-bottom: 40px;
+}
+#video_cloud #mature .layui-container .mature-nav li {
+  padding-bottom: 10px;
+  margin-bottom: -2px;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+}
+#video_cloud #mature .layui-container .mature-nav li:hover {
+  border-bottom: 2px solid #00cc99;
+  color: #00cc99;
+}
+#video_cloud #mature .layui-container .mature-nav .active {
+  border-bottom: 2px solid #00cc99;
+  color: #00cc99;
+}
+#video_cloud #mature .mature-content {
+  height: 600px;
+  background: url('/static/image/videoCloud/women.png') no-repeat;
+}
+#video_cloud #mature .mature-content .layui-container .mature-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 113px 0 97px;
+  box-sizing: border-box;
+  width: 48%;
+  margin: 0 auto;
+}
+#video_cloud #mature .mature-content .layui-container .mature-box h5 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+#video_cloud #mature .mature-content .layui-container .mature-box .biaoqian {
+  font-size: 16px;
+  color: #FFFFFF;
+  opacity: 0.54;
+  margin: 33px 0 44px;
+}
+#video_cloud #mature .mature-content .layui-container .mature-box ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 23px;
+  color: #fff;
+}
+#video_cloud #mature .mature-content .layui-container .mature-box ul li i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #00CC99;
+  transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  /* IE 9 */
+  -moz-transform: rotate(45deg);
+  /* Firefox */
+  -webkit-transform: rotate(45deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(45deg);
+  /* Opera */
+  margin-right: 10px;
+}
+#video_cloud #mature .mature-content .layui-container .mature-box button {
+  margin-top: 31px;
+  width: 133px;
+  height: 40px;
+  background: #00CC99;
+  border-radius: 20px;
+  border: 0;
+  color: #fff;
+}
+#video_cloud #mature .mature-content .layui-container .mature-box button:hover {
+  background: transparent;
+  color: #00cc99;
+  border: 1px solid #00cc99;
+}
+#video_cloud #qiye {
+  padding: 101px 0 109px;
+}
+#video_cloud #qiye .layui-container .title {
+  margin-bottom: 70px;
+}
+#video_cloud #qiye .layui-container .qiye-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#video_cloud #qiye .layui-container .qiye-content li {
+  width: 50%;
+  height: 168px;
+  display: flex;
+  padding: 40px 0 0 60px;
+  border-bottom: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+#video_cloud #qiye .layui-container .qiye-content li:nth-child(2n) {
+  border-left: 1px solid #e5e5e5;
+}
+#video_cloud #qiye .layui-container .qiye-content li:nth-child(5) {
+  border-bottom: 0;
+}
+#video_cloud #qiye .layui-container .qiye-content li:nth-child(6) {
+  border-bottom: 0;
+}
+#video_cloud #qiye .layui-container .qiye-content li .icon {
+  width: 60px;
+  height: 60px;
+}
+#video_cloud #qiye .layui-container .qiye-content li .icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#video_cloud #qiye .layui-container .qiye-content li .text {
+  flex: 6;
+  margin-left: 20px;
+}
+#video_cloud #qiye .layui-container .qiye-content li .text h6 {
+  font-size: 20px;
+  color: #333333;
+  margin-bottom: 23px;
+}
+#video_cloud #qiye .layui-container .qiye-content li .text p {
+  font-size: 16px;
+  color: #666666;
+  margin-bottom: 10px;
+}
+#video_cloud #qiye .layui-container .qiye-content li .btn {
+  flex: 1.5;
+  display: none;
+  cursor: pointer;
+}
+#video_cloud #qiye .layui-container .qiye-content li .btn button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #00cc99;
+}
+#video_cloud #qiye .layui-container .qiye-content li:hover {
+  background: #FFFFFF;
+  box-shadow: 0px 0px 90px 0px rgba(50, 50, 50, 0.09);
+  border: none;
+}
+#video_cloud #qiye .layui-container .qiye-content li:hover .btn {
+  display: block;
+}
+#video_cloud #qiye .layui-container .btns {
+  display: flex;
+  width: 30%;
+  margin: 0 auto;
+  margin-top: 45px;
+  justify-content: space-around;
+}
+#video_cloud #qiye .layui-container .btns button {
+  width: 133px;
+  height: 40px;
+  background: #00CC99;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
+#video_cloud #qiye .layui-container .btns button:hover {
+  background: #FFFFFF;
+  border: 1px solid #00CC99;
+  color: #00cc99;
+}
+#video_cloud #qiye .layui-container .btns button:nth-child(2) {
+  background: #FFFFFF;
+  border: 1px solid #00CC99;
+  color: #00cc99;
+}
+#video_cloud #qiye .layui-container .btns button:nth-child(2):hover {
+  background: #00CC99;
+  border: none;
+  color: #fff;
+}
+#video_cloud #bottom-banner {
+  height: 338px;
+  background: linear-gradient(131deg, #00CC99, #59D590);
+  padding-top: 100px;
+  box-sizing: border-box;
+}
+#video_cloud #bottom-banner .layui-container h3 {
+  font-size: 40px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 80px;
+}
+#video_cloud #bottom-banner .layui-container button {
+  width: 214px;
+  height: 50px;
+  background: transparent;
+  border: 1px solid #FFFFFF;
+  border-radius: 25px;
+  color: #fff;
+  display: block;
+  margin: 0 auto;
+  font-size: 20px;
+  cursor: pointer;
+}
+#video_cloud #hezuo {
+  padding: 60px 0 20px;
+}
+#video_cloud #hezuo .title {
+  margin-bottom: 70px;
+}
+#video_cloud #hezuo .hezuo-nav {
+  width: 90%;
+  margin: 0 auto 70px;
+}
+#video_cloud #hezuo .hezuo-nav .logo-title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#video_cloud #hezuo .hezuo-nav .logo-title .active {
+  background-color: #00cc99;
+  border-radius: 20px;
+}
+#video_cloud #hezuo .hezuo-nav .logo-title .active span {
+  color: #fff;
+}
+#video_cloud #hezuo .hezuo-nav .logo-title li {
+  cursor: pointer;
+  height: 32px;
+  width: 8%;
+  margin: 0 auto;
+  line-height: 32px;
+  text-align: center;
+  padding: 0 15px;
+}
+#video_cloud #hezuo .hezuo-nav .logo-title li:hover {
+  background-color: #00cc99;
+  border-radius: 20px;
+}
+#video_cloud #hezuo .hezuo-nav .logo-title li:hover span {
+  color: #fff;
+}
+#video_cloud #hezuo .hezuo-nav .logo-title li span {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 5px;
+  text-align: center;
+}
+#video_cloud #hezuo .logo-box .logo-imgs {
+  display: none;
+}
+#video_cloud #hezuo .logo-box .logo-imgs li {
+  width: 13.5%;
+  height: 67px;
+  display: inline-block;
+  margin-right: 35px;
+  margin-bottom: 62px;
+}
+#video_cloud #hezuo .logo-box .logo-imgs li:nth-child(6n) {
+  margin-right: 0px;
+}
+#video_cloud #hezuo .logo-box .logo-imgs li img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+#video_cloud #hezuo .logo-box .active {
+  display: block;
+}
+#video_cloud #fiveG {
+  height: 450px;
+  background: url('/static/image/index/fiveG.png') no-repeat;
+  background-size: cover;
+  position: relative;
+}
+#video_cloud #fiveG .hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 47, 35, 0.7);
+  z-index: 0;
+}
+#video_cloud #fiveG .fiveg-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 0 0;
+  box-sizing: border-box;
+}
+#video_cloud #fiveG .fiveg-content h2 {
+  font-size: 60px;
+  color: #fff;
+  text-align: center;
+}
+#video_cloud #fiveG .fiveg-content h5 {
+  font-size: 40px;
+  color: #fff;
+  font-weight: 400;
+  margin: 45px auto 68px;
+}
+#video_cloud #fiveG .fiveg-content button {
+  width: 31%;
+  height: 60px;
+  border: 0;
+  border: 2px solid #FFFFFF;
+  border-radius: 30px;
+  outline: none;
+  background-color: transparent;
+  font-size: 30px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+#video_cloud #fiveG .fiveg-content button:hover {
+  background-color: #00cc99;
+  color: #fff;
+  border: 0;
+}
+@media screen and (min-width: 768px) and (max-width: 1300px) {
+  #video_cloud .layui-container {
+    width: 99% !important;
+  }
+  #video_cloud .title {
+    font-size: 26px;
+  }
+  #video_cloud #banner {
+    height: 400px;
+  }
+  #video_cloud .navbar {
+    height: 50px;
+    line-height: 50px;
+  }
+  #video_cloud .navbar .layui-container ul {
+    width: 80%;
+    margin: 0 auto;
+  }
+  #video_cloud .navbar .layui-container ul li {
+    height: 50px;
+  }
+  #video_cloud #tedian {
+    padding: 70px 0 60px;
+  }
+  #video_cloud #tedian .layui-container .title {
+    margin-bottom: 40px;
+  }
+  #video_cloud #tedian .layui-container .tedian-content li {
+    width: 21%;
+  }
+  #video_cloud #tedian .layui-container .tedian-content li img {
+    width: 40px;
+    height: 40px;
+  }
+  #video_cloud #tedian .layui-container .tedian-content li h5 {
+    margin: 20px 0 18px;
+    font-size: 18px;
+  }
+  #video_cloud #tedian .layui-container .tedian-content li p {
+    font-size: 14px;
+  }
+  #video_cloud #tedian .layui-container .btns {
+    width: 40%;
+  }
+  #video_cloud #tedian .layui-container .btns button {
+    width: 115px;
+    height: 40px;
+  }
+  #video_cloud #mature .layui-container .title {
+    margin-bottom: 70px;
+  }
+  #video_cloud #mature .layui-container .mature-nav {
+    border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 15px;
+    margin-bottom: 40px;
+  }
+  #video_cloud #mature .layui-container .mature-nav li {
+    padding-bottom: 10px;
+    margin-bottom: -2px;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+  }
+  #video_cloud #mature .layui-container .mature-nav li:hover {
+    border-bottom: 2px solid #00cc99;
+    color: #00cc99;
+  }
+  #video_cloud #mature .layui-container .mature-nav .active {
+    border-bottom: 2px solid #00cc99;
+    color: #00cc99;
+  }
+  #video_cloud #mature .mature-content {
+    height: 400px;
+    background-size: cover;
+  }
+  #video_cloud #mature .mature-content .layui-container .mature-box {
+    padding: 53px 0 0;
+    width: 55%;
+    margin: 0 auto;
+  }
+  #video_cloud #mature .mature-content .layui-container .mature-box h5 {
+    font-size: 20px;
+  }
+  #video_cloud #mature .mature-content .layui-container .mature-box .biaoqian {
+    font-size: 16px;
+    margin: 23px 0 20px;
+  }
+  #video_cloud #mature .mature-content .layui-container .mature-box ul li {
+    margin-bottom: 15px;
+  }
+  #video_cloud #mature .mature-content .layui-container .mature-box button {
+    margin-top: 21px;
+    width: 123px;
+  }
+  #video_cloud #qiye {
+    padding: 81px 0 89px;
+  }
+  #video_cloud #qiye .layui-container .title {
+    margin-bottom: 50px;
+  }
+  #video_cloud #qiye .layui-container .qiye-content li {
+    height: 148px;
+    padding: 30px 0 0 40px;
+  }
+  #video_cloud #qiye .layui-container .qiye-content li .icon {
+    width: 50px;
+    height: 50px;
+  }
+  #video_cloud #qiye .layui-container .qiye-content li .text {
+    flex: 6;
+    margin-left: 20px;
+  }
+  #video_cloud #qiye .layui-container .qiye-content li .text h6 {
+    font-size: 18px;
+    color: #333333;
+    margin-bottom: 18px;
+  }
+  #video_cloud #qiye .layui-container .qiye-content li .text p {
+    font-size: 16px;
+    color: #666666;
+    margin-bottom: 10px;
+  }
+  #video_cloud #qiye .layui-container .qiye-content li .btn {
+    flex: 1.5;
+    display: none;
+  }
+  #video_cloud #qiye .layui-container .qiye-content li .btn button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #00cc99;
+  }
+  #video_cloud #qiye .layui-container .btns {
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 45px;
+  }
+  #video_cloud #qiye .layui-container .btns button {
+    width: 133px;
+    height: 40px;
+  }
+  #video_cloud #hezuo .hezuo-nav {
+    margin: 0 auto 70px;
+  }
+  #video_cloud #hezuo .hezuo-nav .logo-title li span {
+    font-size: 16px;
+  }
+  #video_cloud #hezuo .logo-box .logo-imgs li {
+    width: 18%;
+    height: 55px;
+    margin: 0 15px 50px 0;
+  }
+  #video_cloud #fiveG {
+    height: 370px;
+  }
+  #video_cloud #fiveG .fiveg-content {
+    padding: 60px 0 0;
+  }
+  #video_cloud #fiveG .fiveg-content h2 {
+    font-size: 45px;
+  }
+  #video_cloud #fiveG .fiveg-content h5 {
+    font-size: 32px;
+    margin: 21px auto 50px;
+  }
+  #video_cloud #fiveG .fiveg-content button {
+    width: 28%;
+    height: 50px;
+    font-size: 25px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  #video_cloud #hezuo .layui-container {
+    width: 90%;
+  }
+  #video_cloud #hezuo .layui-container .title {
+    margin-bottom: 75px;
+  }
+  #video_cloud #hezuo .layui-container .hezuo-nav {
+    width: 95%;
+  }
+  #video_cloud #hezuo .layui-container .hezuo-nav .logo-title li {
+    width: 10%;
+  }
+  #video_cloud #hezuo .layui-container .logo-box .logo-imgs li {
+    width: 19%;
+    margin: 0 auto 40px;
+  }
+  #video_cloud #qiye {
+    padding: 71px 0 60px;
+  }
+  #video_cloud #qiye .layui-container .title {
+    margin-bottom: 40px;
+  }
+  #video_cloud #qiye .layui-container .qiye-content li {
+    height: 148px;
+    padding: 25px 0 0 25px;
+  }
+  #video_cloud #qiye .layui-container .qiye-content li .icon {
+    width: 40px;
+    height: 40px;
+  }
+  #video_cloud #qiye .layui-container .qiye-content li .text {
+    margin-left: 15px;
+  }
+  #video_cloud #qiye .layui-container .qiye-content li .text h6 {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  #video_cloud #qiye .layui-container .qiye-content li .text p {
+    font-size: 12px;
+    color: #666666;
+    margin-bottom: 10px;
+  }
+  #video_cloud #qiye .layui-container .qiye-content li .btn {
+    flex: 1.5;
+    display: none;
+  }
+  #video_cloud #qiye .layui-container .qiye-content li .btn button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #00cc99;
+    font-size: 12px;
+  }
+  #video_cloud #qiye .layui-container .btns {
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 45px;
+  }
+  #video_cloud #qiye .layui-container .btns button {
+    width: 110px;
+    height: 40px;
+    font-size: 12px;
+  }
+  #video_cloud #fiveG {
+    height: 330px;
+  }
+  #video_cloud #fiveG .fiveg-content {
+    padding: 60px 0 0;
+  }
+  #video_cloud #fiveG .fiveg-content h2 {
+    font-size: 35px;
+  }
+  #video_cloud #fiveG .fiveg-content h5 {
+    font-size: 26px;
+    margin: 25px auto 40px;
+  }
+  #video_cloud #fiveG .fiveg-content button {
+    width: 28%;
+    height: 45px;
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #video_cloud .title {
+    font-size: 22px;
+  }
+  #video_cloud #banner {
+    height: 300px;
+  }
+  #video_cloud #tedian {
+    padding: 40px 0 30px;
+  }
+  #video_cloud #tedian .layui-container .title {
+    margin-bottom: 40px;
+  }
+  #video_cloud #tedian .layui-container .tedian-content {
+    flex-wrap: wrap;
+  }
+  #video_cloud #tedian .layui-container .tedian-content li {
+    width: 48%;
+    margin-bottom: 20px;
+  }
+  #video_cloud #tedian .layui-container .tedian-content li img {
+    width: 40px;
+    height: 40px;
+  }
+  #video_cloud #tedian .layui-container .tedian-content li h5 {
+    margin: 10px 0 12px;
+    font-size: 14px;
+  }
+  #video_cloud #tedian .layui-container .tedian-content li p {
+    font-size: 12px;
+  }
+  #video_cloud #tedian .layui-container .btns {
+    width: 80%;
+    margin-top: 20px;
+  }
+  #video_cloud #tedian .layui-container .btns button {
+    width: 115px;
+    height: 35px;
+    font-size: 12px;
+  }
+  #video_cloud #mature {
+    margin-top: 20px;
+  }
+  #video_cloud #mature .layui-container {
+    padding: 0 !important;
+  }
+  #video_cloud #mature .layui-container .title {
+    margin-bottom: 30px;
+  }
+  #video_cloud #mature .layui-container .mature-nav {
+    border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 15px;
+    margin-bottom: 15px;
+    width: auto;
+    overflow-x: auto;
+  }
+  #video_cloud #mature .layui-container .mature-nav::-webkit-scrollbar {
+    display: none;
+  }
+  #video_cloud #mature .layui-container .mature-nav li {
+    padding-bottom: 10px;
+    margin-bottom: -2px;
+    font-size: 14px;
+    flex-shrink: 0;
+    width: auto;
+    margin: 0 10px;
+  }
+  #video_cloud #mature .mature-content {
+    height: 240px;
+    background-size: cover;
+  }
+  #video_cloud #mature .mature-content .layui-container .mature-box {
+    padding: 15px 0 0;
+    width: 90%;
+    margin: 0 auto;
+  }
+  #video_cloud #mature .mature-content .layui-container .mature-box h5 {
+    font-size: 16px;
+  }
+  #video_cloud #mature .mature-content .layui-container .mature-box .biaoqian {
+    font-size: 14px;
+    margin: 7px 0 5px;
+  }
+  #video_cloud #mature .mature-content .layui-container .mature-box ul li {
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+  #video_cloud #mature .mature-content .layui-container .mature-box button {
+    margin-top: 5px;
+    width: 103px;
+    height: 32px;
+    font-size: 12px;
+  }
+  #video_cloud #qiye {
+    padding: 51px 0 49px;
+  }
+  #video_cloud #qiye .layui-container {
+    padding: 0 5px !important;
+  }
+  #video_cloud #qiye .layui-container .title {
+    margin-bottom: 30px;
+  }
+  #video_cloud #qiye .layui-container .qiye-content li {
+    width: 100%;
+    height: 168px;
+    padding: 10px 0 0 15px;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+  }
+  #video_cloud #qiye .layui-container .qiye-content li:nth-child(2n) {
+    border-left: none;
+  }
+  #video_cloud #qiye .layui-container .qiye-content li .icon {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 10px;
+  }
+  #video_cloud #qiye .layui-container .qiye-content li .text {
+    flex: 4;
+    margin-left: 0px;
+  }
+  #video_cloud #qiye .layui-container .qiye-content li .text h6 {
+    font-size: 14px;
+    color: #333333;
+    margin-bottom: 10px;
+  }
+  #video_cloud #qiye .layui-container .qiye-content li .text p {
+    font-size: 12px;
+    color: #666666;
+    margin-bottom: 6px;
+  }
+  #video_cloud #qiye .layui-container .qiye-content li .btn {
+    flex: 1.5;
+    display: none;
+  }
+  #video_cloud #qiye .layui-container .qiye-content li .btn button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #00cc99;
+  }
+  #video_cloud #qiye .layui-container .btns {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 25px;
+  }
+  #video_cloud #qiye .layui-container .btns button {
+    width: 103px;
+    height: 35px;
+    font-size: 12px;
+  }
+  #video_cloud #bottom-banner {
+    height: 180px;
+    padding-top: 30px;
+  }
+  #video_cloud #bottom-banner .layui-container h3 {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  #video_cloud #bottom-banner .layui-container button {
+    width: 160px;
+    height: 40px;
+    font-size: 14px;
+  }
+  #video_cloud #hezuo {
+    padding: 40px 0 20px;
+  }
+  #video_cloud #hezuo .title {
+    margin-bottom: 35px;
+  }
+  #video_cloud #hezuo .hezuo-nav {
+    width: 100%;
+    overflow-x: auto;
+    margin: 0 auto 30px;
+  }
+  #video_cloud #hezuo .hezuo-nav::-webkit-scrollbar {
+    display: none;
+  }
+  #video_cloud #hezuo .hezuo-nav .logo-title {
+    width: auto;
+  }
+  #video_cloud #hezuo .hezuo-nav .logo-title li {
+    flex-shrink: 0;
+    width: 14%;
+    padding: 0px;
+    height: 25px;
+    line-height: 25px;
+  }
+  #video_cloud #hezuo .hezuo-nav .logo-title li span {
+    margin: 0;
+    font-size: 14px;
+  }
+  #video_cloud #hezuo .logo-box .logo-imgs li {
+    width: 19%;
+    height: 50px;
+    margin-right: 20px;
+    margin-bottom: 22px;
+  }
+  #video_cloud #fiveG {
+    height: 260px;
+  }
+  #video_cloud #fiveG .fiveg-content {
+    padding: 30px 0 20px;
+  }
+  #video_cloud #fiveG .fiveg-content h2 {
+    font-size: 22px;
+  }
+  #video_cloud #fiveG .fiveg-content h5 {
+    font-size: 18px;
+    text-align: center;
+    margin: 31px auto 40px;
+  }
+  #video_cloud #fiveG .fiveg-content button {
+    width: 46%;
+    height: 40px;
+    font-size: 14px;
+  }
+}

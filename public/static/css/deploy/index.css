@@ -1,0 +1,460 @@
+@media screen and (min-width: 1200px) {
+  .layui-container {
+    width: 1200px !important;
+    padding: 0 !important;
+  }
+}
+#deploy .title {
+  font-size: 30px;
+  color: #333;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 0 auto;
+  text-align: center;
+}
+#deploy #banner {
+  height: 600px;
+  position: relative;
+}
+#deploy #banner .layui-carousel {
+  height: 100%;
+}
+#deploy #banner .layui-carousel .lunbo-box {
+  height: 100%;
+}
+#deploy #banner .layui-carousel .lunbo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#deploy #banner .layui-carousel .layui-carousel-ind {
+  display: none !important;
+}
+#deploy #dianbo {
+  padding: 80px 0 30px;
+}
+#deploy #dianbo .layui-container .title {
+  margin-bottom: 50px;
+}
+#deploy #dianbo .layui-container .dianbo-content {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+}
+#deploy #dianbo .layui-container .dianbo-content .dianbo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 590px;
+  height: 149px;
+  margin: 0 20px 20px 0;
+  border: 1px solid #E5E5E5;
+  border-radius: 10px;
+  padding: 23px 0;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+#deploy #dianbo .layui-container .dianbo-content .dianbo-item:nth-child(2n) {
+  margin-right: 0px;
+}
+#deploy #dianbo .layui-container .dianbo-content .dianbo-item .item-left {
+  flex: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#deploy #dianbo .layui-container .dianbo-content .dianbo-item .item-left img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+#deploy #dianbo .layui-container .dianbo-content .dianbo-item .item-right {
+  flex: 6;
+}
+#deploy #dianbo .layui-container .dianbo-content .dianbo-item .item-right h5 {
+  font-size: 26px;
+  color: #2D2E3A;
+  margin-bottom: 12px;
+}
+#deploy #dianbo .layui-container .dianbo-content .dianbo-item .item-right p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.5;
+  width: 88%;
+}
+#deploy #dianbo .layui-container .dianbo-content .dianbo-item:hover {
+  background-color: #00cc99;
+  border: 0;
+  box-shadow: 0px 0px 29px 0px rgba(50, 50, 50, 0.16);
+}
+#deploy #dianbo .layui-container .dianbo-content .dianbo-item:hover .item-left img {
+  filter: brightness(0) invert(1);
+  -webkit-filter: brightness(0) invert(1);
+}
+#deploy #dianbo .layui-container .dianbo-content .dianbo-item:hover .item-right h5 {
+  color: #fff;
+}
+#deploy #dianbo .layui-container .dianbo-content .dianbo-item:hover .item-right p {
+  color: #F6F6F6;
+}
+#deploy #dianbo .layui-container .dianbo-bottom {
+  display: flex;
+  margin-bottom: 50px;
+}
+#deploy #dianbo .layui-container .dianbo-bottom .bottom-left {
+  width: 644px;
+  height: 300px;
+  margin-right: 57px;
+}
+#deploy #dianbo .layui-container .dianbo-bottom .bottom-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+}
+#deploy #dianbo .layui-container .dianbo-bottom .bottom-right {
+  width: 460px;
+  padding-top: 45px;
+  box-sizing: border-box;
+}
+#deploy #dianbo .layui-container .dianbo-bottom .bottom-right h4 {
+  font-size: 30px;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 45px;
+}
+#deploy #dianbo .layui-container .dianbo-bottom .bottom-right p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.4;
+}
+#deploy #qingshiyun .layui-container .title {
+  margin-bottom: 70px;
+}
+#deploy #qingshiyun .layui-container .qing-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#deploy #qingshiyun .layui-container .qing-content li {
+  width: 350px;
+  margin: 0 70px 60px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#deploy #qingshiyun .layui-container .qing-content li img {
+  width: 46px;
+  height: 46px;
+}
+#deploy #qingshiyun .layui-container .qing-content li h5 {
+  font-size: 20px;
+  color: #00cc99;
+  margin: 24px 0 19px;
+}
+#deploy #qingshiyun .layui-container .qing-content li p {
+  color: #666;
+  line-height: 1.4;
+}
+#deploy #qingshiyun .layui-container .qing-content li:nth-child(3n) {
+  margin-right: 0px;
+}
+#deploy #fiveG {
+  height: 500px;
+  background: url('/static/image/index/fiveG.png') no-repeat;
+  background-size: cover;
+  position: relative;
+}
+#deploy #fiveG .hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 47, 35, 0.7);
+  z-index: 0;
+}
+#deploy #fiveG .fiveg-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 0 0;
+  box-sizing: border-box;
+}
+#deploy #fiveG .fiveg-content h2 {
+  font-size: 60px;
+  color: #fff;
+  text-align: center;
+}
+#deploy #fiveG .fiveg-content h5 {
+  font-size: 40px;
+  color: #fff;
+  font-weight: 400;
+  margin: 45px auto 68px;
+}
+#deploy #fiveG .fiveg-content button {
+  width: 31%;
+  height: 60px;
+  border: 0;
+  border: 2px solid #FFFFFF;
+  border-radius: 30px;
+  outline: none;
+  background-color: transparent;
+  font-size: 30px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+#deploy #fiveG .fiveg-content button:hover {
+  background-color: #00cc99;
+  color: #fff;
+  border: 0;
+}
+@media screen and (min-width: 768px) and (max-width: 1300px) {
+  #deploy .layui-container {
+    width: 99% !important;
+  }
+  #deploy .title {
+    font-size: 26px;
+  }
+  #deploy #banner {
+    height: 400px;
+  }
+  #deploy #dianbo {
+    padding: 50px 0 30px;
+  }
+  #deploy #dianbo .layui-container .title {
+    margin-bottom: 30px;
+  }
+  #deploy #dianbo .layui-container .dianbo-content {
+    margin-bottom: 30px;
+  }
+  #deploy #dianbo .layui-container .dianbo-content .dianbo-item {
+    width: 45%;
+    height: 129px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 18px 0;
+  }
+  #deploy #dianbo .layui-container .dianbo-content .dianbo-item:nth-child(2n) {
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  #deploy #dianbo .layui-container .dianbo-content .dianbo-item .item-left img {
+    width: 50px;
+    height: 50px;
+  }
+  #deploy #dianbo .layui-container .dianbo-content .dianbo-item .item-right {
+    flex: 6;
+  }
+  #deploy #dianbo .layui-container .dianbo-content .dianbo-item .item-right h5 {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+  #deploy #dianbo .layui-container .dianbo-content .dianbo-item .item-right p {
+    font-size: 14px;
+    line-height: 1.5;
+    width: 88%;
+  }
+  #deploy #dianbo .layui-container .dianbo-bottom {
+    margin-bottom: 50px;
+    width: 90%;
+    margin: 0 auto;
+  }
+  #deploy #dianbo .layui-container .dianbo-bottom .bottom-left {
+    width: 50%;
+    height: 230px;
+    margin-right: 5%;
+  }
+  #deploy #dianbo .layui-container .dianbo-bottom .bottom-right {
+    width: 35%;
+    padding-top: 25px;
+  }
+  #deploy #dianbo .layui-container .dianbo-bottom .bottom-right h4 {
+    font-size: 26px;
+    margin-bottom: 25px;
+  }
+  #deploy #dianbo .layui-container .dianbo-bottom .bottom-right p {
+    font-size: 14px;
+  }
+  #deploy #qingshiyun .layui-container .title {
+    margin-bottom: 70px;
+  }
+  #deploy #qingshiyun .layui-container .qing-content li {
+    width: 32%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+  #deploy #qingshiyun .layui-container .qing-content li img {
+    width: 40px;
+    height: 40px;
+  }
+  #deploy #qingshiyun .layui-container .qing-content li h5 {
+    font-size: 20px;
+    margin: 16px 0 14px;
+  }
+  #deploy #qingshiyun .layui-container .qing-content li:nth-child(3n) {
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+  #deploy #fiveG {
+    height: 370px;
+  }
+  #deploy #fiveG .fiveg-content {
+    padding: 60px 0 0;
+  }
+  #deploy #fiveG .fiveg-content h2 {
+    font-size: 45px;
+  }
+  #deploy #fiveG .fiveg-content h5 {
+    font-size: 32px;
+    margin: 21px auto 50px;
+  }
+  #deploy #fiveG .fiveg-content button {
+    width: 28%;
+    height: 50px;
+    font-size: 25px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1135px) {
+  #deploy #dianbo .layui-container .dianbo-bottom {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 70%;
+    margin: 0 auto;
+  }
+  #deploy #dianbo .layui-container .dianbo-bottom .bottom-left {
+    width: 90%;
+  }
+  #deploy #dianbo .layui-container .dianbo-bottom .bottom-right {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  #deploy #fiveG {
+    height: 330px;
+  }
+  #deploy #fiveG .fiveg-content {
+    padding: 60px 0 0;
+  }
+  #deploy #fiveG .fiveg-content h2 {
+    font-size: 35px;
+  }
+  #deploy #fiveG .fiveg-content h5 {
+    font-size: 26px;
+    margin: 25px auto 40px;
+  }
+  #deploy #fiveG .fiveg-content button {
+    width: 28%;
+    height: 45px;
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #deploy .title {
+    font-size: 22px;
+  }
+  #deploy #banner {
+    height: 300px;
+  }
+  #deploy #dianbo {
+    padding: 30px 0 30px;
+  }
+  #deploy #dianbo .layui-container .title {
+    margin-bottom: 20px;
+  }
+  #deploy #dianbo .layui-container .dianbo-content {
+    margin-bottom: 20px;
+  }
+  #deploy #dianbo .layui-container .dianbo-content .dianbo-item {
+    width: 95%;
+    height: 89px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 18px 0;
+  }
+  #deploy #dianbo .layui-container .dianbo-content .dianbo-item:nth-child(2n) {
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  #deploy #dianbo .layui-container .dianbo-content .dianbo-item .item-left img {
+    width: 40px;
+    height: 40px;
+  }
+  #deploy #dianbo .layui-container .dianbo-content .dianbo-item .item-right {
+    flex: 6;
+  }
+  #deploy #dianbo .layui-container .dianbo-content .dianbo-item .item-right h5 {
+    font-size: 14px;
+    margin-bottom: 7px;
+  }
+  #deploy #dianbo .layui-container .dianbo-content .dianbo-item .item-right p {
+    font-size: 12px;
+  }
+  #deploy #dianbo .layui-container .dianbo-bottom {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 99%;
+    margin: 0 auto;
+  }
+  #deploy #dianbo .layui-container .dianbo-bottom .bottom-left {
+    width: 96%;
+    height: 170px;
+    margin: 0 auto;
+  }
+  #deploy #dianbo .layui-container .dianbo-bottom .bottom-right {
+    padding-top: 20px;
+    width: 96%;
+  }
+  #deploy #dianbo .layui-container .dianbo-bottom .bottom-right h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  #deploy #dianbo .layui-container .dianbo-bottom .bottom-right p {
+    font-size: 12px;
+  }
+  #deploy #qingshiyun .layui-container .title {
+    margin-bottom: 40px;
+  }
+  #deploy #qingshiyun .layui-container .qing-content li {
+    width: 48%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+  #deploy #qingshiyun .layui-container .qing-content li img {
+    width: 35px;
+    height: 35px;
+  }
+  #deploy #qingshiyun .layui-container .qing-content li h5 {
+    font-size: 14px;
+    margin: 10px 0 6px;
+  }
+  #deploy #qingshiyun .layui-container .qing-content li p {
+    font-size: 12px;
+  }
+  #deploy #qingshiyun .layui-container .qing-content li:nth-child(3n) {
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  #deploy #fiveG {
+    height: 260px;
+  }
+  #deploy #fiveG .fiveg-content {
+    padding: 30px 0 20px;
+  }
+  #deploy #fiveG .fiveg-content h2 {
+    font-size: 22px;
+  }
+  #deploy #fiveG .fiveg-content h5 {
+    font-size: 18px;
+    text-align: center;
+    margin: 31px auto 40px;
+  }
+  #deploy #fiveG .fiveg-content button {
+    width: 46%;
+    height: 40px;
+    font-size: 14px;
+  }
+}

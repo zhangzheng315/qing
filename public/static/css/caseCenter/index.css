@@ -1,0 +1,613 @@
+@media screen and (min-width: 1200px) {
+  .layui-container {
+    width: 1200px !important;
+    padding: 0 !important;
+  }
+}
+#case-center .title {
+  font-size: 30px;
+  color: #333;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 0 auto;
+  text-align: center;
+}
+#case-center #banner {
+  height: 600px;
+  position: relative;
+}
+#case-center #banner .layui-carousel .lunbo-box .lunbo-item {
+  position: relative;
+}
+#case-center #banner .layui-carousel .lunbo-box .lunbo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#case-center #banner .layui-carousel .lunbo-box .lunbo-item .hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 61, 46, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#case-center #banner .layui-carousel .lunbo-box .lunbo-item .hover h3 {
+  font-size: 60px;
+  font-weight: bold;
+  color: #FFFFFF;
+  margin-bottom: 37px;
+}
+#case-center #banner .layui-carousel .lunbo-box .lunbo-item .hover button {
+  width: 328px;
+  height: 60px;
+  border: 2px solid #FFFFFF;
+  border-radius: 30px;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: #fff;
+  font-size: 30px;
+}
+#case-center #banner .layui-carousel .layui-carousel-ind {
+  display: none !important;
+}
+#case-center #jingxuan .layui-container {
+  padding: 65px 0 57px !important;
+}
+#case-center #jingxuan .layui-container .title {
+  margin-bottom: 40px;
+}
+#case-center #jingxuan .layui-container .anlis {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#case-center #jingxuan .layui-container .anlis li {
+  width: 379px;
+  height: 220px;
+  position: relative;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#case-center #jingxuan .layui-container .anlis li .bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  border-radius: 5px;
+}
+#case-center #jingxuan .layui-container .anlis li .hover {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  z-index: 9;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+#case-center #jingxuan .layui-container .anlis li .hover .logo-img {
+  width: 149px;
+  height: 54px;
+}
+#case-center #jingxuan .layui-container .anlis li:nth-child(3n) {
+  margin-right: 0;
+}
+#case-center #jingxuan .layui-container .anlis li:nth-child(n + 4) {
+  margin-bottom: 0;
+}
+#case-center #all-case {
+  background-color: #F2F4F7;
+  padding: 55px 0 60px;
+}
+#case-center #all-case .layui-container .title {
+  margin-bottom: 65px;
+}
+#case-center #all-case .layui-container .all-nav {
+  border-bottom: 2px solid #E4E4E4;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 170px;
+  margin-bottom: 53px;
+}
+#case-center #all-case .layui-container .all-nav li {
+  padding-bottom: 10px;
+  margin-bottom: -2px;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+}
+#case-center #all-case .layui-container .all-nav .active {
+  border-bottom: 2px solid #00cc99;
+  color: #00cc99;
+}
+#case-center #all-case .layui-container .all-box ul {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#case-center #all-case .layui-container .all-box ul li {
+  width: 280px;
+  height: 278px;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-right: 25px;
+  margin-bottom: 19px;
+}
+#case-center #all-case .layui-container .all-box ul li img {
+  width: 100%;
+  height: 158px;
+  border-radius: 5px 5px 0px 0px;
+  object-fit: cover;
+}
+#case-center #all-case .layui-container .all-box ul li .text {
+  padding: 11px 0 0 17px;
+  box-sizing: border-box;
+}
+#case-center #all-case .layui-container .all-box ul li .text h5 {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+}
+#case-center #all-case .layui-container .all-box ul li .text p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+#case-center #all-case .layui-container .all-box ul li .text .biaoqian {
+  margin-top: 5px;
+}
+#case-center #all-case .layui-container .all-box ul li .text .biaoqian span {
+  font-size: 12px;
+  color: #999;
+}
+#case-center #all-case .layui-container .all-box ul li .text .biaoqian i {
+  text-emphasis: none;
+  color: #999;
+  margin: 0 3px;
+}
+#case-center #all-case .layui-container .all-box ul li:nth-child(4n) {
+  margin-right: 0;
+}
+#case-center #all-case .layui-container #test1 {
+  display: flex;
+  justify-content: center;
+}
+#case-center #product {
+  padding-top: 59px;
+  box-sizing: border-box;
+}
+#case-center #product .product-content {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 70px;
+}
+#case-center #product .product-content .product-item {
+  width: 32%;
+  height: 272px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 8px 0px rgba(193, 193, 193, 0.36);
+  border-radius: 10px;
+}
+#case-center #product .product-content .product-item .item-head {
+  display: flex;
+  align-items: center;
+  height: 61px;
+  border-bottom: 1px solid #E5E5E5;
+}
+#case-center #product .product-content .product-item .item-head img {
+  width: 30px;
+  height: 30px;
+  margin: 0 21px 0 11.5%;
+}
+#case-center #product .product-content .product-item .item-head h5 {
+  font-size: 20px;
+  color: #333;
+  font-weight: bold;
+}
+#case-center #product .product-content .product-item .item-body {
+  height: 166px;
+  padding: 31px 30px 0;
+  box-sizing: border-box;
+}
+#case-center #product .product-content .product-item .item-body p {
+  color: #666;
+  font-size: 14px;
+  text-align: left;
+  letter-spacing: 0.5px;
+}
+#case-center #product .product-content .product-item .item-footer {
+  height: calc(100% - 227px);
+  display: flex;
+  align-items: center;
+}
+#case-center #product .product-content .product-item .item-footer button {
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  font-size: 14px;
+  outline: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+}
+#case-center #product .product-content .product-item .item-footer .more {
+  border-radius: 0 0 0 10px;
+}
+#case-center #product .product-content .product-item .item-footer .free {
+  color: #fff;
+  background-color: #00cc99;
+  border-radius: 0 0 10px 0;
+}
+#case-center #jiejue {
+  height: 260px;
+  background: url('/static/image/index/fiveG.png') no-repeat;
+  background-size: cover;
+  position: relative;
+}
+#case-center #jiejue .hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 0;
+}
+#case-center #jiejue .jiejue-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0 0;
+  box-sizing: border-box;
+}
+#case-center #jiejue .jiejue-content h2 {
+  font-size: 60px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 30px;
+}
+#case-center #jiejue .jiejue-content button {
+  width: 31%;
+  height: 60px;
+  border: 0;
+  border: 2px solid #FFFFFF;
+  border-radius: 30px;
+  outline: none;
+  background-color: transparent;
+  font-size: 30px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+#case-center #jiejue .jiejue-content button:hover {
+  background-color: #00cc99;
+  color: #fff;
+  border: 0;
+}
+@media screen and (min-width: 768px) and (max-width: 1300px) {
+  #case-center .title {
+    font-size: 26px;
+  }
+  #case-center #banner {
+    height: 400px;
+  }
+  #case-center #jingxuan .layui-container {
+    width: 98% !important;
+    padding: 30px 0 40px !important;
+  }
+  #case-center #jingxuan .layui-container .title {
+    margin-bottom: 25px;
+  }
+  #case-center #jingxuan .layui-container .anlis li {
+    width: 30%;
+    height: 180px;
+    position: relative;
+    margin: 0 auto 20px;
+  }
+  #case-center #jingxuan .layui-container .anlis li .hover .logo-img {
+    width: 109px;
+    height: 46px;
+    object-fit: contain;
+  }
+  #case-center #jingxuan .layui-container .anlis li:nth-child(3n) {
+    margin: 0 auto 14px;
+  }
+  #case-center #jingxuan .layui-container .anlis li:nth-child(n + 3) {
+    margin: 0 auto 14px;
+  }
+  #case-center #all-case {
+    background-color: #F2F4F7;
+    padding: 30px 0 40px;
+  }
+  #case-center #all-case .layui-container {
+    width: 98% !important;
+    padding: 0 5px;
+  }
+  #case-center #all-case .layui-container .title {
+    margin-bottom: 25px;
+  }
+  #case-center #all-case .layui-container .all-nav {
+    padding: 0 50px;
+    margin-bottom: 30px;
+  }
+  #case-center #all-case .layui-container .all-nav li {
+    font-size: 14px;
+  }
+  #case-center #all-case .layui-container .all-box ul {
+    align-items: center;
+  }
+  #case-center #all-case .layui-container .all-box ul li {
+    width: 30%;
+    height: 200px;
+    margin: 0 auto 20px;
+  }
+  #case-center #all-case .layui-container .all-box ul li img {
+    height: 45%;
+  }
+  #case-center #all-case .layui-container .all-box ul li .text {
+    padding: 8px 0 0 12px;
+    box-sizing: border-box;
+  }
+  #case-center #all-case .layui-container .all-box ul li .text h5 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  #case-center #all-case .layui-container .all-box ul li .text p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+  #case-center #all-case .layui-container .all-box ul li .text .biaoqian {
+    margin-top: 5px;
+  }
+  #case-center #all-case .layui-container .all-box ul li .text .biaoqian span {
+    font-size: 12px;
+    color: #999;
+  }
+  #case-center #all-case .layui-container .all-box ul li .text .biaoqian i {
+    text-emphasis: none;
+    color: #999;
+    margin: 0 3px;
+  }
+  #case-center #all-case .layui-container .all-box ul li:nth-child(3n) {
+    margin: 0 auto 20px;
+  }
+  #case-center #all-case .layui-container .all-box ul li:nth-child(4n) {
+    margin: 0 auto 20px;
+  }
+  #case-center #product {
+    padding-top: 30px;
+  }
+  #case-center #product .title {
+    margin-bottom: 30px;
+  }
+  #case-center #product .product-content {
+    margin: 0px auto 40px;
+  }
+  #case-center #product .product-content .product-item {
+    height: 230px;
+  }
+  #case-center #product .product-content .product-item .item-head {
+    height: 45px;
+  }
+  #case-center #product .product-content .product-item .item-head img {
+    width: 25px;
+    height: 25px;
+  }
+  #case-center #product .product-content .product-item .item-head img h5 {
+    font-size: 18px;
+  }
+  #case-center #product .product-content .product-item .item-body {
+    height: 140px;
+    padding: 20px 20px 0;
+  }
+  #case-center #product .product-content .product-item .item-footer {
+    height: calc(100% - 186px);
+  }
+  #case-center #jiejue {
+    height: 200px;
+  }
+  #case-center #jiejue .jiejue-content {
+    padding: 30px 0 0;
+  }
+  #case-center #jiejue .jiejue-content h2 {
+    font-size: 45px;
+    margin-bottom: 25px;
+  }
+  #case-center #jiejue .jiejue-content button {
+    width: 28%;
+    height: 50px;
+    font-size: 25px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  #case-center #jiejue {
+    height: 170px;
+  }
+  #case-center #jiejue .jiejue-content {
+    padding: 30px 0 0;
+  }
+  #case-center #jiejue .jiejue-content h2 {
+    font-size: 35px;
+  }
+  #case-center #jiejue .jiejue-content button {
+    width: 28%;
+    height: 45px;
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #case-center .title {
+    font-size: 22px;
+  }
+  #case-center #banner {
+    height: 300px;
+  }
+  #case-center #banner .layui-carousel .lunbo-box .lunbo-item {
+    position: relative;
+  }
+  #case-center #banner .layui-carousel .lunbo-box .lunbo-item .hover h3 {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 22px;
+    font-weight: bold;
+    color: #FFFFFF;
+    margin-bottom: 37px;
+    text-align: center;
+  }
+  #case-center #banner .layui-carousel .lunbo-box .lunbo-item .hover button {
+    width: 36%;
+    height: 40px;
+    font-size: 14px;
+  }
+  #case-center #jingxuan .layui-container {
+    padding: 30px 0 40px !important;
+  }
+  #case-center #jingxuan .layui-container .title {
+    margin-bottom: 25px;
+  }
+  #case-center #jingxuan .layui-container .anlis li {
+    width: 47%;
+    height: 120px;
+    position: relative;
+    margin: 0 auto 8px;
+  }
+  #case-center #jingxuan .layui-container .anlis li .hover .logo-img {
+    width: 89px;
+    height: 36px;
+    object-fit: contain;
+  }
+  #case-center #jingxuan .layui-container .anlis li:nth-child(3n) {
+    margin: 0 auto 8px;
+  }
+  #case-center #jingxuan .layui-container .anlis li:nth-child(n + 3) {
+    margin: 0 auto 8px;
+  }
+  #case-center #all-case {
+    background-color: #F2F4F7;
+    padding: 30px 0 40px;
+  }
+  #case-center #all-case .layui-container {
+    padding: 0 5px;
+  }
+  #case-center #all-case .layui-container .title {
+    margin-bottom: 25px;
+  }
+  #case-center #all-case .layui-container .all-nav {
+    padding: 0 15px;
+    margin-bottom: 33px;
+  }
+  #case-center #all-case .layui-container .all-nav li {
+    font-size: 12px;
+  }
+  #case-center #all-case .layui-container .all-box ul li {
+    width: 48%;
+    height: 160px;
+    margin: 0 auto 15px;
+  }
+  #case-center #all-case .layui-container .all-box ul li img {
+    height: 45%;
+  }
+  #case-center #all-case .layui-container .all-box ul li .text {
+    padding: 5px 0 0 10px;
+    box-sizing: border-box;
+  }
+  #case-center #all-case .layui-container .all-box ul li .text h5 {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 3px;
+  }
+  #case-center #all-case .layui-container .all-box ul li .text p {
+    font-size: 12px;
+    color: #666;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+  #case-center #all-case .layui-container .all-box ul li .text .biaoqian {
+    margin-top: 3px;
+  }
+  #case-center #all-case .layui-container .all-box ul li .text .biaoqian span {
+    font-size: 12px;
+    color: #999;
+  }
+  #case-center #all-case .layui-container .all-box ul li .text .biaoqian i {
+    text-emphasis: none;
+    color: #999;
+    margin: 0 3px;
+  }
+  #case-center #all-case .layui-container .all-box ul li:nth-child(4n) {
+    margin-right: 0;
+  }
+  #case-center #product {
+    margin-top: 0px;
+    padding-top: 30px;
+  }
+  #case-center #product .product-content {
+    width: 93%;
+    padding-top: 0px;
+    flex-direction: column;
+    margin-bottom: 40px;
+    margin-top: 25px;
+  }
+  #case-center #product .product-content .product-item {
+    width: 100%;
+    height: 220px;
+    margin-bottom: 25px;
+  }
+  #case-center #product .product-content .product-item .item-head {
+    height: 50px;
+  }
+  #case-center #product .product-content .product-item .item-head img {
+    width: 23px;
+    height: 23px;
+  }
+  #case-center #product .product-content .product-item .item-head h5 {
+    font-size: 16px;
+  }
+  #case-center #product .product-content .product-item .item-body {
+    height: 121px;
+    padding: 21px 20px 0;
+  }
+  #case-center #product .product-content .product-item .item-footer {
+    height: calc(100% - 171px);
+  }
+  #case-center #jiejue {
+    height: 160px;
+  }
+  #case-center #jiejue .jiejue-content {
+    padding: 20px 0 15px;
+  }
+  #case-center #jiejue .jiejue-content h2 {
+    font-size: 22px;
+  }
+  #case-center #jiejue .jiejue-content button {
+    width: 36%;
+    height: 40px;
+    font-size: 14px;
+  }
+}

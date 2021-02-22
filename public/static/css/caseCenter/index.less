@@ -1,0 +1,809 @@
+@media screen and (min-width: 1200px) {
+    .layui-container {
+        width: 1200px !important;
+        padding: 0 !important;
+    }
+}
+
+#case-center {
+    .title {
+        font-size: 30px;
+        color: #333;
+        font-weight: bold;
+        letter-spacing: 2px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    #banner {
+        height: 600px;
+        position: relative;
+
+        .layui-carousel {
+            .lunbo-box {
+                .lunbo-item {
+                    position: relative;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+
+                    .hover {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(0, 61, 46, .3);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+
+                        h3 {
+                            font-size: 60px;
+                            font-weight: bold;
+                            color: #FFFFFF;
+                            margin-bottom: 37px;
+                        }
+
+                        button {
+                            width: 328px;
+                            height: 60px;
+                            border: 2px solid #FFFFFF;
+                            border-radius: 30px;
+                            outline: none;
+                            cursor: pointer;
+                            background-color: transparent;
+                            color: #fff;
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+
+            .layui-carousel-ind {
+                display: none !important;
+            }
+        }
+    }
+
+    #jingxuan {
+        .layui-container {
+            padding: 65px 0 57px !important;
+
+            .title {
+                margin-bottom: 40px;
+            }
+
+            .anlis {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+
+                li {
+                    width: 379px;
+                    height: 220px;
+                    position: relative;
+                    margin-right: 30px;
+                    margin-bottom: 30px;
+                    border-radius: 5px;
+                    cursor: pointer;
+
+                    .bg-img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        z-index: 0;
+                        border-radius: 5px;
+
+                    }
+
+                    .hover {
+                        position: absolute;
+                        top: 0%;
+                        left: 0%;
+                        z-index: 9;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(0, 0, 0, .2);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 5px;
+
+                        .logo-img {
+                            width: 149px;
+                            height: 54px;
+                        }
+                    }
+
+
+                    &:nth-child(3n) {
+                        margin-right: 0;
+
+                    }
+
+                    &:nth-child(n + 4) {
+                        margin-bottom: 0;
+
+                    }
+                }
+            }
+        }
+
+    }
+
+    #all-case {
+        background-color: #F2F4F7;
+        padding: 55px 0 60px;
+
+        .layui-container {
+            .title {
+                margin-bottom: 65px;
+            }
+
+            .all-nav {
+                border-bottom: 2px solid #E4E4E4;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                padding: 0 170px;
+                margin-bottom: 53px;
+
+                li {
+                    padding-bottom: 10px;
+                    margin-bottom: -2px;
+                    font-size: 16px;
+                    color: #333;
+                    cursor: pointer;
+                }
+
+                .active {
+                    border-bottom: 2px solid #00cc99;
+                    color: #00cc99;
+                }
+            }
+
+            .all-box {
+                ul {
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: wrap;
+
+                    li {
+                        width: 280px;
+                        height: 278px;
+                        background-color: #fff;
+                        border-radius: 5px;
+                        margin-right: 25px;
+                        margin-bottom: 19px;
+
+                        img {
+                            width: 100%;
+                            height: 158px;
+                            border-radius: 5px 5px 0px 0px;
+                            object-fit: cover;
+
+                        }
+
+                        .text {
+                            padding: 11px 0 0 17px;
+                            box-sizing: border-box;
+
+                            h5 {
+                                font-size: 16px;
+                                color: #333;
+                                margin-bottom: 10px;
+
+                            }
+
+                            p {
+                                font-size: 14px;
+                                color: #666;
+                                line-height: 1.5;
+                            }
+
+                            .biaoqian {
+                                margin-top: 5px;
+
+                                span {
+                                    font-size: 12px;
+                                    color: #999;
+                                }
+
+                                i {
+                                    text-emphasis: none;
+                                    color: #999;
+                                    margin: 0 3px;
+                                }
+                            }
+                        }
+
+                        &:nth-child(4n) {
+                            margin-right: 0;
+
+                        }
+                    }
+                }
+            }
+
+            #test1 {
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+
+    // 产品与服务
+    #product {
+        padding-top: 59px;
+        box-sizing: border-box;
+
+        .product-content {
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 46px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 70px;
+
+            .product-item {
+                width: 32%;
+                height: 272px;
+                background: #FFFFFF;
+                box-shadow: 0px 4px 8px 0px rgba(193, 193, 193, 0.36);
+                border-radius: 10px;
+
+                .item-head {
+                    display: flex;
+                    align-items: center;
+                    height: 61px;
+                    border-bottom: 1px solid #E5E5E5;
+
+                    img {
+                        width: 30px;
+                        height: 30px;
+                        margin: 0 21px 0 11.5%;
+                    }
+
+                    h5 {
+                        font-size: 20px;
+                        color: #333;
+                        font-weight: bold;
+                    }
+                }
+
+                .item-body {
+                    height: 166px;
+                    padding: 31px 30px 0;
+                    box-sizing: border-box;
+
+                    p {
+                        color: #666;
+                        font-size: 14px;
+                        text-align: left;
+                        letter-spacing: .5px;
+                    }
+                }
+
+                .item-footer {
+                    height: calc(100% - 227px);
+                    display: flex;
+                    align-items: center;
+
+                    button {
+                        width: 50%;
+                        height: 100%;
+                        text-align: center;
+                        font-size: 14px;
+                        outline: none;
+                        border: none;
+                        color: #333;
+                        cursor: pointer;
+                    }
+
+                    .more {
+                        border-radius: 0 0 0 10px;
+                    }
+
+                    .free {
+                        color: #fff;
+                        background-color: #00cc99;
+                        border-radius: 0 0 10px 0;
+
+                    }
+                }
+            }
+        }
+    }
+
+    // 
+    #jiejue {
+        height: 260px;
+        background: url('/static/image/index/fiveG.png') no-repeat;
+        background-size: cover;
+        position: relative;
+
+        .hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .8);
+            z-index: 0;
+        }
+
+        .jiejue-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 0 0;
+            box-sizing: border-box;
+
+            h2 {
+                font-size: 60px;
+                color: #fff;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            button {
+                width: 31%;
+                height: 60px;
+                border: 0;
+                border: 2px solid #FFFFFF;
+                border-radius: 30px;
+                outline: none;
+                background-color: transparent;
+                font-size: 30px;
+                color: #FFFFFF;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #00cc99;
+                    color: #fff;
+                    border: 0;
+                }
+            }
+        }
+
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1300px) {
+        .title {
+            font-size: 26px;
+        }
+        #banner {
+            height: 400px;
+        }
+
+        #jingxuan {
+            .layui-container {
+                width: 98% !important;
+                padding: 30px 0 40px !important;
+
+                .title {
+                    margin-bottom: 25px;
+                }
+
+                .anlis {
+
+                    li {
+                        width: 30%;
+                        height: 180px;
+                        position: relative;
+                        margin: 0 auto 20px;
+
+                        .hover {
+                            .logo-img {
+                                width: 109px;
+                                height: 46px;
+                                object-fit: contain;
+                            }
+                        }
+
+
+                        &:nth-child(3n) {
+                            margin: 0 auto 14px;
+
+
+                        }
+
+                        &:nth-child(n + 3) {
+                            margin: 0 auto 14px;
+
+
+                        }
+                    }
+                }
+            }
+
+        }
+
+        #all-case {
+            background-color: #F2F4F7;
+            padding: 30px 0 40px;
+
+            .layui-container {
+                width: 98% !important;
+                padding: 0 5px;
+
+                .title {
+                    margin-bottom: 25px;
+                }
+
+                .all-nav {
+                    padding: 0 50px;
+                    margin-bottom: 30px;
+
+                    li {
+                        font-size: 14px;
+                    }
+                }
+
+                .all-box {
+                    ul {
+                        align-items: center;
+                        li {
+                            width: 30%;
+                            height: 200px;
+                            margin: 0 auto 20px;
+
+                            img {
+                                height: 45%;
+
+                            }
+
+                            .text {
+                                padding: 8px 0 0 12px;
+                                box-sizing: border-box;
+
+                                h5 {
+                                    font-size: 16px;
+                                    color: #333;
+                                    margin-bottom: 5px;
+
+                                }
+
+                                p {
+                                    font-size: 14px;
+                                    color: #666;
+                                    line-height: 1.5;
+                                    display: -webkit-box;
+                                    -webkit-box-orient: vertical;
+                                    -webkit-line-clamp: 2;
+                                    overflow: hidden;
+                                }
+
+                                .biaoqian {
+                                    margin-top: 5px;
+
+                                    span {
+                                        font-size: 12px;
+                                        color: #999;
+                                    }
+
+                                    i {
+                                        text-emphasis: none;
+                                        color: #999;
+                                        margin: 0 3px;
+                                    }
+                                }
+                            }
+
+                            &:nth-child(3n) {
+                                margin: 0 auto 20px;
+                            }
+                            &:nth-child(4n) {
+                                margin: 0 auto 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #product {
+            padding-top: 30px;
+            .title {
+                margin-bottom: 30px;
+
+            }
+            .product-content {
+                margin: 0px auto 40px;
+
+                .product-item {
+                    height: 230px;
+
+                    .item-head {
+                        height: 45px;
+
+                        img {
+                            width: 25px;
+                            height: 25px;
+
+                            h5 {
+                                font-size: 18px;
+                            }
+                        }
+                    }
+
+                    .item-body {
+                        height: 140px;
+                        padding: 20px 20px 0;
+                    }
+
+                    .item-footer {
+                        height: calc(100% - 186px);
+                    }
+                }
+            }
+        }
+
+        #jiejue {
+            height: 200px;
+
+            .jiejue-content {
+                padding: 30px 0 0;
+
+                h2 {
+                    font-size: 45px;
+                    margin-bottom: 25px;
+                }
+
+                button {
+                    width: 28%;
+                    height: 50px;
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 992px) {
+        #jiejue {
+            height: 170px;
+
+            .jiejue-content {
+                padding: 30px 0 0;
+
+                h2 {
+                    font-size: 35px;
+                }
+
+                button {
+                    width: 28%;
+                    height: 45px;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .title {
+            font-size: 22px;
+        }
+
+        #banner {
+            height: 300px;
+
+            .layui-carousel {
+                .lunbo-box {
+                    .lunbo-item {
+                        position: relative;
+
+                        .hover {
+
+                            h3 {
+                                width: 90%;
+                                margin: 0 auto;
+                                font-size: 22px;
+                                font-weight: bold;
+                                color: #FFFFFF;
+                                margin-bottom: 37px;
+                                text-align: center;
+
+                            }
+
+                            button {
+                                width: 36%;
+                                height: 40px;
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #jingxuan {
+            .layui-container {
+                padding: 30px 0 40px !important;
+
+                .title {
+                    margin-bottom: 25px;
+                }
+
+                .anlis {
+
+                    li {
+                        width: 47%;
+                        height: 120px;
+                        position: relative;
+                        margin: 0 auto 8px;
+
+                        .hover {
+                            .logo-img {
+                                width: 89px;
+                                height: 36px;
+                                object-fit: contain;
+                            }
+                        }
+
+
+                        &:nth-child(3n) {
+                            margin: 0 auto 8px;
+
+
+                        }
+
+                        &:nth-child(n + 3) {
+                            margin: 0 auto 8px;
+
+
+                        }
+                    }
+                }
+            }
+
+        }
+
+        #all-case {
+            background-color: #F2F4F7;
+            padding: 30px 0 40px;
+
+            .layui-container {
+                padding: 0 5px;
+
+                .title {
+                    margin-bottom: 25px;
+                }
+
+                .all-nav {
+                    padding: 0 15px;
+                    margin-bottom: 33px;
+
+                    li {
+                        font-size: 12px;
+                    }
+                }
+
+                .all-box {
+                    ul {
+
+                        li {
+                            width: 48%;
+                            height: 160px;
+                            margin: 0 auto 15px;
+
+                            img {
+                                height: 45%;
+
+                            }
+
+                            .text {
+                                padding: 5px 0 0 10px;
+                                box-sizing: border-box;
+
+                                h5 {
+                                    font-size: 14px;
+                                    color: #333;
+                                    margin-bottom: 3px;
+
+                                }
+
+                                p {
+                                    font-size: 12px;
+                                    color: #666;
+                                    display: -webkit-box;
+                                    -webkit-box-orient: vertical;
+                                    -webkit-line-clamp: 2;
+                                    overflow: hidden;
+                                }
+
+                                .biaoqian {
+                                    margin-top: 3px;
+
+                                    span {
+                                        font-size: 12px;
+                                        color: #999;
+                                    }
+
+                                    i {
+                                        text-emphasis: none;
+                                        color: #999;
+                                        margin: 0 3px;
+                                    }
+                                }
+                            }
+
+                            &:nth-child(4n) {
+                                margin-right: 0;
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #product {
+            margin-top: 0px;
+            padding-top: 30px;
+
+            .product-content {
+                width: 93%;
+                padding-top: 0px;
+                flex-direction: column;
+                margin-bottom: 40px;
+                margin-top: 25px;
+
+                .product-item {
+                    width: 100%;
+                    height: 220px;
+                    margin-bottom: 25px;
+
+                    .item-head {
+                        height: 50px;
+
+                        img {
+                            width: 23px;
+                            height: 23px;
+                        }
+
+                        h5 {
+                            font-size: 16px;
+                        }
+                    }
+
+                    .item-body {
+                        height: 121px;
+                        padding: 21px 20px 0;
+                    }
+
+                    .item-footer {
+                        height: calc(100% - 171px);
+                    }
+                }
+            }
+
+        }
+
+        #jiejue {
+            height: 160px;
+
+            .jiejue-content {
+                padding: 20px 0 15px;
+
+                h2 {
+                    font-size: 22px;
+                }
+
+                button {
+                    width: 36%;
+                    height: 40px;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
