@@ -1,0 +1,228 @@
+{extend name="common::layout"/}
+{block name="main-content"}
+<style>
+    .layui-btn {
+        margin-top: 8px;
+        margin-left: 5px;
+    }
+
+    .btn {
+        margin-top: 0 !important;
+    }
+
+    #add {
+        padding-top: 20px;
+        padding-right: 30px;
+    }
+
+</style>
+<!-- 右侧主体开始 -->
+<div class="page-content">
+    <div class="layui-fluid">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+                <div class="layui-card">
+                    <button class="layui-btn" onclick="add()"><i class="layui-icon"></i>增加</button>
+                    </button>
+                    <!-- 动态表格 -->
+                    <table id="table-rule" lay-filter="table-rule"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- 中部结束 -->
+<div id="add" style="display: none;">
+    <form class="layui-form"> <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
+        <div class="layui-form-item">
+            <label class="layui-form-label">职位</label>
+            <div class="layui-input-block">
+                <input type="text" name="position" placeholder="请输入" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">薪资</label>
+            <div class="layui-input-block">
+                <input type="text" name="salary" placeholder="请输入(20K-30K)" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">地区</label>
+            <div class="layui-input-block">
+                <input type="text" name="region" placeholder="请输入(上海-嘉定区)" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">学历</label>
+            <div class="layui-input-block">
+                <input type="text" name="education" placeholder="请输入(大专及以上)" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">工作年限</label>
+            <div class="layui-input-block">
+                <input type="text" name="years" placeholder="请输入(3-5年)" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">启用</label>
+            <div class="layui-input-block">
+                <input name="status" value="1" type="checkbox" checked lay-skin="switch">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">排序</label>
+            <div class="layui-input-block">
+                <input type="text" name="order" placeholder="请输入(数值越大，排序越靠前)" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="add">保存</button>
+            </div>
+        </div>
+        <!-- 更多表单结构排版请移步文档左侧【页面元素-表单】一项阅览 -->
+    </form>
+</div>
+<div id="edit" style="display: none;">
+    <div class="layui-form"> <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
+        <div class="layui-form-item">
+            <label class="layui-form-label">职位</label>
+            <div class="layui-input-block">
+                <input type="text" name="position" id="position" placeholder="请输入" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">薪资</label>
+            <div class="layui-input-block">
+                <input type="text" name="salary" id="salary" placeholder="请输入(20K-30K)" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">地区</label>
+            <div class="layui-input-block">
+                <input type="text" name="region" id="region" placeholder="请输入(上海-嘉定区)" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">学历</label>
+            <div class="layui-input-block">
+                <input type="text" name="education" id="education" placeholder="请输入(大专及以上)" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">工作年限</label>
+            <div class="layui-input-block">
+                <input type="text" name="years" id="years" placeholder="请输入(3-5年)" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">启用</label>
+            <div class="layui-input-block">
+                <input name="status" id="status" value="1" type="checkbox" checked lay-skin="switch">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">排序</label>
+            <div class="layui-input-block">
+                <input type="text" name="order" id="order" placeholder="请输入(数值越大，排序越靠前)" autocomplete="off" class="layui-input">
+                <input type="hidden" name="id" id="id" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="edit">保存</button>
+            </div>
+        </div>
+        <!-- 更多表单结构排版请移步文档左侧【页面元素-表单】一项阅览 -->
+    </div>
+</div>
+
+<script type="text/html" id="barDemo">
+    <a class="layui-btn btn layui-btn-xs" lay-event="info">详情</a>
+    <a class="layui-btn btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+<script>
+    layui.use(['form', 'table', 'layedit'], function () {
+        var table = layui.table;
+        var form = layui.form;
+
+        //创建动态表格
+        table.render({
+            elem: '#table-rule'
+            , height: 850
+            , url: '/admin/join_us/getJoinUsList' //数据接口
+            , page: true //开启分页
+            , cols: [[ //表头
+                {
+                    field: 'id', title: 'ID', width: 80, sort: true, fixed: 'left'
+                }
+                , {field: 'position', title: '职位'}
+                , {field: 'salary', title: '薪资'}
+                , {field: 'region', title: '地区'}
+                , {field: 'education', title: '学历要求'}
+                , {field: 'years', title: '工作年限'}
+                , {field: 'order', title: '排序'}
+                , {field: 'status', title: '状态'}
+                , {fixed: 'right', width: 150, title: '操作', align: 'center', toolbar: '#barDemo'}
+            ]]
+        });
+
+        //监听工具条
+        table.on('tool(table-rule)', function (obj) { //注：tool 是工具条事件名，test 是 table 原始容器的属性 lay-filter="对应的值"
+            var data = obj.data; //获得当前行数据
+            var layEvent = obj.event; //获得 lay-event 对应的值（也可以是表头的 event 参数对应的值）
+            var tr = obj.tr; //获得当前行 tr 的 DOM 对象（如果有的话）
+
+            if (layEvent === 'info') { //查看
+                $.post('/admin/join_us/joinUsInfo', {id: data.id}, (res) => {
+                    if (res.status === 200) {
+                        layer.open({
+                            type: 1,
+                            title: '编辑',
+                            area: ['900px', '800px'],
+                            content: $('#edit'),
+                        });
+
+                        $('#id').val(res.data.id);
+                        $('#position').val(res.data.position);
+                        $('#salary').val(res.data.salary);
+                        $('#region').val(res.data.region);
+                        $('#education').val(res.data.education);
+                        $('#years').val(res.data.years);
+                        $('#order').val(res.data.order);
+
+                        if (res.data.status === 0) {
+                            $('#status').removeAttr('checked');
+                        } else {
+                            $('#status').prop('checked', true);
+                        }
+
+                        form.render();
+                    }
+                })
+
+            } else if (layEvent === 'del') { //删除
+                layer.confirm('真的要删除吗？', {
+                    btn:['确定吧','取消'],
+                },function () {
+                    $.post('/admin/join_us/joinUsDelete',{id: data.id}, (res) => {
+                        if (res.status === 200) {
+                            layer.msg(res.message);
+                            setTimeout(()=>{
+                                window.location.reload()
+                            },500)
+                        }else{
+                            layer.msg(res.message);
+                        }
+                    })
+                });
+            }
+        });
+
+    });
+
+
+</script>
+{/block}

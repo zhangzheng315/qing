@@ -52,6 +52,12 @@
                 <input type="text" name="title" placeholder="请输入" autocomplete="off" class="layui-input">
             </div>
         </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">简介</label>
+            <div class="layui-input-block">
+                <textarea name="introduction" placeholder="请输入内容" class="layui-textarea"></textarea>
+            </div>
+        </div>
         <div class="layui-form-item">
             <label class="layui-form-label">启用</label>
             <div class="layui-input-block">
@@ -109,6 +115,12 @@
             <label class="layui-form-label">标题</label>
             <div class="layui-input-block">
                 <input type="text" id="title" name="title" placeholder="请输入" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">简介</label>
+            <div class="layui-input-block">
+                <textarea name="introduction" id="introduction" placeholder="请输入内容" class="layui-textarea"></textarea>
             </div>
         </div>
         <div class="layui-form-item">
@@ -194,7 +206,6 @@
                 $('.img-show').attr('src',res.data.src);
                 $('.img_url').val(res.data.src);
                 layer.msg(res.msg);
-                console.log(res); //上传成功返回值，必须为json格式
             }
         });
         //创建动态表格
@@ -224,7 +235,6 @@
 
             if (layEvent === 'info') { //查看
                 $.post('/admin/banner/bannerInfo', {id: data.id}, (res) => {
-                    console.log(res)
                     if (res.status === 200) {
                         layer.open({
                             type: 1,
@@ -239,6 +249,7 @@
                         $('.img-show').attr('src',res.data.img_url);
                         $('.img_url').val(res.data.img_url);
                         $('#pid').empty();
+                        $('#introduction').val(res.data.introduction);
 
                         if (res.data.status === 0) {
                             $('#status').removeAttr('checked');

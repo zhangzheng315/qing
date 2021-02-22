@@ -40,9 +40,9 @@
             <div class="layui-input-block">
                 <select name="pid">
                     <option value="0">--请选择--</option>
-                    {if isset($navigation_list)}
-                    {foreach $navigation_list as $item }
-                    <option value="{$item.id}">{$item.menu_name}</option>
+                    {if isset($article_type_list)}
+                    {foreach $article_type_list as $item }
+                    <option value="{$item.id}">{$item.name}</option>
                     {/foreach}
                     {/if}
                 </select>
@@ -61,6 +61,22 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">标签选择</label>
+            <div class="layui-input-block">
+                {if isset($label_list)}
+                {foreach $label_list as $val}
+                <input type="checkbox" name="label[]" value="{$val.name}" title="{$val.name}">
+                {/foreach}
+                {/if}
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">热门文章</label>
+            <div class="layui-input-block">
+                <input name="hot_article" value="1" type="checkbox" lay-skin="switch">
+            </div>
+        </div>
+        <div class="layui-form-item">
             <label class="layui-form-label">启用</label>
             <div class="layui-input-block">
                 <input name="status" value="1" type="checkbox" checked lay-skin="switch">
@@ -75,8 +91,8 @@
         <div class="layui-form-item">
             <label class="layui-form-label">内容</label>
             <div class="layui-input-block">
-                        <textarea type="text" name="content" id="myEdit" lay-verify="fu_content" style="width: 100%;height: 140px;">
-                        </textarea>
+                    <textarea type="text" name="content" id="myEdit" lay-verify="fu_content" style="width: 100%;height: 140px;">
+                    </textarea>
             </div>
         </div>
         <div class="layui-form-item">
@@ -94,9 +110,9 @@
             <div class="layui-input-block">
                 <select name="pid" id="pid">
                     <option value="0">--请选择--</option>
-                    {if isset($navigation_list)}
-                    {foreach $navigation_list as $item }
-                    <option value="{$item.id}">{$item.menu_name}</option>
+                    {if isset($article_type_list)}
+                    {foreach $article_type_list as $item }
+                    <option value="{$item.id}">{$item.name}</option>
                     {/foreach}
                     {/if}
                 </select>
@@ -113,6 +129,22 @@
             <div class="layui-input-block">
                 <input type="text" id="second_title" name="second_title" placeholder="请输入" autocomplete="off"
                        class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">标签选择</label>
+            <div class="layui-input-block" id="label_check">
+                {if isset($label_list)}
+                {foreach $label_list as $val}
+                <input type="checkbox" name="like{$val.id}" value="{$val.id}" title="{$val.name}">
+                {/foreach}
+                {/if}
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">热门文章</label>
+            <div class="layui-input-block">
+                <input name="hot_article" id="hot_article" value="1" type="checkbox" lay-skin="switch">
             </div>
         </div>
         <div class="layui-form-item">
@@ -168,8 +200,9 @@
                 }
                 , {field: 'title', title: '标题'}
                 , {field: 'second_title', title: '第二标题'}
-                , {field: 'belong', title: '所属分类'}
-                // ,{field: 'content', title: '内容'}
+                , {field: 'pid_name', title: '所属分类'}
+                , {field: 'hot_article', title: '热门文章'}
+                , {field: 'browse', title: '浏览量'}
                 , {field: 'order', title: '排序'}
                 , {field: 'status', title: '状态'}
                 , {fixed: 'right', width: 150, title: '操作', align: 'center', toolbar: '#barDemo'}
@@ -219,11 +252,10 @@
 
             if (layEvent === 'info') { //查看
                 $.post('/admin/article/articleInfo', {id: data.id}, (res) => {
-                    console.log(res)
                     if (res.status === 200) {
                         layer.open({
                             type: 1,
-                            title: '新增',
+                            title: '编辑',
                             area: ['900px', '800px'],
                             content: $('#edit'),
                         });
@@ -234,16 +266,29 @@
                         $('#second_title').val(res.data.second_title);
                         $('#order').val(res.data.order);
                         $('#pid').empty();
+                        $('#label_check').empty();
                         if (res.data.status === 0) {
                             $('#status').removeAttr('checked');
                         } else {
                             $('#status').prop('checked', true);
                         }
-                        for (let item of res.data.navigation_list) {
+                        if (res.data.hot_article === 0) {
+                            $('#hot_article').removeAttr('checked');
+                        } else {
+                            $('#hot_article').prop('checked', true);
+                        }
+                        for (let item of res.data.article_type) {
                             if (res.data.pid === item.id) {
-                                $('#pid').append('<option value="' + item.id + '" selected>' + item.menu_name + '</option>')
+                                $('#pid').append('<option value="' + item.id + '" selected>' + item.name + '</option>')
                             } else {
-                                $('#pid').append('<option value="' + item.id + '">' + item.menu_name + '</option>')
+                                $('#pid').append('<option value="' + item.id + '">' + item.name + '</option>')
+                            }
+                        }
+                        for (let val of res.data.label_list) {
+                            if (res.data.label.indexOf(val.name) > -1) {
+                                $('#label_check').append('<input type="checkbox" name="label[]" checked value="'+ val.name+'" title="'+ val.name +'">')
+                            }else{
+                                $('#label_check').append('<input type="checkbox" name="label[]" value="'+ val.name+'" title="'+ val.name +'">')
                             }
                         }
 
@@ -267,8 +312,7 @@
                             layer.msg(res.message);
                         }
                     })
-                    }
-                );
+                });
             }
         });
 

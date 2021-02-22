@@ -131,10 +131,14 @@
                         $("#status").empty();
                         $("#group_id").remove();
                         for (var i = 0; i < res.data.rules_all.length; i++) {
-                            if ($.inArray(String(res.data.rules_all[i].rule_id), res.data.rules) !== -1) {
+                            if (res.data.group_id === 1) {
                                 var dom = `<input type="checkbox" name="like` + res.data.rules_all[i].rule_id + `" checked value="` + res.data.rules_all[i].rule_id + `" title="` + res.data.rules_all[i].title + `">`;
-                            } else {
-                                var dom = `<input type="checkbox" name="like` + res.data.rules_all[i].rule_id + `" value="` + res.data.rules_all[i].rule_id + `" title="` + res.data.rules_all[i].title + `">`;
+                            }else{
+                                if ($.inArray(String(res.data.rules_all[i].rule_id), res.data.rules) !== -1) {
+                                    var dom = `<input type="checkbox" name="like` + res.data.rules_all[i].rule_id + `" checked value="` + res.data.rules_all[i].rule_id + `" title="` + res.data.rules_all[i].title + `">`;
+                                } else {
+                                    var dom = `<input type="checkbox" name="like` + res.data.rules_all[i].rule_id + `" value="` + res.data.rules_all[i].rule_id + `" title="` + res.data.rules_all[i].title + `">`;
+                                }
                             }
                             $('#rules').append(dom);
                         }

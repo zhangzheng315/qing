@@ -20,7 +20,7 @@ class Administrators extends Common{
      * 角色管理
      */
     public function role(){
-        $str = ModelAdministrators::getFieldList('auth_rule','title,rule_id',['status'=>1]);
+        $str = ModelAdministrators::getFieldList('auth_rule','title,rule_id',['status'=>1,'deleted_time'=>0]);
         $add_url = '/admin/administrators/roleCreate';
         return $this->fetch('',['rules'=>$str,'add_url'=>$add_url]);
     }
@@ -65,7 +65,7 @@ class Administrators extends Common{
         $str = ServeAdministrators::data_one_info($data,'auth_group');
         if($str){
             $str['rules'] = explode(',',$str['rules']);
-            $str['rules_all'] =  ModelAdministrators::getFieldList('auth_rule','title,rule_id',['status'=>1]);
+            $str['rules_all'] =  ModelAdministrators::getFieldList('auth_rule','title,rule_id',['status'=>1,'deleted_time'=>0]);
             return show($this->ok,'success',$str);
         }else{
             return show($this->fail,'error');

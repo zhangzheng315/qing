@@ -159,7 +159,6 @@
 
             if (layEvent === 'info') { //查看
                 $.post('/admin/administrators/ruleInfo', {rule_id: data.rule_id}, (res) => {
-                    console.log(res)
                     if (res.status === 200) {
                         layer.open({
                             type: 1,

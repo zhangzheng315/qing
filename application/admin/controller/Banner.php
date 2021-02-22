@@ -92,7 +92,7 @@ class Banner extends Common{
     }
 
     /**
-     * 修改导航栏
+     * 修改轮播图
      * @return mixed
      */
     public function bannerEdit(){
@@ -120,7 +120,7 @@ class Banner extends Common{
     }
 
     /**
-     * 删除导航栏
+     * 删除轮播图
      * @return mixed
      */
     public function bannerDelete(Request $request){

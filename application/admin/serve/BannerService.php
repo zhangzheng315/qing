@@ -20,15 +20,11 @@ class BannerService extends Common{
     }
 
     /**
-     * 创建菜单
+     * 创建轮播图
      * @param $data
      * @return bool
      */
     public function bannerCreate($param){
-        if ($param['pid'] == 0) {
-            $this->setError('请选择父类');
-            return false;
-        }
         if(!isset($param['status'])) $param['status'] = 0;
         $pid_name = $this->navigation->where(['id' => $param['pid']])->value('menu_name');
         $data = [
@@ -36,6 +32,7 @@ class BannerService extends Common{
             'pid' => $param['pid'],
             'pid_name' => $pid_name,
             'title' => $param['title'] ?: '',
+            'introduction' => $param['introduction'],
             'status' => $param['status'],
             'order' => $param['order'] ?: 0,
             'created_time' => time(),
@@ -54,7 +51,7 @@ class BannerService extends Common{
 
 
     /**
-     * 导航栏详情
+     * 导航轮播图
      * @param $param
      * @return array|bool|false|\PDOStatement|string|\think\Model
      * @throws \think\db\exception\DataNotFoundException
@@ -76,16 +73,12 @@ class BannerService extends Common{
     }
 
     /**
-     * 导航栏修改
+     * 轮播图修改
      * @param $data
      * @return bool
      */
     public function bannerEdit($data)
     {
-        if ($data['pid'] == 0) {
-            $this->setError('请选择父类');
-            return false;
-        }
         if(!isset($data['status'])) $data['status'] = 0;
         if (isset($data['file'])) {
             //layui富文本自带file参数
@@ -106,7 +99,7 @@ class BannerService extends Common{
     }
 
     /**
-     * 文章删除
+     * 轮播图删除
      * @param $param
      * @return bool
      */

@@ -2,27 +2,30 @@
 namespace app\admin\controller;
 
 use app\admin\serve\ArticleService;
-use app\admin\serve\NavigationService;
+use app\admin\serve\ArticleTypeService;
+use app\admin\serve\LabelService;
 use think\Request;
 use think\Validate;
 
 class Article extends Common{
     public $articleService;
-    public $navigationService;
-    public function __construct(ArticleService $articleService, NavigationService $navigationService)
+    public $articleTypeService;
+    public $labelService;
+    public function __construct(ArticleService $articleService, ArticleTypeService $articleTypeService, LabelService $labelService)
     {
         parent::__construct();
         $this->articleService = $articleService;
-        $this->navigationService = $navigationService;
+        $this->articleTypeService = $articleTypeService;
+        $this->labelService = $labelService;
     }
 
     public function index()
     {
-        $navigation_list = $this->navigationService->navigationList();
+        $article_type_list = $this->articleTypeService->articleTypeList();
+        $label_list = $this->labelService->labelList();
         $add_url = '/admin/article/articleCreate';
         $edit_url = '/admin/article/articleEdit';
-        $del_url = '/admin/article/articleDelete';
-        return $this->fetch('',compact('navigation_list','add_url','edit_url','del_url'));
+        return $this->fetch('',compact('article_type_list','label_list','add_url','edit_url'));
     }
 
     /**
@@ -32,14 +35,9 @@ class Article extends Common{
         $data = input('get.');
         $data['deleted_time'] = 0;
         $str = ArticleService::data_paging($data,'article','order');
-        $navigation_list = $this->navigationService->navigationList();
         foreach ($str['data'] as &$value) {
             $value['status'] = $value['status'] == 1 ? '显示' : '不显示';
-            foreach ($navigation_list as $item) {
-                if ($item['id'] == $value['pid']) {
-                    $value['belong'] = $item['menu_name'];
-                }
-            }
+            $value['hot_article'] = $value['hot_article'] == 1 ? '是' : '否';
         }
         return layshow($this->code,'ok',$str['data'],$str['count']);
     }
