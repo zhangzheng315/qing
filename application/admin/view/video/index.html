@@ -304,7 +304,6 @@
         //通过class绑定多个上传file
         $(".select").unbind("change").bind("change",function(){
 
-            //获取上传的input 的id用来区分多个上传时各自的进度及上传结果处理
             var file = this.files[0];
             var finishedAttr = [];
             var compareChunks = [];
@@ -342,10 +341,7 @@
                         if (chunks[i].percent === 100){
                             finishedAttr[i] = true;
                         }
-
                     }
-
-                    // $("#jinDu_"+thisId).html("进度：" + total.percent.toFixed(2) + "% ");
                     element.progress('uploadProgress',total.percent.toFixed(2) + '%');
 
                     compareChunks = chunks;
@@ -369,7 +365,6 @@
             }
         })
     }
-
 
     function dateFtt(date,fmt) {
         if(fmt==null){
