@@ -23,19 +23,18 @@
         <div id="banner">
             <div class="layui-carousel" id="banners">
                 <div carousel-item class="lunbo-box">
+                    {if isset($banner_list)}
+                    {foreach($banner_list as $item)}
                     <div class="lunbo-item">
                         <div class="hover">
-                            <h3>轻直播为您提供一站式企业视频解决方案</h3>
+                            <h3>{$item.title}</h3>
                             <button>立即咨询</button>
                         </div>
-                        <img src="/static/image/index/banner.png" alt="">
+                        <img src="{$item.img_url}" alt="">
                     </div>
-                    <div class="lunbo-item">
-                        <img src="/static/image/index/banner.png" alt="">
-                    </div>
-                    <div class="lunbo-item">
-                        <img src="/static/image/index/banner.png" alt="">
-                    </div>
+                    {/foreach}
+                    {/if}
+
                 </div>
             </div>
         </div>
@@ -45,36 +44,16 @@
             <div class="layui-container">
                 <h2 class="title">精选案例</h2>
                 <ul class="anlis">
+                    {if isset($case_selected)}
+                    {foreach($case_selected as $item)}
                     <li>
-                        <img class="bg-img" src="/static/image/site_service/people.png" alt="">
+                        <img class="bg-img" src="{$item.cover_img_url}" alt="">
                         <div class="hover">
                             <img class="logo-img" src="/static/image/logo.png" alt="">
                         </div>
                     </li>
-                    <li>
-                        <img class="bg-img" src="/static/image/site_service/people.png" alt="">
-                        <div class="hover">
-                            <img class="logo-img" src="/static/image/logo.png" alt="">
-                        </div>
-                    </li>
-                    <li>
-                        <img class="bg-img" src="/static/image/site_service/people.png" alt="">
-                        <div class="hover">
-                            <img class="logo-img" src="/static/image/logo.png" alt="">
-                        </div>
-                    </li>
-                    <li>
-                        <img class="bg-img" src="/static/image/site_service/people.png" alt="">
-                        <div class="hover">
-                            <img class="logo-img" src="/static/image/logo.png" alt="">
-                        </div>
-                    </li>
-                    <li>
-                        <img class="bg-img" src="/static/image/site_service/people.png" alt="">
-                        <div class="hover">
-                            <img class="logo-img" src="/static/image/logo.png" alt="">
-                        </div>
-                    </li>
+                    {/foreach}
+                    {/if}
                     <li>
                         <img class="bg-img" src="/static/image/site_service/people.png" alt="">
                         <div class="hover">
@@ -98,6 +77,7 @@
                     <li>地产</li>
                 </ul>
                 <div class="all-box">
+                    <ul class="case_type"></ul>
                     <ul>
                         <!-- <li>
                             <img src="/static/image/site_service/people.png" alt="">
@@ -503,6 +483,31 @@
             , theme: '#00cc99'
         });
     });
+
+    casePoint(1)
+    function casePoint(index) {
+        $.ajax({
+            url: "{:url('/admin/case_m/getCaseByWhere')}",
+            data:{'pid':index},
+            type:'get',
+            success:function (res) {
+                console.log(res)
+                if (res.status === 200) {
+                    $('.case_type').empty();
+                    var label_html = '';
+                    for (let item of res.data) {
+                        for (let label of item.label) {
+                            label_html = '<i>|</i><span>'+label+'</span>';
+                        }
+                        $('.case_type').append('<li><img src="{$item.cover_img_url}" alt=""><div class="text"><h5>{$item.title}</h5><p>{$item.second_title}</p><div class="biaoqian">'+label_html+'</div></div></li>');
+                    }
+                }
+            },
+            error:function (err) {
+                console.log(err)
+            }
+        })
+    }
 </script>
 
 </html>

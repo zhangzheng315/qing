@@ -35,6 +35,7 @@ class CaseService extends Common{
             'second_title' => $param['second_title'] ?: '',
             'pid' => $param['pid'],
             'content' => $param['content'],
+            'cover_img_url' => $param['cover_img_url'] ?:'https://images.innocomn.com/036d5202102231449286918.png',
             'status' => $status,
             'label' => $label,
             'case_selected' => $case_selected,
@@ -100,6 +101,9 @@ class CaseService extends Common{
         }else{
             $data['label'] = '';
         }
+        if (!$data['cover_img_url']) {
+            $data['cover_img_url'] = 'https://images.innocomn.com/036d5202102231449286918.png';
+        }
         $where = ['id' => $data['id']];
         $data['updated_time'] = time();
         $res = $this->case->update($data,$where);
@@ -130,5 +134,47 @@ class CaseService extends Common{
         }
         $this->setMessage('删除成功');
         return true;
+    }
+
+    /**
+     * @param $param
+     * @return bool|false|\PDOStatement|string|\think\Collection
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
+    public function getCaseByWhere($param)
+    {
+        $where = [
+            'status'=>1,
+            'deleted_time' => 0,
+            'pid' => $param['pid'],
+        ];
+        $res = $this->case->where($where)->select();
+        if (!$res) {
+            $this->setError('暂无数据');
+            return false;
+        }
+        foreach ($res as &$item) {
+            $item->label = explode(',', $item->label);
+        }
+        $this->setMessage('查询成功');
+        return $res;
+    }
+
+    public function getCaseSelected()
+    {
+        $where = [
+            'status'=>1,
+            'deleted_time' => 0,
+            'case_selected' => 1,
+        ];
+        $res = $this->case->where($where)->select();
+        if (!$res) {
+            $this->setError('暂无数据');
+            return false;
+        }
+        $this->setMessage('查询成功');
+        return $res;
     }
 }

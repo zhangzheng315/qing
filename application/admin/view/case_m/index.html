@@ -71,6 +71,21 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">封面图片</label>
+            <div class="layui-input-block">
+                <button type="button" class="layui-btn cover_img_url">
+                    <i class="layui-icon">&#xe67c;</i>上传图片
+                </button>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"></label>
+            <div class="layui-input-block">
+                <input type="hidden" name="cover_img_url" class="img_url">
+                <img src="" alt="" width="200px" class="img-show">
+            </div>
+        </div>
+        <div class="layui-form-item">
             <label class="layui-form-label">精选案例</label>
             <div class="layui-input-block">
                 <input name="case_selected" value="1" type="checkbox" lay-skin="switch">
@@ -142,6 +157,21 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">封面图片</label>
+            <div class="layui-input-block">
+                <button type="button" class="layui-btn cover_img_url">
+                    <i class="layui-icon">&#xe67c;</i>图片上传
+                </button>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"></label>
+            <div class="layui-input-block">
+                <input type="hidden" name="cover_img_url" class="img_url">
+                <img src="" alt="" width="200px" class="img-show">
+            </div>
+        </div>
+        <div class="layui-form-item">
             <label class="layui-form-label">精选案例</label>
             <div class="layui-input-block">
                 <input name="case_selected" id="case_selected" value="1" type="checkbox" lay-skin="switch">
@@ -177,16 +207,57 @@
         <!-- 更多表单结构排版请移步文档左侧【页面元素-表单】一项阅览 -->
     </div>
 </div>
+<!--图片弹出-->
+<script type="text/html" id="imgtmp">
+    <div id="layer-photos-demo" style="cursor:pointer;">
+        <img onclick="imgPoint(this)" src="{{d.cover_img_url}}" alt="">
+    </div>
+</script>
 
 <script type="text/html" id="barDemo">
     <a class="layui-btn btn layui-btn-xs" lay-event="info">详情</a>
     <a class="layui-btn btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>
 <script>
-    layui.use(['form', 'table', 'layedit'], function () {
+    //图片弹出
+    function imgPoint(obj) {
+        var img = new Image();
+        img.src = obj.src;
+        var imgHtml = "<img src='" + obj.src + "' style='margin-left:45px' width='800px'/>";
+        //弹出层
+        layer.open({
+            type: 1,
+            shade: 0.8,
+            offset: 'auto',
+            area: [900 + 'px',800+'px'],
+            shadeClose:true,
+            scrollbar: false,
+            title: "图片预览", //不显示标题
+            content: imgHtml, //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+            cancel: function () {
+                //layer.msg('捕获就是从页面已经存在的元素上，包裹layer的结构', { time: 5000, icon: 6 });
+            }
+        });
+    }
+
+    layui.use(['form', 'table', 'upload', 'layedit'], function () {
         var table = layui.table;
         var form = layui.form;
+        var upload = layui.upload;
         layedit = layui.layedit;
+
+        //图片上传接口
+        upload.render({
+            elem:'.cover_img_url'
+            ,url: "{:url('admin/common_file/uploadFile')}"
+            ,ext: 'jpg|jpeg|svg|png|gif'
+            ,acceptMime: 'image/*'
+            ,done: function(res){
+                $('.img-show').attr('src',res.data.src);
+                $('.img_url').val(res.data.src);
+                layer.msg(res.msg);
+            }
+        });
 
         //创建动态表格
         table.render({
@@ -199,7 +270,7 @@
                     field: 'id', title: 'ID', width: 80, sort: true, fixed: 'left'
                 }
                 , {field: 'title', title: '标题'}
-                , {field: 'second_title', title: '第二标题'}
+                , {field: 'cover_img_url', title: '封面图', templet:'#imgtmp'}
                 , {field: 'belong', title: '所属分类'}
                 , {field: 'case_selected', title: '精选案例'}
                 , {field: 'browse', title: '浏览量'}
@@ -266,6 +337,8 @@
                         $('#title').val(res.data.title);
                         $('#second_title').val(res.data.second_title);
                         $('#order').val(res.data.order);
+                        $('.img-show').attr('src', res.data.cover_img_url);
+                        $('.img_url').val(res.data.cover_img_url);
                         $('#pid').empty();
                         $('#label_check').empty();
                         if (res.data.status === 0) {

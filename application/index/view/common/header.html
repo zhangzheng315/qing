@@ -446,7 +446,7 @@
             
         }
        .header-nav {
-            position: fixed;
+            position: sticky;
             top: 0;
             width: 100%;
             box-sizing: border-box;
@@ -760,15 +760,43 @@
         //  $(this).addClass('active');
      })
 
+    //  (function init(win, doc){
+    //      const optionsNode = document.querySelector('.nav-product > .nav-pro-con');
+    //       optionsNode.setAttribute('real-height',win.getComputedStyle(optionsNode).height);
+    //       optionsNode.style.height = '0px';
+    //  })(window, document)
+
+    //  $(window).resize(function() {
+    //      const deviceWidth = $(window).width();
+    //      console.log(deviceWidth);
+    //      if(deviceWidth < 820) {
+    //         init();
+    //     }
+    //  })
+
+    //  function init(){
+    //      $('.nav-pro-con').attr('real-height', $('.nav-pro-con').height());
+    //      $('.nav-pro-con').css({
+    //          'height': '0px'
+    //      })
+    //  }
+
+    //  $(document).ready(function() {
+    //     const deviceWidth = $(window).width();
+    //     if(deviceWidth < 820) {
+    //         init();
+    //     }
+    //  })
+
      $.ajax({
          url: "/admin/navigation/navigationListClass",
-         success: function(res) {
-             if(res.status == 200) {
-               console.log(res);
+         success:function (res) {
+             console.log(res)
+             if (res.status === 200) {
+
              }
          }
      })
-
 
     </script>
 </body>

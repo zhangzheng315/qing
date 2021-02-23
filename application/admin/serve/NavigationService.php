@@ -94,7 +94,11 @@ class NavigationService extends Common{
     public function navigationEdit($data)
     {
         if(!isset($data['status'])) $data['status'] = 0;
-        $data['pid_name'] = $this->navigation->where(['id' => $data['pid']])->value('menu_name');
+        if ($data['pid'] == 0) {
+            $data['pid_name'] = '根目录';
+        }else{
+            $data['pid_name'] = $this->navigation->where(['id' => $data['pid']])->value('menu_name');
+        }
         $data['status'] = isset($data['status']) ? $data['status'] : 0;
         $data['route'] = isset($data['route']) ? $data['route'] : '';
 

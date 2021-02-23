@@ -157,4 +157,25 @@ class CaseM extends Common{
             return show($this->fail,$this->caseService->error);
         }
     }
+
+    public function getCaseByWhere(Request $request){
+        $rules =
+            [
+                'pid' => 'require',
+            ];
+        $msg =
+            [
+                'pid' => '缺少参数@pid',
+            ];
+        $validate = new Validate($rules,$msg);
+        if(!$validate->check($request->param())){
+            return show($this->fail,$validate->getError());
+        }
+        $res = $this->caseService->getCaseByWhere($request->param());
+        if($res){
+            return show($this->ok,$this->caseService->message,$res);
+        }else{
+            return show($this->fail,$this->caseService->error);
+        }
+    }
 }
