@@ -15,10 +15,11 @@ class Navigation extends Common{
 
     public function index()
     {
+        $nav_list = $this->navigationService->navigationListClass();
         $add_url = '/admin/navigation/navigationCreate'; //添加
         $edit_url = '/admin/navigation/navigationEdit';  //修改
         $del_url = '/admin/navigation/navigationDelete'; //删除
-        return $this->fetch('',compact('add_url','edit_url','del_url'));
+        return $this->fetch('',compact('add_url','edit_url','del_url','nav_list'));
     }
 
     /**
@@ -43,13 +44,13 @@ class Navigation extends Common{
             [
                 'menu_name' => 'require',
 //                'route' => 'require',
-//                'pid' => 'require',
+                'pid' => 'require',
             ];
         $msg =
             [
                 'menu_name' => '缺少参数@menu_name',
 //                'route' => '缺少参数@route',
-//                'pid' => '缺少参数@pid',
+                'pid' => '缺少参数@pid',
             ];
         $validate = new Validate($rules,$msg);
         if(!$validate->check($request->param())){
@@ -98,13 +99,13 @@ class Navigation extends Common{
             [
                 'menu_name' => 'require',
 //                'route' => 'require',
-//                'pid' => 'require',
+                'pid' => 'require',
         ];
         $msg =
             [
                 'menu_name' => '缺少参数@menu_name',
 //                'route' => '缺少参数@route',
-//                'pid' => '缺少参数@pid',
+                'pid' => '缺少参数@pid',
         ];
         $validate = new Validate($rules,$msg);
         if(!$validate->check($data)){
@@ -138,6 +139,15 @@ class Navigation extends Common{
         $res = $this->navigationService->navigationDelete($request->param());
         if($res){
             return show($this->ok,$this->navigationService->message);
+        }else{
+            return show($this->fail,$this->navigationService->error);
+        }
+    }
+
+    public function navigationListClass(){
+        $res = $this->navigationService->navigationListClass();
+        if($res){
+            return show($this->ok,$this->navigationService->message,$res);
         }else{
             return show($this->fail,$this->navigationService->error);
         }

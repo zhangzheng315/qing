@@ -8,6 +8,7 @@ use think\Request;
 
 class NavigationService extends Common{
 
+    public $navigation_list;
     public $navigation;
     public function __construct(Request $request = null)
     {
@@ -22,13 +23,16 @@ class NavigationService extends Common{
      * @return bool
      */
     public function navigationCreate($param){
-
+        $pid_name = $this->navigation->where(['id' => $param['pid']])->value('menu_name');
+        $status = isset($param['status']) ? $param['status'] : 0;
+        $route = isset($param['route']) ? $param['route'] : '';
         $data = [
             'menu_name' => $param['menu_name'],
-//            'route' => $param['route'],
-//            'pid' => $param['pid'],
-            'status' => $param['status'],
-            'order' => $param['order'],
+            'route' => $route,
+            'pid' => $param['pid'],
+            'pid_name' => $pid_name,
+            'status' => $status,
+            'order' => $param['order'] ?:0,
             'created_time' => time(),
             'updated_time' => 0,
             'deleted_time' => 0,
@@ -77,6 +81,7 @@ class NavigationService extends Common{
             $this->setError('查询失败');
             return false;
         }
+        $info->nav_list = $this->navigationListClass();
         $this->setMessage('查询成功');
         return $info;
     }
@@ -89,6 +94,9 @@ class NavigationService extends Common{
     public function navigationEdit($data)
     {
         if(!isset($data['status'])) $data['status'] = 0;
+        $data['pid_name'] = $this->navigation->where(['id' => $data['pid']])->value('menu_name');
+        $data['status'] = isset($data['status']) ? $data['status'] : 0;
+        $data['route'] = isset($data['route']) ? $data['route'] : '';
 
         $where = ['id' => $data['id']];
         $res = $this->navigation->update($data,$where);
@@ -119,6 +127,46 @@ class NavigationService extends Common{
         }
         $this->setMessage('删除成功');
         return true;
+    }
+
+    public function navigationListClass()
+    {
+        $where = [
+            'deleted_time' => 0,
+            'status' => 1,
+        ];
+        $this->navigation_list = $this->navigation->where($where)->order('order','desc')->select();
+        $nav_tree = $this->tree();
+        return $nav_tree;
+    }
+
+    public function tree($id = 0) {
+        # 根据ID找出所有下级
+        $childs = $this->child($this->navigation_list, $id);
+        if (!$childs) {
+            return [];
+        }
+
+        # 遍历下级数据
+        foreach ($childs as $key => $value) {
+            # 用下级ID找出下级自身下级数据
+            $tree = $this->tree($value['id']);
+            if ($tree) {
+                $childs[$key]['sub'] = $tree;
+            }else{
+                $childs[$key]['sub'] = [];
+            }
+        }
+        return $childs;
+    }
+    public function child($res, $pid) {
+        $childs = [];
+        foreach ($res as $key => $value) {
+            if ($value['pid'] == $pid) {
+                $childs[] = $value;
+            }
+        }
+        return $childs;
     }
 
 }
