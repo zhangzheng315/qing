@@ -1,0 +1,990 @@
+@media screen and (min-width: 1200px) {
+  .layui-container {
+    width: 1200px !important;
+    padding: 0 !important;
+  }
+}
+#about .title {
+  font-size: 30px;
+  color: #333;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 0 auto;
+  text-align: center;
+}
+#about #video {
+  height: 600px;
+  position: relative;
+}
+#about #video .jsmodern-video {
+  width: 100% !important;
+}
+#about #video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#about #video .jsmodern-video-panel {
+  display: none !important;
+}
+#about #video .VideoBtn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: block;
+  width: 70px;
+  height: 70px;
+  margin-left: -35px;
+  margin-top: -35px;
+  cursor: pointer;
+  z-index: 10;
+}
+#about .navbar {
+  height: 60px;
+  line-height: 60px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 6px 0px rgba(193, 193, 193, 0.28);
+}
+#about .navbar .layui-container ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#about .navbar .layui-container ul li {
+  height: 60px;
+  color: #333;
+  cursor: pointer;
+}
+#about .navbar .layui-container ul li a {
+  text-decoration: none;
+}
+#about .navbar .layui-container ul li:hover {
+  border-bottom: 3px solid #00cc99;
+}
+#about .navbar .layui-container ul li:hover a {
+  color: #00cc99;
+}
+#about .about-boxs section .guanyu {
+  padding: 100px 0 60px;
+}
+#about .about-boxs section .guanyu .layui-container .title {
+  margin-bottom: 60px;
+}
+#about .about-boxs section .guanyu .layui-container .guanyu-content h2 {
+  display: block;
+  align-items: center;
+  font-size: 30px;
+  color: #999;
+  font-weight: 400;
+  margin-bottom: 40px;
+  letter-spacing: 5px;
+}
+#about .about-boxs section .guanyu .layui-container .guanyu-content h2 i {
+  display: inline-block;
+  width: 7px;
+  height: 26px;
+  background: #00CC99;
+  border-radius: 4px;
+  margin-right: 14px;
+}
+#about .about-boxs section .guanyu .layui-container .guanyu-content h4 {
+  font-size: 18px;
+  color: #00cc99;
+  letter-spacing: 3px;
+  margin-bottom: 55px;
+}
+#about .about-boxs section .guanyu .layui-container .guanyu-content p {
+  font-size: 16px;
+  color: #666;
+  letter-spacing: 3.5px;
+  line-height: 3;
+}
+#about .about-boxs section .guanyu .layui-container .guanyu-content img {
+  width: 95%;
+  height: 600px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 50px;
+  object-fit: cover;
+}
+#about .about-boxs section .culture {
+  background-color: #f2f4f7;
+  padding: 67px 0 104px;
+}
+#about .about-boxs section .culture .layui-container .title {
+  margin-bottom: 69px;
+}
+#about .about-boxs section .culture .layui-container .culture-content {
+  display: flex;
+}
+#about .about-boxs section .culture .layui-container .culture-content li {
+  width: 374px;
+  height: 490px;
+  padding: 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border: 1px solid #E5E5E5;
+  border-radius: 10px;
+  margin-right: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+#about .about-boxs section .culture .layui-container .culture-content li h6 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+#about .about-boxs section .culture .layui-container .culture-content li p {
+  font-size: 14px;
+  color: #666;
+}
+#about .about-boxs section .culture .layui-container .culture-content li:nth-child(3) {
+  margin-right: 0;
+}
+#about .about-boxs section .fazhan {
+  height: 700px;
+  background: url('/static/image/about/jincheng.png') no-repeat;
+  background-size: cover;
+  padding-top: 71px;
+  box-sizing: border-box;
+}
+#about .about-boxs section .fazhan .layui-container {
+  position: relative;
+}
+#about .about-boxs section .fazhan .layui-container .title {
+  margin-bottom: 50px;
+  color: #fff;
+}
+#about .about-boxs section .fazhan .layui-container .year {
+  position: absolute;
+  top: 174px;
+  left: 161px;
+  height: 362px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#about .about-boxs section .fazhan .layui-container .year li {
+  color: #999;
+}
+#about .about-boxs section .fazhan .layui-container .year .li-active {
+  color: #fff;
+}
+#about .about-boxs section .fazhan .layui-container .left-line {
+  width: 4px;
+  height: 538px;
+  background: #005A43;
+  margin-left: 230px;
+}
+#about .about-boxs section .fazhan .layui-container .dot {
+  position: absolute;
+  top: 170px;
+  left: 220px;
+  height: 370px;
+  width: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#about .about-boxs section .fazhan .layui-container .dot li {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #00cc99;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+#about .about-boxs section .fazhan .layui-container .dot li div {
+  width: 14px;
+  height: 14px;
+  background: #005A43;
+  border-radius: 50%;
+}
+#about .about-boxs section .fazhan .layui-container .dot li:hover div {
+  background-color: #00cc99;
+}
+#about .about-boxs section .fazhan .layui-container .dot li:hover .year li {
+  color: #fff;
+}
+#about .about-boxs section .fazhan .layui-container .year-story {
+  position: absolute;
+  top: 200px;
+  left: 489px;
+  display: none;
+}
+#about .about-boxs section .fazhan .layui-container .year-story h4 {
+  font-size: 50px;
+  color: #fff;
+  margin-bottom: 50px;
+}
+#about .about-boxs section .fazhan .layui-container .year-story p {
+  width: 555px;
+  display: flex;
+  justify-content: space-between;
+}
+#about .about-boxs section .fazhan .layui-container .year-story p i {
+  color: #00cc99;
+  margin-right: 29px;
+  margin-top: 4px;
+  font-size: 20px;
+}
+#about .about-boxs section .fazhan .layui-container .year-story p span {
+  font-size: 20px;
+  color: #FFFFFF;
+  text-align: left;
+  letter-spacing: 3px;
+  line-height: 1.8;
+}
+#about .about-boxs section .fazhan .layui-container .actives {
+  display: block;
+}
+#about .about-boxs section .product {
+  padding: 90px 0 30px;
+}
+#about .about-boxs section .product .layui-container .title {
+  margin-bottom: 80px;
+}
+#about .about-boxs section .product .layui-container .product-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#about .about-boxs section .product .layui-container .product-content li {
+  width: 364px;
+  height: 334px;
+  border: 1px solid #E5E5E5;
+  border-radius: 10px;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-right: 52px;
+  margin-bottom: 52px;
+  cursor: pointer;
+}
+#about .about-boxs section .product .layui-container .product-content li:nth-child(3n) {
+  margin-right: 0px;
+}
+#about .about-boxs section .product .layui-container .product-content li .text {
+  text-align: center;
+  margin-top: 30px;
+}
+#about .about-boxs section .product .layui-container .product-content li .text h5 {
+  font-size: 20px;
+  color: #333;
+}
+#about .about-boxs section .product .layui-container .product-content li .text p {
+  color: #666;
+  margin-top: 20px;
+}
+#about .about-boxs section .recruit {
+  padding: 70px 0 110px;
+}
+#about .about-boxs section .recruit .layui-container .title {
+  margin-bottom: 50px;
+}
+#about .about-boxs section .recruit .layui-container .select {
+  display: flex;
+  align-items: center;
+}
+#about .about-boxs section .recruit .layui-container .select li {
+  margin-right: 13px;
+}
+#about .about-boxs section .recruit .layui-container .select li p {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 20px;
+}
+#about .about-boxs section .recruit .layui-container .select li select {
+  width: 290px;
+  height: 40px;
+  border: 1px solid #E5E5E5;
+  cursor: pointer;
+  font-size: 14px;
+  color: #666;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+#about .about-boxs section .recruit .layui-container .zhaopin-info {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#about .about-boxs section .recruit .layui-container .zhaopin-info li {
+  width: 591px;
+  height: 151px;
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 10px;
+  margin-right: 18px;
+  margin-bottom: 18px;
+  padding: 23px 30px 0 30px;
+  box-sizing: border-box;
+}
+#about .about-boxs section .recruit .layui-container .zhaopin-info li h6 {
+  font-size: 20px;
+  color: #00cc99;
+}
+#about .about-boxs section .recruit .layui-container .zhaopin-info li div {
+  margin-top: 20px;
+}
+#about .about-boxs section .recruit .layui-container .zhaopin-info li div i {
+  color: #E5E5E5;
+  margin: 0 15px;
+}
+#about .about-boxs section .recruit .layui-container .zhaopin-info li .zhao-content span {
+  color: #666;
+}
+#about .about-boxs section .recruit .layui-container .zhaopin-info li .zhao-content .xinzi {
+  font-size: 16px;
+  color: #FF5D5D;
+}
+#about .about-boxs section .recruit .layui-container .zhaopin-info li .zhao-content .diqu {
+  color: #00cc99;
+}
+#about .about-boxs section .recruit .layui-container .zhaopin-info li .zhao-bottom span {
+  color: #999;
+  font-size: 12px;
+}
+#about .about-boxs section .recruit .layui-container .zhaopin-info li .zhao-bottom button {
+  float: right;
+  width: 118px;
+  height: 30px;
+  line-height: 30px;
+  background: #00cc99;
+  border-radius: 15px;
+  border: 0;
+  color: #fff;
+}
+#about .about-boxs section .recruit .layui-container .zhaopin-info li .zhao-bottom button:hover {
+  color: #00cc99;
+  border: 1px solid #00cc99;
+  background-color: transparent;
+}
+#about .about-boxs section .recruit .layui-container .zhaopin-info li:nth-child(2n) {
+  margin-right: 0;
+}
+#about .about-boxs section .hope {
+  padding: 78px 0 150px;
+  box-sizing: border-box;
+  background-color: #f2f4f7;
+}
+#about .about-boxs section .hope .layui-container h5 {
+  margin: 41px auto 60px;
+  color: #666;
+  text-align: center;
+}
+#about .about-boxs section .hope .layui-container p {
+  font-size: 20px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 100px;
+}
+#about .about-boxs section .hope .layui-container .icons {
+  width: 65%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+#about .about-boxs section .hope .layui-container .icons li {
+  margin-right: 133px;
+  margin-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#about .about-boxs section .hope .layui-container .icons li img {
+  margin-bottom: 20px;
+}
+#about .about-boxs section .hope .layui-container .icons li p {
+  font-size: 20px;
+  color: #666;
+  margin-bottom: 0;
+}
+#about .about-boxs section .hope .layui-container .icons li:nth-child(4n) {
+  margin-right: 0;
+}
+#about .about-boxs section .free {
+  height: 400px;
+  background: url('/static/image/about/banner-b.png') no-repeat;
+  background-size: cover;
+  padding-top: 100px;
+  box-sizing: border-box;
+}
+#about .about-boxs section .free .layui-container h3 {
+  font-size: 50px;
+  font-weight: bold;
+  color: #FFFFFF;
+  margin-bottom: 90px;
+  text-align: center;
+}
+#about .about-boxs section .free .layui-container button {
+  width: 168px;
+  height: 40px;
+  background: linear-gradient(90deg, #009CA9, #39D6AF);
+  border-radius: 20px;
+  border: none;
+  color: #fff;
+  display: block;
+  margin: 0 auto;
+  font-size: 20px;
+}
+@media screen and (min-width: 768px) and (max-width: 1300px) {
+  #about .title {
+    font-size: 26px;
+  }
+  #about #video {
+    height: 400px;
+  }
+  #about #video .jsmodern-video {
+    height: 100% !important;
+  }
+  #about .navbar {
+    height: 50px;
+    line-height: 50px;
+  }
+  #about .navbar .layui-container {
+    width: 80% !important;
+  }
+  #about .navbar .layui-container .navinfo li {
+    height: 50px;
+  }
+  #about .about-boxs section .guanyu {
+    padding: 40px 0 30px;
+  }
+  #about .about-boxs section .guanyu .layui-container .title {
+    margin-bottom: 30px;
+  }
+  #about .about-boxs section .guanyu .layui-container .guanyu-content {
+    width: 90%;
+    margin: 0 auto;
+  }
+  #about .about-boxs section .guanyu .layui-container .guanyu-content h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+  #about .about-boxs section .guanyu .layui-container .guanyu-content h2 i {
+    width: 4px;
+    height: 20px;
+  }
+  #about .about-boxs section .guanyu .layui-container .guanyu-content h4 {
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+  }
+  #about .about-boxs section .guanyu .layui-container .guanyu-content p {
+    font-size: 14px;
+    line-height: 2;
+  }
+  #about .about-boxs section .culture {
+    padding: 37px 0 74px;
+  }
+  #about .about-boxs section .culture .layui-container .title {
+    margin-bottom: 39px;
+  }
+  #about .about-boxs section .culture .layui-container .culture-content li {
+    width: 30%;
+    height: 390px;
+    padding: 8px;
+    margin-right: 0;
+    margin: 0 auto;
+  }
+  #about .about-boxs section .culture .layui-container .culture-content li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  #about .about-boxs section .culture .layui-container .culture-content li .text h6 {
+    font-size: 16px;
+  }
+  #about .about-boxs section .culture .layui-container .culture-content li .text p {
+    font-size: 14px;
+  }
+  #about .about-boxs section .fazhan {
+    height: 450px;
+    padding-top: 41px;
+  }
+  #about .about-boxs section .fazhan .layui-container .title {
+    margin-bottom: 30px;
+  }
+  #about .about-boxs section .fazhan .layui-container .year {
+    top: 113px;
+    left: 196px;
+    height: 253px;
+  }
+  #about .about-boxs section .fazhan .layui-container .left-line {
+    height: 344px;
+    margin-left: 250px;
+  }
+  #about .about-boxs section .fazhan .layui-container .dot {
+    top: 110px;
+    left: 257px;
+    height: 259px;
+  }
+  #about .about-boxs section .fazhan .layui-container .dot li {
+    width: 20px;
+    height: 20px;
+  }
+  #about .about-boxs section .fazhan .layui-container .dot li div {
+    width: 10px;
+    height: 10px;
+  }
+  #about .about-boxs section .fazhan .layui-container .stories .year-story {
+    top: 126px;
+    left: 396px;
+  }
+  #about .about-boxs section .fazhan .layui-container .stories .year-story h4 {
+    font-size: 35px;
+    margin-bottom: 30px;
+  }
+  #about .about-boxs section .product {
+    padding: 40px 0 30px;
+  }
+  #about .about-boxs section .product .layui-container .title {
+    margin-bottom: 30px;
+  }
+  #about .about-boxs section .product .layui-container .product-content li {
+    width: 30%;
+    height: 260px;
+    margin: 0 auto;
+    margin-bottom: 32px;
+  }
+  #about .about-boxs section .product .layui-container .product-content li img {
+    width: 100%;
+  }
+  #about .about-boxs section .product .layui-container .product-content li:nth-child(3n) {
+    margin-right: 0px;
+  }
+  #about .about-boxs section .product .layui-container .product-content li .text {
+    margin-top: 20px;
+  }
+  #about .about-boxs section .product .layui-container .product-content li .text h5 {
+    font-size: 16px;
+  }
+  #about .about-boxs section .product .layui-container .product-content li .text p {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  #about .about-boxs section .recruit {
+    padding: 40px 0 60px;
+  }
+  #about .about-boxs section .recruit .layui-container .title {
+    margin-bottom: 30px;
+  }
+  #about .about-boxs section .recruit .layui-container .select li {
+    width: 23%;
+    margin: 0 auto;
+    margin-right: 13px;
+  }
+  #about .about-boxs section .recruit .layui-container .select li p {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  #about .about-boxs section .recruit .layui-container .select li select {
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+  }
+  #about .about-boxs section .recruit .layui-container .zhaopin-info {
+    margin-top: 30px;
+  }
+  #about .about-boxs section .recruit .layui-container .zhaopin-info li {
+    width: 47%;
+    height: 131px;
+    margin: 0 auto;
+    margin-bottom: 18px;
+    padding: 15px 20px 0 20px;
+  }
+  #about .about-boxs section .recruit .layui-container .zhaopin-info li h6 {
+    font-size: 14px;
+  }
+  #about .about-boxs section .recruit .layui-container .zhaopin-info li div {
+    margin-top: 15px;
+  }
+  #about .about-boxs section .recruit .layui-container .zhaopin-info li div i {
+    margin: 0 10px;
+  }
+  #about .about-boxs section .recruit .layui-container .zhaopin-info li .zhao-bottom span {
+    font-size: 12px;
+  }
+  #about .about-boxs section .recruit .layui-container .zhaopin-info li .zhao-bottom button {
+    width: 108px;
+    height: 30px;
+    line-height: 30px;
+  }
+  #about .about-boxs section .recruit .layui-container .zhaopin-info li:nth-child(2n) {
+    margin-right: 0;
+  }
+  #about .about-boxs section .hope {
+    padding: 40px 0 30px;
+  }
+  #about .about-boxs section .hope .layui-container h5 {
+    margin: 41px auto 30px;
+  }
+  #about .about-boxs section .hope .layui-container p {
+    font-size: 18px;
+    margin-bottom: 50px;
+  }
+  #about .about-boxs section .hope .layui-container .icons {
+    width: 55%;
+  }
+  #about .about-boxs section .hope .layui-container .icons li {
+    width: 23%;
+    margin-right: 0px;
+    margin: 0 auto;
+    margin-bottom: 45px;
+  }
+  #about .about-boxs section .hope .layui-container .icons li img {
+    width: 45px;
+    height: 46px;
+    margin-bottom: 20px;
+  }
+  #about .about-boxs section .hope .layui-container .icons li p {
+    font-size: 16px;
+  }
+  #about .about-boxs section .hope .layui-container .icons li:nth-child(4n) {
+    margin-right: 0;
+  }
+  #about .about-boxs section .free {
+    height: 300px;
+    padding-top: 80px;
+  }
+  #about .about-boxs section .free .layui-container h3 {
+    font-size: 30px;
+    margin-bottom: 50px;
+  }
+  #about .about-boxs section .free .layui-container button {
+    width: 168px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  #about .about-boxs section .fazhan {
+    height: 450px;
+    padding-top: 41px;
+  }
+  #about .about-boxs section .fazhan .layui-container .title {
+    margin-bottom: 30px;
+  }
+  #about .about-boxs section .fazhan .layui-container .year {
+    top: 95px;
+    left: 59px;
+  }
+  #about .about-boxs section .fazhan .layui-container .left-line {
+    height: 344px;
+    margin-left: 117px;
+  }
+  #about .about-boxs section .fazhan .layui-container .dot {
+    top: 95px;
+    left: 126px;
+    height: 259px;
+  }
+  #about .about-boxs section .fazhan .layui-container .dot li {
+    width: 16px;
+    height: 16px;
+  }
+  #about .about-boxs section .fazhan .layui-container .dot li div {
+    width: 8px;
+    height: 8px;
+  }
+  #about .about-boxs section .fazhan .layui-container .stories .year-story {
+    top: 126px;
+    left: 228px;
+  }
+  #about .about-boxs section .fazhan .layui-container .stories .year-story h4 {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  #about .about-boxs section .fazhan .layui-container .stories .year-story p {
+    width: 100%;
+  }
+  #about .about-boxs section .product {
+    padding: 40px 0 30px;
+  }
+  #about .about-boxs section .product .layui-container .product-content li {
+    height: 200px;
+    margin-bottom: 25px;
+  }
+  #about .about-boxs section .product .layui-container .product-content li .text {
+    margin-top: 20px;
+  }
+  #about .about-boxs section .recruit {
+    padding: 40px 0 60px;
+  }
+  #about .about-boxs section .recruit .layui-container .title {
+    margin-bottom: 30px;
+  }
+  #about .about-boxs section .recruit .layui-container .select li {
+    width: 23%;
+    margin: 0 auto;
+    margin-right: 13px;
+  }
+  #about .about-boxs section .recruit .layui-container .select li p {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  #about .about-boxs section .recruit .layui-container .select li select {
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+  }
+  #about .about-boxs section .recruit .layui-container .zhaopin-info {
+    margin-top: 30px;
+  }
+  #about .about-boxs section .recruit .layui-container .zhaopin-info li {
+    width: 47%;
+    height: 131px;
+    margin: 0 auto;
+    margin-bottom: 18px;
+    padding: 15px 20px 0 20px;
+  }
+  #about .about-boxs section .recruit .layui-container .zhaopin-info li h6 {
+    font-size: 14px;
+  }
+  #about .about-boxs section .recruit .layui-container .zhaopin-info li div {
+    margin-top: 12px;
+  }
+  #about .about-boxs section .recruit .layui-container .zhaopin-info li div i {
+    margin: 0 10px;
+  }
+  #about .about-boxs section .recruit .layui-container .zhaopin-info li .zhao-bottom span {
+    font-size: 12px;
+  }
+  #about .about-boxs section .recruit .layui-container .zhaopin-info li .zhao-bottom button {
+    width: 78px;
+    height: 23px;
+    line-height: 23px;
+    font-size: 12px;
+  }
+  #about .about-boxs section .recruit .layui-container .zhaopin-info li:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  #about .title {
+    font-size: 22px;
+  }
+  #about #video {
+    height: 300px;
+  }
+  #about .navbar {
+    height: 40px;
+    line-height: 40px;
+  }
+  #about .navbar .layui-container {
+    width: 90% !important;
+  }
+  #about .navbar .layui-container .navinfo li {
+    height: 40px;
+  }
+  #about .about-boxs section .guanyu {
+    padding: 30px 0 20px;
+  }
+  #about .about-boxs section .guanyu .layui-container .title {
+    margin-bottom: 20px;
+  }
+  #about .about-boxs section .guanyu .layui-container .guanyu-content {
+    width: 90%;
+    margin: 0 auto;
+  }
+  #about .about-boxs section .guanyu .layui-container .guanyu-content h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+  }
+  #about .about-boxs section .guanyu .layui-container .guanyu-content h2 i {
+    width: 4px;
+    height: 16px;
+  }
+  #about .about-boxs section .guanyu .layui-container .guanyu-content h4 {
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+  #about .about-boxs section .guanyu .layui-container .guanyu-content p {
+    font-size: 12px;
+    line-height: 2;
+  }
+  #about .about-boxs section .guanyu .layui-container .guanyu-content img {
+    height: 230px;
+    margin-top: 30px;
+  }
+  #about .about-boxs section .culture {
+    padding: 15px 0 45px;
+  }
+  #about .about-boxs section .culture .layui-container .title {
+    margin-bottom: 20px;
+  }
+  #about .about-boxs section .culture .layui-container .culture-content {
+    flex-wrap: wrap;
+  }
+  #about .about-boxs section .culture .layui-container .culture-content li {
+    width: 80%;
+    height: 230px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  #about .about-boxs section .culture .layui-container .culture-content li .imgs {
+    width: 100%;
+    height: 75%;
+    order: -1;
+  }
+  #about .about-boxs section .culture .layui-container .culture-content li .imgs img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  #about .about-boxs section .culture .layui-container .culture-content li:nth-child(3) {
+    margin: 0 auto;
+  }
+  #about .about-boxs section .culture .layui-container .culture-content li .text h6 {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+  #about .about-boxs section .culture .layui-container .culture-content li .text p {
+    font-size: 12px;
+  }
+  #about .about-boxs section .product {
+    padding: 30px 0 20px;
+  }
+  #about .about-boxs section .product .layui-container .title {
+    margin-bottom: 20px;
+  }
+  #about .about-boxs section .product .layui-container .product-content li {
+    width: 46%;
+    height: 190px;
+    margin-bottom: 20px;
+    margin-right: 25px;
+  }
+  #about .about-boxs section .product .layui-container .product-content li:nth-child(3) {
+    margin-right: 25px;
+  }
+  #about .about-boxs section .product .layui-container .product-content li:nth-child(2n) {
+    margin-right: 0;
+  }
+  #about .about-boxs section .product .layui-container .product-content li img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  #about .about-boxs section .product .layui-container .product-content li .text {
+    margin-top: 8px;
+  }
+  #about .about-boxs section .product .layui-container .product-content li .text h5 {
+    font-size: 14px;
+  }
+  #about .about-boxs section .product .layui-container .product-content li .text p {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+  #about .about-boxs section .fazhan {
+    display: none;
+  }
+  #about .about-boxs section .recruit {
+    padding: 40px 0 50px;
+  }
+  #about .about-boxs section .recruit .layui-container .title {
+    margin-bottom: 30px;
+  }
+  #about .about-boxs section .recruit .layui-container .select {
+    flex-wrap: wrap;
+  }
+  #about .about-boxs section .recruit .layui-container .select li {
+    width: 45%;
+    margin: 0 auto;
+    margin-right: 13px;
+  }
+  #about .about-boxs section .recruit .layui-container .select li p {
+    font-size: 14px;
+    margin: 10px auto 8px;
+  }
+  #about .about-boxs section .recruit .layui-container .select li select {
+    width: 100%;
+    height: 40px;
+    font-size: 12px;
+  }
+  #about .about-boxs section .recruit .layui-container .zhaopin-info {
+    margin-top: 30px;
+  }
+  #about .about-boxs section .recruit .layui-container .zhaopin-info li {
+    width: 95%;
+    height: 121px;
+    margin: 0 auto;
+    margin-bottom: 18px;
+    padding: 10px 12px 0 12px;
+  }
+  #about .about-boxs section .recruit .layui-container .zhaopin-info li h6 {
+    font-size: 14px;
+  }
+  #about .about-boxs section .recruit .layui-container .zhaopin-info li div {
+    margin-top: 12px;
+  }
+  #about .about-boxs section .recruit .layui-container .zhaopin-info li div i {
+    margin: 0 6px;
+  }
+  #about .about-boxs section .recruit .layui-container .zhaopin-info li .zhao-bottom span {
+    font-size: 12px;
+  }
+  #about .about-boxs section .recruit .layui-container .zhaopin-info li .zhao-bottom button {
+    width: 78px;
+    height: 23px;
+    line-height: 23px;
+    font-size: 12px;
+  }
+  #about .about-boxs section .recruit .layui-container .zhaopin-info li:nth-child(2n) {
+    margin: 0 auto;
+    margin-bottom: 18px;
+  }
+  #about .about-boxs section .hope {
+    padding: 30px 0 20px;
+  }
+  #about .about-boxs section .hope .layui-container h5 {
+    margin: 21px auto 15px;
+  }
+  #about .about-boxs section .hope .layui-container p {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  #about .about-boxs section .hope .layui-container .icons {
+    width: 70%;
+  }
+  #about .about-boxs section .hope .layui-container .icons li {
+    width: 47%;
+    margin-right: 0px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+  }
+  #about .about-boxs section .hope .layui-container .icons li img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 12px;
+  }
+  #about .about-boxs section .hope .layui-container .icons li p {
+    font-size: 12px;
+  }
+  #about .about-boxs section .hope .layui-container .icons li:nth-child(4n) {
+    margin-right: 0;
+  }
+  #about .about-boxs section .free {
+    height: 240px;
+    padding-top: 50px;
+  }
+  #about .about-boxs section .free .layui-container h3 {
+    font-size: 22px;
+    margin-bottom: 40px;
+  }
+  #about .about-boxs section .free .layui-container button {
+    width: 138px;
+    height: 35px;
+    font-size: 14px;
+  }
+}

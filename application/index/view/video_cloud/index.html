@@ -35,18 +35,18 @@
         <nav class="navbar">
             <div class="layui-container">
                 <ul>
-                    <li>产品特点</li>
-                    <li>应用场景</li>
-                    <li>直播功能</li>
-                    <li>合作客户</li>
+                    <li><a href="#section-1">产品特点</a></li>
+                    <li><a href="#section-2">应用场景</a></li>
+                    <li><a href="#section-3">直播功能</a></li>
+                    <li><a href="#section-4">合作客户</a></li>
                 </ul>
             </div>
         </nav>
 
         <!-- 产品特点 -->
-        <div id="tedian">
+        <div id="section-1" class="tedian">
             <div class="layui-container">
-                <div class="title">产品特点</div>
+                <div  class="title">产品特点</div>
                 <ul class="tedian-content">
                     <li>
                         <img src="/static/image/site_service/icon.svg" alt="">
@@ -76,9 +76,9 @@
         </div>
 
         <!-- 成熟的场景解决方案 -->
-        <div id="mature">
+        <div id="section-2" class="mature">
             <div class="layui-container">
-                <div class="title">成熟的场景解决方案</div>
+                <div  class="title">成熟的场景解决方案</div>
                 <ul class="mature-nav">
                     <li class="active">在线教育</li>
                     <li>金融直播</li>
@@ -166,9 +166,9 @@
         </div>
 
         <!-- 企业级直播场景全覆盖 -->
-        <div id="qiye">
-            <div class="layui-container">
-                <div class="title">企业级直播场景全覆盖</div>
+        <div id="section-3" class="qiye">
+            <div  class="layui-container">
+                <div  class="title">企业级直播场景全覆盖</div>
                 <ul class="qiye-content">
                     <li>
                         <div class="icon"><img src="/static/image/index/product1.png" alt=""></div>
@@ -239,9 +239,9 @@
         </div>
 
         <!-- 合作客户 -->
-        <div id="hezuo">
+        <div id="section-4" class="hezuo">
             <div class="layui-container">
-                <h2 class="title">合作客户</h2>
+                <h2  class="title">合作客户</h2>
                 <nav class="hezuo-nav">
                     <ul class="logo-title">
                         <li class="active"><span>全部</span></li>
@@ -497,7 +497,7 @@
     });
 
     // 成熟的场景解决方案
-    $('#mature').each(function (index, element) {
+    $('.mature').each(function (index, element) {
         var obj = $(this);
         obj.find('.mature-nav').children().on('click li', function () {
             $(this).addClass('active').siblings().removeClass('active');
@@ -508,7 +508,7 @@
     });
 
     // logo墙
-    $('#hezuo').each(function (index, element) {
+    $('.hezuo').each(function (index, element) {
         var obj = $(this);
         obj.find('.logo-title').children().on('click li', function () {
             $(this).addClass('active').siblings().removeClass('active');
