@@ -43,6 +43,12 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">路由</label>
+            <div class="layui-input-block">
+                <input type="text" name="route" placeholder="请输入(/admin/index/index)" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
             <label class="layui-form-label">启用</label>
             <div class="layui-input-block">
                 <input name="status" value="1" type="checkbox" checked lay-skin="switch">
@@ -75,6 +81,12 @@
             <label class="layui-form-label">菜单名称</label>
             <div class="layui-input-block">
                 <input type="text" id="menu_name" name="menu_name" placeholder="请输入" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">路由</label>
+            <div class="layui-input-block">
+                <input type="text" name="route" id="route" placeholder="请输入(/admin/index/index)" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
@@ -168,7 +180,8 @@
                     field: 'id', title: 'ID', width: 80, sort: true, fixed: 'left'
                 }
                 , {field: 'menu_name', title: '菜单名称'}
-                // ,{field: 'route', title: '路由'}
+                , {field: 'route', title: '路由'}
+                , {field: 'pid_name', title: '父级名称'}
                 , {field: 'order', title: '排序'}
                 , {field: 'status', title: '当前状态'}
                 , {fixed: 'right', width: 150, title: '操作', align: 'center', toolbar: '#barDemo'}
@@ -195,6 +208,7 @@
                         $('#menu_name').val(res.data.menu_name);
                         $('#order').val(res.data.order);
                         $('#id').val(res.data.id);
+                        $('#route').val(res.data.route)
                         $('.pid').empty();
                         $('.pid').append('<option value="0">根目录</option>');
 

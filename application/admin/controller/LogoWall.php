@@ -151,7 +151,7 @@ class LogoWall extends Common{
     }
 
     /**
-     * 删除logo墙
+     * logo墙
      * @return mixed
      */
     public function getLogoByWhere(Request $request){
