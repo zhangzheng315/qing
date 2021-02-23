@@ -32,4 +32,24 @@ class Solution extends Controller
     {
       return $this->fetch();
     }
+    /* 解决方案-营销活动*/
+    public function Marketactivite()
+    {
+      return $this->fetch();
+    }
+    /* 手术示教*/
+    public function Operation()
+    {
+      return $this->fetch();
+    }
+    /* 金融保险 */
+    public function Financial()
+    {
+      return $this->fetch();
+    }
+    /* 大会直播*/
+    public function Meetinglive()
+    {
+      return $this->fetch();
+    }
 }
