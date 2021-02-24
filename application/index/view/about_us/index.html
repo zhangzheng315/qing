@@ -133,7 +133,7 @@
                             <div class="year-story actives">
                                 <h4>2020</h4>
                                 <p><i>●</i>
-                                    <span>2015年2月，公司创始人在杭州创办直播实验室，开展直播技术平台的前期开发工作。</span>
+                                    <span>2020年2月，公司创始人在杭州创办直播实验室，开展直播技术平台的前期开发工作。</span>
                                 </p>
                             </div>
                             <div class="year-story">
@@ -257,78 +257,19 @@
                         </ul>
 
                         <ul class="zhaopin-info">
+                            {if isset($join_list)}
+                            {foreach($join_list as $item)}
                             <li>
-                                <h6>WEB前端工程师</h6>
-                                <div class="zhao-content"><span class="xinzi">10-15k.13薪</span><i>|</i><span
-                                        class="diqu">上海-嘉定区</span><i>|</i><span class="xueli">大专及以上</span><i>|</i><span
-                                        class="nianxian">3-5年</span></div>
+                                <h6>{$item.position}</h6>
+                                <div class="zhao-content"><span class="xinzi">{$item.salary}</span><i>|</i><span
+                                        class="diqu">{$item.region}</span><i>|</i><span class="xueli">{$item.education}</span><i>|</i><span
+                                        class="nianxian">{$item.years}</span></div>
                                 <div class="zhao-bottom"><span
-                                        class="time">2021-02-02</span><i>|</i><span>投递后：24小时反馈</span><button>立即应聘</button>
+                                        class="time">{$item.time}</span><i>|</i><span>投递后：24小时反馈</span><button>立即应聘</button>
                                 </div>
                             </li>
-                            <li>
-                                <h6>WEB前端工程师</h6>
-                                <div class="zhao-content"><span class="xinzi">10-15k.13薪</span><i>|</i><span
-                                        class="diqu">上海-嘉定区</span><i>|</i><span class="xueli">大专及以上</span><i>|</i><span
-                                        class="nianxian">3-5年</span></div>
-                                <div class="zhao-bottom"><span
-                                        class="time">2021-02-02</span><i>|</i><span>投递后：24小时反馈</span><button>立即应聘</button>
-                                </div>
-                            </li>
-                            <li>
-                                <h6>WEB前端工程师</h6>
-                                <div class="zhao-content"><span class="xinzi">10-15k.13薪</span><i>|</i><span
-                                        class="diqu">上海-嘉定区</span><i>|</i><span class="xueli">大专及以上</span><i>|</i><span
-                                        class="nianxian">3-5年</span></div>
-                                <div class="zhao-bottom"><span
-                                        class="time">2021-02-02</span><i>|</i><span>投递后：24小时反馈</span><button>立即应聘</button>
-                                </div>
-                            </li>
-                            <li>
-                                <h6>WEB前端工程师</h6>
-                                <div class="zhao-content"><span class="xinzi">10-15k.13薪</span><i>|</i><span
-                                        class="diqu">上海-嘉定区</span><i>|</i><span class="xueli">大专及以上</span><i>|</i><span
-                                        class="nianxian">3-5年</span></div>
-                                <div class="zhao-bottom"><span
-                                        class="time">2021-02-02</span><i>|</i><span>投递后：24小时反馈</span><button>立即应聘</button>
-                                </div>
-                            </li>
-                            <li>
-                                <h6>WEB前端工程师</h6>
-                                <div class="zhao-content"><span class="xinzi">10-15k.13薪</span><i>|</i><span
-                                        class="diqu">上海-嘉定区</span><i>|</i><span class="xueli">大专及以上</span><i>|</i><span
-                                        class="nianxian">3-5年</span></div>
-                                <div class="zhao-bottom"><span
-                                        class="time">2021-02-02</span><i>|</i><span>投递后：24小时反馈</span><button>立即应聘</button>
-                                </div>
-                            </li>
-                            <li>
-                                <h6>WEB前端工程师</h6>
-                                <div class="zhao-content"><span class="xinzi">10-15k.13薪</span><i>|</i><span
-                                        class="diqu">上海-嘉定区</span><i>|</i><span class="xueli">大专及以上</span><i>|</i><span
-                                        class="nianxian">3-5年</span></div>
-                                <div class="zhao-bottom"><span
-                                        class="time">2021-02-02</span><i>|</i><span>投递后：24小时反馈</span><button>立即应聘</button>
-                                </div>
-                            </li>
-                            <li>
-                                <h6>WEB前端工程师</h6>
-                                <div class="zhao-content"><span class="xinzi">10-15k.13薪</span><i>|</i><span
-                                        class="diqu">上海-嘉定区</span><i>|</i><span class="xueli">大专及以上</span><i>|</i><span
-                                        class="nianxian">3-5年</span></div>
-                                <div class="zhao-bottom"><span
-                                        class="time">2021-02-02</span><i>|</i><span>投递后：24小时反馈</span><button>立即应聘</button>
-                                </div>
-                            </li>
-                            <li>
-                                <h6>WEB前端工程师</h6>
-                                <div class="zhao-content"><span class="xinzi">10-15k.13薪</span><i>|</i><span
-                                        class="diqu">上海-嘉定区</span><i>|</i><span class="xueli">大专及以上</span><i>|</i><span
-                                        class="nianxian">3-5年</span></div>
-                                <div class="zhao-bottom"><span
-                                        class="time">2021-02-02</span><i>|</i><span>投递后：24小时反馈</span><button>立即应聘</button>
-                                </div>
-                            </li>
+                            {/foreach}
+                            {/if}
                         </ul>
                     </div>
                 </div>

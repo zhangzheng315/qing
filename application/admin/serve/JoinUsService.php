@@ -101,4 +101,22 @@ class JoinUsService extends Common{
         $this->setMessage('删除成功');
         return true;
     }
+
+    public function joinUsList()
+    {
+        $where = [
+            'status' => 1,
+            'deleted_time' => 0,
+        ];
+        $res = $this->joinUs->where($where)->order('order','desc')->select();
+        foreach ($res as &$item) {
+            $item['time'] = date('Y-m-d', $item['created_time']);
+        }
+        if(!$res){
+            $this->setError('暂无数据');
+            return false;
+        }
+        $this->setMessage('删除成功');
+        return $res;
+    }
 }
