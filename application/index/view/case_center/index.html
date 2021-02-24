@@ -172,23 +172,24 @@
         setTimeout(function () { obj.find('.all-nav .active').trigger('li'); }, 100);
     });
 
+    //分页方法
     function layPage(data) {
         layui.use('laypage', function () {
             var laypage = layui.laypage;
 
             //执行一个laypage实例
             laypage.render({
-                elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
-                , count: data.count //数据总数，从服务端得到
-                , curr: data.curr
+                elem: 'test1'       //注意，这里的 test1 是分页容器ID，不用加 # 号
+                , count: data.count //数据总数
+                , curr: data.curr   //当前页
                 , limit:8
-                , prev: '<' // 上一页按钮内容
-                , next: '>' // 下一页按钮内容
+                , prev: '<'         // 上一页按钮内容
+                , next: '>'         // 下一页按钮内容
                 , theme: '#00cc99'
                 , jump: function (obj,first) {
-                    currPage =obj.curr;  //这里是后台返回给前端的当前页数
-                    if(!first){ //点击跳页触发函数自身，并传递当前页：obj.curr  ajax 再次请求
-                        casePoint(data.index,currPage);
+                    currPage =obj.curr; //这里是后台返回给前端的当前页数
+                    if(!first){         //点击跳页触发函数自身，并传递当前页：obj.curr  ajax 再次请求
+                        casePoint(data.index,currPage);     //调用ajax请求数据
                     }
                 }
             });
@@ -213,8 +214,8 @@
                         }
                         $('.case_type').append('<li><img src="'+item.cover_img_url+'" alt=""><div class="text"><h5>'+item.title+'</h5><p>'+item.second_title+'</p><div class="biaoqian">'+label_html+'</div></div></li>');
                     }
+                    layPage(res.data);      //请求成功调用分页方法
                 }
-                layPage(res.data)
             },
             error:function (err) {
                 console.log(err)

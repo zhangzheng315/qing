@@ -11,7 +11,7 @@ class Solution extends Controller
     {
         $banner_service = new BannerService();
         $data = request()->param();
-        $pid = isset($data['id']) ? $data['id'] : 4;
+        $pid = isset($data['id']) ? $data['id'] : 3;
         $banner_list = $banner_service->bannerListByPid($pid);
         return $this->fetch('',compact( 'banner_list'));
     }
