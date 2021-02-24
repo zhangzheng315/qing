@@ -610,9 +610,9 @@
                                        </a>
                                    </dd>
                                    <dd>
-                                    <a href="" class="pink-item">
-                                        <p>轻直播平台</p>
-                                        <span>企业级视频云直播平台</span>
+                                    <a href="{:url('index/deploy/index')}" class="pink-item">
+                                        <p>私有化部署</p>
+                                        <span>直播平台私有化部署</span>
                                     </a> 
                                    </dd>
                                    <dd>
@@ -673,7 +673,7 @@
                        <a href="{:url('index/solution/index')}">解决方案</a>
                    </li>
                    <li class="menu-item">
-                       <a href="">案列中心</a>
+                       <a href="{:url('index/case_center/index')}">案列中心</a>
                    </li>
                    <li class="menu-item">
                        <a href="">轻学院</a>
@@ -791,7 +791,6 @@
      $.ajax({
          url: "/index/navigation/navigationListClass",
          success:function (res) {
-             console.log(res)
              if (res.status === 200) {
 
              }

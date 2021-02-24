@@ -606,7 +606,7 @@
     logoPoint(0);
     function logoPoint(index) {
         $.ajax({
-            url: "{:url('/admin/logo_wall/getLogoByWhere')}",
+            url: "{:url('/index/logo_wall/getLogoByWhere')}",
             data:{'pid':1,'type_id':index},
             type:'get',
             success:function (res) {
