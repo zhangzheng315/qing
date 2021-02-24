@@ -120,4 +120,15 @@ class BannerService extends Common{
         return true;
     }
 
+    public function bannerListByPid($pid)
+    {
+        $where = [
+            'status' => 1,
+            'deleted_time' => 0,
+            'pid' => $pid,
+        ];
+        $res = $this->banner->where($where)->select();
+        return $res ? $res : false;
+    }
+
 }
