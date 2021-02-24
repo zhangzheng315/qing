@@ -2,15 +2,18 @@
 
 namespace app\index\controller;
 
+use app\admin\serve\BannerService;
 use think\Controller;
 
 class Solution extends Controller
 {
     public function index()
     {
-    
-        // $color = 'red';
-        return $this->fetch();
+        $banner_service = new BannerService();
+        $data = request()->param();
+        $pid = isset($data['id']) ? $data['id'] : 3;
+        $banner_list = $banner_service->bannerListByPid($pid);
+        return $this->fetch('',compact( 'banner_list'));
     }
     /* 解决方案-企业会议*/
     public function Corporate()

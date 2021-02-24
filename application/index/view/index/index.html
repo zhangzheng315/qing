@@ -24,9 +24,6 @@
         <div id="banner">
             <div class="layui-carousel" id="banners">
                 <div carousel-item class="lunbo-box">
-<!--                    <img src="/static/image/index/banner.png" alt="">-->
-<!--                    <img src="/static/image/index/banner.png" alt="">-->
-<!--                    <img src="/static/image/index/banner.png" alt="">-->
                     {if isset($banner_list)}
                     {foreach $banner_list as $item}
                     <img src="{$item.img_url}" alt="">
@@ -606,7 +603,7 @@
     logoPoint(0);
     function logoPoint(index) {
         $.ajax({
-            url: "{:url('/admin/logo_wall/getLogoByWhere')}",
+            url: "{:url('/index/logo_wall/getLogoByWhere')}",
             data:{'pid':1,'type_id':index},
             type:'get',
             success:function (res) {

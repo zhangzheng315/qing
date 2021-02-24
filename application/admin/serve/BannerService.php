@@ -68,6 +68,7 @@ class BannerService extends Common{
             $this->setError('查询失败');
             return false;
         }
+        $info->navigation_list = $this->navigationService->navigationListClass();
         $this->setMessage('查询成功');
         return $info;
     }
@@ -117,6 +118,17 @@ class BannerService extends Common{
         }
         $this->setMessage('删除成功');
         return true;
+    }
+
+    public function bannerListByPid($pid)
+    {
+        $where = [
+            'status' => 1,
+            'deleted_time' => 0,
+            'pid' => $pid,
+        ];
+        $res = $this->banner->where($where)->select();
+        return $res ? $res : false;
     }
 
 }

@@ -48,6 +48,12 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">排序</label>
+            <div class="layui-input-block">
+                <input type="text" name="order" placeholder="请输入(数值越大，排序越靠前)" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
             <label class="layui-form-label">内容</label>
             <div class="layui-input-block">
                     <textarea type="text" name="content" id="myEdit" lay-verify="fu_content" style="width: 100%;height: 140px;">
@@ -75,6 +81,12 @@
             <label class="layui-form-label">启用</label>
             <div class="layui-input-block">
                 <input name="status" id="status" value="1" type="checkbox" checked lay-skin="switch">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">排序</label>
+            <div class="layui-input-block">
+                <input type="text" id="order" name="order" placeholder="请输入(数值越大，排序越靠前)" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
@@ -116,6 +128,7 @@
                 }
                 , {field: 'time', title: '时间'}
                 , {field: 'content', title: '内容'}
+                , {field: 'order', title: '排序'}
                 , {field: 'status', title: '状态'}
                 , {fixed: 'right', width: 150, title: '操作', align: 'center', toolbar: '#barDemo'}
             ]]
@@ -175,6 +188,7 @@
 
                         $('#id').val(res.data.id);
                         $('#time').val(res.data.time);
+                        $('#order').val(res.data.order);
                         if (res.data.status === 0) {
                             $('#status').removeAttr('checked');
                         } else {
