@@ -24,6 +24,15 @@
   height: 100%;
   object-fit: cover;
 }
+#about #video img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 10;
+}
 #about #video .jsmodern-video-panel {
   display: none !important;
 }
@@ -37,7 +46,7 @@
   margin-left: -35px;
   margin-top: -35px;
   cursor: pointer;
-  z-index: 10;
+  z-index: 11;
 }
 #about .navbar {
   height: 60px;
@@ -63,6 +72,13 @@
 }
 #about .navbar .layui-container ul li:hover a {
   color: #00cc99;
+}
+#about .navbar .layui-container ul .active {
+  border-bottom: 3px solid #00cc99;
+  color: #00cc99;
+}
+#about .about-boxs section {
+  display: none;
 }
 #about .about-boxs section .guanyu {
   padding: 100px 0 60px;
@@ -434,6 +450,339 @@
   margin: 0 auto;
   font-size: 20px;
 }
+#about .about-boxs section .lianxi {
+  padding: 102px 0 39px;
+  background-color: #f2f4f7;
+}
+#about .about-boxs section .lianxi .layui-container .title {
+  margin-bottom: 84px;
+}
+#about .about-boxs section .lianxi .layui-container .lianxi-content {
+  display: flex;
+  align-items: center;
+}
+#about .about-boxs section .lianxi .layui-container .lianxi-content .content-left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#about .about-boxs section .lianxi .layui-container .lianxi-content .content-left li {
+  width: 45%;
+  padding: 31px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 1px solid #E5E5E5;
+  border-radius: 10px;
+  margin: 0 32px 36px 0;
+}
+#about .about-boxs section .lianxi .layui-container .lianxi-content .content-left li .imgs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#about .about-boxs section .lianxi .layui-container .lianxi-content .content-left li .imgs span {
+  font-size: 20px;
+  color: #333;
+}
+#about .about-boxs section .lianxi .layui-container .lianxi-content .content-left li p {
+  font-size: 26px;
+  color: #666666;
+}
+#about .about-boxs section .lianxi .layui-container .lianxi-content .content-right {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+#about .about-boxs section .lianxi .layui-container .lianxi-content .content-right div:nth-child(1) {
+  margin-bottom: 35px;
+}
+#about .about-boxs section .lianxi .layui-container .lianxi-content .content-right div img {
+  width: 176px;
+  height: 176px;
+  margin-bottom: 15px;
+}
+#about .about-boxs section .lianxi .layui-container .lianxi-content .content-right div p {
+  color: #333;
+  text-align: center;
+}
+#about .about-boxs section .fenbu {
+  height: 950px;
+  padding: 205px 0 77px;
+  box-sizing: border-box;
+  background: url('/static/image/about/fenbu.png');
+  background-size: cover;
+}
+#about .about-boxs section .fenbu .layui-container .title {
+  color: #fff;
+  margin-bottom: 96px;
+}
+#about .about-boxs section .fenbu .layui-container .fenbu-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#about .about-boxs section .fenbu .layui-container .fenbu-content .fenbu-left {
+  height: 515px;
+  padding-left: 8px;
+}
+#about .about-boxs section .fenbu .layui-container .fenbu-content .fenbu-left li {
+  height: 70px;
+  width: 288px;
+  line-height: 70px;
+  font-size: 20px;
+  margin-bottom: 50px;
+  color: #fff;
+  cursor: pointer;
+  padding-left: 35px;
+  box-sizing: border-box;
+}
+#about .about-boxs section .fenbu .layui-container .fenbu-content .fenbu-left li i {
+  margin-right: 39px;
+}
+#about .about-boxs section .fenbu .layui-container .fenbu-content .fenbu-left li:hover {
+  color: #00cc99;
+  background-color: rgba(0, 204, 153, 0.3);
+  border-right: 4px solid #00cc99;
+}
+#about .about-boxs section .fenbu .layui-container .fenbu-content .fenbu-left .actives {
+  color: #00cc99;
+  background-color: rgba(0, 204, 153, 0.3);
+  border-right: 4px solid #00cc99;
+}
+#about .about-boxs section .fenbu .layui-container .fenbu-content .fenbu-right {
+  width: 915px;
+  padding: 60px 65px;
+  border: 1px solid #00B689;
+  border-radius: 10px;
+}
+#about .about-boxs section .fenbu .layui-container .fenbu-content .fenbu-right img {
+  width: 769px;
+  height: 409px;
+  object-fit: cover;
+  display: none;
+}
+#about .about-boxs section .fenbu .layui-container .fenbu-content .fenbu-right .active {
+  display: block;
+}
+#about .about-boxs section .lianxi-free {
+  background: url(/static/image/about/ditu.png) no-repeat;
+}
+#about .about-boxs section .lianxi-free .layui-container h3 {
+  color: #333;
+}
+#about .about-boxs section .dongtai {
+  padding: 120px 0 49px;
+}
+#about .about-boxs section .dongtai .layui-container .title {
+  margin-bottom: 49px;
+}
+#about .about-boxs section .dongtai .layui-container .dt-top .top-item {
+  width: 100%;
+  height: 362px;
+  border: 1px solid #E5E5E5;
+  border-radius: 10px;
+  margin-bottom: 36px;
+  padding: 43px 67px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#about .about-boxs section .dongtai .layui-container .dt-top .top-item .text {
+  margin-left: 87px;
+}
+#about .about-boxs section .dongtai .layui-container .dt-top .top-item .text h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 60px;
+}
+#about .about-boxs section .dongtai .layui-container .dt-top .top-item .text p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+#about .about-boxs section .dongtai .layui-container .dt-top .top-item .text .time {
+  text-align: right;
+  margin: 29px 0 38px;
+}
+#about .about-boxs section .dongtai .layui-container .dt-top .top-item .text .dt-biaoqian {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#about .about-boxs section .dongtai .layui-container .dt-top .top-item .text .dt-biaoqian ul {
+  display: flex;
+}
+#about .about-boxs section .dongtai .layui-container .dt-top .top-item .text .dt-biaoqian ul li {
+  margin-right: 9px;
+  padding: 9px 12px;
+  background: #F5F5F5;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #999;
+}
+#about .about-boxs section .dongtai .layui-container .dt-top .top-item .text .dt-biaoqian img {
+  cursor: pointer;
+}
+#about .about-boxs section .dongtai .layui-container .dt-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#about .about-boxs section .dongtai .layui-container .dt-bottom .bottom-item {
+  border: 1px solid #E5E5E5;
+  border-radius: 10px;
+  display: flex;
+  padding: 34px 30px 20px;
+  cursor: pointer;
+}
+#about .about-boxs section .dongtai .layui-container .dt-bottom .bottom-item .item-left {
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  box-sizing: border-box;
+  position: relative;
+  margin-right: 30px;
+}
+#about .about-boxs section .dongtai .layui-container .dt-bottom .bottom-item .item-left::before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: 10px;
+  width: 100%;
+  height: 43%;
+  box-sizing: border-box;
+  border-bottom: 1px solid #eee;
+  transform: rotate(-45deg) scale(0.9);
+}
+#about .about-boxs section .dongtai .layui-container .dt-bottom .bottom-item .item-left .num {
+  font-size: 30px;
+  color: #999;
+}
+#about .about-boxs section .dongtai .layui-container .dt-bottom .bottom-item .item-left .name {
+  position: absolute;
+  right: 6%;
+  bottom: 25%;
+  font-size: 20px;
+  color: #999;
+}
+#about .about-boxs section .dongtai .layui-container .dt-bottom .bottom-item .item-right h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 30px;
+}
+#about .about-boxs section .dongtai .layui-container .dt-bottom .bottom-item .item-right p {
+  font-size: 14px;
+  color: #666;
+}
+#about .about-boxs section .dongtai .layui-container .look-more {
+  width: 172px;
+  height: 40px;
+  border: 1px solid #00CC99;
+  border-radius: 20px;
+  margin: 0 auto;
+  margin-top: 70px;
+  display: block;
+  color: #00cc99;
+  cursor: pointer;
+  text-align: center;
+  line-height: 40px;
+}
+#about .about-boxs section .dongtai .layui-container .look-more:hover {
+  border: 0;
+  background-color: #00cc99;
+  color: #fff;
+}
+#about .about-boxs section .news {
+  padding: 78px 0 67px;
+  background-color: #f2f4f7;
+}
+#about .about-boxs section .news .layui-container .title {
+  margin-bottom: 69px;
+}
+#about .about-boxs section .news .layui-container .dt-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#about .about-boxs section .news .layui-container .dt-bottom .bottom-item {
+  background-color: #fff;
+  border: 1px solid #E5E5E5;
+  border-radius: 10px;
+  display: flex;
+  padding: 34px 30px 20px;
+  margin-bottom: 45px;
+  cursor: pointer;
+}
+#about .about-boxs section .news .layui-container .dt-bottom .bottom-item .item-left {
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  box-sizing: border-box;
+  position: relative;
+  margin-right: 30px;
+}
+#about .about-boxs section .news .layui-container .dt-bottom .bottom-item .item-left::before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: 10px;
+  width: 100%;
+  height: 43%;
+  box-sizing: border-box;
+  border-bottom: 1px solid #eee;
+  transform: rotate(-45deg) scale(0.9);
+}
+#about .about-boxs section .news .layui-container .dt-bottom .bottom-item .item-left .num {
+  font-size: 30px;
+  color: #999;
+}
+#about .about-boxs section .news .layui-container .dt-bottom .bottom-item .item-left .name {
+  position: absolute;
+  right: 6%;
+  bottom: 25%;
+  font-size: 20px;
+  color: #999;
+}
+#about .about-boxs section .news .layui-container .dt-bottom .bottom-item .item-right h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 30px;
+}
+#about .about-boxs section .news .layui-container .dt-bottom .bottom-item .item-right p {
+  font-size: 14px;
+  color: #666;
+}
+#about .about-boxs section .news .layui-container .look-more {
+  width: 172px;
+  height: 40px;
+  border: 1px solid #00CC99;
+  border-radius: 20px;
+  margin: 0 auto;
+  margin-top: 70px;
+  display: block;
+  color: #00cc99;
+  cursor: pointer;
+  text-align: center;
+  line-height: 40px;
+}
+#about .about-boxs section .news .layui-container .look-more:hover {
+  border: 0;
+  background-color: #00cc99;
+  color: #fff;
+}
+#about .about-boxs .active {
+  display: block;
+}
 @media screen and (min-width: 768px) and (max-width: 1300px) {
   #about .title {
     font-size: 26px;
@@ -664,8 +1013,223 @@
     height: 40px;
     font-size: 16px;
   }
+  #about .about-boxs section .lianxi {
+    padding: 42px 0 29px;
+  }
+  #about .about-boxs section .lianxi .layui-container .title {
+    margin-bottom: 44px;
+  }
+  #about .about-boxs section .lianxi .layui-container .lianxi-content .content-left li {
+    width: 45%;
+    padding: 21px;
+    margin: 0 22px 26px 0;
+  }
+  #about .about-boxs section .lianxi .layui-container .lianxi-content .content-left li .imgs img {
+    width: 60px;
+    height: 62px;
+    object-fit: cover;
+  }
+  #about .about-boxs section .lianxi .layui-container .lianxi-content .content-left li .imgs span {
+    font-size: 16px;
+  }
+  #about .about-boxs section .lianxi .layui-container .lianxi-content .content-left li p {
+    font-size: 20px;
+  }
+  #about .about-boxs section .lianxi .layui-container .lianxi-content .content-right {
+    margin-left: 20px;
+  }
+  #about .about-boxs section .lianxi .layui-container .lianxi-content .content-right div:nth-child(1) {
+    margin-bottom: 25px;
+  }
+  #about .about-boxs section .lianxi .layui-container .lianxi-content .content-right div img {
+    width: 116px;
+    height: 116px;
+    margin-bottom: 10px;
+  }
+  #about .about-boxs section .fenbu {
+    height: 550px;
+    padding: 65px 0 57px;
+  }
+  #about .about-boxs section .fenbu .layui-container .title {
+    margin-bottom: 46px;
+  }
+  #about .about-boxs section .fenbu .layui-container .fenbu-content .fenbu-left {
+    height: 315px;
+    padding-left: 8px;
+  }
+  #about .about-boxs section .fenbu .layui-container .fenbu-content .fenbu-left li {
+    height: 50px;
+    width: 208px;
+    line-height: 50px;
+    font-size: 16px;
+    margin-bottom: 30px;
+    padding-left: 25px;
+  }
+  #about .about-boxs section .fenbu .layui-container .fenbu-content .fenbu-left li i {
+    margin-right: 29px;
+  }
+  #about .about-boxs section .fenbu .layui-container .fenbu-content .fenbu-left li:hover {
+    border-right: 3px solid #00cc99;
+  }
+  #about .about-boxs section .fenbu .layui-container .fenbu-content .fenbu-left .actives {
+    border-right: 3px solid #00cc99;
+  }
+  #about .about-boxs section .fenbu .layui-container .fenbu-content .fenbu-right {
+    width: 68%;
+    padding: 40px 45px;
+  }
+  #about .about-boxs section .fenbu .layui-container .fenbu-content .fenbu-right img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  #about .about-boxs section .lianxi-free {
+    height: 300px;
+  }
+  #about .about-boxs section .dongtai {
+    padding: 40px 0 39px;
+  }
+  #about .about-boxs section .dongtai .layui-container {
+    width: 99% !important;
+  }
+  #about .about-boxs section .dongtai .layui-container .title {
+    margin-bottom: 39px;
+  }
+  #about .about-boxs section .dongtai .layui-container .dt-top {
+    width: 95%;
+    margin: 0 auto;
+  }
+  #about .about-boxs section .dongtai .layui-container .dt-top .top-item {
+    width: 100%;
+    height: 282px;
+    margin-bottom: 26px;
+    padding: 25px 35px;
+  }
+  #about .about-boxs section .dongtai .layui-container .dt-top .top-item .text {
+    margin-left: 57px;
+  }
+  #about .about-boxs section .dongtai .layui-container .dt-top .top-item .text h3 {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  #about .about-boxs section .dongtai .layui-container .dt-top .top-item .text p {
+    font-size: 14px;
+  }
+  #about .about-boxs section .dongtai .layui-container .dt-top .top-item .text .time {
+    margin: 20px 0 28px;
+  }
+  #about .about-boxs section .dongtai .layui-container .dt-top .top-item .text .dt-biaoqian ul li {
+    margin-right: 5px;
+    padding: 6px 8px;
+    font-size: 14px;
+  }
+  #about .about-boxs section .dongtai .layui-container .dt-top .top-item > img {
+    width: 45%;
+    height: 210px;
+    object-fit: cover;
+  }
+  #about .about-boxs section .dongtai .layui-container .dt-bottom {
+    width: 95%;
+    margin: 0 auto;
+  }
+  #about .about-boxs section .dongtai .layui-container .dt-bottom .bottom-item {
+    width: 44%;
+    margin: 0 auto;
+    padding: 24px 20px 10px;
+  }
+  #about .about-boxs section .dongtai .layui-container .dt-bottom .bottom-item .item-left {
+    width: 80px;
+    height: 80px;
+    padding: 5px;
+    margin-right: 20px;
+  }
+  #about .about-boxs section .dongtai .layui-container .dt-bottom .bottom-item .item-left::before {
+    content: "";
+    position: absolute;
+    left: -12px;
+    top: 10px;
+    width: 100%;
+    height: 43%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eee;
+    transform: rotate(-45deg) scale(0.9);
+  }
+  #about .about-boxs section .dongtai .layui-container .dt-bottom .bottom-item .item-left .num {
+    font-size: 24px;
+  }
+  #about .about-boxs section .dongtai .layui-container .dt-bottom .bottom-item .item-left .name {
+    right: 6%;
+    bottom: 25%;
+    font-size: 16px;
+  }
+  #about .about-boxs section .dongtai .layui-container .dt-bottom .bottom-item .item-right h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  #about .about-boxs section .dongtai .layui-container .look-more {
+    width: 132px;
+    height: 35px;
+    margin-top: 50px;
+    line-height: 35px;
+  }
+  #about .about-boxs section .news {
+    padding: 48px 0 37px;
+  }
+  #about .about-boxs section .news .layui-container .title {
+    margin-bottom: 39px;
+  }
+  #about .about-boxs section .news .layui-container .dt-bottom {
+    width: 95%;
+    margin: 0 auto;
+  }
+  #about .about-boxs section .news .layui-container .dt-bottom .bottom-item {
+    width: 44%;
+    margin: 0 auto;
+    padding: 24px 20px 10px;
+    margin-bottom: 20px;
+  }
+  #about .about-boxs section .news .layui-container .dt-bottom .bottom-item .item-left {
+    width: 80px;
+    height: 80px;
+    padding: 5px;
+    margin-right: 20px;
+  }
+  #about .about-boxs section .news .layui-container .dt-bottom .bottom-item .item-left::before {
+    content: "";
+    position: absolute;
+    left: -12px;
+    top: 10px;
+    width: 100%;
+    height: 43%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eee;
+    transform: rotate(-45deg) scale(0.9);
+  }
+  #about .about-boxs section .news .layui-container .dt-bottom .bottom-item .item-left .num {
+    font-size: 24px;
+  }
+  #about .about-boxs section .news .layui-container .dt-bottom .bottom-item .item-left .name {
+    right: 6%;
+    bottom: 25%;
+    font-size: 16px;
+  }
+  #about .about-boxs section .news .layui-container .dt-bottom .bottom-item .item-right h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  #about .about-boxs section .news .layui-container .look-more {
+    width: 132px;
+    height: 35px;
+    margin-top: 30px;
+    line-height: 35px;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
+  #about .layui-container {
+    width: 99% !important;
+    padding: 0 !important;
+  }
   #about .about-boxs section .fazhan {
     height: 450px;
     padding-top: 41px;
@@ -765,6 +1329,61 @@
   }
   #about .about-boxs section .recruit .layui-container .zhaopin-info li:nth-child(2n) {
     margin-right: 0;
+  }
+  #about .about-boxs section .news {
+    padding: 48px 0 37px;
+  }
+  #about .about-boxs section .news .layui-container {
+    width: 99% !important;
+    padding: 0 !important;
+  }
+  #about .about-boxs section .news .layui-container .title {
+    margin-bottom: 39px;
+  }
+  #about .about-boxs section .news .layui-container .dt-bottom {
+    width: 95%;
+    margin: 0 auto;
+  }
+  #about .about-boxs section .news .layui-container .dt-bottom .bottom-item {
+    width: 44%;
+    margin: 0 auto;
+    padding: 24px 10px 10px;
+    margin-bottom: 20px;
+  }
+  #about .about-boxs section .news .layui-container .dt-bottom .bottom-item .item-left {
+    width: 80px;
+    height: 80px;
+    padding: 5px;
+    margin-right: 20px;
+  }
+  #about .about-boxs section .news .layui-container .dt-bottom .bottom-item .item-left::before {
+    content: "";
+    position: absolute;
+    left: -12px;
+    top: 10px;
+    width: 100%;
+    height: 43%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eee;
+    transform: rotate(-45deg) scale(0.9);
+  }
+  #about .about-boxs section .news .layui-container .dt-bottom .bottom-item .item-left .num {
+    font-size: 24px;
+  }
+  #about .about-boxs section .news .layui-container .dt-bottom .bottom-item .item-left .name {
+    right: 6%;
+    bottom: 25%;
+    font-size: 16px;
+  }
+  #about .about-boxs section .news .layui-container .dt-bottom .bottom-item .item-right h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  #about .about-boxs section .news .layui-container .look-more {
+    width: 132px;
+    height: 35px;
+    margin-top: 30px;
+    line-height: 35px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -955,10 +1574,10 @@
     margin-bottom: 30px;
   }
   #about .about-boxs section .hope .layui-container .icons {
-    width: 70%;
+    width: 100%;
   }
   #about .about-boxs section .hope .layui-container .icons li {
-    width: 47%;
+    width: 24%;
     margin-right: 0px;
     margin: 0 auto;
     margin-bottom: 25px;
@@ -985,6 +1604,263 @@
   #about .about-boxs section .free .layui-container button {
     width: 138px;
     height: 35px;
+    font-size: 14px;
+  }
+  #about .about-boxs section .lianxi-free {
+    height: 240px;
+    background-size: contain;
+  }
+  #about .about-boxs section .lianxi {
+    padding: 32px 0 20px;
+  }
+  #about .about-boxs section .lianxi .layui-container .title {
+    margin-bottom: 24px;
+  }
+  #about .about-boxs section .lianxi .layui-container .lianxi-content {
+    flex-direction: column;
+  }
+  #about .about-boxs section .lianxi .layui-container .lianxi-content .content-left li {
+    width: 45%;
+    padding: 10px;
+    margin: 0 30px 16px 0;
+  }
+  #about .about-boxs section .lianxi .layui-container .lianxi-content .content-left li .imgs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #about .about-boxs section .lianxi .layui-container .lianxi-content .content-left li .imgs img {
+    width: 35px;
+    height: 37px;
+    object-fit: cover;
+    order: -1;
+  }
+  #about .about-boxs section .lianxi .layui-container .lianxi-content .content-left li .imgs span {
+    font-size: 14px;
+  }
+  #about .about-boxs section .lianxi .layui-container .lianxi-content .content-left li p {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  #about .about-boxs section .lianxi .layui-container .lianxi-content .content-left li:nth-child(2n) {
+    margin-right: 0;
+  }
+  #about .about-boxs section .lianxi .layui-container .lianxi-content .content-right {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  #about .about-boxs section .lianxi .layui-container .lianxi-content .content-right div:nth-child(1) {
+    margin-bottom: 0px;
+  }
+  #about .about-boxs section .lianxi .layui-container .lianxi-content .content-right div img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 5px;
+  }
+  #about .about-boxs section .fenbu {
+    height: 350px;
+    padding: 35px 0 27px;
+  }
+  #about .about-boxs section .fenbu .layui-container {
+    width: 100% !important;
+    padding: 0 5px !important;
+  }
+  #about .about-boxs section .fenbu .layui-container .title {
+    margin-bottom: 26px;
+  }
+  #about .about-boxs section .fenbu .layui-container .fenbu-content {
+    width: 100%;
+  }
+  #about .about-boxs section .fenbu .layui-container .fenbu-content .fenbu-left {
+    height: 160px;
+    padding-left: 8px;
+  }
+  #about .about-boxs section .fenbu .layui-container .fenbu-content .fenbu-left li {
+    height: 30px;
+    width: 120px;
+    line-height: 30px;
+    font-size: 12px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+  }
+  #about .about-boxs section .fenbu .layui-container .fenbu-content .fenbu-left li i {
+    margin-right: 10px;
+  }
+  #about .about-boxs section .fenbu .layui-container .fenbu-content .fenbu-left li:hover {
+    border-right: 2px solid #00cc99;
+  }
+  #about .about-boxs section .fenbu .layui-container .fenbu-content .fenbu-left .actives {
+    border-right: 2px solid #00cc99;
+  }
+  #about .about-boxs section .fenbu .layui-container .fenbu-content .fenbu-right {
+    width: 62%;
+    padding: 12px;
+  }
+  #about .about-boxs section .fenbu .layui-container .fenbu-content .fenbu-right img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  #about .about-boxs section .dongtai {
+    padding: 30px 0 29px;
+  }
+  #about .about-boxs section .dongtai .layui-container .title {
+    margin-bottom: 29px;
+  }
+  #about .about-boxs section .dongtai .layui-container .dt-top {
+    width: 95%;
+    margin: 0 auto;
+  }
+  #about .about-boxs section .dongtai .layui-container .dt-top .top-item {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin-bottom: 16px;
+    padding: 10px 8px;
+  }
+  #about .about-boxs section .dongtai .layui-container .dt-top .top-item .text {
+    padding: 0 5px;
+    box-sizing: border-box;
+    margin-left: 0px;
+  }
+  #about .about-boxs section .dongtai .layui-container .dt-top .top-item .text h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  #about .about-boxs section .dongtai .layui-container .dt-top .top-item .text p {
+    font-size: 12px;
+  }
+  #about .about-boxs section .dongtai .layui-container .dt-top .top-item .text .time {
+    margin: 10px 0 18px;
+  }
+  #about .about-boxs section .dongtai .layui-container .dt-top .top-item .text .dt-biaoqian ul li {
+    margin-right: 5px;
+    padding: 4px 5px;
+    font-size: 12px;
+  }
+  #about .about-boxs section .dongtai .layui-container .dt-top .top-item .text .dt-biaoqian img {
+    width: 20px;
+  }
+  #about .about-boxs section .dongtai .layui-container .dt-top .top-item > img {
+    width: 65%;
+    height: 130px;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+  #about .about-boxs section .dongtai .layui-container .dt-bottom {
+    width: 95%;
+    margin: 0 auto;
+    flex-direction: column;
+  }
+  #about .about-boxs section .dongtai .layui-container .dt-bottom .bottom-item {
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px 10px 8px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+  }
+  #about .about-boxs section .dongtai .layui-container .dt-bottom .bottom-item .item-left {
+    width: 60px;
+    height: 60px;
+    padding: 3px;
+    margin-right: 10px;
+  }
+  #about .about-boxs section .dongtai .layui-container .dt-bottom .bottom-item .item-left::before {
+    content: "";
+    position: absolute;
+    left: -12px;
+    top: 10px;
+    width: 100%;
+    height: 43%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eee;
+    transform: rotate(-45deg) scale(0.9);
+  }
+  #about .about-boxs section .dongtai .layui-container .dt-bottom .bottom-item .item-left .num {
+    font-size: 18px;
+  }
+  #about .about-boxs section .dongtai .layui-container .dt-bottom .bottom-item .item-left .name {
+    right: 1%;
+    bottom: 13%;
+    font-size: 14px;
+  }
+  #about .about-boxs section .dongtai .layui-container .dt-bottom .bottom-item .item-right h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  #about .about-boxs section .dongtai .layui-container .dt-bottom .bottom-item .item-right p {
+    font-size: 12px;
+  }
+  #about .about-boxs section .dongtai .layui-container .look-more {
+    width: 112px;
+    height: 35px;
+    margin-top: 20px;
+    line-height: 35px;
+    font-size: 14px;
+  }
+  #about .about-boxs section .news {
+    padding: 32px 0 29px;
+  }
+  #about .about-boxs section .news .layui-container .title {
+    margin-bottom: 29px;
+  }
+  #about .about-boxs section .news .layui-container .dt-bottom {
+    width: 95%;
+    margin: 0 auto;
+    flex-direction: column;
+  }
+  #about .about-boxs section .news .layui-container .dt-bottom .bottom-item {
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px 10px 8px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+  }
+  #about .about-boxs section .news .layui-container .dt-bottom .bottom-item .item-left {
+    width: 60px;
+    height: 60px;
+    padding: 3px;
+    margin-right: 10px;
+  }
+  #about .about-boxs section .news .layui-container .dt-bottom .bottom-item .item-left::before {
+    content: "";
+    position: absolute;
+    left: -12px;
+    top: 10px;
+    width: 100%;
+    height: 43%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eee;
+    transform: rotate(-45deg) scale(0.9);
+  }
+  #about .about-boxs section .news .layui-container .dt-bottom .bottom-item .item-left .num {
+    font-size: 18px;
+  }
+  #about .about-boxs section .news .layui-container .dt-bottom .bottom-item .item-left .name {
+    right: 1%;
+    bottom: 13%;
+    font-size: 14px;
+  }
+  #about .about-boxs section .news .layui-container .dt-bottom .bottom-item .item-right h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  #about .about-boxs section .news .layui-container .dt-bottom .bottom-item .item-right p {
+    font-size: 12px;
+  }
+  #about .about-boxs section .news .layui-container .look-more {
+    width: 112px;
+    height: 35px;
+    margin-top: 20px;
+    line-height: 35px;
     font-size: 14px;
   }
 }

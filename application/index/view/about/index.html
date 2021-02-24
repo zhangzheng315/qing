@@ -26,25 +26,31 @@
         <!-- 视频播放区域 -->
         <div id="video">
             <video id="videoShow" src="http://images.innocomn.com/aboutUs.mp4"></video>
-            <span class="VideoBtn"><img src="/static/image/about/bo1.png"></span>
+            <span class="VideoBtn"><img src="/static/image/about/bofang.png"></span>
+            <img class="video-hover" src="/static/image/about/video.png" alt="">
         </div>
 
         <!-- nav导航栏 -->
         <nav class="navbar">
             <div class="layui-container">
                 <ul class="navinfo">
-                    <li><a href="#section-1">关于我们</a></li>
+                    <!-- <li><a href="#section-1">关于我们</a></li>
                     <li><a href="#section-2">加入我们</a></li>
                     <li><a href="#section-3">联系我们</a></li>
-                    <li><a href="#section-4">企业新闻</a></li>
+                    <li><a href="#section-4">企业新闻</a></li> -->
+
+                    <li class="active">关于我们</li>
+                    <li>加入我们</li>
+                    <li>联系我们</li>
+                    <li>企业新闻</li>
                 </ul>
             </div>
         </nav>
 
         <div class="about-boxs">
             <!-- 关于我们 -->
-            <section>
-                <div id="section-1" class="guanyu">
+            <section class="active">
+                <div class="guanyu">
                     <div class="layui-container">
                         <div class="title">关于我们</div>
                         <div class="guanyu-content">
@@ -386,12 +392,205 @@
 
             <!-- 联系我们 -->
             <section>
-                联系我们
+                <div  class="lianxi">
+                    <div class="layui-container">
+                        <div class="title">联系轻直播</div>
+                        <div class="lianxi-content">
+                            <ul class="content-left">
+                                <li>
+                                    <div class="imgs">
+                                        <span>咨询电话</span>
+                                        <img src="/static/image/about/dianhua.png" alt="">
+                                    </div>
+                                    <p>400-920-1599</p>
+                                </li>
+                                <li>
+                                    <div class="imgs">
+                                        <span>市场合作</span>
+                                        <img src="/static/image/about/hezuo.png" alt="">
+                                    </div>
+                                    <p>frank.fu@sicbon.com</p>
+                                </li>
+                                <li>
+                                    <div class="imgs">
+                                        <span>服务建议</span>
+                                        <img src="/static/image/about/tousu.png" alt="">
+                                    </div>
+                                    <p>frank.fu@sicbon.com</p>
+                                </li>
+                                <li>
+                                    <div class="imgs">
+                                        <span>简历投递</span>
+                                        <img src="/static/image/about/wenben.png" alt="">
+                                    </div>
+                                    <p>lisa.wang@sicbon.com</p>
+                                </li>
+                            </ul>
+                            <div class="content-right">
+                                <div>
+                                    <img src="/static/image/about/qrcode.png" alt="">
+                                    <p>官方公众号</p>
+                                </div>
+                                <div>
+                                    <img src="/static/image/about/qrcode.png" alt="">
+                                    <p>官方微博</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fenbu">
+                    <div class="layui-container">
+                        <div class="title">公司分布</div>
+                        <div class="fenbu-content">
+                            <ul class="fenbu-left">
+                                <li class="actives"><i>●</i>上海总部</li>
+                                <li><i>●</i>上海总部</li>
+                                <li><i>●</i>上海总部</li>
+                                <li><i>●</i>上海总部</li>
+                            </ul>
+                            <div class="fenbu-right">
+                                <img class="active" src="/static/image/about/fangwei.png" alt="">
+                                <img src="/static/image/index/jiesuo.png" alt="">
+                                <img src="/static/image/about/fangwei.png" alt="">
+                                <img src="/static/image/about/fangwei.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="free lianxi-free">
+                    <div class="layui-container">
+                        <h3>全功能免费试用，0成本体验轻直播带来的改变</h3>
+                        <button>免费试用</button>
+                    </div>
+                </div>
             </section>
 
             <!-- 企业新闻 -->
             <section>
-                企业新闻
+                <div  class="dongtai">
+                    <div class="layui-container">
+                        <div class="title">企业动态</div>
+                        <div class="dt-top">
+                            <div class="top-item">
+                                <img src="/static/image/about/first.png" alt="">
+                                <div class="text">
+                                    <h3>互联网周刊：轻直播获评2020企业直播服务商第一名</h3>
+                                    <p>6月9日，由中国科学院主管、科学出版社主办的核心杂志《互联网周刊》，携手eNet研究院联合发布【2020企业直播服务商排行榜】...</p>
+                                    <p class="time">2020-12-06</p>
+                                    <div class="dt-biaoqian">
+                                        <ul>
+                                            <li>云视频服务商</li>
+                                            <li>企业培训</li>
+                                            <li>轻直播</li>
+                                        </ul>
+                                        <img src="/static/image/about/jiantou-r.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="top-item">
+                                <img src="/static/image/about/first.png" alt="">
+                                <div class="text">
+                                    <h3>互联网周刊：轻直播获评2020企业直播服务商第一名</h3>
+                                    <p>6月9日，由中国科学院主管、科学出版社主办的核心杂志《互联网周刊》，携手eNet研究院联合发布【2020企业直播服务商排行榜】...</p>
+                                    <p class="time">2020-12-06</p>
+                                    <div class="dt-biaoqian">
+                                        <ul>
+                                            <li>云视频服务商</li>
+                                            <li>企业培训</li>
+                                            <li>轻直播</li>
+                                        </ul>
+                                        <img src="/static/image/about/jiantou-r.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dt-bottom">
+                            <div class="bottom-item">
+                                <div class="item-left">
+                                    <span class="num">01</span>
+                                    <span class="name">jade</span>
+                                </div>
+                                <div class="item-right">
+                                    <h3>轻直播独家发布！2021企业直播运营地图...</h3>
+                                    <p>由中国科学院主管、科学出版社主办的核心杂志《互联...</p>
+                                </div>
+                            </div>
+                            <div class="bottom-item">
+                                <div class="item-left">
+                                    <span class="num">02</span>
+                                    <span class="name">jade</span>
+                                </div>
+                                <div class="item-right">
+                                    <h3>轻直播独家发布！2021企业直播运营地图...</h3>
+                                    <p>由中国科学院主管、科学出版社主办的核心杂志《互联...</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="look-more">查看更多</button>
+                    </div>
+                </div>
+
+                <!-- 新闻报道 -->
+                <div class="news">
+                    <div class="layui-container">
+                        <div class="title">新闻报道</div>
+                        <div class="dt-bottom">
+                            <div class="bottom-item">
+                                <div class="item-left">
+                                    <span class="num">01</span>
+                                    <span class="name">jade</span>
+                                </div>
+                                <div class="item-right">
+                                    <h3>轻直播独家发布！2021企业直播运营地图...</h3>
+                                    <p>由中国科学院主管、科学出版社主办的核心杂志《互联...</p>
+                                </div>
+                            </div>
+                            <div class="bottom-item">
+                                <div class="item-left">
+                                    <span class="num">02</span>
+                                    <span class="name">jade</span>
+                                </div>
+                                <div class="item-right">
+                                    <h3>轻直播独家发布！2021企业直播运营地图...</h3>
+                                    <p>由中国科学院主管、科学出版社主办的核心杂志《互联...</p>
+                                </div>
+                            </div>
+                            <div class="bottom-item">
+                                <div class="item-left">
+                                    <span class="num">03</span>
+                                    <span class="name">jade</span>
+                                </div>
+                                <div class="item-right">
+                                    <h3>轻直播独家发布！2021企业直播运营地图...</h3>
+                                    <p>由中国科学院主管、科学出版社主办的核心杂志《互联...</p>
+                                </div>
+                            </div>
+                            <div class="bottom-item">
+                                <div class="item-left">
+                                    <span class="num">04</span>
+                                    <span class="name">jade</span>
+                                </div>
+                                <div class="item-right">
+                                    <h3>轻直播独家发布！2021企业直播运营地图...</h3>
+                                    <p>由中国科学院主管、科学出版社主办的核心杂志《互联...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="look-more">查看更多</button>
+                    </div>
+                </div>
+
+                <div class="free lianxi-free">
+                    <div class="layui-container">
+                        <h3>全功能免费试用，0成本体验轻直播带来的改变</h3>
+                        <button>免费试用</button>
+                    </div>
+                </div>
             </section>
         </div>
 
@@ -403,6 +602,7 @@
 
 <!--视频插件调用方法-->
 <script>
+    // 播放视频
     $(function () {
         //视频
         jsModern.video("#video");
@@ -411,6 +611,7 @@
             var video = document.getElementById("videoShow");
             video.play();
             $('.VideoBtn').hide();
+            $('.video-hover').hide() // 隐藏视频封面图片
         })
         //监听视频的播放状态
         var video = document.getElementById("videoShow");
@@ -463,6 +664,18 @@
             if (obj.find('.stories').children().eq($(this).index()).length > 0)
                 obj.find('.stories').children().hide().eq($(this).index()).show();
             obj.find('.year li').removeClass('li-active').eq($(this).index()).addClass('li-active');
+
+        });
+        // setTimeout(function () { obj.find('.dot .active').trigger('.left-item'); }, 100);
+    });
+
+    // 公司分布
+    $('.fenbu').each(function (index, element) {
+        var obj = $(this);
+        obj.find('.fenbu-left').children().on('mouseover .left-item', function () {
+            $(this).addClass('actives').siblings().removeClass('actives');
+            if (obj.find('.fenbu-right').children().eq($(this).index()).length > 0)
+                obj.find('.fenbu-right').children().hide().eq($(this).index()).show();
 
         });
         // setTimeout(function () { obj.find('.dot .active').trigger('.left-item'); }, 100);

@@ -1,0 +1,148 @@
+@media screen and (min-width: 1200px) {
+    .layui-container {
+        width: 1200px !important;
+        padding: 0 !important;
+    }
+}
+
+#advantage {
+    .title {
+        font-size: 30px;
+        color: #333;
+        font-weight: bold;
+        letter-spacing: 2px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    #video {
+        height: 600px;
+        position: relative;
+
+        .jsmodern-video {
+            width: 100% !important;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 10;
+        }
+
+        .jsmodern-video-panel {
+            display: none !important;
+        }
+
+        .VideoBtn {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            display: block;
+            width: 70px;
+            height: 70px;
+            margin-left: -35px;
+            margin-top: -35px;
+            cursor: pointer;
+            z-index: 11;
+        }
+
+        &::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, .5);
+            z-index: 12;
+        }
+
+        button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 222px;
+            height: 60px;
+            background: #00AC81;
+            border-radius: 30px;
+            z-index: 13;
+            border: none;
+            font-size: 20px;
+            color: #fff;
+
+        }
+    }
+
+    .kehu {
+        padding: 294px 0 66px;
+
+        .layui-container {
+            .title {
+                margin-bottom: 167px;
+            }
+
+            #test1 {
+                height: 238px !important;
+                background-color: #fff;
+
+                .logo-box {
+                    .logo-imgs {
+                        height: 100px;
+                        background-color: #fff !important;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        li {
+                            display: inline-block;
+                            background: #fff;
+
+                            img {
+                                width: 100px;
+                                height: 100px;
+                                object-fit: cover;
+                            }
+                        }
+                    }
+                }
+
+                .layui-carousel-ind {
+                    ul {
+                        background-color: transparent;
+
+                        li {
+                            width: 35px;
+                            height: 7px;
+                            background: #E5E5E5;
+                            ;
+                            border-radius: 4px;
+                            margin: 0 3px;
+                            font-size: 14px;
+                        }
+
+                        .layui-this {
+                            background: #00AC81;
+                        }
+                    }
+                }
+            }
+
+            .layui-carousel>[carousel-item]:before {
+                content: '' !important;
+            }
+        }
+    }
+
+
+}
