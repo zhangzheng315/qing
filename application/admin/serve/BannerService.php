@@ -68,6 +68,7 @@ class BannerService extends Common{
             $this->setError('查询失败');
             return false;
         }
+        $info->navigation_list = $this->navigationService->navigationListClass();
         $this->setMessage('查询成功');
         return $info;
     }

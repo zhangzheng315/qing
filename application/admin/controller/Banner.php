@@ -18,12 +18,10 @@ class Banner extends Common{
 
     public function index()
     {
-        $navigation_list = $this->navigationService->navigationList();
-
         $add_url = '/admin/banner/bannerCreate'; //添加
         $edit_url = '/admin/banner/bannerEdit';  //修改
         $del_url = '/admin/banner/bannerDelete'; //删除
-        return $this->fetch('',compact('navigation_list','add_url','edit_url','del_url'));
+        return $this->fetch('',compact('add_url','edit_url','del_url'));
     }
 
     /**
