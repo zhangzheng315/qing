@@ -16,22 +16,22 @@ class Solution extends Controller
         return $this->fetch('',compact( 'banner_list'));
     }
     /* 解决方案-企业会议*/
-    public function Corporate()
+    public function corporate()
     {
       return $this->fetch();
     }
     /* 解决方案-医学教育 */
-    public function Medical()
+    public function medical()
     {
       return $this->fetch();
     }
     /* 解决方案-企业培训*/
-    public function Training()
+    public function training()
     {
       return $this->fetch();
     }
     /* 解决方案-在线课堂 */
-    public function Onlineclass()
+    public function onlineClass()
     {
       return $this->fetch();
     }
