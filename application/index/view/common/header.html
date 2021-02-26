@@ -47,7 +47,7 @@
         .login {
             border: 1px solid #00cc99;
             color: #00cc99;
-            margin-right: 30px;
+            margin-right: 20px;
         }
         .menu>.menu-item>a {
             font-size: 16px;
@@ -243,14 +243,14 @@
                 border-top: 1px solid #d2d2d2;
                 box-shadow: 0px 3px 4px 0px rgba(193, 193, 193, 0.5);
              }
-             .navbar-collpase.collpase-true {
+             /* .navbar-collpase.collpase-true {
                  top: 65px;
-             }
+             } */
              .navbar-nav {
-                 margin: 7.5px 0;
+                 
              }
              .navbar-nav>li {
-                 padding: 10px 15px;
+                 padding: 10px 0;
                  position: relative;
 
              }
@@ -258,6 +258,8 @@
                 /* padding: 10px 15px; */
                 display: inline-block;
                 width: 100%;
+                box-sizing: border-box;
+                padding-left: 15px;
              }
              .navbar-nav>li>a:hover {
                  color: #00cc99;
@@ -275,13 +277,20 @@
              .navbar-nav>li>a>i{
                  position: absolute;
                  font-size: 24px;
-                 top: 7px;
+                 top: 0px;
                  right: 15px;
              }
-             .navbar-nav>li.nav-product-span {
+             .navbar-nav>li.nav-product {
+                 padding: 0;
+             }
+             .navbar-nav>li>.nav-product-span {
                 display: inline-block;
                 width: 100%;
                 cursor: pointer;
+                box-sizing: border-box;
+                padding-left: 15px;
+                height: 39.2px;
+                line-height: 39.2px;
              }
              .nav-product-span>i {
                 position: absolute;
@@ -295,6 +304,9 @@
                /* margin-top: 10px; */
                overflow: hidden;
                transition: height 0.5s;
+               box-sizing: border-box;
+               padding-left: 30px;
+               background: #f8f8f8;
             /* height: 100px; */
             }
         
@@ -325,8 +337,7 @@
         .mobile-login {
             color: #00cc99;
             border: 1px solid #00cc99;
-        }
-            
+        }   
         }
 
         @media screen and (max-width: 768px) {
@@ -361,26 +372,26 @@
                 border-top: 1px solid #d2d2d2;
                 box-shadow: 0px 3px 4px 0px rgba(193, 193, 193, 0.5);
              }
-             .navbar-collpase.collpase-true {
+             /* .navbar-collpase.collpase-true {
                  top: 65px;
-             }
+             } */
              .navbar-nav {
-                 margin: 7.5px 0;
+                 /* margin: 7.5px 0; */
              }
              .navbar-nav>li {
-                 padding: 10px 15px;
+                 padding: 10px 0;
                  position: relative;
-
              }
              .navbar-nav>li>a{
                 /* padding: 10px 15px; */
                 display: inline-block;
                 width: 100%;
+                box-sizing: border-box;
+                padding-left: 15px;
              }
              .navbar-nav>li>a:hover {
                  color: #00cc99;
              }
-
              .navbar-nav>li::after {
                  content: '';
                  display: block;
@@ -396,35 +407,43 @@
                  top: 7px;
                  right: 15px;
              }
-             .navbar-nav>li.nav-product-span {
+             .navbar-nav>li.nav-product {
+                 padding: 0;
+             }
+             .navbar-nav>li>.nav-product-span {
                 display: inline-block;
                 width: 100%;
+                box-sizing: border-box;
+                padding-left: 15px;
                 cursor: pointer;
+                height: 39.2px;
+                line-height: 39.2px;
              }
              .nav-product-span>i {
                 position: absolute;
                  font-size: 24px;
-                 top: 7px;
+                 top: 0px;
                  right: 15px;
              }
-
              .nav-pro-con {
+               box-sizing: border-box;
+               padding-left: 30px;
+               background: #f8f8f8;
                width: 100%;
                overflow: hidden;
                transition: height 0.5s;
             }
-        
-        .nav-pro-con>span {
+            .nav-pro-con>span {
             display: inline-block;
             width: 100%;
             height: 34px;
             line-height: 34px;
-        }
+           }
 
-        .login-nav {
-           margin: 7.5px 0;
-           display: flex;
-           justify-content: space-around;
+           .login-nav {
+            margin: 7.5px 0;
+            display: flex;
+            justify-content: space-around;
         }
         .login-nav>li {
             width: 80px;
@@ -598,7 +617,7 @@
                     <a href="{:url('/')}">首页</a>
                    </li>
                    <li class="menu-item  menu-item-product">
-                       <a href="">产品与服务</a>
+                       <a href="{:url('index/site_service/index')}">产品与服务</a>
                        <div class="pull-down-pannel pull-down-pannel-product">
                            <div class="product-pannel">
                                <dl class="dl-border">
@@ -611,14 +630,14 @@
                                    </dd>
                                    <dd>
                                     <a href="" class="pink-item">
-                                        <p>轻直播平台</p>
-                                        <span>企业级视频云直播平台</span>
+                                        <p>私有化部署</p>
+                                        <span>直播平台私有化部署</span>
                                     </a> 
                                    </dd>
                                    <dd>
                                     <a href="" class="pink-item">
-                                        <p>轻直播平台</p>
-                                        <span>企业级视频云直播平台</span>
+                                        <p>轻视云</p>
+                                        <span>灵活开放、敏捷开发的视频云服务</span>
                                     </a> 
                                    </dd>
                                </dl>
@@ -628,19 +647,19 @@
                                    </dt>
                                    <dd>
                                     <a href="" class="pink-item">
-                                        <p>轻直播平台</p>
+                                        <p>直播集成开发</p>
                                         <span>企业级视频云直播平台</span>
                                     </a>
                                 </dd>
                                 <dd>
                                  <a href="" class="pink-item">
-                                     <p>轻直播平台</p>
+                                     <p>APP/小程序开发</p>
                                      <span>企业级视频云直播平台</span>
                                  </a> 
                                 </dd>
                                 <dd>
                                  <a href="" class="pink-item">
-                                     <p>轻直播平台</p>
+                                     <p>自助会议系统</p>
                                      <span>企业级视频云直播平台</span>
                                  </a> 
                                 </dd>
@@ -649,22 +668,28 @@
                                    <dt>现场服务</dt>
                                    <dd>
                                     <a href="" class="pink-item">
-                                        <p>轻直播平台</p>
+                                        <p>方案设计</p>
                                         <span>企业级视频云直播平台</span>
                                     </a>
                                 </dd>
                                 <dd>
                                  <a href="" class="pink-item">
-                                     <p>轻直播平台</p>
+                                     <p>搭建支持</p>
                                      <span>企业级视频云直播平台</span>
                                  </a> 
                                 </dd>
                                 <dd>
                                  <a href="" class="pink-item">
-                                     <p>轻直播平台</p>
+                                     <p>现场保障</p>
                                      <span>企业级视频云直播平台</span>
                                  </a> 
                                 </dd>
+                                <dd>
+                                    <a href="" class="pink-item">
+                                        <p>数据报告</p>
+                                        <span>企业级视频云直播平台</span>
+                                    </a> 
+                                   </dd>
                                </dl>
                            </div>
                        </div>
@@ -673,13 +698,13 @@
                        <a href="{:url('index/solution/index')}">解决方案</a>
                    </li>
                    <li class="menu-item">
-                       <a href="">案列中心</a>
+                       <a href="{:url('index/case_center/index')}">案列中心</a>
                    </li>
                    <li class="menu-item">
-                       <a href="">轻学院</a>
+                       <a href="{:url('index/qing')}">轻学院</a>
                    </li>
                    <li class="menu-item">
-                       <a href="">关于轻直播</a>
+                       <a href="{:url('index/about/index')}">关于轻直播</a>
                    </li>
                  </ul>
            </div>
@@ -713,7 +738,15 @@
                       <span class="nav-product-span" href="">产品与服务<i>+</i></span>
                       <div class="nav-pro-con">
                           <span><a href="">轻直播平台</a></span>
-                          <span><a href="">轻直播平台</a></span>
+                          <span><a href="">私有化部署</a></span>
+                          <span><a href="">轻视云</a></span>
+                          <span><a href="">直播集成开发</a></span>
+                          <span><a href="">APP/小程序开发</a></span>
+                          <span><a href="">自助会议系统</a></span>
+                          <span><a href="">方案设计</a></span>
+                          <span><a href="">搭建支持</a></span>
+                          <span><a href="">现场保障</a></span>
+                          <span><a href="">数据报告</a></span>
                       </div>
                     </li>
                   <li><a href="">解决方案</a></li>
@@ -735,6 +768,16 @@
     <script>
      $('.navbar-toggle').on('click', function() {
         $('.navbar-collpase').toggleClass('collpase-true');
+        if(!$('.navbar-collpase').hasClass('collpase-true')) {
+            let height = $('.navbar-collpase').height();
+            $('.navbar-collpase').css({
+                'top': - height + 'px'
+            })
+        } else {
+            $('.collpase-true').css({
+                'top': '65px'
+            })
+        }
      })
 
      $('.nav-product').on('click', function() {
@@ -756,47 +799,57 @@
 
      })
      
-     $('.menu li').on('click', function() {
+     $('.menua').on('click', function() {
         //  $(this).addClass('active');
+
      })
 
-    //  (function init(win, doc){
-    //      const optionsNode = document.querySelector('.nav-product > .nav-pro-con');
-    //       optionsNode.setAttribute('real-height',win.getComputedStyle(optionsNode).height);
-    //       optionsNode.style.height = '0px';
-    //  })(window, document)
-
-    //  $(window).resize(function() {
-    //      const deviceWidth = $(window).width();
-    //      console.log(deviceWidth);
-    //      if(deviceWidth < 820) {
-    //         init();
-    //     }
-    //  })
-
-    //  function init(){
-    //      $('.nav-pro-con').attr('real-height', $('.nav-pro-con').height());
-    //      $('.nav-pro-con').css({
-    //          'height': '0px'
-    //      })
-    //  }
-
-    //  $(document).ready(function() {
-    //     const deviceWidth = $(window).width();
-    //     if(deviceWidth < 820) {
-    //         init();
-    //     }
-    //  })
-
-     $.ajax({
-         url: "/index/navigation/navigationListClass",
-         success:function (res) {
-             console.log(res)
-             if (res.status === 200) {
-
-             }
-         }
+     $('.menu-item>a').each(function() {
+        let $this = $(this);
+       if($this[0].href == window.location) {
+           $(this).parent().siblings().removeClass('active');
+           $(this).parent().addClass('active');
+       }
      })
+
+
+    //  $.ajax({
+    //      url: "/index/navigation/navigationListClass",
+    //      success:function (res) {
+    //          let navStr = '';
+    //          res.forEach((item, index) => {
+    //              if(item.sub.length <= 0) {
+    //                 navStr +=`<li class="menu-item"><a href="${item.route}">${item.menu_name}</a></li>`;
+    //              } else {
+    //                  navStr +=`<li class="menu-item  menu-item-product">
+    //                    <a href="">${item.menu_name}</a>
+    //                    <div class="pull-down-pannel pull-down-pannel-product">
+    //                        <div class="product-pannel">`;
+    //                         item.sub.forEach((child, index) =>{
+    //                              navStr += `<dl class="dl-border">
+    //                                <dt>${child.menu_name}</dt>`
+    //                               if(child.sub.length > 0) {
+    //                                 child.sub.forEach((item1, index) =>{
+    //                                  navStr +=`<dd>
+    //                                     <a class="pink-item">
+    //                                        <p class="p-active">轻直播平台</p>
+    //                                        <span>${item1.menu_name}</span>
+    //                                     </a>
+    //                                   </dd>`
+    //                                 })
+    //                               };
+    //                              navStr +='</dl>';
+    //                         });   
+    //                      navStr+=`</div>
+    //                    </div>
+    //                </li>`;
+    //              }  
+    //          })
+
+          
+    //          $('.menu')[0].innerHTML = navStr;
+    //      }
+    //  })
 
     </script>
 </body>

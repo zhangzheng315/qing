@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>直播解决方案_各行业现场直播方案_轻直播</title>
-    <meta name="keywords"  content="企业直播解决方案,活动直播方案,营销直播方案" />
-    <meta name="description"  content="轻直播特有的沉浸式应用场景解决方案,符合多行业用户选择，独特双语直播模式，服务全球用户。" />
+    <title>医疗行业解决方案_手术直播_医学会议_医疗产品推介</title>
+    <meta name="keywords"  content="手术直播，医学会议，医疗产品推介" />
+    <meta name="description"  content="轻直播专注为医疗机构打造稳定安全的视频云平台，提供医学在线培训、手术直播、医学会议、医疗产品推介等全场景视频解决方案" />
     <link rel="stylesheet" href="/static/layui/css/layui.css">
     <link rel="stylesheet" href="/static/css/style.css">
     <script type='text/javascript' src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
@@ -17,6 +17,13 @@
             background: #ffffff;
             height: 60px;          
             box-shadow: 0px 4px 6px 0px rgba(193, 193, 193, 0.5);
+        }
+        #conporate-container nav.solution-nav-fixed {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            z-index: 999;
         }
         .nav-content>li {
               position: relative;
@@ -1641,7 +1648,7 @@
         </div>
     </div>
     <!-- 导航栏 -->
-    <nav>
+    <nav id="solution-nav">
         <div class="layui-container">
             <div class="nav-content">
                 <li class="active">
@@ -1967,6 +1974,7 @@
   </div>
 </body>
 <script src="/static/common/js/header-footer.js"></script>
+<script src="/static/common/js/solution.js"></script>
 <script type="text/javascript">
      layui.use('carousel', function () {
         var carousel = layui.carousel;

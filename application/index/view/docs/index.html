@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轻直播_客户案例_直播定制化服务</title>
+    <meta name="keywords"  content="轻直播,经典案例" />
+    <meta name="description"
+         content="轻直播提供私有化部署,全方位全场景直播一站式服务,服务范围涵盖医疗、教育、金融、科技等各行业,已获得上海医师协会、瀚晖制药、四川大学、等国内知名企业的高度认可。" />
+    <link rel="stylesheet" href="/static/layui/css/layui.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script type='text/javascript' src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/static/layui/layui.js"></script>
+    <style>
+        #docs-container {
+            background: #f9f9f9;
+        }
+
+        @media screen and (min-width: 1200px) {
+            .layui-container {
+                width: 1200px !important;
+                padding: 0;
+            }
+
+            .docs-content {
+                padding-top: 32px;
+            }
+
+            .docs-content::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+            .baike-menu {
+                float: left;
+                margin-left: 50px;
+                margin-right: 40px;
+                overflow: hidden;
+            }
+
+            .baikeMenuTitle {
+                width: 245px;
+                height: 45px;
+                background: #00cc99;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+            }
+
+            .baikeMenuTitle>p {
+                color: #ffffff;
+                font-size: 20px;
+                padding: 10px;
+            }
+
+            .baike-menu>.baikeMenuList {
+                background: #ffffff;
+                padding-top: 10px;
+            }
+
+            .baikeMenu>.baikeMenuList li {
+                width: 100%;
+            }
+
+            .baikeMenuContent>a {
+                font-size: 16px;
+            }
+
+            .baikeMenuList a {
+                width: 100%;
+                display: inline-block;
+                padding: 10px;
+                color: #000;
+                box-sizing: border-box;
+            }
+
+            .baikeMenuList>ul>ul>li {
+                padding-left: 55px;
+            }
+
+            .baikeMenuList>ul>ul>li>a {
+                font-size: 14px;
+            }
+
+            .baikeMenuList li:hover, .baikeMenuList li.active {
+                color: #49a6f7;
+                border-left: 2px solid #49a6f7;
+                background-color: rgba(73, 166, 247, 0.2);
+            }
+            .baikeMenuList li:hover a, .baikeMenuList li.active a {
+                color: #39a6f7;
+            }
+            .baike-list {
+                width: 850px;
+                min-height: 649px;
+                background: #ffffff;
+                float: left;
+                border-radius: 5px;
+            }
+
+            .listContainer {
+                overflow: hidden;
+                width: 90%;
+                margin: 20px auto;
+            }
+
+            .listContainerTitle {
+                display: flex;
+                justify-content: space-between;
+                padding-bottom: 15px;
+                border-bottom: 1px solid #eae9e9;
+            }
+
+            .listContainerTitle>p {
+                font-size: 20px;
+                color: #333;
+            }
+
+            .listContainerTitle>.search {
+                width: 153px;
+                height: 30px;
+                border: 1px solid #e5e5e5;
+                border-radius: 15px;
+                padding-left: 15px;
+                box-sizing: border-box;
+            }
+
+            .listContainerTitle>.search>input {
+                border: none;
+                width: 80%;
+                height: 28px;
+                font-size: 14px;
+                color: #999999;
+            }
+
+            .listGuideContent {
+                margin: 5px;
+                margin-bottom: 50px;
+            }
+
+            .listGuideContent>ul {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .listGuideContent>ul>li {
+                margin-top: 15px;
+                width: 50%;
+
+            }
+
+            .listGuideContent>ul>li>a {
+                color: #666666;
+                font-size: 14px;
+            }
+
+            .listGuideContent>ul>li:hover a {
+                color: #0099ff;
+            }
+        }
+        @media screen and (max-width: 1200px) and (min-width: 992px) {
+            .layui-container {
+                width: 970px !important;
+                padding: 0;
+            }
+            .docs-content {
+                padding-top: 32px;
+            }
+
+            .docs-content::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+            .baike-menu {
+                float: left;
+                margin-left: 50px;
+                margin-right: 40px;
+                overflow: hidden;
+            }
+
+            .baikeMenuTitle {
+                width: 230px;
+                height: 45px;
+                background: #00cc99;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+            }
+
+            .baikeMenuTitle>p {
+                color: #ffffff;
+                font-size: 20px;
+                padding: 10px;
+            }
+
+            .baike-menu>.baikeMenuList {
+                background: #ffffff;
+                padding-top: 10px;
+            }
+
+            .baikeMenu>.baikeMenuList li {
+                width: 100%;
+            }
+
+            .baikeMenuContent>a {
+                font-size: 16px;
+            }
+
+            .baikeMenuList a {
+                width: 100%;
+                display: inline-block;
+                padding: 10px;
+                color: #000;
+                box-sizing: border-box;
+            }
+
+            .baikeMenuList>ul>ul>li {
+                padding-left: 55px;
+            }
+
+            .baikeMenuList>ul>ul>li>a {
+                font-size: 14px;
+            }
+
+            .baikeMenuList li:hover, .baikeMenuList li.active {
+                color: #49a6f7;
+                border-left: 2px solid #49a6f7;
+                background-color: rgba(73, 166, 247, 0.2);
+            }
+            .baikeMenuList li:hover a, .baikeMenuList li.active a {
+                color: #39a6f7;
+            }
+            .baike-list {
+                width: 580px;
+                min-height: 649px;
+                background: #ffffff;
+                float: left;
+                border-radius: 5px;
+            }
+
+            .listContainer {
+                overflow: hidden;
+                width: 90%;
+                margin: 20px auto;
+            }
+
+            .listContainerTitle {
+                display: flex;
+                justify-content: space-between;
+                padding-bottom: 15px;
+                border-bottom: 1px solid #eae9e9;
+            }
+
+            .listContainerTitle>p {
+                font-size: 20px;
+                color: #333;
+            }
+
+            .listContainerTitle>.search {
+                width: 153px;
+                height: 30px;
+                border: 1px solid #e5e5e5;
+                border-radius: 15px;
+                padding-left: 15px;
+                box-sizing: border-box;
+            }
+
+            .listContainerTitle>.search>input {
+                border: none;
+                width: 80%;
+                height: 28px;
+                font-size: 14px;
+                color: #999999;
+            }
+
+            .listGuideContent {
+                margin: 5px;
+                margin-bottom: 50px;
+            }
+
+            .listGuideContent>ul {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .listGuideContent>ul>li {
+                margin-top: 15px;
+                width: 50%;
+
+            }
+
+            .listGuideContent>ul>li>a {
+                color: #666666;
+                font-size: 14px;
+            }
+
+            .listGuideContent>ul>li:hover a {
+                color: #0099ff;
+            }
+        }
+
+        @media screen and (max-width: 992px) and (min-width: 768px) {
+            .layui-container {
+                width: 750px !important;
+                padding: 0;
+            }
+            .docs-content {
+                padding-top: 32px;
+            }
+
+            .docs-content::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+            .baike-menu {
+                float: left;
+                margin-left: 20px;
+                margin-right: 30px;
+                overflow: hidden;
+            }
+
+            .baikeMenuTitle {
+                width: 180px;
+                height: 45px;
+                background: #00cc99;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+            }
+
+            .baikeMenuTitle>p {
+                color: #ffffff;
+                font-size: 20px;
+                padding: 10px;
+            }
+
+            .baike-menu>.baikeMenuList {
+                background: #ffffff;
+                padding-top: 10px;
+            }
+
+            .baikeMenu>.baikeMenuList li {
+                width: 100%;
+            }
+
+            .baikeMenuContent>a {
+                font-size: 16px;
+            }
+
+            .baikeMenuList a {
+                width: 100%;
+                display: inline-block;
+                padding: 10px;
+                color: #000;
+                box-sizing: border-box;
+            }
+
+            .baikeMenuList>ul>ul>li {
+                padding-left: 35px;
+            }
+
+            .baikeMenuList>ul>ul>li>a {
+                font-size: 14px;
+            }
+
+            .baikeMenuList li:hover, .baikeMenuList li.active {
+                color: #49a6f7;
+                border-left: 2px solid #49a6f7;
+                background-color: rgba(73, 166, 247, 0.2);
+            }
+            .baikeMenuList li:hover a, .baikeMenuList li.active a {
+                color: #39a6f7;
+            }
+            .baike-list {
+                width: 480px;
+                min-height: 649px;
+                background: #ffffff;
+                float: left;
+                border-radius: 5px;
+            }
+
+            .listContainer {
+                overflow: hidden;
+                width: 90%;
+                margin: 20px auto;
+            }
+
+            .listContainerTitle {
+                display: flex;
+                justify-content: space-between;
+                padding-bottom: 15px;
+                border-bottom: 1px solid #eae9e9;
+            }
+
+            .listContainerTitle>p {
+                font-size: 20px;
+                color: #333;
+            }
+
+            .listContainerTitle>.search {
+                width: 153px;
+                height: 30px;
+                border: 1px solid #e5e5e5;
+                border-radius: 15px;
+                padding-left: 15px;
+                box-sizing: border-box;
+            }
+
+            .listContainerTitle>.search>input {
+                border: none;
+                width: 80%;
+                height: 28px;
+                font-size: 14px;
+                color: #999999;
+            }
+
+            .listGuideContent {
+                margin: 5px;
+                margin-bottom: 50px;
+            }
+            .listGuideContent>ul>li {
+                margin-top: 15px;
+                /* width: 50%; */
+
+            }
+
+            .listGuideContent>ul>li>a {
+                color: #666666;
+                font-size: 14px;
+            }
+
+            .listGuideContent>ul>li:hover a {
+                color: #0099ff;
+            }
+        }
+            
+        
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <!-- 头部 -->
+        {include file="common/header"}
+        <!-- 直播百科 -->
+        <div id="docs-container">
+            <div class="layui-container docs-content">
+                <!-- 菜单栏 -->
+                <div class="baike-menu">
+                    <div class="baikeMenuTitle">
+                        <p>直播百科</p>
+                    </div>
+                    <div class="baikeMenuList">
+                        <ul>
+                            <li id="menu-item-1" class="baikeMenuContent">
+                                <a href="">
+                                    <img src="" alt="">
+                                    产品说明
+                                </a>
+                            </li>
+                            <ul>
+                                <li class="active">
+                                    <a href="">直播频道</a>
+                                </li>
+                                <li>
+                                    <a href="">频道管理</a>
+                                </li>
+                                <li>
+                                    <a href="">我的账户</a>
+                                </li>
+                                <li>
+                                    <a href="">媒体库</a>
+                                </li>
+                                <li>
+                                    <a href="">应用</a>
+                                </li>
+                            </ul>
+                            <li id="menu-item-1" class="baikeMenuContent">
+                                <a href="">
+                                    <img src="" alt="">
+                                    产品说明
+                                </a>
+                            </li>
+                            <ul>
+                                <li>
+                                    <a href="">直播频道</a>
+                                </li>
+                                <li>
+                                    <a href="">频道管理</a>
+                                </li>
+                                <li>
+                                    <a href="">我的账户</a>
+                                </li>
+                                <li>
+                                    <a href="">媒体库</a>
+                                </li>
+                                <li>
+                                    <a href="">应用</a>
+                                </li>
+                            </ul>
+                            <li id="menu-item-1" class="baikeMenuContent">
+                                <a href="">
+                                    <img src="" alt="">
+                                    产品说明
+                                </a>
+                            </li>
+                            <ul>
+                                <li>
+                                    <a href="">直播频道</a>
+                                </li>
+                                <li>
+                                    <a href="">频道管理</a>
+                                </li>
+                                <li>
+                                    <a href="">我的账户</a>
+                                </li>
+                                <li>
+                                    <a href="">媒体库</a>
+                                </li>
+                                <li>
+                                    <a href="">应用</a>
+                                </li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 直播百科内容区 -->
+                <div class="baike-list">
+                    <div class="listContainer">
+                        <div class="listContainerTitle">
+                            <p>直播频道</p>
+                            <div class="search">
+                                <input type="text" placeholder="搜索">
+                                <i class="layui-icon layui-icon-search"></i>
+                            </div>
+                        </div>
+                        <div class="listGuideContent">
+                            <ul>
+                                <li>
+                                    <a href="">
+                                        桌面直播工具-网络监测及时间显示
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        桌面直播工具-网络监测及时间显示
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        桌面直播工具-网络监测及时间显示
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        桌面直播工具-网络监测及时间显示
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        桌面直播工具-网络监测及时间显示
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        桌面直播工具-网络监测及时间显示
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        桌面直播工具-网络监测及时间显示
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        桌面直播工具-网络监测及时间显示
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        桌面直播工具-网络监测及时间显示
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        桌面直播工具-网络监测及时间显示
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        桌面直播工具-网络监测及时间显示
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        桌面直播工具-网络监测及时间显示
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/static/common/js/header-footer.js"></script>
+<script type="text/javascript">
+    $('.baikeMenuList li').on('click', function() {
+        console.log($(this));
+    })
+</script>
+
+</html>
