@@ -170,16 +170,18 @@
 #advantage .kehu .layui-container #logos #logo-content .logo-imgs {
   height: 100px;
   background-color: #fff !important;
-  display: flex;
-  align-items: center;
 }
 #advantage .kehu .layui-container #logos #logo-content .logo-imgs li {
-  width: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 19%;
+  height: 100%;
+  display: inline-block;
+  position: relative;
 }
 #advantage .kehu .layui-container #logos #logo-content .logo-imgs li img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   height: 80px;
   object-fit: cover;
 }
@@ -238,7 +240,7 @@
   border-radius: 10px;
   cursor: pointer;
 }
-#advantage .case .layui-container .case-box ul li img {
+#advantage .case .layui-container .case-box ul li > img {
   width: 100%;
   object-fit: cover;
 }
@@ -253,6 +255,7 @@
   color: rgba(255, 255, 255, 0.7);
   line-height: 40px;
   text-align: center;
+  font-size: 16px;
 }
 #advantage .case .layui-container .case-box ul li .text {
   padding: 0 16px;
@@ -274,6 +277,11 @@
 }
 #advantage .case .layui-container .case-box ul li .text p .num {
   float: right;
+}
+#advantage .case .layui-container .case-box ul li .text p .num img {
+  width: auto;
+  margin-right: 10px;
+  vertical-align: middle;
 }
 #advantage .case .layui-container .case-box ul li:nth-child(3n) {
   margin-right: 0;

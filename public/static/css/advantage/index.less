@@ -207,16 +207,22 @@
                     .logo-imgs {
                         height: 100px;
                         background-color: #fff !important;
-                        display: flex;
-                        align-items: center;
+                        // display: flex;
+                        // align-items: center;
 
                         li {
-                            width: 20%;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
+                            width: 19%;
+                            height: 100%;
+                            display: inline-block;
+                            // justify-content: center;
+                            // align-items: center;
+                            position: relative;
 
                             img {
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%,-50%);
                                 height: 80px;
                                 object-fit: cover;
                             }
@@ -232,7 +238,6 @@
                             width: 35px;
                             height: 7px;
                             background: #E5E5E5;
-                            ;
                             border-radius: 4px;
                             margin: 0 3px;
                             font-size: 14px;
@@ -299,7 +304,7 @@
                         border-radius: 10px;
                         cursor: pointer;
 
-                        img {
+                        &>img {
                             width: 100%;
                             object-fit: cover;
                         }
@@ -315,6 +320,7 @@
                             color: rgba(255, 255, 255, .7);
                             line-height: 40px;
                             text-align: center;
+                            font-size:16px
                         }
 
                         .text {
@@ -339,6 +345,11 @@
 
                                 .num {
                                     float: right;
+                                    img {
+                                        width: auto;
+                                        margin-right: 10px;
+                                        vertical-align: middle;
+                                    }
                                 }
 
                             }
