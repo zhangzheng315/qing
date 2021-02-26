@@ -80,7 +80,7 @@
                 position: relative;
             }
 
-            .product-pannel > dl.dl-border::after {
+            .product-pannel > dl.dl-border:not(:last-child):after {
                 display: block;
                 position: absolute;
                 content: '';
@@ -145,7 +145,7 @@
                 position: relative;
             }
 
-            .product-pannel > dl.dl-border::after {
+            .product-pannel > dl.dl-border:not(:last-child):after {
                 display: block;
                 position: absolute;
                 content: '';
@@ -223,7 +223,7 @@
                 position: relative;
             }
 
-            .product-pannel > dl.dl-border::after {
+            .product-pannel > dl.dl-border:not(:last-child):after {
                 display: block;
                 position: absolute;
                 content: '';
@@ -608,7 +608,8 @@
             visibility: hidden;
             /* height: 225px; */
             background: #ffffff;
-            box-shadow: 0px -2px 2px 0px rgba(193, 193, 193, 0.3);
+            /* box-shadow: 0px -2px 2px 0px rgba(193, 193, 193, 0.3); */
+            border: 1px solid rgba(193,193,193,.3);
             transition: all .5s linear;
         }
 
@@ -794,7 +795,7 @@
         //  $(this).addClass('active');
 
     })
-
+    
     $('.menu-item>a').each(function () {
         let $this = $(this);
         if ($this[0].href == window.location) {
@@ -828,8 +829,11 @@
                     }
                 }
             }
+         
         }
     });
+
+  
 
     //拼接子集
     function pingChild(array) {
