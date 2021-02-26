@@ -42,8 +42,8 @@
             <div class="layui-container">
                 <h2 class="title">行业解决方案</h2>
                 <ul class="industry-content">
-                    {if isset($solution_list)}
-                    {foreach($solution_list as $item)}
+                    {if isset($solution_list['ind_res'])}
+                    {foreach($solution_list['ind_res'] as $item)}
                     <li>
                         <img src="{$item.img_url}" alt="">
                         <div class="text">
@@ -62,70 +62,20 @@
             <div class="layui-container">
                 <h2 class="title">场景解决方案</h2>
                 <ul class="scene-content">
+                    {if isset($solution_list['sce_res'])}
+                    {foreach($solution_list['sce_res'] as $item)}
                     <li>
-                        <a href="{:url('index/solution/corporate')}" class="turn">
+                        <a href="{$item.link}" class="turn">
                             <div>
-                                <p>企业会议</p>
+                                <p>{$item.title}</p>
+
                                 <img src="/static/image/solution/jiantou.png" alt="">
                             </div>
                         </a>
                     </li>
-                    <li>
-                        <a href="{:url('index/solution/training')}" class="turn">
-                            <div>
-                                <p>企业培训</p>
-                                <img src="/static/image/solution/jiantou.png" alt="">
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{:url('index/solution/onlineClass')}" class="turn">
-                            <div>
-                                <p>在线课堂</p>
-                                <img src="/static/image/solution/jiantou.png" alt="">
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{:url('index/solution/marketActivite')}" class="turn">
-                            <div>
-                                <p>营销活动</p>
-                                <img src="/static/image/solution/jiantou.png" alt="">
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{:url('index/solution/medical')}" class="turn">
-                            <div>
-                                <p>医学教育</p>
-                                <img src="/static/image/solution/jiantou.png" alt="">
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{:url('index/solution/operation')}" class="turn">
-                            <div>
-                                <p>手术示教</p>
-                                <img src="/static/image/solution/jiantou.png" alt="">
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{:url('index/solution/financial')}" class="turn">
-                            <div>
-                                <p>金融保险</p>
-                                <img src="/static/image/solution/jiantou.png" alt="">
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{:url('index/solution/meetingLive')}" class="turn">
-                            <div>
-                                <p>大会直播</p>
-                                <img src="/static/image/solution/jiantou.png" alt="">
-                            </div>
-                        </a>
-                    </li>
+                    {/foreach}
+                    {/if}
+                    
                 </ul>
             </div>
         </div>

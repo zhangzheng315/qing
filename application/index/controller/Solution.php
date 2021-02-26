@@ -34,12 +34,12 @@ class Solution extends Controller
       return $this->fetch();
     }
     /* 解决方案-在线课堂 */
-    public function onlineclass()
+    public function onlineClass()
     {
       return $this->fetch();
     }
     /* 解决方案-营销活动*/
-    public function marketactivite()
+    public function marketActivities()
     {
       return $this->fetch();
     }
@@ -54,7 +54,7 @@ class Solution extends Controller
       return $this->fetch();
     }
     /* 大会直播*/
-    public function meetinglive()
+    public function meetingLive()
     {
       return $this->fetch();
     }

@@ -46,6 +46,19 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">场景解决方案</label>
+            <div class="layui-input-block">
+                <input name="type" value="1" type="checkbox" lay-skin="switch">
+                <span style="color: rgba(0,0,0,0.2)">开启为场景解决方案，否则为行业解决方案</span>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">跳转链接</label>
+            <div class="layui-input-block">
+                <input type="text" name="link" placeholder="请输入(/index/solution/corporate)" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
             <label class="layui-form-label">启用</label>
             <div class="layui-input-block">
                 <input name="status" value="1" type="checkbox" checked lay-skin="switch">
@@ -95,6 +108,19 @@
             <label class="layui-form-label">简介</label>
             <div class="layui-input-block">
                 <textarea name="introduction" id="introduction" placeholder="请输入内容" class="layui-textarea"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">场景解决方案</label>
+            <div class="layui-input-block">
+                <input name="type" id="type" value="1" type="checkbox" lay-skin="switch">
+                <span style="color: rgba(0,0,0,0.2)">开启为场景解决方案，否则为行业解决方案</span>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">跳转链接</label>
+            <div class="layui-input-block">
+                <input type="text" name="link" id="link" placeholder="请输入(/index/solution/corporate)" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
@@ -194,6 +220,7 @@
 
                 , {field: 'img_url', title: '缩略图', templet:'#imgtmp'}
                 , {field: 'title', title: '标题'}
+                , {field: 'type', title: '类别'}
                 , {field: 'order', title: '排序'}
                 , {field: 'status', title: '当前状态'}
                 , {fixed: 'right', width: 150, title: '操作', align: 'center', toolbar: '#barDemo'}
@@ -223,11 +250,17 @@
                         $('.img-show').attr('src',res.data.img_url);
                         $('.img_url').val(res.data.img_url);
                         $('#introduction').val(res.data.introduction);
+                        $('#link').val(res.data.link);
 
                         if (res.data.status === 0) {
                             $('#status').removeAttr('checked');
                         } else {
                             $('#status').prop('checked', true);
+                        }
+                        if (res.data.type === 0) {
+                            $('#type').removeAttr('checked');
+                        } else {
+                            $('#type').prop('checked', true);
                         }
                         form.render();
                     }

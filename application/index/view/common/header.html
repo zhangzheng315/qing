@@ -12,6 +12,9 @@
            padding: 0 !important;
        }
       } */
+        body{
+            overflow-x: hidden;
+        }
         @media screen and (min-width: 1200px) {
             /* .layui-container {
                 width: 1200px !important;
@@ -804,18 +807,23 @@
         }
     })
 
+    //导航栏
     $.ajax({
         url: "/index/navigation/navigationListClass",
+        data:{'url':top.location.href},
         success: function (res) {
-            console.log(res);
             if (res.status === 200) {
                 for (let item of res.nav_list) {
+                    let active = '';
+                    if (item.id === res.nav_id.pid) {
+                        active = 'active';
+                    }
                     if (item.id === 2 || item.id === 6) {
                         if (item.sub.length !== 0) {
-                            var child = pingChild(item.sub);
+                            var child = pingChild(item.sub,res.nav_id.id);
                         }
-                        $('.menu_nav').append('<li class="menu-item  menu-item-product">\n' +
-                            '                    <a href="">' + item.menu_name + '</a>\n' +
+                        $('.menu_nav').append('<li class="menu-item  menu-item-product '+active+'">\n' +
+                            '                    <a style="cursor: pointer;display: ">' + item.menu_name + '</a>\n' +
                             '                    <div class="pull-down-pannel pull-down-pannel-product">\n' +
                             '                        <div class="product-pannel">\n' +
                             child +
@@ -823,27 +831,24 @@
                             '                    </div>\n' +
                             '                </li>');
                     } else {
-                        $('.menu_nav').append('<li class="menu-item">\n' +
+                        $('.menu_nav').append('<li class="menu-item '+active+'">\n' +
                             '                    <a href="' + item.route + '">' + item.menu_name + '</a>\n' +
                             '                </li>');
                     }
                 }
             }
-         
         }
     });
 
-  
-
     //拼接子集
-    function pingChild(array) {
+    function pingChild(array,id) {
         let child = '';
         if (array.length === 0) {
             return '';
         }
         for (let item of array) {
             if (item.sub.length !== 0) {
-                var sun = pingSun(item.sub);
+                var sun = pingSun(item.sub,id);
             }
             child += '<dl class="dl-border">\n' +
                 '         <dt>' + item.menu_name + '</dt>\n' +
@@ -852,16 +857,19 @@
         }
         return child;
     }
-
-    function pingSun(arr) {
+    function pingSun(arr,id) {
         let sun = '';
         if (arr.length === 0) {
             return '';
         }
         for (let item of arr) {
+            let active = '';
+            if (item.id === id) {
+                active = 'p-active';
+            }
             sun += '<dd>\n' +
                 '       <a href="' + item.route + '" class="pink-item">\n' +
-                '           <p class="p-active">' + item.menu_name + '</p>\n' +
+                '           <p class="'+ active +'">' + item.menu_name + '</p>\n' +
                 // '           <span>企业级视频云直播平台</span>\n' +
                 '       </a>\n' +
                 '   </dd>';

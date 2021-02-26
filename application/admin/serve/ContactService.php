@@ -23,6 +23,7 @@ class ContactService extends Common{
         $data = [
             'type_name' => $param['type_name'],
             'num_en' => $param['num_en'],
+            'icon_url' => $param['icon_url'],
             'status' => $status,
             'order' => $param['order'],
             'created_time' => time(),
@@ -97,5 +98,20 @@ class ContactService extends Common{
         }
         $this->setMessage('删除成功');
         return true;
+    }
+
+    public function contactList()
+    {
+        $where = [
+            'status' => 1,
+            'deleted_time' => 0,
+        ];
+        $res = $this->contact->where($where)->order('order','desc')->select();
+        if(!$res){
+            $this->setError('暂无数据');
+            return [];
+        }
+        $this->setMessage('查询成功');
+        return $res;
     }
 }

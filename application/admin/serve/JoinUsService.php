@@ -114,9 +114,9 @@ class JoinUsService extends Common{
         }
         if(!$res){
             $this->setError('暂无数据');
-            return false;
+            return [];
         }
-        $this->setMessage('删除成功');
+        $this->setMessage('查询成功');
         return $res;
     }
 }
