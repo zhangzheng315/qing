@@ -11,6 +11,6 @@ class Navigation extends Controller
     {
         $navigation_service = new NavigationService();
         $nav_list = $navigation_service->navigationListClass();
-        return $nav_list;
+        return ['status'=>200,'nav_list'=>$nav_list];
     }
 }

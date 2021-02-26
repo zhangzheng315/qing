@@ -87,10 +87,10 @@
                 position: absolute;
                 content: '';
                 width: 1px;
-                height: 170px;
+                height: 100%;
                 background: #e5e5e5;
                 right: 90px;
-                top: 50px;
+                top: 10px;
             }
         }
 
@@ -152,10 +152,10 @@
                 position: absolute;
                 content: '';
                 width: 1px;
-                height: 170px;
+                height: 100%;
                 background: #e5e5e5;
                 right: 80px;
-                top: 50px;
+                top: 10px;
             }
 
         }
@@ -230,10 +230,10 @@
                 position: absolute;
                 content: '';
                 width: 1px;
-                height: 170px;
+                height: 100%;
                 background: #e5e5e5;
                 right: 60px;
-                top: 50px;
+                top: 10px;
             }
         }
 
@@ -610,7 +610,7 @@
             width: 20px;
             height: 20px;
             background-size: contain;
-            top: 6px;
+            top: 1px;
             left: -30px;
             background-position: center center;
             background-repeat: no-repeat;
@@ -675,94 +675,7 @@
             </a>
         </div>
         <div class="nav-menu">
-            <ul class="menu">
-                <li class="menu-item active">
-                    <a href="{:url('/')}">首页</a>
-                </li>
-                <li class="menu-item  menu-item-product">
-                    <a href="">产品与服务</a>
-                    <div class="pull-down-pannel pull-down-pannel-product">
-                        <div class="product-pannel">
-                            <dl class="dl-border">
-                                <dt>视频云服务</dt>
-                                <dd>
-                                    <a href="{:url('index/video_cloud/index')}" class="pink-item">
-                                        <p class="p-active">轻直播平台</p>
-                                        <span>企业级视频云直播平台</span>
-                                    </a>
-                                </dd>
-                                <dd>
-                                    <a href="{:url('index/deploy/index')}" class="pink-item">
-                                        <p>私有化部署</p>
-                                        <span>直播平台私有化部署</span>
-                                    </a>
-                                </dd>
-                                <dd>
-                                    <a href="" class="pink-item">
-                                        <p>轻直播平台</p>
-                                        <span>企业级视频云直播平台</span>
-                                    </a>
-                                </dd>
-                            </dl>
-                            <dl class="dl-border">
-                                <dt>
-                                    定制化服务
-                                </dt>
-                                <dd>
-                                    <a href="{:url('index/customized_service/index')}" class="pink-item">
-                                        <p>直播集成开发</p>
-                                        <span>企业级视频云直播平台</span>
-                                    </a>
-                                </dd>
-                                <dd>
-                                    <a href="" class="pink-item">
-                                        <p>轻直播平台</p>
-                                        <span>企业级视频云直播平台</span>
-                                    </a>
-                                </dd>
-                                <dd>
-                                    <a href="" class="pink-item">
-                                        <p>轻直播平台</p>
-                                        <span>企业级视频云直播平台</span>
-                                    </a>
-                                </dd>
-                            </dl>
-                            <dl>
-                                <dt>现场服务</dt>
-                                <dd>
-                                    <a href="{:url('index/site_service/index')}" class="pink-item">
-                                        <p>轻直播平台</p>
-                                        <span>企业级视频云直播平台</span>
-                                    </a>
-                                </dd>
-                                <dd>
-                                    <a href="" class="pink-item">
-                                        <p>轻直播平台</p>
-                                        <span>企业级视频云直播平台</span>
-                                    </a>
-                                </dd>
-                                <dd>
-                                    <a href="" class="pink-item">
-                                        <p>轻直播平台</p>
-                                        <span>企业级视频云直播平台</span>
-                                    </a>
-                                </dd>
-                            </dl>
-                        </div>
-                    </div>
-                </li>
-                <li class="menu-item">
-                    <a href="{:url('index/solution/index')}">解决方案</a>
-                </li>
-                <li class="menu-item">
-                    <a href="{:url('index/case_center/index')}">案列中心</a>
-                </li>
-                <li class="menu-item">
-                    <a href="">轻学院</a>
-                </li>
-                <li class="menu-item">
-                    <a href="">关于轻直播</a>
-                </li>
+            <ul class="menu menu_nav">
             </ul>
         </div>
         <div class="nav-btn">
@@ -873,11 +786,64 @@
     $.ajax({
         url: "/index/navigation/navigationListClass",
         success: function (res) {
+            console.log(res);
             if (res.status === 200) {
-
+                for (let item of res.nav_list) {
+                    if (item.id === 2 || item.id === 6) {
+                        if (item.sub.length !== 0) {
+                            var child = pingChild(item.sub);
+                        }
+                        $('.menu_nav').append('<li class="menu-item  menu-item-product">\n' +
+                            '                    <a href="">'+ item.menu_name +'</a>\n' +
+                            '                    <div class="pull-down-pannel pull-down-pannel-product">\n' +
+                            '                        <div class="product-pannel">\n' +
+                                                        child +
+                            '                        </div>\n' +
+                            '                    </div>\n' +
+                            '                </li>');
+                    }else{
+                        $('.menu_nav').append('<li class="menu-item">\n' +
+                            '                    <a href="'+ item.route +'">'+ item.menu_name +'</a>\n' +
+                            '                </li>');
+                    }
+                }
             }
         }
-    })
+    });
+
+    //拼接子集
+    function pingChild(array) {
+        let child = '';
+        if (array.length === 0) {
+            return '';
+        }
+        for (let item of array) {
+            if (item.sub.length !== 0) {
+                var sun = pingSun(item.sub);
+            }
+            child += '<dl class="dl-border">\n' +
+                '         <dt>'+ item.menu_name +'</dt>\n' +
+                          sun +
+                '     </dl>';
+        }
+        return child;
+    }
+
+    function pingSun(arr) {
+        let sun = '';
+        if (arr.length === 0) {
+            return '';
+        }
+        for (let item of arr) {
+            sun += '<dd>\n' +
+                '       <a href="'+ item.route +'" class="pink-item">\n' +
+                '           <p class="p-active">'+ item.menu_name +'</p>\n' +
+                // '           <span>企业级视频云直播平台</span>\n' +
+                '       </a>\n' +
+                '   </dd>';
+        }
+        return sun;
+    }
 
 </script>
 </body>
