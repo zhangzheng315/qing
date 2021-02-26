@@ -13,12 +13,14 @@ class LogoWallService extends Common{
     public $logoWall;
     public $navigation;
     public $caseType;
+    public $navigationService;
     public function __construct(Request $request = null)
     {
         parent::__construct($request);
         $this->logoWall = new LogoWall();
         $this->navigation = new Navigation();
         $this->caseType = new CaseType();
+        $this->navigationService = new NavigationService();
     }
 
     /**
@@ -66,7 +68,7 @@ class LogoWallService extends Common{
         $id = $param['id'];
         $where = ['id' => $id];
         $info = $this->logoWall->find($where);
-        $info->navigation_list = $this->navigation->where(['deleted_time' => 0,'status'=>1])->select();
+        $info->navigation_list = $this->navigationService->navigationListClass();
         $info->type_list = $this->caseType->where(['deleted_time' => 0,'status'=>1])->select();
         if(!$info){
             $this->setError('查询失败');

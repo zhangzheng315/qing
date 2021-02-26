@@ -16,6 +16,10 @@
   height: 600px;
   position: relative;
 }
+#video_cloud #banner .layui-carousel {
+  width: 100%;
+  height: 100%;
+}
 #video_cloud #banner .layui-carousel .layui-carousel-ind {
   display: none !important;
 }
@@ -35,45 +39,48 @@
   color: #333;
   cursor: pointer;
 }
+#video_cloud .navbar .layui-container ul li a {
+  text-decoration: none;
+}
 #video_cloud .navbar .layui-container ul li:hover {
   color: #00cc99;
   border-bottom: 3px solid #00cc99;
 }
-#video_cloud #tedian {
-  padding: 100px 0 100px;
+#video_cloud .tedian {
+  padding: 100px 0 30px;
 }
-#video_cloud #tedian .layui-container .title {
+#video_cloud .tedian .layui-container .title {
   margin-bottom: 60px;
 }
-#video_cloud #tedian .layui-container .tedian-content {
+#video_cloud .tedian .layui-container .tedian-content {
   display: flex;
   align-items: center;
 }
-#video_cloud #tedian .layui-container .tedian-content li {
+#video_cloud .tedian .layui-container .tedian-content li {
   width: 21%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-#video_cloud #tedian .layui-container .tedian-content li h5 {
+#video_cloud .tedian .layui-container .tedian-content li h5 {
   margin: 20px 0 18px;
   font-size: 20px;
   color: #333;
 }
-#video_cloud #tedian .layui-container .tedian-content li p {
+#video_cloud .tedian .layui-container .tedian-content li p {
   font-size: 16px;
   color: #666;
   line-height: 1.4;
 }
-#video_cloud #tedian .layui-container .btns {
+#video_cloud .tedian .layui-container .btns {
   display: flex;
   width: 30%;
   margin: 0 auto;
   margin-top: 40px;
   justify-content: space-between;
 }
-#video_cloud #tedian .layui-container .btns button {
+#video_cloud .tedian .layui-container .btns button {
   width: 133px;
   height: 40px;
   background: #00CC99;
@@ -82,25 +89,28 @@
   cursor: pointer;
   color: #fff;
 }
-#video_cloud #tedian .layui-container .btns button:hover {
+#video_cloud .tedian .layui-container .btns button:hover {
   background: #FFFFFF;
   border: 1px solid #00CC99;
   color: #00cc99;
 }
-#video_cloud #tedian .layui-container .btns button:nth-child(2) {
+#video_cloud .tedian .layui-container .btns button:nth-child(2) {
   background: #FFFFFF;
   border: 1px solid #00CC99;
   color: #00cc99;
 }
-#video_cloud #tedian .layui-container .btns button:nth-child(2):hover {
+#video_cloud .tedian .layui-container .btns button:nth-child(2):hover {
   background: #00CC99;
   border: none;
   color: #fff;
 }
-#video_cloud #mature .layui-container .title {
+#video_cloud .mature {
+  padding-top: 70px;
+}
+#video_cloud .mature .layui-container .title {
   margin-bottom: 70px;
 }
-#video_cloud #mature .layui-container .mature-nav {
+#video_cloud .mature .layui-container .mature-nav {
   border-bottom: 1px solid #e5e5e5;
   display: flex;
   align-items: center;
@@ -108,7 +118,7 @@
   padding: 0 15px;
   margin-bottom: 40px;
 }
-#video_cloud #mature .layui-container .mature-nav li {
+#video_cloud .mature .layui-container .mature-nav li {
   padding-bottom: 10px;
   margin-bottom: -2px;
   font-size: 16px;
@@ -116,19 +126,19 @@
   cursor: pointer;
   border-bottom: 2px solid transparent;
 }
-#video_cloud #mature .layui-container .mature-nav li:hover {
+#video_cloud .mature .layui-container .mature-nav li:hover {
   border-bottom: 2px solid #00cc99;
   color: #00cc99;
 }
-#video_cloud #mature .layui-container .mature-nav .active {
+#video_cloud .mature .layui-container .mature-nav .active {
   border-bottom: 2px solid #00cc99;
   color: #00cc99;
 }
-#video_cloud #mature .mature-content {
+#video_cloud .mature .mature-content {
   height: 600px;
   background: url('/static/image/videoCloud/women.png') no-repeat;
 }
-#video_cloud #mature .mature-content .layui-container .mature-box {
+#video_cloud .mature .mature-content .layui-container .mature-box {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -137,24 +147,24 @@
   width: 48%;
   margin: 0 auto;
 }
-#video_cloud #mature .mature-content .layui-container .mature-box h5 {
+#video_cloud .mature .mature-content .layui-container .mature-box h5 {
   font-size: 20px;
   font-weight: bold;
   color: #FFFFFF;
 }
-#video_cloud #mature .mature-content .layui-container .mature-box .biaoqian {
+#video_cloud .mature .mature-content .layui-container .mature-box .biaoqian {
   font-size: 16px;
   color: #FFFFFF;
   opacity: 0.54;
   margin: 33px 0 44px;
 }
-#video_cloud #mature .mature-content .layui-container .mature-box ul li {
+#video_cloud .mature .mature-content .layui-container .mature-box ul li {
   display: flex;
   align-items: center;
   margin-bottom: 23px;
   color: #fff;
 }
-#video_cloud #mature .mature-content .layui-container .mature-box ul li i {
+#video_cloud .mature .mature-content .layui-container .mature-box ul li i {
   display: inline-block;
   width: 10px;
   height: 10px;
@@ -170,7 +180,7 @@
   /* Opera */
   margin-right: 10px;
 }
-#video_cloud #mature .mature-content .layui-container .mature-box button {
+#video_cloud .mature .mature-content .layui-container .mature-box button {
   margin-top: 31px;
   width: 133px;
   height: 40px;
@@ -178,24 +188,25 @@
   border-radius: 20px;
   border: 0;
   color: #fff;
+  cursor: pointer;
 }
-#video_cloud #mature .mature-content .layui-container .mature-box button:hover {
+#video_cloud .mature .mature-content .layui-container .mature-box button:hover {
   background: transparent;
   color: #00cc99;
   border: 1px solid #00cc99;
 }
-#video_cloud #qiye {
+#video_cloud .qiye {
   padding: 101px 0 109px;
 }
-#video_cloud #qiye .layui-container .title {
+#video_cloud .qiye .layui-container .title {
   margin-bottom: 70px;
 }
-#video_cloud #qiye .layui-container .qiye-content {
+#video_cloud .qiye .layui-container .qiye-content {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
 }
-#video_cloud #qiye .layui-container .qiye-content li {
+#video_cloud .qiye .layui-container .qiye-content li {
   width: 50%;
   height: 168px;
   display: flex;
@@ -203,66 +214,71 @@
   border-bottom: 1px solid #e5e5e5;
   box-sizing: border-box;
   cursor: pointer;
+  transition: all 0.3s;
 }
-#video_cloud #qiye .layui-container .qiye-content li:nth-child(2n) {
+#video_cloud .qiye .layui-container .qiye-content li:nth-child(2n) {
   border-left: 1px solid #e5e5e5;
 }
-#video_cloud #qiye .layui-container .qiye-content li:nth-child(5) {
+#video_cloud .qiye .layui-container .qiye-content li:nth-child(5) {
   border-bottom: 0;
 }
-#video_cloud #qiye .layui-container .qiye-content li:nth-child(6) {
+#video_cloud .qiye .layui-container .qiye-content li:nth-child(6) {
   border-bottom: 0;
 }
-#video_cloud #qiye .layui-container .qiye-content li .icon {
+#video_cloud .qiye .layui-container .qiye-content li .icon {
   width: 60px;
   height: 60px;
 }
-#video_cloud #qiye .layui-container .qiye-content li .icon img {
+#video_cloud .qiye .layui-container .qiye-content li .icon img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-#video_cloud #qiye .layui-container .qiye-content li .text {
+#video_cloud .qiye .layui-container .qiye-content li .text {
   flex: 6;
   margin-left: 20px;
 }
-#video_cloud #qiye .layui-container .qiye-content li .text h6 {
+#video_cloud .qiye .layui-container .qiye-content li .text h6 {
   font-size: 20px;
   color: #333333;
   margin-bottom: 23px;
 }
-#video_cloud #qiye .layui-container .qiye-content li .text p {
+#video_cloud .qiye .layui-container .qiye-content li .text p {
   font-size: 16px;
   color: #666666;
   margin-bottom: 10px;
 }
-#video_cloud #qiye .layui-container .qiye-content li .btn {
+#video_cloud .qiye .layui-container .qiye-content li .btn {
   flex: 1.5;
   display: none;
   cursor: pointer;
+  margin-top: 80px;
 }
-#video_cloud #qiye .layui-container .qiye-content li .btn button {
-  background-color: transparent;
+#video_cloud .qiye .layui-container .qiye-content li .btn button {
+  background-color: #00cc99;
   border: none;
   outline: none;
-  color: #00cc99;
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 17px;
 }
-#video_cloud #qiye .layui-container .qiye-content li:hover {
+#video_cloud .qiye .layui-container .qiye-content li:hover {
   background: #FFFFFF;
   box-shadow: 0px 0px 90px 0px rgba(50, 50, 50, 0.09);
   border: none;
+  transform: scale(1.01);
 }
-#video_cloud #qiye .layui-container .qiye-content li:hover .btn {
+#video_cloud .qiye .layui-container .qiye-content li:hover .btn {
   display: block;
 }
-#video_cloud #qiye .layui-container .btns {
+#video_cloud .qiye .layui-container .btns {
   display: flex;
   width: 30%;
   margin: 0 auto;
   margin-top: 45px;
   justify-content: space-around;
 }
-#video_cloud #qiye .layui-container .btns button {
+#video_cloud .qiye .layui-container .btns button {
   width: 133px;
   height: 40px;
   background: #00CC99;
@@ -271,17 +287,17 @@
   cursor: pointer;
   color: #fff;
 }
-#video_cloud #qiye .layui-container .btns button:hover {
+#video_cloud .qiye .layui-container .btns button:hover {
   background: #FFFFFF;
   border: 1px solid #00CC99;
   color: #00cc99;
 }
-#video_cloud #qiye .layui-container .btns button:nth-child(2) {
+#video_cloud .qiye .layui-container .btns button:nth-child(2) {
   background: #FFFFFF;
   border: 1px solid #00CC99;
   color: #00cc99;
 }
-#video_cloud #qiye .layui-container .btns button:nth-child(2):hover {
+#video_cloud .qiye .layui-container .btns button:nth-child(2):hover {
   background: #00CC99;
   border: none;
   color: #fff;
@@ -310,30 +326,30 @@
   font-size: 20px;
   cursor: pointer;
 }
-#video_cloud #hezuo {
-  padding: 60px 0 20px;
+#video_cloud .hezuo {
+  padding: 80px 0 20px;
 }
-#video_cloud #hezuo .title {
+#video_cloud .hezuo .title {
   margin-bottom: 70px;
 }
-#video_cloud #hezuo .hezuo-nav {
+#video_cloud .hezuo .hezuo-nav {
   width: 90%;
   margin: 0 auto 70px;
 }
-#video_cloud #hezuo .hezuo-nav .logo-title {
+#video_cloud .hezuo .hezuo-nav .logo-title {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
-#video_cloud #hezuo .hezuo-nav .logo-title .active {
+#video_cloud .hezuo .hezuo-nav .logo-title .active {
   background-color: #00cc99;
   border-radius: 20px;
 }
-#video_cloud #hezuo .hezuo-nav .logo-title .active span {
+#video_cloud .hezuo .hezuo-nav .logo-title .active span {
   color: #fff;
 }
-#video_cloud #hezuo .hezuo-nav .logo-title li {
+#video_cloud .hezuo .hezuo-nav .logo-title li {
   cursor: pointer;
   height: 32px;
   width: 8%;
@@ -342,38 +358,38 @@
   text-align: center;
   padding: 0 15px;
 }
-#video_cloud #hezuo .hezuo-nav .logo-title li:hover {
+#video_cloud .hezuo .hezuo-nav .logo-title li:hover {
   background-color: #00cc99;
   border-radius: 20px;
 }
-#video_cloud #hezuo .hezuo-nav .logo-title li:hover span {
+#video_cloud .hezuo .hezuo-nav .logo-title li:hover span {
   color: #fff;
 }
-#video_cloud #hezuo .hezuo-nav .logo-title li span {
+#video_cloud .hezuo .hezuo-nav .logo-title li span {
   font-size: 18px;
   color: #666;
   margin-bottom: 5px;
   text-align: center;
 }
-#video_cloud #hezuo .logo-box .logo-imgs {
+#video_cloud .hezuo .logo-box .logo-imgs {
   display: none;
 }
-#video_cloud #hezuo .logo-box .logo-imgs li {
+#video_cloud .hezuo .logo-box .logo-imgs li {
   width: 13.5%;
   height: 67px;
   display: inline-block;
   margin-right: 35px;
   margin-bottom: 62px;
 }
-#video_cloud #hezuo .logo-box .logo-imgs li:nth-child(6n) {
+#video_cloud .hezuo .logo-box .logo-imgs li:nth-child(6n) {
   margin-right: 0px;
 }
-#video_cloud #hezuo .logo-box .logo-imgs li img {
+#video_cloud .hezuo .logo-box .logo-imgs li img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
-#video_cloud #hezuo .logo-box .active {
+#video_cloud .hezuo .logo-box .active {
   display: block;
 }
 #video_cloud #fiveG {
@@ -399,12 +415,12 @@
   box-sizing: border-box;
 }
 #video_cloud #fiveG .fiveg-content h2 {
-  font-size: 60px;
+  font-size: 50px;
   color: #fff;
   text-align: center;
 }
 #video_cloud #fiveG .fiveg-content h5 {
-  font-size: 40px;
+  font-size: 35px;
   color: #fff;
   font-weight: 400;
   margin: 45px auto 68px;
@@ -417,7 +433,7 @@
   border-radius: 30px;
   outline: none;
   background-color: transparent;
-  font-size: 30px;
+  font-size: 28px;
   color: #FFFFFF;
   cursor: pointer;
 }
@@ -447,37 +463,37 @@
   #video_cloud .navbar .layui-container ul li {
     height: 50px;
   }
-  #video_cloud #tedian {
+  #video_cloud .tedian {
     padding: 70px 0 60px;
   }
-  #video_cloud #tedian .layui-container .title {
+  #video_cloud .tedian .layui-container .title {
     margin-bottom: 40px;
   }
-  #video_cloud #tedian .layui-container .tedian-content li {
+  #video_cloud .tedian .layui-container .tedian-content li {
     width: 21%;
   }
-  #video_cloud #tedian .layui-container .tedian-content li img {
+  #video_cloud .tedian .layui-container .tedian-content li img {
     width: 40px;
     height: 40px;
   }
-  #video_cloud #tedian .layui-container .tedian-content li h5 {
+  #video_cloud .tedian .layui-container .tedian-content li h5 {
     margin: 20px 0 18px;
     font-size: 18px;
   }
-  #video_cloud #tedian .layui-container .tedian-content li p {
+  #video_cloud .tedian .layui-container .tedian-content li p {
     font-size: 14px;
   }
-  #video_cloud #tedian .layui-container .btns {
+  #video_cloud .tedian .layui-container .btns {
     width: 40%;
   }
-  #video_cloud #tedian .layui-container .btns button {
+  #video_cloud .tedian .layui-container .btns button {
     width: 115px;
     height: 40px;
   }
-  #video_cloud #mature .layui-container .title {
+  #video_cloud .mature .layui-container .title {
     margin-bottom: 70px;
   }
-  #video_cloud #mature .layui-container .mature-nav {
+  #video_cloud .mature .layui-container .mature-nav {
     border-bottom: 1px solid #e5e5e5;
     display: flex;
     align-items: center;
@@ -485,98 +501,98 @@
     padding: 0 15px;
     margin-bottom: 40px;
   }
-  #video_cloud #mature .layui-container .mature-nav li {
+  #video_cloud .mature .layui-container .mature-nav li {
     padding-bottom: 10px;
     margin-bottom: -2px;
     font-size: 16px;
     color: #333;
     cursor: pointer;
   }
-  #video_cloud #mature .layui-container .mature-nav li:hover {
+  #video_cloud .mature .layui-container .mature-nav li:hover {
     border-bottom: 2px solid #00cc99;
     color: #00cc99;
   }
-  #video_cloud #mature .layui-container .mature-nav .active {
+  #video_cloud .mature .layui-container .mature-nav .active {
     border-bottom: 2px solid #00cc99;
     color: #00cc99;
   }
-  #video_cloud #mature .mature-content {
+  #video_cloud .mature .mature-content {
     height: 400px;
     background-size: cover;
   }
-  #video_cloud #mature .mature-content .layui-container .mature-box {
+  #video_cloud .mature .mature-content .layui-container .mature-box {
     padding: 53px 0 0;
     width: 55%;
     margin: 0 auto;
   }
-  #video_cloud #mature .mature-content .layui-container .mature-box h5 {
+  #video_cloud .mature .mature-content .layui-container .mature-box h5 {
     font-size: 20px;
   }
-  #video_cloud #mature .mature-content .layui-container .mature-box .biaoqian {
+  #video_cloud .mature .mature-content .layui-container .mature-box .biaoqian {
     font-size: 16px;
     margin: 23px 0 20px;
   }
-  #video_cloud #mature .mature-content .layui-container .mature-box ul li {
+  #video_cloud .mature .mature-content .layui-container .mature-box ul li {
     margin-bottom: 15px;
   }
-  #video_cloud #mature .mature-content .layui-container .mature-box button {
+  #video_cloud .mature .mature-content .layui-container .mature-box button {
     margin-top: 21px;
     width: 123px;
   }
-  #video_cloud #qiye {
+  #video_cloud .qiye {
     padding: 81px 0 89px;
   }
-  #video_cloud #qiye .layui-container .title {
+  #video_cloud .qiye .layui-container .title {
     margin-bottom: 50px;
   }
-  #video_cloud #qiye .layui-container .qiye-content li {
+  #video_cloud .qiye .layui-container .qiye-content li {
     height: 148px;
     padding: 30px 0 0 40px;
   }
-  #video_cloud #qiye .layui-container .qiye-content li .icon {
+  #video_cloud .qiye .layui-container .qiye-content li .icon {
     width: 50px;
     height: 50px;
   }
-  #video_cloud #qiye .layui-container .qiye-content li .text {
+  #video_cloud .qiye .layui-container .qiye-content li .text {
     flex: 6;
     margin-left: 20px;
   }
-  #video_cloud #qiye .layui-container .qiye-content li .text h6 {
+  #video_cloud .qiye .layui-container .qiye-content li .text h6 {
     font-size: 18px;
     color: #333333;
     margin-bottom: 18px;
   }
-  #video_cloud #qiye .layui-container .qiye-content li .text p {
+  #video_cloud .qiye .layui-container .qiye-content li .text p {
     font-size: 16px;
     color: #666666;
     margin-bottom: 10px;
   }
-  #video_cloud #qiye .layui-container .qiye-content li .btn {
+  #video_cloud .qiye .layui-container .qiye-content li .btn {
     flex: 1.5;
     display: none;
   }
-  #video_cloud #qiye .layui-container .qiye-content li .btn button {
+  #video_cloud .qiye .layui-container .qiye-content li .btn button {
     background-color: transparent;
     border: none;
     outline: none;
     color: #00cc99;
   }
-  #video_cloud #qiye .layui-container .btns {
+  #video_cloud .qiye .layui-container .btns {
     width: 30%;
     margin: 0 auto;
     margin-top: 45px;
   }
-  #video_cloud #qiye .layui-container .btns button {
+  #video_cloud .qiye .layui-container .btns button {
     width: 133px;
     height: 40px;
   }
-  #video_cloud #hezuo .hezuo-nav {
+  #video_cloud .hezuo .hezuo-nav {
     margin: 0 auto 70px;
   }
-  #video_cloud #hezuo .hezuo-nav .logo-title li span {
+  #video_cloud .hezuo .hezuo-nav .logo-title li span {
     font-size: 16px;
   }
-  #video_cloud #hezuo .logo-box .logo-imgs li {
+  #video_cloud .hezuo .logo-box .logo-imgs li {
     width: 18%;
     height: 55px;
     margin: 0 15px 50px 0;
@@ -601,65 +617,65 @@
   }
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
-  #video_cloud #hezuo .layui-container {
+  #video_cloud .hezuo .layui-container {
     width: 90%;
   }
-  #video_cloud #hezuo .layui-container .title {
+  #video_cloud .hezuo .layui-container .title {
     margin-bottom: 75px;
   }
-  #video_cloud #hezuo .layui-container .hezuo-nav {
+  #video_cloud .hezuo .layui-container .hezuo-nav {
     width: 95%;
   }
-  #video_cloud #hezuo .layui-container .hezuo-nav .logo-title li {
+  #video_cloud .hezuo .layui-container .hezuo-nav .logo-title li {
     width: 10%;
   }
-  #video_cloud #hezuo .layui-container .logo-box .logo-imgs li {
+  #video_cloud .hezuo .layui-container .logo-box .logo-imgs li {
     width: 19%;
     margin: 0 auto 40px;
   }
-  #video_cloud #qiye {
+  #video_cloud .qiye {
     padding: 71px 0 60px;
   }
-  #video_cloud #qiye .layui-container .title {
+  #video_cloud .qiye .layui-container .title {
     margin-bottom: 40px;
   }
-  #video_cloud #qiye .layui-container .qiye-content li {
+  #video_cloud .qiye .layui-container .qiye-content li {
     height: 148px;
     padding: 25px 0 0 25px;
   }
-  #video_cloud #qiye .layui-container .qiye-content li .icon {
+  #video_cloud .qiye .layui-container .qiye-content li .icon {
     width: 40px;
     height: 40px;
   }
-  #video_cloud #qiye .layui-container .qiye-content li .text {
+  #video_cloud .qiye .layui-container .qiye-content li .text {
     margin-left: 15px;
   }
-  #video_cloud #qiye .layui-container .qiye-content li .text h6 {
+  #video_cloud .qiye .layui-container .qiye-content li .text h6 {
     font-size: 14px;
     margin-bottom: 10px;
   }
-  #video_cloud #qiye .layui-container .qiye-content li .text p {
+  #video_cloud .qiye .layui-container .qiye-content li .text p {
     font-size: 12px;
     color: #666666;
     margin-bottom: 10px;
   }
-  #video_cloud #qiye .layui-container .qiye-content li .btn {
+  #video_cloud .qiye .layui-container .qiye-content li .btn {
     flex: 1.5;
     display: none;
   }
-  #video_cloud #qiye .layui-container .qiye-content li .btn button {
+  #video_cloud .qiye .layui-container .qiye-content li .btn button {
     background-color: transparent;
     border: none;
     outline: none;
     color: #00cc99;
     font-size: 12px;
   }
-  #video_cloud #qiye .layui-container .btns {
+  #video_cloud .qiye .layui-container .btns {
     width: 40%;
     margin: 0 auto;
     margin-top: 45px;
   }
-  #video_cloud #qiye .layui-container .btns button {
+  #video_cloud .qiye .layui-container .btns button {
     width: 110px;
     height: 40px;
     font-size: 12px;
@@ -690,49 +706,58 @@
   #video_cloud #banner {
     height: 300px;
   }
-  #video_cloud #tedian {
+  #video_cloud #banner .layui-carousel .lunbo-box {
+    width: 100%;
+    height: 100%;
+  }
+  #video_cloud #banner .layui-carousel .lunbo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  #video_cloud .tedian {
     padding: 40px 0 30px;
   }
-  #video_cloud #tedian .layui-container .title {
+  #video_cloud .tedian .layui-container .title {
     margin-bottom: 40px;
   }
-  #video_cloud #tedian .layui-container .tedian-content {
+  #video_cloud .tedian .layui-container .tedian-content {
     flex-wrap: wrap;
   }
-  #video_cloud #tedian .layui-container .tedian-content li {
+  #video_cloud .tedian .layui-container .tedian-content li {
     width: 48%;
     margin-bottom: 20px;
   }
-  #video_cloud #tedian .layui-container .tedian-content li img {
+  #video_cloud .tedian .layui-container .tedian-content li img {
     width: 40px;
     height: 40px;
   }
-  #video_cloud #tedian .layui-container .tedian-content li h5 {
+  #video_cloud .tedian .layui-container .tedian-content li h5 {
     margin: 10px 0 12px;
     font-size: 14px;
   }
-  #video_cloud #tedian .layui-container .tedian-content li p {
+  #video_cloud .tedian .layui-container .tedian-content li p {
     font-size: 12px;
   }
-  #video_cloud #tedian .layui-container .btns {
+  #video_cloud .tedian .layui-container .btns {
     width: 80%;
     margin-top: 20px;
   }
-  #video_cloud #tedian .layui-container .btns button {
+  #video_cloud .tedian .layui-container .btns button {
     width: 115px;
     height: 35px;
     font-size: 12px;
   }
-  #video_cloud #mature {
+  #video_cloud .mature {
     margin-top: 20px;
   }
-  #video_cloud #mature .layui-container {
+  #video_cloud .mature .layui-container {
     padding: 0 !important;
   }
-  #video_cloud #mature .layui-container .title {
+  #video_cloud .mature .layui-container .title {
     margin-bottom: 30px;
   }
-  #video_cloud #mature .layui-container .mature-nav {
+  #video_cloud .mature .layui-container .mature-nav {
     border-bottom: 1px solid #e5e5e5;
     display: flex;
     align-items: center;
@@ -742,10 +767,10 @@
     width: auto;
     overflow-x: auto;
   }
-  #video_cloud #mature .layui-container .mature-nav::-webkit-scrollbar {
+  #video_cloud .mature .layui-container .mature-nav::-webkit-scrollbar {
     display: none;
   }
-  #video_cloud #mature .layui-container .mature-nav li {
+  #video_cloud .mature .layui-container .mature-nav li {
     padding-bottom: 10px;
     margin-bottom: -2px;
     font-size: 14px;
@@ -753,42 +778,42 @@
     width: auto;
     margin: 0 10px;
   }
-  #video_cloud #mature .mature-content {
+  #video_cloud .mature .mature-content {
     height: 240px;
     background-size: cover;
   }
-  #video_cloud #mature .mature-content .layui-container .mature-box {
+  #video_cloud .mature .mature-content .layui-container .mature-box {
     padding: 15px 0 0;
     width: 90%;
     margin: 0 auto;
   }
-  #video_cloud #mature .mature-content .layui-container .mature-box h5 {
+  #video_cloud .mature .mature-content .layui-container .mature-box h5 {
     font-size: 16px;
   }
-  #video_cloud #mature .mature-content .layui-container .mature-box .biaoqian {
+  #video_cloud .mature .mature-content .layui-container .mature-box .biaoqian {
     font-size: 14px;
     margin: 7px 0 5px;
   }
-  #video_cloud #mature .mature-content .layui-container .mature-box ul li {
+  #video_cloud .mature .mature-content .layui-container .mature-box ul li {
     margin-bottom: 8px;
     font-size: 12px;
   }
-  #video_cloud #mature .mature-content .layui-container .mature-box button {
+  #video_cloud .mature .mature-content .layui-container .mature-box button {
     margin-top: 5px;
     width: 103px;
     height: 32px;
     font-size: 12px;
   }
-  #video_cloud #qiye {
+  #video_cloud .qiye {
     padding: 51px 0 49px;
   }
-  #video_cloud #qiye .layui-container {
+  #video_cloud .qiye .layui-container {
     padding: 0 5px !important;
   }
-  #video_cloud #qiye .layui-container .title {
+  #video_cloud .qiye .layui-container .title {
     margin-bottom: 30px;
   }
-  #video_cloud #qiye .layui-container .qiye-content li {
+  #video_cloud .qiye .layui-container .qiye-content li {
     width: 100%;
     height: 168px;
     padding: 10px 0 0 15px;
@@ -796,44 +821,44 @@
     align-items: center;
     border: none;
   }
-  #video_cloud #qiye .layui-container .qiye-content li:nth-child(2n) {
+  #video_cloud .qiye .layui-container .qiye-content li:nth-child(2n) {
     border-left: none;
   }
-  #video_cloud #qiye .layui-container .qiye-content li .icon {
+  #video_cloud .qiye .layui-container .qiye-content li .icon {
     width: 35px;
     height: 35px;
     margin-bottom: 10px;
   }
-  #video_cloud #qiye .layui-container .qiye-content li .text {
+  #video_cloud .qiye .layui-container .qiye-content li .text {
     flex: 4;
     margin-left: 0px;
   }
-  #video_cloud #qiye .layui-container .qiye-content li .text h6 {
+  #video_cloud .qiye .layui-container .qiye-content li .text h6 {
     font-size: 14px;
     color: #333333;
     margin-bottom: 10px;
   }
-  #video_cloud #qiye .layui-container .qiye-content li .text p {
+  #video_cloud .qiye .layui-container .qiye-content li .text p {
     font-size: 12px;
     color: #666666;
     margin-bottom: 6px;
   }
-  #video_cloud #qiye .layui-container .qiye-content li .btn {
+  #video_cloud .qiye .layui-container .qiye-content li .btn {
     flex: 1.5;
     display: none;
   }
-  #video_cloud #qiye .layui-container .qiye-content li .btn button {
+  #video_cloud .qiye .layui-container .qiye-content li .btn button {
     background-color: transparent;
     border: none;
     outline: none;
     color: #00cc99;
   }
-  #video_cloud #qiye .layui-container .btns {
+  #video_cloud .qiye .layui-container .btns {
     width: 80%;
     margin: 0 auto;
     margin-top: 25px;
   }
-  #video_cloud #qiye .layui-container .btns button {
+  #video_cloud .qiye .layui-container .btns button {
     width: 103px;
     height: 35px;
     font-size: 12px;
@@ -851,35 +876,35 @@
     height: 40px;
     font-size: 14px;
   }
-  #video_cloud #hezuo {
+  #video_cloud .hezuo {
     padding: 40px 0 20px;
   }
-  #video_cloud #hezuo .title {
+  #video_cloud .hezuo .title {
     margin-bottom: 35px;
   }
-  #video_cloud #hezuo .hezuo-nav {
+  #video_cloud .hezuo .hezuo-nav {
     width: 100%;
     overflow-x: auto;
     margin: 0 auto 30px;
   }
-  #video_cloud #hezuo .hezuo-nav::-webkit-scrollbar {
+  #video_cloud .hezuo .hezuo-nav::-webkit-scrollbar {
     display: none;
   }
-  #video_cloud #hezuo .hezuo-nav .logo-title {
+  #video_cloud .hezuo .hezuo-nav .logo-title {
     width: auto;
   }
-  #video_cloud #hezuo .hezuo-nav .logo-title li {
+  #video_cloud .hezuo .hezuo-nav .logo-title li {
     flex-shrink: 0;
     width: 14%;
     padding: 0px;
     height: 25px;
     line-height: 25px;
   }
-  #video_cloud #hezuo .hezuo-nav .logo-title li span {
+  #video_cloud .hezuo .hezuo-nav .logo-title li span {
     margin: 0;
     font-size: 14px;
   }
-  #video_cloud #hezuo .logo-box .logo-imgs li {
+  #video_cloud .hezuo .logo-box .logo-imgs li {
     width: 19%;
     height: 50px;
     margin-right: 20px;

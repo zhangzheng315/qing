@@ -1,0 +1,989 @@
+@media screen and (min-width: 1200px) {
+    .layui-container {
+        width: 1200px !important;
+        padding: 0 !important;
+    }
+}
+
+#advantage {
+    position: absolute;
+
+    .title {
+        font-size: 30px;
+        color: #333;
+        font-weight: bold;
+        letter-spacing: 2px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .video {
+        height: 600px;
+        position: relative;
+
+        .jsmodern-video {
+            width: 100% !important;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        img {
+            // position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 10;
+        }
+
+        .jsmodern-video-panel {
+            display: none !important;
+        }
+
+        .VideoBtn {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            display: block;
+            width: 70px;
+            height: 70px;
+            margin-left: -35px;
+            margin-top: -35px;
+            cursor: pointer;
+            z-index: 11;
+        }
+
+        &::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, .5);
+            z-index: 12;
+        }
+
+        a {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 222px;
+            height: 60px;
+            line-height: 60px;
+            background: #00AC81;
+            border-radius: 30px;
+            z-index: 13;
+            border: none;
+            font-size: 20px;
+            color: #fff;
+            text-align: center;
+
+        }
+    }
+
+    .recommend {
+        position: absolute;
+        top: 420px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 14;
+
+        .layui-container {
+            .icons {
+                text-align: center;
+
+                i {
+                    font-size: 30px;
+                    color: #fff;
+                    cursor: pointer;
+
+                }
+            }
+
+
+            .recommend-content {
+                width: 70%;
+                margin: 0 auto;
+                margin-top: 58px;
+                background: rgba(0, 0, 0, .5);
+                border: 1px solid rgba(255, 255, 255, .5);
+                border-radius: 10px;
+
+                h4 {
+                    font-size: 30px;
+                    color: #fff;
+                    margin: 32px 0;
+                    text-align: center;
+                }
+
+                ul {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 0 23px 50px;
+                    box-sizing: border-box;
+
+                    li {
+                        position: relative;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+
+                        }
+
+                        .text {
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            height: 50px;
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+
+                            .text-left {
+                                width: 75%;
+                                height: 100%;
+                                background: rgba(0, 0, 0, .7);
+                                padding: 6px 0 0 12px;
+                                box-sizing: border-box;
+                                color: #fff;
+
+                                h6 {
+                                    font-size: 14px;
+                                    margin-bottom: 5px;
+
+                                }
+
+                                p {
+                                    font-size: 12px;
+
+                                }
+                            }
+
+                            .text-right {
+                                width: 25%;
+                                height: 100%;
+                                background-color: rgba(0, 172, 129, 1);
+                                text-align: center;
+                                font-size: 20px;
+                                color: #fff;
+                                line-height: 2.5;
+                            }
+
+                            .active {
+                                background-color: rgba(136, 136, 136, 1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    .kehu {
+        padding: 294px 0 66px;
+
+        .layui-container {
+            .title {
+                margin-bottom: 147px;
+            }
+
+            #logos {
+                height: 238px !important;
+                background-color: #fff;
+
+                #logo-content {
+                    .logo-imgs {
+                        height: 100px;
+                        background-color: #fff !important;
+                        display: flex;
+                        align-items: center;
+
+                        li {
+                            width: 20%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            img {
+                                height: 80px;
+                                object-fit: cover;
+                            }
+                        }
+                    }
+                }
+
+                .layui-carousel-ind {
+                    ul {
+                        background-color: transparent;
+
+                        li {
+                            width: 35px;
+                            height: 7px;
+                            background: #E5E5E5;
+                            ;
+                            border-radius: 4px;
+                            margin: 0 3px;
+                            font-size: 14px;
+                        }
+
+                        .layui-this {
+                            background: #00AC81;
+                        }
+                    }
+                }
+            }
+
+            .layui-carousel>[carousel-item]:before {
+                content: '' !important;
+            }
+        }
+    }
+
+    // 案例部分
+    .case {
+        padding: 93px 0 107px;
+        background-color: #f2f4f7;
+
+        .layui-container {
+            .case-nav {
+                display: flex;
+                align-items: center;
+                margin-bottom: 76px;
+
+                li {
+                    color: #666;
+                    padding: 0 20px;
+                    border-right: 1px solid #999;
+                    cursor: pointer;
+
+                    &:last-child {
+                        border: 0;
+                    }
+
+                    &:hover {
+                        color: #00cc99;
+                    }
+                }
+
+                .active {
+                    color: #00cc99;
+                }
+            }
+
+            .case-box {
+                ul {
+                    display: flex;
+                    // align-items: center;
+                    flex-wrap: wrap;
+
+                    li {
+                        position: relative;
+                        width: 31%;
+                        // margin: 0 auto;
+                        padding: 9px;
+                        background-color: #fff;
+                        margin-bottom: 45px;
+                        margin-right: 40px;
+                        border-radius: 10px;
+                        cursor: pointer;
+
+                        img {
+                            width: 100%;
+                            object-fit: cover;
+                        }
+
+                        .type {
+                            position: absolute;
+                            top: 24px;
+                            right: 20px;
+                            width: 86px;
+                            height: 40px;
+                            background: rgba(37, 37, 37, .5);
+                            border-radius: 20px;
+                            color: rgba(255, 255, 255, .7);
+                            line-height: 40px;
+                            text-align: center;
+                        }
+
+                        .text {
+                            padding: 0 16px;
+                            box-sizing: border-box;
+
+                            h5 {
+                                margin: 13px 0 10px;
+                                color: #333;
+                            }
+
+                            h6 {
+                                margin-bottom: 12px;
+                                font-size: 14px;
+                                color: #666;
+                            }
+
+                            p {
+                                color: #999;
+                                font-size: 12px;
+                                margin-bottom: 8px;
+
+                                .num {
+                                    float: right;
+                                }
+
+                            }
+                        }
+
+                        &:nth-child(3n) {
+                            margin-right: 0;
+                        }
+
+                    }
+                }
+            }
+
+            button {
+                width: 172px;
+                height: 40px;
+                border: 1px solid #00CC99;
+                border-radius: 20px;
+                color: #00cc99;
+                background: transparent;
+                display: block;
+                margin: 0 auto;
+                cursor: pointer;
+                margin-top: 34px;
+            }
+        }
+    }
+
+    .free {
+        height: 400px;
+        background: url('/static/image/about/banner-b.png') no-repeat;
+        background-size: cover;
+        padding-top: 100px;
+        box-sizing: border-box;
+
+        .layui-container {
+            h3 {
+                font-size: 50px;
+                font-weight: bold;
+                color: #FFFFFF;
+                margin-bottom: 90px;
+                text-align: center;
+            }
+
+            button {
+                width: 168px;
+                height: 40px;
+                background: linear-gradient(90deg, #009CA9, #39D6AF);
+                border-radius: 20px;
+                border: none;
+                color: #fff;
+                display: block;
+                margin: 0 auto;
+                font-size: 20px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .lianxi-free {
+        background: url(/static/image/about/ditu.png) no-repeat;
+
+        .layui-container {
+            h3 {
+                color: #333;
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1300px) {
+        .title {
+            font-size: 26px;
+        }
+
+        .video {
+            height: 400px;
+
+            a {
+                top: 35%;
+                width: 162px;
+                height: 45px;
+                line-height: 45px;
+                font-size: 16px;
+
+            }
+        }
+
+        .recommend {
+            top: 260px;
+
+            .layui-container {
+                .icons {
+
+                    i {
+                        font-size: 25px;
+
+                    }
+                }
+
+
+                .recommend-content {
+                    margin-top: 38px;
+
+                    h4 {
+                        font-size: 25px;
+                        margin: 24px 0;
+                    }
+
+                    ul {
+                        padding: 0 15px 30px;
+
+                        li {
+                            width: 32%;
+
+                            .text {
+                                height: 40px;
+
+                                .text-left {
+                                    padding: 2px 0 0 8px;
+
+                                    h6 {
+                                        font-size: 14px;
+                                        margin-bottom: 3px;
+
+                                    }
+                                }
+
+                                .text-right {
+                                    width: 25%;
+                                    font-size: 16px;
+                                    line-height: 2.5;
+                                }
+
+
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .kehu {
+            padding: 190px 0 46px;
+
+            .layui-container {
+                .title {
+                    margin-bottom: 73px;
+                }
+
+                #logos {
+                    height: 180px !important;
+
+                    #logos>[carousel-item] {
+                        width: 85% !important;
+                        margin: 0 auto !important;
+
+                        .logo-imgs {
+                            height: 80px;
+                            background-color: #fff !important;
+
+                            li {
+                                img {
+                                    width: 80px;
+                                    height: 80px;
+                                }
+                            }
+                        }
+                    }
+
+                    .layui-carousel-ind {
+                        ul {
+                            background-color: transparent;
+
+                            li {
+                                width: 30px;
+                                height: 6px;
+                                border-radius: 4px;
+                                margin: 0 4px;
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+
+                .layui-carousel>[carousel-item]:before {
+                    content: '' !important;
+                }
+            }
+        }
+
+        .case {
+            padding: 43px 0 57px;
+
+            .layui-container {
+                .case-nav {
+                    margin-bottom: 46px;
+
+                    li {
+                        padding: 0 20px;
+
+                        &:last-child {
+                            border: 0;
+                        }
+
+                    }
+
+
+                }
+
+                .case-box {
+                    ul {
+                        li {
+                            width: 31%;
+                            margin-bottom: 32px;
+                            margin-right: 3%;
+
+
+                            .type {
+                                top: 24px;
+                                right: 20px;
+                                width: 66px;
+                                height: 32px;
+                                line-height: 32px;
+                                font-size: 14px;
+                            }
+
+                            .text {
+                                padding: 0 12px;
+
+                                h5 {
+                                    margin: 10px 0 7px;
+                                    font-size: 14px;
+                                }
+
+                                h6 {
+                                    margin-bottom: 8px;
+                                    font-size: 14px;
+                                }
+
+                                p {
+                                    margin-bottom: 5px;
+
+
+
+                                }
+                            }
+
+                            &:nth-child(3n) {
+                                margin-right: 0;
+                            }
+
+                        }
+                    }
+                }
+
+                button {
+                    width: 142px;
+                    height: 35px;
+                    margin-top: 30px;
+                }
+            }
+        }
+
+        .free {
+            height: 300px;
+            padding-top: 80px;
+
+            .layui-container {
+                h3 {
+                    font-size: 30px;
+                    margin-bottom: 50px;
+                }
+
+                button {
+                    width: 168px;
+                    height: 40px;
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .lianxi-free {
+            height: 300px;
+        }
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 992px) {
+        .recommend {
+            top: 260px;
+
+            .layui-container {
+                .icons {
+                    i {
+                        font-size: 25px;
+
+                    }
+                }
+
+
+                .recommend-content {
+                    width: 90%;
+                    margin-top: 30px;
+
+                    h4 {
+                        font-size: 22px;
+                        margin: 18px 0;
+                    }
+
+                    ul {
+                        padding: 0 15px 26px;
+
+                        li {
+                            width: 32%;
+
+                            .text {
+                                height: 40px;
+
+                                .text-left {
+                                    padding: 2px 0 0 8px;
+
+                                    h6 {
+                                        font-size: 14px;
+                                        margin-bottom: 3px;
+
+                                    }
+                                }
+
+                                .text-right {
+                                    width: 25%;
+                                    font-size: 16px;
+                                    line-height: 2.5;
+                                }
+
+
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .case {
+            padding: 43px 0 47px;
+
+            .layui-container {
+                .case-nav {
+                    margin-bottom: 46px;
+
+                    li {
+                        padding: 0 20px;
+
+                        &:last-child {
+                            border: 0;
+                        }
+
+                    }
+
+
+                }
+
+                .case-box {
+                    ul {
+                        li {
+                            width: 31%;
+                            margin-bottom: 32px;
+                            margin-right: 3%;
+
+
+                            .type {
+                                top: 17px;
+                                right: 15px;
+                                width: 50px;
+                                height: 28px;
+                                line-height: 28px;
+                                font-size: 12px;
+                            }
+
+                            .text {
+                                padding: 0 12px;
+
+                                h5 {
+                                    margin: 10px 0 7px;
+                                    font-size: 14px;
+                                }
+
+                                h6 {
+                                    margin-bottom: 8px;
+                                    font-size: 14px;
+                                }
+
+                                p {
+                                    margin-bottom: 5px;
+
+
+
+                                }
+                            }
+
+                            &:nth-child(3n) {
+                                margin-right: 0;
+                            }
+
+                        }
+                    }
+                }
+
+                button {
+                    width: 132px;
+                    height: 35px;
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width:768px) {
+        .title {
+            font-size: 22px;
+        }
+
+        .video {
+            height: 300px;
+
+            a {
+                top: 30%;
+                width: 125px;
+                height: 32px;
+                line-height: 32px;
+                font-size: 14px;
+            }
+        }
+
+        .recommend {
+            top: 200px;
+            width: 98%;
+            margin: 0 auto;
+
+            .layui-container {
+                .icons {
+                    i {
+                        font-size: 25px;
+                    }
+                }
+
+                .recommend-content {
+                    width: 90%;
+                    margin-top: 18px;
+
+                    h4 {
+                        font-size: 18px;
+                        margin: 15px 0;
+                    }
+
+                    ul {
+                        padding: 0 10px 20px;
+                        flex-wrap: wrap;
+
+                        li {
+                            width: 90%;
+                            height: 150px;
+                            margin: 0 auto;
+                            margin-bottom: 20px;
+
+                            .text {
+                                height: 45px;
+
+                                .text-left {
+                                    padding: 4px 0 0 8px;
+
+                                    h6 {
+                                        font-size: 14px;
+                                        margin-bottom: 5px;
+
+                                    }
+                                }
+
+                                .text-right {
+                                    width: 25%;
+                                    font-size: 16px;
+                                    line-height: 3;
+                                }
+                            }
+
+                            &:nth-child(3) {
+                                margin-bottom: 0px;
+
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .kehu {
+            display: none;
+            padding: 530px 0 46px;
+
+            .layui-container {
+                .title {
+                    margin-bottom: 73px;
+                }
+
+                #logos {
+                    height: 180px !important;
+
+                    .logo-box {
+                        width: 85%;
+                        margin: 0 auto;
+
+                        .logo-imgs {
+                            height: 80px;
+
+                            li {
+                                img {
+                                    width: 80px;
+                                    height: 80px;
+                                }
+                            }
+                        }
+                    }
+
+                    .layui-carousel-ind {
+                        ul {
+                            background-color: transparent;
+
+                            li {
+                                width: 30px;
+                                height: 6px;
+                                border-radius: 4px;
+                                margin: 0 4px;
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+
+                .layui-carousel>[carousel-item]:before {
+                    content: '' !important;
+                }
+            }
+        }
+
+        .case {
+            padding: 43px 0 57px;
+            margin-top: 480px;
+
+            .layui-container {
+                .case-nav {
+                    margin-bottom: 36px;
+                    justify-content: space-around;
+
+                    li {
+                        padding: 0 10px;
+
+                        &:last-child {
+                            border: 0;
+                        }
+
+                    }
+
+
+                }
+
+                .case-box {
+                    ul {
+                        li {
+                            width: 47%;
+                            margin-bottom: 15px;
+                            margin-right: 3%;
+                            padding: 5px 5px 10px;
+
+                            img {
+                                height: 60%;
+                                border-radius: 10px;
+                            }
+
+                            .type {
+                                top: 10px;
+                                right: 12px;
+                                width: 50px;
+                                height: 22px;
+                                line-height: 22px;
+                                font-size: 12px;
+                            }
+
+                            .text {
+                                padding: 0 4px 0 2px;
+
+                                h5 {
+                                    margin: 7px 0 5px;
+                                    font-size: 14px;
+                                }
+
+                                h6 {
+                                    margin-bottom: 5px;
+                                    font-size: 12px;
+                                }
+
+                                p {
+                                    margin-bottom: 10px;
+                                }
+                            }
+
+                            &:nth-child(2n) {
+                                margin-right: 0;
+                            }
+
+                            &:nth-child(3n) {
+                                margin-right: 3%;
+
+                            }
+
+                        }
+                    }
+                }
+
+                button {
+                    width: 122px;
+                    height: 35px;
+                    margin-top: 25px;
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .free {
+            height: 240px;
+            padding-top: 50px;
+
+            .layui-container {
+                h3 {
+                    font-size: 22px;
+                    margin-bottom: 40px;
+                }
+
+                button {
+                    width: 138px;
+                    height: 35px;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+}

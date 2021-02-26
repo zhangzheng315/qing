@@ -24,9 +24,6 @@
         <div id="banner">
             <div class="layui-carousel" id="banners">
                 <div carousel-item class="lunbo-box">
-<!--                    <img src="/static/image/index/banner.png" alt="">-->
-<!--                    <img src="/static/image/index/banner.png" alt="">-->
-<!--                    <img src="/static/image/index/banner.png" alt="">-->
                     {if isset($banner_list)}
                     {foreach $banner_list as $item}
                     <img src="{$item.img_url}" alt="">
@@ -334,14 +331,14 @@
             <div class="layui-container">
                 <h2 class="title">「全行业」解决方案</h2>
                 <div class="solve-content">
-                    <div class="solve-item">
+                    <!-- <div class="solve-item">
                         <img src="/static/image/index/jiesuo.png" alt="">
                         <div class="text">
                             <h6>教育行业案例</h6>
                             <p>下载报告，选择符合您会议空间的商务电话</p>
                             <img src="/static/image/index/jiantou.png" alt="">
                         </div>
-                    </div>
+                    </div> -->
                     <div class="solve-item">
                         <img src="/static/image/index/jiesuo.png" alt="">
                         <div class="text">
@@ -606,7 +603,7 @@
     logoPoint(0);
     function logoPoint(index) {
         $.ajax({
-            url: "{:url('/admin/logo_wall/getLogoByWhere')}",
+            url: "{:url('/index/logo_wall/getLogoByWhere')}",
             data:{'pid':1,'type_id':index},
             type:'get',
             success:function (res) {

@@ -24,6 +24,7 @@ class DevelopmentService extends Common{
             'content' => $param['content'],
             'time' => $param['time'],
             'status' => $status,
+            'order' => $param['order'] ?: 0,
             'created_time' => time(),
             'updated_time' => 0,
             'deleted_time' => 0,

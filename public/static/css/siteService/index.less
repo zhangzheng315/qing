@@ -27,8 +27,11 @@
     }
 
     nav {
-        background-color: #252525;
+        background-color: #fff;
         height: 60px;
+        box-shadow: 0px 4px 6px 0px rgba(193, 193, 193, 0.28);
+        opacity: 0.8;
+
 
         .layui-container {
             height: 100%;
@@ -40,12 +43,15 @@
                 justify-content: space-between;
 
                 li {
+                    height: 60px;
+                    line-height: 60px;
                     font-size: 16px;
-                    color: #fff;
+                    color: #333;
                     cursor: pointer;
 
                     &:hover {
                         color: #00cc99;
+                        border-bottom: 3px solid #00cc99;
                     }
                 }
             }
@@ -53,7 +59,7 @@
 
     }
 
-    #module {
+    .module {
         padding: 100px 0 110px;
 
         .title {
@@ -71,6 +77,7 @@
                 box-shadow: 0px 0px 29px 0px rgba(50, 50, 50, 0.11);
                 margin: 0 30px 40px 0;
                 cursor: pointer;
+
                 .text {
                     padding: 24px 30px 0;
                     box-sizing: border-box;
@@ -103,6 +110,11 @@
             outline: none;
             color: #fff;
             cursor: pointer;
+            &:hover {
+                color: #00cc99;
+                background-color: transparent;
+                border: 1px solid #00cc99;
+            }
         }
     }
 
@@ -217,6 +229,11 @@
                     outline: none;
                     color: #fff;
                     cursor: pointer;
+                    &:hover {
+                        color: #00cc99;
+                        background-color: transparent;
+                        border: 1px solid #00cc99;
+                    }
                 }
             }
 
@@ -250,7 +267,7 @@
 
     // 5g时代
     #fiveG {
-        height: 500px;
+        height: 450px;
         background: url('/static/image/index/fiveG.png') no-repeat;
         background-size: cover;
         position: relative;
@@ -273,13 +290,13 @@
             box-sizing: border-box;
 
             h2 {
-                font-size: 60px;
+                font-size: 50px;
                 color: #fff;
                 text-align: center;
             }
 
             h5 {
-                font-size: 40px;
+                font-size: 35px;
                 color: #fff;
                 font-weight: 400;
                 margin: 45px auto 68px;
@@ -293,7 +310,7 @@
                 border-radius: 30px;
                 outline: none;
                 background-color: transparent;
-                font-size: 30px;
+                font-size: 28px;
                 color: #FFFFFF;
                 cursor: pointer;
 
@@ -316,7 +333,7 @@
             width: 99% !important;
         }
 
-        #module {
+        .module {
             padding: 60px 0 70px;
 
             .layui-container {
@@ -542,7 +559,7 @@
     }
 
     @media screen and (min-width: 768px) and (max-width:892px) {
-        #module {
+        .module {
             padding: 60px 0 50px;
 
             .layui-container {
@@ -595,6 +612,19 @@
 
         #banner {
             height: 300px;
+
+            .layui-carousel {
+                .lunbo-box {
+                    width: 100%;
+                    height: 100%;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
         }
 
         nav {
@@ -609,7 +639,7 @@
             }
         }
 
-        #module {
+        .module {
             padding: 60px 0 50px;
             width: 95%;
             margin: 0 auto;

@@ -149,4 +149,16 @@ class VideoService extends Common{
         return true;
     }
 
+    /**
+     * 视频数量
+     * @return int|string
+     * @throws \think\Exception
+     */
+    public function videoCount()
+    {
+        $where = ['deleted_time' => 0,];
+        $count = $this->video->where($where)->count('id');
+        return $count;
+    }
+
 }

@@ -36,13 +36,8 @@
         <div class="layui-form-item">
             <label class="layui-form-label">选择父级</label>
             <div class="layui-input-block">
-                <select name="pid">
-                    <option value="0">--请选择--</option>
-                    {if isset($navigation_list)}
-                    {foreach $navigation_list as $item }
-                    <option value="{$item.id}">{$item.menu_name}</option>
-                    {/foreach}
-                    {/if}
+                <select name="pid" class="pid">
+
                 </select>
             </div>
         </div>
@@ -170,7 +165,45 @@
         <img onclick="imgPoint(this)" src="{{d.img_url}}" alt="">
     </div>
 </script>
+<script>
+    var child_num = 0;
+    var selected = 0;
+    $.ajax({
+        url: "/admin/navigation/navigationListClass",
+        success:function (res) {
+            if (res.status === 200) {
+                for (let item of res.data) {
+                    $('.pid').append('<option value="'+item.id+'">'+item.menu_name+'</option>')
+                    if (item.sub.length !== 0) {
+                        child_num = 0;
+                        childSub(item.sub)
+                    }
+                }
+            }
+            layui.form.render();
+        }
 
+    })
+    //无限分类递归
+    function childSub(arr) {
+        if(arr.length === 0) return false;
+        child_num++;
+        let aa = '';
+        for (let n = 0; n < child_num; n++) {
+            aa += '——'
+        }
+        for (let item of arr) {
+            if (item.id === selected) {
+                $('.pid').append('<option value="'+item.id+'" selected>'+aa+item.menu_name+'</option>');
+            }else{
+                $('.pid').append('<option value="'+item.id+'">'+aa+item.menu_name+'</option>');
+            }
+            if (item.sub.length !== 0) {
+                childSub(item.sub)
+            }
+        }
+    }
+</script>
 <script>
     //图片弹出
     function imgPoint(obj) {
@@ -197,7 +230,8 @@
         var form = layui.form;
         var table = layui.table;
         var upload = layui.upload;
-//图片上传接口
+
+        //图片上传接口
         upload.render({
             elem:'.fileUp'
             ,url: "{:url('admin/common_file/uploadFile')}"
@@ -261,6 +295,10 @@
                                 $('#pid').append('<option value="' + item.id + '" selected>' + item.menu_name + '</option>')
                             } else {
                                 $('#pid').append('<option value="' + item.id + '">' + item.menu_name + '</option>')
+                            }
+                            if (item.sub.length !== 0) {
+                                child_num = 0;
+                                childSub(item.sub)
                             }
                         }
 

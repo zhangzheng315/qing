@@ -145,12 +145,14 @@ class CaseService extends Common{
      */
     public function getCaseByWhere($param)
     {
+        $limit = 8;
+        $offset = ($param['curr'] - 1) * $limit;
         $where = [
             'status'=>1,
             'deleted_time' => 0,
             'pid' => $param['pid'],
         ];
-        $res = $this->case->where($where)->select();
+        $res = $this->case->where($where)->limit($offset,$limit)->select();
         if (!$res) {
             $this->setError('暂无数据');
             return false;
@@ -158,10 +160,18 @@ class CaseService extends Common{
         foreach ($res as &$item) {
             $item->label = explode(',', $item->label);
         }
+        $count = $this->case->where($where)->count('id');
         $this->setMessage('查询成功');
-        return $res;
+        return ['data'=>$res,'count'=>$count,'index'=>$param['pid'],'curr'=>$param['curr']];
     }
 
+    /**
+     * 精选案例
+     * @return bool|false|\PDOStatement|string|\think\Collection
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
     public function getCaseSelected()
     {
         $where = [
@@ -169,12 +179,19 @@ class CaseService extends Common{
             'deleted_time' => 0,
             'case_selected' => 1,
         ];
-        $res = $this->case->where($where)->select();
+        $res = $this->case->where($where)->limit(0,6)->select();
         if (!$res) {
             $this->setError('暂无数据');
             return false;
         }
         $this->setMessage('查询成功');
         return $res;
+    }
+
+    public function caseCount()
+    {
+        $where = ['deleted_time' => 0];
+        $count = $this->case->where($where)->count('id');
+        return $count;
     }
 }

@@ -26,7 +26,7 @@ class Contact extends Common{
     public function getContactList(){
         $data = input('get.');
         $data['deleted_time'] = 0;
-        $str = ContactService::data_paging($data,'contact','id');
+        $str = ContactService::data_paging($data,'contact','order');
         foreach ($str['data'] as &$value) {
             $value['status'] = $value['status'] == 1 ? '显示' : '不显示';
         }
