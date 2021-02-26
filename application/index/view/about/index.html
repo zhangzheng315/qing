@@ -338,34 +338,17 @@
                         <div class="title">联系轻直播</div>
                         <div class="lianxi-content">
                             <ul class="content-left">
+                                {if isset($contact_list)}
+                                {foreach($contact_list as $item)}
                                 <li>
                                     <div class="imgs">
-                                        <span>咨询电话</span>
-                                        <img src="/static/image/about/dianhua.png" alt="">
+                                        <span>{$item.type_name}</span>
+                                        <img src="{$item.icon_url}" alt="">
                                     </div>
-                                    <p>400-920-1599</p>
+                                    <p>{$item.num_en}</p>
                                 </li>
-                                <li>
-                                    <div class="imgs">
-                                        <span>市场合作</span>
-                                        <img src="/static/image/about/hezuo.png" alt="">
-                                    </div>
-                                    <p>frank.fu@sicbon.com</p>
-                                </li>
-                                <li>
-                                    <div class="imgs">
-                                        <span>服务建议</span>
-                                        <img src="/static/image/about/tousu.png" alt="">
-                                    </div>
-                                    <p>frank.fu@sicbon.com</p>
-                                </li>
-                                <li>
-                                    <div class="imgs">
-                                        <span>简历投递</span>
-                                        <img src="/static/image/about/wenben.png" alt="">
-                                    </div>
-                                    <p>lisa.wang@sicbon.com</p>
-                                </li>
+                                {/foreach}
+                                {/if}
                             </ul>
                             <div class="content-right">
                                 <div>

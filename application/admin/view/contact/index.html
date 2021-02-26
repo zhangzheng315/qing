@@ -60,6 +60,21 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">图标上传</label>
+            <div class="layui-input-block">
+                <button type="button" class="layui-btn icon_url">
+                    <i class="layui-icon">&#xe67c;</i>上传图标
+                </button>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"></label>
+            <div class="layui-input-block">
+                <input type="hidden" name="icon_url" class="icon_url">
+                <img src="" alt="" width="200px" class="icon-show">
+            </div>
+        </div>
+        <div class="layui-form-item">
             <div class="layui-input-block">
                 <button class="layui-btn" lay-submit lay-filter="add">保存</button>
             </div>
@@ -95,6 +110,21 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">图标上传</label>
+            <div class="layui-input-block">
+                <button type="button" class="layui-btn icon_url">
+                    <i class="layui-icon">&#xe67c;</i>上传图标
+                </button>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"></label>
+            <div class="layui-input-block">
+                <input type="hidden" name="icon_url" class="icon_url">
+                <img src="" alt="" width="200px" class="icon-show">
+            </div>
+        </div>
+        <div class="layui-form-item">
             <div class="layui-input-block">
                 <button class="layui-btn" lay-submit lay-filter="edit">保存</button>
             </div>
@@ -108,10 +138,24 @@
     <a class="layui-btn btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>
 <script>
-    layui.use(['form', 'table', 'layedit'], function () {
+    layui.use(['form', 'table', 'layedit','upload'], function () {
         var table = layui.table;
         var form = layui.form;
+        var upload = layui.upload;
         layedit = layui.layedit;
+
+        //图片上传接口
+        upload.render({
+            elem:'.icon_url'
+            ,url: "{:url('admin/common_file/uploadFile')}"
+            ,ext: 'jpg|jpeg|svg|png|gif'
+            ,acceptMime: 'image/*'
+            ,done: function(res){
+                $('.icon-show').attr('src',res.data.src);
+                $('.icon_url').val(res.data.src);
+                layer.msg(res.msg);
+            }
+        });
 
         //创建动态表格
         table.render({
@@ -151,6 +195,8 @@
                         $('#type_name').val(res.data.type_name);
                         $('#num_en').val(res.data.num_en);
                         $('#order').val(res.data.order);
+                        $('.icon-show').attr('src',res.data.icon_url);
+                        $('.icon_url').val(res.data.icon_url);
                         if (res.data.status === 0) {
                             $('#status').removeAttr('checked');
                         } else {
