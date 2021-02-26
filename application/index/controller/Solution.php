@@ -34,27 +34,27 @@ class Solution extends Controller
       return $this->fetch();
     }
     /* 解决方案-在线课堂 */
-    public function onlineClass()
+    public function onlineclass()
     {
       return $this->fetch();
     }
     /* 解决方案-营销活动*/
-    public function Marketactivite()
+    public function marketactivite()
     {
       return $this->fetch();
     }
     /* 手术示教*/
-    public function Operation()
+    public function operation()
     {
       return $this->fetch();
     }
     /* 金融保险 */
-    public function Financial()
+    public function financial()
     {
       return $this->fetch();
     }
     /* 大会直播*/
-    public function Meetinglive()
+    public function meetinglive()
     {
       return $this->fetch();
     }
