@@ -12,6 +12,9 @@
            padding: 0 !important;
        }
       } */
+        body{
+            overflow-x: hidden;
+        }
         @media screen and (min-width: 1200px) {
             /* .layui-container {
                 width: 1200px !important;
@@ -803,13 +806,15 @@
             $(this).parent().addClass('active');
         }
     })
+
+    //导航栏
     $.ajax({
         url: "/index/navigation/navigationListClass",
         data:{'url':top.location.href},
         success: function (res) {
             if (res.status === 200) {
                 for (let item of res.nav_list) {
-                    var active = '';
+                    let active = '';
                     if (item.id === res.nav_id.pid) {
                         active = 'active';
                     }
@@ -818,7 +823,7 @@
                             var child = pingChild(item.sub,res.nav_id.id);
                         }
                         $('.menu_nav').append('<li class="menu-item  menu-item-product '+active+'">\n' +
-                            '                    <a href="">' + item.menu_name + '</a>\n' +
+                            '                    <a style="cursor: pointer;display: ">' + item.menu_name + '</a>\n' +
                             '                    <div class="pull-down-pannel pull-down-pannel-product">\n' +
                             '                        <div class="product-pannel">\n' +
                             child +
@@ -852,7 +857,6 @@
         }
         return child;
     }
-
     function pingSun(arr,id) {
         let sun = '';
         if (arr.length === 0) {

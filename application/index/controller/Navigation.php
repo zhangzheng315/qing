@@ -15,7 +15,7 @@ class Navigation extends Controller
         $url = request()->param()['url'];
         $last = substr($url, -1);
         if ($last == '/') {
-            $nav_id = 1;
+            $nav_id = ['pid'=>1];
         }else{
             $url_arr = explode('/', $url);
             $controller = $url_arr[count($url_arr)-2];
