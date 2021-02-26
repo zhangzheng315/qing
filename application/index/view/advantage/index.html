@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/static/layui/css/layui.css">
     <link rel="stylesheet" href="/static/css/style.css">
     <!--封装好的视频布局样式-->
-    <link rel="stylesheet" href="/static/css/about/jsmodern.min.css">
+    <!-- <link rel="stylesheet" href="/static/css/about/jsmodern.min.css"> -->
     <script type='text/javascript' src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="/static/layui/layui.js"></script>
     <!--mp4视频插件-->
@@ -21,20 +21,65 @@
 
 <body>
     <div id="advantage">
+        {include file="common/header"}
         <!-- 视频播放区域 -->
-        <div id="video">
-            <video autoplay="autoplay" loop id="videoShow" src="http://images.innocomn.com/aboutUs.mp4"></video>
+        <div class="video">
+            <!-- <video autoplay="autoplay" loop id="videoShow" src="http://images.innocomn.com/aboutUs.mp4"></video> -->
             <!-- <span class="VideoBtn"><img src="/static/image/about/bofang.png"></span> -->
             <img class="video-hover" src="/static/image/advantage/banner.png" alt="">
-            <button>一键发起直播</button>
-
+            <a href="http://login.lighos.com/" target="_blank">一键发起直播</a>
         </div>
 
+        <!-- 推荐活动 -->
+        <div class="recommend">
+            <div class="layui-container">
+                <div class="icons">
+                    <i class="layui-icon layui-icon-down"></i>
+                </div>
+                <div class="recommend-content">
+                    <h4>推荐活动</h4>
+                    <ul>
+                        <li>
+                            <img src="/static/image/advantage/kv1.png" alt="">
+                            <div class="text">
+                                <div class="text-left">
+                                    <h6>上海智慧城市大讲堂</h6>
+                                    <p>2022-08-20 08:00:02</p>
+                                </div>
+                                <div class="text-right">案例</div>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="/static/image/advantage/kv2.png" alt="">
+                            <div class="text">
+                                <div class="text-left">
+                                    <h6>上海智慧城市大讲堂</h6>
+                                    <p>2022-08-20 08:00:02</p>
+                                </div>
+                                <div class="text-right">案例</div>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="/static/image/advantage/kv3.png" alt="">
+                            <div class="text">
+                                <div class="text-left">
+                                    <h6>上海智慧城市大讲堂</h6>
+                                    <p>2022-08-20 08:00:02</p>
+                                </div>
+                                <div class="text-right active">结束</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 合作客户 -->
         <div class="kehu">
             <div class="layui-container">
                 <div class="title">合作客户</div>
-                <div class="layui-carousel" id="test1">
-                    <div carousel-item class="logo-box">
+                <div class="layui-carousel" id="logos">
+                    <div carousel-item id="logo-content">
                         <ul class="logo-imgs">
                             <li>
                                 <img src="/static/image/index/logo1.png" alt="">
@@ -91,64 +136,478 @@
             </div>
         </div>
 
+        <!-- 案例部分 -->
+        <div class="case">
+            <div class="layui-container">
+                <ul class="case-nav">
+                    <li class="active">金融</li>
+                    <li>教育</li>
+                    <li>医疗</li>
+                    <li>汽车</li>
+                    <li>科技</li>
+                    <li>地产</li>
+                </ul>
+                <div class="case-box">
+                    <ul>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+
+                    </ul>
+                    <ul>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+
+                    </ul>
+                    <ul>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type">案例</div>
+                            <img src="/static/image/advantage/bg-logo.png" alt="">
+                            <div class="text">
+                                <h5>天使投资高峰论坛</h5>
+                                <h6>轻直播</h6>
+                                <p><span>2022-08-20 08:00:02</span><span class="num">1200</span></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <button>查看更多案例</button>
+            </div>
+        </div>
+
+        <!-- 全功能，免费试用 -->
+        <div class="free lianxi-free">
+            <div class="layui-container">
+                <h3>全功能免费试用，0成本体验轻直播带来的改变</h3>
+                <button>免费试用</button>
+            </div>
+        </div>
+
+        {include file="common/footer"}
     </div>
 </body>
 <script src="/static/common/js/header-footer.js"></script>
-<script>
+<script type="text/javascript">
     // 播放视频
-    $(function () {
-        //视频
-        jsModern.video("#video");
-        //播放视频
-        $(".VideoBtn").click(function () {
-            var video = document.getElementById("videoShow");
-            video.play();
-            $('.VideoBtn').hide();
-            $('.video-hover').hide() // 隐藏视频封面图片
-        })
-        //监听视频的播放状态
-        var video = document.getElementById("videoShow");
-        video.oncanplay = function () {
-            $(".VideoBtn").show();
-            //$("#video").attr("poster","");
-        }
-        //视频播放事件
-        video.onplay = function () {
-            $("#videoShow").attr("poster", "");
-            $(".VideoBtn").hide();
-        };
-        video.onplaying = function () {
-            $(".VideoBtn").hide();
-        };
+    // $(function () {
+    //     //视频
+    //     jsModern.video("#video");
+    //     //播放视频
+    //     $(".VideoBtn").click(function () {
+    //         var video = document.getElementById("videoShow");
+    //         video.play();
+    //         $('.VideoBtn').hide();
+    //         $('.video-hover').hide() // 隐藏视频封面图片
+    //     })
+    //     //监听视频的播放状态
+    //     var video = document.getElementById("videoShow");
+    //     video.oncanplay = function () {
+    //         $(".VideoBtn").show();
+    //         //$("#video").attr("poster","");
+    //     }
+    //     //视频播放事件
+    //     video.onplay = function () {
+    //         $("#videoShow").attr("poster", "");
+    //         $(".VideoBtn").hide();
+    //     };
+    //     video.onplaying = function () {
+    //         $(".VideoBtn").hide();
+    //     };
 
-        //视频暂停事件
-        video.onpause = function () {
-            $(".VideoBtn").show();
-        };
-        //点击视频周围暂停播放图片出现
-        video.onclick = function () {
-            if (video.paused) {
-                $(".VideoBtn").hide();
-                video.play();
-            } else {
-                $(".VideoBtn").show();
-                video.pause();
-            }
-        };
-    })
+    //     //视频暂停事件
+    //     video.onpause = function () {
+    //         $(".VideoBtn").show();
+    //     };
+    //     //点击视频周围暂停播放图片出现
+    //     video.onclick = function () {
+    //         if (video.paused) {
+    //             $(".VideoBtn").hide();
+    //             video.play();
+    //         } else {
+    //             $(".VideoBtn").show();
+    //             video.pause();
+    //         }
+    //     };
+    // })
 
-    // 轻学院左侧轮播图
+
     layui.use('carousel', function () {
         var carousel = layui.carousel;
         //建造实例
         carousel.render({
-            elem: '#test1'
+            elem: '#logos'
             , width: '100%' // 设置容器宽度
-            , height: '100%'
+            // , height: '100%'
             , arrow: 'none' // 始终显示箭头
-            // ,anim: 'updown' // 切换动画方式
-            , interval: 3000 // 轮播间隔时间
+            , interval: 2000 // 轮播间隔时间
         });
+
+    });
+
+    // 推荐活动
+    $('.icons').click(function () {
+        // console.log(11);
+        let top = document.documentElement.scrollTop || document.body.scrollTop
+        let width = $(window).width()
+        if (width >= 1300) {
+            $("html,body").animate({ scrollTop: 850 }, 300);
+        } else if (width < 1300 && width >= 992) {
+            $("html,body").animate({ scrollTop: 550 }, 300);
+
+        } else if (width < 992 && width > 768) {
+            $("html,body").animate({ scrollTop: 550 }, 300);
+
+        } else if (width <= 768) {
+            $("html,body").animate({ scrollTop: 750 }, 300);
+        }
+    })
+
+
+    // 案例切换
+    $('.case').each(function (index, element) {
+        var obj = $(this);
+        obj.find('.case-nav').children().on('click li', function () {
+            $(this).addClass('active').siblings().removeClass('active');
+            if (obj.find('.case-box').children().eq($(this).index()).length > 0)
+                obj.find('.case-box').children().hide().eq($(this).index()).show();
+        });
+        setTimeout(function () { obj.find('.case-nav .active').trigger('li'); }, 100);
     });
 </script>
 

@@ -53,7 +53,7 @@
             .login {
                 border: 1px solid #00cc99;
                 color: #00cc99;
-                margin-right: 30px;
+                margin-right: 20px;
             }
 
             .menu > .menu-item > a {
@@ -72,8 +72,6 @@
                 overflow: hidden;
                 z-index: 999;
                 margin-top: -80%;
-
-
                 transition: all .4s; */
             }
 
@@ -157,7 +155,6 @@
                 right: 80px;
                 top: 10px;
             }
-
         }
 
         @media screen and (max-width: 1000px) and (min-width: 820px) {
@@ -207,6 +204,7 @@
                 text-align: center;
                 cursor: pointer;
             }
+
 
             .login {
                 border: 1px solid #00cc99;
@@ -278,16 +276,15 @@
                 box-shadow: 0px 3px 4px 0px rgba(193, 193, 193, 0.5);
             }
 
-            .navbar-collpase.collpase-true {
+            /* .navbar-collpase.collpase-true {
                 top: 65px;
-            }
-
+            } */
             .navbar-nav {
-                margin: 7.5px 0;
+
             }
 
             .navbar-nav > li {
-                padding: 10px 15px;
+                padding: 10px 0;
                 position: relative;
 
             }
@@ -296,6 +293,8 @@
                 /* padding: 10px 15px; */
                 display: inline-block;
                 width: 100%;
+                box-sizing: border-box;
+                padding-left: 15px;
             }
 
             .navbar-nav > li > a:hover {
@@ -315,14 +314,22 @@
             .navbar-nav > li > a > i {
                 position: absolute;
                 font-size: 24px;
-                top: 7px;
+                top: 0px;
                 right: 15px;
             }
 
-            .navbar-nav > li.nav-product-span {
+            .navbar-nav > li.nav-product {
+                padding: 0;
+            }
+
+            .navbar-nav > li > .nav-product-span {
                 display: inline-block;
                 width: 100%;
                 cursor: pointer;
+                box-sizing: border-box;
+                padding-left: 15px;
+                height: 39.2px;
+                line-height: 39.2px;
             }
 
             .nav-product-span > i {
@@ -337,6 +344,9 @@
                 /* margin-top: 10px; */
                 overflow: hidden;
                 transition: height 0.5s;
+                box-sizing: border-box;
+                padding-left: 30px;
+                background: #f8f8f8;
                 /* height: 100px; */
             }
 
@@ -371,7 +381,6 @@
                 color: #00cc99;
                 border: 1px solid #00cc99;
             }
-
         }
 
         @media screen and (max-width: 768px) {
@@ -412,24 +421,24 @@
                 box-shadow: 0px 3px 4px 0px rgba(193, 193, 193, 0.5);
             }
 
-            .navbar-collpase.collpase-true {
+            /* .navbar-collpase.collpase-true {
                 top: 65px;
-            }
-
+            } */
             .navbar-nav {
-                margin: 7.5px 0;
+                /* margin: 7.5px 0; */
             }
 
             .navbar-nav > li {
-                padding: 10px 15px;
+                padding: 10px 0;
                 position: relative;
-
             }
 
             .navbar-nav > li > a {
                 /* padding: 10px 15px; */
                 display: inline-block;
                 width: 100%;
+                box-sizing: border-box;
+                padding-left: 15px;
             }
 
             .navbar-nav > li > a:hover {
@@ -453,20 +462,31 @@
                 right: 15px;
             }
 
-            .navbar-nav > li.nav-product-span {
+            .navbar-nav > li.nav-product {
+                padding: 0;
+            }
+
+            .navbar-nav > li > .nav-product-span {
                 display: inline-block;
                 width: 100%;
+                box-sizing: border-box;
+                padding-left: 15px;
                 cursor: pointer;
+                height: 39.2px;
+                line-height: 39.2px;
             }
 
             .nav-product-span > i {
                 position: absolute;
                 font-size: 24px;
-                top: 7px;
+                top: 0px;
                 right: 15px;
             }
 
             .nav-pro-con {
+                box-sizing: border-box;
+                padding-left: 30px;
+                background: #f8f8f8;
                 width: 100%;
                 overflow: hidden;
                 transition: height 0.5s;
@@ -664,6 +684,7 @@
     </style>
 </head>
 <body>
+
 <div class="header-nav">
     <!-- pc端 -->
     <div class="flex-item pc-layui-container">
@@ -708,7 +729,15 @@
                 <span class="nav-product-span" href="">产品与服务<i>+</i></span>
                 <div class="nav-pro-con">
                     <span><a href="">轻直播平台</a></span>
-                    <span><a href="">轻直播平台</a></span>
+                    <span><a href="">私有化部署</a></span>
+                    <span><a href="">轻视云</a></span>
+                    <span><a href="">直播集成开发</a></span>
+                    <span><a href="">APP/小程序开发</a></span>
+                    <span><a href="">自助会议系统</a></span>
+                    <span><a href="">方案设计</a></span>
+                    <span><a href="">搭建支持</a></span>
+                    <span><a href="">现场保障</a></span>
+                    <span><a href="">数据报告</a></span>
                 </div>
             </li>
             <li><a href="">解决方案</a></li>
@@ -730,6 +759,16 @@
 <script>
     $('.navbar-toggle').on('click', function () {
         $('.navbar-collpase').toggleClass('collpase-true');
+        if (!$('.navbar-collpase').hasClass('collpase-true')) {
+            let height = $('.navbar-collpase').height();
+            $('.navbar-collpase').css({
+                'top': -height + 'px'
+            })
+        } else {
+            $('.collpase-true').css({
+                'top': '65px'
+            })
+        }
     })
 
     $('.nav-product').on('click', function () {
@@ -751,37 +790,18 @@
 
     })
 
-    $('.menu li').on('click', function () {
+    $('.menua').on('click', function () {
         //  $(this).addClass('active');
+
     })
 
-    //  (function init(win, doc){
-    //      const optionsNode = document.querySelector('.nav-product > .nav-pro-con');
-    //       optionsNode.setAttribute('real-height',win.getComputedStyle(optionsNode).height);
-    //       optionsNode.style.height = '0px';
-    //  })(window, document)
-
-    //  $(window).resize(function() {
-    //      const deviceWidth = $(window).width();
-    //      console.log(deviceWidth);
-    //      if(deviceWidth < 820) {
-    //         init();
-    //     }
-    //  })
-
-    //  function init(){
-    //      $('.nav-pro-con').attr('real-height', $('.nav-pro-con').height());
-    //      $('.nav-pro-con').css({
-    //          'height': '0px'
-    //      })
-    //  }
-
-    //  $(document).ready(function() {
-    //     const deviceWidth = $(window).width();
-    //     if(deviceWidth < 820) {
-    //         init();
-    //     }
-    //  })
+    $('.menu-item>a').each(function () {
+        let $this = $(this);
+        if ($this[0].href == window.location) {
+            $(this).parent().siblings().removeClass('active');
+            $(this).parent().addClass('active');
+        }
+    })
 
     $.ajax({
         url: "/index/navigation/navigationListClass",
@@ -794,16 +814,16 @@
                             var child = pingChild(item.sub);
                         }
                         $('.menu_nav').append('<li class="menu-item  menu-item-product">\n' +
-                            '                    <a href="">'+ item.menu_name +'</a>\n' +
+                            '                    <a href="">' + item.menu_name + '</a>\n' +
                             '                    <div class="pull-down-pannel pull-down-pannel-product">\n' +
                             '                        <div class="product-pannel">\n' +
-                                                        child +
+                            child +
                             '                        </div>\n' +
                             '                    </div>\n' +
                             '                </li>');
-                    }else{
+                    } else {
                         $('.menu_nav').append('<li class="menu-item">\n' +
-                            '                    <a href="'+ item.route +'">'+ item.menu_name +'</a>\n' +
+                            '                    <a href="' + item.route + '">' + item.menu_name + '</a>\n' +
                             '                </li>');
                     }
                 }
@@ -822,8 +842,8 @@
                 var sun = pingSun(item.sub);
             }
             child += '<dl class="dl-border">\n' +
-                '         <dt>'+ item.menu_name +'</dt>\n' +
-                          sun +
+                '         <dt>' + item.menu_name + '</dt>\n' +
+                sun +
                 '     </dl>';
         }
         return child;
@@ -836,8 +856,8 @@
         }
         for (let item of arr) {
             sun += '<dd>\n' +
-                '       <a href="'+ item.route +'" class="pink-item">\n' +
-                '           <p class="p-active">'+ item.menu_name +'</p>\n' +
+                '       <a href="' + item.route + '" class="pink-item">\n' +
+                '           <p class="p-active">' + item.menu_name + '</p>\n' +
                 // '           <span>企业级视频云直播平台</span>\n' +
                 '       </a>\n' +
                 '   </dd>';
@@ -846,5 +866,6 @@
     }
 
 </script>
+
 </body>
 </html>
