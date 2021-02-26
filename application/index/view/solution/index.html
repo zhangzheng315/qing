@@ -42,34 +42,17 @@
             <div class="layui-container">
                 <h2 class="title">行业解决方案</h2>
                 <ul class="industry-content">
+                    {if isset($solution_list)}
+                    {foreach($solution_list as $item)}
                     <li>
-                        <img src="/static/image/solution/hangye.png" alt="">
+                        <img src="{$item.img_url}" alt="">
                         <div class="text">
-                            <h6>医疗</h6>
-                            <p>我是内容我是内容我是内容我是内容。</p>
+                            <h6>{$item.title}</h6>
+                            <p>{$item.introduction}</p>
                         </div>
                     </li>
-                    <li>
-                        <img src="/static/image/solution/hangye.png" alt="">
-                        <div class="text">
-                            <h6>医疗</h6>
-                            <p>我是内容我是内容我是内容我是内容。</p>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="/static/image/solution/hangye.png" alt="">
-                        <div class="text">
-                            <h6>医疗</h6>
-                            <p>我是内容我是内容我是内容我是内容。</p>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="/static/image/solution/hangye.png" alt="">
-                        <div class="text">
-                            <h6>医疗</h6>
-                            <p>我是内容我是内容我是内容我是内容。</p>
-                        </div>
-                    </li>
+                    {/foreach}
+                    {/if}
                 </ul>
             </div>
         </div>
