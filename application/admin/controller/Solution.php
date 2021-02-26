@@ -29,6 +29,7 @@ class Solution extends Common{
         $str = SolutionService::data_paging($data,'solution','order');
         foreach ($str['data'] as &$value) {
             $value['status'] = $value['status'] == 1 ? '显示' : '不显示';
+            $value['type'] = $value['type'] == 1 ? '场景解决方案' : '行业解决方案';
         }
         return layshow($this->code,'ok',$str['data'],$str['count']);
     }

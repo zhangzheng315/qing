@@ -20,10 +20,13 @@ class SolutionService extends Common{
      */
     public function solutionCreate($param){
         if(!isset($param['status'])) $param['status'] = 0;
+        if(!isset($param['type'])) $param['type'] = 0;
         $data = [
             'img_url' => $param['img_url'],
             'title' => $param['title'] ?: '',
             'introduction' => $param['introduction'],
+            'type' => $param['type'],
+            'link' => $param['link'] ?: '',
             'status' => $param['status'],
             'order' => $param['order'] ?: 0,
             'created_time' => time(),
@@ -70,10 +73,11 @@ class SolutionService extends Common{
     public function solutionEdit($data)
     {
         if(!isset($data['status'])) $data['status'] = 0;
+        if(!isset($data['type'])) $data['type'] = 0;
         $where = ['id' => $data['id']];
         $data['updated_time'] = time();
 
-        $add_id = $this->solution->update($data,$where);
+        $add_id = $this->solution->allowField(true)->save($data,$where);
         if(!$add_id){
             $this->setError('修改失败');
             return false;
@@ -108,9 +112,18 @@ class SolutionService extends Common{
         $where = [
             'status' => 1,
             'deleted_time' => 0,
+            'type' => 0,
         ];
-        $res = $this->solution->where($where)->select();
-        return $res ? $res : [];
+        //行业解决方案
+        $ind_res = $this->solution->where($where)->select();
+        //场景解决方案
+        $where['type'] = 1;
+        $sce_res = $this->solution->where($where)->select();
+        $res = [
+            'ind_res' => $ind_res ? $ind_res : [],
+            'sce_res' => $sce_res ? $sce_res : [],
+        ];
+        return $res;
     }
 
 }
