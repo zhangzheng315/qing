@@ -173,4 +173,34 @@ class NavigationService extends Common{
         return $childs;
     }
 
+    public function getActive($controller)
+    {
+        $where = [
+            'deleted_time' => 0,
+            'status' => 1,
+            'route'=>['like','%'.$controller.'%']
+        ];
+        $info = $this->navigation->where($where)->find();
+        if ($info['pid'] == 0) {
+            $pid = $info['id'];
+        }else{
+            $pid = $this->getPid($info['pid']);
+        }
+        return ['pid'=>$pid,'id'=>$info['id']];
+    }
+
+    public function getPid($pid)
+    {
+        $where = [
+            'deleted_time' => 0,
+            'status' => 1,
+            'id'=>$pid,
+        ];
+        $info = $this->navigation->where($where)->find();
+        if ($info['pid'] != 0) {
+            return $this->getPid($info['pid']);
+        }
+        return $info['id'];
+    }
+
 }

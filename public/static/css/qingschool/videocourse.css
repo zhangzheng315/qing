@@ -83,6 +83,10 @@
   padding: 61px 0 71px;
   background-color: #f2f4f7;
 }
+#video .all-watch .layui-container .watch-text {
+  margin-bottom: 30px;
+  justify-content: flex-start;
+}
 #video .all-watch .layui-container .watch-text .text-title {
   margin-right: 50px;
 }
@@ -99,6 +103,7 @@
 #video .all-watch .layui-container .watch-text .more {
   font-size: 14px;
   color: #666;
+  cursor: pointer;
 }
 #video .all-watch .layui-container .watch-content {
   width: 100%;
@@ -117,6 +122,9 @@
   font-size: 20px;
   color: #333;
   margin-bottom: 20px;
+}
+#video .all-watch .layui-container .watch-content .content-text .teacher {
+  justify-content: flex-start;
 }
 #video .all-watch .layui-container .watch-content .content-text .teacher div {
   margin-right: 60px;
@@ -233,4 +241,661 @@
 }
 #video .case-study .layui-container .study-content .active {
   display: block;
+}
+#video .product-zixun {
+  padding: 80px 0 100px;
+  background-color: #f2f4f7;
+}
+#video .product-zixun .layui-container .watch-text {
+  margin-bottom: 30px;
+  justify-content: flex-start;
+}
+#video .product-zixun .layui-container .watch-text .text-title {
+  margin-right: 50px;
+}
+#video .product-zixun .layui-container .watch-text .text-title h6 {
+  color: #333;
+  margin-bottom: 3px;
+}
+#video .product-zixun .layui-container .watch-text .text-title .underline {
+  width: 35px;
+  height: 4px;
+  background: #00cc99;
+  border-radius: 3px;
+}
+#video .product-zixun .layui-container .watch-text .more {
+  font-size: 14px;
+  color: #666;
+  cursor: pointer;
+}
+#video .product-zixun .layui-container .product-content {
+  height: 450px;
+}
+#video .product-zixun .layui-container .product-content .layui-carousel .lunbo-box .lunbo-item {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 9px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  background-color: #f2f4f7;
+}
+#video .product-zixun .layui-container .product-content .layui-carousel .lunbo-box .lunbo-item li {
+  display: inline-block;
+  width: 48%;
+  height: 197px;
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 10px;
+  padding: 10px 24px 14px 12px;
+  box-sizing: border-box;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  cursor: pointer;
+}
+#video .product-zixun .layui-container .product-content .layui-carousel .lunbo-box .lunbo-item li:nth-child(2n) {
+  margin-right: 0;
+}
+#video .product-zixun .layui-container .product-content .layui-carousel .lunbo-box .lunbo-item li:hover {
+  box-shadow: 0px 5px 9px 0px rgba(20, 20, 20, 0.11);
+}
+#video .product-zixun .layui-container .product-content .layui-carousel .lunbo-box .lunbo-item li img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  float: left;
+  margin-right: 15px;
+}
+#video .product-zixun .layui-container .product-content .layui-carousel .lunbo-box .lunbo-item li .text-box {
+  padding-left: 15px;
+  padding-top: 10px;
+}
+#video .product-zixun .layui-container .product-content .layui-carousel .lunbo-box .lunbo-item li .text-box h6 {
+  font-size: 16px;
+  color: #333;
+  letter-spacing: 2px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+#video .product-zixun .layui-container .product-content .layui-carousel .lunbo-box .lunbo-item li .text-box p {
+  font-size: 14px;
+  color: #666;
+  letter-spacing: 1px;
+  line-height: 2;
+}
+#video .product-zixun .layui-container .product-content .layui-carousel .layui-carousel-ind {
+  position: absolute;
+  top: 100%;
+}
+#video .product-zixun .layui-container .product-content .layui-carousel .layui-carousel-ind ul {
+  background-color: transparent;
+}
+#video .product-zixun .layui-container .product-content .layui-carousel .layui-carousel-ind ul li {
+  width: 9px;
+  height: 9px;
+  background: #ccc;
+  border-right: 50%;
+  margin: 0 18px;
+}
+#video .product-zixun .layui-container .product-content .layui-carousel .layui-carousel-ind ul .layui-this {
+  background-color: #34DBB1;
+}
+#video .video-free {
+  height: 400px;
+  background: url('/static/image/qingschool/banner_bottom.png') no-repeat;
+  background-size: cover;
+  padding-top: 111px;
+  box-sizing: border-box;
+}
+#video .video-free .layui-container h3 {
+  font-size: 50px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 90px;
+  text-align: center;
+}
+#video .video-free .layui-container button {
+  width: 168px;
+  height: 40px;
+  background: linear-gradient(90deg, #009CA9, #39D6AF);
+  border-radius: 20px;
+  border: none;
+  color: #fff;
+  display: block;
+  margin: 0 auto;
+  font-size: 20px;
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) and (max-width: 1300px) {
+  #video header {
+    height: 60px;
+    padding: 10px 0;
+  }
+  #video header .layui-container {
+    width: 100% !important;
+  }
+  #video header .layui-container .head-right .text {
+    margin-right: 54px;
+  }
+  #video header .layui-container .head-right .text a {
+    font-size: 14px;
+    margin-right: 38px;
+  }
+  #video header .layui-container .head-right .btns button {
+    width: 93px;
+    height: 26px;
+    font-size: 14px;
+  }
+  #video header .layui-container .head-right .btns .login {
+    margin-right: 31px;
+  }
+  #video .video-nav {
+    height: 60px;
+  }
+  #video .video-nav .layui-container {
+    width: 100% !important;
+  }
+  #video .video-nav .layui-container a {
+    display: block;
+    font-size: 14px;
+    width: 9%;
+    height: 60px;
+    line-height: 60px;
+    margin-right: 38px;
+  }
+  #video .all-watch {
+    padding: 41px 20px 51px;
+    background-color: #f2f4f7;
+  }
+  #video .all-watch .layui-container {
+    width: 100% !important;
+  }
+  #video .all-watch .layui-container .watch-text {
+    margin-bottom: 25px;
+  }
+  #video .all-watch .layui-container .watch-text .text-title {
+    margin-right: 30px;
+  }
+  #video .all-watch .layui-container .watch-text .text-title h6 {
+    color: #333;
+    margin-bottom: 3px;
+  }
+  #video .all-watch .layui-container .watch-text .text-title .underline {
+    width: 41px;
+    height: 4px;
+    background: #00cc99;
+    border-radius: 3px;
+  }
+  #video .all-watch .layui-container .watch-text .more {
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+  }
+  #video .all-watch .layui-container .watch-content {
+    width: 80%;
+    margin: 0 auto;
+    height: 483px;
+    margin-top: 30px;
+    padding: 35px 40px 0;
+  }
+  #video .all-watch .layui-container .watch-content img {
+    width: 100%;
+    height: 280px;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+  #video .all-watch .layui-container .watch-content .content-text {
+    margin-top: 25px;
+  }
+  #video .all-watch .layui-container .watch-content .content-text h5 {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  #video .all-watch .layui-container .watch-content .content-text .teacher {
+    font-size: 12px;
+  }
+  #video .all-watch .layui-container .watch-content .content-text .teacher div {
+    margin-right: 40px;
+  }
+  #video .all-watch .layui-container .watch-content .line {
+    width: 281px;
+    margin: 20px 0 23px;
+  }
+  #video .all-watch .layui-container .watch-content p {
+    font-size: 12px;
+  }
+  #video .case-study {
+    padding: 25px 20px 38px;
+  }
+  #video .case-study .layui-container {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  #video .case-study .layui-container .study-nav {
+    margin-bottom: 31px;
+  }
+  #video .case-study .layui-container .study-nav li {
+    margin-right: 78px;
+    height: 25px;
+    line-height: 24px;
+  }
+  #video .case-study .layui-container .study-nav li div {
+    width: 41px;
+    height: 3px;
+  }
+  #video .case-study .layui-container .study-content .study-item .study-box li {
+    width: 23%;
+    margin-right: 20px;
+    margin-bottom: 16px;
+    height: 226px;
+  }
+  #video .case-study .layui-container .study-content .study-item .study-box li .txt {
+    padding-left: 8px;
+    margin-top: 15px;
+  }
+  #video .case-study .layui-container .study-content .study-item .study-box li .txt h6 {
+    margin-bottom: 9px;
+  }
+  #video .case-study .layui-container .study-content .study-item .study-box li .txt p {
+    font-size: 14px;
+    margin-bottom: 7px;
+  }
+  #video .case-study .layui-container .study-content .study-item button {
+    width: 125px;
+    height: 35px;
+    font-size: 14px;
+  }
+  #video .product-zixun {
+    padding: 25px 20px 60px;
+  }
+  #video .product-zixun .layui-container {
+    width: 100% !important;
+  }
+  #video .product-zixun .layui-container .watch-text {
+    margin-bottom: 30px;
+  }
+  #video .product-zixun .layui-container .watch-text .text-title {
+    margin-right: 30px;
+  }
+  #video .product-zixun .layui-container .watch-text .text-title h6 {
+    color: #333;
+    margin-bottom: 3px;
+  }
+  #video .product-zixun .layui-container .watch-text .more {
+    font-size: 14px;
+  }
+  #video .product-zixun .layui-container .product-content {
+    height: 420px;
+  }
+  #video .product-zixun .layui-container .product-content .layui-carousel .lunbo-box .lunbo-item {
+    padding-bottom: 9px;
+  }
+  #video .product-zixun .layui-container .product-content .layui-carousel .lunbo-box .lunbo-item li {
+    width: 48%;
+    height: 167px;
+    padding: 8px 24px 14px 12px;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    cursor: pointer;
+  }
+  #video .product-zixun .layui-container .product-content .layui-carousel .lunbo-box .lunbo-item li img {
+    height: 90%;
+    width: 45%;
+    object-fit: cover;
+    margin-right: 12px;
+    margin-top: 3%;
+  }
+  #video .product-zixun .layui-container .product-content .layui-carousel .lunbo-box .lunbo-item li .text-box {
+    padding-left: 15px;
+    padding-top: 10px;
+  }
+  #video .product-zixun .layui-container .product-content .layui-carousel .lunbo-box .lunbo-item li .text-box h6 {
+    font-size: 16px;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  #video .product-zixun .layui-container .product-content .layui-carousel .lunbo-box .lunbo-item li .text-box p {
+    font-size: 14px;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+  }
+  #video .product-zixun .layui-container .product-content .layui-carousel .layui-carousel-ind {
+    position: absolute;
+    top: 100%;
+  }
+  #video .product-zixun .layui-container .product-content .layui-carousel .layui-carousel-ind ul {
+    background-color: transparent;
+  }
+  #video .product-zixun .layui-container .product-content .layui-carousel .layui-carousel-ind ul li {
+    width: 9px;
+    height: 9px;
+    background: #ccc;
+    border-right: 50%;
+    margin: 0 18px;
+  }
+  #video .product-zixun .layui-container .product-content .layui-carousel .layui-carousel-ind ul .layui-this {
+    background-color: #34DBB1;
+  }
+  #video .video-free {
+    height: 300px;
+    padding-top: 91px;
+  }
+  #video .video-free .layui-container {
+    width: 100% !important;
+  }
+  #video .video-free .layui-container h3 {
+    font-size: 35px;
+    margin-bottom: 70px;
+  }
+  #video .video-free .layui-container button {
+    width: 148px;
+    height: 35px;
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  #video .video-nav {
+    height: 50px;
+  }
+  #video .video-nav .layui-container {
+    width: 100% !important;
+  }
+  #video .video-nav .layui-container a {
+    display: block;
+    font-size: 14px;
+    width: 9%;
+    height: 50px;
+    line-height: 50px;
+    margin-right: 25px;
+    font-size: 12px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 954px) {
+  #video .case-study {
+    padding: 20px 20px 38px;
+  }
+  #video .case-study .layui-container .study-nav {
+    margin-bottom: 24px;
+  }
+  #video .case-study .layui-container .study-nav li {
+    margin-right: 65px;
+    height: 25px;
+    line-height: 24px;
+  }
+  #video .case-study .layui-container .study-content .study-item .study-box li {
+    width: 23%;
+    margin-right: 15px;
+    margin-bottom: 16px;
+    height: 186px;
+  }
+  #video .case-study .layui-container .study-content .study-item .study-box li .txt {
+    padding-left: 8px;
+    margin-top: 11px;
+  }
+  #video .case-study .layui-container .study-content .study-item .study-box li .txt h6 {
+    margin-bottom: 7px;
+  }
+  #video .case-study .layui-container .study-content .study-item .study-box li .txt p {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  #video .case-study .layui-container .study-content .study-item button {
+    width: 115px;
+    height: 32px;
+    font-size: 12px;
+    margin: 37px auto 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  #video header {
+    height: 40px;
+    padding: 5px 0;
+  }
+  #video header .layui-container {
+    padding: 0 15px !important;
+    height: 100%;
+  }
+  #video header .layui-container .logo a img {
+    width: 80px;
+  }
+  #video header .layui-container .head-right .text {
+    margin-right: 10px;
+  }
+  #video header .layui-container .head-right .text a {
+    font-size: 12px;
+    margin-right: 15px;
+  }
+  #video header .layui-container .head-right .btns {
+    display: none;
+  }
+  #video header .layui-container .head-right .btns button {
+    width: 93px;
+    height: 26px;
+    font-size: 14px;
+  }
+  #video header .layui-container .head-right .btns .login {
+    margin-right: 0px;
+  }
+  #video .video-nav {
+    height: 40px;
+  }
+  #video .video-nav .layui-container {
+    width: auto;
+    overflow-x: auto;
+  }
+  #video .video-nav .layui-container a {
+    flex-shrink: 0;
+    width: auto;
+    display: block;
+    font-size: 12px;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 15px;
+    padding: 0 5px;
+  }
+  #video .all-watch {
+    padding: 21px 10px 31px;
+  }
+  #video .all-watch .layui-container {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  #video .all-watch .layui-container .watch-text {
+    margin-bottom: 15px;
+  }
+  #video .all-watch .layui-container .watch-text .text-title {
+    margin-right: 20px;
+  }
+  #video .all-watch .layui-container .watch-text .text-title h6 {
+    font-size: 12px;
+    margin-bottom: 3px;
+  }
+  #video .all-watch .layui-container .watch-text .text-title .underline {
+    width: 41px;
+    height: 4px;
+    background: #00cc99;
+    border-radius: 3px;
+  }
+  #video .all-watch .layui-container .watch-text .more {
+    font-size: 12px;
+  }
+  #video .all-watch .layui-container .watch-content {
+    width: 100%;
+    height: 303px;
+    margin-top: 25px;
+    padding: 15px 10px 0;
+  }
+  #video .all-watch .layui-container .watch-content img {
+    width: 100%;
+  }
+  #video .all-watch .layui-container .watch-content .content-text {
+    margin-top: 15px;
+  }
+  #video .all-watch .layui-container .watch-content .content-text h5 {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  #video .all-watch .layui-container .watch-content .content-text .teacher {
+    font-size: 12px;
+  }
+  #video .all-watch .layui-container .watch-content .content-text .teacher div {
+    margin-right: 40px;
+  }
+  #video .all-watch .layui-container .watch-content .line {
+    width: 211px;
+    margin: 15px 0 15px;
+  }
+  #video .all-watch .layui-container .watch-content p {
+    font-size: 12px;
+  }
+  #video .case-study {
+    padding: 21px 10px 31px;
+  }
+  #video .case-study .layui-container {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  #video .case-study .layui-container .study-nav {
+    margin-bottom: 20px;
+    width: auto;
+    overflow-x: auto;
+  }
+  #video .case-study .layui-container .study-nav li {
+    flex-shrink: 0;
+    width: auto;
+    margin-right: 30px;
+    height: 25px;
+    line-height: 24px;
+  }
+  #video .case-study .layui-container .study-nav li p {
+    font-size: 12px;
+  }
+  #video .case-study .layui-container .study-nav li div {
+    width: 41px;
+    height: 3px;
+  }
+  #video .case-study .layui-container .study-content .study-item .study-box li {
+    width: 47%;
+    margin-right: 3%;
+    margin-bottom: 16px;
+    height: 166px;
+  }
+  #video .case-study .layui-container .study-content .study-item .study-box li .txt {
+    padding-left: 5px;
+    margin-top: 10px;
+  }
+  #video .case-study .layui-container .study-content .study-item .study-box li .txt h6 {
+    margin-bottom: 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  #video .case-study .layui-container .study-content .study-item .study-box li .txt p {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  #video .case-study .layui-container .study-content .study-item .study-box li:nth-child(2n) {
+    margin-right: 0;
+  }
+  #video .case-study .layui-container .study-content .study-item button {
+    width: 115px;
+    height: 30px;
+    font-size: 12px;
+    margin: 20px auto 0;
+  }
+  #video .product-zixun {
+    padding: 21px 10px 20px;
+  }
+  #video .product-zixun .layui-container {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  #video .product-zixun .layui-container .watch-text {
+    margin-bottom: 30px;
+  }
+  #video .product-zixun .layui-container .watch-text .text-title {
+    margin-right: 20px;
+  }
+  #video .product-zixun .layui-container .watch-text .text-title h6 {
+    margin-bottom: 3px;
+    font-size: 12px;
+  }
+  #video .product-zixun .layui-container .watch-text .more {
+    font-size: 12px;
+  }
+  #video .product-zixun .layui-container .product-content {
+    height: 365px;
+  }
+  #video .product-zixun .layui-container .product-content .layui-carousel .lunbo-box .lunbo-item {
+    padding-bottom: 9px;
+  }
+  #video .product-zixun .layui-container .product-content .layui-carousel .lunbo-box .lunbo-item li {
+    width: 100%;
+    height: 147px;
+    padding: 5px 14px 7px 6px;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    cursor: pointer;
+  }
+  #video .product-zixun .layui-container .product-content .layui-carousel .lunbo-box .lunbo-item li img {
+    height: 80%;
+    width: 45%;
+    object-fit: cover;
+    margin-right: 12px;
+    margin-top: 5%;
+  }
+  #video .product-zixun .layui-container .product-content .layui-carousel .lunbo-box .lunbo-item li .text-box {
+    padding-left: 7px;
+    padding-top: 28px;
+  }
+  #video .product-zixun .layui-container .product-content .layui-carousel .lunbo-box .lunbo-item li .text-box h6 {
+    font-size: 14px;
+    letter-spacing: 0px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  #video .product-zixun .layui-container .product-content .layui-carousel .lunbo-box .lunbo-item li .text-box p {
+    font-size: 12px;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+  }
+  #video .product-zixun .layui-container .product-content .layui-carousel .lunbo-box .lunbo-item li:nth-child(n + 3) {
+    display: none;
+  }
+  #video .product-zixun .layui-container .product-content .layui-carousel .layui-carousel-ind {
+    top: 90%;
+  }
+  #video .product-zixun .layui-container .product-content .layui-carousel .layui-carousel-ind ul li {
+    width: 7px;
+    height: 7px;
+    margin: 0 10px;
+  }
+  #video .video-free {
+    height: 240px;
+    padding-top: 51px;
+  }
+  #video .video-free .layui-container {
+    width: 100% !important;
+  }
+  #video .video-free .layui-container h3 {
+    font-size: 22px;
+    margin-bottom: 40px;
+  }
+  #video .video-free .layui-container button {
+    width: 128px;
+    height: 30px;
+    font-size: 14px;
+  }
 }
