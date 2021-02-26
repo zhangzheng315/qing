@@ -1,0 +1,236 @@
+@media screen and (min-width: 1200px) {
+  .layui-container {
+    width: 1200px !important;
+    padding: 0 !important;
+  }
+}
+#video .flex {
+  display: flex;
+  align-items: center;
+}
+#video header {
+  height: 65px;
+  padding: 10px 0;
+  box-sizing: border-box;
+}
+#video header .layui-container {
+  justify-content: space-between;
+}
+#video header .layui-container .head-right .text {
+  margin-right: 64px;
+}
+#video header .layui-container .head-right .text a {
+  color: #999;
+  font-size: 14px;
+  margin-right: 48px;
+}
+#video header .layui-container .head-right .text a:nth-child(2) {
+  margin-right: 0px;
+}
+#video header .layui-container .head-right .btns button {
+  border: none;
+  width: 103px;
+  height: 30px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 14px;
+}
+#video header .layui-container .head-right .btns .login {
+  background-color: #fff;
+  color: #00cc99;
+  border: 1px solid #00cc99;
+  margin-right: 41px;
+}
+#video header .layui-container .head-right .btns .login:hover {
+  background-color: #00cc99;
+  color: #fff;
+  border: none;
+}
+#video header .layui-container .head-right .btns .free-btn {
+  background-color: #00cc99;
+  color: #fff;
+}
+#video header .layui-container .head-right .btns .free-btn:hover {
+  background-color: #fff;
+  color: #00cc99;
+  border: 1px solid #00cc99;
+}
+#video .video-nav {
+  height: 65px;
+  background: #2D2D2D;
+  box-shadow: 0px 4px 6px 0px rgba(193, 193, 193, 0.28);
+}
+#video .video-nav a {
+  display: block;
+  color: #fff;
+  font-size: 16px;
+  width: 9%;
+  height: 65px;
+  line-height: 65px;
+  text-align: center;
+  margin-right: 48px;
+  box-sizing: border-box;
+}
+#video .video-nav a:hover {
+  color: #00cc99;
+  border-bottom: 2px solid #00cc99;
+}
+#video .video-nav .active {
+  color: #00cc99;
+  border-bottom: 2px solid #00cc99;
+}
+#video .all-watch {
+  padding: 61px 0 71px;
+  background-color: #f2f4f7;
+}
+#video .all-watch .layui-container .watch-text .text-title {
+  margin-right: 50px;
+}
+#video .all-watch .layui-container .watch-text .text-title h6 {
+  color: #333;
+  margin-bottom: 3px;
+}
+#video .all-watch .layui-container .watch-text .text-title .underline {
+  width: 41px;
+  height: 4px;
+  background: #00cc99;
+  border-radius: 3px;
+}
+#video .all-watch .layui-container .watch-text .more {
+  font-size: 14px;
+  color: #666;
+}
+#video .all-watch .layui-container .watch-content {
+  width: 100%;
+  height: 693px;
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 10px;
+  margin-top: 30px;
+  padding: 48px 51px 0;
+  box-sizing: border-box;
+}
+#video .all-watch .layui-container .watch-content .content-text {
+  margin-top: 37px;
+}
+#video .all-watch .layui-container .watch-content .content-text h5 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 20px;
+}
+#video .all-watch .layui-container .watch-content .content-text .teacher div {
+  margin-right: 60px;
+  color: #333;
+}
+#video .all-watch .layui-container .watch-content .content-text .teacher div span {
+  color: #00cc99;
+}
+#video .all-watch .layui-container .watch-content .content-text .teacher div .num {
+  color: #F75B5B;
+}
+#video .all-watch .layui-container .watch-content .line {
+  width: 311px;
+  height: 1px;
+  background-color: #e5e5e5;
+  margin: 25px 0 28px;
+}
+#video .all-watch .layui-container .watch-content p {
+  color: #666;
+}
+#video .case-study {
+  padding: 30px 0 58px;
+}
+#video .case-study .layui-container .study-nav {
+  margin-bottom: 41px;
+}
+#video .case-study .layui-container .study-nav li {
+  margin-right: 88px;
+  height: 28px;
+  line-height: 24px;
+  cursor: pointer;
+}
+#video .case-study .layui-container .study-nav li p {
+  color: #333;
+}
+#video .case-study .layui-container .study-nav li div {
+  display: none;
+  width: 41px;
+  height: 4px;
+  background: #00cc99;
+  border-radius: 3px;
+}
+#video .case-study .layui-container .study-nav li:hover p {
+  color: #00cc99;
+}
+#video .case-study .layui-container .study-nav li:hover div {
+  display: block;
+}
+#video .case-study .layui-container .study-nav .active p {
+  color: #00cc99;
+}
+#video .case-study .layui-container .study-nav .active div {
+  display: block;
+}
+#video .case-study .layui-container .study-content .study-item {
+  display: none;
+}
+#video .case-study .layui-container .study-content .study-item .study-box li {
+  display: inline-block;
+  padding: 7px;
+  width: 23%;
+  margin-right: 25px;
+  margin-bottom: 20px;
+  height: 256px;
+  border: 1px solid #E5E5E5;
+  border-radius: 10px;
+}
+#video .case-study .layui-container .study-content .study-item .study-box li:nth-child(4n) {
+  margin-right: 0;
+}
+#video .case-study .layui-container .study-content .study-item .study-box li:hover {
+  box-shadow: 0px 5px 9px 0px rgba(20, 20, 20, 0.11);
+}
+#video .case-study .layui-container .study-content .study-item .study-box li img {
+  width: 100%;
+  object-fit: cover;
+}
+#video .case-study .layui-container .study-content .study-item .study-box li .txt {
+  padding-left: 11px;
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+#video .case-study .layui-container .study-content .study-item .study-box li .txt h6 {
+  color: #333;
+  margin-bottom: 15px;
+}
+#video .case-study .layui-container .study-content .study-item .study-box li .txt p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+#video .case-study .layui-container .study-content .study-item .study-box li .txt p span {
+  color: #00cc99;
+}
+#video .case-study .layui-container .study-content .study-item .study-box li .txt span {
+  color: #999;
+  font-size: 12px;
+}
+#video .case-study .layui-container .study-content .study-item button {
+  width: 135px;
+  height: 40px;
+  border: 1px solid #00CD9A;
+  border-radius: 20px;
+  display: block;
+  margin: 67px auto 0;
+  background-color: transparent;
+  color: #00cc99;
+  cursor: pointer;
+}
+#video .case-study .layui-container .study-content .study-item button:hover {
+  color: #fff;
+  background-color: #00cc99;
+  border: 0;
+}
+#video .case-study .layui-container .study-content .active {
+  display: block;
+}
