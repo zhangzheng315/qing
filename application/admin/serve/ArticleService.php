@@ -135,4 +135,18 @@ class ArticleService extends Common{
         $this->setMessage('删除成功');
         return true;
     }
+
+    /**
+     * 文章数量
+     * @return int|string
+     * @throws \think\Exception
+     */
+    public function articleCount()
+    {
+        $where = [
+            'deleted_time'=>0
+        ];
+        $count = $this->article->where($where)->count('id');
+        return $count;
+    }
 }

@@ -165,6 +165,13 @@ class CaseService extends Common{
         return ['data'=>$res,'count'=>$count,'index'=>$param['pid'],'curr'=>$param['curr']];
     }
 
+    /**
+     * 精选案例
+     * @return bool|false|\PDOStatement|string|\think\Collection
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
     public function getCaseSelected()
     {
         $where = [
@@ -179,5 +186,12 @@ class CaseService extends Common{
         }
         $this->setMessage('查询成功');
         return $res;
+    }
+
+    public function caseCount()
+    {
+        $where = ['deleted_time' => 0];
+        $count = $this->case->where($where)->count('id');
+        return $count;
     }
 }
