@@ -11,6 +11,16 @@ class Navigation extends Controller
     {
         $navigation_service = new NavigationService();
         $nav_list = $navigation_service->navigationListClass();
-        return ['status'=>200,'nav_list'=>$nav_list];
+
+        $url = request()->param()['url'];
+        $last = substr($url, -1);
+        if ($last == '/') {
+            $nav_id = 1;
+        }else{
+            $url_arr = explode('/', $url);
+            $controller = $url_arr[count($url_arr)-2];
+            $nav_id = $navigation_service->getActive($controller);
+        }
+        return ['status'=>200,'nav_list'=>$nav_list,'nav_id'=>$nav_id];
     }
 }
