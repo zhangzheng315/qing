@@ -1,0 +1,325 @@
+@media screen and (min-width: 1200px) {
+    .layui-container {
+        width: 1200px !important;
+        padding: 0 !important;
+    }
+}
+
+#video {
+    .flex {
+        display: flex;
+        align-items: center;
+    }
+
+    header {
+        height: 65px;
+        padding: 10px 0;
+        box-sizing: border-box;
+
+        .layui-container {
+
+            justify-content: space-between;
+
+            .head-right {
+                .text {
+                    margin-right: 64px;
+
+                    a {
+                        color: #999;
+                        font-size: 14px;
+                        margin-right: 48px;
+
+                        &:nth-child(2) {
+                            margin-right: 0px;
+
+                        }
+                    }
+
+                }
+
+                .btns {
+                    button {
+                        border: none;
+                        width: 103px;
+                        height: 30px;
+                        border-radius: 15px;
+                        cursor: pointer;
+                        font-size: 14px;
+                    }
+
+                    .login {
+                        background-color: #fff;
+                        color: #00cc99;
+                        border: 1px solid #00cc99;
+                        margin-right: 41px;
+
+                        &:hover {
+                            background-color: #00cc99;
+                            color: #fff;
+                            border: none;
+                        }
+
+                    }
+
+                    .free-btn {
+                        background-color: #00cc99;
+                        color: #fff;
+
+                        &:hover {
+                            background-color: #fff;
+                            color: #00cc99;
+                            border: 1px solid #00cc99;
+
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+
+    .video-nav {
+        height: 65px;
+        background: #2D2D2D;
+        box-shadow: 0px 4px 6px 0px rgba(193, 193, 193, 0.28);
+
+        a {
+            display: block;
+            color: #fff;
+            font-size: 16px;
+            width: 9%;
+            height: 65px;
+            line-height: 65px;
+            text-align: center;
+            margin-right: 48px;
+            box-sizing: border-box;
+
+            &:hover {
+                color: #00cc99;
+                border-bottom: 2px solid #00cc99;
+            }
+        }
+
+        .active {
+            color: #00cc99;
+            border-bottom: 2px solid #00cc99;
+        }
+    }
+
+    .all-watch {
+        padding: 61px 0 71px;
+        background-color: #f2f4f7;
+
+        .layui-container {
+            .watch-text {
+                .text-title {
+                    margin-right: 50px;
+
+                    h6 {
+                        color: #333;
+                        margin-bottom: 3px;
+                    }
+
+                    .underline {
+                        width: 41px;
+                        height: 4px;
+                        background: #00cc99;
+                        border-radius: 3px;
+
+                    }
+                }
+
+                .more {
+                    font-size: 14px;
+                    color: #666;
+                }
+            }
+
+            .watch-content {
+                width: 100%;
+                height: 693px;
+                background: #FFFFFF;
+                border: 1px solid #E5E5E5;
+                border-radius: 10px;
+                margin-top: 30px;
+                padding: 48px 51px 0;
+                box-sizing: border-box;
+
+                .content-text {
+                    margin-top: 37px;
+
+                    h5 {
+                        font-size: 20px;
+                        color: #333;
+                        margin-bottom: 20px;
+                    }
+
+                    .teacher {
+                        div {
+                            margin-right: 60px;
+                            color: #333;
+
+                            span {
+                                color: #00cc99;
+                            }
+
+                            .num {
+                                color: #F75B5B;
+                            }
+                        }
+                    }
+                }
+
+                .line {
+                    width: 311px;
+                    height: 1px;
+                    background-color: #e5e5e5;
+                    margin: 25px 0 28px;
+                }
+
+                p {
+                    color: #666;
+                }
+            }
+        }
+    }
+
+    .case-study {
+        padding: 30px 0 58px;
+
+        .layui-container {
+            .study-nav {
+                margin-bottom: 41px;
+
+                li {
+                    margin-right: 88px;
+                    height: 28px;
+                    line-height: 24px;
+                    cursor: pointer;
+
+                    p {
+                        color: #333;
+                        // margin-bottom: 3px;
+
+                    }
+
+                    div {
+                        display: none;
+                        width: 41px;
+                        height: 4px;
+                        background: #00cc99;
+                        border-radius: 3px;
+                    }
+
+                    &:hover {
+                        p {
+                            color: #00cc99;
+                        }
+
+                        div {
+                            display: block;
+                        }
+                    }
+
+                }
+
+                .active {
+                    p {
+                        color: #00cc99;
+                    }
+
+                    div {
+                        display: block;
+                    }
+                }
+            }
+
+            .study-content {
+                .study-item {
+                    display: none;
+
+                    .study-box {
+
+                        li {
+                            display: inline-block;
+                            padding: 7px;
+                            width: 23%;
+                            margin-right: 25px;
+                            margin-bottom: 20px;
+                            height: 256px;
+                            border: 1px solid #E5E5E5;
+                            border-radius: 10px;
+
+                            &:nth-child(4n) {
+                                margin-right: 0;
+                            }
+
+                            &:hover {
+                                box-shadow: 0px 5px 9px 0px rgba(20, 20, 20, 0.11);
+                            }
+
+                            img {
+                                width: 100%;
+                                object-fit: cover;
+                            }
+
+                            .txt {
+                                padding-left: 11px;
+                                box-sizing: border-box;
+                                margin-top: 20px;
+
+                                h6 {
+                                    color: #333;
+                                    margin-bottom: 15px;
+
+                                }
+
+                                p {
+                                    font-size: 14px;
+                                    color: #666;
+                                    margin-bottom: 10px;
+
+                                    span {
+                                        color: #00cc99;
+                                    }
+                                }
+
+                                span {
+                                    color: #999;
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+
+                   
+
+                    button {
+                        width: 135px;
+                        height: 40px;
+                        border: 1px solid #00CD9A;
+                        border-radius: 20px;
+                        display: block;
+                        margin: 67px auto 0;
+                        background-color: transparent;
+                        color: #00cc99;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: #fff;
+                            background-color: #00cc99;
+                            border: 0;
+                        }
+                    }
+                }
+                .active {
+                    display: block;
+                }
+
+            }
+
+
+        }
+    }
+}
