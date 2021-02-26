@@ -34,7 +34,7 @@ class Solution extends Controller
       return $this->fetch();
     }
     /* 解决方案-在线课堂 */
-    public function onlineclass()
+    public function onlineClass()
     {
       return $this->fetch();
     }
