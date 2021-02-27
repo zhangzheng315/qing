@@ -2,14 +2,14 @@
 
 namespace app\index\controller;
 
-use app\admin\serve\JoinUsService;
+// use app\admin\serve\JoinUsService;
 use think\Controller;
 
 class QingSchool extends Controller
 {
     public function index()
     {
-        return $this->fetch();
+      return $this->fetch();
     }
 
     public function videoCourse()
