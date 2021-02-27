@@ -9,9 +9,7 @@ class QingSchool extends Controller
 {
     public function index()
     {
-        $joinUsService = new JoinUsService();
-        $join_list = $joinUsService->joinUsList();
-        return $this->fetch('',compact('join_list'));
+        return $this->fetch();
     }
 
     public function videoCourse()

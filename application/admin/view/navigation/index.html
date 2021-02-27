@@ -149,7 +149,7 @@
         child_num++;
         let aa = '';
         for (let n = 0; n < child_num; n++) {
-            aa += '— — '
+            aa += '——'
         }
         for (let item of arr) {
             if (item.id === selected) {
@@ -158,6 +158,7 @@
                 $('.pid').append('<option value="'+item.id+'">'+aa+item.menu_name+'</option>');
             }
             if (item.sub.length !== 0) {
+                child_num = 1;
                 childSub(item.sub)
             }
         }
