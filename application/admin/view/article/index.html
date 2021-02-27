@@ -267,15 +267,17 @@
                         $('#order').val(res.data.order);
                         $('#pid').empty();
                         $('#label_check').empty();
+                        //状态
                         if (res.data.status === 0) {
                             $('#status').removeAttr('checked');
                         } else {
-                            $('#status').prop('checked', true);
+                            $('#status').attr('checked', true);
                         }
+                        //热门文章
                         if (res.data.hot_article === 0) {
                             $('#hot_article').removeAttr('checked');
                         } else {
-                            $('#hot_article').prop('checked', true);
+                            $('#hot_article').attr('checked', true);
                         }
                         for (let item of res.data.article_type) {
                             if (res.data.pid === item.id) {

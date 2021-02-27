@@ -44,7 +44,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">排序</label>
             <div class="layui-input-block">
-                <input type="text"  name="order" placeholder="请输入(数值越大，排序越靠前)" autocomplete="off"
+                <input type="text" name="order" placeholder="请输入(数值越大，排序越靠前)" autocomplete="off"
                        class="layui-input">
             </div>
         </div>
@@ -142,7 +142,7 @@
                         if (res.data.status === 0) {
                             $('#status').removeAttr('checked');
                         } else {
-                            $('#status').prop('checked', true);
+                            $('#status').attr('checked', true);
                         }
 
                         form.render();
@@ -151,25 +151,23 @@
 
             } else if (layEvent === 'del') { //删除
                 layer.confirm('真的要删除吗？', {
-                    btn:['确定吧','取消'],
-                },function () {
-                    $.post('/admin/video_type/videoTypeDelete',{id: data.id}, (res) => {
-                        if (res.status === 200) {
-                            layer.msg(res.message);
-                            setTimeout(()=>{
-                                window.location.reload()
-                            },500)
-                        }else{
-                            layer.msg(res.message);
-                        }
-                    })
+                        btn: ['确定吧', '取消'],
+                    }, function () {
+                        $.post('/admin/video_type/videoTypeDelete', {id: data.id}, (res) => {
+                            if (res.status === 200) {
+                                layer.msg(res.message);
+                                setTimeout(() => {
+                                    window.location.reload()
+                                }, 500)
+                            } else {
+                                layer.msg(res.message);
+                            }
+                        });
                     }
                 );
             }
         });
-
     });
-
 
 </script>
 {/block}
