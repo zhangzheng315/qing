@@ -149,7 +149,7 @@
         child_num++;
         let aa = '';
         for (let n = 0; n < child_num; n++) {
-            aa += '— — '
+            aa += '——'
         }
         for (let item of arr) {
             if (item.id === selected) {
@@ -158,6 +158,7 @@
                 $('.pid').append('<option value="'+item.id+'">'+aa+item.menu_name+'</option>');
             }
             if (item.sub.length !== 0) {
+                child_num = 1;
                 childSub(item.sub)
             }
         }
@@ -215,7 +216,7 @@
                         if (res.data.status === 0) {
                             $('#status').removeAttr('checked');
                         } else {
-                            $('#status').prop('checked', true);
+                            $('#status').attr('checked', true);
                         }
                         for (let item of res.data.nav_list) {
                             if (item.id === selected) {

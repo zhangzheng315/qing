@@ -194,4 +194,23 @@ class CaseService extends Common{
         $count = $this->case->where($where)->count('id');
         return $count;
     }
+
+    public function caseListByPid($pid)
+    {
+        $where = [
+            'status'=>1,
+            'deleted_time' => 0,
+            'pid' => $pid,
+        ];
+        $res = $this->case->where($where)->limit(0,9)->select();
+        foreach ($res as &$item) {
+            $item['time'] = $item['updated_time'] == 0 ? date('Y-m-d H:i', $item['updated_time']) : date('Y-m-d H:i', $item['created_time']);
+        }
+        if (!$res) {
+            $this->setError('暂无数据');
+            return false;
+        }
+        $this->setMessage('查询成功');
+        return $res;
+    }
 }

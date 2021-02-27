@@ -194,6 +194,7 @@
                 $('.pid').append('<option value="'+item.id+'">'+aa+item.menu_name+'</option>');
             }
             if (item.sub.length !== 0) {
+                child_num = 1;
                 childSub(item.sub)
             }
         }
@@ -285,7 +286,7 @@
                         if (res.data.status === 0) {
                             $('#status').removeAttr('checked');
                         } else {
-                            $('#status').prop('checked', true);
+                            $('#status').attr('checked', true);
                         }
 
                         //父级

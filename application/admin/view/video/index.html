@@ -489,13 +489,13 @@
                         if (res.data.status === 0) {
                             $('#status').removeAttr('checked');
                         } else {
-                            $('#status').prop('checked', true);
+                            $('#status').attr('checked', true);
                         }
 
                         if (res.data.video_selected === 0) {
                             $('#video_selected').removeAttr('checked');
                         } else {
-                            $('#video_selected').prop('checked', true);
+                            $('#video_selected').attr('checked', true);
                         }
                         //父级
                         for (let item of res.data.video_type_list) {

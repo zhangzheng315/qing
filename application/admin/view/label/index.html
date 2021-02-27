@@ -49,6 +49,12 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">热门标签</label>
+            <div class="layui-input-block">
+                <input name="hot_label" value="1" type="checkbox" lay-skin="switch">
+            </div>
+        </div>
+        <div class="layui-form-item">
             <label class="layui-form-label">启用</label>
             <div class="layui-input-block">
                 <input name="status" value="1" type="checkbox" checked lay-skin="switch">
@@ -76,6 +82,12 @@
                 <input type="text" id="order" name="order" placeholder="请输入(数值越大，排序越靠前)" autocomplete="off"
                        class="layui-input">
                 <input type="hidden" id="id" name="id" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">热门标签</label>
+            <div class="layui-input-block">
+                <input name="hot_label" id="hot_label" value="1" type="checkbox" lay-skin="switch">
             </div>
         </div>
         <div class="layui-form-item">
@@ -114,6 +126,7 @@
                     field: 'id', title: 'ID', width: 80, sort: true, fixed: 'left'
                 }
                 , {field: 'name', title: '标签名称'}
+                , {field: 'hot_label', title: '热门标签'}
                 , {field: 'order', title: '排序'}
                 , {field: 'status', title: '状态'}
                 , {fixed: 'right', width: 150, title: '操作', align: 'center', toolbar: '#barDemo'}
@@ -142,7 +155,12 @@
                         if (res.data.status === 0) {
                             $('#status').removeAttr('checked');
                         } else {
-                            $('#status').prop('checked', true);
+                            $('#status').attr('checked', true);
+                        }
+                        if (res.data.hot_label === 0) {
+                            $('#hot_label').removeAttr('checked');
+                        } else {
+                            $('#hot_label').attr('checked', true);
                         }
 
                         form.render();

@@ -344,12 +344,12 @@
                         if (res.data.status === 0) {
                             $('#status').removeAttr('checked');
                         } else {
-                            $('#status').prop('checked', true);
+                            $('#status').attr('checked', true);
                         }
                         if (res.data.case_selected === 0) {
                             $('#case_selected').removeAttr('checked');
                         } else {
-                            $('#case_selected').prop('checked', true);
+                            $('#case_selected').attr('checked', true);
                         }
                         for (let item of res.data.case_type) {
                             if (res.data.pid === item.id) {
