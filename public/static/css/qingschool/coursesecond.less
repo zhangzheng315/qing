@@ -1,0 +1,787 @@
+@media screen and (min-width: 1200px) {
+    .layui-container {
+        width: 1200px !important;
+        padding: 0 !important;
+    }
+}
+
+#course {
+    .flexs {
+        display: flex;
+        align-items: center;
+    }
+
+    header {
+        height: 90px;
+        box-sizing: border-box;
+        padding-top: 23px;
+
+        .layui-container {
+            .logo {
+                margin-right: 41px;
+            }
+
+            ul {
+                li {
+                    color: #333;
+                    margin-right: 41px;
+                    font-size: 16px;
+
+                }
+            }
+
+            .layui-form-item {
+                height: 34px;
+                width: 208px;
+                margin-bottom: 0;
+                margin-left: 10px;
+
+                .layui-input-block {
+                    height: 100%;
+                    width: 100%;
+                    margin: 0;
+                    min-height: 20px;
+                    position: relative;
+
+                    .layui-input {
+                        width: 100%;
+                        height: 100%;
+                        border: 0;
+                        background-color: #F4F4F4;
+                    }
+
+                    .icons {
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        background-color: #00cc99;
+                        width: 43px;
+                        height: 100%;
+                        text-align: center;
+                        line-height: 2.3;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            a {
+                color: #333;
+                font-size: 16px;
+                margin: 0 50px;
+            }
+
+            .login {
+                button {
+                    font-size: 16px;
+                    color: #333;
+                    border: 0;
+                    background-color: transparent;
+                    cursor: pointer;
+                }
+
+                span {
+                    margin: 0 10px;
+                }
+            }
+        }
+    }
+
+    .nav-second {
+        height: 100px;
+        background: #2D2D2D;
+        line-height: 100px;
+
+        .layui-container {
+            font-size: 16px;
+
+            span {
+                color: #fff;
+                cursor: pointer;
+
+                &:hover {
+                    color: #00cc99;
+                }
+            }
+
+            i {
+                color: #BDBDBD;
+                margin: 0 17px;
+                font-weight: bold;
+            }
+
+            .active {
+                color: #00cc99;
+            }
+        }
+    }
+
+    .study-direction {
+        height: 150px;
+
+        .direction-item {
+            padding: 0 20px;
+            margin: 26px 0 45px;
+
+            .item-title {
+                width: 66px;
+                font-size: 16px;
+                color: #999999;
+            }
+
+            ul {
+                li {
+                    margin-left: 69px;
+
+                    a {
+                        font-size: 16px;
+                        color: #333;
+                    }
+
+                    .active {
+                        color: #00cc99;
+                    }
+                }
+            }
+        }
+    }
+
+    .checkbox {
+        background-color: #F5F6FA;
+        height: 50px;
+        line-height: 50px;
+
+        .layui-container {
+            padding-left: 155px !important;
+
+            .checkboxs {
+                li {
+                    height: 50px;
+                    line-height: 50px;
+
+                    label {
+                        position: relative;
+
+                        span {
+                            color: #333;
+                            font-size: 16px;
+                            margin-left: 5px;
+                        }
+
+                        input[type="checkbox"] {
+                            border: 0;
+                            background-color: #DEDEDE;
+                        }
+
+                        input[type="checkbox"]::before {
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            background: #DEDEDE;
+                            // width: 100%;
+                            // height: 100%;
+                            border: 0;
+                            border-radius: 4px;
+                        }
+                    }
+
+                    i {
+                        color: #999;
+                        margin: 0 50px;
+                    }
+                }
+            }
+        }
+    }
+
+    .price {
+        height: 107px;
+        line-height: 107px;
+
+        .layui-container {
+            ul {
+                li {
+                    height: 107px;
+                    font-size: 16px;
+                    color: #999;
+                    margin-right: 85px;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: #00cc99;
+                        border-bottom: 7px solid #00cc99;
+                    }
+
+                    i {
+                        position: relative;
+                        width: 8px;
+                        height: 7px;
+                        margin-left: 15px;
+
+                        &:before {
+                            content: "";
+                            position: absolute;
+                            right: 0;
+                            top: 2px;
+                            border-bottom: 4px solid #aaa;
+                            border-left: 4px solid rgba(0, 0, 0, 0);
+                            border-right: 4px solid rgba(0, 0, 0, 0);
+                        }
+
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            right: 0;
+                            bottom: 2px;
+                            border-top: 4px solid #aaa;
+                            border-left: 4px solid rgba(0, 0, 0, 0);
+                            border-right: 4px solid rgba(0, 0, 0, 0);
+                        }
+
+
+                    }
+                }
+            }
+
+            .active {
+                color: #00cc99;
+                border-bottom: 7px solid #00cc99;
+            }
+        }
+    }
+
+    .price-content {
+        padding: 71px 0 85px;
+        background-color: #F5F6FA;
+
+        .layui-container {
+            .study-item {
+                display: none;
+
+                .study-box {
+                    li {
+                        display: inline-block;
+                        padding: 7px;
+                        width: 23%;
+                        margin-right: 25px;
+                        margin-bottom: 20px;
+                        height: 226px;
+                        border: 1px solid #E5E5E5;
+                        border-radius: 10px;
+                        cursor: pointer;
+
+                        &:nth-child(4n) {
+                            margin-right: 0;
+                        }
+
+                        &:hover {
+                            box-shadow: 0px 5px 9px 0px rgba(20, 20, 20, 0.11);
+                        }
+
+                        img {
+                            width: 100%;
+                            object-fit: cover;
+                        }
+
+                        .txt {
+                            padding-left: 11px;
+                            box-sizing: border-box;
+                            margin-top: 20px;
+
+                            h6 {
+                                color: #333;
+                                margin-bottom: 15px;
+                                font-size: 16px;
+
+                            }
+
+                            p {
+                                color: #666;
+                                margin-bottom: 10px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+
+                                span {
+                                    color: #00cc99;
+                                    font-size: 14px;
+
+                                    &:nth-child(2) {
+                                        color: #999;
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+
+            .active {
+                display: block;
+            }
+
+            #test1 {
+                display: flex !important;
+                justify-content: center;
+
+                .layui-laypage {
+
+                    a,
+                    span {
+                        margin: 0 10px;
+                        border: 1px solid #E5E5E5;
+                        border-radius: 5px;
+                    }
+                }
+            }
+
+        }
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1300px) {
+        header {
+            height: 60px;
+            padding-top: 12px;
+
+            .layui-container {
+                width: 100% !important;
+
+                .logo {
+                    margin-right: 15px;
+
+                    img {
+                        width: 86px;
+                    }
+                }
+
+                ul {
+                    li {
+                        margin-right: 15px;
+                        font-size: 12px;
+
+                    }
+                }
+
+                .layui-form-item {
+                    height: 30px;
+                    width: 138px;
+                    margin-left: 5px;
+
+                    .layui-input-block {
+                        .layui-input {
+                            font-size: 12px;
+                        }
+
+                        .icons {
+                            width: 35px;
+                            line-height: 2;
+                        }
+                    }
+                }
+
+                a {
+                    font-size: 12px;
+                    margin: 0 20px;
+                }
+
+                .login {
+                    button {
+                        font-size: 12px;
+                    }
+
+                    span {
+                        margin: 0 7px;
+                    }
+                }
+            }
+        }
+
+        .nav-second {
+            height: 70px;
+            line-height: 70px;
+
+            .layui-container {
+                font-size: 14px;
+
+                i {
+                    margin: 0 12px;
+                }
+            }
+        }
+
+        .study-direction {
+            height: 105px;
+
+            .direction-item {
+                padding: 0 20px;
+                margin: 20px 0 32px;
+
+                .item-title {
+                    width: 63px;
+                    font-size: 14px;
+                }
+
+                ul {
+                    li {
+                        margin-left: 30px;
+
+                        a {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .checkbox {
+            height: 45px;
+            line-height: 45px;
+
+            .layui-container {
+                padding-left: 55px !important;
+
+                .checkboxs {
+                    li {
+                        height: 45px;
+                        line-height: 45px;
+
+                        label {
+                            span {
+                                font-size: 14px;
+                                margin-left: 5px;
+                            }
+
+                            input[type="checkbox"]::before {
+                                content: "";
+                                border: 0;
+                                border-radius: 4px;
+                            }
+                        }
+
+                        i {
+                            margin: 0 30px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .price {
+            height: 70px;
+            line-height: 70px;
+
+            .layui-container {
+                ul {
+                    li {
+                        height: 70px;
+                        font-size: 14px;
+                        margin-right: 55px;
+
+                        &:hover {
+                            border-bottom: 5px solid #00cc99;
+                        }
+                    }
+                }
+
+                .active {
+                    border-bottom: 5px solid #00cc99;
+                }
+            }
+        }
+
+        .price-content {
+            padding: 41px 0 45px;
+
+            .layui-container {
+                width: 100% !important;
+                padding: 0 10px !important;
+
+                .study-item {
+                    display: none;
+
+                    .study-box {
+                        li {
+                            width: 23%;
+                            margin-right: 21px;
+                            margin-bottom: 16px;
+                            height: 226px;
+
+                            .txt {
+                                padding-left: 8px;
+                                margin-top: 15px;
+
+                                h6 {
+                                    margin-bottom: 9px;
+                                }
+
+                                p {
+                                    font-size: 14px;
+                                    margin-bottom: 7px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .active {
+                    display: block;
+                }
+
+                #test1 {
+                    display: flex !important;
+                    justify-content: center;
+
+                    .layui-laypage {
+
+                        a,
+                        span {
+                            margin: 0 10px;
+                            border: 1px solid #E5E5E5;
+                            border-radius: 5px;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 954px) {
+        .price-content {
+            padding: 31px 0 35px;
+
+            .layui-container {
+                .study-item {
+                    .study-box {
+                        li {
+                            width: 23%;
+                            margin-right: 15px;
+                            margin-bottom: 16px;
+                            height: 166px;
+
+                            .txt {
+                                padding-left: 8px;
+                                margin-top: 11px;
+
+                                h6 {
+                                    margin-bottom: 7px;
+                                    font-size: 14px;
+                                }
+
+                                p {
+                                    margin-bottom: 5px;
+
+                                    span {
+                                        font-size: 12px;
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width:768px) {
+        header {
+            height: 80px;
+            padding-top: 0px;
+            position: relative;
+
+            .layui-container {
+                width: 100% !important;
+                height: 80%;
+                .logo {
+                    margin-right: 15px;
+
+                    img {
+                        width: 66px;
+                    }
+                }
+
+                ul {
+                    position: absolute;
+                    bottom: -5px;
+                    li {
+                        margin-right: 20px;
+                        font-size: 12px;
+
+                    }
+                }
+
+                .layui-form-item {
+                    height: 26px;
+                    width: 128px;
+                    margin-left: 5px;
+
+                    .layui-input-block {
+                        .layui-input {
+                            font-size: 12px;
+                        }
+
+                        .icons {
+                            width: 30px;
+                            line-height: 1.8;
+                            img {
+                                width: 15px;
+                            }
+                        }
+                    }
+                }
+
+                a {
+                    font-size: 12px;
+                    margin: 0 15px;
+                }
+
+                .login {
+                    button {
+                        font-size: 12px;
+                    }
+
+                    span {
+                        margin: 0 7px;
+                    }
+                }
+            }
+        }
+
+        .nav-second {
+            height: 50px;
+            line-height: 50px;
+
+            .layui-container {
+                width: 90%;
+                font-size: 12px;
+                i {
+                    margin: 0 10px;
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .study-direction {
+            height: 95px;
+            .direction-item {
+                padding: 0px;
+                margin: 10px 0 16px;
+
+                .item-title {
+                    width: 71px;
+                    font-size: 12px;
+                }
+
+                ul {
+                    flex-wrap: wrap;
+                    li {
+                        margin-left: 20px;
+                        margin-bottom: 6px;
+                        a {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .checkbox {
+            height: 40px;
+            line-height: 40px;
+
+            .layui-container {
+                padding-left: 15px !important;
+
+                .checkboxs {
+                    li {
+                        height: 40px;
+                        line-height: 40px;
+
+                        label {
+                            span {
+                                font-size: 12px;
+                                margin-left: 2px;
+                            }
+
+                            input[type="checkbox"]::before {
+                                content: "";
+                                border: 0;
+                                border-radius: 4px;
+                            }
+                        }
+
+                        i {
+                            margin: 0 12px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .price {
+            height: 45px;
+            line-height: 45px;
+
+            .layui-container {
+                ul {
+                    li {
+                        height: 45px;
+                        font-size: 12px;
+                        margin-right: 45px;
+
+                        &:hover {
+                            border-bottom: 3px solid #00cc99;
+                        }
+                    }
+                }
+
+                .active {
+                    border-bottom: 3px solid #00cc99;
+                }
+            }
+        }
+
+        .price-content {
+            padding: 18px 0 22px;
+
+            .layui-container {
+                .study-item {
+                    .study-box {
+                        li {
+                            width: 47%;
+                            margin-right: 4%;
+                            margin-bottom: 16px;
+                            height: 150px;
+                            .txt {
+                                padding-left: 5px;
+                                margin-top: 10px;
+
+                                h6 {
+                                    margin-bottom: 6px;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    white-space: nowrap;
+                                    font-size: 14px;
+                                }
+
+                                p {
+                                    margin-bottom: 5px;
+                                    span {
+                                        font-size: 12px;
+
+                                    }
+                                }
+                            }
+
+                            &:nth-child(2n) {
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

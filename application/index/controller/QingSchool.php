@@ -16,4 +16,8 @@ class QingSchool extends Controller
     {
       return $this->fetch();
     }
+    public function courseSecond()
+    {
+      return $this->fetch();
+    }
 }
