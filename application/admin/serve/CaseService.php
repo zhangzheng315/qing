@@ -188,6 +188,11 @@ class CaseService extends Common{
         return $res;
     }
 
+    /**
+     * 案例数量（后台首页展示）
+     * @return int|string
+     * @throws \think\Exception
+     */
     public function caseCount()
     {
         $where = ['deleted_time' => 0];
@@ -195,6 +200,14 @@ class CaseService extends Common{
         return $count;
     }
 
+    /**
+     * 关于轻直播--我们的优势--合作伙伴
+     * @param $pid
+     * @return bool|false|\PDOStatement|string|\think\Collection
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
     public function caseListByPid($pid)
     {
         $where = [

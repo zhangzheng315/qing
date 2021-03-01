@@ -37,7 +37,11 @@
             <label class="layui-form-label">选择父级</label>
             <div class="layui-input-block">
                 <select name="pid" class="pid">
-
+                    {if isset($pid_list)}
+                    {foreach($pid_list as $key=>$val)}
+                    <option value="{$key}">{$val}</option>
+                    {/foreach}
+                    {/if}
                 </select>
             </div>
         </div>
@@ -160,47 +164,6 @@
     </div>
 </script>
 <script>
-    var child_num = 0;
-    var selected = 0;
-    $.ajax({
-        url: "/admin/navigation/navigationListClass",
-        success:function (res) {
-            if (res.status === 200) {
-                for (let item of res.data) {
-                    $('.pid').append('<option value="'+item.id+'">'+item.menu_name+'</option>')
-                    if (item.sub.length !== 0) {
-                        child_num = 0;
-                        childSub(item.sub)
-                    }
-                }
-            }
-            layui.form.render();
-        }
-
-    })
-    //无限分类递归
-    function childSub(arr) {
-        console.log(11);
-        if(arr.length === 0) return false;
-        child_num++;
-        let aa = '';
-        for (let n = 0; n < child_num; n++) {
-            aa += '——'
-        }
-        for (let item of arr) {
-            if (item.id === selected) {
-                $('.pid').append('<option value="'+item.id+'" selected>'+aa+item.menu_name+'</option>');
-            }else{
-                $('.pid').append('<option value="'+item.id+'">'+aa+item.menu_name+'</option>');
-            }
-            if (item.sub.length !== 0) {
-                child_num = 1;
-                childSub(item.sub)
-            }
-        }
-    }
-</script>
-<script>
     //图片弹出
     function imgPoint(obj) {
         var img = new Image();
@@ -242,7 +205,7 @@
         table.render({
             elem: '#table-rule'
             , height: 850
-            , url: '/admin/banner/getBannerList' //数据接口
+            , url: '/admin/q_banner/getQBannerList' //数据接口
             , page: true //开启分页
             , cols: [[ //表头
                 {field: 'id', title: 'ID', width: 80, sort: true}
@@ -264,7 +227,7 @@
             var tr = obj.tr; //获得当前行 tr 的 DOM 对象（如果有的话）
 
             if (layEvent === 'info') { //查看
-                $.post('/admin/banner/bannerInfo', {id: data.id}, (res) => {
+                $.post('/admin/q_banner/QBannerInfo', {id: data.id}, (res) => {
                     console.log(res);
                     if (res.status === 200) {
                         layer.open({
@@ -288,15 +251,11 @@
                         } else {
                             $('#status').attr('checked', true);
                         }
-                        for (let item of res.data.navigation_list) {
-                            if (res.data.pid === item.id) {
-                                $('.pid').append('<option value="' + item.id + '" selected>' + item.menu_name + '</option>')
+                        for (let item in res.data.pid_list) {
+                            if (res.data.pid === item) {
+                                $('.pid').append('<option value="' + item + '" selected>' + res.data.pid_list[item] + '</option>')
                             } else {
-                                $('.pid').append('<option value="' + item.id + '">' + item.menu_name + '</option>')
-                            }
-                            if (item.sub.length !== 0) {
-                                child_num = 0;
-                                childSub(item.sub)
+                                $('.pid').append('<option value="' + item + '">' + res.data.pid_list[item] + '</option>')
                             }
                         }
 
@@ -308,7 +267,7 @@
                 layer.confirm('真的要删除吗？', {
                         btn:['确定吧','取消'],
                     },function () {
-                        $.post('/admin/banner/bannerDelete',{id: data.id}, (res) => {
+                        $.post('/admin/q_banner/QBannerDelete',{id: data.id}, (res) => {
                             if (res.status === 200) {
                                 layer.msg(res.message);
                                 setTimeout(()=>{

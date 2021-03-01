@@ -38,6 +38,7 @@ class Article extends Common{
         foreach ($str['data'] as &$value) {
             $value['status'] = $value['status'] == 1 ? '显示' : '不显示';
             $value['hot_article'] = $value['hot_article'] == 1 ? '是' : '否';
+            $value['content_center'] = $value['content_center'] == 1 ? '是' : '否';
         }
         return layshow($this->code,'ok',$str['data'],$str['count']);
     }

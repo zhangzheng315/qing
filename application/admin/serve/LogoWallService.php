@@ -159,4 +159,31 @@ class LogoWallService extends Common{
         return $res;
     }
 
+    public function logoListAdvantage()
+    {
+        $where = [
+            'status'=>1,
+            'deleted_time' => 0,
+            'pid' => 17,
+        ];
+        $res = $this->logoWall->where($where)->limit(0,15)->select();
+        $arr_count = count($res);
+        $logo_list = [];
+        if ($arr_count <= 5) {
+            $page = 1;
+        } elseif ($arr_count > 5 && $arr_count <= 10) {
+            $page = 2;
+        } elseif ($arr_count > 10 && $arr_count <= 15) {
+            $page = 3;
+        }
+        for ($i = 0; $i < $page; $i++) {
+            $logo_list[] = array_slice($res, $i * 5, 5);
+        }
+        if (!$logo_list) {
+            $this->setError('暂无数据');
+            return false;
+        }
+        $this->setMessage('查询成功');
+        return $logo_list;
+    }
 }

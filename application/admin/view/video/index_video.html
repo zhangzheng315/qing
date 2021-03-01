@@ -46,7 +46,6 @@
         <div class="layui-row layui-col-space15">
             <div class="layui-col-md12">
                 <div class="layui-card">
-                    <button class="layui-btn" onclick="add()"><i class="layui-icon"></i>增加</button>
                     <!-- 动态表格 -->
                     <table id="table-rule" lay-filter="table-rule"></table>
                 </div>
@@ -55,112 +54,13 @@
     </div>
 
 </div>
-<!-- 中部结束 -->
-<div id="add" style="display: none;">
-    <form class="layui-form"> <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
-        <div class="layui-form-item">
-            <label class="layui-form-label">选择父级</label>
-            <div class="layui-input-block">
-                <select name="pid">
-                    <option value="0">--请选择--</option>
-                    {if isset($video_type_list)}
-                    {foreach $video_type_list as $item }
-                    <option value="{$item.id}">{$item.name}</option>
-                    {/foreach}
-                    {/if}
-                </select>
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">标题</label>
-            <div class="layui-input-block">
-                <input type="text" name="title" placeholder="请输入" autocomplete="off" class="layui-input">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">标签选择</label>
-            <div class="layui-input-block">
-                {if isset($label_list)}
-                {foreach $label_list as $val}
-                <input type="checkbox" name="label[]" value="{$val.name}" title="{$val.name}">
-                {/foreach}
-                {/if}
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">视频学院首页</label>
-            <div class="layui-input-block">
-                <input name="video_selected" value="1" type="checkbox" lay-skin="switch">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">启用</label>
-            <div class="layui-input-block">
-                <input name="status" value="1" type="checkbox" checked lay-skin="switch">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">排序</label>
-            <div class="layui-input-block">
-                <input type="text" name="order" placeholder="请输入(数值越大，排序越靠前)" autocomplete="off" class="layui-input">
-            </div>
-        </div>
-        <div class="layui-form-item layui-form-text">
-            <label class="layui-form-label">简介</label>
-            <div class="layui-input-block">
-                <textarea name="content" placeholder="请输入内容" class="layui-textarea"></textarea>
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">图片上传</label>
-            <div class="layui-input-block">
-                <button type="button" class="layui-btn cover_img_url">
-                    <i class="layui-icon">&#xe67c;</i>上传图片
-                </button>
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label"></label>
-            <div class="layui-input-block">
-                <input type="hidden" name="cover_img_url" class="img_url">
-                <img src="" alt="" width="200px" class="img-show">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">视频上传</label>
-            <div class="layui-input-block">
-                <input type="hidden" name="video_url" class="layui-upload-file video_url">
-                <input  class="select" name="video_up" type="file" id="video_add">
-
-                <button type="button" class="layui-btn" id="videoUp" >
-                    <i class="layui-icon">&#xe681;</i>上传视频
-                </button>
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label"></label>
-            <div class="layui-input-block">
-                <input type="hidden" name="video_url" class="video_url">
-                <video src="" width="320" controls style="display: none" class="video_show">
-                    您的浏览器不支持Video标签。
-                </video>
-                <div class="layui-progress layui-progress-big" lay-showpercent="true" lay-filter="uploadProgress">
-                    <div class="layui-progress-bar layui-bg-red" lay-percent="0%"></div>
-                </div>
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <div class="layui-input-block">
-                <button class="layui-btn" lay-submit lay-filter="add">保存</button>
-            </div>
-        </div>
-        <!-- 更多表单结构排版请移步文档左侧【页面元素-表单】一项阅览 -->
-    </form>
-</div>
-
 
 <div id="edit" style="display: none;">
     <form class="layui-form"> <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
+        <div class="layui-form-item">
+            <label class="layui-form-label"></label>
+            <span style="color: red;font-size: 16px;">仅可更改排序!</span>
+        </div>
         <div class="layui-form-item">
             <label class="layui-form-label">选择父级</label>
             <div class="layui-input-block">
@@ -177,48 +77,26 @@
         <div class="layui-form-item">
             <label class="layui-form-label">标题</label>
             <div class="layui-input-block">
-                <input type="text" id="title" name="title" placeholder="请输入" autocomplete="off" class="layui-input">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">标签选择</label>
-            <div class="layui-input-block" id="label_check">
-                {if isset($label_list)}
-                {foreach $label_list as $val}
-                <input type="checkbox" name="like{$val.id}" value="{$val.id}" title="{$val.name}">
-                {/foreach}
-                {/if}
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">视频学院首页</label>
-            <div class="layui-input-block">
-                <input name="video_selected" id="video_selected" value="1" type="checkbox" lay-skin="switch">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">启用</label>
-            <input type="hidden" name="id" id="id">
-            <div class="layui-input-block">
-                <input name="status" id="status" value="1" type="checkbox" checked lay-skin="switch">
+                <input type="text" id="title" name="title" readonly placeholder="请输入" autocomplete="off" class="layui-input">
+                <input type="hidden" id="id" name="id" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">排序</label>
             <div class="layui-input-block">
-                <input type="text" id="order" name="order" placeholder="请输入(数值越大，排序越靠前)" autocomplete="off" class="layui-input">
+                <input type="text" id="selected_order" name="selected_order" placeholder="请输入(数值越大，排序越靠前)" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item layui-form-text">
             <label class="layui-form-label">简介</label>
             <div class="layui-input-block">
-                <textarea name="content" id="content" placeholder="请输入内容" class="layui-textarea"></textarea>
+                <textarea name="content" id="content" readonly placeholder="请输入内容" class="layui-textarea"></textarea>
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">图片上传</label>
             <div class="layui-input-block">
-                <button type="button" class="layui-btn cover_img_url">
+                <button type="button" class="layui-btn cover_img_url" disabled>
                     <i class="layui-icon">&#xe67c;</i>上传图片
                 </button>
             </div>
@@ -234,9 +112,9 @@
             <label class="layui-form-label">视频上传</label>
             <div class="layui-input-block">
                 <input type="hidden" name="video_url" class="layui-upload-file video_url">
-                <input  class="select" name="video_up" type="file" id="video_edit">
+                <input  class="select" name="video_up" type="file" id="video_edit" disabled>
 
-                <button type="button" class="layui-btn" id="videoEditUp">
+                <button type="button" class="layui-btn" id="videoEditUp" disabled>
                     <i class="layui-icon">&#xe681;</i>上传视频
                 </button>
             </div>
@@ -441,7 +319,7 @@
         table.render({
             elem: '#table-rule'
             , height: 850
-            , url: '/admin/video/getVideoList' //数据接口
+            , url: '/admin/video/getVideoHomeList' //数据接口
             , page: true //开启分页
             , cols: [[ //表头
                 {field: 'id', title: 'ID', width: 80, sort: true}
@@ -449,9 +327,8 @@
                 , {field: 'cover_img_url', title: '封面图', templet:'#imgtmp'}
                 , {field: 'pid_name',title:'所属分类'}
                 , {field: 'title', title: '标题'}
-                , {field: 'video_selected', title: '内容中心'}
                 , {field: 'browse', title: '浏览量'}
-                , {field: 'order', title: '排序'}
+                , {field: 'selected_order', title: '排序'}
                 , {field: 'status', title: '当前状态'}
                 , { width: 150, title: '操作', align: 'center', toolbar: '#barDemo'}
             ]]
@@ -475,7 +352,7 @@
                         });
 
                         $('#title').val(res.data.title);
-                        $('#order').val(res.data.order);
+                        $('#selected_order').val(res.data.selected_order);
                         $('#id').val(res.data.id);
                         $('.img-show').attr('src',res.data.cover_img_url);
                         $('.video_show').attr('src',res.data.video_url);
@@ -485,6 +362,8 @@
                         $('#pid').empty();
                         $('#label_check').empty();
                         $('#content').val(res.data.content);
+
+                        edit_url = '/admin/video/videoHomeEdit';
 
                         //状态
                         if (res.data.status === 0) {
@@ -502,19 +381,8 @@
                         for (let item of res.data.video_type_list) {
                             if (res.data.pid === item.id) {
                                 $('#pid').append('<option value="' + item.id + '" selected>' + item.name + '</option>')
-                            } else {
-                                $('#pid').append('<option value="' + item.id + '">' + item.name + '</option>')
                             }
                         }
-                        //标签
-                        for (let val of res.data.label_list) {
-                            if (res.data.label.indexOf(val.name) > -1) {
-                                $('#label_check').append('<input type="checkbox" name="label[]" checked value="'+ val.name+'" title="'+ val.name +'">')
-                            }else{
-                                $('#label_check').append('<input type="checkbox" name="label[]" value="'+ val.name+'" title="'+ val.name +'">')
-                            }
-                        }
-
                         form.render();
                     }
                 })

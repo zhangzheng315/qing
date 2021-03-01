@@ -19,6 +19,9 @@ class Common extends Controller{
         if (isset($data['deleted_time'])) {
             $contion['deleted_time'] = $data['deleted_time'];
         }
+        if (isset($data['video_selected'])) {
+            $contion['video_selected'] = $data['video_selected'];
+        }
         $page = !empty($data['page']) ? $data['page'] : 1;
         $size = !empty($data['limit']) ? $data['limit'] : 20;
         $form = ($page - 1) * $size;

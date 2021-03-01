@@ -1,32 +1,32 @@
 <?php
 namespace app\admin\serve;
-use app\admin\model\Banner;
-use app\admin\model\Navigation;
-use app\admin\serve\NavigationService;
+use app\admin\model\QBanner;
 use think\Request;
 
 
-class BannerService extends Common{
+class QBannerService extends Common{
 
-    public $banner;
-    public $navigation;
-    public $navigationService;
+    public $QBanner;
+    public $pid_arr = [
+        0 => '内容中心',
+        1 => '案例解析',
+        2 => '产品动态',
+        3 => '直播资讯',
+    ];
     public function __construct(Request $request = null)
     {
         parent::__construct($request);
-        $this->banner = new Banner();
-        $this->navigation = new Navigation();
-        $this->navigationService = new NavigationService();
+        $this->QBanner = new QBanner();
     }
 
     /**
-     * 创建轮播图
+     * 创建轻学院轮播图
      * @param $data
      * @return bool
      */
-    public function bannerCreate($param){
+    public function QBannerCreate($param){
         if(!isset($param['status'])) $param['status'] = 0;
-        $pid_name = $this->navigation->where(['id' => $param['pid']])->value('menu_name');
+        $pid_name = $this->pid_arr[$param['pid']];
         $data = [
             'img_url' => $param['img_url'],
             'pid' => $param['pid'],
@@ -40,7 +40,7 @@ class BannerService extends Common{
             'deleted_time' => 0,
         ];
 
-        $add_id = $this->banner->insertGetId($data);
+        $add_id = $this->QBanner->insertGetId($data);
         if(!$add_id){
             $this->setError('添加失败');
             return false;
@@ -51,33 +51,33 @@ class BannerService extends Common{
 
 
     /**
-     * 导航轮播图
+     * 导航轻学院轮播图
      * @param $param
      * @return array|bool|false|\PDOStatement|string|\think\Model
      * @throws \think\db\exception\DataNotFoundException
      * @throws \think\db\exception\ModelNotFoundException
      * @throws \think\exception\DbException
      */
-    public function bannerInfo($param)
+    public function QBannerInfo($param)
     {
         $id = $param['id'];
         $where = ['id' => $id];
-        $info = $this->banner->find($where);
+        $info = $this->QBanner->find($where);
         if(!$info){
             $this->setError('查询失败');
             return false;
         }
-        $info->navigation_list = $this->navigationService->navigationListClass();
+        $info->pid_list = $this->pid_arr;
         $this->setMessage('查询成功');
         return $info;
     }
 
     /**
-     * 轮播图修改
+     * 轻学院轮播图修改
      * @param $data
      * @return bool
      */
-    public function bannerEdit($data)
+    public function QBannerEdit($data)
     {
         if(!isset($data['status'])) $data['status'] = 0;
         if (isset($data['file'])) {
@@ -85,11 +85,11 @@ class BannerService extends Common{
             unset($data['file']);
         }
         $where = ['id' => $data['id']];
-        $pid_name = $this->navigation->where(['id' => $data['pid']])->value('menu_name');
+        $pid_name = $this->pid_arr[$data['pid']];
         $data['pid_name'] = $pid_name;
         $data['updated_time'] = time();
 
-        $add_id = $this->banner->update($data,$where);
+        $add_id = $this->QBanner->update($data,$where);
         if(!$add_id){
             $this->setError('修改失败');
             return false;
@@ -99,18 +99,18 @@ class BannerService extends Common{
     }
 
     /**
-     * 轮播图删除
+     * 轻学院轮播图删除
      * @param $param
      * @return bool
      */
-    public function bannerDelete($param)
+    public function QBannerDelete($param)
     {
         $where = ['id' => $param['id']];
         $data = [
             'updated_time' => time(),
             'deleted_time' => time(),
         ];
-        $res = $this->banner->update($data,$where);
+        $res = $this->QBanner->update($data,$where);
         if(!$res){
             $this->setError('删除失败');
             return false;
@@ -119,14 +119,14 @@ class BannerService extends Common{
         return true;
     }
 
-    public function bannerListByPid($pid)
+    public function QBannerListByPid($pid)
     {
         $where = [
             'status' => 1,
             'deleted_time' => 0,
             'pid' => $pid,
         ];
-        $res = $this->banner->where($where)->select();
+        $res = $this->QBanner->where($where)->select();
         return $res ? $res : false;
     }
 

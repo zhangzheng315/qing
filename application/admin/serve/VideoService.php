@@ -161,4 +161,23 @@ class VideoService extends Common{
         return $count;
     }
 
+    /**
+     * 轻学院视频首页修改
+     * @param $data
+     * @return bool
+     */
+    public function videoHomeEdit($param)
+    {
+        $where = ['id' => $param['id']];
+        $data['selected_order'] = $param['selected_order'];
+        $data['updated_time'] = time();
+        $add_id = $this->video->update($data,$where);
+        if(!$add_id){
+            $this->setError('修改失败');
+            return false;
+        }
+        $this->setMessage('修改成功');
+        return true;
+    }
+
 }

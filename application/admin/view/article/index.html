@@ -77,6 +77,12 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">内容中心</label>
+            <div class="layui-input-block">
+                <input name="content_center" value="1" type="checkbox" lay-skin="switch">
+            </div>
+        </div>
+        <div class="layui-form-item">
             <label class="layui-form-label">启用</label>
             <div class="layui-input-block">
                 <input name="status" value="1" type="checkbox" checked lay-skin="switch">
@@ -148,6 +154,12 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">内容中心</label>
+            <div class="layui-input-block">
+                <input name="content_center" id="content_center" value="1" type="checkbox" lay-skin="switch">
+            </div>
+        </div>
+        <div class="layui-form-item">
             <label class="layui-form-label">启用</label>
             <div class="layui-input-block">
                 <input name="status" id="status" value="1" type="checkbox" checked lay-skin="switch">
@@ -202,6 +214,7 @@
                 , {field: 'second_title', title: '第二标题'}
                 , {field: 'pid_name', title: '所属分类'}
                 , {field: 'hot_article', title: '热门文章'}
+                , {field: 'content_center', title: '内容中心'}
                 , {field: 'browse', title: '浏览量'}
                 , {field: 'order', title: '排序'}
                 , {field: 'status', title: '状态'}
@@ -278,6 +291,12 @@
                             $('#hot_article').removeAttr('checked');
                         } else {
                             $('#hot_article').attr('checked', true);
+                        }
+                        //内容中心
+                        if (res.data.content_center === 0) {
+                            $('#content_center').removeAttr('checked');
+                        } else {
+                            $('#content_center').attr('checked', true);
                         }
                         for (let item of res.data.article_type) {
                             if (res.data.pid === item.id) {
