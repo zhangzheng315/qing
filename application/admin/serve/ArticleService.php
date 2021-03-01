@@ -2,18 +2,25 @@
 namespace app\admin\serve;
 use app\admin\model\Article;
 use app\admin\model\ArticleType;
+use app\admin\model\ContentCenter;
+use app\admin\model\HotArticle;
+use think\Db;
 use think\Request;
 
 
 class ArticleService extends Common{
 
     public $article;
+    public $hotArticle;
+    public $content_center;
     public $articleType;
     public $labelService;
     public function __construct(Request $request = null)
     {
         parent::__construct($request);
         $this->article = new Article();
+        $this->hotArticle = new HotArticle();
+        $this->content_center = new ContentCenter();
         $this->articleType = new ArticleType();
         $this->labelService = new LabelService();
     }
@@ -26,6 +33,7 @@ class ArticleService extends Common{
     public function articleCreate($param){
         $status = isset($param['status']) ? $param['status'] : 0;
         $hot_article = isset($param['hot_article']) ? $param['hot_article'] : 0;
+        $content_center = isset($param['content_center']) ? $param['content_center'] : 0;
         $pid_name = $this->articleType->where(['id' => $param['pid']])->value('name');
         $label = '';
         if (isset($param['label'])) {
@@ -40,16 +48,36 @@ class ArticleService extends Common{
             'status' => $status,
             'label' => $label,
             'hot_article' => $hot_article,
+            'content_center' => $content_center,
             'order' => $param['order'] ?:0,
             'created_time' => time(),
             'updated_time' => 0,
             'deleted_time' => 0,
         ];
-        $res = $this->article->insertGetId($data);
-        if(!$res){
-            $this->setError('添加失败');
-            return false;
+        Db::startTrans();
+        $id = $this->article->insertGetId($data);
+        unset($data['hot_article']);
+        unset($data['content_center']);
+        $data['id'] = $id;
+        //热门文章
+        if ($hot_article) {
+            $res = $this->hotArticle->save($data);
+            if(!$res){
+                $this->setError('添加失败');
+                Db::rollback();
+                return false;
+            }
         }
+        //内容中心
+        if ($content_center) {
+            $re = $this->content_center->save($data);
+            if(!$re){
+                $this->setError('添加失败');
+                Db::rollback();
+                return false;
+            }
+        }
+        Db::commit();
         $this->setMessage('添加成功');
         return true;
     }
@@ -93,6 +121,7 @@ class ArticleService extends Common{
     {
         if(!isset($data['status'])) $data['status'] = 0;
         if(!isset($data['hot_article'])) $data['hot_article'] = 0;
+        if(!isset($data['content_center'])) $data['content_center'] = 0;
         if (isset($data['file'])) {
             //layui富文本自带file参数
             unset($data['file']);
@@ -106,11 +135,52 @@ class ArticleService extends Common{
 
         $where = ['id' => $data['id']];
         $data['updated_time'] = time();
+        Db::startTrans();
         $res = $this->article->update($data,$where);
         if(!$res){
             $this->setError('修改失败');
+            Db::rollback();
             return false;
         }
+        //查询是否是热门文章
+        $hot_info = $this->hotArticle->where($where)->find();
+        if ($hot_info && !$data['hot_article']) {
+            $rs = $this->hotArticle->where($where)->delete();
+            if(!$rs){
+                $this->setError('修改失败');
+                Db::rollback();
+                return false;
+            }
+        }
+        if (!$hot_info && $data['hot_article']) {
+            $data['created_time'] = time();
+            $rt = $this->hotArticle->allowField(true)->save($data);
+            if(!$rt){
+                $this->setError('修改失败');
+                Db::rollback();
+                return false;
+            }
+        }
+        //查询是否属于内容中心
+        $content_info = $this->content_center->where($where)->find();
+        if ($content_info && !$data['content_center']) {
+            $rs = $this->content_center->where($where)->delete();
+            if(!$rs){
+                $this->setError('修改失败');
+                Db::rollback();
+                return false;
+            }
+        }
+        if (!$content_info && $data['content_center']) {
+            $data['created_time'] = time();
+            $rt = $this->content_center->allowField(true)->save($data);
+            if(!$rt){
+                $this->setError('修改失败');
+                Db::rollback();
+                return false;
+            }
+        }
+        Db::commit();
         $this->setMessage('修改成功');
         return true;
     }
