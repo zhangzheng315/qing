@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轻直播_视频教程</title>
+    <meta name="keywords"  content="轻直播,直播视频教程" />
+    <meta name="description"
+         content="轻直播是国内知名的企业级直播定制化服务平台,服务全球500强,为企业提供医疗直播、手术直播、活动直播、会议直播、营销直播、年会直播等全场景解决方案,热线:400-920-1599。" />
+    <link rel="stylesheet" href="/static/css/tutorial/index.css">
+    <link rel="stylesheet" href="/static/layui/css/layui.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!--封装好的视频布局样式-->
+    <link rel="stylesheet" href="/static/css/about/jsmodern.min.css">
+    <script type='text/javascript' src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/static/layui/layui.js"></script>
+    <!--mp4视频插件-->
+    <script src="/static/common/js/jsmodern.min.js"></script>
+</head>
+
+<body>
+    <div id="tutorial">
+        <header>
+            <div class="layui-container flex-box">
+                <div class="logo">
+                    <a href="">
+                        <img src="/static/image/logo.png" alt="">
+                    </a>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block flex-box">
+                        <input type="text" name="title" required lay-verify="required" placeholder="课程/关键词"
+                            autocomplete="off" class="layui-input">
+                        <div class="icons">
+                            <img src="/static/image/qingschool/search.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <a href="{:url('/')}">轻直播首页</a>
+                <div class="login flex-box">
+                    <button>登录</button>
+                    <button>注册</button>
+                </div>
+            </div>
+        </header>
+
+        <nav class="nav-second flex-box">
+            <div class="layui-container">
+                <span class="active">首页</span>
+                <i class="layui-icon layui-icon-right"></i>
+                <span class="active">点播公开课</span>
+                <i class="layui-icon layui-icon-right"></i>
+                <span>轻直播操作入门课程</span>
+            </div>
+        </nav>
+
+        <div class="video-box">
+            <div class="layui-container flex-box">
+                <!-- 视频播放区域 -->
+                <div id="video">
+                    <video id="videoShow" src="http://images.innocomn.com/aboutUs.mp4"></video>
+                    <!-- <span class="VideoBtn"><img src="/static/image/about/bofang.png"></span>
+                    <img class="video-hover" src="/static/image/about/video.png" alt=""> -->
+                </div>
+                <div class="video-list">
+                    <div class="list-head">
+                        <h4>轻直播操作入门课程</h4>
+                        <p>主讲老师：jade/1120人在浏览</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/static/common/js/header-footer.js"></script>
+<script>
+    // 播放视频
+    $(function () {
+        //视频
+        jsModern.video("#video");
+        //播放视频
+        $(".VideoBtn").click(function () {
+            var video = document.getElementById("videoShow");
+            video.play();
+            $('.VideoBtn').hide();
+            $('.video-hover').hide() // 隐藏视频封面图片
+        })
+        //监听视频的播放状态
+        var video = document.getElementById("videoShow");
+        video.oncanplay = function () {
+            $(".VideoBtn").show();
+            //$("#video").attr("poster","");
+        }
+        //视频播放事件
+        video.onplay = function () {
+            $("#videoShow").attr("poster", "");
+            $(".VideoBtn").hide();
+        };
+        video.onplaying = function () {
+            $(".VideoBtn").hide();
+        };
+
+        //视频暂停事件
+        video.onpause = function () {
+            $(".VideoBtn").show();
+        };
+        //点击视频周围暂停播放图片出现
+        video.onclick = function () {
+            if (video.paused) {
+                $(".VideoBtn").hide();
+                video.play();
+            } else {
+                $(".VideoBtn").show();
+                video.pause();
+            }
+        };
+    })
+</script>
+
+</html>
