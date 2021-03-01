@@ -63,7 +63,6 @@ class BannerService extends Common{
         $id = $param['id'];
         $where = ['id' => $id];
         $info = $this->banner->find($where);
-        $info->navigation_list = $this->navigationService->navigationList();
         if(!$info){
             $this->setError('查询失败');
             return false;

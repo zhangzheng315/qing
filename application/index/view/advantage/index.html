@@ -80,57 +80,17 @@
                 <div class="title">合作客户</div>
                 <div class="layui-carousel" id="logos">
                     <div carousel-item id="logo-content">
+                        {if isset($advantage_logo)}
+                        {foreach($advantage_logo as $item)}
                         <ul class="logo-imgs">
+                            {foreach($item as $val)}
                             <li>
-                                <img src="/static/image/index/logo1.png" alt="">
+                                <img src="{$val.img_url}" alt="">
                             </li>
-                            <li>
-                                <img src="/static/image/index/logo2.png" alt="">
-                            </li>
-                            <li>
-                                <img src="/static/image/index/logo3.png" alt="">
-                            </li>
-                            <li>
-                                <img src="/static/image/index/logo4.png" alt="">
-                            </li>
-                            <li>
-                                <img src="/static/image/index/logo5.png" alt="">
-                            </li>
+                            {/foreach}
                         </ul>
-                        <ul class="logo-imgs">
-                            <li>
-                                <img src="/static/image/index/logo7.png" alt="">
-                            </li>
-                            <li>
-                                <img src="/static/image/index/logo2.png" alt="">
-                            </li>
-                            <li>
-                                <img src="/static/image/index/logo6.png" alt="">
-                            </li>
-                            <li>
-                                <img src="/static/image/index/logo4.png" alt="">
-                            </li>
-                            <li>
-                                <img src="/static/image/index/logo5.png" alt="">
-                            </li>
-                        </ul>
-                        <ul class="logo-imgs">
-                            <li>
-                                <img src="/static/image/index/logo1.png" alt="">
-                            </li>
-                            <li>
-                                <img src="/static/image/index/logo8.png" alt="">
-                            </li>
-                            <li>
-                                <img src="/static/image/index/logo3.png" alt="">
-                            </li>
-                            <li>
-                                <img src="/static/image/index/logo4.png" alt="">
-                            </li>
-                            <li>
-                                <img src="/static/image/index/logo9.png" alt="">
-                            </li>
-                        </ul>
+                        {/foreach}
+                        {/if}
                     </div>
                 </div>
             </div>
@@ -176,7 +136,6 @@
             data:{'pid':pid},
             type:'get',
             success:function (res) {
-                console.log(res);
                 if (res.status === 200) {
                     $('.case_list').empty();
                     for (let item of res.data) {
