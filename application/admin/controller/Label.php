@@ -27,6 +27,10 @@ class Label extends Common{
         $data = input('get.');
         $data['deleted_time'] = 0;
         $str = LabelService::data_paging($data,'label','order');
+        foreach ($str['data'] as &$value) {
+            $value['status'] = $value['status'] == 1 ? '显示' : '不显示';
+            $value['hot_label'] = $value['hot_label'] == 1 ? '是' : '否';
+        }
         return layshow($this->code,'ok',$str['data'],$str['count']);
     }
 

@@ -30,9 +30,11 @@ class LabelService   extends Common{
      */
     public function labelCreate($param){
         $status = isset($param['status']) ? $param['status'] : 0;
+        $hot_label = isset($param['hot_label']) ? $param['hot_label'] : 0;
         $data = [
             'name' => $param['name'],
             'status' => $status,
+            'hot_label' => $hot_label,
             'order'=> $param['order']?:0,
             'created_time' => time(),
             'updated_time' => 0,
@@ -76,6 +78,7 @@ class LabelService   extends Common{
     public function labelEdit($data)
     {
         if(!isset($data['status'])) $data['status'] = 0;
+        if(!isset($data['hot_label'])) $data['hot_label'] = 0;
         if (isset($data['file'])) {
             //layui富文本自带file参数
             unset($data['file']);

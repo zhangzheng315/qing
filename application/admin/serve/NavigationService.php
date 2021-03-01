@@ -23,7 +23,11 @@ class NavigationService extends Common{
      * @return bool
      */
     public function navigationCreate($param){
-        $pid_name = $this->navigation->where(['id' => $param['pid']])->value('menu_name');
+        if ($param['pid'] == 0) {
+            $pid_name = '根目录';
+        }else{
+            $pid_name = $this->navigation->where(['id' => $param['pid']])->value('menu_name');
+        }
         $status = isset($param['status']) ? $param['status'] : 0;
         $route = isset($param['route']) ? $param['route'] : '';
         $data = [
@@ -148,7 +152,7 @@ class NavigationService extends Common{
         # 根据ID找出所有下级
         $childs = $this->child($this->navigation_list, $id);
         if (!$childs) {
-            return [];
+            return false;
         }
 
         # 遍历下级数据

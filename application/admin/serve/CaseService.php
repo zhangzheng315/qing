@@ -188,10 +188,42 @@ class CaseService extends Common{
         return $res;
     }
 
+    /**
+     * 案例数量（后台首页展示）
+     * @return int|string
+     * @throws \think\Exception
+     */
     public function caseCount()
     {
         $where = ['deleted_time' => 0];
         $count = $this->case->where($where)->count('id');
         return $count;
+    }
+
+    /**
+     * 关于轻直播--我们的优势--合作伙伴
+     * @param $pid
+     * @return bool|false|\PDOStatement|string|\think\Collection
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
+    public function caseListByPid($pid)
+    {
+        $where = [
+            'status'=>1,
+            'deleted_time' => 0,
+            'pid' => $pid,
+        ];
+        $res = $this->case->where($where)->limit(0,9)->select();
+        foreach ($res as &$item) {
+            $item['time'] = $item['updated_time'] == 0 ? date('Y-m-d H:i', $item['updated_time']) : date('Y-m-d H:i', $item['created_time']);
+        }
+        if (!$res) {
+            $this->setError('暂无数据');
+            return false;
+        }
+        $this->setMessage('查询成功');
+        return $res;
     }
 }

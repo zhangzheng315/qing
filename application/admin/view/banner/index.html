@@ -96,13 +96,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">选择父级</label>
             <div class="layui-input-block">
-                <select name="pid" id="pid">
-                    <option value="0">--请选择--</option>
-                    {if isset($navigation_list)}
-                    {foreach $navigation_list as $item }
-                    <option value="{$item.id}">{$item.menu_name}</option>
-                    {/foreach}
-                    {/if}
+                <select name="pid" class="pid">
                 </select>
             </div>
         </div>
@@ -186,6 +180,7 @@
     })
     //无限分类递归
     function childSub(arr) {
+        console.log(11);
         if(arr.length === 0) return false;
         child_num++;
         let aa = '';
@@ -199,6 +194,7 @@
                 $('.pid').append('<option value="'+item.id+'">'+aa+item.menu_name+'</option>');
             }
             if (item.sub.length !== 0) {
+                child_num = 1;
                 childSub(item.sub)
             }
         }
@@ -269,6 +265,7 @@
 
             if (layEvent === 'info') { //查看
                 $.post('/admin/banner/bannerInfo', {id: data.id}, (res) => {
+                    console.log(res);
                     if (res.status === 200) {
                         layer.open({
                             type: 1,
@@ -282,19 +279,20 @@
                         $('#id').val(res.data.id);
                         $('.img-show').attr('src',res.data.img_url);
                         $('.img_url').val(res.data.img_url);
-                        $('#pid').empty();
+                        $('.pid').empty();
                         $('#introduction').val(res.data.introduction);
 
+                        selected = res.data.pid;
                         if (res.data.status === 0) {
                             $('#status').removeAttr('checked');
                         } else {
-                            $('#status').prop('checked', true);
+                            $('#status').attr('checked', true);
                         }
                         for (let item of res.data.navigation_list) {
                             if (res.data.pid === item.id) {
-                                $('#pid').append('<option value="' + item.id + '" selected>' + item.menu_name + '</option>')
+                                $('.pid').append('<option value="' + item.id + '" selected>' + item.menu_name + '</option>')
                             } else {
-                                $('#pid').append('<option value="' + item.id + '">' + item.menu_name + '</option>')
+                                $('.pid').append('<option value="' + item.id + '">' + item.menu_name + '</option>')
                             }
                             if (item.sub.length !== 0) {
                                 child_num = 0;
