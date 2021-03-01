@@ -56,7 +56,6 @@
       #content-center {
           background-color: #f2f4f7;
       }
-
       .m-cause-con {
           display: none;
       }
@@ -103,7 +102,8 @@
           }
 
           /* 导航栏 */
-           .school-nav {
+         /* 导航栏 */
+         .school-nav {
                height: 65px;
                display: flex;
                align-items: center;
@@ -133,7 +133,7 @@
                vertical-align: middle;
            }
            .icon-nav-home {
-               background-image: url('/static/image/qingschool/school-home.png');
+               background-image: url(/static/image/qingschool/school-home.png);
            }
            .school-nav>a:hover span, .school-nav>a.active span {
              color: #00cc81;
@@ -147,12 +147,37 @@
            .school-nav>a:hover .icon-nav-item {
                opacity: 1;
            }
+           /* 大家都在看 */
+           .category-look-con {
+               padding: 24px 0 !important;
+           }
+           .category-look-tags {
+               height: 50px;
+               overflow: hidden;
+           }
+           .category-look-tags>span {
+            color: #999999;
+            font-size: 16px;
+            line-height: 20px;
+           }
+           .category-look-tags>.category-look-tag {
+               display: inline-block;
+               padding: 7px 14px;
+               margin: 8px;
+               color: #666666;
+               background: #e9e9e9;
+               border-radius: 4px;
+               transition: all .3s ease-in-out;
+           }
+           .category-look-tags>.category-look-tag:hover {
+               color: #ffffff;
+               background: #00cc99;
+           }
+           
            .school-left-con {
-               margin-top: 58px;
                width: 65%;
            }
            .school-right-con {
-               margin-top: 58px;
                width: 32%;
            }
            .school-left-con>#banner {
@@ -393,6 +418,9 @@
              .article-item {
                 position: relative;
                 padding: 14px 0 14px 48px;
+                /* background-repeat: no-repeat;
+                background-size: 30px 30px;
+                background-position-y: 16px; */
              }
              .article-item:not(:first-child) {
                  border-top: 1px solid #e5e5e5;
@@ -620,7 +648,8 @@
           }
 
           /* 导航栏 */
-          .school-nav {
+           /* 导航栏 */
+           .school-nav {
                height: 65px;
                display: flex;
                align-items: center;
@@ -664,12 +693,40 @@
            .school-nav>a:hover .icon-nav-item {
                opacity: 1;
            }
+           
+            /* 大家都在看 */
+            .category-look-con {
+               padding: 18px 0 !important;
+           }
+           .category-look-tags {
+               height: 40px;
+               overflow: hidden;
+           }
+           .category-look-tags>span {
+            color: #999999;
+            font-size: 14px;
+            line-height: 20px;
+           }
+           .category-look-tags>.category-look-tag {
+               display: inline-block;
+               padding: 7px 10px;
+               margin: 8px;
+               color: #666666;
+               background: #e9e9e9;
+               border-radius: 4px;
+               transition: all .3s ease-in-out;
+           }
+           .category-look-tags>.category-look-tag:hover {
+               color: #ffffff;
+               background: #00cc99;
+           }
+
            .school-left-con {
-               margin-top: 40px;
+               /* margin-top: 40px; */
                width: 67%;
            }
            .school-right-con {
-               margin-top: 40px;
+               /* margin-top: 40px; */
                width: 30%;
            }
            .school-left-con>#banner {
@@ -1184,12 +1241,40 @@
            .school-nav>a:hover .icon-nav-item {
                opacity: 1;
            }
+              /* 大家都在看 */
+              .category-look-con {
+               padding: 18px 0 !important;
+           }
+           .category-look-tags {
+               height: 40px;
+               overflow: hidden;
+           }
+           .category-look-tags>span {
+            color: #999999;
+            font-size: 12px;
+            line-height: 20px;
+           }
+           .category-look-tags>.category-look-tag {
+               font-size: 12px;
+               display: inline-block;
+               padding: 5px 10px;
+               margin: 6px;
+               color: #666666;
+               background: #e9e9e9;
+               border-radius: 4px;
+               transition: all .3s ease-in-out;
+           }
+           .category-look-tags>.category-look-tag:hover {
+               color: #ffffff;
+               background: #00cc99;
+           }
+
            .flex-space-between {
                display: flex;
                justify-content: center;
            }
            .school-left-con {
-               margin-top: 40px;
+               /* margin-top: 40px; */
                width: 100%;
            }
            .school-right-con {
@@ -1378,7 +1463,7 @@
               margin-left: 20px;
           }
 
-          /* 导航栏 */
+           /* 导航栏 */
            .school-nav {
                height: 45px;
                display: flex;
@@ -1413,6 +1498,10 @@
            }
            .school-nav>a:hover, .school-nav>a.active {
              border-bottom: 3px solid #00ac81; 
+           }
+               /* 大家都在看 */
+               .category-look-con {
+               display: none;
            }
            .flex-space-between {
                display: flex;
@@ -1615,31 +1704,47 @@
         <!-- 导航栏 -->
         <nav>
             <div class="layui-container school-nav">
-                <a href="{:url('qing_school/index')}" class="active">
-                    <!-- <img src="/static/image/qingschool/school-home.png" alt=""> -->
+                <a href="{:url('qing_school/index')}">
                     <i class="icon-nav-item icon-nav-home"></i>
-                     <span>内容中心</span>
+                    <span>内容中心</span>
                 </a>
-                <a href="{:url('qing_school/case')}">
+                <a href="{:url('qing_school/case')}" >
                     <i class="icon-nav-item icon-nav-home"></i>
                     <span>案例解析</span>
-                </a>
-                <a href="{:url('qing_school/products')}">
+                    </a>
+                <a href="{:url('qing_school/products')}" class="active">
                     <i class="icon-nav-item icon-nav-home"></i>
                     <span>产品动态</span>
-                </a>
+                    </a>
                 <a href="{:url('qing_school/liveNews')}">
                     <i class="icon-nav-item icon-nav-home"></i>
                     <span>直播资讯</span>
-                </a>
-                <a href="{:url('index/qing_school/videoCourse')}">
+                    </a>
+                <a href="">
                     <span>视频学院</span>
                 </a>
             </div>
         </nav>
         <!-- 内容区域 -->
         <section id="content-center">
-            <div class="layui-container flex-space-between content-center">
+              <!-- 大家都在看 -->
+              <div class="layui-container category-look-con">
+                <div class="category-look-tags">
+                    <span>大家都在看：</span>
+                    <a href="" class="category-look-tag">企业培训</a>
+                    <a href="" class="category-look-tag">数字化转型</a>
+                    <a href="" class="category-look-tag">无延迟直播</a>
+                    <a href="" class="category-look-tag">手术示教</a>
+                    <a href="" class="category-look-tag">线上直播</a>
+                    <a href="" class="category-look-tag">企业培训</a>
+                    <a href="" class="category-look-tag">数字化转型</a>
+                    <a href="" class="category-look-tag">直播</a>
+                    <a href="" class="category-look-tag">手术示教</a>
+                    <a href="" class="category-look-tag">网校</a>
+                </div>
+              </div>
+            
+            <div class="layui-container flex-space-between">
                 <div class="school-left-con">
                     <!-- 轮播图 -->
                     <div id="banner">
