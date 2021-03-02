@@ -127,7 +127,7 @@ class QBannerService extends Common{
             'pid' => $pid,
         ];
         $res = $this->QBanner->where($where)->select();
-        return $res ? $res : false;
+        return $res ? $res : [];
     }
 
 }

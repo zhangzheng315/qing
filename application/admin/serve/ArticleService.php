@@ -42,6 +42,7 @@ class ArticleService extends Common{
         $data = [
             'title' => $param['title'],
             'second_title' => $param['second_title'] ?: '',
+            'cover_img_url' => $param['cover_img_url'] ?: '',
             'pid' => $param['pid'],
             'pid_name'=>$pid_name,
             'content' => $param['content'],
@@ -218,5 +219,31 @@ class ArticleService extends Common{
         ];
         $count = $this->article->where($where)->count('id');
         return $count;
+    }
+
+    /**
+     * 分类获取文章
+     * @return bool|false|\PDOStatement|string|\think\Collection
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
+    public function articleContentCenter()
+    {
+        $where = [
+            'status'=>1,
+            'deleted_time' => 0,
+        ];
+        $content_center = new ContentCenter();
+        $res = $content_center->where($where)->order('order', 'desc')->select();
+        foreach ($res as &$item) {
+            $item['browse'] = $this->article->where(['id' => $item['id']])->value('browse');
+        }
+        if (!$res) {
+            $this->setError('暂无数据');
+            return false;
+        }
+        $this->setMessage('查询成功');
+        return $res;
     }
 }
