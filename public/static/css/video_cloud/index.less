@@ -138,6 +138,7 @@
 
     .mature {
         padding-top: 70px;
+
         .layui-container {
             .title {
                 margin-bottom: 70px;
@@ -236,6 +237,7 @@
                         border: 0;
                         color: #fff;
                         cursor: pointer;
+
                         &:hover {
                             background: transparent;
                             color: #00cc99;
@@ -270,6 +272,7 @@
                     box-sizing: border-box;
                     cursor: pointer;
                     transition: all .3s;
+
                     &:nth-child(2n) {
                         border-left: 1px solid #e5e5e5;
                     }
@@ -316,6 +319,7 @@
                         display: none;
                         cursor: pointer;
                         margin-top: 80px;
+
                         button {
                             background-color: #00cc99;
                             border: none;
@@ -331,6 +335,7 @@
                         box-shadow: 0px 0px 90px 0px rgba(50, 50, 50, 0.09);
                         border: none;
                         transform: scale(1.01);
+
                         .btn {
                             display: block;
                         }
@@ -346,6 +351,7 @@
                 justify-content: space-around;
 
                 button {
+                    display: block !important;
                     width: 133px;
                     height: 40px;
                     background: #00CC99;
@@ -360,21 +366,27 @@
                         color: #00cc99;
 
                     }
+                }
 
-                    &:nth-child(2) {
-                        background: #FFFFFF;
-                        border: 1px solid #00CC99;
-                        color: #00cc99;
+                .a-btn {
+                    background: #FFFFFF;
+                    border: 1px solid #00CC99;
+                    color: #00cc99;
 
-                        &:hover {
-                            background: #00CC99;
-                            border: none;
-                            color: #fff;
+                    a {
+                        color: #00cc99 !important;
+                    }
 
+                    &:hover {
+                        background: #00CC99;
+                        border: none;
+                        color: #fff;
+
+                        a {
+                            color: #fff !important;
                         }
                     }
                 }
-
 
             }
         }
@@ -937,11 +949,12 @@
 
         #banner {
             height: 300px;
+
             .layui-carousel {
                 .lunbo-box {
                     width: 100%;
                     height: 100%;
-    
+
                     img {
                         width: 100%;
                         height: 100%;
@@ -949,7 +962,7 @@
                     }
                 }
             }
-            
+
         }
 
         .tedian {

@@ -279,6 +279,7 @@
   justify-content: space-around;
 }
 #video_cloud .qiye .layui-container .btns button {
+  display: block !important;
   width: 133px;
   height: 40px;
   background: #00CC99;
@@ -292,15 +293,21 @@
   border: 1px solid #00CC99;
   color: #00cc99;
 }
-#video_cloud .qiye .layui-container .btns button:nth-child(2) {
+#video_cloud .qiye .layui-container .btns .a-btn {
   background: #FFFFFF;
   border: 1px solid #00CC99;
   color: #00cc99;
 }
-#video_cloud .qiye .layui-container .btns button:nth-child(2):hover {
+#video_cloud .qiye .layui-container .btns .a-btn a {
+  color: #00cc99 !important;
+}
+#video_cloud .qiye .layui-container .btns .a-btn:hover {
   background: #00CC99;
   border: none;
   color: #fff;
+}
+#video_cloud .qiye .layui-container .btns .a-btn:hover a {
+  color: #fff !important;
 }
 #video_cloud #bottom-banner {
   height: 338px;

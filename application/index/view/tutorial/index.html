@@ -68,7 +68,93 @@
                         <h4>轻直播操作入门课程</h4>
                         <p>主讲老师：jade/1120人在浏览</p>
                     </div>
-                    
+                    <div class="list-body">
+                        <div class="title">
+                            <h6>介绍说明</h6>
+                            <p>轻直播产品介绍<span>00:15:24</span></p>
+                        </div>
+                    </div>
+                    <div class="list-content">
+                        <ul>
+                            <h6>第一课 创建频道</h6>
+                            <li>
+                                <img src="/static/image/tutorial/video_btn.png" alt="">
+                                <span>创建直播频道</span>
+                                <i>00:15:24</i>
+                            </li>
+                            <li>
+                                <img src="/static/image/tutorial/video_btn.png" alt="">
+                                <span>创建直播频道</span>
+                                <i>00:15:24</i>
+                            </li>
+                            <li>
+                                <img src="/static/image/tutorial/video_btn.png" alt="">
+                                <span>创建直播频道</span>
+                                <i>00:15:24</i>
+                            </li>
+                        </ul>
+                        <ul>
+                            <h6>第二课 安装客户端</h6>
+                            <li>
+                                <img src="/static/image/tutorial/video_btn.png" alt="">
+                                <span>创建直播频道</span>
+                                <i>00:15:24</i>
+                            </li>
+                            <li>
+                                <img src="/static/image/tutorial/video_btn.png" alt="">
+                                <span>创建直播频道</span>
+                                <i>00:15:24</i>
+                            </li>
+                            <li>
+                                <img src="/static/image/tutorial/video_btn.png" alt="">
+                                <span>创建直播频道</span>
+                                <i>00:15:24</i>
+                            </li>
+                        </ul>
+                        <ul>
+                            <h6>第三课 发起直播</h6>
+                            <li>
+                                <img src="/static/image/tutorial/video_btn.png" alt="">
+                                <span>创建直播频道</span>
+                                <i>00:15:24</i>
+                            </li>
+                            <li>
+                                <img src="/static/image/tutorial/video_btn.png" alt="">
+                                <span>创建直播频道</span>
+                                <i>00:15:24</i>
+                            </li>
+                            <li>
+                                <img src="/static/image/tutorial/video_btn.png" alt="">
+                                <span>创建直播频道</span>
+                                <i>00:15:24</i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-tab">
+            <div class="tab-title">
+                <div class="layui-container">
+                    <span class="active">课程介绍</span>
+                    <span>视频课时</span>
+                </div>
+            </div>
+            <div class="tab-content">
+                <div class="layui-container">
+                    <div class="content-item active">
+                        <div class="item-left">
+                            <section>
+
+                            </section>
+                            <section>
+                                
+                            </section>
+                        </div>
+                        <div class="item-right">22</div>
+                    </div>
+                    <div class="content-item">2</div>
                 </div>
             </div>
         </div>
@@ -117,6 +203,16 @@
             }
         };
     })
+
+    $('.nav-tab').each(function (index, element) {
+        var obj = $(this);
+        obj.find('.tab-title .layui-container').children().on('click span', function () {
+            $(this).addClass('active').siblings().removeClass('active');
+            if (obj.find('.tab-content .layui-container').children().eq($(this).index()).length > 0)
+                obj.find('.tab-content .layui-container').children().hide().eq($(this).index()).show();
+        });
+        setTimeout(function () { obj.find('.tab-title .active').trigger('li'); }, 100);
+    });
 </script>
 
 </html>

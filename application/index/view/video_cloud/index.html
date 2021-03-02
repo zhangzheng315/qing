@@ -48,7 +48,7 @@
         <!-- 产品特点 -->
         <div id="section-1" class="tedian">
             <div class="layui-container">
-                <div  class="title">产品特点</div>
+                <div class="title">产品特点</div>
                 <ul class="tedian-content">
                     <li>
                         <img src="/static/image/site_service/icon.svg" alt="">
@@ -80,7 +80,7 @@
         <!-- 成熟的场景解决方案 -->
         <div id="section-2" class="mature">
             <div class="layui-container">
-                <div  class="title">成熟的场景解决方案</div>
+                <div class="title">成熟的场景解决方案</div>
                 <ul class="mature-nav">
                     <li class="active">在线教育</li>
                     <li>金融直播</li>
@@ -169,8 +169,8 @@
 
         <!-- 企业级直播场景全覆盖 -->
         <div id="section-3" class="qiye">
-            <div  class="layui-container">
-                <div  class="title">企业级直播场景全覆盖</div>
+            <div class="layui-container">
+                <div class="title">企业级直播场景全覆盖</div>
                 <ul class="qiye-content">
                     <li>
                         <div class="icon"><img src="/static/image/index/product1.png" alt=""></div>
@@ -228,7 +228,7 @@
                     </li>
                 </ul>
                 <div class="btns">
-                    <button>在线咨询</button><button>更多直播功能</button>
+                    <button>在线咨询</button><button class="a-btn"><a href="">更多直播功能</a></button>
                 </div>
             </div>
         </div>
@@ -243,7 +243,7 @@
         <!-- 合作客户 -->
         <div id="section-4" class="hezuo">
             <div class="layui-container">
-                <h2  class="title">合作客户</h2>
+                <h2 class="title">合作客户</h2>
                 <nav class="hezuo-nav">
                     <ul class="logo-title">
                         <li class="active" onclick="logoPoint(0)"><span>全部</span></li>
@@ -318,17 +318,17 @@
     function logoPoint(index) {
         $.ajax({
             url: "{:url('/index/logo_wall/getLogoByWhere')}",
-            data:{'pid':12,'type_id':index},
-            type:'get',
-            success:function (res) {
+            data: { 'pid': 12, 'type_id': index },
+            type: 'get',
+            success: function (res) {
                 if (res.status === 200) {
                     $('.logo-imgs').empty();
                     for (let item of res.data) {
-                        $('.logo-imgs').append('<li><img src="'+ item.img_url + '" alt=""></li>');
+                        $('.logo-imgs').append('<li><img src="' + item.img_url + '" alt=""></li>');
                     }
                 }
             },
-            error:function (err) {
+            error: function (err) {
                 console.log(err)
             }
         })
