@@ -153,8 +153,7 @@ class ArticleService extends Common{
                 return false;
             }
         }
-        if (!$hot_info && $data['hot_article']) {
-            $data['created_time'] = time();
+        if ($data['hot_article']) {
             $rt = $this->hotArticle->allowField(true)->save($data);
             if(!$rt){
                 $this->setError('修改失败');
@@ -172,8 +171,7 @@ class ArticleService extends Common{
                 return false;
             }
         }
-        if (!$content_info && $data['content_center']) {
-            $data['created_time'] = time();
+        if ($data['content_center']) {
             $rt = $this->content_center->allowField(true)->save($data);
             if(!$rt){
                 $this->setError('修改失败');
@@ -238,6 +236,57 @@ class ArticleService extends Common{
         $res = $content_center->where($where)->order('order', 'desc')->select();
         foreach ($res as &$item) {
             $item['browse'] = $this->article->where(['id' => $item['id']])->value('browse');
+            $item['label'] = explode(',', $item['label']);
+            $item['time'] = $item['updated_time'] ? date('Y-m-d', $item['updated_time']) : date('Y-m-d', $item['created_time']);
+        }
+        if (!$res) {
+            $this->setError('暂无数据');
+            return false;
+        }
+        $this->setMessage('查询成功');
+        return $res;
+    }
+
+    /**
+     * 热门文章
+     * @return array|bool
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
+    public function hotArticleList()
+    {
+        $hotArticle = new HotArticle();
+        $hotArticleList = $hotArticle->order('order', 'desc')->select();
+        foreach ($hotArticleList as &$item) {
+            $item['time'] = $item['updated_time'] ? date('Y-m-d', $item['updated_time']) : date('Y-m-d', $item['created_time']);
+        }
+        $recommendList = $this->article->where(['deleted_time' => 0, 'status' => 1])->order('order', 'desc')->limit(0, 5)->select();
+        foreach ($recommendList as &$item) {
+            $item['time'] = $item['updated_time'] ? date('Y-m-d', $item['updated_time']) : date('Y-m-d', $item['created_time']);
+        }
+        $res = ['hot_article' => $hotArticleList, 'recommend' => $recommendList];
+        if (!$res) {
+            $this->setError('暂无数据');
+            return false;
+        }
+        $this->setMessage('查询成功');
+        return $res;
+
+    }
+
+    public function articleByPid($pid)
+    {
+        $where = [
+            'status'=>1,
+            'deleted_time' => 0,
+            'pid' => $pid,
+        ];
+        $res = $this->article->where($where)->order('order', 'desc')->select();
+        foreach ($res as &$item) {
+            $item['browse'] = $this->article->where(['id' => $item['id']])->value('browse');
+            $item['label'] = explode(',', $item['label']);
+            $item['time'] = $item['updated_time'] ? date('Y-m-d', $item['updated_time']) : date('Y-m-d', $item['created_time']);
         }
         if (!$res) {
             $this->setError('暂无数据');

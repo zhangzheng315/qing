@@ -1891,7 +1891,7 @@
                         {foreach($article_list as $item)}
                         <li class="cause-item">
                             <a href="" class="cause-cover" target="_blank"
-                               style="background: url(/static/image/qingschool/cause-item.png);">
+                               style="background: url({$item.cover_img_url});background-size: cover">
                             </a>
                             <div class="cause-des">
                                 <a href="" class="cause-title">
@@ -1904,12 +1904,15 @@
                                     </p>
                                 </a>
                                 <div class="cause-tags">
-                                    <span class="post-time">2021-1-18</span>
+                                    <span class="post-time">{$item.time}</span>
                                     <i class="vertical-bar">|</i>
                                     <span class="category">{$item.pid_name}</span>
                                     <i class="vertical-bar">|</i>
-                                    <a href="" class="cause-tag-item">在线直播平台</a>
-                                    <a href="" class="cause-tag-item">培训直播</a>
+                                    {if(!empty($item.label))}
+                                    {foreach($item.label as $label)}
+                                    <a href="" class="cause-tag-item">{$label}</a>
+                                    {/foreach}
+                                    {/if}
                                     <span class="post-views">
                                              <i class="icon-view"></i>
                                              {$item.browse}
@@ -1927,106 +1930,27 @@
                 <!-- 移动端 -->
                 <div class="m-cause-con">
                     <ul>
+                        {if isset($article_list)}
+                        {foreach($article_list as $item)}
                         <li class="cause-item">
                             <a href="">
                                 <h3>
-                                    <!-- <i class="cause-icon icon-item-solution"></i> -->
-                                    500强银行直播揭秘：中国银行、建设银行都这么做！
+                                    {$item.title}
                                 </h3>
                             </a>
 
                             <div class="cause-tags">
-                                <span class="post-time">2021-1-18</span>
+                                <span class="post-time">{$item.time}</span>
                                 <i class="vertical-bar">|</i>
-                                <span class="category">案例解析</span>
-                                <!-- <i class="vertical-bar">|</i>
-                                <a href="" class="cause-tag-item">在线直播平台</a>
-                                <a href="" class="cause-tag-item">培训直播</a>
-                                <span class="post-views">
-                                    <i class="icon-view"></i>
-                                    222
-                                </span> -->
+                                <span class="category">{$item.pid_name}</span>
                             </div>
                             <a href="" class="cause-item-desc">
-                                <img src="/static/image/qingschool/cause-item.png" alt="">
-                                <p>工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。</p>
+                                <img src="{$item.cover_img_url}" alt="">
+                                <p>{$item.second_title}</p>
                             </a>
                         </li>
-                        <li class="cause-item">
-                            <a href="">
-                                <h3>
-                                    <!-- <i class="cause-icon icon-item-solution"></i> -->
-                                    500强银行直播揭秘：中国银行、建设银行都这么做！
-                                </h3>
-                            </a>
-
-                            <div class="cause-tags">
-                                <span class="post-time">2021-1-18</span>
-                                <i class="vertical-bar">|</i>
-                                <span class="category">案例解析</span>
-                                <!-- <i class="vertical-bar">|</i>
-                                <a href="" class="cause-tag-item">在线直播平台</a>
-                                <a href="" class="cause-tag-item">培训直播</a>
-                                <span class="post-views">
-                                    <i class="icon-view"></i>
-                                    222
-                                </span> -->
-                            </div>
-                            <a href="" class="cause-item-desc">
-                                <img src="/static/image/qingschool/cause-item.png" alt="">
-                                <p>工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。</p>
-                            </a>
-                        </li>
-                        <li class="cause-item">
-                            <a href="">
-                                <h3>
-                                    <!-- <i class="cause-icon icon-item-solution"></i> -->
-                                    500强银行直播揭秘：中国银行、建设银行都这么做！
-                                </h3>
-                            </a>
-
-                            <div class="cause-tags">
-                                <span class="post-time">2021-1-18</span>
-                                <i class="vertical-bar">|</i>
-                                <span class="category">案例解析</span>
-                                <!-- <i class="vertical-bar">|</i>
-                                <a href="" class="cause-tag-item">在线直播平台</a>
-                                <a href="" class="cause-tag-item">培训直播</a>
-                                <span class="post-views">
-                                    <i class="icon-view"></i>
-                                    222
-                                </span> -->
-                            </div>
-                            <a href="" class="cause-item-desc">
-                                <img src="/static/image/qingschool/cause-item.png" alt="">
-                                <p>工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。</p>
-                            </a>
-                        </li>
-                        <li class="cause-item">
-                            <a href="">
-                                <h3>
-                                    <!-- <i class="cause-icon icon-item-solution"></i> -->
-                                    500强银行直播揭秘：中国银行、建设银行都这么做！
-                                </h3>
-                            </a>
-
-                            <div class="cause-tags">
-                                <span class="post-time">2021-1-18</span>
-                                <i class="vertical-bar">|</i>
-                                <span class="category">案例解析</span>
-                                <!-- <i class="vertical-bar">|</i>
-                                <a href="" class="cause-tag-item">在线直播平台</a>
-                                <a href="" class="cause-tag-item">培训直播</a>
-                                <span class="post-views">
-                                    <i class="icon-view"></i>
-                                    222
-                                </span> -->
-                            </div>
-                            <a href="" class="cause-item-desc">
-                                <img src="/static/image/qingschool/cause-item.png" alt="">
-                                <p>工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。</p>
-                            </a>
-                        </li>
+                        {/foreach}
+                        {/if}
                     </ul>
                 </div>
             </div>
@@ -2050,68 +1974,28 @@
 
                     </div>
                     <ul class="hot-article-list active">
+                        {if(isset($list))}
+                        {foreach($list['hot_article'] as $item)}
                         <li class="article-item">
-                            <a href="" class="link" title="做一场成功的年会直播，要注意这几点" target="_blank" rel="noopener noreferrer">
-                                <p>一场成功的直播是怎么互动的? 轻直播6大互动功能，点燃你的直播间</p>
-                                <span class="time">2021-12-06</span>
+                            <a href="" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
+                                <p>{$item.title}</p>
+                                <span class="time">{$item.time}</span>
                             </a>
                         </li>
-                        <li class="article-item">
-                            <a href="" class="link" title="做一场成功的年会直播，要注意这几点" target="_blank" rel="noopener noreferrer">
-                                <p>一场成功的直播是怎么互动的? 轻直播6大互动功能，点燃你的直播间</p>
-                                <span class="time">2021-12-06</span>
-                            </a>
-                        </li>
-                        <li class="article-item">
-                            <a href="" class="link" title="做一场成功的年会直播，要注意这几点" target="_blank" rel="noopener noreferrer">
-                                <p>一场成功的直播是怎么互动的? 轻直播6大互动功能，点燃你的直播间</p>
-                                <span class="time">2021-12-06</span>
-                            </a>
-                        </li>
-                        <li class="article-item">
-                            <a href="" class="link" title="做一场成功的年会直播，要注意这几点" target="_blank" rel="noopener noreferrer">
-                                <p>一场成功的直播是怎么互动的? 轻直播6大互动功能，点燃你的直播间</p>
-                                <span class="time">2021-12-06</span>
-                            </a>
-                        </li>
-                        <li class="article-item">
-                            <a href="" class="link" title="做一场成功的年会直播，要注意这几点" target="_blank" rel="noopener noreferrer">
-                                <p>一场成功的直播是怎么互动的? 轻直播6大互动功能，点燃你的直播间</p>
-                                <span class="time">2021-12-06</span>
-                            </a>
-                        </li>
+                        {/foreach}
+                        {/if}
                     </ul>
                     <ul class="hot-article-list">
+                        {if(isset($list))}
+                        {foreach($list['recommend'] as $item)}
                         <li class="article-item">
-                            <a href="" class="link" title="做一场成功的年会直播，要注意这几点" target="_blank" rel="noopener noreferrer">
-                                <p>一场成功的直播是怎么互动的? 轻直播6大互动功能，点燃你的直播间</p>
-                                <span class="time">2021-12-06</span>
+                            <a href="" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
+                                <p>{$item.title}</p>
+                                <span class="time">{$item.time}</span>
                             </a>
                         </li>
-                        <li class="article-item">
-                            <a href="" class="link" title="做一场成功的年会直播，要注意这几点" target="_blank" rel="noopener noreferrer">
-                                <p>一场成功的直播是怎么互动的? 轻直播6大互动功能，点燃你的直播间</p>
-                                <span class="time">2021-12-06</span>
-                            </a>
-                        </li>
-                        <li class="article-item">
-                            <a href="" class="link" title="做一场成功的年会直播，要注意这几点" target="_blank" rel="noopener noreferrer">
-                                <p>一场成功的直播是怎么互动的? 轻直播6大互动功能，点燃你的直播间</p>
-                                <span class="time">2021-12-06</span>
-                            </a>
-                        </li>
-                        <li class="article-item">
-                            <a href="" class="link" title="做一场成功的年会直播，要注意这几点" target="_blank" rel="noopener noreferrer">
-                                <p>一场成功的直播是怎么互动的? 轻直播6大互动功能，点燃你的直播间</p>
-                                <span class="time">2021-12-06</span>
-                            </a>
-                        </li>
-                        <li class="article-item">
-                            <a href="" class="link" title="做一场成功的年会直播，要注意这几点" target="_blank" rel="noopener noreferrer">
-                                <p>一场成功的直播是怎么互动的? 轻直播6大互动功能，点燃你的直播间</p>
-                                <span class="time">2021-12-06</span>
-                            </a>
-                        </li>
+                        {/foreach}
+                        {/if}
                     </ul>
                 </div>
 
@@ -2163,16 +2047,11 @@
                         </h2>
                     </div>
                     <ul class="hot-tags-list">
-                        <li><a href="" class="hot-tag-item">轻直播</a></li>
-                        <li><a href="" class="hot-tag-item">医学会议</a></li>
-                        <li><a href="" class="hot-tag-item">医学会议</a></li>
-                        <li><a href="" class="hot-tag-item">云视频服务</a></li>
-                        <li><a href="" class="hot-tag-item">视频托管</a></li>
-                        <li><a href="" class="hot-tag-item">直播</a></li>
-                        <li><a href="" class="hot-tag-item">手术直播</a></li>
-                        <li><a href="" class="hot-tag-item">年会直播</a></li>
-                        <li><a href="" class="hot-tag-item">企业直播</a></li>
-                        <li><a href="" class="hot-tag-item">企业培训</a></li>
+                        {if(isset($hot_label))}
+                        {foreach($hot_label as $item)}
+                        <li><a href="" class="hot-tag-item">{$item.name}</a></li>
+                        {/foreach}
+                        {/if}
                     </ul>
                 </div>
                 <!-- 微信公众号 -->
