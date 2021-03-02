@@ -222,6 +222,7 @@
 }
 #tutorial .nav-tab {
   background-color: #f2f4f7;
+  padding: 0 0 200px;
 }
 #tutorial .nav-tab .tab-title {
   height: 60px;
@@ -245,23 +246,585 @@
   display: none;
   padding: 37px 0 0;
 }
-#tutorial .nav-tab .tab-content .layui-container .content-item .item-left,
-#tutorial .nav-tab .tab-content .layui-container .content-item .item-right {
-  display: inline-block;
+#tutorial .nav-tab .tab-content .layui-container .content-item .item-box {
+  align-items: flex-start;
 }
-#tutorial .nav-tab .tab-content .layui-container .content-item .item-left {
+#tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left {
   width: 64%;
   margin-right: 9%;
 }
-#tutorial .nav-tab .tab-content .layui-container .content-item .item-left section {
+#tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left section {
   background: #FFFFFF;
   border: 1px solid #E5E5E5;
   border-radius: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 36px;
+  padding: 10px 20px 0;
 }
-#tutorial .nav-tab .tab-content .layui-container .content-item .item-right {
+#tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left section:last-child {
+  margin-bottom: 0;
+}
+#tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left section h5 {
+  padding-bottom: 10px;
+  margin-bottom: 13px;
+  border-bottom: 1px solid #E5E5E5;
+}
+#tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left section h5 i {
+  display: inline-block;
+  width: 5px;
+  height: 18px;
+  background-color: #00cc99;
+  border-radius: 4px;
+  font-style: normal;
+  margin-right: 10px;
+}
+#tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left section h5 span {
+  font-size: 16px;
+  color: #333;
+}
+#tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left section p {
+  padding-left: 23px;
+  padding-bottom: 10px;
+  margin-bottom: 13px;
+  border-bottom: 1px solid #E5E5E5;
+  color: #666;
+  cursor: pointer;
+}
+#tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left section p:hover {
+  color: #00cc99;
+}
+#tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left section p img {
+  margin-right: 17px;
+}
+#tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left section p span {
+  margin-right: 26px;
+}
+#tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left section p:last-child {
+  border: 0;
+}
+#tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left section .active {
+  color: #00cc99;
+}
+#tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-right {
   width: 26%;
+}
+#tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-right h6 {
+  font-size: 16px;
+  color: #333;
+  padding-left: 10px;
+  border-left: 3px solid #00cc99;
+  margin-bottom: 30px;
+}
+#tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-right .right-item {
+  width: 100%;
+  height: 284px;
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 10px;
+  margin-bottom: 36px;
+  padding: 20px 21px 0;
+  box-sizing: border-box;
+}
+#tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-right .right-item img {
+  height: 60%;
+  width: 100%;
+  object-fit: cover;
+}
+#tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-right .right-item h5 {
+  margin: 14px 0 10px;
+  font-size: 16px;
+  color: #333;
+}
+#tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-right .right-item p {
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+#tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-right .right-item p span {
+  color: #999;
+  font-size: 14px;
+}
+#tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-right .right-item .free {
+  text-align: right;
+  color: #00cc99;
+  font-size: 14px;
 }
 #tutorial .nav-tab .tab-content .layui-container .active {
   display: block;
+}
+#tutorial .func-free {
+  height: 400px;
+  background: url('/static/image/tutorial/banner-b.png') no-repeat;
+  background-size: cover;
+  padding: 110px 0 0;
+  box-sizing: border-box;
+}
+#tutorial .func-free h3 {
+  font-size: 50px;
+  color: #333;
+  margin-bottom: 98px;
+  text-align: center;
+}
+#tutorial .func-free button {
+  width: 168px;
+  height: 40px;
+  background: linear-gradient(90deg, #009CA9, #39D6AF);
+  border-radius: 20px;
+  display: block;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 20px;
+  border: 0;
+}
+@media screen and (min-width: 768px) and (max-width: 1300px) {
+  #tutorial header {
+    height: 70px;
+    line-height: 70px;
+  }
+  #tutorial header .layui-container {
+    width: 100% !important;
+    padding: 0 10px !important;
+  }
+  #tutorial header .layui-container .logo a img {
+    width: 90px;
+  }
+  #tutorial header .layui-container .layui-form-item {
+    height: 30px;
+    width: 188px;
+    margin: 0 30% 0 10px;
+  }
+  #tutorial header .layui-container .layui-form-item .layui-input-block .icons {
+    width: 34px;
+    line-height: 2.1;
+  }
+  #tutorial header .layui-container a {
+    font-size: 14px;
+    margin: 0 40px 0 0;
+  }
+  #tutorial header .layui-container .login button {
+    width: 88px;
+    height: 30px;
+    font-size: 14px;
+  }
+  #tutorial header .layui-container .login button:nth-child(1) {
+    margin-right: 15px;
+  }
+  #tutorial .nav-second {
+    height: 70px;
+    line-height: 70px;
+  }
+  #tutorial .nav-second .layui-container {
+    font-size: 14px;
+    width: 100% !important;
+    padding: 0 15px !important;
+  }
+  #tutorial .nav-second .layui-container i {
+    margin: 0 15px;
+    font-size: 14px;
+  }
+  #tutorial .video-box {
+    height: 450px;
+  }
+  #tutorial .video-box .layui-container {
+    width: 100% !important;
+  }
+  #tutorial .video-box .layui-container #video {
+    width: 75%;
+    height: 450px;
+    position: relative;
+  }
+  #tutorial .video-box .layui-container #video .jsmodern-video-panel {
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 50px;
+    line-height: 50px;
+  }
+  #tutorial .video-box .layui-container #video .jsmodern-video-panel .jsmodern-video-play {
+    margin-top: 14px;
+  }
+  #tutorial .video-box .layui-container #video .jsmodern-video-panel .jsmodern-video-start + span {
+    margin-top: 20px;
+  }
+  #tutorial .video-box .layui-container #video .jsmodern-video-panel .jsmodern-video-linebox {
+    margin: 21px 0 0 15px;
+  }
+  #tutorial .video-box .layui-container #video .jsmodern-video-panel .jsmodern-video-linebox .jsmodern-video-pass {
+    background-color: #00cc99;
+  }
+  #tutorial .video-box .layui-container #video .jsmodern-video-panel .jsmodern-video-volumebox {
+    margin: 22px 0 0 7px;
+  }
+  #tutorial .video-box .layui-container #video .jsmodern-video-panel .jsmodern-video-volumebox .jsmodern-video-volumeline {
+    background: #00cc99;
+  }
+  #tutorial .video-box .layui-container #video .jsmodern-video-panel .jsmodern-video-volume {
+    margin-top: 17px;
+  }
+  #tutorial .video-box .layui-container #video .jsmodern-video-panel .jsmodern-video-fullin {
+    margin-top: 16px;
+  }
+  #tutorial .video-box .layui-container .video-list {
+    width: 25%;
+    height: 450px;
+  }
+  #tutorial .video-box .layui-container .video-list .list-head {
+    height: 60px;
+    padding: 10px 0 0 20px;
+  }
+  #tutorial .video-box .layui-container .video-list .list-head h4 {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  #tutorial .video-box .layui-container .video-list .list-body .title {
+    height: 60px;
+    padding: 10px 0 0 20px;
+  }
+  #tutorial .video-box .layui-container .video-list .list-body .title h6 {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  #tutorial .video-box .layui-container .video-list .list-content {
+    height: calc(100% - 120px);
+  }
+  #tutorial .video-box .layui-container .video-list .list-content ul {
+    padding: 10px 20px 0 20px;
+    margin-bottom: 10px;
+  }
+  #tutorial .video-box .layui-container .video-list .list-content ul h6 {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  #tutorial .video-box .layui-container .video-list .list-content ul li {
+    padding-bottom: 7px;
+    margin-bottom: 12px;
+  }
+  #tutorial .video-box .layui-container .video-list .list-content ul li img {
+    width: 15px;
+  }
+  #tutorial .video-box .layui-container .video-list .list-content ul li span {
+    margin: 0 25px 0 7px;
+  }
+  #tutorial .nav-tab {
+    padding: 0 0 150px;
+  }
+  #tutorial .nav-tab .tab-title {
+    height: 50px;
+    line-height: 50px;
+  }
+  #tutorial .nav-tab .tab-title .layui-container {
+    width: 100% !important;
+    padding: 0 30px !important;
+  }
+  #tutorial .nav-tab .tab-title .layui-container span {
+    font-size: 14px;
+    margin-right: 80px;
+    height: 50px;
+  }
+  #tutorial .nav-tab .tab-content .layui-container {
+    width: 100% !important;
+  }
+  #tutorial .nav-tab .tab-content .layui-container .content-item {
+    padding: 30px 0 0;
+  }
+  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box {
+    align-items: flex-start;
+  }
+  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left {
+    width: 64%;
+    margin-right: 5%;
+  }
+  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left section {
+    margin-bottom: 50px;
+    height: 400px;
+  }
+  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-right {
+    width: 31%;
+  }
+  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-right h6 {
+    font-size: 14px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+  }
+  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-right .right-item {
+    width: 100%;
+    height: 240px;
+    margin-bottom: 30px;
+    padding: 13px 16px 0;
+  }
+  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-right .right-item img {
+    height: 60%;
+  }
+  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-right .right-item h5 {
+    margin: 10px 0 7px;
+    font-size: 14px;
+  }
+  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-right .right-item p {
+    margin-bottom: 10px;
+  }
+  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-right .right-item p span {
+    font-size: 12px;
+  }
+  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-right .right-item .free {
+    font-size: 12px;
+  }
+  #tutorial .func-free {
+    height: 300px;
+    padding: 85px 0 0;
+  }
+  #tutorial .func-free h3 {
+    padding: 0 15px;
+    font-size: 30px;
+    margin-bottom: 48px;
+  }
+  #tutorial .func-free button {
+    width: 139px;
+    height: 35px;
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 935px) {
+  #tutorial header {
+    height: 60px;
+    line-height: 60px;
+  }
+  #tutorial header .layui-container .logo a img {
+    width: 90px;
+  }
+  #tutorial header .layui-container .layui-form-item {
+    height: 26px;
+    width: 168px;
+    margin: 0 26% 0 10px;
+  }
+  #tutorial header .layui-container .layui-form-item .layui-input-block .icons {
+    width: 34px;
+    line-height: 2.1;
+  }
+  #tutorial header .layui-container a {
+    font-size: 12px;
+    margin: 0 30px 0 0;
+  }
+  #tutorial header .layui-container .login button {
+    width: 60px;
+    height: 26px;
+    font-size: 12px;
+  }
+  #tutorial header .layui-container .login button:nth-child(1) {
+    margin-right: 12px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #tutorial header {
+    height: 70px;
+    line-height: 70px;
+  }
+  #tutorial header .layui-container {
+    width: 100% !important;
+    padding: 0 5px !important;
+  }
+  #tutorial header .layui-container .logo a img {
+    width: 70px;
+  }
+  #tutorial header .layui-container .layui-form-item {
+    height: 26px;
+    width: 148px;
+    margin: 0 15% 0 15px;
+  }
+  #tutorial header .layui-container .layui-form-item .layui-input-block .layui-input {
+    font-size: 12px;
+  }
+  #tutorial header .layui-container .layui-form-item .layui-input-block .icons {
+    width: 30px;
+    line-height: 1.8;
+  }
+  #tutorial header .layui-container a {
+    font-size: 12px;
+    margin: 0;
+  }
+  #tutorial header .layui-container .login {
+    display: none;
+  }
+  #tutorial header .layui-container .login button {
+    width: 88px;
+    height: 30px;
+    font-size: 14px;
+  }
+  #tutorial header .layui-container .login button:nth-child(1) {
+    margin-right: 15px;
+  }
+  #tutorial .nav-second {
+    height: 45px;
+    line-height: 45px;
+  }
+  #tutorial .nav-second .layui-container {
+    font-size: 12px;
+    width: 100% !important;
+    padding: 0 15px !important;
+  }
+  #tutorial .nav-second .layui-container i {
+    margin: 0 10px;
+    font-size: 12px;
+  }
+  #tutorial .video-box {
+    height: 240px;
+  }
+  #tutorial .video-box .layui-container {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  #tutorial .video-box .layui-container #video {
+    width: 100%;
+    height: 240px;
+    position: relative;
+  }
+  #tutorial .video-box .layui-container #video .jsmodern-video-panel {
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 50px;
+    line-height: 50px;
+  }
+  #tutorial .video-box .layui-container #video .jsmodern-video-panel .jsmodern-video-play {
+    margin-top: 14px;
+  }
+  #tutorial .video-box .layui-container #video .jsmodern-video-panel .jsmodern-video-start + span {
+    margin-top: 20px;
+  }
+  #tutorial .video-box .layui-container #video .jsmodern-video-panel .jsmodern-video-linebox {
+    margin: 21px 0 0 15px;
+  }
+  #tutorial .video-box .layui-container #video .jsmodern-video-panel .jsmodern-video-linebox .jsmodern-video-pass {
+    background-color: #00cc99;
+  }
+  #tutorial .video-box .layui-container #video .jsmodern-video-panel .jsmodern-video-volumebox {
+    margin: 22px 0 0 7px;
+  }
+  #tutorial .video-box .layui-container #video .jsmodern-video-panel .jsmodern-video-volumebox .jsmodern-video-volumeline {
+    background: #00cc99;
+  }
+  #tutorial .video-box .layui-container #video .jsmodern-video-panel .jsmodern-video-volume {
+    margin-top: 17px;
+  }
+  #tutorial .video-box .layui-container #video .jsmodern-video-panel .jsmodern-video-fullin {
+    margin-top: 16px;
+  }
+  #tutorial .video-box .layui-container .video-list {
+    display: none;
+    width: 25%;
+    height: 450px;
+  }
+  #tutorial .video-box .layui-container .video-list .list-head {
+    height: 60px;
+    padding: 10px 0 0 20px;
+  }
+  #tutorial .video-box .layui-container .video-list .list-head h4 {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  #tutorial .video-box .layui-container .video-list .list-body .title {
+    height: 60px;
+    padding: 10px 0 0 20px;
+  }
+  #tutorial .video-box .layui-container .video-list .list-body .title h6 {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  #tutorial .video-box .layui-container .video-list .list-content {
+    height: calc(100% - 120px);
+  }
+  #tutorial .video-box .layui-container .video-list .list-content ul {
+    padding: 10px 20px 0 20px;
+    margin-bottom: 10px;
+  }
+  #tutorial .video-box .layui-container .video-list .list-content ul h6 {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  #tutorial .video-box .layui-container .video-list .list-content ul li {
+    padding-bottom: 7px;
+    margin-bottom: 12px;
+  }
+  #tutorial .video-box .layui-container .video-list .list-content ul li img {
+    width: 15px;
+  }
+  #tutorial .video-box .layui-container .video-list .list-content ul li span {
+    margin: 0 25px 0 7px;
+  }
+  #tutorial .nav-tab {
+    padding: 0 0 60px;
+  }
+  #tutorial .nav-tab .tab-title {
+    height: 50px;
+    line-height: 50px;
+  }
+  #tutorial .nav-tab .tab-title .layui-container {
+    width: 100% !important;
+    padding: 0 30px !important;
+    display: flex;
+    justify-content: space-around;
+  }
+  #tutorial .nav-tab .tab-title .layui-container span {
+    font-size: 14px;
+    margin-right: 0px;
+    height: 50px;
+  }
+  #tutorial .nav-tab .tab-content .layui-container {
+    width: 100% !important;
+  }
+  #tutorial .nav-tab .tab-content .layui-container .content-item {
+    padding: 20px 0 0;
+  }
+  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box {
+    align-items: flex-start;
+  }
+  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left {
+    width: 100%;
+    margin-right: 0;
+  }
+  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left section {
+    margin-bottom: 25px;
+    padding: 10px 15px 0;
+  }
+  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left section:last-child {
+    margin-bottom: 0;
+  }
+  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left section h5 {
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+  }
+  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left section h5 i {
+    width: 4px;
+    height: 18px;
+    border-radius: 4px;
+    font-style: normal;
+    margin-right: 10px;
+  }
+  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left section h5 span {
+    font-size: 14px;
+  }
+  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left section p {
+    padding-left: 15px;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+  }
+  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left section p img {
+    margin-right: 12px;
+  }
+  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left section p span {
+    margin-right: 20px;
+  }
+  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left section p:last-child {
+    border: 0;
+  }
+  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-right {
+    display: none;
+  }
+  #tutorial .func-free {
+    height: 240px;
+    padding: 55px 0 0;
+  }
+  #tutorial .func-free h3 {
+    padding: 0 15px;
+    font-size: 24px;
+    margin-bottom: 38px;
+  }
+  #tutorial .func-free button {
+    width: 98px;
+    height: 28px;
+    font-size: 12px;
+  }
 }
