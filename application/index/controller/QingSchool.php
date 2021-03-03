@@ -32,4 +32,9 @@ class QingSchool extends Controller
     {
       return $this->fetch();
     }
+    /* 新闻详情页 */
+    public function newsDetail()
+    {
+      return $this->fetch();
+    }
 }
