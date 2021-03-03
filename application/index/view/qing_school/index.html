@@ -160,13 +160,13 @@
                         <h2>
                             <span>热门文章</span>
                             <div class="switch-article">
-                                <div class="switch-article-btn active">热门</div>
-                                <div class="switch-article-btn">推荐</div>
+                                <div class="switch-article-btn active" data-name="hot">热门</div>
+                                <div class="switch-article-btn" data-name="recommend">推荐</div>
                             </div>
                         </h2>
 
                     </div>
-                    <ul class="hot-article-list active">
+                    <ul class="hot-article-list active" data-name="hot">
                         {if(isset($list))}
                         {foreach($list['hot_article'] as $item)}
                         <li class="article-item">
@@ -178,7 +178,7 @@
                         {/foreach}
                         {/if}
                     </ul>
-                    <ul class="hot-article-list">
+                    <ul class="hot-article-list" data-name="recommend">
                         {if(isset($list))}
                         {foreach($list['recommend'] as $item)}
                         <li class="article-item">
@@ -288,9 +288,15 @@
     $('.switch-article .switch-article-btn').on('click', function () {
         $(this).siblings().removeClass('active');
         $(this).addClass('active');
-        //  if($('.hot-article-list').hasClass('active')) {
-        //      $('.hot-article-list').siblings().removeClass('active');
-        //  }
+        let dataName = $(this).attr('data-name');
+        if(dataName == 'hot') {
+            $('.hot-article-list').eq(0).show();
+            $('.hot-article-list').eq(1).hide();
+
+        } else if (dataName == 'recommend') {
+            $('.hot-article-list').eq(0).hide();
+            $('.hot-article-list').eq(1).show();
+        }
 
 
     })
