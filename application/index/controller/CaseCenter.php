@@ -46,4 +46,9 @@ class CaseCenter extends Controller
             return show(401,$case_service->error);
         }
     }
+    /* 全部案例 */
+    public function allCase()
+    {
+        return $this->fetch();
+    }
 }

@@ -1,0 +1,2032 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="renderer" content="webkit">
+    <title>轻直播_企业直播服务平台,医疗直播领军者,营销直播定制服务商</title>
+    <meta name="keywords"  content="企业直播平台,医疗直播,营销直播,活动直播,直播定制服务" />
+    <meta name="description"
+         content="轻直播是国内知名的企业级直播定制化服务平台,服务全球500强,为企业提供医疗直播、手术直播、活动直播、会议直播、营销直播、年会直播等全场景解决方案,热线:400-920-1599。" />
+    <link rel="stylesheet" href="/static/layui/css/layui.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script type='text/javascript' src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/static/layui/layui.js"></script>
+    <style>
+
+      .flex-center-space-between {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+      }
+      .flex-space-between {
+          display: flex;
+          justify-content: space-between;
+      }
+      nav {
+          background: #ffffff;
+          box-shadow: 0px 4px 6px 0px rgba(193, 193, 193, 0.28);
+      }
+      .head-right {
+        display: flex;
+        align-items: center;
+      }
+
+      /* 轮播图样式修改 */
+      .lunbo-box>img {
+          border-radius: 6px;
+      }
+     .layui-carousel-ind ul {
+            position: absolute;
+            right: 50px;
+            display: inline-block;
+            background-color: transparent;
+     }
+     .layui-carousel-ind ul:hover {
+         background-color: transparent;
+     }
+     .layui-carousel-ind ul li {
+         width: 38px;
+         height: 8px;
+         border-radius: 4px;
+         margin-left: 30px;
+     }
+       /* 内容区域 */
+       #content-center {
+          background-color: #f2f4f7;
+      }
+      .m-cause-con {
+          display: none;
+      }
+      @media screen and (min-width: 1300px){
+
+          .layui-container {
+              width: 1200px !important;
+              padding: 0 !important;
+          }
+          .header-nav {
+              height: 65px;
+          }
+
+          .head-right>.text{
+            margin-right: 64px;
+            height: 30px;
+            line-height: 30px;
+        }
+        .head-right>.text>a {
+            font-size: 14px;
+            color: #999999; 
+        }
+        .head-right>.text>a:first-child {
+            margin-right: 48px;
+        }
+          .btns>button {
+              width: 103px;
+              height: 30px;
+              line-height: 30px;
+              font-size: 14px;
+              border-radius: 15px;
+              outline: none;
+              border: none;
+              cursor: pointer;
+          }
+          .btns>button.login {
+              background: #fff;
+              border: 1px solid #00cc99;
+              color: #00cc99;
+          }
+          .btns>button.free-btn {
+              background: #00AC81;
+              color: #ffffff;
+              margin-left: 41px;
+          }
+
+          /* 导航栏 */
+           .school-nav {
+               height: 65px;
+               display: flex;
+               align-items: center;
+           }
+           .school-nav>a {
+               font-size: 16px;
+               margin-right: 100px;
+               display: inline-block;
+               height: 65px;
+               line-height: 65px;
+               padding: 0 6px;
+               box-sizing: border-box;
+           }
+           .school-nav>a>.icon-nav-item {
+               display: inline-block;
+               width: 18px;
+               height: 18px;
+               margin-right: 5px;
+               background-size: contain;
+               opacity: 0;
+               transition: opacity .25s;
+               vertical-align: middle;
+           }
+           .school-nav>a>span {
+               font-size: 16px;
+               color: #333333;
+               vertical-align: middle;
+           }
+           .icon-nav-home {
+               background-image: url(/static/image/qingschool/school-home.png);
+           }
+           .school-nav>a:hover span, .school-nav>a.active span {
+             color: #00cc81;
+           }
+           .school-nav>a:hover, .school-nav>a.active {
+             border-bottom: 3px solid #00ac81; 
+           }
+           .school-nav>a.active .icon-nav-item {
+              opacity: 1;
+           }
+           .school-nav>a:hover .icon-nav-item {
+               opacity: 1;
+           }
+           #content-center {
+               padding-bottom: 80px;
+           }
+
+           /* 面包屑导航栏 */
+           .single-breadcrumb {
+               padding: 24px 0;
+               color: #666666;
+           }
+           .breadcrumb-link {
+               color: #00cc99;
+               font-size: 14px;
+           }
+           .breadcrumb-link:hover {
+               color: #00cc99;
+           }
+           .school-left-con {
+               /* margin-top: 58px; */
+               width: 65%;
+           }
+           .school-right-con {
+               /* margin-top: 58px; */
+               width: 32%;
+           }
+           /* 文章详情页 */
+           .single-article-content {
+               padding: 40px;
+               background: #ffffff;
+               border: 1px solid #e5eaf1;
+               /* min-height: 600px; */
+               border-radius: 5px;
+           }
+           .article-head-title>h2 {
+               font-size: 24px;
+               line-height: 36px;
+               color: #333333;
+               font-weight: 600;
+               text-align: justify;
+           }
+           .article-head>.article-head-desc {
+               position: relative;
+               margin-top: 24px;
+               font-size: 12px;
+               line-height: 22px;
+               color: #999999;
+           }
+           .article-head-desc .time, .article-head-desc .category {
+               font-size: 12px;
+               line-height: 22px;
+               color: #999999;
+           }
+           .article-head-desc .vertical-bar {
+               display: inline-block;
+               margin: 0 12px;
+           }
+           .article-head-desc .tags-box {
+               display: inline-block;
+           }
+           .article-head-desc .tags-box .tag-item {
+            display: inline-block;
+            margin: 0 4px;
+            padding: 6px 8px;
+            color: currentColor;
+            background: #f5f5f5;
+            border-radius: 2px;
+            -webkit-transition: all .25s ease-in-out;
+            -o-transition: all .25s ease-in-out;
+            transition: all .25s ease-in-out;
+            }
+            .reading-box {
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .reading-box .icon-view {
+                display: inline-block;
+                width: 14px;
+                height: 14px;
+                background: url(/static/image/qingschool/eyes.svg) no-repeat center;
+                background-size: contain;
+                vertical-align: middle;
+            }
+            .article-head-desc .reading-box span {
+                display: inline-block;
+                color: #8c8d9e;
+                font-size: 12px;
+                line-height: 22px;
+                vertical-align: middle;
+            }
+
+            .article-head-desc .tags-box .tag-item:hover {
+                background: #00cc99;
+                color: #fff;
+            }
+           
+            /* 摘要 */
+            .article-excerpt {
+                margin-top: 24px;
+                padding: 16px 24px;
+                background: #f5f5f5;
+            }
+            .article-excerpt p {
+                position: relative;
+                color: #464964;
+                padding-left: 48px;
+                font-size: 14px;
+                line-height: 24px;
+            }
+            .article-excerpt p span {
+                position: absolute;
+                top: 2px;
+                left: 0;
+                color: #171c3c;
+                font-size: 16px;
+                font-weight: 600;
+            }
+            /* 文章主体 */
+            .article-body {
+                margin-top: 24px;
+                color: #464964;
+                line-height: 2;
+            }
+            /* 分割线 */
+            .divider {
+                margin: 40px 0;
+                width: 100%;
+                height: 1px;
+                background: #e5e5e5;
+            }
+            /* 上一篇下一篇 */
+            .article-link .article-link-item {
+                color: #171c3c;
+                font-size: 14px;
+                line-height: 20px;
+            }
+            .article-link .article-link-item+.article-link-item {
+                margin-top: 16px;
+            }
+        
+            .article-link .article-link-item a {
+                color: #171c3c;
+                font-size: 14px;
+                line-height: 20px;
+            }
+            .article-link .article-link-item a:hover {
+                color: #00cc99;
+            }
+
+            .siderbar-item {
+                width: 100%;
+                background-color: #ffffff;
+                border: 1px solid #e5e5e5;
+                border-radius: 10px;
+                padding: 24px 24px 32px;
+                box-sizing: border-box;
+                margin-top: 39px;
+            }
+            /* 搜索框 */
+            .siderbar-item-search {
+                padding: 0;
+                margin-top: 0;
+            }
+            .search-form {
+                width: 100%;
+                position: relative;
+            }
+            .search-form input {
+            height: 40px;
+            border: none;
+            outline: 0;
+            }
+            .search-form .searchInput {
+            width: 100%;
+            padding: 0 40px;
+            color: #8c8d9e;
+            background-color: #fff;
+            border-radius: 10px;
+           }
+           .search-form .submitInput {
+            position: absolute;
+            width: 40px;
+            top: 0;
+            right: 0;
+            font-size: 0;
+            cursor: pointer;
+            background-color: #fff;
+            background: url(/static/image/qingschool/search-icon.png) no-repeat center;
+            background-size: 14px;
+            }
+            /* .siderbar-item-search {
+
+            } */
+            /* 热门文章 */
+            .siderbar-item-head {
+               margin-bottom: 8px;
+            }
+            .siderbar-item-head>h2 {
+                position: relative;
+                font-size: 20px;
+                font-weight: 600;
+                line-height: 32px;
+                color: #171c3c;
+                border-bottom: 1px solid #e5eaf1;
+            }
+            .siderbar-item-head>h2>span {
+                display: inline-block;
+                position: relative;
+                padding-bottom: 10px;
+             }
+             .siderbar-item-head>h2>span::after {
+                 position: absolute;
+                 content: '';
+                 bottom: -2px;
+                 left: 0;
+                 width: 100%;
+                 height: 2px;
+                 background-color: #00cc99;
+             }
+             .switch-article {
+                 position: absolute;
+                 top: 50%;
+                 transform: translateY(-50%);
+                 -webkit-transform: translateY(-50%);
+                 -ms-transform: translateY(-50%);
+                 right: 0;
+                 font-size: 14px;
+                 line-height: 1;
+                 color: #999999;
+                 margin-top: -5px;
+                 font-weight: 400;
+             }
+             .switch-article>.switch-article-btn {
+                 display: inline-block;
+                 vertical-align: middle;
+                 margin: 0 8px;
+                 cursor: pointer;
+             }
+             .switch-article>.switch-article-btn.active {
+                 color: #00cc99;
+             }
+             .hot-article-list {
+                 display: none;
+             }
+             .hot-article-list.active {
+                 display: block;
+             }
+             .article-item {
+                position: relative;
+                padding: 14px 0 14px 48px;
+             }
+             .article-item:not(:first-child) {
+                 border-top: 1px solid #e5e5e5;
+             }
+             .article-item::before {
+                position: absolute;
+                 font-size: 36px;
+                 font-weight: bold;
+                 left: 0;
+             }
+             .article-item:nth-child(1)::before {
+                 content: '01';
+                 color: #f55b5b;
+             }
+             .article-item:nth-child(2)::before {
+                 content: '02';
+                 color: #FF9D47;
+             }
+             .article-item:nth-child(3)::before {
+                 content: '03';
+                 color: #FFD16B;
+             }
+             .article-item:nth-child(4)::before {
+                 content: '04';
+                 color: #E0E0E0;
+             }
+             .article-item:nth-child(5)::before {
+                 content: '05';
+                 color: #E0E0E0;
+             }
+
+             .hot-article-list .article-item .link {
+                font-size: 14px;
+                line-height: 20px;
+                color: #666666;
+            }
+            .article-item .link p {
+                font-size: 14px;
+                line-height: 20px;
+                overflow: hidden;
+                -o-text-overflow: ellipsis;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+            }
+            .article-item .link p:hover {
+                color: #00cc99;
+            }
+            .article-item .link .time {
+                display: block;
+                margin-top: 12px;
+                font-size: 12px;
+                line-height: 1;
+                color: #999999;
+                text-align: right;
+            }
+            /* 热门产品 */
+           .hot-products-list {
+               margin-left: -7px;
+               margin-right: -7px;
+               font-size: 0;
+           }           
+           .hot-products-list>li {
+               display: inline-block;
+               font-size: 14px;
+               padding: 0 7px;
+               width: 50%;
+               margin-top: 20px;
+           }
+           .hot-products-list .hot-products-item {
+               display: block;
+               padding: 14px;
+               padding-left: 14px;
+               background-color: #f4f4f4;
+               border-radius: 5px;
+           }
+           .hot-products-list .hot-products-item:hover {
+               background-color: #00cc99;
+           }
+           .hot-products-list .hot-products-item:hover span {
+               color: #ffffff;
+           }
+           .hot-products-list .hot-products-item .icon-hot-product {
+               display: inline-block;
+                width: 16px;
+                height: 16px;
+                background-repeat: no-repeat;
+                background-size: contain;
+                vertical-align: middle;
+            }
+            .hot-products-list .hot-products-item .icon-hot-product.icon-hot-product_1 {
+                background-image: url(/static/image/qingschool/hot_product-1.png);
+            }
+            .hot-products-list .hot-products-item .icon-hot-product.icon-hot-product_2 {
+                background-image: url(/static/image/qingschool/hot_product-2.png);
+            }
+            .hot-products-list .hot-products-item .icon-hot-product.icon-hot-product_3 {
+                background-image: url(/static/image/qingschool/hot_product-3.png);
+            }
+            .hot-products-list .hot-products-item .icon-hot-product.icon-hot-product_4 {
+                background-image: url(/static/image/qingschool/hot_product-4.png);
+            }
+            .hot-products-item span {
+                font-size: 16px;
+                line-height: 1;
+                color: #666666;
+                display: inline-block;
+                vertical-align: middle;
+                margin-left: 4px;
+            }
+            /* 热门标签 */
+            .hot-tags-more {
+                position: absolute;
+                top: 50%;
+                right: 20px;
+                font-size: 14px;
+                line-height: 1;
+                font-weight: 400;
+                color: #999999;
+                transform: translateY(-50%);
+                margin-top: -5px;
+            }
+            .hot-tags-more:hover,.hot-tags-more:hover::after {
+                color: #00cc99;
+            }
+            .hot-tags-more::after {
+                display: block;
+                content: '...';
+                font-size: 14px;
+                position: absolute;
+                right: -17px;
+                top: -7px;
+                color: #999999;
+            }
+            .hot-tags-list {
+                margin-left: -4px;
+                margin-right: -4px;
+                font-size: 0;
+            }
+            .hot-tags-list>li {
+                display: inline-block;
+                padding-left: 4px;
+                padding-right: 4px;
+                font-size: 14px;
+                margin-top: 16px;
+            }
+            .hot-tags-list .hot-tag-item {
+                display: inline-block;
+                padding: 9px 20px;
+                font-size: 14px;
+                 color: #666666;
+                 border-radius: 5px;
+                 background-color: #f4f4f4;
+            }
+            .hot-tags-list .hot-tag-item:hover {
+                background-color: #00cc99;
+                color: #ffffff;
+            }
+
+            /* 微信公众号 */
+            .wechat-public {
+                position: relative;
+                margin-top: 30px;
+            }
+            .wechat-public>img {
+                display: inline-block;
+                vertical-align: top;
+                border: none;
+                width: 138px;
+                height: 138px;
+            }
+            .wechat-public>p {
+                position: absolute;
+                top: 50%;
+                right: 0;
+                font-size: 14px;
+                font-weight: 400;
+                font-family: 'Microsoft YaHei';
+                color: #333333;
+                transform: translateY(-50%);
+            }
+            #kefu {
+             height: 300px;
+             background: linear-gradient(97deg, #87D2D0, #BBDCCA);
+         }
+         .kefu-content {
+             padding-top: 90px;
+             text-align: center;
+         }
+         .kefu-content>h2 {
+            font-size: 50px;
+            font-family: Microsoft YaHei;
+            font-weight: bold;
+            color: #FFFFFF;
+            text-align: center;
+         }
+         .kefu-content>button {
+             width: 240px;
+             height: 60px;
+             border: 0;
+             border: 2px solid #ffffff;
+             border-radius: 30px;
+             outline: none;
+             background-color: transparent;
+             font-size: 28px;
+             color: #ffffff;
+             cursor: pointer;
+             margin-top: 37px;
+             transition: all .25s ease-in-out;
+         }
+         .kefu-content>button:hover {
+            background-color: #00cc99;
+            color: #fff;
+            border: 0;
+         }
+        }
+
+       @media screen and (max-width: 1300px) and (min-width: 992px) {
+        .layui-container {
+              width: 970px !important;
+              padding: 0 !important;
+          }
+          .header-nav {
+              height: 65px;
+          }
+
+          .head-right>.text{
+            margin-right: 40px;
+            height: 30px;
+            line-height: 30px;
+        }
+        .head-right>.text>a {
+            font-size: 14px;
+            color: #999999; 
+        }
+        .head-right>.text>a:first-child {
+            margin-right: 24px;
+        }
+          .btns>button {
+              width: 96px;
+              height: 30px;
+              line-height: 30px;
+              font-size: 14px;
+              border-radius: 15px;
+              outline: none;
+              border: none;
+              cursor: pointer;
+          }
+          .btns>button.login {
+              background: #fff;
+              border: 1px solid #00cc99;
+              color: #00cc99;
+          }
+          .btns>button.free-btn {
+              background: #00AC81;
+              color: #ffffff;
+              margin-left: 20px;
+          }
+
+          /* 导航栏 */
+          .school-nav {
+               height: 65px;
+               display: flex;
+               align-items: center;
+           }
+           .school-nav>a {
+               font-size: 16px;
+               margin-right: 80px;
+               display: inline-block;
+               height: 65px;
+               line-height: 65px;
+               padding: 0 6px;
+               box-sizing: border-box;
+           }
+           .school-nav>a>.icon-nav-item {
+               display: inline-block;
+               width: 18px;
+               height: 18px;
+               margin-right: 5px;
+               background-size: contain;
+               opacity: 0;
+               transition: opacity .25s;
+               vertical-align: middle;
+           }
+           .school-nav>a>span {
+               font-size: 16px;
+               color: #333333;
+               vertical-align: middle;
+           }
+           .icon-nav-home {
+               background-image: url(/static/image/qingschool/school-home.png);
+           }
+           .school-nav>a:hover span, .school-nav>a.active span {
+             color: #00cc81;
+           }
+           .school-nav>a:hover, .school-nav>a.active {
+             border-bottom: 3px solid #00ac81; 
+           }
+           .school-nav>a.active .icon-nav-item {
+              opacity: 1;
+           }
+           .school-nav>a:hover .icon-nav-item {
+               opacity: 1;
+           }
+
+           #content-center {
+               padding-bottom: 60px;
+           }
+              /* 面包屑导航栏 */
+              .single-breadcrumb {
+               padding: 24px 0;
+               color: #666666;
+           }
+           .breadcrumb-link {
+               color: #00cc99;
+               font-size: 14px;
+           }
+           .breadcrumb-link:hover {
+               color: #00cc99;
+           }
+           .school-left-con {
+               width: 67%;
+           }
+           .school-right-con {
+               width: 30%;
+           }
+
+              /* 文章详情页 */
+              .single-article-content {
+               padding: 32px;
+               background: #ffffff;
+               border: 1px solid #e5eaf1;
+               /* min-height: 600px; */
+               border-radius: 5px;
+           }
+           .article-head-title>h2 {
+               font-size: 22px;
+               line-height: 36px;
+               color: #333333;
+               font-weight: 600;
+               text-align: justify;
+           }
+           .article-head>.article-head-desc {
+               position: relative;
+               margin-top: 18px;
+               font-size: 12px;
+               line-height: 22px;
+               color: #999999;
+           }
+           .article-head-desc .time, .article-head-desc .category {
+               font-size: 12px;
+               line-height: 22px;
+               color: #999999;
+           }
+           .article-head-desc .vertical-bar {
+               display: inline-block;
+               margin: 0 10px;
+           }
+           .article-head-desc .tags-box {
+               display: inline-block;
+           }
+           .article-head-desc .tags-box .tag-item {
+            display: inline-block;
+            margin: 0 4px;
+            padding: 4px 6px;
+            color: currentColor;
+            background: #f5f5f5;
+            border-radius: 2px;
+            -webkit-transition: all .25s ease-in-out;
+            -o-transition: all .25s ease-in-out;
+            transition: all .25s ease-in-out;
+            }
+            .reading-box {
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .reading-box .icon-view {
+                display: inline-block;
+                width: 14px;
+                height: 14px;
+                background: url(/static/image/qingschool/eyes.svg) no-repeat center;
+                background-size: contain;
+                vertical-align: middle;
+            }
+            .article-head-desc .reading-box span {
+                display: inline-block;
+                color: #8c8d9e;
+                font-size: 12px;
+                line-height: 22px;
+                vertical-align: middle;
+            }
+
+            .article-head-desc .tags-box .tag-item:hover {
+                background: #00cc99;
+                color: #fff;
+            }
+           
+            /* 摘要 */
+            .article-excerpt {
+                margin-top: 20px;
+                padding: 12px 20px;
+                background: #f5f5f5;
+            }
+            .article-excerpt p {
+                position: relative;
+                color: #464964;
+                padding-left: 48px;
+                font-size: 14px;
+                line-height: 24px;
+            }
+            .article-excerpt p span {
+                position: absolute;
+                top: 0px;
+                left: 0;
+                color: #171c3c;
+                font-size: 16px;
+                font-weight: 600;
+            }
+            /* 文章主体 */
+            .article-body {
+                margin-top: 24px;
+                color: #464964;
+                line-height: 2;
+            }
+            /* 分割线 */
+            .divider {
+                margin: 40px 0;
+                width: 100%;
+                height: 1px;
+                background: #e5e5e5;
+            }
+            /* 上一篇下一篇 */
+            .article-link .article-link-item {
+                color: #171c3c;
+                font-size: 14px;
+                line-height: 20px;
+            }
+            .article-link .article-link-item+.article-link-item {
+                margin-top: 16px;
+            }
+        
+            .article-link .article-link-item a {
+                color: #171c3c;
+                font-size: 14px;
+                line-height: 20px;
+            }
+            .article-link .article-link-item a:hover {
+                color: #00cc99;
+            }
+         
+            .siderbar-item {
+                width: 100%;
+                background-color: #ffffff;
+                border: 1px solid #e5e5e5;
+                border-radius: 10px;
+                padding: 24px 24px 32px;
+                box-sizing: border-box;
+                margin-top: 24px;
+            }
+            /* 搜索框 */
+            .siderbar-item-search {
+                padding: 0;
+                margin-top: 0;
+            }
+            .search-form {
+                width: 100%;
+                position: relative;
+            }
+            .search-form input {
+            height: 40px;
+            border: none;
+            outline: 0;
+            }
+            .search-form .searchInput {
+            width: 100%;
+            padding: 0 40px;
+            color: #8c8d9e;
+            background-color: #fff;
+            border-radius: 10px;
+           }
+           .search-form .submitInput {
+            position: absolute;
+            width: 40px;
+            top: 0;
+            right: 0;
+            font-size: 0;
+            cursor: pointer;
+            background-color: #fff;
+            background: url(/static/image/qingschool/search-icon.png) no-repeat center;
+            background-size: 14px;
+            }
+            /* .siderbar-item-search {
+
+            } */
+            /* 热门文章 */
+            .siderbar-item-head {
+               margin-bottom: 8px;
+            }
+            .siderbar-item-head>h2 {
+                position: relative;
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 32px;
+                color: #171c3c;
+                border-bottom: 1px solid #e5eaf1;
+            }
+            .siderbar-item-head>h2>span {
+                display: inline-block;
+                position: relative;
+                padding-bottom: 10px;
+             }
+             .siderbar-item-head>h2>span::after {
+                 position: absolute;
+                 content: '';
+                 bottom: -2px;
+                 left: 0;
+                 width: 100%;
+                 height: 2px;
+                 background-color: #00cc99;
+             }
+             .switch-article {
+                 position: absolute;
+                 top: 50%;
+                 transform: translateY(-50%);
+                 -webkit-transform: translateY(-50%);
+                 -ms-transform: translateY(-50%);
+                 right: 0;
+                 font-size: 14px;
+                 line-height: 1;
+                 color: #999999;
+                 margin-top: -5px;
+                 font-weight: 400;
+             }
+             .switch-article>.switch-article-btn {
+                 display: inline-block;
+                 vertical-align: middle;
+                 margin: 0 8px;
+                 cursor: pointer;
+             }
+             .switch-article>.switch-article-btn.active {
+                 color: #00cc99;
+             }
+             .hot-article-list {
+                 display: none;
+             }
+             .hot-article-list.active {
+                 display: block;
+             }
+             .article-item {
+                position: relative;
+                padding: 14px 0 14px 48px;
+                /* background-repeat: no-repeat;
+                background-size: 30px 30px;
+                background-position-y: 16px; */
+             }
+             .article-item:not(:first-child) {
+                 border-top: 1px solid #e5e5e5;
+             }
+             .article-item::before {
+                position: absolute;
+                 font-size: 36px;
+                 font-weight: bold;
+                 left: 0;
+             }
+             .article-item:nth-child(1)::before {
+                 content: '01';
+                 color: #f55b5b;
+             }
+             .article-item:nth-child(2)::before {
+                 content: '02';
+                 color: #FF9D47;
+             }
+             .article-item:nth-child(3)::before {
+                 content: '03';
+                 color: #FFD16B;
+             }
+             .article-item:nth-child(4)::before {
+                 content: '04';
+                 color: #E0E0E0;
+             }
+             .article-item:nth-child(5)::before {
+                 content: '05';
+                 color: #E0E0E0;
+             }
+
+             .hot-article-list .article-item .link {
+                font-size: 14px;
+                line-height: 20px;
+                color: #666666;
+            }
+            .article-item .link p {
+                font-size: 14px;
+                line-height: 20px;
+                overflow: hidden;
+                -o-text-overflow: ellipsis;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+            }
+            .article-item .link p:hover {
+                color: #00cc99;
+            }
+            .article-item .link .time {
+                display: block;
+                margin-top: 12px;
+                font-size: 12px;
+                line-height: 1;
+                color: #999999;
+                text-align: right;
+            }
+            /* 热门产品 */
+           .hot-products-list {
+               margin-left: -7px;
+               margin-right: -7px;
+               font-size: 0;
+           }           
+           .hot-products-list>li {
+               display: inline-block;
+               font-size: 14px;
+               padding: 0 7px;
+               width: 50%;
+               margin-top: 16px;
+           }
+           .hot-products-list .hot-products-item {
+               display: block;
+               padding: 12px 10px;
+               background-color: #f4f4f4;
+               border-radius: 4px;
+           }
+           .hot-products-list .hot-products-item:hover {
+               background-color: #00cc99;
+           }
+           .hot-products-list .hot-products-item:hover span {
+               color: #ffffff;
+           }
+           .hot-products-list .hot-products-item .icon-hot-product {
+               display: inline-block;
+                width: 14px;
+                height: 14px;
+                background-repeat: no-repeat;
+                background-size: contain;
+                vertical-align: middle;
+            }
+            .hot-products-list .hot-products-item .icon-hot-product.icon-hot-product_1 {
+                background-image: url(/static/image/qingschool/hot_product-1.png);
+            }
+            .hot-products-list .hot-products-item .icon-hot-product.icon-hot-product_2 {
+                background-image: url(/static/image/qingschool/hot_product-2.png);
+            }
+            .hot-products-list .hot-products-item .icon-hot-product.icon-hot-product_3 {
+                background-image: url(/static/image/qingschool/hot_product-3.png);
+            }
+            .hot-products-list .hot-products-item .icon-hot-product.icon-hot-product_4 {
+                background-image: url(/static/image/qingschool/hot_product-4.png);
+            }
+            .hot-products-item span {
+                font-size: 14px;
+                line-height: 1;
+                color: #666666;
+                display: inline-block;
+                vertical-align: middle;
+                margin-left: 4px;
+            }
+            /* 热门标签 */
+            .hot-tags-more {
+                position: absolute;
+                top: 50%;
+                right: 20px;
+                font-size: 14px;
+                line-height: 1;
+                font-weight: 400;
+                color: #999999;
+                transform: translateY(-50%);
+                margin-top: -5px;
+            }
+            .hot-tags-more:hover,.hot-tags-more:hover::after {
+                color: #00cc99;
+            }
+            .hot-tags-more::after {
+                display: block;
+                content: '...';
+                font-size: 14px;
+                position: absolute;
+                right: -17px;
+                top: -7px;
+                color: #999999;
+            }
+            .hot-tags-list {
+                margin-left: -4px;
+                margin-right: -4px;
+                font-size: 0;
+            }
+            .hot-tags-list>li {
+                display: inline-block;
+                padding-left: 4px;
+                padding-right: 4px;
+                font-size: 14px;
+                margin-top: 14px;
+            }
+            .hot-tags-list .hot-tag-item {
+                display: inline-block;
+                padding: 9px 14px;
+                font-size: 14px;
+                 color: #666666;
+                 border-radius: 5px;
+                 background-color: #f4f4f4;
+            }
+            .hot-tags-list .hot-tag-item:hover {
+                background-color: #00cc99;
+                color: #ffffff;
+            }
+
+            /* 微信公众号 */
+            .wechat-public {
+                position: relative;
+                margin-top: 24px;
+            }
+            .wechat-public>img {
+                display: inline-block;
+                vertical-align: top;
+                border: none;
+                width: 110px;
+                height: 110px;
+            }
+            .wechat-public>p {
+                position: absolute;
+                top: 50%;
+                right: 0;
+                font-size: 14px;
+                font-weight: 400;
+                font-family: 'Microsoft YaHei';
+                color: #333333;
+                transform: translateY(-50%);
+            }
+
+            #kefu {
+             height: 240px;
+             background: linear-gradient(97deg, #87D2D0, #BBDCCA);
+         }
+         .kefu-content {
+             padding-top: 60px;
+             text-align: center;
+         }
+         .kefu-content>h2 {
+            font-size: 40px;
+            font-family: Microsoft YaHei;
+            font-weight: bold;
+            color: #FFFFFF;
+            text-align: center;
+         }
+         .kefu-content>button {
+             width: 180px;
+             height: 50px;
+             border: 0;
+             border: 1px solid #ffffff;
+             border-radius: 25px;
+             outline: none;
+             background-color: transparent;
+             font-size: 22px;
+             color: #ffffff;
+             cursor: pointer;
+             margin-top: 24px;
+             transition: all .25s ease-in-out;
+         }
+         .kefu-content>button:hover {
+            background-color: #00cc99;
+            color: #fff;
+            border: 0;
+         }
+       }
+
+       @media screen and (max-width:992px) and (min-width: 769px) {
+        .layui-container {
+              width: 750px !important;
+              padding: 0 !important;
+          }
+          .header-nav {
+              height: 65px;
+          }
+
+          .head-right>.text{
+            margin-right: 40px;
+            height: 30px;
+            line-height: 30px;
+        }
+        .head-right>.text>a {
+            font-size: 14px;
+            color: #999999; 
+        }
+        .head-right>.text>a:first-child {
+            margin-right: 32px;
+        }
+          .btns>button {
+              width: 103px;
+              height: 30px;
+              line-height: 30px;
+              font-size: 14px;
+              border-radius: 15px;
+              outline: none;
+              border: none;
+              cursor: pointer;
+          }
+          .btns>button.login {
+              background: #fff;
+              border: 1px solid #00cc99;
+              color: #00cc99;
+          }
+          .btns>button.free-btn {
+              background: #00AC81;
+              color: #ffffff;
+              margin-left: 20px;
+          }
+
+          /* 导航栏 */
+          .school-nav {
+               height: 65px;
+               display: flex;
+               align-items: center;
+           }
+           .school-nav>a {
+               font-size: 16px;
+               margin-right: 40px;
+               display: inline-block;
+               height: 65px;
+               line-height: 65px;
+               padding: 0 6px;
+               box-sizing: border-box;
+           }
+           .school-nav>a>.icon-nav-item {
+               display: inline-block;
+               width: 18px;
+               height: 18px;
+               margin-right: 5px;
+               background-size: contain;
+               opacity: 0;
+               transition: opacity .25s;
+               vertical-align: middle;
+           }
+           .school-nav>a>span {
+               font-size: 16px;
+               color: #333333;
+               vertical-align: middle;
+           }
+           .icon-nav-home {
+               background-image: url(/static/image/qingschool/school-home.png);
+           }
+           .school-nav>a:hover span, .school-nav>a.active span {
+             color: #00cc81;
+           }
+           .school-nav>a:hover, .school-nav>a.active {
+             border-bottom: 3px solid #00ac81; 
+           }
+           .school-nav>a.active .icon-nav-item {
+              opacity: 1;
+           }
+           .school-nav>a:hover .icon-nav-item {
+               opacity: 1;
+           }
+           .flex-space-between {
+               display: flex;
+               justify-content: center;
+           }
+           .school-left-con {
+               width: 100%;
+           }
+           .school-right-con {
+              display: none;
+           }
+
+           #content-center {
+               padding-bottom: 60px;
+           }
+              /* 面包屑导航栏 */
+              .single-breadcrumb {
+               padding: 24px 0;
+               color: #666666;
+           }
+           .breadcrumb-link {
+               color: #00cc99;
+               font-size: 14px;
+           }
+           .breadcrumb-link:hover {
+               color: #00cc99;
+           }
+              /* 文章详情页 */
+              .single-article-content {
+               padding: 32px;
+               background: #ffffff;
+               border: 1px solid #e5eaf1;
+               /* min-height: 600px; */
+               border-radius: 5px;
+           }
+           .article-head-title>h2 {
+               font-size: 22px;
+               line-height: 36px;
+               color: #333333;
+               font-weight: 600;
+               text-align: justify;
+           }
+           .article-head>.article-head-desc {
+               position: relative;
+               margin-top: 18px;
+               font-size: 12px;
+               line-height: 22px;
+               color: #999999;
+           }
+           .article-head-desc .time, .article-head-desc .category {
+               font-size: 12px;
+               line-height: 22px;
+               color: #999999;
+           }
+           .article-head-desc .vertical-bar {
+               display: inline-block;
+               margin: 0 10px;
+           }
+           .article-head-desc .tags-box {
+               display: inline-block;
+           }
+           .article-head-desc .tags-box .tag-item {
+            display: inline-block;
+            margin: 0 4px;
+            padding: 4px 6px;
+            color: currentColor;
+            background: #f5f5f5;
+            border-radius: 2px;
+            -webkit-transition: all .25s ease-in-out;
+            -o-transition: all .25s ease-in-out;
+            transition: all .25s ease-in-out;
+            }
+            .reading-box {
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .reading-box .icon-view {
+                display: inline-block;
+                width: 14px;
+                height: 14px;
+                background: url(/static/image/qingschool/eyes.svg) no-repeat center;
+                background-size: contain;
+                vertical-align: middle;
+            }
+            .article-head-desc .reading-box span {
+                display: inline-block;
+                color: #8c8d9e;
+                font-size: 12px;
+                line-height: 22px;
+                vertical-align: middle;
+            }
+
+            .article-head-desc .tags-box .tag-item:hover {
+                background: #00cc99;
+                color: #fff;
+            }
+           
+            /* 摘要 */
+            .article-excerpt {
+                margin-top: 20px;
+                padding: 12px 20px;
+                background: #f5f5f5;
+            }
+            .article-excerpt p {
+                position: relative;
+                color: #464964;
+                padding-left: 48px;
+                font-size: 14px;
+                line-height: 24px;
+            }
+            .article-excerpt p span {
+                position: absolute;
+                top: 0px;
+                left: 0;
+                color: #171c3c;
+                font-size: 16px;
+                font-weight: 600;
+            }
+            /* 文章主体 */
+            .article-body {
+                margin-top: 24px;
+                color: #464964;
+                line-height: 2;
+            }
+            /* 分割线 */
+            .divider {
+                margin: 40px 0;
+                width: 100%;
+                height: 1px;
+                background: #e5e5e5;
+            }
+            /* 上一篇下一篇 */
+            .article-link .article-link-item {
+                color: #171c3c;
+                font-size: 14px;
+                line-height: 20px;
+            }
+            .article-link .article-link-item+.article-link-item {
+                margin-top: 16px;
+            }
+        
+            .article-link .article-link-item a {
+                color: #171c3c;
+                font-size: 14px;
+                line-height: 20px;
+            }
+            .article-link .article-link-item a:hover {
+                color: #00cc99;
+            }
+            #kefu {
+             height: 200px;
+             background: linear-gradient(97deg, #87D2D0, #BBDCCA);
+         }
+         .kefu-content {
+             padding-top: 40px;
+             text-align: center;
+         }
+         .kefu-content>h2 {
+            font-size: 40px;
+            font-family: Microsoft YaHei;
+            font-weight: bold;
+            color: #FFFFFF;
+            text-align: center;
+         }
+         .kefu-content>button {
+             width: 130px;
+             height: 40px;
+             border: 0;
+             border: 1px solid #ffffff;
+             border-radius: 20px;
+             outline: none;
+             background-color: transparent;
+             font-size: 18px;
+             color: #ffffff;
+             cursor: pointer;
+             margin-top: 24px;
+             transition: all .25s ease-in-out;
+         }
+         .kefu-content>button:hover {
+            background-color: #00cc99;
+            color: #fff;
+            border: 0;
+         }
+         
+          
+       }
+
+       @media screen and (max-width: 768px) {
+           .layui-container {
+               width: 100%;
+               padding: 0 ;
+           }
+          .header-nav {
+              height: 45px;
+              padding: 0 15px;
+          }
+         .logo img {
+             width: 82.67px;
+             height: 30px;
+         }
+          .head-right>.text{
+            margin-right: 0px;
+            height: 30px;
+            line-height: 30px;
+        }
+        .head-right>.text>a {
+            font-size: 14px;
+            color: #999999; 
+        }
+        .head-right>.text>a:first-child {
+            margin-right: 32px;
+        }
+        .btns {
+            display: none;
+        }
+          .btns>button {
+              width: 103px;
+              height: 30px;
+              line-height: 30px;
+              font-size: 14px;
+              border-radius: 15px;
+              outline: none;
+              border: none;
+              cursor: pointer;
+          }
+          .btns>button.login {
+              background: #fff;
+              border: 1px solid #00cc99;
+              color: #00cc99;
+          }
+          .btns>button.free-btn {
+              background: #00AC81;
+              color: #ffffff;
+              margin-left: 20px;
+          }
+
+          /* 导航栏 */
+           .school-nav {
+               height: 45px;
+               display: flex;
+               justify-content: space-between;
+               align-items: center;
+               /* min-width: 500px; */
+               width: auto;
+               overflow-x: auto;
+               padding: 0 15px;
+               box-sizing: border-box;
+            }
+           .school-nav>a {
+            flex-shrink: 0;
+            width: auto;
+            display: block;
+            font-size: 12px;
+            height: 40px;
+            line-height: 40px;
+            margin-right: 15px;
+            padding: 0 5px;
+            box-sizing: border-box;
+            }
+
+           .school-nav>a>.icon-nav-item {
+            display: none;
+           }
+           .school-nav>a>span {
+               font-size: 14px;
+               color: #333333;
+               vertical-align: middle;
+           }
+           .school-nav>a:hover span, .school-nav>a.active span {
+             color: #00cc81;
+           }
+           .school-nav>a:hover, .school-nav>a.active {
+             border-bottom: 3px solid #00ac81; 
+           }
+           .flex-space-between {
+               display: flex;
+               justify-content: center;
+           }
+           .school-left-con {
+               width: 100%;
+           }
+           .school-right-con {
+              display: none;
+           }
+           #content-center {
+               padding-bottom: 30px;
+           }
+              /* 面包屑导航栏 */
+          .single-breadcrumb {
+               /* padding: 24px 0;
+               color: #666666; */
+               display: none;
+           }
+           .breadcrumb-link {
+               color: #00cc99;
+               font-size: 14px;
+           }
+           .breadcrumb-link:hover {
+               color: #00cc99;
+           }
+              /* 文章详情页 */
+              .single-article-content {
+               padding: 20px 16px;
+               background: #ffffff;
+               border: 1px solid #e5eaf1;
+               /* min-height: 600px; */
+               border-radius: 5px;
+           }
+           .article-head-title>h2 {
+               font-size: 18px;
+               line-height: 28px;
+               color: #333333;
+               font-weight: 600;
+               text-align: justify;
+           }
+           .article-head>.article-head-desc {
+               position: relative;
+               margin-top: 10px;
+               font-size: 12px;
+               line-height: 22px;
+               color: #999999;
+           }
+           .article-head-desc .time, .article-head-desc .category {
+               font-size: 12px;
+               line-height: 22px;
+               color: #999999;
+           }
+           .article-head-desc .vertical-bar {
+               display: inline-block;
+               margin: 0 10px;
+           }
+           .article-head-desc .vertical-bar:last-of-type {
+               display: none;
+           }
+           .article-head-desc .tags-box {
+               display: none;
+           }
+           .article-head-desc .tags-box .tag-item {
+            display: inline-block;
+            margin: 0 4px;
+            padding: 4px 6px;
+            color: currentColor;
+            background: #f5f5f5;
+            border-radius: 2px;
+            -webkit-transition: all .25s ease-in-out;
+            -o-transition: all .25s ease-in-out;
+            transition: all .25s ease-in-out;
+            }
+            .reading-box {
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .reading-box .icon-view {
+                display: inline-block;
+                width: 14px;
+                height: 14px;
+                background: url(/static/image/qingschool/eyes.svg) no-repeat center;
+                background-size: contain;
+                vertical-align: middle;
+            }
+            .article-head-desc .reading-box span {
+                display: inline-block;
+                color: #8c8d9e;
+                font-size: 12px;
+                line-height: 22px;
+                vertical-align: middle;
+            }
+
+            .article-head-desc .tags-box .tag-item:hover {
+                background: #00cc99;
+                color: #fff;
+            }
+           
+            /* 摘要 */
+            .article-excerpt {
+                margin-top: 16px;
+                padding: 10px 18px;
+                background: #f5f5f5;
+            }
+            .article-excerpt p {
+                position: relative;
+                color: #464964;
+                font-size: 12px;
+                line-height: 20px;
+            }
+            .article-excerpt p span {
+             display: none;
+            }
+            /* 文章主体 */
+            .article-body {
+                margin-top: 20px;
+                color: #464964;
+                line-height: 1.8;
+            }
+            /* 分割线 */
+            .divider {
+                margin: 26px 0;
+                width: 100%;
+                height: 1px;
+                background: #e5e5e5;
+            }
+            /* 上一篇下一篇 */
+            .article-link .article-link-item {
+                color: #171c3c;
+                font-size: 12px;
+                line-height: 20px;
+            }
+            .article-link .article-link-item+.article-link-item {
+                margin-top: 12px;
+            }
+        
+            .article-link .article-link-item a {
+                color: #171c3c;
+                font-size: 12px;
+                line-height: 18px;
+            }
+            .article-link .article-link-item a:hover {
+                color: #00cc99;
+            }
+            #kefu {
+             height: 150px;
+             background: linear-gradient(97deg, #87D2D0, #BBDCCA);
+         }
+         .kefu-content {
+             padding-top: 30px;
+             text-align: center;
+         }
+         .kefu-content>h2 {
+            font-size: 20px;
+            font-family: Microsoft YaHei;
+            font-weight: bold;
+            color: #FFFFFF;
+            text-align: center;
+         }
+         .kefu-content>button {
+             width: 100px;
+             height: 32px;
+             border: 0;
+             border-radius: 16px;
+             outline: none;
+             background-color: transparent;
+             font-size: 14px;
+             background-color: #00cc99;
+            color: #fff;
+             cursor: pointer;
+             margin-top: 20px;
+             transition: all .25s ease-in-out;
+         }
+       }
+
+
+    </style>
+</head>
+
+<body cz-shortcut-listen="true">
+    <div id="qingschool">
+        <!-- 头部 -->
+        <header>
+            <div class="layui-container flex-center-space-between header-nav">
+                <div class="logo">
+                    <a href="{:url('/')}"><img src="/static/image/logo.png" alt=""></a>
+                </div>
+                <div class="head-right">
+                    <div class="text">
+                        <a href="{:url('/')}">轻直播首页</a>
+                        <a href="{:url('/')}">产品功能</a>
+                    </div>
+                    <div class="btns">
+                        <button class="login">登录</button>
+                        <button class="free-btn">免费试用</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- 导航栏 -->
+        <nav>
+            <div class="layui-container school-nav">
+                <a href="{:url('qing_school/index')}">
+                    <!-- <img src="/static/image/qingschool/school-home.png" alt=""> -->
+                    <i class="icon-nav-item icon-nav-home"></i>
+                     <span>内容中心</span>
+                </a>
+                <a href="{:url('qing_school/case')}">
+                    <i class="icon-nav-item icon-nav-home"></i>
+                    <span>案例解析</span>
+                </a>
+                <a href="{:url('qing_school/products')}">
+                    <i class="icon-nav-item icon-nav-home"></i>
+                    <span>产品动态</span>
+                </a>
+                <a href="{:url('qing_school/liveNews')}">
+                    <i class="icon-nav-item icon-nav-home"></i>
+                    <span>直播资讯</span>
+                </a>
+                <a href="">
+                    <span>视频学院</span>
+                </a>
+            </div>
+        </nav>
+        <!-- 内容区域 -->
+        <section id="content-center">
+            <!-- 文章面包屑导航 -->
+            <div class="layui-container">
+                <div class="single-breadcrumb">
+                    <a href="" class="breadcrumb-link">内容中心 ></a>
+                    <a href="" class="breadcrumb-link">
+                     解决方案 >
+                    </a>
+                    500强银行直播揭秘：中国银行、建设银行都这么做！
+                </div>
+            </div>
+            <div class="layui-container flex-space-between">
+                <div class="school-left-con">
+                   <!-- 文章详情-->
+                   <div class="single-article-content">
+                       <!-- 文章标题 -->
+                        <div class="article-head">
+                            <div class="article-head-title">
+                                <h2>500强银行直播揭秘：中国银行、建设银行都这么做！</h2>
+                            </div>
+                            <div class="article-head-desc">
+                                <span class="time">2020-12-21</span>
+                                <i class="vertical-bar">|</i>
+                                <span class="category">解决方案</span>
+                                <i class="vertical-bar">|</i>
+                                 <div class="tags-box">
+                                     <a href="" class="tag-item">企业直播服务商</a>
+                                     <a href="" class="tag-item">企业直播软件</a>
+                                     <a href="" class="tag-item">轻直播</a>
+                                 </div>
+                                 <div class="reading-box">
+                                     <i class="icon-view"></i>
+                                     <span>222</span>
+                                 </div>
+                            </div>
+                        </div>
+                        <!-- 摘要 -->
+                        <div class="article-excerpt">
+                            <p>
+                                <span>摘要：</span>
+                                工商银行、中国银行、建设银行等大型银行，今年都通过保利威直播进行了培训、营销、大会等多个场景的直播应用，实现业务的优化和增长。
+                            </p>
+                        </div>
+                        <!-- 文章内容 -->
+                        <div class="article-body">
+
+                        </div>
+                        <!-- 分割线 -->
+                        <div class="divider"></div>
+                        <!-- 上一篇下一篇 -->
+                        <div class="article-link">
+                            <div class="article-link-item">
+                               上一篇
+                               <a href="">
+                                带货直播如何让转化翻倍？9个案例轻松搞定
+                               </a> 
+                            </div>
+                            <div class="article-link-item">
+                                下一篇
+                                <a href="">
+                                 疫情之下，如何快速筹备一场“云年会”?
+                                </a>
+                            </div>
+                        </div>
+                   </div>
+                </div>
+                <div class="school-right-con">
+                    <div class="siderbar-item siderbar-item-search">
+                       <form action="" class="search-form" id="search-form">
+                             <input type="text" class="searchInput" placeholder="输入关键词" autocomplete="off">
+                             <input type="submit" class="submitInput" alt="search">
+                       </form>
+                    </div>
+                    <!-- 热门文章 -->
+                    <div class="siderbar-item siderbar-item-article">
+                          <div class="siderbar-item-head">
+                              <h2>
+                                  <span>热门文章</span>
+                                  <div class="switch-article">
+                                    <div class="switch-article-btn active">热门</div>
+                                    <div class="switch-article-btn">推荐</div>
+                                </div>
+                              </h2>
+                             
+                          </div>
+                          <ul class="hot-article-list active">
+                              <li class="article-item">
+                                  <a href="" class="link" title="做一场成功的年会直播，要注意这几点" target="_blank" rel="noopener noreferrer">
+                                       <p>一场成功的直播是怎么互动的? 轻直播6大互动功能，点燃你的直播间</p>
+                                       <span class="time">2021-12-06</span>
+                                  </a>
+                              </li>
+                              <li class="article-item">
+                                <a href="" class="link" title="做一场成功的年会直播，要注意这几点" target="_blank" rel="noopener noreferrer">
+                                     <p>一场成功的直播是怎么互动的? 轻直播6大互动功能，点燃你的直播间</p>
+                                     <span class="time">2021-12-06</span>
+                                </a>
+                            </li>
+                            <li class="article-item">
+                                <a href="" class="link" title="做一场成功的年会直播，要注意这几点" target="_blank" rel="noopener noreferrer">
+                                     <p>一场成功的直播是怎么互动的? 轻直播6大互动功能，点燃你的直播间</p>
+                                     <span class="time">2021-12-06</span>
+                                </a>
+                            </li>
+                            <li class="article-item">
+                                <a href="" class="link" title="做一场成功的年会直播，要注意这几点" target="_blank" rel="noopener noreferrer">
+                                     <p>一场成功的直播是怎么互动的? 轻直播6大互动功能，点燃你的直播间</p>
+                                     <span class="time">2021-12-06</span>
+                                </a>
+                            </li>
+                            <li class="article-item">
+                                <a href="" class="link" title="做一场成功的年会直播，要注意这几点" target="_blank" rel="noopener noreferrer">
+                                     <p>一场成功的直播是怎么互动的? 轻直播6大互动功能，点燃你的直播间</p>
+                                     <span class="time">2021-12-06</span>
+                                </a>
+                            </li>
+                          </ul>
+                          <ul class="hot-article-list">
+                            <li class="article-item">
+                                <a href="" class="link" title="做一场成功的年会直播，要注意这几点" target="_blank" rel="noopener noreferrer">
+                                     <p>一场成功的直播是怎么互动的? 轻直播6大互动功能，点燃你的直播间</p>
+                                     <span class="time">2021-12-06</span>
+                                </a>
+                            </li>
+                            <li class="article-item">
+                              <a href="" class="link" title="做一场成功的年会直播，要注意这几点" target="_blank" rel="noopener noreferrer">
+                                   <p>一场成功的直播是怎么互动的? 轻直播6大互动功能，点燃你的直播间</p>
+                                   <span class="time">2021-12-06</span>
+                              </a>
+                          </li>
+                          <li class="article-item">
+                              <a href="" class="link" title="做一场成功的年会直播，要注意这几点" target="_blank" rel="noopener noreferrer">
+                                   <p>一场成功的直播是怎么互动的? 轻直播6大互动功能，点燃你的直播间</p>
+                                   <span class="time">2021-12-06</span>
+                              </a>
+                          </li>
+                          <li class="article-item">
+                              <a href="" class="link" title="做一场成功的年会直播，要注意这几点" target="_blank" rel="noopener noreferrer">
+                                   <p>一场成功的直播是怎么互动的? 轻直播6大互动功能，点燃你的直播间</p>
+                                   <span class="time">2021-12-06</span>
+                              </a>
+                          </li>
+                          <li class="article-item">
+                              <a href="" class="link" title="做一场成功的年会直播，要注意这几点" target="_blank" rel="noopener noreferrer">
+                                   <p>一场成功的直播是怎么互动的? 轻直播6大互动功能，点燃你的直播间</p>
+                                   <span class="time">2021-12-06</span>
+                              </a>
+                          </li>
+                        </ul>
+                    </div>
+
+                    <!-- 热门产品 -->
+                    <div class="siderbar-item">
+                          <div class="siderbar-item-head">
+                              <h2>
+                                  <span>
+                                      热门产品
+                                  </span>
+                              </h2>
+                          </div>
+                          <ul class="hot-products-list">
+                              <li>
+                                  <a href="" class="hot-products-item" target="_blank">
+                                      <i class="icon-hot-product icon-hot-product_1"></i>
+                                      <span>企业直播</span>
+                                  </a>
+                              </li>
+                              <li>
+                                <a href="" class="hot-products-item" target="_blank">
+                                    <i class="icon-hot-product icon-hot-product_2"></i>
+                                    <span>培训直播</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="hot-products-item" target="_blank">
+                                    <i class="icon-hot-product icon-hot-product_3"></i>
+                                    <span>视频点播</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="hot-products-item" target="_blank">
+                                    <i class="icon-hot-product icon-hot-product_4"></i>
+                                    <span>视频混合云</span>
+                                </a>
+                            </li>
+                          </ul>
+                    </div>
+
+                    <!-- 热门标签 -->
+                    <div class="siderbar-item siderbar-item-label">
+                        <div class="siderbar-item-head">
+                            <h2>
+                                <span>
+                                    热门标签
+                                </span>
+                                <a href="" class="hot-tags-more" rel="tag">更多</a>
+                            </h2>
+                        </div>
+                        <ul class="hot-tags-list">
+                             <li><a href="" class="hot-tag-item">轻直播</a></li>
+                             <li><a href="" class="hot-tag-item">医学会议</a></li>
+                             <li><a href="" class="hot-tag-item">医学会议</a></li>
+                             <li><a href="" class="hot-tag-item">云视频服务</a></li>
+                             <li><a href="" class="hot-tag-item">视频托管</a></li>
+                             <li><a href="" class="hot-tag-item">直播</a></li>
+                             <li><a href="" class="hot-tag-item">手术直播</a></li>
+                             <li><a href="" class="hot-tag-item">年会直播</a></li>
+                             <li><a href="" class="hot-tag-item">企业直播</a></li>
+                             <li><a href="" class="hot-tag-item">企业培训</a></li>
+                        </ul>
+                    </div>
+                    <!-- 微信公众号 -->
+                      <div class="siderbar-item">
+                        <div class="siderbar-item-head">
+                            <h2>
+                                <span>
+                                    微信公众号
+                                </span>
+                            </h2>
+                        </div>
+                        <div class="wechat-public">
+                              <img src="/static/image/qingschool/wechat_public.png" alt="更多视频云干货，尽在轻直播公众号">
+                              <p style="line-height: 2;">
+                                更多直播干货<br>
+                                尽在轻直播公众号
+                            </p>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </section>
+        <!--  -->
+        <div id="kefu">
+            <div class="layui-container">
+                <div class="kefu-content">
+                    <h2>轻直播为您提供一站式企业视频解决方案</h2>
+                    <button>立即咨询</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+     layui.use('carousel', function () {
+        var carousel = layui.carousel;
+        //建造实例
+        carousel.render({
+            elem: '#banners'
+            , width: '100%' // 设置容器宽度
+            , height: '100%'
+            , arrow: 'none' // 始终显示箭头
+            // , anim: 'updown' // 切换动画方式
+            , interval: 3000 // 轮播间隔时间
+        });
+    });
+
+    // 热门文章点击切换
+    $('.switch-article .switch-article-btn').on('click', function() {
+         $(this).siblings().removeClass('active');
+         $(this).addClass('active');
+        //  if($('.hot-article-list').hasClass('active')) {
+        //      $('.hot-article-list').siblings().removeClass('active');
+        //  }
+    })
+</script>
+
+</html>

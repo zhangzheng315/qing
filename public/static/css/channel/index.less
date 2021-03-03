@@ -1,0 +1,247 @@
+@media screen and (min-width: 1200px) {
+    .layui-container {
+        width: 1200px !important;
+        padding: 0 !important;
+    }
+}
+
+#channel {
+    .flex-box {
+        display: flex;
+        align-items: center;
+    }
+
+    .title {
+        font-size: 30px;
+        color: #333;
+        font-weight: bold;
+        letter-spacing: 2px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .banner {
+        height: 600px;
+
+        .layui-carousel {
+            .lunbo-box {
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .layui-carousel-ind {
+                display: none;
+            }
+        }
+    }
+
+    .channel-nav {
+        height: 60px;
+        box-shadow: 0px 4px 6px 0px rgba(193, 193, 193, 0.28);
+        line-height: 60px;
+
+        .layui-container {
+            justify-content: space-between;
+
+            a {
+                display: inline-block;
+                height: 60px;
+                line-height: 60px;
+                font-size: 16px;
+                color: #333;
+                box-sizing: border-box;
+            }
+
+            .active {
+                color: #00cc99;
+                border-bottom: 3px solid #00cc99;
+            }
+        }
+    }
+
+    .jiagou {
+        padding: 68px 0 97px;
+
+        .layui-container {
+            flex-direction: column;
+            position: relative;
+
+            h5 {
+                color: #333;
+                font-size: 20px;
+                margin: 37px 0 21px;
+            }
+
+            .line {
+                width: 144px;
+                height: 1px;
+                background: #E5E5E5;
+                margin-bottom: 22px;
+            }
+
+            p {
+                font-size: 16px;
+                color: #333;
+                margin-bottom: 8px;
+                letter-spacing: 1px;
+
+                span {
+                    color: #00cc99;
+                }
+            }
+
+            .yin {
+                position: absolute;
+                top: 65%;
+                transform: translateY(-50%);
+            }
+
+            .yin-l {
+                left: 0;
+
+            }
+
+            .yin-r {
+                right: 0;
+
+            }
+
+            .dot {
+                margin-top: 80px;
+                width: 569px;
+                height: 1px;
+                background: #E5E5E5;
+                padding: 0 113px;
+                box-sizing: border-box;
+                justify-content: space-between;
+
+                li {
+                    width: 13px;
+                    height: 13px;
+                    background: #00CC99;
+                    border-radius: 50%;
+                }
+
+                .active {
+                    width: 28px;
+                    height: 28px;
+                    border: 1px solid #00CC99;
+                    border-radius: 50%;
+                    background: #fff;
+                    justify-content: center;
+
+                    span {
+                        display: block;
+                        width: 13px;
+                        height: 13px;
+                        background: #00CC99;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+
+    .partner {
+        padding: 97px 0 133px;
+        background: #f2f4f7;
+
+        .layui-container {
+            .title {
+                margin-bottom: 127px;
+            }
+
+            .part-content {
+                flex-wrap: wrap;
+
+                li {
+                    width: 266px;
+                    height: 297px;
+                    background: #FFFFFF;
+                    border-radius: 10px;
+                    padding: 34px 37px 0;
+                    box-sizing: border-box;
+                    flex-direction: column;
+                    margin: 0 45px 37px 0;
+
+                    &:nth-child(4n) {
+                        margin: 0 0 37px 0;
+                    }
+
+                    h6 {
+                        font-size: 20px;
+                        color: #333;
+                        font-weight: bold;
+                        text-align: center;
+                        margin: 20px 0 22px;
+                    }
+
+                    p {
+                        text-align: center;
+                        font-size: 14px;
+                        color: #999;
+                        line-height: 1.8;
+                    }
+                }
+            }
+        }
+    }
+
+    .part-term {
+        height: 700px;
+        padding: 110px 0 0;
+        box-sizing: border-box;
+        background: url('/static/image/channel/tiaojian.png') no-repeat;
+        background-size: cover;
+
+        .layui-container {
+            .title {
+                color: #fff;
+                margin-bottom: 110px;
+            }
+
+            .term-content {
+                padding: 0 110px;
+                box-sizing: border-box;
+                li {
+                    width: 188px;
+                    flex-direction: column;
+
+                    &:nth-child(2n) {
+                        width: 2px;
+                        height: 232px;
+                        background: #FFFFFF;
+                        margin: 0 38px 0;
+
+                    }
+
+                    h6 {
+                        color: #fff;
+                        margin: 65px 0 30px;
+                        font-size: 20px;
+                        font-weight: bold;
+                    }
+
+                    .line {
+                        width: 56px;
+                        height: 8px;
+                        background: #00CC99;
+                        border-radius: 4px;
+                        margin-bottom: 23px;
+
+                    }
+
+                    p {
+                        color: #fff;
+                        font-size: 14px;
+                        line-height: 1.5;
+                    }
+                }
+            }
+        }
+
+    }
+}
