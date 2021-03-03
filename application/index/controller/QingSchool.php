@@ -63,4 +63,9 @@ class QingSchool extends Controller
         $article_list = $this->articleService->articleByPid(3);
         return $this->fetch('',compact('banner_list','article_list'));
     }
+
+    public function courseSecond()
+    {
+        return $this->fetch();
+    }
 }
