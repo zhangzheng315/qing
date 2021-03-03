@@ -182,40 +182,35 @@
 #solution #qiye .logo-box .active {
   display: block;
 }
-#solution #fiveG {
-  height: 450px;
+#solution #kefu {
+  height: 260px;
   background: url('/static/image/index/fiveG.png') no-repeat;
   background-size: cover;
   position: relative;
 }
-#solution #fiveG .hover {
+#solution #kefu .hover {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 47, 35, 0.7);
+  background-color: rgba(0, 47, 35, 0.5);
   z-index: 0;
 }
-#solution #fiveG .fiveg-content {
+#solution #kefu .kefu-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 80px 0 0;
+  padding: 49px 0 0;
   box-sizing: border-box;
 }
-#solution #fiveG .fiveg-content h2 {
+#solution #kefu .kefu-content h2 {
   font-size: 50px;
   color: #fff;
   text-align: center;
+  margin: 0 auto 38px;
 }
-#solution #fiveG .fiveg-content h5 {
-  font-size: 35px;
-  color: #fff;
-  font-weight: 400;
-  margin: 45px auto 68px;
-}
-#solution #fiveG .fiveg-content button {
+#solution #kefu .kefu-content button {
   width: 31%;
   height: 60px;
   border: 0;
@@ -227,7 +222,7 @@
   color: #FFFFFF;
   cursor: pointer;
 }
-#solution #fiveG .fiveg-content button:hover {
+#solution #kefu .kefu-content button:hover {
   background-color: #00cc99;
   color: #fff;
   border: 0;

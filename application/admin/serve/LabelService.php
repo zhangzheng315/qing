@@ -114,4 +114,20 @@ class LabelService   extends Common{
         $this->setMessage('删除成功');
         return true;
     }
+
+    public function hotLabelList()
+    {
+        $where = [
+            'deleted_time' => 0,
+            'status' => 1,
+            'hot_label' => 1,
+        ];
+        $res = $this->label->where($where)->order('order', 'desc')->select();
+        if(!$res){
+            $this->setError('暂无数据');
+            return false;
+        }
+        $this->setMessage('查询成功');
+        return $res;
+    }
 }

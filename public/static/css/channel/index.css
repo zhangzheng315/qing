@@ -1,0 +1,196 @@
+@media screen and (min-width: 1200px) {
+  .layui-container {
+    width: 1200px !important;
+    padding: 0 !important;
+  }
+}
+#channel .flex-box {
+  display: flex;
+  align-items: center;
+}
+#channel .title {
+  font-size: 30px;
+  color: #333;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 0 auto;
+  text-align: center;
+}
+#channel .banner {
+  height: 600px;
+}
+#channel .banner .layui-carousel .lunbo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#channel .banner .layui-carousel .layui-carousel-ind {
+  display: none;
+}
+#channel .channel-nav {
+  height: 60px;
+  box-shadow: 0px 4px 6px 0px rgba(193, 193, 193, 0.28);
+  line-height: 60px;
+}
+#channel .channel-nav .layui-container {
+  justify-content: space-between;
+}
+#channel .channel-nav .layui-container a {
+  display: inline-block;
+  height: 60px;
+  line-height: 60px;
+  font-size: 16px;
+  color: #333;
+  box-sizing: border-box;
+}
+#channel .channel-nav .layui-container .active {
+  color: #00cc99;
+  border-bottom: 3px solid #00cc99;
+}
+#channel .jiagou {
+  padding: 68px 0 97px;
+}
+#channel .jiagou .layui-container {
+  flex-direction: column;
+  position: relative;
+}
+#channel .jiagou .layui-container h5 {
+  color: #333;
+  font-size: 20px;
+  margin: 37px 0 21px;
+}
+#channel .jiagou .layui-container .line {
+  width: 144px;
+  height: 1px;
+  background: #E5E5E5;
+  margin-bottom: 22px;
+}
+#channel .jiagou .layui-container p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+#channel .jiagou .layui-container p span {
+  color: #00cc99;
+}
+#channel .jiagou .layui-container .yin {
+  position: absolute;
+  top: 65%;
+  transform: translateY(-50%);
+}
+#channel .jiagou .layui-container .yin-l {
+  left: 0;
+}
+#channel .jiagou .layui-container .yin-r {
+  right: 0;
+}
+#channel .jiagou .layui-container .dot {
+  margin-top: 80px;
+  width: 569px;
+  height: 1px;
+  background: #E5E5E5;
+  padding: 0 113px;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+#channel .jiagou .layui-container .dot li {
+  width: 13px;
+  height: 13px;
+  background: #00CC99;
+  border-radius: 50%;
+}
+#channel .jiagou .layui-container .dot .active {
+  width: 28px;
+  height: 28px;
+  border: 1px solid #00CC99;
+  border-radius: 50%;
+  background: #fff;
+  justify-content: center;
+}
+#channel .jiagou .layui-container .dot .active span {
+  display: block;
+  width: 13px;
+  height: 13px;
+  background: #00CC99;
+  border-radius: 50%;
+}
+#channel .partner {
+  padding: 97px 0 133px;
+  background: #f2f4f7;
+}
+#channel .partner .layui-container .title {
+  margin-bottom: 127px;
+}
+#channel .partner .layui-container .part-content {
+  flex-wrap: wrap;
+}
+#channel .partner .layui-container .part-content li {
+  width: 266px;
+  height: 297px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  padding: 34px 37px 0;
+  box-sizing: border-box;
+  flex-direction: column;
+  margin: 0 45px 37px 0;
+}
+#channel .partner .layui-container .part-content li:nth-child(4n) {
+  margin: 0 0 37px 0;
+}
+#channel .partner .layui-container .part-content li h6 {
+  font-size: 20px;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0 22px;
+}
+#channel .partner .layui-container .part-content li p {
+  text-align: center;
+  font-size: 14px;
+  color: #999;
+  line-height: 1.8;
+}
+#channel .part-term {
+  height: 700px;
+  padding: 110px 0 0;
+  box-sizing: border-box;
+  background: url('/static/image/channel/tiaojian.png') no-repeat;
+  background-size: cover;
+}
+#channel .part-term .layui-container .title {
+  color: #fff;
+  margin-bottom: 110px;
+}
+#channel .part-term .layui-container .term-content {
+  padding: 0 110px;
+  box-sizing: border-box;
+}
+#channel .part-term .layui-container .term-content li {
+  width: 188px;
+  flex-direction: column;
+}
+#channel .part-term .layui-container .term-content li:nth-child(2n) {
+  width: 2px;
+  height: 232px;
+  background: #FFFFFF;
+  margin: 0 38px 0;
+}
+#channel .part-term .layui-container .term-content li h6 {
+  color: #fff;
+  margin: 65px 0 30px;
+  font-size: 20px;
+  font-weight: bold;
+}
+#channel .part-term .layui-container .term-content li .line {
+  width: 56px;
+  height: 8px;
+  background: #00CC99;
+  border-radius: 4px;
+  margin-bottom: 23px;
+}
+#channel .part-term .layui-container .term-content li p {
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.5;
+}

@@ -39,6 +39,7 @@ class Video extends Common{
         $str = VideoService::data_paging($data,'video','order');
         foreach ($str['data'] as &$value) {
             $value['status'] = $value['status'] == 1 ? '显示' : '不显示';
+            $value['video_selected'] = $value['video_selected'] == 1 ? '是' : '否';
         }
         return layshow($this->code,'ok',$str['data'],$str['count']);
     }
@@ -149,6 +150,65 @@ class Video extends Common{
             return show($this->fail,$validate->getError());
         }
         $res = $this->videoService->videoDelete($request->param());
+        if($res){
+            return show($this->ok,$this->videoService->message);
+        }else{
+            return show($this->fail,$this->videoService->error);
+        }
+    }
+
+    /**
+     * 轻学院视频首页
+     * @return mixed
+     */
+    public function indexVideo()
+    {
+        $video_type_list = $this->videoTypeService->videoTypeList();
+        $label_list = $this->labelService->labelList();
+        $add_url = ''; //添加
+        $edit_url = '/admin/video/videoEdit';  //修改
+        return $this->fetch('',compact('video_type_list','label_list','add_url','edit_url'));
+    }
+
+    /**
+     * 分页获取轻学院视频首页列表
+     */
+    public function getVideoHomeList(){
+        $data = input('get.');
+        $data['deleted_time'] = 0;
+        $data['video_selected'] = 1;
+        $str = VideoService::data_paging($data,'video','selected_order');
+        foreach ($str['data'] as &$value) {
+            $value['status'] = $value['status'] == 1 ? '显示' : '不显示';
+        }
+        return layshow($this->code,'ok',$str['data'],$str['count']);
+    }
+
+    /**
+     * 修改视频
+     * @return mixed
+     */
+    public function videoHomeEdit(){
+        $data = input('post.');
+        $rules =
+            [
+                'pid' => 'require',
+                'video_url' => 'require',
+                'title' => 'require',
+                'cover_img_url' => 'require',
+            ];
+        $msg =
+            [
+                'pid' => '缺少参数@pid',
+                'video_url' => '缺少参数@video_url',
+                'title' => '缺少参数@title',
+                'cover_img_url' => '缺少参数@cover_img_url',
+            ];
+        $validate = new Validate($rules,$msg);
+        if(!$validate->check($data)){
+            return show($this->fail,$validate->getError());
+        }
+        $res = $this->videoService->videoHomeEdit($data);
         if($res){
             return show($this->ok,$this->videoService->message);
         }else{

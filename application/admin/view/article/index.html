@@ -77,6 +77,12 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">内容中心</label>
+            <div class="layui-input-block">
+                <input name="content_center" value="1" type="checkbox" lay-skin="switch">
+            </div>
+        </div>
+        <div class="layui-form-item">
             <label class="layui-form-label">启用</label>
             <div class="layui-input-block">
                 <input name="status" value="1" type="checkbox" checked lay-skin="switch">
@@ -86,6 +92,21 @@
             <label class="layui-form-label">排序</label>
             <div class="layui-input-block">
                 <input type="text" name="order" placeholder="请输入(数值越大，排序越靠前)" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">上传封面图片</label>
+            <div class="layui-input-block">
+                <button type="button" class="layui-btn fileUp">
+                    <i class="layui-icon">&#xe67c;</i>上传封面图片
+                </button>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"></label>
+            <div class="layui-input-block">
+                <input type="hidden" name="cover_img_url" class="cover_img_url" value="">
+                <img src="" alt="" width="200px" class="cover_img_show">
             </div>
         </div>
         <div class="layui-form-item">
@@ -148,6 +169,12 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">内容中心</label>
+            <div class="layui-input-block">
+                <input name="content_center" id="content_center" value="1" type="checkbox" lay-skin="switch">
+            </div>
+        </div>
+        <div class="layui-form-item">
             <label class="layui-form-label">启用</label>
             <div class="layui-input-block">
                 <input name="status" id="status" value="1" type="checkbox" checked lay-skin="switch">
@@ -159,6 +186,21 @@
                 <input type="text" id="order" name="order" placeholder="请输入(数值越大，排序越靠前)" autocomplete="off"
                        class="layui-input">
                 <input type="hidden" id="id" name="id" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">上传封面图片</label>
+            <div class="layui-input-block">
+                <button type="button" class="layui-btn fileUp">
+                    <i class="layui-icon">&#xe67c;</i>上传封面图片
+                </button>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"></label>
+            <div class="layui-input-block">
+                <input type="hidden" name="cover_img_url" class="cover_img_url" value="">
+                <img src="" alt="" width="200px" class="cover_img_show">
             </div>
         </div>
         <div class="layui-form-item">
@@ -182,11 +224,50 @@
     <a class="layui-btn btn layui-btn-xs" lay-event="info">详情</a>
     <a class="layui-btn btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>
+<script type="text/html" id="imgtmp">
+    <div id="layer-photos-demo" style="cursor:pointer;">
+        <img onclick="imgPoint(this)" src="{{d.cover_img_url}}" alt="">
+    </div>
+</script>
 <script>
-    layui.use(['form', 'table', 'layedit'], function () {
+    //图片弹出
+    function imgPoint(obj) {
+        var img = new Image();
+        img.src = obj.src;
+        var imgHtml = "<img src='" + obj.src + "' style='margin-left:45px' width='800px'/>";
+        //弹出层
+        layer.open({
+            type: 1,
+            shade: 0.8,
+            offset: 'auto',
+            area: [900 + 'px',800+'px'],
+            shadeClose:true,
+            scrollbar: false,
+            title: "图片预览", //不显示标题
+            content: imgHtml, //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+            cancel: function () {
+                //layer.msg('捕获就是从页面已经存在的元素上，包裹layer的结构', { time: 5000, icon: 6 });
+            }
+        });
+    }
+
+    layui.use(['form', 'table', 'layedit','upload'], function () {
         var table = layui.table;
         var form = layui.form;
+        var upload = layui.upload;
         layedit = layui.layedit;
+
+        //图片上传接口
+        upload.render({
+            elem:'.fileUp'
+            ,url: "{:url('admin/common_file/uploadFile')}"
+            ,ext: 'jpg|jpeg|svg|png|gif'
+            ,done: function(res){
+                $('.cover_img_show').attr('src',res.data.src);
+                $('.cover_img_url').val(res.data.src);
+                layer.msg(res.msg);
+            }
+        });
 
         //创建动态表格
         table.render({
@@ -198,10 +279,12 @@
                 {
                     field: 'id', title: 'ID', width: 80, sort: true, fixed: 'left'
                 }
+                , {field: 'cover_img_url', title: '缩略图', templet:'#imgtmp'}
                 , {field: 'title', title: '标题'}
                 , {field: 'second_title', title: '第二标题'}
                 , {field: 'pid_name', title: '所属分类'}
                 , {field: 'hot_article', title: '热门文章'}
+                , {field: 'content_center', title: '内容中心'}
                 , {field: 'browse', title: '浏览量'}
                 , {field: 'order', title: '排序'}
                 , {field: 'status', title: '状态'}
@@ -267,6 +350,8 @@
                         $('#order').val(res.data.order);
                         $('#pid').empty();
                         $('#label_check').empty();
+                        $('.cover_img_show').attr('src',res.data.cover_img_url);
+                        $('.cover_img_url').val(res.data.cover_img_url);
                         //状态
                         if (res.data.status === 0) {
                             $('#status').removeAttr('checked');
@@ -278,6 +363,12 @@
                             $('#hot_article').removeAttr('checked');
                         } else {
                             $('#hot_article').attr('checked', true);
+                        }
+                        //内容中心
+                        if (res.data.content_center === 0) {
+                            $('#content_center').removeAttr('checked');
+                        } else {
+                            $('#content_center').attr('checked', true);
                         }
                         for (let item of res.data.article_type) {
                             if (res.data.pid === item.id) {

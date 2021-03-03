@@ -824,7 +824,7 @@
                             var child = pingChild(item.sub,res.nav_id.id);
                         }
                         $('.menu_nav').append('<li class="menu-item  menu-item-product '+active+'">\n' +
-                            '                    <a style="cursor: pointer;display: ">' + item.menu_name + '</a>\n' +
+                            '                    <a style="cursor: pointer;display: block">' + item.menu_name + '</a>\n' +
                             '                    <div class="pull-down-pannel pull-down-pannel-product">\n' +
                             '                        <div class="product-pannel">\n' +
                             child +
@@ -833,7 +833,7 @@
                             '                </li>');
                     } else {
                         $('.menu_nav').append('<li class="menu-item '+active+'">\n' +
-                            '                    <a href="' + item.route + '">' + item.menu_name + '</a>\n' +
+                            '                    <a style="cursor: pointer;display: block" href="' + item.route + '">' + item.menu_name + '</a>\n' +
                             '                </li>');
                     }
                 }
