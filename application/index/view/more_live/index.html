@@ -55,12 +55,15 @@
                         <h5>{$item.name}</h5>
                         <ul class="flex-box">
                             {foreach($article_list['all_article'] as $val)}
-                            <li class="flex-box">
-                                <img src="{$val.icon_img_url}" alt="">
-                                <div class="text">
-                                    <h6>{$val.title}</h6>
-                                    <p>{$val.second_title}</p>
-                                </div>
+                            <li >
+                                <a class="flex-box" href="">
+                                    <img src="{$val.icon_img_url}" alt="">
+                                    <div class="text">
+                                        <h6>{$val.title}</h6>
+                                        <p>{$val.second_title}</p>
+                                    </div>
+                                </a>
+
                             </li>
                             {/foreach}
                         </ul>
