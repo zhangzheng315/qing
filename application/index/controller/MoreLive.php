@@ -16,7 +16,8 @@ class MoreLive extends Controller
         $pid = isset($data['id']) ? $data['id'] : 26;
         $banner_list = $banner_service->bannerListByPid($pid);
         $article_list = $common_article_service->commonArticleList();
+        $new = $common_article_service->newAdd();
 
-        return $this->fetch('',compact('banner_list','article_list'));
+        return $this->fetch('',compact('banner_list','article_list','new'));
     }
 }

@@ -39,13 +39,11 @@
                         <span>新增功能：</span>
                     </div>
                     <ul class="nav-right flex-box">
-                        <li>双语直播</li>
-                        <li>双语直播</li>
-                        <li>双语直播</li>
-                        <li>双语直播</li>
-                        <li>双语直播</li>
-                        <li>双语直播</li>
-                        <li>双语直播</li>
+                        {if isset($new)}
+                        {foreach($new as $item)}
+                        <li>{$item.title}</li>
+                        {/foreach}
+                        {/if}
                     </ul>
                 </div>
                 <div class="func-content">
@@ -56,12 +54,14 @@
                         <ul class="flex-box">
                             {foreach($article_list['all_article'] as $val)}
                             {if($val.pid == $item.id)}
-                            <li class="flex-box">
-                                <img src="{$val.icon_img_url}" alt="">
-                                <div class="text">
-                                    <h6>{$val.title}</h6>
-                                    <p>{$val.second_title}</p>
-                                </div>
+                            <li >
+                                <a class="flex-box" href="{:url('/index/docs/article',['id'=>$val.id])}">
+                                    <img src="{$val.icon_img_url}" alt="">
+                                    <div class="text">
+                                        <h6>{$val.title}</h6>
+                                        <p>{$val.second_title}</p>
+                                    </div>
+                                </a>
                             </li>
                             {/if}
                             {/foreach}

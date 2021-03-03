@@ -2,6 +2,7 @@
 
 namespace app\index\controller;
 
+use app\admin\serve\CommonArticleService;
 use think\Controller;
 
 class Docs extends Controller
@@ -11,8 +12,10 @@ class Docs extends Controller
         return $this->fetch();
     }
     /* 文章 */
-    public function article()
+    public function article($id)
     {
+        $common_article_service = new CommonArticleService();
+
         return $this->fetch();
     }
 }

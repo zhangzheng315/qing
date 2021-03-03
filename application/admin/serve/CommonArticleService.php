@@ -160,6 +160,13 @@ class CommonArticleService extends Common{
         return $count;
     }
 
+    /**
+     * 前端获取文章列表
+     * @return array|bool
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
     public function commonArticleList()
     {
         $where = [
@@ -185,5 +192,44 @@ class CommonArticleService extends Common{
         }
         $this->setMessage('查询成功');
         return $list;
+    }
+
+    /**
+     * 前端文章详情
+     * @param $id
+     * @return array|bool|false|\PDOStatement|string|\think\Model
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException\
+     */
+    public function getArticleInfo($id)
+    {
+        $where = [
+            'deleted_time' => 0,
+            'status' => 1,
+            'id' => $id,
+        ];
+        $info = $this->commonArticle->where($where)->find();
+        if (!$info) {
+            $this->setError('暂无数据');
+            return false;
+        }
+        $this->setMessage('查询成功');
+        return $info;
+    }
+
+    public function newAdd()
+    {
+        $where = [
+            'deleted_time' => 0,
+            'status' => 1,
+        ];
+        $new_add = $this->commonArticle->field('title')->where($where)->order('created_time','desc')->limit(0,10)->select();
+        if (!$new_add) {
+            $this->setError('暂无数据');
+            return false;
+        }
+        $this->setMessage('查询成功');
+        return $new_add;
     }
 }
