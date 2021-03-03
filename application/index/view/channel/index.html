@@ -43,7 +43,7 @@
         <!-- 多云架构混合云部署 -->
         <div class="jiagou">
             <div class="layui-container flex-box">
-                <img src="/static/image/channel/duoyun.png" alt="">
+                <img class="duoyun" src="/static/image/channel/duoyun.png" alt="">
                 <h5>多云架构混合云部署</h5>
                 <div class="line"></div>
                 <p>混合云部署更像是<span>SAAS</span>应用</p>
@@ -123,28 +123,88 @@
                     </li>
                     <li></li>
                     <li class="flex-box">
-                        <img src="/static/image/channel/gsi.png" alt="">
-                        <h6>公司资质</h6>
+                        <img src="/static/image/channel/ziyuan.png" alt="">
+                        <h6>客户资源</h6>
                         <div class="line"></div>
                         <p>有合作营业执照和独立法人代表，具有良好商业信誉和口碑</p>
                     </li>
                     <li></li>
                     <li class="flex-box">
-                        <img src="/static/image/channel/gsi.png" alt="">
-                        <h6>公司资质</h6>
+                        <img src="/static/image/channel/team.png" alt="">
+                        <h6>专业团队</h6>
                         <div class="line"></div>
                         <p>有合作营业执照和独立法人代表，具有良好商业信誉和口碑</p>
                     </li>
                     <li></li>
                     <li class="flex-box">
-                        <img src="/static/image/channel/gsi.png" alt="">
-                        <h6>公司资质</h6>
+                        <img src="/static/image/channel/hezuo.png" alt="">
+                        <h6>共同价值观</h6>
                         <div class="line"></div>
                         <p>有合作营业执照和独立法人代表，具有良好商业信誉和口碑</p>
                     </li>
                 </ul>
             </div>
         </div>
+
+        <!-- 如何成为轻直播合作伙伴 -->
+        <div class="become-part">
+            <div class="layui-container">
+                <div class="title">如何成为轻直播合作伙伴</div>
+                <ul class="icons flex-box">
+                    <li><img src="/static/image/channel/write.png" alt=""></li>
+                    <li><img src="/static/image/channel/write.png" alt=""></li>
+                    <li><img src="/static/image/channel/write.png" alt=""></li>
+                    <li><img src="/static/image/channel/write.png" alt=""></li>
+                    <li><img src="/static/image/channel/write.png" alt=""></li>
+                    <li><img src="/static/image/channel/write.png" alt=""></li>
+                </ul>
+                <ul class="dots flex-box">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <ul class="text flex-box">
+                    <li>1.提交申请</li>
+                    <li>2.资质审核</li>
+                    <li>3.合作洽谈</li>
+                    <li>4.签订协议</li>
+                    <li>5.业务培训</li>
+                    <li>6.正式运营</li>
+                </ul>
+
+                <!-- 合作客户 -->
+                <div class="kehu">
+                    <div class="layui-carousel" id="logos">
+                        <div carousel-item id="logo-content">
+                            {if isset($advantage_logo)}
+                            {foreach($advantage_logo as $item)}
+                            <ul class="logo-imgs">
+                                {foreach($item as $val)}
+                                <li>
+                                    <img src="{$val.img_url}" alt="">
+                                </li>
+                                {/foreach}
+                            </ul>
+                            {/foreach}
+                            {/if}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="join">
+            <div class="layui-container">
+                <h3>立即加入，合作共赢</h3>
+            <button>立即试用</button>
+            </div>
+            
+        </div>
+
+
     </div>
 </body>
 <script src="/static/common/js/header-footer.js"></script>
@@ -160,6 +220,19 @@
             // , anim: 'updown' // 切换动画方式
             , interval: 3000 // 轮播间隔时间
         });
+    });
+
+    layui.use('carousel', function () {
+        var carousel = layui.carousel;
+        //建造实例
+        carousel.render({
+            elem: '#logos'
+            , width: '100%' // 设置容器宽度
+            // , height: '100%'
+            , arrow: 'none' // 始终显示箭头
+            , interval: 3000 // 轮播间隔时间
+        });
+
     });
 </script>
 

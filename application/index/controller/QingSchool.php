@@ -14,6 +14,7 @@ class QingSchool extends Controller
     public $qBannerService;
     public $articleService;
     public $labelService;
+
     public function __construct(Request $request = null)
     {
         parent::__construct($request);
@@ -32,7 +33,7 @@ class QingSchool extends Controller
         $banner_list = $this->qBannerService->QBannerListByPid(0);
         $article_list = $this->articleService->articleContentCenter();
 
-        return $this->fetch('',compact('banner_list','article_list'));
+        return $this->fetch('', compact('banner_list', 'article_list'));
     }
 
     public function videoCourse()
@@ -45,7 +46,7 @@ class QingSchool extends Controller
     {
         $banner_list = $this->qBannerService->QBannerListByPid(1);
         $article_list = $this->articleService->articleByPid(1);
-        return $this->fetch('',compact('banner_list','article_list'));
+        return $this->fetch('', compact('banner_list', 'article_list'));
     }
 
     /*产品动态 */
@@ -53,7 +54,7 @@ class QingSchool extends Controller
     {
         $banner_list = $this->qBannerService->QBannerListByPid(2);
         $article_list = $this->articleService->articleByPid(2);
-        return $this->fetch('',compact('banner_list','article_list'));
+        return $this->fetch('', compact('banner_list', 'article_list'));
     }
 
     /* 直播资讯*/
@@ -61,11 +62,17 @@ class QingSchool extends Controller
     {
         $banner_list = $this->qBannerService->QBannerListByPid(3);
         $article_list = $this->articleService->articleByPid(3);
-        return $this->fetch('',compact('banner_list','article_list'));
+        return $this->fetch('', compact('banner_list', 'article_list'));
     }
+
+    public function courseSecond()
+    {
+        return $this->fetch();
+    }
+
     /* 新闻详情页 */
     public function newsDetail()
     {
-      return $this->fetch();
+        return $this->fetch();
     }
 }

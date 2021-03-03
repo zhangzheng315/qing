@@ -7,7 +7,7 @@
     <title>轻直播_企业直播服务平台,医疗直播领军者,营销直播定制服务商</title>
     <meta name="keywords"  content="企业直播平台,医疗直播,营销直播,活动直播,直播定制服务"/>
     <meta name="description"
-     content="轻直播是国内知名的企业级直播定制化服务平台,服务全球500强,为企业提供医疗直播、手术直播、活动直播、会议直播、营销直播、年会直播等全场景解决方案,热线:400-920-1599。" />
+          content="轻直播是国内知名的企业级直播定制化服务平台,服务全球500强,为企业提供医疗直播、手术直播、活动直播、会议直播、营销直播、年会直播等全场景解决方案,热线:400-920-1599。"/>
     <link rel="stylesheet" href="/static/css/qingschool/news.css">
     <link rel="stylesheet" href="/static/layui/css/layui.css">
     <link rel="stylesheet" href="/static/css/style.css">
@@ -32,239 +32,241 @@
                     <button class="free-btn">免费试用</button>
                 </div>
             </div>
-        </header>
-        <!-- 导航栏 -->
-        <nav>
-            <div class="layui-container school-nav">
-                <a href="{:url('qing_school/index')}">
-                    <i class="icon-nav-item icon-nav-home"></i>
-                    <span>内容中心</span>
-                </a>
-                <a href="{:url('qing_school/caseAn')}" >
-                    <i class="icon-nav-item icon-nav-case"></i>
-                    <span>案例解析</span>
-                    </a>
-                <a href="{:url('qing_school/products')}">
-                    <i class="icon-nav-item icon-nav-product"></i>
-                    <span>产品动态</span>
-                    </a>
-                <a href="{:url('qing_school/liveNews')}" class="active">
-                    <i class="icon-nav-item icon-nav-live"></i>
-                    <span>直播资讯</span>
-                    </a>
-                <a href="{:url('qing_school/videoCourse')}">
-                    <i class="icon-nav-item icon-nav-video"></i>
-                    <span>视频学院</span>
-                </a>
+        </div>
+    </header>
+    <!-- 导航栏 -->
+    <nav>
+        <div class="layui-container school-nav">
+            <a href="{:url('qing_school/index')}">
+                <i class="icon-nav-item icon-nav-home"></i>
+                <span>内容中心</span>
+            </a>
+            <a href="{:url('qing_school/caseAn')}">
+                <i class="icon-nav-item icon-nav-case"></i>
+                <span>案例解析</span>
+            </a>
+            <a href="{:url('qing_school/products')}">
+                <i class="icon-nav-item icon-nav-product"></i>
+                <span>产品动态</span>
+            </a>
+            <a href="{:url('qing_school/liveNews')}" class="active">
+                <i class="icon-nav-item icon-nav-live"></i>
+                <span>直播资讯</span>
+            </a>
+            <a href="{:url('index/qing_school/videoCourse')}">
+                <i class="icon-nav-item icon-nav-video"></i>
+                <span>视频学院</span>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="layui-container flex-space-between">
+    <div class="school-left-con">
+        <!-- 轮播图 -->
+        <div id="banner">
+            <div class="layui-carousel" id="banners">
+                <div carousel-item class="lunbo-box">
+                    {if isset($banner_list)}
+                    {foreach $banner_list as $item}
+                    <img src="{$item.img_url}" alt="">
+                    {/foreach}
+                    {/if}
+                </div>
             </div>
         </div>
-
-        <div class="layui-container flex-space-between">
-            <div class="school-left-con">
-                <!-- 轮播图 -->
-                <div id="banner">
-                    <div class="layui-carousel" id="banners">
-                        <div carousel-item class="lunbo-box">
-                            {if isset($banner_list)}
-                            {foreach $banner_list as $item}
-                            <img src="{$item.img_url}" alt="">
+        <!-- 课程区域 -->
+        <div class="cause-con">
+            <ul>
+                {if isset($article_list)}
+                {foreach($article_list as $item)}
+                <li class="cause-item">
+                    <a href="" class="cause-cover" target="_blank"
+                       style="background: url({$item.cover_img_url});background-size: cover">
+                    </a>
+                    <div class="cause-des">
+                        <a href="" class="cause-title">
+                            <h3>
+                                <i class="cause-icon icon-item-solution"></i>
+                                {$item.title}
+                            </h3>
+                            <p class="cause-intro">
+                                {$item.second_title}
+                            </p>
+                        </a>
+                        <div class="cause-tags">
+                            <span class="post-time">{$item.time}</span>
+                            <i class="vertical-bar">|</i>
+                            <span class="category">{$item.pid_name}</span>
+                            <i class="vertical-bar">|</i>
+                            {if(!empty($item.label))}
+                            {foreach($item.label as $label)}
+                            <a href="" class="cause-tag-item">{$label}</a>
                             {/foreach}
                             {/if}
-                        </div>
-                    </div>
-                </div>
-                <!-- 课程区域 -->
-                <div class="cause-con">
-                    <ul>
-                        {if isset($article_list)}
-                        {foreach($article_list as $item)}
-                        <li class="cause-item">
-                            <a href="" class="cause-cover" target="_blank"
-                               style="background: url({$item.cover_img_url});background-size: cover">
-                            </a>
-                            <div class="cause-des">
-                                <a href="" class="cause-title">
-                                    <h3>
-                                        <i class="cause-icon icon-item-solution"></i>
-                                        {$item.title}
-                                    </h3>
-                                    <p class="cause-intro">
-                                        {$item.second_title}
-                                    </p>
-                                </a>
-                                <div class="cause-tags">
-                                    <span class="post-time">{$item.time}</span>
-                                    <i class="vertical-bar">|</i>
-                                    <span class="category">{$item.pid_name}</span>
-                                    <i class="vertical-bar">|</i>
-                                    {if(!empty($item.label))}
-                                    {foreach($item.label as $label)}
-                                    <a href="" class="cause-tag-item">{$label}</a>
-                                    {/foreach}
-                                    {/if}
-                                    <span class="post-views">
+                            <span class="post-views">
                                              <i class="icon-view"></i>
                                              {$item.browse}
                                          </span>
-                                </div>
-                            </div>
-                        </li>
-                        {/foreach}
-                        {/if}
-                    </ul>
-                    <div class="cause-bottom">
-                        <span class="cause-more">点击加载更多</span>
+                        </div>
                     </div>
-                </div>
-                <!-- 移动端 -->
-                <div class="m-cause-con">
-                    <ul>
-                        {if isset($article_list)}
-                        {foreach($article_list as $item)}
-                        <li class="cause-item">
-                            <a href="">
-                                <h3>
-                                    {$item.title}
-                                </h3>
-                            </a>
-
-                            <div class="cause-tags">
-                                <span class="post-time">{$item.time}</span>
-                                <i class="vertical-bar">|</i>
-                                <span class="category">{$item.pid_name}</span>
-                            </div>
-                            <a href="" class="cause-item-desc">
-                                <img src="{$item.cover_img_url}" alt="">
-                                <p>{$item.second_title}</p>
-                            </a>
-                        </li>
-                        {/foreach}
-                        {/if}
-                    </ul>
-                </div>
+                </li>
+                {/foreach}
+                {/if}
+            </ul>
+            <div class="cause-bottom">
+                <span class="cause-more">点击加载更多</span>
             </div>
-            <div class="school-right-con">
-                <div class="siderbar-item siderbar-item-search">
-                    <form action="" class="search-form" id="search-form">
-                        <input type="text" class="searchInput" placeholder="输入关键词" autocomplete="off">
-                        <input type="submit" class="submitInput" alt="search">
-                    </form>
-                </div>
-                <!-- 热门文章 -->
-                <div class="siderbar-item siderbar-item-article">
-                    <div class="siderbar-item-head">
-                        <h2>
-                            <span>热门文章</span>
-                            <div class="switch-article">
-                                <div class="switch-article-btn active">热门</div>
-                                <div class="switch-article-btn">推荐</div>
-                            </div>
-                        </h2>
+        </div>
+        <!-- 移动端 -->
+        <div class="m-cause-con">
+            <ul>
+                {if isset($article_list)}
+                {foreach($article_list as $item)}
+                <li class="cause-item">
+                    <a href="">
+                        <h3>
+                            {$item.title}
+                        </h3>
+                    </a>
 
+                    <div class="cause-tags">
+                        <span class="post-time">{$item.time}</span>
+                        <i class="vertical-bar">|</i>
+                        <span class="category">{$item.pid_name}</span>
                     </div>
-                    <ul class="hot-article-list active">
-                        {if(isset($list))}
-                        {foreach($list['hot_article'] as $item)}
-                        <li class="article-item">
-                            <a href="" class="link" title="{$item.second_title}" target="_blank"
-                               rel="noopener noreferrer">
-                                <p>{$item.title}</p>
-                                <span class="time">{$item.time}</span>
-                            </a>
-                        </li>
-                        {/foreach}
-                        {/if}
-                    </ul>
-                    <ul class="hot-article-list">
-                        {if(isset($list))}
-                        {foreach($list['recommend'] as $item)}
-                        <li class="article-item">
-                            <a href="" class="link" title="{$item.second_title}" target="_blank"
-                               rel="noopener noreferrer">
-                                <p>{$item.title}</p>
-                                <span class="time">{$item.time}</span>
-                            </a>
-                        </li>
-                        {/foreach}
-                        {/if}
-                    </ul>
-                </div>
+                    <a href="" class="cause-item-desc">
+                        <img src="{$item.cover_img_url}" alt="">
+                        <p>{$item.second_title}</p>
+                    </a>
+                </li>
+                {/foreach}
+                {/if}
+            </ul>
+        </div>
+    </div>
+    <div class="school-right-con">
+        <div class="siderbar-item siderbar-item-search">
+            <form action="" class="search-form" id="search-form">
+                <input type="text" class="searchInput" placeholder="输入关键词" autocomplete="off">
+                <input type="submit" class="submitInput" alt="search">
+            </form>
+        </div>
+        <!-- 热门文章 -->
+        <div class="siderbar-item siderbar-item-article">
+            <div class="siderbar-item-head">
+                <h2>
+                    <span>热门文章</span>
+                    <div class="switch-article">
+                        <div class="switch-article-btn active">热门</div>
+                        <div class="switch-article-btn">推荐</div>
+                    </div>
+                </h2>
 
-                <!-- 热门产品 -->
-                <div class="siderbar-item">
-                    <div class="siderbar-item-head">
-                        <h2>
+            </div>
+            <ul class="hot-article-list active">
+                {if(isset($list))}
+                {foreach($list['hot_article'] as $item)}
+                <li class="article-item">
+                    <a href="" class="link" title="{$item.second_title}" target="_blank"
+                       rel="noopener noreferrer">
+                        <p>{$item.title}</p>
+                        <span class="time">{$item.time}</span>
+                    </a>
+                </li>
+                {/foreach}
+                {/if}
+            </ul>
+            <ul class="hot-article-list">
+                {if(isset($list))}
+                {foreach($list['recommend'] as $item)}
+                <li class="article-item">
+                    <a href="" class="link" title="{$item.second_title}" target="_blank"
+                       rel="noopener noreferrer">
+                        <p>{$item.title}</p>
+                        <span class="time">{$item.time}</span>
+                    </a>
+                </li>
+                {/foreach}
+                {/if}
+            </ul>
+        </div>
+
+        <!-- 热门产品 -->
+        <div class="siderbar-item">
+            <div class="siderbar-item-head">
+                <h2>
                                   <span>
                                       热门产品
                                   </span>
-                        </h2>
-                    </div>
-                    <ul class="hot-products-list">
-                        <li>
-                            <a href="" class="hot-products-item" target="_blank">
-                                <i class="icon-hot-product icon-hot-product_1"></i>
-                                <span>企业直播</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="" class="hot-products-item" target="_blank">
-                                <i class="icon-hot-product icon-hot-product_2"></i>
-                                <span>培训直播</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="" class="hot-products-item" target="_blank">
-                                <i class="icon-hot-product icon-hot-product_3"></i>
-                                <span>视频点播</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="" class="hot-products-item" target="_blank">
-                                <i class="icon-hot-product icon-hot-product_4"></i>
-                                <span>视频混合云</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                </h2>
+            </div>
+            <ul class="hot-products-list">
+                <li>
+                    <a href="" class="hot-products-item" target="_blank">
+                        <i class="icon-hot-product icon-hot-product_1"></i>
+                        <span>企业直播</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="hot-products-item" target="_blank">
+                        <i class="icon-hot-product icon-hot-product_2"></i>
+                        <span>培训直播</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="hot-products-item" target="_blank">
+                        <i class="icon-hot-product icon-hot-product_3"></i>
+                        <span>视频点播</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="hot-products-item" target="_blank">
+                        <i class="icon-hot-product icon-hot-product_4"></i>
+                        <span>视频混合云</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
 
-                <!-- 热门标签 -->
-                <div class="siderbar-item siderbar-item-label">
-                    <div class="siderbar-item-head">
-                        <h2>
+        <!-- 热门标签 -->
+        <div class="siderbar-item siderbar-item-label">
+            <div class="siderbar-item-head">
+                <h2>
                                 <span>
                                     热门标签
                                 </span>
-                            <a href="" class="hot-tags-more" rel="tag">更多</a>
-                        </h2>
-                    </div>
-                    <ul class="hot-tags-list">
-                        {if(isset($hot_label))}
-                        {foreach($hot_label as $item)}
-                        <li><a href="" class="hot-tag-item">{$item.name}</a></li>
-                        {/foreach}
-                        {/if}
-                    </ul>
-                </div>
-                <!-- 微信公众号 -->
-                <div class="siderbar-item">
-                    <div class="siderbar-item-head">
-                        <h2>
+                    <a href="" class="hot-tags-more" rel="tag">更多</a>
+                </h2>
+            </div>
+            <ul class="hot-tags-list">
+                {if(isset($hot_label))}
+                {foreach($hot_label as $item)}
+                <li><a href="" class="hot-tag-item">{$item.name}</a></li>
+                {/foreach}
+                {/if}
+            </ul>
+        </div>
+        <!-- 微信公众号 -->
+        <div class="siderbar-item">
+            <div class="siderbar-item-head">
+                <h2>
                                 <span>
                                     微信公众号
                                 </span>
-                        </h2>
-                    </div>
-                    <div class="wechat-public">
-                        <img src="/static/image/qingschool/wechat_public.png" alt="更多视频云干货，尽在轻直播公众号">
-                        <p style="line-height: 2;">
-                            更多直播干货<br>
-                            尽在轻直播公众号
-                        </p>
-                    </div>
-                </div>
+                </h2>
+            </div>
+            <div class="wechat-public">
+                <img src="/static/image/qingschool/wechat_public.png" alt="更多视频云干货，尽在轻直播公众号">
+                <p style="line-height: 2;">
+                    更多直播干货<br>
+                    尽在轻直播公众号
+                </p>
             </div>
         </div>
-    </section>
+    </div>
+</div>
+</section>
 </div>
 
 </body>
