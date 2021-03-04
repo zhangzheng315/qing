@@ -60,7 +60,7 @@
   background: #2D2D2D;
   box-shadow: 0px 4px 6px 0px rgba(193, 193, 193, 0.28);
 }
-#video .video-nav a {
+#video .video-nav .layui-container a {
   display: block;
   color: #fff;
   font-size: 16px;
@@ -71,13 +71,18 @@
   margin-right: 48px;
   box-sizing: border-box;
 }
-#video .video-nav a:hover {
+#video .video-nav .layui-container a:hover {
   color: #00cc99;
   border-bottom: 2px solid #00cc99;
 }
-#video .video-nav .active {
+#video .video-nav .layui-container .active {
   color: #00cc99;
   border-bottom: 2px solid #00cc99;
+}
+#video .video-nav .box {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-start !important;
 }
 #video .all-watch {
   padding: 61px 0 71px;
