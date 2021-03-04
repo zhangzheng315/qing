@@ -40,13 +40,14 @@
 
         <!-- 导航栏 -->
         <nav class="video-nav ">
-            <div class="layui-container flex">
-                <a href="{:url('index/qing_school/videoCourse')}" class="active">首页</a>
-                <a href="{:url('/index/qing_school/courseSecond')}">企培用户专区</a>
-                <a href="">直播快速入门</a>
-                <a href="">点播快速入门</a>
-                <a href="">线上沙龙课</a>
-                <a href="">案例解析</a>
+            <div class="layui-container box" style="display: flex;align-items: center;justify-content: flex-start">
+                <a href="{:url('/index/qing_school/videoCourse')}" class="active">首页</a>
+                {if(isset($video_type))}
+                {foreach($video_type as $item)}
+                <a href="{:url('/index/qing_school/courseSecond')}">{$item.name}</a>
+                {/foreach}
+                {/if}
+
             </div>
 
         </nav>
@@ -63,18 +64,17 @@
                 </div>
                 <div class="watch-content">
                     <a href="{:url('/index/tutorial/index')}">
-                        <img src="/static/image/qingschool/kaiqi.png" alt="">
+                        <img src="{$first_video['cover_img_url']}" alt="">
                     </a>
                     <div class="content-text">
-                        <h5>如何在电脑上开启直播(直播快速入门）</h5>
+                        <h5>{$first_video['title']}</h5>
                         <div class="teacher flex">
                             <div>主讲老师：<span>轻直播</span></div>
-                            <div>5视频课时：<span class="num">418 </span>人在浏览</div>
+                            <div>5视频课时：<span class="num">{$first_video['browse']}</span>人在浏览</div>
                         </div>
                     </div>
                     <div class="line"></div>
-                    <p>用轻直播，您只需要3步就可以轻松实现直播。 创建直播频道和安装客户端—>用频道号和密码登录，发起直播—>查看直播效果并进行分享</p>
-
+                    <p>{$first_video['content']}</p>
                 </div>
             </div>
         </div>

@@ -180,7 +180,7 @@
                     , 'help' //帮助
                 ]
             });
-            $("#LAY_layedit_1").contents().find("body[contenteditable]").prop("contenteditable", false);
+            $("[id *= 'LAY_layedit']").contents().find("body[contenteditable]").prop("contenteditable", false);
             //同步富文本内容到textarea
             form.verify({
                 fu_content: function (value) {

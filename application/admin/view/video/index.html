@@ -105,12 +105,6 @@
                 <input type="text" name="order" placeholder="请输入(数值越大，排序越靠前)" autocomplete="off" class="layui-input">
             </div>
         </div>
-        <div class="layui-form-item layui-form-text">
-            <label class="layui-form-label">简介</label>
-            <div class="layui-input-block">
-                <textarea name="content" placeholder="请输入内容" class="layui-textarea"></textarea>
-            </div>
-        </div>
         <div class="layui-form-item">
             <label class="layui-form-label">图片上传</label>
             <div class="layui-input-block">
@@ -147,6 +141,12 @@
                 <div class="layui-progress layui-progress-big" lay-showpercent="true" lay-filter="uploadProgress">
                     <div class="layui-progress-bar layui-bg-red" lay-percent="0%"></div>
                 </div>
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">简介</label>
+            <div class="layui-input-block">
+                <textarea name="content" id="myEdit" lay-verify="fu_content" placeholder="请输入内容" class="layui-textarea"></textarea>
             </div>
         </div>
         <div class="layui-form-item">
@@ -209,12 +209,6 @@
                 <input type="text" id="order" name="order" placeholder="请输入(数值越大，排序越靠前)" autocomplete="off" class="layui-input">
             </div>
         </div>
-        <div class="layui-form-item layui-form-text">
-            <label class="layui-form-label">简介</label>
-            <div class="layui-input-block">
-                <textarea name="content" id="content" placeholder="请输入内容" class="layui-textarea"></textarea>
-            </div>
-        </div>
         <div class="layui-form-item">
             <label class="layui-form-label">图片上传</label>
             <div class="layui-input-block">
@@ -251,6 +245,12 @@
                 <div class="layui-progress layui-progress-big" lay-showpercent="true" lay-filter="uploadProgress">
                     <div class="layui-progress-bar layui-bg-red" lay-percent="0%"></div>
                 </div>
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">简介</label>
+            <div class="layui-input-block">
+                <textarea name="content" id="articleEdit" lay-verify="fu_content" placeholder="请输入内容" class="layui-textarea"></textarea>
             </div>
         </div>
         <div class="layui-form-item">
@@ -419,10 +419,11 @@
         });
     }
 
-    layui.use(['form', 'table','upload'], function () {
+    layui.use(['form', 'table','upload','layedit'], function () {
         var form = layui.form;
         var table = layui.table;
         var upload = layui.upload;
+        layedit = layui.layedit;
 
         //图片上传接口
         upload.render({
@@ -458,6 +459,41 @@
 
         });
 
+        window.articleEdit = function () {
+            //设置图片上传接口
+            layedit.set({
+                uploadImage: {
+                    url: "{:url('admin/common_file/uploadFile')}" //接口url
+                    , type: 'post' //默认post
+                }
+            });
+            //建立编辑器
+            var index = layedit.build('articleEdit', {
+                tool: ['strong' //加粗
+                    , 'italic' //斜体
+                    , 'underline' //下划线
+                    , 'del' //删除线
+                    , '|' //分割线
+                    , 'left' //左对齐
+                    , 'center' //居中对齐
+                    , 'right' //右对齐
+                    , 'link' //超链接
+                    , 'unlink' //清除链接
+                    , 'face' //表情
+                    , 'image' //插入图片
+                    , 'help' //帮助
+                ]
+            });
+            //同步富文本内容到textarea
+            form.verify({
+                fu_content: function (value) {
+                    return layedit.sync(index);
+                }
+            })
+            layedit.setContent(index, '');
+            return index;
+        }
+
         //监听工具条
         table.on('tool(table-rule)', function (obj) { //注：tool 是工具条事件名，test 是 table 原始容器的属性 lay-filter="对应的值"
             var data = obj.data; //获得当前行数据
@@ -473,6 +509,7 @@
                             area: ['900px', '800px'],
                             content: $('#edit'),
                         });
+                        let index = articleEdit();
 
                         $('#title').val(res.data.title);
                         $('#order').val(res.data.order);
@@ -484,7 +521,6 @@
                         $('.img_url').val(res.data.cover_img_url);
                         $('#pid').empty();
                         $('#label_check').empty();
-                        $('#content').val(res.data.content);
 
                         //状态
                         if (res.data.status === 0) {
@@ -516,6 +552,7 @@
                         }
 
                         form.render();
+                        layedit.setContent(index, res.data.content);
                     }
                 })
 
