@@ -63,46 +63,58 @@
                 <div class="layui-container">
                     <ul class="stars">
                         <li>
-                            <div>
-                                <img src="/static/image/index/dianshi.png" alt="">
-                                <h6>年会直播方案</h6>
-                            </div>
-                            <p>企业精彩，尽在年会直播</p>
+                            <a href="">
+                                <div>
+                                    <img src="/static/image/index/dianshi.png" alt="">
+                                    <h6>年会直播方案</h6>
+                                </div>
+                                <p>企业精彩，尽在年会直播</p>
+                            </a>
                         </li>
                         <li>
-                            <div>
-                                <img src="/static/image/index/dianshi.png" alt="">
-                                <h6>视频功能大全</h6>
-                            </div>
-                            <p>图文+视频，直观介绍</p>
+                            <a href="{:url('/index/more_live/index')}">
+                                <div>
+                                    <img src="/static/image/index/dianshi.png" alt="">
+                                    <h6>视频功能大全</h6>
+                                </div>
+                                <p>图文+视频，直观介绍</p>
+                            </a>
                         </li>
                         <li>
-                            <div>
-                                <img src="/static/image/index/dianshi.png" alt="">
-                                <h6>为何选择我们</h6>
-                            </div>
-                            <p>稳定，安全，快速</p>
+                            <a href="">
+                                <div>
+                                    <img src="/static/image/index/dianshi.png" alt="">
+                                    <h6>为何选择我们</h6>
+                                </div>
+                                <p>稳定，安全，快速</p>
+                            </a>
                         </li>
                         <li>
-                            <div>
-                                <img src="/static/image/index/dianshi.png" alt="">
-                                <h6>HTML5技术</h6>
-                            </div>
-                            <p>全终端播放，放心观看</p>
+                            <a href="">
+                                <div>
+                                    <img src="/static/image/index/dianshi.png" alt="">
+                                    <h6>HTML5技术</h6>
+                                </div>
+                                <p>全终端播放，放心观看</p>
+                            </a>
                         </li>
                         <li>
-                            <div>
-                                <img src="/static/image/index/dianshi.png" alt="">
-                                <h6>轻直播学院</h6>
-                            </div>
-                            <p>视频教学，快速上手</p>
+                            <a href="{:url('/index/qing_school/videoCourse')}">
+                                <div>
+                                    <img src="/static/image/index/dianshi.png" alt="">
+                                    <h6>轻直播学院</h6>
+                                </div>
+                                <p>视频教学，快速上手</p>
+                            </a>
                         </li>
                         <li>
-                            <div>
-                                <img src="/static/image/index/dianshi.png" alt="">
-                                <h6>年会直播方案</h6>
-                            </div>
-                            <p>企业精彩，尽在年会直播</p>
+                            <a href="">
+                                <div>
+                                    <img src="/static/image/index/dianshi.png" alt="">
+                                    <h6>年会直播方案</h6>
+                                </div>
+                                <p>企业精彩，尽在年会直播</p>
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -511,7 +523,6 @@
                                     </li>
                                 </ul>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -560,8 +571,7 @@
             , height: '100%'
             , arrow: 'none' // 始终显示箭头
             , anim: 'updown' // 切换动画方式
-            , interval: 5000 // 轮播间隔时间
-            , autoplay: false
+            , interval: 3000 // 轮播间隔时间
         });
     });
 
@@ -604,17 +614,17 @@
     function logoPoint(index) {
         $.ajax({
             url: "{:url('/index/logo_wall/getLogoByWhere')}",
-            data:{'pid':1,'type_id':index},
-            type:'get',
-            success:function (res) {
+            data: { 'pid': 1, 'type_id': index },
+            type: 'get',
+            success: function (res) {
                 if (res.status === 200) {
                     $('.logo-imgs').empty();
                     for (let item of res.data) {
-                        $('.logo-imgs').append('<li><img src="'+ item.img_url + '" alt=""></li>');
+                        $('.logo-imgs').append('<li><img src="' + item.img_url + '" alt=""></li>');
                     }
                 }
             },
-            error:function (err) {
+            error: function (err) {
                 console.log(err)
             }
         })

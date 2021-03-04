@@ -51,12 +51,12 @@
   line-height: 2.3;
   cursor: pointer;
 }
-#course header .layui-container a {
+#course header .layui-container > a {
   color: #333;
   font-size: 16px;
   margin: 0 50px;
 }
-#course header .layui-container .login button {
+#course header .layui-container .login a {
   font-size: 16px;
   color: #333;
   border: 0;
@@ -74,10 +74,12 @@
 #course .nav-second .layui-container {
   font-size: 16px;
 }
+#course .nav-second .layui-container a,
 #course .nav-second .layui-container span {
   color: #fff;
   cursor: pointer;
 }
+#course .nav-second .layui-container a:hover,
 #course .nav-second .layui-container span:hover {
   color: #00cc99;
 }
@@ -286,7 +288,7 @@
     width: 35px;
     line-height: 2;
   }
-  #course header .layui-container a {
+  #course header .layui-container > a {
     font-size: 12px;
     margin: 0 20px;
   }
@@ -466,7 +468,7 @@
   #course header .layui-container .layui-form-item .layui-input-block .icons img {
     width: 15px;
   }
-  #course header .layui-container a {
+  #course header .layui-container > a {
     font-size: 12px;
     margin: 0 15px;
   }

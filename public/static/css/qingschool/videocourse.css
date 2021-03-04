@@ -27,7 +27,7 @@
 #video header .layui-container .head-right .text a:nth-child(2) {
   margin-right: 0px;
 }
-#video header .layui-container .head-right .btns button {
+#video header .layui-container .head-right .btns a button {
   border: none;
   width: 103px;
   height: 30px;
@@ -35,22 +35,22 @@
   cursor: pointer;
   font-size: 14px;
 }
-#video header .layui-container .head-right .btns .login {
+#video header .layui-container .head-right .btns a .login {
   background-color: #fff;
   color: #00cc99;
   border: 1px solid #00cc99;
   margin-right: 25px;
 }
-#video header .layui-container .head-right .btns .login:hover {
+#video header .layui-container .head-right .btns a .login:hover {
   background-color: #00cc99;
   color: #fff;
   border: none;
 }
-#video header .layui-container .head-right .btns .free-btn {
+#video header .layui-container .head-right .btns a .free-btn {
   background-color: #00cc99;
   color: #fff;
 }
-#video header .layui-container .head-right .btns .free-btn:hover {
+#video header .layui-container .head-right .btns a .free-btn:hover {
   background-color: #fff;
   color: #00cc99;
   border: 1px solid #00cc99;

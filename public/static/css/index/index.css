@@ -83,38 +83,43 @@
   width: 16.6%;
   border-right: 1px solid #E5E5E5;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+#banner #high-lights .stars li a {
+  float: left;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  cursor: pointer;
 }
-#banner #high-lights .stars li div {
+#banner #high-lights .stars li a div {
   display: flex;
   align-items: center;
 }
-#banner #high-lights .stars li div img {
+#banner #high-lights .stars li a div img {
   width: 26px;
   height: 23px;
   object-fit: cover;
   margin-right: 8px;
 }
-#banner #high-lights .stars li div h6 {
+#banner #high-lights .stars li a div h6 {
   color: #333;
   font-size: 14px;
   font-weight: bold;
 }
-#banner #high-lights .stars li p {
+#banner #high-lights .stars li a p {
   color: #999;
   font-size: 12px;
   margin-top: 16px;
   letter-spacing: 1px;
 }
+#banner #high-lights .stars li a:hover h6 {
+  color: #00cc99;
+}
 #banner #high-lights .stars li:nth-child(6) {
   border-right: 0;
-}
-#banner #high-lights .stars li:hover h6,
-#banner #high-lights .stars li:hover p {
-  color: #00cc99;
 }
 #product {
   padding-top: 129px;
@@ -647,7 +652,7 @@
   box-sizing: border-box;
 }
 #fiveG .fiveg-content h2 {
-  font-size: 60px;
+  font-size: 50px;
   color: #fff;
   text-align: center;
 }
@@ -703,11 +708,11 @@
   #banner #high-lights .layui-container .stars {
     padding: 18px 20px;
   }
-  #banner #high-lights .layui-container .stars li div img {
+  #banner #high-lights .layui-container .stars li a div img {
     width: 22px;
     height: 20px;
   }
-  #banner #high-lights .layui-container .stars li p {
+  #banner #high-lights .layui-container .stars li a p {
     margin-top: 12px;
     letter-spacing: 0;
   }
@@ -842,7 +847,7 @@
     padding-bottom: 12px;
     margin-bottom: 12px;
   }
-  #banner #high-lights .layui-container .stars li p {
+  #banner #high-lights .layui-container .stars li a p {
     margin-top: 8px;
   }
   #banner #high-lights .layui-container .stars li:nth-child(n + 4) {
@@ -1055,7 +1060,7 @@
   }
   #banner #high-lights {
     width: 92%;
-    bottom: -92.5%;
+    bottom: -78%;
     height: 210px;
   }
   #banner #high-lights .layui-container {
@@ -1072,17 +1077,19 @@
     border-bottom: 1px solid #E5E5E5;
     padding-bottom: 12px;
     margin-bottom: 12px;
+  }
+  #banner #high-lights .layui-container .stars li a {
     justify-content: flex-start;
   }
-  #banner #high-lights .layui-container .stars li div {
+  #banner #high-lights .layui-container .stars li a div {
     flex-direction: column;
   }
-  #banner #high-lights .layui-container .stars li div img {
+  #banner #high-lights .layui-container .stars li a div img {
     width: 23px;
     height: 20px;
     margin-bottom: 3px;
   }
-  #banner #high-lights .layui-container .stars li p {
+  #banner #high-lights .layui-container .stars li a p {
     margin-top: 8px;
     text-align: center;
   }
