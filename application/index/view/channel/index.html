@@ -20,28 +20,35 @@
         {include file="common/header"}
 
         <div class="banner">
-            <div class="layui-carousel" id="banners">
+            <!-- <div class="layui-carousel" id="banners">
                 <div carousel-item class="lunbo-box">
                     <img src="/static/image/channel/banner.png" alt="">
                     <img src="/static/image/channel/banner.png" alt="">
-                    <img src="/static/image/channel/banner.png" alt="">
                 </div>
+            </div> -->
+            <img src="/static/image/channel/banner.png" alt="">
+
+            <div class="layui-container">
+                <h3>轻直播渠道合作伙伴招募</h3>
+                <h6>立即加入轻直播合作伙伴体系，共同开阔企业直播市场</h6>
+                <button>合作咨询</button>
             </div>
+
         </div>
 
         <nav class="channel-nav">
             <div class="layui-container flex-box">
-                <a class="active" href="">合作支持</a>
-                <a href="">合作条件</a>
-                <a href="">合作流程</a>
-                <a href="">合作优势</a>
-                <a href="">客户案例</a>
-                <a href="">加入合作伙伴</a>
+                <a class="transition active" href="#section-1">合作支持</a>
+                <a class="transition" href="#section-2">合作条件</a>
+                <a class="transition" href="#section-3">合作流程</a>
+                <a class="transition" href="#section-4">合作优势</a>
+                <a class="transition" href="#section-5">客户案例</a>
+                <a class="transition" href="#section-6">加入合作伙伴</a>
             </div>
         </nav>
 
         <!-- 多云架构混合云部署 -->
-        <div class="jiagou">
+        <div id="section-1" class="jiagou">
             <div class="layui-container flex-box">
                 <img class="duoyun" src="/static/image/channel/duoyun.png" alt="">
                 <h5>多云架构混合云部署</h5>
@@ -60,7 +67,7 @@
         </div>
 
         <!-- 合作伙伴权益 -->
-        <div class="partner">
+        <div id="section-4" class="partner">
             <div class="layui-container">
                 <div class="title">合作伙伴权益</div>
                 <ul class="part-content flex-box">
@@ -109,7 +116,7 @@
         </div>
 
         <!-- 希望合作伙伴可以具备的条件 -->
-        <div class="part-term">
+        <div id="section-2" class="part-term">
             <div class="layui-container">
                 <div class="title">
                     希望合作伙伴可以具备的条件
@@ -147,7 +154,7 @@
         </div>
 
         <!-- 如何成为轻直播合作伙伴 -->
-        <div class="become-part">
+        <div id="section-3" class="become-part">
             <div class="layui-container">
                 <div class="title">如何成为轻直播合作伙伴</div>
                 <ul class="icons flex-box">
@@ -176,7 +183,7 @@
                 </ul>
 
                 <!-- 合作客户 -->
-                <div class="kehu">
+                <div id="section-5" class="kehu">
                     <div class="layui-carousel" id="logos">
                         <div carousel-item id="logo-content">
                             {if isset($advantage_logo)}
@@ -196,15 +203,14 @@
             </div>
         </div>
 
-        <div class="join">
+        <div id="section-6" class="join">
             <div class="layui-container">
                 <h3>立即加入，合作共赢</h3>
-            <button>立即试用</button>
+                <button>立即试用</button>
             </div>
-            
         </div>
 
-
+        {include file="common/footer"}
     </div>
 </body>
 <script src="/static/common/js/header-footer.js"></script>
@@ -233,6 +239,18 @@
             , interval: 3000 // 轮播间隔时间
         });
 
+    });
+
+    $(".transition").click(function () {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var $target = $(this.hash);
+            $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');
+            if ($target.length) {
+                var targetOffset = $target.offset().top;
+                $('html,body').animate({ scrollTop: targetOffset }, 400);
+                return false;
+            }
+        }
     });
 </script>
 

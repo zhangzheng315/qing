@@ -33,11 +33,11 @@
         <nav>
             <div class="layui-container">
                 <div class="nav-content">
-                    <li><a href="#section-1">服务范围</a></li>
-                    <li><a href="#section-2">方案设计</a></li>
-                    <li><a href="#section-3">搭建支持</a></li>
-                    <li><a href="#section-4">现场保障</a></li>
-                    <li><a href="#section-5">数据报告</a></li>
+                    <li><a class="transition" href="#section-1">服务范围</a></li>
+                    <li><a class="transition" href="#section-2">方案设计</a></li>
+                    <li><a class="transition" href="#section-3">搭建支持</a></li>
+                    <li><a class="transition" href="#section-4">现场保障</a></li>
+                    <li><a class="transition" href="#section-5">数据报告</a></li>
                 </div>
             </div>
         </nav>
@@ -241,6 +241,19 @@
             // , anim: 'updown' // 切换动画方式
             , interval: 3000 // 轮播间隔时间
         });
+    });
+
+    // 锚点定位缓慢滚动
+    $(".transition").click(function () {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var $target = $(this.hash);
+            $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');
+            if ($target.length) {
+                var targetOffset = $target.offset().top;
+                $('html,body').animate({ scrollTop: targetOffset }, 400);
+                return false;
+            }
+        }
     });
 </script>
 

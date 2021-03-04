@@ -37,13 +37,17 @@
 #service nav .layui-container .nav-content li {
   height: 60px;
   line-height: 60px;
-  font-size: 16px;
-  color: #333;
   cursor: pointer;
 }
+#service nav .layui-container .nav-content li a {
+  font-size: 16px;
+  color: #333;
+}
 #service nav .layui-container .nav-content li:hover {
-  color: #00cc99;
   border-bottom: 3px solid #00cc99;
+}
+#service nav .layui-container .nav-content li:hover a {
+  color: #00cc99;
 }
 #service .module {
   padding: 100px 0 110px;

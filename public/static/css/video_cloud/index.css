@@ -43,8 +43,10 @@
   text-decoration: none;
 }
 #video_cloud .navbar .layui-container ul li:hover {
-  color: #00cc99;
   border-bottom: 3px solid #00cc99;
+}
+#video_cloud .navbar .layui-container ul li:hover .transition {
+  color: #00cc99 !important;
 }
 #video_cloud .tedian {
   padding: 100px 0 30px;

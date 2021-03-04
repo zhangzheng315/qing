@@ -37,10 +37,10 @@
         <nav class="navbar">
             <div class="layui-container">
                 <ul>
-                    <li><a href="#section-1">产品特点</a></li>
-                    <li><a href="#section-2">应用场景</a></li>
-                    <li><a href="#section-3">直播功能</a></li>
-                    <li><a href="#section-4">合作客户</a></li>
+                    <li><a class="transition" href="#section-1">产品特点</a></li>
+                    <li><a class="transition" href="#section-2">应用场景</a></li>
+                    <li><a class="transition" href="#section-3">直播功能</a></li>
+                    <li><a class="transition" href="#section-4">合作客户</a></li>
                 </ul>
             </div>
         </nav>
@@ -333,6 +333,19 @@
             }
         })
     }
+
+    // 锚点定位缓慢滚动
+    $(".transition").click(function () {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var $target = $(this.hash);
+            $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');
+            if ($target.length) {
+                var targetOffset = $target.offset().top;
+                $('html,body').animate({ scrollTop: targetOffset }, 400);
+                return false;
+            }
+        }
+    });
 </script>
 
 </html>
