@@ -6,6 +6,8 @@ namespace app\index\controller;
 use app\admin\serve\ArticleService;
 use app\admin\serve\LabelService;
 use app\admin\serve\QBannerService;
+use app\admin\serve\VideoService;
+use app\admin\serve\VideoTypeService;
 use think\Controller;
 use think\Request;
 
@@ -14,6 +16,8 @@ class QingSchool extends Controller
     public $qBannerService;
     public $articleService;
     public $labelService;
+    public $videoTypeService;
+    public $videoService;
 
     public function __construct(Request $request = null)
     {
@@ -21,10 +25,14 @@ class QingSchool extends Controller
         $this->qBannerService = new QBannerService();
         $this->articleService = new ArticleService();
         $this->labelService = new LabelService();
+        $this->videoTypeService = new VideoTypeService();
+        $this->videoService = new VideoService();
         $list = $this->articleService->hotArticleList();
         $hot_label = $this->labelService->hotLabelList();
+        $video_type = $this->videoTypeService->videoTypeList();
         $this->assign('list', $list);
         $this->assign('hot_label', $hot_label);
+        $this->assign('video_type', $video_type);
     }
 
     /* 内容中心*/
@@ -38,7 +46,8 @@ class QingSchool extends Controller
 
     public function videoCourse()
     {
-        return $this->fetch();
+        $first_video = $this->videoService->videoHomeFirst();
+        return $this->fetch('',compact('first_video'));
     }
 
     /* 案例解析*/

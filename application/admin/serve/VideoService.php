@@ -180,4 +180,19 @@ class VideoService extends Common{
         return true;
     }
 
+    public function videoHomeFirst()
+    {
+        $where = [
+            'deleted_time' => 0,
+            'status' => 1,
+        ];
+        $info = $this->video->where($where)->order('selected_order', 'desc')->limit(1)->find();
+        if (!$info) {
+            $this->setError('查询有误');
+            return false;
+        }
+        $this->setMessage('查询成功');
+        return $info;
+    }
+
 }
