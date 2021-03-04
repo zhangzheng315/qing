@@ -493,8 +493,8 @@
                                 <dl class="baikeMenu-child">
                                     {foreach($article['all_article'] as $val)}
                                     {if($val.pid == $item.id)}
-                                    <dd class="active">
-                                        <a href="">{$val.title}</a>
+                                    <dd class="{$val.id == $id ? 'active' : ''}">
+                                        <a href="{:url('/index/docs/article',['id'=>$val.id])}">{$val.title}</a>
                                     </dd>
                                     {/if}
                                     {/foreach}
