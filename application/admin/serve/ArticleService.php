@@ -154,7 +154,7 @@ class ArticleService extends Common{
             }
         }
         if ($data['hot_article']) {
-            $rt = $this->hotArticle->allowField(true)->save($data);
+            $rt = $this->hotArticle->allowField(true)->save($data,$where);
             if(!$rt){
                 $this->setError('修改失败');
                 Db::rollback();
@@ -172,7 +172,7 @@ class ArticleService extends Common{
             }
         }
         if ($data['content_center']) {
-            $rt = $this->content_center->allowField(true)->save($data);
+            $rt = $this->content_center->allowField(true)->save($data,$where);
             if(!$rt){
                 $this->setError('修改失败');
                 Db::rollback();
@@ -220,7 +220,7 @@ class ArticleService extends Common{
     }
 
     /**
-     * 分类获取文章
+     * 内容中心文章
      * @return bool|false|\PDOStatement|string|\think\Collection
      * @throws \think\db\exception\DataNotFoundException
      * @throws \think\db\exception\ModelNotFoundException
@@ -275,6 +275,14 @@ class ArticleService extends Common{
 
     }
 
+    /**
+     * 分类文章列表
+     * @param $pid
+     * @return bool|false|\PDOStatement|string|\think\Collection
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
     public function articleByPid($pid)
     {
         $where = [
@@ -294,5 +302,65 @@ class ArticleService extends Common{
         }
         $this->setMessage('查询成功');
         return $res;
+    }
+
+    public function articleInfoById($id,$pid)
+    {
+        $where = [
+            'status'=>1,
+            'deleted_time' => 0,
+            'id' => $id,
+        ];
+        $info = $this->article->where($where)->find();
+        if (!$info) {
+            $this->setError('查询有误');
+            return false;
+        }
+        $info['label'] = explode(',', $info['label']);
+        $info['time'] = date('Y-m-d', $info['created_time']);
+
+        $page_where = [
+            'status' => 1,
+            'deleted_time' => 0,
+        ];
+        //查询上一篇
+        //内容中心
+        $pre_btn = 0;
+        $nex_btn = 0;
+        $pre_article = [];
+        $nex_article = [];
+        if ($pid == 0) {
+            $article_list = $this->content_center->where($page_where)->order('order', 'desc')->select();
+        }else{
+            $page_where['pid'] = $pid;
+            $article_list = $this->article->where($page_where)->order('order', 'desc')->select();
+        }
+        $last_index = count($article_list) - 1;
+        $index = 0;
+        foreach ($article_list as $key => $value) {
+            if ($value['id'] == $id) {
+                $index = $key;
+            }
+        }
+
+        if ($index - 1  > 0) {
+            $pre_btn = 1;
+            $pre_article = $article_list[$index - 1];
+        }
+        if ($index + 1 <= $last_index) {
+            $nex_btn = 1;
+            $nex_article = $article_list[$index + 1];
+        }
+        $data = [
+            'info' => $info,
+            'pre_nex' => [
+                'pre_btn' => $pre_btn,
+                'pre_article' => $pre_article,
+                'nex_btn' => $nex_btn,
+                'nex_article' => $nex_article,
+            ],
+        ];
+        $this->setMessage('查询成功');
+        return $data;
     }
 }
