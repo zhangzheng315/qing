@@ -4,12 +4,14 @@ namespace app\index\controller;
 
 // use app\admin\serve\JoinUsService;
 use app\admin\serve\ArticleService;
+use app\admin\serve\CaseService;
 use app\admin\serve\LabelService;
 use app\admin\serve\QBannerService;
 use app\admin\serve\VideoService;
 use app\admin\serve\VideoTypeService;
 use think\Controller;
 use think\Request;
+use think\Validate;
 
 class QingSchool extends Controller
 {
@@ -46,8 +48,9 @@ class QingSchool extends Controller
 
     public function videoCourse()
     {
+        $id = 1;
         $first_video = $this->videoService->videoHomeFirst();
-        return $this->fetch('',compact('first_video'));
+        return $this->fetch('',compact('first_video','id'));
     }
 
     /* 案例解析*/
@@ -122,5 +125,27 @@ class QingSchool extends Controller
             }
         }
         return $this->fetch('',compact('article_info','pid','top_name','top_url'));
+    }
+
+    public function getVideoListByWhere(Request $request){
+        $rules =
+            [
+                'pid' => 'require',
+            ];
+        $msg =
+            [
+                'pid' => '缺少参数@pid',
+            ];
+        $validate = new Validate($rules,$msg);
+        if(!$validate->check($request->param())){
+            return show(401,$validate->getError());
+        }
+        $video_service = new VideoService();
+        $res = $video_service->getVideoListByWhere($request->param());
+        if($res){
+            return show(200,$video_service->message,$res);
+        }else{
+            return show(401,$video_service->error);
+        }
     }
 }

@@ -83,559 +83,29 @@
         <div class="case-study">
             <div class="layui-container">
                 <ul class="study-nav" style="display: flex;align-items: center;justify-content: flex-start">
-                    <li class="active">
-                        <p>直播快速入门</p>
+                    {if(isset($video_type))}
+                    {foreach($video_type as $item)}
+                    <li class="{$item.id == $id ? 'active' : ''}">
+                        <p onclick="videoPoint({$item.id})">{$item.name}</p>
                         <div></div>
                     </li>
-                    <li>
-                        <p>点播快速入门</p>
-                        <div></div>
-                    </li>
-                    <li>
-                        <p>最新功能视频</p>
-                        <div></div>
-                    </li>
-                    <li>
-                        <p>产品介绍</p>
-                        <div></div>
-                    </li>
-                    <li>
-                        <p>直播进阶教程</p>
-                        <div></div>
-                    </li>
+                    {/foreach}
+                    {/if}
                 </ul>
                 <div class="study-content">
                     <div class="study-item active">
                         <ul class="study-box">
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
+
                         </ul>
                         <button>点击加载更多</button>
                     </div>
-                    <div class="study-item">
-                        <ul class="study-box">
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                        <button>点击加载更多</button>
-                    </div>
-                    <div class="study-item">
-                        <ul class="study-box">
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                        <button>点击加载更多</button>
-                    </div>
-                    <div class="study-item">
-                        <ul class="study-box">
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                        <button>点击加载更多</button>
-                    </div>
-                    <div class="study-item">
-                        <ul class="study-box">
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{:url('/index/tutorial/index')}">
-                                    <img src="/static/image/qingschool/bg_small.png" alt="">
-                                    <div class="txt">
-                                        <h6>轻直播客户端2.0入门教程</h6>
-                                        <p><span>免费</span> / 1000人在浏览</p>
-                                        <span>2021-02-11</span>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                        <button>点击加载更多</button>
-                    </div>
+
                 </div>
             </div>
         </div>
 
         <!-- 产品资讯 -->
-        <div class="product-zixun">
+        <div class="product-zixun" style="display: none">
             <div class="layui-container">
                 <div class="watch-text flex">
                     <div class="text-title">
@@ -808,6 +278,35 @@
             // ,anim: 'updown' // 切换动画方式
         });
     });
+    videoPoint(1)
+    function videoPoint(pid) {
+        $.ajax({
+            url: "{:url('/index/qing_school/getVideoListByWhere')}",
+            data:{'pid':pid},
+            type:'get',
+            success:function (res) {
+                console.log(res)
+                if (res.status === 200) {
+                    $('.study-box').empty();
+                    for(let item of res.data) {
+                        $('.study-box').append('<li>\n' +
+                            '                        <a href="{:url(\'/index/tutorial/index\')}">\n' +
+                            '                              <img src="'+item.cover_img_url+'" alt="">\n' +
+                            '                              <div class="txt">\n' +
+                            '                                   <h6>'+item.title+'</h6>\n' +
+                            '                                    <p><span>免费</span> / '+item.browse+'人在浏览</p>\n' +
+                            '                                    <span>'+item.time+'</span>\n' +
+                            '                               </div>\n' +
+                            '                         </a>\n' +
+                            '                    </li>')
+                    }
+                }
+            },
+            error:function (err) {
+                console.log(err)
+            }
+        })
+    }
 </script>
 
 </html>
