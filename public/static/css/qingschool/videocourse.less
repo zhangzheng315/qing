@@ -280,6 +280,7 @@
 
                             img {
                                 width: 100%;
+                                height: 50%;
                                 object-fit: cover;
                             }
 
@@ -322,11 +323,17 @@
                         display: block;
                         margin: 67px auto 0;
                         background-color: transparent;
-                        color: #00cc99;
                         cursor: pointer;
 
+                        a {
+                            color: #00cc99;
+                        }
+
                         &:hover {
-                            color: #fff;
+                            a {
+                                color: #fff;
+                            }
+
                             background-color: #00cc99;
                             border: 0;
                         }
@@ -1230,6 +1237,7 @@
                 button {
                     width: 128px;
                     height: 30px;
+
                     a {
                         font-size: 14px;
 
