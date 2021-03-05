@@ -8,7 +8,7 @@
     <title>轻直播_企业直播服务平台,医疗直播领军者,营销直播定制服务商</title>
     <meta name="keywords"  content="企业直播平台,医疗直播,营销直播,活动直播,直播定制服务"/>
     <meta name="description"
-         content="轻直播是国内知名的企业级直播定制化服务平台,服务全球500强,为企业提供医疗直播、手术直播、活动直播、会议直播、营销直播、年会直播等全场景解决方案,热线:400-920-1599。" />
+           content="轻直播是国内知名的企业级直播定制化服务平台,服务全球500强,为企业提供医疗直播、手术直播、活动直播、会议直播、营销直播、年会直播等全场景解决方案,热线:400-920-1599。"/>
     <link rel="stylesheet" href="/static/css/qingschool/index.css">
     <link rel="stylesheet" href="/static/layui/css/layui.css">
     <link rel="stylesheet" href="/static/css/style.css">
@@ -83,11 +83,11 @@
                         {if isset($article_list)}
                         {foreach($article_list as $item)}
                         <li class="cause-item">
-                            <a href="" class="cause-cover" target="_blank"
+                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>0])}" class="cause-cover"
                                style="background: url({$item.cover_img_url});background-size: cover">
                             </a>
                             <div class="cause-des">
-                                <a href="" class="cause-title">
+                                <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>0])}" class="cause-title">
                                     <h3>
                                         <i class="cause-icon icon-item-solution"></i>
                                         {$item.title}
@@ -107,9 +107,9 @@
                                     {/foreach}
                                     {/if}
                                     <span class="post-views">
-                                             <i class="icon-view"></i>
-                                             {$item.browse}
-                                         </span>
+                                         <i class="icon-view"></i>
+                                         {$item.browse}
+                                     </span>
                                 </div>
                             </div>
                         </li>
@@ -126,7 +126,7 @@
                         {if isset($article_list)}
                         {foreach($article_list as $item)}
                         <li class="cause-item">
-                            <a href="">
+                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id])}">
                                 <h3>
                                     {$item.title}
                                 </h3>
@@ -170,7 +170,8 @@
                         {if(isset($list))}
                         {foreach($list['hot_article'] as $item)}
                         <li class="article-item">
-                            <a href="" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
+                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>20])}" class="link" title="{$item.second_title}" target="_blank"
+                               rel="noopener noreferrer">
                                 <p>{$item.title}</p>
                                 <span class="time">{$item.time}</span>
                             </a>
@@ -182,7 +183,8 @@
                         {if(isset($list))}
                         {foreach($list['recommend'] as $item)}
                         <li class="article-item">
-                            <a href="" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
+                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>20])}" class="link" title="{$item.second_title}" target="_blank"
+                               rel="noopener noreferrer">
                                 <p>{$item.title}</p>
                                 <span class="time">{$item.time}</span>
                             </a>
@@ -203,7 +205,7 @@
                     </div>
                     <ul class="hot-products-list">
                         <li>
-                            <a href="" class="hot-products-item" target="_blank">
+                            <a href="{:url('/index/video_cloud/index')}" class="hot-products-item" target="_blank">
                                 <i class="icon-hot-product icon-hot-product_1"></i>
                                 <span>企业直播</span>
                             </a>
@@ -289,7 +291,7 @@
         $(this).siblings().removeClass('active');
         $(this).addClass('active');
         let dataName = $(this).attr('data-name');
-        if(dataName == 'hot') {
+        if (dataName == 'hot') {
             $('.hot-article-list').eq(0).show();
             $('.hot-article-list').eq(1).hide();
 

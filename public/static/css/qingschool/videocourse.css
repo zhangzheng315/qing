@@ -27,7 +27,7 @@
 #video header .layui-container .head-right .text a:nth-child(2) {
   margin-right: 0px;
 }
-#video header .layui-container .head-right .btns button {
+#video header .layui-container .head-right .btns a button {
   border: none;
   width: 103px;
   height: 30px;
@@ -35,22 +35,22 @@
   cursor: pointer;
   font-size: 14px;
 }
-#video header .layui-container .head-right .btns .login {
+#video header .layui-container .head-right .btns a .login {
   background-color: #fff;
   color: #00cc99;
   border: 1px solid #00cc99;
   margin-right: 25px;
 }
-#video header .layui-container .head-right .btns .login:hover {
+#video header .layui-container .head-right .btns a .login:hover {
   background-color: #00cc99;
   color: #fff;
   border: none;
 }
-#video header .layui-container .head-right .btns .free-btn {
+#video header .layui-container .head-right .btns a .free-btn {
   background-color: #00cc99;
   color: #fff;
 }
-#video header .layui-container .head-right .btns .free-btn:hover {
+#video header .layui-container .head-right .btns a .free-btn:hover {
   background-color: #fff;
   color: #00cc99;
   border: 1px solid #00cc99;
@@ -60,7 +60,7 @@
   background: #2D2D2D;
   box-shadow: 0px 4px 6px 0px rgba(193, 193, 193, 0.28);
 }
-#video .video-nav a {
+#video .video-nav .layui-container a {
   display: block;
   color: #fff;
   font-size: 16px;
@@ -71,13 +71,18 @@
   margin-right: 48px;
   box-sizing: border-box;
 }
-#video .video-nav a:hover {
+#video .video-nav .layui-container a:hover {
   color: #00cc99;
   border-bottom: 2px solid #00cc99;
 }
-#video .video-nav .active {
+#video .video-nav .layui-container .active {
   color: #00cc99;
   border-bottom: 2px solid #00cc99;
+}
+#video .video-nav .box {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-start !important;
 }
 #video .all-watch {
   padding: 61px 0 71px;
@@ -200,6 +205,7 @@
 }
 #video .case-study .layui-container .study-content .study-item .study-box li img {
   width: 100%;
+  height: 50%;
   object-fit: cover;
 }
 #video .case-study .layui-container .study-content .study-item .study-box li .txt {
@@ -231,13 +237,17 @@
   display: block;
   margin: 67px auto 0;
   background-color: transparent;
-  color: #00cc99;
   cursor: pointer;
 }
+#video .case-study .layui-container .study-content .study-item button a {
+  color: #00cc99;
+}
 #video .case-study .layui-container .study-content .study-item button:hover {
-  color: #fff;
   background-color: #00cc99;
   border: 0;
+}
+#video .case-study .layui-container .study-content .study-item button:hover a {
+  color: #fff;
 }
 #video .case-study .layui-container .study-content .active {
   display: block;
@@ -359,11 +369,13 @@
   background: linear-gradient(90deg, #009CA9, #39D6AF);
   border-radius: 20px;
   border: none;
-  color: #fff;
   display: block;
   margin: 0 auto;
-  font-size: 20px;
   cursor: pointer;
+}
+#video .video-free .layui-container button a {
+  color: #fff;
+  font-size: 20px;
 }
 @media screen and (min-width: 768px) and (max-width: 1300px) {
   #video header {
@@ -596,6 +608,8 @@
   #video .video-free .layui-container button {
     width: 148px;
     height: 35px;
+  }
+  #video .video-free .layui-container button a {
     font-size: 16px;
   }
 }
@@ -896,6 +910,8 @@
   #video .video-free .layui-container button {
     width: 128px;
     height: 30px;
+  }
+  #video .video-free .layui-container button a {
     font-size: 14px;
   }
 }

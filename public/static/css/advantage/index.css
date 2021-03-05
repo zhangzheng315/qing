@@ -241,8 +241,10 @@
   cursor: pointer;
 }
 #advantage .case .layui-container .case-box ul li > img {
+  height: 67%;
   width: 100%;
   object-fit: cover;
+  border-radius: 10px;
 }
 #advantage .case .layui-container .case-box ul li .type {
   position: absolute;
@@ -429,6 +431,9 @@
     margin-bottom: 32px;
     margin-right: 3%;
   }
+  #advantage .case .layui-container .case-box ul li > img {
+    height: 55%;
+  }
   #advantage .case .layui-container .case-box ul li .type {
     top: 24px;
     right: 20px;
@@ -443,10 +448,17 @@
   #advantage .case .layui-container .case-box ul li .text h5 {
     margin: 10px 0 7px;
     font-size: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   #advantage .case .layui-container .case-box ul li .text h6 {
     margin-bottom: 8px;
     font-size: 14px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
   }
   #advantage .case .layui-container .case-box ul li .text p {
     margin-bottom: 5px;
@@ -543,10 +555,17 @@
   #advantage .case .layui-container .case-box ul li .text h5 {
     margin: 10px 0 7px;
     font-size: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   #advantage .case .layui-container .case-box ul li .text h6 {
     margin-bottom: 8px;
     font-size: 14px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
   }
   #advantage .case .layui-container .case-box ul li .text p {
     margin-bottom: 5px;
@@ -672,8 +691,8 @@
     margin-right: 3%;
     padding: 5px 5px 10px;
   }
-  #advantage .case .layui-container .case-box ul li img {
-    height: 60%;
+  #advantage .case .layui-container .case-box ul li > img {
+    height: 55%;
     border-radius: 10px;
   }
   #advantage .case .layui-container .case-box ul li .type {
@@ -690,10 +709,16 @@
   #advantage .case .layui-container .case-box ul li .text h5 {
     margin: 7px 0 5px;
     font-size: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   #advantage .case .layui-container .case-box ul li .text h6 {
     margin-bottom: 5px;
     font-size: 12px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   #advantage .case .layui-container .case-box ul li .text p {
     margin-bottom: 10px;

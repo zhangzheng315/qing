@@ -22,8 +22,8 @@ class VideoTypeService extends Common{
             'deleted_time' => 0,
             'status' => 1,
         ];
-        $case_type_list = $this->videoType->where($where)->select();
-        return $case_type_list;
+        $video_type_list = $this->videoType->where($where)->select();
+        return $video_type_list;
     }
 
     /**

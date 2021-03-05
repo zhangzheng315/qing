@@ -18,6 +18,43 @@
 }
 #channel .banner {
   height: 600px;
+  position: relative;
+}
+#channel .banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  z-index: 0;
+}
+#channel .banner .layui-container {
+  padding: 129px 0 0 !important;
+  box-sizing: border-box;
+}
+#channel .banner .layui-container h3 {
+  color: #fff;
+  font-size: 50px;
+  text-align: center;
+}
+#channel .banner .layui-container h6 {
+  color: #fff;
+  font-size: 30px;
+  text-align: center;
+  margin: 77px 0;
+}
+#channel .banner .layui-container button {
+  width: 210px;
+  height: 60px;
+  background: #FFFFFF;
+  border-radius: 30px;
+  border: 0;
+  display: block;
+  margin: 0 auto;
+  color: #00cc99;
+  font-size: 20px;
+  text-align: center;
+  line-height: 60px;
+  cursor: pointer;
 }
 #channel .banner .layui-carousel .lunbo-box img {
   width: 100%;
@@ -236,11 +273,13 @@
   padding: 0 33px;
   box-sizing: border-box;
   justify-content: space-between;
-  margin-bottom: 200px;
 }
 #channel .become-part .layui-container .text li {
   color: #666;
   font-size: 16px;
+}
+#channel .become-part .layui-container .kehu {
+  padding-top: 200px;
 }
 #channel .become-part .layui-container .kehu #logos {
   height: 238px !important;
@@ -312,6 +351,33 @@
   }
   #channel .banner {
     height: 400px;
+    position: relative;
+  }
+  #channel .banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: 0;
+  }
+  #channel .banner .layui-container {
+    padding: 89px 0 0 !important;
+    box-sizing: border-box;
+  }
+  #channel .banner .layui-container h3 {
+    font-size: 35px;
+  }
+  #channel .banner .layui-container h6 {
+    color: #fff;
+    font-size: 22px;
+    text-align: center;
+    margin: 57px 0;
+  }
+  #channel .banner .layui-container button {
+    width: 170px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 50px;
   }
   #channel .banner .layui-carousel .lunbo-box img {
     width: 100%;
@@ -500,10 +566,12 @@
   }
   #channel .become-part .layui-container .text {
     padding: 0 30px;
-    margin-bottom: 100px;
   }
   #channel .become-part .layui-container .text li {
     font-size: 14px;
+  }
+  #channel .become-part .layui-container .kehu {
+    padding-top: 100px;
   }
   #channel .become-part .layui-container .kehu #logos {
     height: 180px !important;
@@ -545,5 +613,271 @@
     width: 148px;
     height: 40px;
     font-size: 16px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #channel .title {
+    font-size: 18px;
+  }
+  #channel .banner {
+    height: 240px;
+    position: relative;
+  }
+  #channel .banner .layui-container {
+    padding: 59px 0 0 !important;
+    box-sizing: border-box;
+  }
+  #channel .banner .layui-container h3 {
+    font-size: 20px;
+  }
+  #channel .banner .layui-container h6 {
+    font-size: 14px;
+    margin: 37px 0;
+  }
+  #channel .banner .layui-container button {
+    width: 130px;
+    height: 34px;
+    font-size: 14px;
+    line-height: 34px;
+  }
+  #channel .banner .layui-carousel .lunbo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  #channel .banner .layui-carousel .layui-carousel-ind {
+    display: none;
+  }
+  #channel .channel-nav {
+    height: 45px;
+    line-height: 45px;
+  }
+  #channel .channel-nav .layui-container {
+    padding: 0 5px !important;
+  }
+  #channel .channel-nav .layui-container a {
+    height: 45px;
+    line-height: 45px;
+    font-size: 12px;
+  }
+  #channel .jiagou {
+    padding: 23px 0 40px;
+  }
+  #channel .jiagou .layui-container {
+    width: 100% !important;
+  }
+  #channel .jiagou .layui-container .duoyun {
+    width: 50px;
+    height: 50px;
+  }
+  #channel .jiagou .layui-container h5 {
+    font-size: 14px;
+    margin: 20px 0 12px;
+  }
+  #channel .jiagou .layui-container .line {
+    width: 124px;
+    height: 1px;
+    margin-bottom: 10px;
+  }
+  #channel .jiagou .layui-container p {
+    font-size: 12px;
+    margin-bottom: 6px;
+    letter-spacing: 0;
+    text-align: center;
+  }
+  #channel .jiagou .layui-container .yin {
+    display: none;
+  }
+  #channel .jiagou .layui-container .dot {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 30px;
+    height: 1px;
+    padding: 0 10%;
+  }
+  #channel .jiagou .layui-container .dot li {
+    width: 8px;
+    height: 8px;
+  }
+  #channel .jiagou .layui-container .dot .active {
+    width: 20px;
+    height: 20px;
+  }
+  #channel .jiagou .layui-container .dot .active span {
+    width: 8px;
+    height: 8px;
+    background: #00CC99;
+    border-radius: 50%;
+  }
+  #channel .partner {
+    padding: 27px 0 33px;
+  }
+  #channel .partner .layui-container {
+    width: 100% !important;
+  }
+  #channel .partner .layui-container .title {
+    margin-bottom: 37px;
+  }
+  #channel .partner .layui-container .part-content {
+    flex-wrap: wrap;
+  }
+  #channel .partner .layui-container .part-content li {
+    width: 49%;
+    height: 177px;
+    padding: 13px 17px 0;
+    margin: 0 2% 2% 0;
+  }
+  #channel .partner .layui-container .part-content li:nth-child(2n) {
+    margin: 0 0 2% 0;
+  }
+  #channel .partner .layui-container .part-content li img {
+    width: 30px;
+    height: 38px;
+  }
+  #channel .partner .layui-container .part-content li h6 {
+    font-size: 14px;
+    margin: 10px 0 12px;
+  }
+  #channel .partner .layui-container .part-content li p {
+    font-size: 12px;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+  }
+  #channel .part-term {
+    height: 430px;
+    padding: 30px 0 0;
+  }
+  #channel .part-term .layui-container {
+    width: 100% !important;
+    padding: 0 10px !important;
+  }
+  #channel .part-term .layui-container .title {
+    margin-bottom: 30px;
+  }
+  #channel .part-term .layui-container .term-content {
+    padding: 0px;
+    flex-wrap: wrap;
+  }
+  #channel .part-term .layui-container .term-content li {
+    width: 45%;
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+  #channel .part-term .layui-container .term-content li:nth-child(2n) {
+    width: 2px;
+    height: 112px;
+    margin: 0 15px 0;
+  }
+  #channel .part-term .layui-container .term-content li:nth-child(4) {
+    display: none;
+  }
+  #channel .part-term .layui-container .term-content li img {
+    width: 32px;
+  }
+  #channel .part-term .layui-container .term-content li h6 {
+    margin: 12px 0 10px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  #channel .part-term .layui-container .term-content li .line {
+    width: 46px;
+    height: 5px;
+    margin-bottom: 12px;
+  }
+  #channel .part-term .layui-container .term-content li p {
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: center;
+  }
+  #channel .become-part {
+    padding: 33px 0 10px;
+  }
+  #channel .become-part .layui-container {
+    width: 100% !important;
+    padding: 0 10px !important;
+  }
+  #channel .become-part .layui-container .title {
+    margin-bottom: 30px;
+  }
+  #channel .become-part .layui-container .icons {
+    padding: 0 25px;
+    margin-bottom: 20px;
+  }
+  #channel .become-part .layui-container .icons li {
+    width: 32px;
+    height: 32px;
+  }
+  #channel .become-part .layui-container .icons li img {
+    width: 14px;
+    height: 14px;
+  }
+  #channel .become-part .layui-container .dots {
+    padding: 0 32px;
+    margin-bottom: 22px;
+  }
+  #channel .become-part .layui-container .dots li {
+    width: 13px;
+    height: 13px;
+    border: 2px solid #9AFFE6;
+  }
+  #channel .become-part .layui-container .text {
+    padding: 0 15px;
+  }
+  #channel .become-part .layui-container .text li {
+    width: 12%;
+    font-size: 12px;
+    text-align: center;
+  }
+  #channel .become-part .layui-container .kehu {
+    padding-top: 50px;
+  }
+  #channel .become-part .layui-container .kehu #logos {
+    height: 160px !important;
+  }
+  #channel .become-part .layui-container .kehu #logos #logo-content .logo-imgs {
+    height: 70px;
+  }
+  #channel .become-part .layui-container .kehu #logos #logo-content .logo-imgs li {
+    width: 19%;
+    height: 100%;
+  }
+  #channel .become-part .layui-container .kehu #logos #logo-content .logo-imgs li img {
+    width: 100%;
+    height: 70px;
+  }
+  #channel .become-part .layui-container .kehu #logos .layui-carousel-ind {
+    margin-top: -10px;
+  }
+  #channel .become-part .layui-container .kehu #logos .layui-carousel-ind ul {
+    background-color: transparent;
+  }
+  #channel .become-part .layui-container .kehu #logos .layui-carousel-ind ul li {
+    width: 30px;
+    height: 5px;
+    border-radius: 4px;
+    margin: 0 10px;
+    font-size: 14px;
+  }
+  #channel .become-part .layui-container .kehu #logos .layui-carousel-ind ul .layui-this {
+    background: #00AC81;
+  }
+  #channel .become-part .layui-container .kehu .layui-carousel > [carousel-item]:before {
+    content: '' !important;
+  }
+  #channel .join {
+    height: 200px;
+    padding: 52px 0 0;
+  }
+  #channel .join .layui-container h3 {
+    font-size: 24px;
+    margin-bottom: 37px;
+  }
+  #channel .join .layui-container button {
+    width: 108px;
+    height: 26px;
+    font-size: 12px;
   }
 }

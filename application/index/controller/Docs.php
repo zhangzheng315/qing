@@ -25,6 +25,7 @@ class Docs extends Controller
     public function article($id)
     {
         $info = $this->common_article_service->getArticleInfo($id);
-        return $this->fetch('',compact('info'));
+
+        return $this->fetch('',compact('info','id'));
     }
 }

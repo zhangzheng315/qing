@@ -68,6 +68,7 @@
   text-decoration: none;
 }
 #about .navbar .layui-container ul li:hover {
+  color: #00cc99;
   border-bottom: 3px solid #00cc99;
 }
 #about .navbar .layui-container ul li:hover a {

@@ -4,16 +4,22 @@ namespace app\index\controller;
 
 // use app\admin\serve\JoinUsService;
 use app\admin\serve\ArticleService;
+use app\admin\serve\CaseService;
 use app\admin\serve\LabelService;
 use app\admin\serve\QBannerService;
+use app\admin\serve\VideoService;
+use app\admin\serve\VideoTypeService;
 use think\Controller;
 use think\Request;
+use think\Validate;
 
 class QingSchool extends Controller
 {
     public $qBannerService;
     public $articleService;
     public $labelService;
+    public $videoTypeService;
+    public $videoService;
 
     public function __construct(Request $request = null)
     {
@@ -21,10 +27,14 @@ class QingSchool extends Controller
         $this->qBannerService = new QBannerService();
         $this->articleService = new ArticleService();
         $this->labelService = new LabelService();
+        $this->videoTypeService = new VideoTypeService();
+        $this->videoService = new VideoService();
         $list = $this->articleService->hotArticleList();
         $hot_label = $this->labelService->hotLabelList();
+        $video_type = $this->videoTypeService->videoTypeList();
         $this->assign('list', $list);
         $this->assign('hot_label', $hot_label);
+        $this->assign('video_type', $video_type);
     }
 
     /* 内容中心*/
@@ -38,7 +48,9 @@ class QingSchool extends Controller
 
     public function videoCourse()
     {
-        return $this->fetch();
+        $id = 1;
+        $first_video = $this->videoService->videoHomeFirst();
+        return $this->fetch('',compact('first_video','id'));
     }
 
     /* 案例解析*/
@@ -71,8 +83,69 @@ class QingSchool extends Controller
     }
 
     /* 新闻详情页 */
-    public function newsDetail()
+    public function newsDetail($id,$pid)
     {
-        return $this->fetch();
+        $article_info = $this->articleService->articleInfoById($id,$pid);
+        switch ($pid) {
+            case 0:
+                $top_name = '内容中心';
+                $top_url = '/index/qing_school/index';
+                break;
+            case 1:
+                $top_name = '案例解析';
+                $top_url = '/index/qing_school/caseAn';
+                break;
+            case 2:
+                $top_name = '产品动态';
+                $top_url = '/index/qing_school/products';
+                break;
+            case 3:
+                $top_name = '直播资讯';
+                $top_url = '/index/qing_school/liveNews';
+                break;
+            default :
+                $top_name = '';
+                $top_url = '';
+        }
+        if (!$top_name) {
+            $top_name = $article_info['info']['pid_name'];
+            switch ($top_name) {
+                case '内容中心':
+                    $top_url = '/index/qing_school/index';
+                    break;
+                case '案例解析':
+                    $top_url = '/index/qing_school/caseAn';
+                    break;
+                case '产品动态':
+                    $top_url = '/index/qing_school/products';
+                    break;
+                case '直播资讯':
+                    $top_url = '/index/qing_school/liveNews';
+                    break;
+            }
+        }
+        return $this->fetch('',compact('article_info','pid','top_name','top_url'));
+    }
+
+    public function getVideoListByWhere(Request $request){
+        $rules =
+            [
+                'pid' => 'require',
+            ];
+        $msg =
+            [
+                'pid' => '缺少参数@pid',
+            ];
+        $validate = new Validate($rules,$msg);
+        if(!$validate->check($request->param())){
+            return show(401,$validate->getError());
+        }
+        $video_service = new VideoService();
+        $res = $video_service->getVideoListByWhere($request->param());
+        if($res){
+            return show(200,$video_service->message,$res);
+        }else{
+            return show(401,$video_service->error);
+        }
     }
 }

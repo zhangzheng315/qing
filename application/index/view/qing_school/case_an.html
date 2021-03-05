@@ -101,11 +101,11 @@
                         {if isset($article_list)}
                         {foreach($article_list as $item)}
                         <li class="cause-item">
-                            <a href="" class="cause-cover" target="_blank"
+                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>1])}" class="cause-cover"
                                style="background: url({$item.cover_img_url});background-size: cover">
                             </a>
                             <div class="cause-des">
-                                <a href="" class="cause-title">
+                                <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>1])}" class="cause-title">
                                     <h3>
                                         <i class="cause-icon icon-item-solution"></i>
                                         {$item.title}
@@ -188,7 +188,7 @@
                         {if(isset($list))}
                         {foreach($list['hot_article'] as $item)}
                         <li class="article-item">
-                            <a href="" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
+                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>20])}" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
                                 <p>{$item.title}</p>
                                 <span class="time">{$item.time}</span>
                             </a>
@@ -200,7 +200,7 @@
                         {if(isset($list))}
                         {foreach($list['recommend'] as $item)}
                         <li class="article-item">
-                            <a href="" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
+                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>20])}" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
                                 <p>{$item.title}</p>
                                 <span class="time">{$item.time}</span>
                             </a>
@@ -221,7 +221,7 @@
                     </div>
                     <ul class="hot-products-list">
                         <li>
-                            <a href="" class="hot-products-item" target="_blank">
+                            <a href="{:url('/index/video_cloud/index')}" class="hot-products-item" target="_blank">
                                 <i class="icon-hot-product icon-hot-product_1"></i>
                                 <span>企业直播</span>
                             </a>
