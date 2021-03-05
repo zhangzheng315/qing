@@ -46,8 +46,38 @@ class CaseCenter extends Controller
             return show(401,$case_service->error);
         }
     }
-    /* 全部案例 */
-    public function allCase()
+    /* 医疗案例 */
+    public function medical()
+    {
+        return $this->fetch();
+    }
+    /* 案例详情 */
+    public function caseDetail()
+    {
+        return $this->fetch();
+    }
+    /* 金融案例 */
+    public function finance()
+    {
+        return $this->fetch();
+    }
+    /* 教育案例 */
+    public function education()
+    {
+        return $this->fetch();
+    }
+    /* 汽车案例 */
+    public function car()
+    {
+        return $this->fetch();
+    }
+    /* 科技案例*/
+    public function technology()
+    {
+        return $this->fetch();
+    }
+    /* 地产案例*/
+    public function property()
     {
         return $this->fetch();
     }

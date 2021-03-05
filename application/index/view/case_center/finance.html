@@ -52,15 +52,14 @@
          border-radius: 4px;
          margin-left: 30px;
      }
-       /* 内容区域 */
-       #content-center {
+      /* 内容区域 */
+      #content-center {
           background-color: #f2f4f7;
       }
       .m-cause-con {
           display: none;
       }
       @media screen and (min-width: 1300px){
-
           .layui-container {
               width: 1200px !important;
               padding: 0 !important;
@@ -103,7 +102,8 @@
           }
 
           /* 导航栏 */
-           .school-nav {
+         /* 导航栏 */
+         .school-nav {
                height: 65px;
                display: flex;
                align-items: center;
@@ -147,155 +147,172 @@
            .school-nav>a:hover .icon-nav-item {
                opacity: 1;
            }
-           #content-center {
-               padding-bottom: 80px;
+           /* 大家都在看 */
+           .category-look-con {
+               padding: 24px 0 !important;
            }
-
-           /* 面包屑导航栏 */
-           .single-breadcrumb {
-               padding: 24px 0;
+           .category-look-tags {
+               height: 50px;
+               overflow: hidden;
+           }
+           .category-look-tags>span {
+            color: #999999;
+            font-size: 16px;
+            line-height: 20px;
+           }
+           .category-look-tags>.category-look-tag {
+               display: inline-block;
+               padding: 7px 14px;
+               margin: 8px;
                color: #666666;
+               background: #e9e9e9;
+               border-radius: 4px;
+               transition: all .3s ease-in-out;
            }
-           .breadcrumb-link {
-               color: #00cc99;
-               font-size: 14px;
+           .category-look-tags>.category-look-tag:hover {
+               color: #ffffff;
+               background: #00cc99;
            }
-           .breadcrumb-link:hover {
-               color: #00cc99;
-           }
+           
            .school-left-con {
-               /* margin-top: 58px; */
                width: 65%;
+               margin-top: 50px;
            }
            .school-right-con {
-               /* margin-top: 58px; */
                width: 32%;
+               margin-top: 50px;
            }
-           /* 文章详情页 */
-           .single-article-content {
-               padding: 40px;
-               background: #ffffff;
-               border: 1px solid #e5eaf1;
-               /* min-height: 600px; */
-               border-radius: 5px;
+           /* 课程区域 */
+           .cause-con {
+               background-color: #ffffff;
+               border-radius: 10px;
+               min-height: 600px;
+               box-sizing: border-box;
            }
-           .article-head-title>h2 {
-               font-size: 24px;
-               line-height: 36px;
-               color: #333333;
-               font-weight: 600;
-               text-align: justify;
+           .cause-item {
+               /* display: flex; */
+               transition: all .25s ease-in-out;
+               padding: 30px 24px 32px;
+               border-bottom: 1px solid #e5e5e5;
            }
-           .article-head>.article-head-desc {
+           .cause-item>.cause-cover {
                position: relative;
-               margin-top: 24px;
-               font-size: 12px;
-               line-height: 22px;
-               color: #999999;
+               width: 236px;
+               height: 133px;
+               overflow: hidden;
+               background-size: cover;
+               background-position: center;
+               display: inline-block;
+               vertical-align: middle;
            }
-           .article-head-desc .time, .article-head-desc .category {
-               font-size: 12px;
-               line-height: 22px;
-               color: #999999;
+          
+           .cause-des {
+               margin-left: 20px;
+               width: 445px;
+               display: inline-block;
+               font-size: 14px;
+               vertical-align: middle;
            }
-           .article-head-desc .vertical-bar {
+           /* .cause-title {
+               padding-top: 5px;
+               display: flex;
+           } */
+           .cause-title:hover h3 {
+               color: #00cc99;
+           }
+           .cause-title>h3 {
+               position: relative;
+               padding-left: 36px;
+               text-align: justify;
+               font-size: 16px;
+               font-weight: 600;
+               line-height: 1.2;
+               overflow: hidden;
+               white-space: nowrap;
+               transition: all .25s ease-in-out;
+               color: #333333;
+           }
+           
+           .cause-title>h3 .cause-icon {
+               position: absolute;
+               display: block;
+               left: 0;
+               width: 24px;
+               height: 24px;
+               background-size: contain;
+               background-repeat: no-repeat;
+               background-position: center;
+           }
+           .cause-title>h3 .cause-icon.icon-item-solution {
+               background-image: url(/static/image/qingschool/cause-icon.png);
+           }
+           .cause-title>.cause-intro {
+               font-size: 14px;
+               color: #666666;
+               margin-top: 12px;
+               line-height: 25px;
+               min-height: 42px;
+               overflow: hidden;
+               text-overflow: ellipsis;
+               display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+           }
+           .cause-tags {
+            position: relative;
+            font-size: 0;
+            margin-top: 10px;
+            line-height: 22px;
+            color: #8c8d9e;
+           }
+           .cause-tags>.post-time, .cause-tags>.category {
+               font-size: 12px;
+           }
+           .cause-tags>.vertical-bar {
                display: inline-block;
                margin: 0 12px;
+               font-size: 12px;
            }
-           .article-head-desc .tags-box {
-               display: inline-block;
-           }
-           .article-head-desc .tags-box .tag-item {
+           .cause-tags>.cause-tag-item {
             display: inline-block;
-            margin: 0 4px;
-            padding: 6px 8px;
-            color: currentColor;
-            background: #f5f5f5;
-            border-radius: 2px;
-            -webkit-transition: all .25s ease-in-out;
-            -o-transition: all .25s ease-in-out;
+            color: #707481;
+            margin: 0 8px;
+            font-size: 12px;
+            padding: 1px 8px;
+            height: 24px;
+            background-color: #f6f6f6;
+            border-radius: 1px;
             transition: all .25s ease-in-out;
             }
-            .reading-box {
+            .cause-tags>.post-views {
+                font-size: 12px;
                 position: absolute;
                 right: 0;
-                top: 50%;
-                transform: translateY(-50%);
             }
-            .reading-box .icon-view {
+            .cause-tags>.post-views>.icon-view {
                 display: inline-block;
-                width: 14px;
-                height: 14px;
+                width: 32px;
+                height: 12px;
                 background: url(/static/image/qingschool/eyes.svg) no-repeat center;
                 background-size: contain;
-                vertical-align: middle;
+                margin-right: 6px;
             }
-            .article-head-desc .reading-box span {
-                display: inline-block;
-                color: #8c8d9e;
-                font-size: 12px;
-                line-height: 22px;
-                vertical-align: middle;
+            .cause-bottom {
+                text-align: center;
+                padding: 30px 0;
             }
-
-            .article-head-desc .tags-box .tag-item:hover {
-                background: #00cc99;
-                color: #fff;
+            .cause-bottom>.cause-more{
+                 display: inline-block;
+                 width: 135px;
+                 height: 40px;
+                 border: 1px solid #00cc99;
+                 line-height: 40px;
+                 border-radius: 20px;
+                 font-size: 14px;
+                 text-align: center;
+                 color: #00cc99;
+                 cursor: pointer;
             }
-           
-            /* 摘要 */
-            .article-excerpt {
-                margin-top: 24px;
-                padding: 16px 24px;
-                background: #f5f5f5;
-            }
-            .article-excerpt p {
-                position: relative;
-                color: #464964;
-                padding-left: 48px;
-                font-size: 14px;
-                line-height: 24px;
-            }
-            .article-excerpt p span {
-                position: absolute;
-                top: 2px;
-                left: 0;
-                color: #171c3c;
-                font-size: 16px;
-                font-weight: 600;
-            }
-            /* 文章主体 */
-            .article-body {
-                margin-top: 24px;
-                color: #464964;
-                line-height: 2;
-            }
-            /* 分割线 */
-            .divider {
-                margin: 40px 0;
-                width: 100%;
-                height: 1px;
-                background: #e5e5e5;
-            }
-            /* 上一篇下一篇 */
-            .article-link .article-link-item {
-                color: #171c3c;
-                font-size: 14px;
-                line-height: 20px;
-            }
-            .article-link .article-link-item+.article-link-item {
-                margin-top: 16px;
-            }
-        
-            .article-link .article-link-item a {
-                color: #171c3c;
-                font-size: 14px;
-                line-height: 20px;
-            }
-            .article-link .article-link-item a:hover {
-                color: #00cc99;
-            }
-
             .siderbar-item {
                 width: 100%;
                 background-color: #ffffff;
@@ -397,6 +414,9 @@
              .article-item {
                 position: relative;
                 padding: 14px 0 14px 48px;
+                /* background-repeat: no-repeat;
+                background-size: 30px 30px;
+                background-position-y: 16px; */
              }
              .article-item:not(:first-child) {
                  border-top: 1px solid #e5e5e5;
@@ -579,40 +599,6 @@
                 color: #333333;
                 transform: translateY(-50%);
             }
-            #kefu {
-             height: 300px;
-             background: linear-gradient(97deg, #87D2D0, #BBDCCA);
-         }
-         .kefu-content {
-             padding-top: 90px;
-             text-align: center;
-         }
-         .kefu-content>h2 {
-            font-size: 50px;
-            font-family: Microsoft YaHei;
-            font-weight: bold;
-            color: #FFFFFF;
-            text-align: center;
-         }
-         .kefu-content>button {
-             width: 240px;
-             height: 60px;
-             border: 0;
-             border: 2px solid #ffffff;
-             border-radius: 30px;
-             outline: none;
-             background-color: transparent;
-             font-size: 28px;
-             color: #ffffff;
-             cursor: pointer;
-             margin-top: 37px;
-             transition: all .25s ease-in-out;
-         }
-         .kefu-content>button:hover {
-            background-color: #00cc99;
-            color: #fff;
-            border: 0;
-         }
         }
 
        @media screen and (max-width: 1300px) and (min-width: 992px) {
@@ -658,7 +644,8 @@
           }
 
           /* 导航栏 */
-          .school-nav {
+           /* 导航栏 */
+           .school-nav {
                height: 65px;
                display: flex;
                align-items: center;
@@ -702,154 +689,180 @@
            .school-nav>a:hover .icon-nav-item {
                opacity: 1;
            }
-
-           #content-center {
-               padding-bottom: 60px;
+           
+            /* 大家都在看 */
+            .category-look-con {
+               padding: 18px 0 !important;
            }
-              /* 面包屑导航栏 */
-              .single-breadcrumb {
-               padding: 24px 0;
+           .category-look-tags {
+               height: 40px;
+               overflow: hidden;
+           }
+           .category-look-tags>span {
+            color: #999999;
+            font-size: 14px;
+            line-height: 20px;
+           }
+           .category-look-tags>.category-look-tag {
+               display: inline-block;
+               padding: 7px 10px;
+               margin: 8px;
                color: #666666;
+               background: #e9e9e9;
+               border-radius: 4px;
+               transition: all .3s ease-in-out;
            }
-           .breadcrumb-link {
-               color: #00cc99;
-               font-size: 14px;
+           .category-look-tags>.category-look-tag:hover {
+               color: #ffffff;
+               background: #00cc99;
            }
-           .breadcrumb-link:hover {
-               color: #00cc99;
-           }
+
            .school-left-con {
+               margin-top: 40px;
                width: 67%;
            }
            .school-right-con {
+               margin-top: 40px;
                width: 30%;
            }
-
-              /* 文章详情页 */
-              .single-article-content {
-               padding: 32px;
-               background: #ffffff;
-               border: 1px solid #e5eaf1;
-               /* min-height: 600px; */
+           .school-left-con>#banner {
+               width: 100%;
+               height: 320px;
                border-radius: 5px;
            }
-           .article-head-title>h2 {
-               font-size: 22px;
-               line-height: 36px;
-               color: #333333;
-               font-weight: 600;
-               text-align: justify;
+           /* 课程区域 */
+           .cause-con {
+               /* margin-top: 30px; */
+               background-color: #ffffff;
+               border-radius: 10px;
+               min-height: 600px;
+               box-sizing: border-box;
            }
-           .article-head>.article-head-desc {
+           .cause-item {
+               /* display: flex; */
+               transition: all .25s ease-in-out;
+               padding: 24px 18px 26px;
+               border-bottom: 1px solid #e5e5e5;
+           }
+           .cause-item>.cause-cover {
                position: relative;
-               margin-top: 18px;
-               font-size: 12px;
-               line-height: 22px;
-               color: #999999;
-           }
-           .article-head-desc .time, .article-head-desc .category {
-               font-size: 12px;
-               line-height: 22px;
-               color: #999999;
-           }
-           .article-head-desc .vertical-bar {
+               width: 200px;
+               height: 112px;
+               overflow: hidden;
+               background-size: cover;
+               background-position: center;
                display: inline-block;
-               margin: 0 10px;
+               vertical-align: middle;
            }
-           .article-head-desc .tags-box {
+          
+           .cause-des {
+               margin-left: 14px;
+               width: 395px;
                display: inline-block;
+               font-size: 14px;
+               vertical-align: middle;
            }
-           .article-head-desc .tags-box .tag-item {
+           /* .cause-title {
+               padding-top: 5px;
+               display: flex;
+           } */
+           .cause-title:hover h3 {
+               color: #00cc99;
+           }
+           .cause-title>h3 {
+               position: relative;
+               padding-left: 30px;
+               text-align: justify;
+               font-size: 16px;
+               font-weight: 600;
+               line-height: 1.2;
+               overflow: hidden;
+               white-space: nowrap;
+               text-overflow: ellipsis;
+               transition: all .25s ease-in-out;
+               color: #333333;
+           }
+           
+           .cause-title>h3 .cause-icon {
+               position: absolute;
+               display: block;
+               left: 0;
+               width: 18px;
+               height: 18px;
+               background-size: contain;
+               background-repeat: no-repeat;
+               background-position: center;
+           }
+           .cause-title>h3 .cause-icon.icon-item-solution {
+               background-image: url(/static/image/qingschool/cause-icon.png);
+           }
+           .cause-title>.cause-intro {
+               font-size: 14px;
+               color: #666666;
+               margin-top: 12px;
+               line-height: 25px;
+               min-height: 42px;
+               overflow: hidden;
+               text-overflow: ellipsis;
+               display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+           }
+           .cause-tags {
+            position: relative;
+            font-size: 0;
+            margin-top: 10px;
+            line-height: 22px;
+            color: #8c8d9e;
+           }
+           .cause-tags>.post-time, .cause-tags>.category {
+               font-size: 12px;
+           }
+           .cause-tags>.vertical-bar {
+               display: inline-block;
+               margin: 0 12px;
+               font-size: 12px;
+           }
+           .cause-tags>.cause-tag-item {
             display: inline-block;
-            margin: 0 4px;
-            padding: 4px 6px;
-            color: currentColor;
-            background: #f5f5f5;
-            border-radius: 2px;
-            -webkit-transition: all .25s ease-in-out;
-            -o-transition: all .25s ease-in-out;
+            color: #707481;
+            margin: 0 8px;
+            font-size: 12px;
+            padding: 1px 8px;
+            height: 24px;
+            background-color: #f6f6f6;
+            border-radius: 1px;
             transition: all .25s ease-in-out;
             }
-            .reading-box {
+            .cause-tags>.post-views {
+                font-size: 12px;
                 position: absolute;
                 right: 0;
-                top: 50%;
-                transform: translateY(-50%);
             }
-            .reading-box .icon-view {
+            .cause-tags>.post-views>.icon-view {
                 display: inline-block;
-                width: 14px;
-                height: 14px;
+                width: 32px;
+                height: 12px;
                 background: url(/static/image/qingschool/eyes.svg) no-repeat center;
                 background-size: contain;
-                vertical-align: middle;
+                margin-right: 6px;
             }
-            .article-head-desc .reading-box span {
-                display: inline-block;
-                color: #8c8d9e;
-                font-size: 12px;
-                line-height: 22px;
-                vertical-align: middle;
+            .cause-bottom {
+                text-align: center;
+                padding: 30px 0;
             }
-
-            .article-head-desc .tags-box .tag-item:hover {
-                background: #00cc99;
-                color: #fff;
+            .cause-bottom>.cause-more{
+                 display: inline-block;
+                 width: 135px;
+                 height: 40px;
+                 border: 1px solid #00cc99;
+                 line-height: 40px;
+                 border-radius: 20px;
+                 font-size: 14px;
+                 text-align: center;
+                 color: #00cc99;
+                 cursor: pointer;
             }
-           
-            /* 摘要 */
-            .article-excerpt {
-                margin-top: 20px;
-                padding: 12px 20px;
-                background: #f5f5f5;
-            }
-            .article-excerpt p {
-                position: relative;
-                color: #464964;
-                padding-left: 48px;
-                font-size: 14px;
-                line-height: 24px;
-            }
-            .article-excerpt p span {
-                position: absolute;
-                top: 0px;
-                left: 0;
-                color: #171c3c;
-                font-size: 16px;
-                font-weight: 600;
-            }
-            /* 文章主体 */
-            .article-body {
-                margin-top: 24px;
-                color: #464964;
-                line-height: 2;
-            }
-            /* 分割线 */
-            .divider {
-                margin: 40px 0;
-                width: 100%;
-                height: 1px;
-                background: #e5e5e5;
-            }
-            /* 上一篇下一篇 */
-            .article-link .article-link-item {
-                color: #171c3c;
-                font-size: 14px;
-                line-height: 20px;
-            }
-            .article-link .article-link-item+.article-link-item {
-                margin-top: 16px;
-            }
-        
-            .article-link .article-link-item a {
-                color: #171c3c;
-                font-size: 14px;
-                line-height: 20px;
-            }
-            .article-link .article-link-item a:hover {
-                color: #00cc99;
-            }
-         
             .siderbar-item {
                 width: 100%;
                 background-color: #ffffff;
@@ -1135,41 +1148,6 @@
                 color: #333333;
                 transform: translateY(-50%);
             }
-
-            #kefu {
-             height: 240px;
-             background: linear-gradient(97deg, #87D2D0, #BBDCCA);
-         }
-         .kefu-content {
-             padding-top: 60px;
-             text-align: center;
-         }
-         .kefu-content>h2 {
-            font-size: 40px;
-            font-family: Microsoft YaHei;
-            font-weight: bold;
-            color: #FFFFFF;
-            text-align: center;
-         }
-         .kefu-content>button {
-             width: 180px;
-             height: 50px;
-             border: 0;
-             border: 1px solid #ffffff;
-             border-radius: 25px;
-             outline: none;
-             background-color: transparent;
-             font-size: 22px;
-             color: #ffffff;
-             cursor: pointer;
-             margin-top: 24px;
-             transition: all .25s ease-in-out;
-         }
-         .kefu-content>button:hover {
-            background-color: #00cc99;
-            color: #fff;
-            border: 0;
-         }
        }
 
        @media screen and (max-width:992px) and (min-width: 769px) {
@@ -1259,202 +1237,187 @@
            .school-nav>a:hover .icon-nav-item {
                opacity: 1;
            }
+              /* 大家都在看 */
+              .category-look-con {
+               padding: 18px 0 !important;
+           }
+           .category-look-tags {
+               height: 40px;
+               overflow: hidden;
+           }
+           .category-look-tags>span {
+            color: #999999;
+            font-size: 12px;
+            line-height: 20px;
+           }
+           .category-look-tags>.category-look-tag {
+               font-size: 12px;
+               display: inline-block;
+               padding: 5px 10px;
+               margin: 6px;
+               color: #666666;
+               background: #e9e9e9;
+               border-radius: 4px;
+               transition: all .3s ease-in-out;
+           }
+           .category-look-tags>.category-look-tag:hover {
+               color: #ffffff;
+               background: #00cc99;
+           }
+
            .flex-space-between {
                display: flex;
                justify-content: center;
            }
            .school-left-con {
+               /* margin-top: 40px; */
                width: 100%;
            }
            .school-right-con {
               display: none;
            }
-
-           #content-center {
-               padding-bottom: 60px;
-           }
-              /* 面包屑导航栏 */
-              .single-breadcrumb {
-               padding: 24px 0;
-               color: #666666;
-           }
-           .breadcrumb-link {
-               color: #00cc99;
-               font-size: 14px;
-           }
-           .breadcrumb-link:hover {
-               color: #00cc99;
-           }
-              /* 文章详情页 */
-              .single-article-content {
-               padding: 32px;
-               background: #ffffff;
-               border: 1px solid #e5eaf1;
-               /* min-height: 600px; */
+           .school-left-con>#banner {
+               width: 100%;
+               height: 344px;
                border-radius: 5px;
            }
-           .article-head-title>h2 {
-               font-size: 22px;
-               line-height: 36px;
-               color: #333333;
-               font-weight: 600;
-               text-align: justify;
+           /* 课程区域 */
+           .cause-con {
+               margin-top: 40px;
+               background-color: #ffffff;
+               border-radius: 10px;
+               min-height: 600px;
+               box-sizing: border-box;
            }
-           .article-head>.article-head-desc {
+           .cause-item {
+               /* display: flex; */
+               transition: all .25s ease-in-out;
+               padding: 30px 24px 32px;
+               border-bottom: 1px solid #e5e5e5;
+           }
+           .cause-item>.cause-cover {
                position: relative;
-               margin-top: 18px;
-               font-size: 12px;
-               line-height: 22px;
-               color: #999999;
-           }
-           .article-head-desc .time, .article-head-desc .category {
-               font-size: 12px;
-               line-height: 22px;
-               color: #999999;
-           }
-           .article-head-desc .vertical-bar {
+               width: 218px;
+               height: 123px;
+               overflow: hidden;
+               background-size: cover;
+               background-position: center;
                display: inline-block;
-               margin: 0 10px;
+               vertical-align: middle;
            }
-           .article-head-desc .tags-box {
+          
+           .cause-des {
+               margin-left: 20px;
+               width: 445px;
                display: inline-block;
+               font-size: 14px;
+               vertical-align: middle;
            }
-           .article-head-desc .tags-box .tag-item {
+           /* .cause-title {
+               padding-top: 5px;
+               display: flex;
+           } */
+           .cause-title:hover h3 {
+               color: #00cc99;
+           }
+           .cause-title>h3 {
+               position: relative;
+               padding-left: 36px;
+               text-align: justify;
+               font-size: 16px;
+               font-weight: 600;
+               line-height: 1.2;
+               overflow: hidden;
+               white-space: nowrap;
+               transition: all .25s ease-in-out;
+               color: #333333;
+           }
+           
+           .cause-title>h3 .cause-icon {
+               position: absolute;
+               display: block;
+               left: 0;
+               width: 24px;
+               height: 24px;
+               background-size: contain;
+               background-repeat: no-repeat;
+               background-position: center;
+           }
+           .cause-title>h3 .cause-icon.icon-item-solution {
+               background-image: url(/static/image/qingschool/cause-icon.png);
+           }
+           .cause-title>.cause-intro {
+               font-size: 14px;
+               color: #666666;
+               margin-top: 12px;
+               line-height: 25px;
+               min-height: 42px;
+               overflow: hidden;
+               text-overflow: ellipsis;
+               display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+           }
+           .cause-tags {
+            position: relative;
+            font-size: 0;
+            margin-top: 10px;
+            line-height: 22px;
+            color: #8c8d9e;
+           }
+           .cause-tags>.post-time, .cause-tags>.category {
+               font-size: 12px;
+           }
+           .cause-tags>.vertical-bar {
+               display: inline-block;
+               margin: 0 12px;
+               font-size: 12px;
+           }
+           .cause-tags>.cause-tag-item {
             display: inline-block;
-            margin: 0 4px;
-            padding: 4px 6px;
-            color: currentColor;
-            background: #f5f5f5;
-            border-radius: 2px;
-            -webkit-transition: all .25s ease-in-out;
-            -o-transition: all .25s ease-in-out;
+            color: #707481;
+            margin: 0 8px;
+            font-size: 12px;
+            padding: 1px 8px;
+            height: 24px;
+            background-color: #f6f6f6;
+            border-radius: 1px;
             transition: all .25s ease-in-out;
             }
-            .reading-box {
+            .cause-tags>.post-views {
+                font-size: 12px;
                 position: absolute;
                 right: 0;
-                top: 50%;
-                transform: translateY(-50%);
             }
-            .reading-box .icon-view {
+            .cause-tags>.post-views>.icon-view {
                 display: inline-block;
-                width: 14px;
-                height: 14px;
+                width: 32px;
+                height: 12px;
                 background: url(/static/image/qingschool/eyes.svg) no-repeat center;
                 background-size: contain;
-                vertical-align: middle;
+                margin-right: 6px;
             }
-            .article-head-desc .reading-box span {
-                display: inline-block;
-                color: #8c8d9e;
-                font-size: 12px;
-                line-height: 22px;
-                vertical-align: middle;
+            .cause-bottom {
+                text-align: center;
+                padding: 30px 0;
             }
-
-            .article-head-desc .tags-box .tag-item:hover {
-                background: #00cc99;
-                color: #fff;
+            .cause-bottom>.cause-more{
+                 display: inline-block;
+                 width: 135px;
+                 height: 40px;
+                 border: 1px solid #00cc99;
+                 line-height: 40px;
+                 border-radius: 20px;
+                 font-size: 14px;
+                 text-align: center;
+                 color: #00cc99;
+                 cursor: pointer;
             }
-           
-            /* 摘要 */
-            .article-excerpt {
-                margin-top: 20px;
-                padding: 12px 20px;
-                background: #f5f5f5;
-            }
-            .article-excerpt p {
-                position: relative;
-                color: #464964;
-                padding-left: 48px;
-                font-size: 14px;
-                line-height: 24px;
-            }
-            .article-excerpt p span {
-                position: absolute;
-                top: 0px;
-                left: 0;
-                color: #171c3c;
-                font-size: 16px;
-                font-weight: 600;
-            }
-            /* 文章主体 */
-            .article-body {
-                margin-top: 24px;
-                color: #464964;
-                line-height: 2;
-            }
-            /* 分割线 */
-            .divider {
-                margin: 40px 0;
-                width: 100%;
-                height: 1px;
-                background: #e5e5e5;
-            }
-            /* 上一篇下一篇 */
-            .article-link .article-link-item {
-                color: #171c3c;
-                font-size: 14px;
-                line-height: 20px;
-            }
-            .article-link .article-link-item+.article-link-item {
-                margin-top: 16px;
-            }
-        
-            .article-link .article-link-item a {
-                color: #171c3c;
-                font-size: 14px;
-                line-height: 20px;
-            }
-            .article-link .article-link-item a:hover {
-                color: #00cc99;
-            }
-            #kefu {
-             height: 200px;
-             background: linear-gradient(97deg, #87D2D0, #BBDCCA);
-         }
-         .kefu-content {
-             padding-top: 40px;
-             text-align: center;
-         }
-         .kefu-content>h2 {
-            font-size: 40px;
-            font-family: Microsoft YaHei;
-            font-weight: bold;
-            color: #FFFFFF;
-            text-align: center;
-         }
-         .kefu-content>button {
-             width: 130px;
-             height: 40px;
-             border: 0;
-             border: 1px solid #ffffff;
-             border-radius: 20px;
-             outline: none;
-             background-color: transparent;
-             font-size: 18px;
-             color: #ffffff;
-             cursor: pointer;
-             margin-top: 24px;
-             transition: all .25s ease-in-out;
-         }
-         .kefu-content>button:hover {
-            background-color: #00cc99;
-            color: #fff;
-            border: 0;
-         }
-         
-          
        }
 
        @media screen and (max-width: 768px) {
-           .layui-container {
-               width: 100%;
-               padding: 0 ;
-           }
           .header-nav {
               height: 45px;
-              padding: 0 15px;
           }
          .logo img {
              width: 82.67px;
@@ -1496,7 +1459,7 @@
               margin-left: 20px;
           }
 
-          /* 导航栏 */
+           /* 导航栏 */
            .school-nav {
                height: 45px;
                display: flex;
@@ -1505,8 +1468,6 @@
                /* min-width: 500px; */
                width: auto;
                overflow-x: auto;
-               padding: 0 15px;
-               box-sizing: border-box;
             }
            .school-nav>a {
             flex-shrink: 0;
@@ -1534,182 +1495,182 @@
            .school-nav>a:hover, .school-nav>a.active {
              border-bottom: 3px solid #00ac81; 
            }
+               /* 大家都在看 */
+               .category-look-con {
+               display: none;
+           }
            .flex-space-between {
                display: flex;
                justify-content: center;
            }
            .school-left-con {
+               margin-top: 20px;
                width: 100%;
            }
            .school-right-con {
               display: none;
            }
-           #content-center {
-               padding-bottom: 30px;
-           }
-              /* 面包屑导航栏 */
-          .single-breadcrumb {
-               /* padding: 24px 0;
-               color: #666666; */
-               display: none;
-           }
-           .breadcrumb-link {
-               color: #00cc99;
-               font-size: 14px;
-           }
-           .breadcrumb-link:hover {
-               color: #00cc99;
-           }
-              /* 文章详情页 */
-              .single-article-content {
-               padding: 20px 16px;
-               background: #ffffff;
-               border: 1px solid #e5eaf1;
-               /* min-height: 600px; */
+           .school-left-con>#banner {
+               width: 100%;
+               height: 200px;
                border-radius: 5px;
            }
-           .article-head-title>h2 {
-               font-size: 18px;
-               line-height: 28px;
-               color: #333333;
-               font-weight: 600;
-               text-align: justify;
+           /* 课程区域 */
+           .cause-con {
+              display: none;
            }
-           .article-head>.article-head-desc {
+           .m-cause-con {
+               display: block;
+               background-color: #ffffff;
+               min-height: 600px;
+               margin-top: 30px;
+               border-radius: 5px;
+           }
+           .cause-item {
+               transition: all .25s ease-in-out;
+               padding: 15px 10px 16px;
+               border-bottom: 1px solid #e5e5e5;
+               justify-content: space-between;
+           }
+
+           .cause-item>a>h3 {
                position: relative;
-               margin-top: 10px;
-               font-size: 12px;
-               line-height: 22px;
-               color: #999999;
+               text-align: justify;
+               font-size: 16px;
+               font-weight: 600;
+               line-height: 1.2;
+               overflow: hidden;
+               white-space: nowrap;
+               transition: all .25s ease-in-out;
+               color: #333333;
+               text-overflow: ellipsis;
            }
-           .article-head-desc .time, .article-head-desc .category {
-               font-size: 12px;
-               line-height: 22px;
-               color: #999999;
-           }
-           .article-head-desc .vertical-bar {
+           .cause-item>.cause-cover {
+               position: relative;
+               width: 34%;
+               height: 100px;
+               overflow: hidden;
+               background-size: cover;
+               background-position: center;
                display: inline-block;
-               margin: 0 10px;
+               vertical-align: middle;
            }
-           .article-head-desc .vertical-bar:last-of-type {
-               display: none;
+          
+           .cause-des {
+               /* margin-left: 20px; */
+               width: 62%;
+               display: inline-block;
+               font-size: 14px;
+               vertical-align: middle;
            }
-           .article-head-desc .tags-box {
-               display: none;
+           /* .cause-title {
+               padding-top: 5px;
+               display: flex;
+           } */
+           .cause-title:hover h3 {
+               color: #00cc99;
            }
-           .article-head-desc .tags-box .tag-item {
+           
+           .cause-title>h3 .cause-icon {
+               position: absolute;
+               display: block;
+               left: 0;
+               width: 24px;
+               height: 24px;
+               background-size: contain;
+               background-repeat: no-repeat;
+               background-position: center;
+           }
+           .cause-title>h3 .cause-icon.icon-item-solution {
+               background-image: url(/static/image/qingschool/cause-icon.png);
+           }
+           .cause-title>.cause-intro {
+               font-size: 14px;
+               color: #666666;
+               margin-top: 12px;
+               line-height: 25px;
+               min-height: 42px;
+               overflow: hidden;
+               text-overflow: ellipsis;
+               display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+           }
+           .cause-tags {
+            position: relative;
+            font-size: 0;
+            margin-top: 10px;
+            line-height: 22px;
+            color: #8c8d9e;
+           }
+           .cause-tags>.post-time, .cause-tags>.category {
+               font-size: 12px;
+           }
+           .cause-tags>.vertical-bar {
+               display: inline-block;
+               margin: 0 12px;
+               font-size: 12px;
+           }
+           .cause-tags>.cause-tag-item {
             display: inline-block;
-            margin: 0 4px;
-            padding: 4px 6px;
-            color: currentColor;
-            background: #f5f5f5;
-            border-radius: 2px;
-            -webkit-transition: all .25s ease-in-out;
-            -o-transition: all .25s ease-in-out;
+            color: #707481;
+            margin: 0 8px;
+            font-size: 12px;
+            padding: 1px 8px;
+            height: 24px;
+            background-color: #f6f6f6;
+            border-radius: 1px;
             transition: all .25s ease-in-out;
             }
-            .reading-box {
+            .cause-tags>.post-views {
+                font-size: 12px;
                 position: absolute;
                 right: 0;
-                top: 50%;
-                transform: translateY(-50%);
             }
-            .reading-box .icon-view {
+            .cause-tags>.post-views>.icon-view {
                 display: inline-block;
-                width: 14px;
-                height: 14px;
+                width: 32px;
+                height: 12px;
                 background: url(/static/image/qingschool/eyes.svg) no-repeat center;
                 background-size: contain;
-                vertical-align: middle;
+                margin-right: 6px;
             }
-            .article-head-desc .reading-box span {
-                display: inline-block;
-                color: #8c8d9e;
-                font-size: 12px;
-                line-height: 22px;
-                vertical-align: middle;
+            .cause-bottom {
+                text-align: center;
+                padding: 30px 0;
             }
-
-            .article-head-desc .tags-box .tag-item:hover {
-                background: #00cc99;
-                color: #fff;
+            .cause-bottom>.cause-more{
+                 display: inline-block;
+                 width: 135px;
+                 height: 40px;
+                 border: 1px solid #00cc99;
+                 line-height: 40px;
+                 border-radius: 20px;
+                 font-size: 14px;
+                 text-align: center;
+                 color: #00cc99;
+                 cursor: pointer;
             }
-           
-            /* 摘要 */
-            .article-excerpt {
-                margin-top: 16px;
-                padding: 10px 18px;
-                background: #f5f5f5;
-            }
-            .article-excerpt p {
-                position: relative;
-                color: #464964;
-                font-size: 12px;
-                line-height: 20px;
-            }
-            .article-excerpt p span {
-             display: none;
-            }
-            /* 文章主体 */
-            .article-body {
-                margin-top: 20px;
-                color: #464964;
-                line-height: 1.8;
-            }
-            /* 分割线 */
-            .divider {
-                margin: 26px 0;
-                width: 100%;
-                height: 1px;
-                background: #e5e5e5;
-            }
-            /* 上一篇下一篇 */
-            .article-link .article-link-item {
-                color: #171c3c;
-                font-size: 12px;
-                line-height: 20px;
-            }
-            .article-link .article-link-item+.article-link-item {
+            .cause-item-desc {
+                display: block;
                 margin-top: 12px;
             }
-        
-            .article-link .article-link-item a {
-                color: #171c3c;
+            .cause-item-desc>img {
+                width: 100%;
+                max-height: 200px;
+            }
+            .cause-item-desc>p {
                 font-size: 12px;
-                line-height: 18px;
+                color: #666666;
+                margin-top: 12px;
+                line-height: 24px;
+                min-height: 42px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
             }
-            .article-link .article-link-item a:hover {
-                color: #00cc99;
-            }
-            #kefu {
-             height: 150px;
-             background: linear-gradient(97deg, #87D2D0, #BBDCCA);
-         }
-         .kefu-content {
-             padding-top: 30px;
-             text-align: center;
-         }
-         .kefu-content>h2 {
-            font-size: 20px;
-            font-family: Microsoft YaHei;
-            font-weight: bold;
-            color: #FFFFFF;
-            text-align: center;
-         }
-         .kefu-content>button {
-             width: 100px;
-             height: 32px;
-             border: 0;
-             border-radius: 16px;
-             outline: none;
-             background-color: transparent;
-             font-size: 14px;
-             background-color: #00cc99;
-            color: #fff;
-             cursor: pointer;
-             margin-top: 20px;
-             transition: all .25s ease-in-out;
-         }
        }
 
 
@@ -1727,7 +1688,7 @@
                 <div class="head-right">
                     <div class="text">
                         <a href="{:url('/')}">轻直播首页</a>
-                        <a href="{:url('/')}">产品功能</a>
+                        <a href="{:url('case_center/index')}">案例中心</a>
                     </div>
                     <div class="btns">
                         <button class="login">登录</button>
@@ -1739,94 +1700,309 @@
         <!-- 导航栏 -->
         <nav>
             <div class="layui-container school-nav">
-                <a href="{:url('qing_school/index')}">
-                    <!-- <img src="/static/image/qingschool/school-home.png" alt=""> -->
-                    <i class="icon-nav-item icon-nav-home"></i>
-                     <span>内容中心</span>
+                <a href="{:url('case_center/medical')}">
+                    <!-- <i class="icon-nav-item icon-nav-home"></i> -->
+                    <span>医疗</span>
                 </a>
-                <a href="{:url('qing_school/case')}">
-                    <i class="icon-nav-item icon-nav-home"></i>
-                    <span>案例解析</span>
+                <a href="{:url('case_center/education')}">
+                    <!-- <i class="icon-nav-item icon-nav-home"></i> -->
+                    <span>教育</span>
+                    </a>
+                <a href="{:url('case_center/finance')}" class="active">
+                    <!-- <i class="icon-nav-item icon-nav-home"></i> -->
+                    <span>金融</span>
+                    </a>
+                <a href="{:url('case_center/car')}">
+                    <!-- <i class="icon-nav-item icon-nav-home"></i> -->
+                    <span>汽车</span>
+                    </a>
+                <a href="{:url('case_center/technology')}">
+                    <span>科技</span>
                 </a>
-                <a href="{:url('qing_school/products')}">
-                    <i class="icon-nav-item icon-nav-home"></i>
-                    <span>产品动态</span>
-                </a>
-                <a href="{:url('qing_school/liveNews')}">
-                    <i class="icon-nav-item icon-nav-home"></i>
-                    <span>直播资讯</span>
-                </a>
-                <a href="">
-                    <span>视频学院</span>
+                <a href="{:url('case_center/property')}">
+                    <span>地产</span>
                 </a>
             </div>
         </nav>
         <!-- 内容区域 -->
         <section id="content-center">
-            <!-- 文章面包屑导航 -->
-            <div class="layui-container">
-                <div class="single-breadcrumb">
-                    <a href="" class="breadcrumb-link">内容中心 ></a>
-                    <a href="" class="breadcrumb-link">
-                     解决方案 >
-                    </a>
-                    500强银行直播揭秘：中国银行、建设银行都这么做！
-                </div>
-            </div>
             <div class="layui-container flex-space-between">
                 <div class="school-left-con">
-                   <!-- 文章详情-->
-                   <div class="single-article-content">
-                       <!-- 文章标题 -->
-                        <div class="article-head">
-                            <div class="article-head-title">
-                                <h2>500强银行直播揭秘：中国银行、建设银行都这么做！</h2>
-                            </div>
-                            <div class="article-head-desc">
-                                <span class="time">2020-12-21</span>
-                                <i class="vertical-bar">|</i>
-                                <span class="category">解决方案</span>
-                                <i class="vertical-bar">|</i>
-                                 <div class="tags-box">
-                                     <a href="" class="tag-item">企业直播服务商</a>
-                                     <a href="" class="tag-item">企业直播软件</a>
-                                     <a href="" class="tag-item">轻直播</a>
+                    <!-- 课程区域 -->
+                    <div class="cause-con">
+                         <ul>
+                             <li class="cause-item">
+                                 <a href="" class="cause-cover" target="_blank" style="background: url(/static/image/qingschool/cause-item.png);">   
+                                 </a>
+                                 <div class="cause-des">
+                                     <a href="" class="cause-title">
+                                         <h3>
+                                             <i class="cause-icon icon-item-solution"></i>
+                                             500强银行直播揭秘：中国银行、建设银行都这么做！
+                                         </h3>
+                                         <p class="cause-intro">
+                                            工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。
+                                         </p>
+                                     </a>
+                                     <div class="cause-tags">
+                                         <span class="post-time">2021-1-18</span>
+                                         <i class="vertical-bar">|</i>
+                                         <!-- <span class="category">案例解析</span>
+                                         <i class="vertical-bar">|</i> -->
+                                         <a href="" class="cause-tag-item">在线直播平台</a>
+                                         <a href="" class="cause-tag-item">培训直播</a>
+                                         <!-- <span class="post-views">
+                                             <i class="icon-view"></i>
+                                             222
+                                         </span> -->
+                                     </div>
                                  </div>
-                                 <div class="reading-box">
-                                     <i class="icon-view"></i>
-                                     <span>222</span>
-                                 </div>
-                            </div>
-                        </div>
-                        <!-- 摘要 -->
-                        <div class="article-excerpt">
-                            <p>
-                                <span>摘要：</span>
-                                工商银行、中国银行、建设银行等大型银行，今年都通过保利威直播进行了培训、营销、大会等多个场景的直播应用，实现业务的优化和增长。
-                            </p>
-                        </div>
-                        <!-- 文章内容 -->
-                        <div class="article-body">
-
-                        </div>
-                        <!-- 分割线 -->
-                        <div class="divider"></div>
-                        <!-- 上一篇下一篇 -->
-                        <div class="article-link">
-                            <div class="article-link-item">
-                               上一篇
-                               <a href="">
-                                带货直播如何让转化翻倍？9个案例轻松搞定
-                               </a> 
-                            </div>
-                            <div class="article-link-item">
-                                下一篇
-                                <a href="">
-                                 疫情之下，如何快速筹备一场“云年会”?
+                             </li>
+                             <li class="cause-item">
+                                <a href="" class="cause-cover" target="_blank" style="background: url(/static/image/qingschool/cause-item.png);">   
                                 </a>
-                            </div>
-                        </div>
-                   </div>
+                                <div class="cause-des">
+                                    <a href="" class="cause-title">
+                                        <h3>
+                                            <i class="cause-icon icon-item-solution"></i>
+                                            500强银行直播揭秘：中国银行、建设银行都这么做！
+                                        </h3>
+                                        <p class="cause-intro">
+                                           工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。
+                                        </p>
+                                    </a>
+                                    <div class="cause-tags">
+                                        <span class="post-time">2021-1-18</span>
+                                        <i class="vertical-bar">|</i>
+                                        <!-- <span class="category">案例解析</span>
+                                        <i class="vertical-bar">|</i> -->
+                                        <a href="" class="cause-tag-item">在线直播平台</a>
+                                        <a href="" class="cause-tag-item">培训直播</a>
+                                        <!-- <span class="post-views">
+                                            <i class="icon-view"></i>
+                                            222
+                                        </span> -->
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="cause-item">
+                                <a href="" class="cause-cover" target="_blank" style="background: url(/static/image/qingschool/cause-item.png);">   
+                                </a>
+                                <div class="cause-des">
+                                    <a href="" class="cause-title">
+                                        <h3>
+                                            <i class="cause-icon icon-item-solution"></i>
+                                            500强银行直播揭秘：中国银行、建设银行都这么做！
+                                        </h3>
+                                        <p class="cause-intro">
+                                           工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。
+                                        </p>
+                                    </a>
+                                    <div class="cause-tags">
+                                        <span class="post-time">2021-1-18</span>
+                                        <i class="vertical-bar">|</i>
+                                        <!-- <span class="category">案例解析</span>
+                                        <i class="vertical-bar">|</i> -->
+                                        <a href="" class="cause-tag-item">在线直播平台</a>
+                                        <a href="" class="cause-tag-item">培训直播</a>
+                                        <!-- <span class="post-views">
+                                            <i class="icon-view"></i>
+                                            222
+                                        </span> -->
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="cause-item">
+                                <a href="" class="cause-cover" target="_blank" style="background: url(/static/image/qingschool/cause-item.png);">   
+                                </a>
+                                <div class="cause-des">
+                                    <a href="" class="cause-title">
+                                        <h3>
+                                            <i class="cause-icon icon-item-solution"></i>
+                                            500强银行直播揭秘：中国银行、建设银行都这么做！
+                                        </h3>
+                                        <p class="cause-intro">
+                                           工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。
+                                        </p>
+                                    </a>
+                                    <div class="cause-tags">
+                                        <span class="post-time">2021-1-18</span>
+                                        <i class="vertical-bar">|</i>
+                                        <!-- <span class="category">案例解析</span>
+                                        <i class="vertical-bar">|</i> -->
+                                        <a href="" class="cause-tag-item">在线直播平台</a>
+                                        <a href="" class="cause-tag-item">培训直播</a>
+                                        <!-- <span class="post-views">
+                                            <i class="icon-view"></i>
+                                            222
+                                        </span> -->
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="cause-item">
+                                <a href="" class="cause-cover" target="_blank" style="background: url(/static/image/qingschool/cause-item.png);">   
+                                </a>
+                                <div class="cause-des">
+                                    <a href="" class="cause-title">
+                                        <h3>
+                                            <i class="cause-icon icon-item-solution"></i>
+                                            500强银行直播揭秘：中国银行、建设银行都这么做！
+                                        </h3>
+                                        <p class="cause-intro">
+                                           工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。
+                                        </p>
+                                    </a>
+                                    <div class="cause-tags">
+                                        <span class="post-time">2021-1-18</span>
+                                        <i class="vertical-bar">|</i>
+                                        <!-- <span class="category">案例解析</span>
+                                        <i class="vertical-bar">|</i> -->
+                                        <a href="" class="cause-tag-item">在线直播平台</a>
+                                        <a href="" class="cause-tag-item">培训直播</a>
+                                        <!-- <span class="post-views">
+                                            <i class="icon-view"></i>
+                                            222
+                                        </span> -->
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="cause-item">
+                                <a href="" class="cause-cover" target="_blank" style="background: url(/static/image/qingschool/cause-item.png);">   
+                                </a>
+                                <div class="cause-des">
+                                    <a href="" class="cause-title">
+                                        <h3>
+                                            <i class="cause-icon icon-item-solution"></i>
+                                            500强银行直播揭秘：中国银行、建设银行都这么做！
+                                        </h3>
+                                        <p class="cause-intro">
+                                           工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。
+                                        </p>
+                                    </a>
+                                    <div class="cause-tags">
+                                        <span class="post-time">2021-1-18</span>
+                                        <i class="vertical-bar">|</i>
+                                        <!-- <span class="category">案例解析</span>
+                                        <i class="vertical-bar">|</i> -->
+                                        <a href="" class="cause-tag-item">在线直播平台</a>
+                                        <a href="" class="cause-tag-item">培训直播</a>
+                                        <!-- <span class="post-views">
+                                            <i class="icon-view"></i>
+                                            222
+                                        </span> -->
+                                    </div>
+                                </div>
+                            </li>
+                         </ul>
+                         <div class="cause-bottom">
+                              <span class="cause-more">点击加载更多</span>
+                         </div>
+                    </div>
+                    <!-- 移动端 -->
+                    <div class="m-cause-con">
+                         <ul>
+                            <li class="cause-item">
+                                <a href="">
+                                    <h3>
+                                        <!-- <i class="cause-icon icon-item-solution"></i> -->
+                                        500强银行直播揭秘：中国银行、建设银行都这么做！
+                                    </h3>
+                                </a>
+                              
+                                <div class="cause-tags">
+                                    <span class="post-time">2021-1-18</span>
+                                    <i class="vertical-bar">|</i>
+                                    <span class="category">案例解析</span>
+                                    <!-- <i class="vertical-bar">|</i>
+                                    <a href="" class="cause-tag-item">在线直播平台</a>
+                                    <a href="" class="cause-tag-item">培训直播</a>
+                                    <span class="post-views">
+                                        <i class="icon-view"></i>
+                                        222
+                                    </span> -->
+                                </div>
+                                <a href="" class="cause-item-desc">
+                                    <img src="/static/image/qingschool/cause-item.png" alt="">
+                                    <p>工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。</p>
+                                </a>
+                            </li>
+                            <li class="cause-item">
+                                <a href="">
+                                    <h3>
+                                        <!-- <i class="cause-icon icon-item-solution"></i> -->
+                                        500强银行直播揭秘：中国银行、建设银行都这么做！
+                                    </h3>
+                                </a>
+                              
+                                <div class="cause-tags">
+                                    <span class="post-time">2021-1-18</span>
+                                    <i class="vertical-bar">|</i>
+                                    <span class="category">案例解析</span>
+                                    <!-- <i class="vertical-bar">|</i>
+                                    <a href="" class="cause-tag-item">在线直播平台</a>
+                                    <a href="" class="cause-tag-item">培训直播</a>
+                                    <span class="post-views">
+                                        <i class="icon-view"></i>
+                                        222
+                                    </span> -->
+                                </div>
+                                <a href="" class="cause-item-desc">
+                                    <img src="/static/image/qingschool/cause-item.png" alt="">
+                                    <p>工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。</p>
+                                </a>
+                            </li>
+                            <li class="cause-item">
+                                <a href="">
+                                    <h3>
+                                        <!-- <i class="cause-icon icon-item-solution"></i> -->
+                                        500强银行直播揭秘：中国银行、建设银行都这么做！
+                                    </h3>
+                                </a>
+                              
+                                <div class="cause-tags">
+                                    <span class="post-time">2021-1-18</span>
+                                    <i class="vertical-bar">|</i>
+                                    <span class="category">案例解析</span>
+                                    <!-- <i class="vertical-bar">|</i>
+                                    <a href="" class="cause-tag-item">在线直播平台</a>
+                                    <a href="" class="cause-tag-item">培训直播</a>
+                                    <span class="post-views">
+                                        <i class="icon-view"></i>
+                                        222
+                                    </span> -->
+                                </div>
+                                <a href="" class="cause-item-desc">
+                                    <img src="/static/image/qingschool/cause-item.png" alt="">
+                                    <p>工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。</p>
+                                </a>
+                            </li>
+                            <li class="cause-item">
+                                <a href="">
+                                    <h3>
+                                        <!-- <i class="cause-icon icon-item-solution"></i> -->
+                                        500强银行直播揭秘：中国银行、建设银行都这么做！
+                                    </h3>
+                                </a>
+                              
+                                <div class="cause-tags">
+                                    <span class="post-time">2021-1-18</span>
+                                    <i class="vertical-bar">|</i>
+                                    <span class="category">案例解析</span>
+                                    <!-- <i class="vertical-bar">|</i>
+                                    <a href="" class="cause-tag-item">在线直播平台</a>
+                                    <a href="" class="cause-tag-item">培训直播</a>
+                                    <span class="post-views">
+                                        <i class="icon-view"></i>
+                                        222
+                                    </span> -->
+                                </div>
+                                <a href="" class="cause-item-desc">
+                                    <img src="/static/image/qingschool/cause-item.png" alt="">
+                                    <p>工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。</p>
+                                </a>
+                            </li>
+                         </ul>
+                    </div>
                 </div>
                 <div class="school-right-con">
                     <div class="siderbar-item siderbar-item-search">
@@ -1841,13 +2017,13 @@
                               <h2>
                                   <span>热门文章</span>
                                   <div class="switch-article">
-                                    <div class="switch-article-btn active" data-name="hot">热门</div>
-                                    <div class="switch-article-btn" data-name="recommend">推荐</div>
+                                    <div class="switch-article-btn active">热门</div>
+                                    <div class="switch-article-btn">推荐</div>
                                 </div>
                               </h2>
                              
                           </div>
-                          <ul class="hot-article-list active" data-name="hot">
+                          <ul class="hot-article-list active">
                               <li class="article-item">
                                   <a href="" class="link" title="做一场成功的年会直播，要注意这几点" target="_blank" rel="noopener noreferrer">
                                        <p>一场成功的直播是怎么互动的? 轻直播6大互动功能，点燃你的直播间</p>
@@ -1879,11 +2055,11 @@
                                 </a>
                             </li>
                           </ul>
-                          <ul class="hot-article-list" data-name="recommend">
+                          <ul class="hot-article-list">
                             <li class="article-item">
                                 <a href="" class="link" title="做一场成功的年会直播，要注意这几点" target="_blank" rel="noopener noreferrer">
                                      <p>一场成功的直播是怎么互动的? 轻直播6大互动功能，点燃你的直播间</p>
-                                     <span class="time">2021-12-01</span>
+                                     <span class="time">2021-12-06</span>
                                 </a>
                             </li>
                             <li class="article-item">
@@ -1914,7 +2090,7 @@
                     </div>
 
                     <!-- 热门产品 -->
-                    <div class="siderbar-item">
+                    <!-- <div class="siderbar-item">
                           <div class="siderbar-item-head">
                               <h2>
                                   <span>
@@ -1948,7 +2124,7 @@
                                 </a>
                             </li>
                           </ul>
-                    </div>
+                    </div> -->
 
                     <!-- 热门标签 -->
                     <div class="siderbar-item siderbar-item-label">
@@ -1987,21 +2163,12 @@
                               <p style="line-height: 2;">
                                 更多直播干货<br>
                                 尽在轻直播公众号
-                            </p>
+                              </p>
                         </div>
                       </div>
                 </div>
             </div>
         </section>
-        <!--  -->
-        <div id="kefu">
-            <div class="layui-container">
-                <div class="kefu-content">
-                    <h2>轻直播为您提供一站式企业视频解决方案</h2>
-                    <button>立即咨询</button>
-                </div>
-            </div>
-        </div>
     </div>
 
 </body>
@@ -2019,19 +2186,17 @@
         });
     });
 
-     // 热门文章点击切换
-     $('.switch-article .switch-article-btn').on('click', function () {
-        $(this).siblings().removeClass('active');
-        $(this).addClass('active');
-        let dataName = $(this).attr('data-name');
-        if(dataName == 'hot') {
-            $('.hot-article-list').eq(0).show();
-            $('.hot-article-list').eq(1).hide();
+    // 热门文章点击切换
+    $('.switch-article .switch-article-btn').on('click', function() {
+         $(this).siblings().removeClass('active');
+         $(this).addClass('active');
+        //  if($('.hot-article-list').hasClass('active')) {
+        //      $('.hot-article-list').siblings().removeClass('active');
+        //  }
 
-        } else if (dataName == 'recommend') {
-            $('.hot-article-list').eq(0).hide();
-            $('.hot-article-list').eq(1).show();
-        }
+         
+
+
     })
 </script>
 

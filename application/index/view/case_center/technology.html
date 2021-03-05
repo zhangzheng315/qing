@@ -176,18 +176,14 @@
            
            .school-left-con {
                width: 65%;
+               margin-top: 50px;
            }
            .school-right-con {
                width: 32%;
-           }
-           .school-left-con>#banner {
-               width: 100%;
-               height: 344px;
-               border-radius: 5px;
+               margin-top: 50px;
            }
            /* 课程区域 */
            .cause-con {
-               margin-top: 40px;
                background-color: #ffffff;
                border-radius: 10px;
                min-height: 600px;
@@ -722,11 +718,11 @@
            }
 
            .school-left-con {
-               /* margin-top: 40px; */
+               margin-top: 40px;
                width: 67%;
            }
            .school-right-con {
-               /* margin-top: 40px; */
+               margin-top: 40px;
                width: 30%;
            }
            .school-left-con>#banner {
@@ -736,7 +732,7 @@
            }
            /* 课程区域 */
            .cause-con {
-               margin-top: 30px;
+               /* margin-top: 30px; */
                background-color: #ffffff;
                border-radius: 10px;
                min-height: 600px;
@@ -1704,61 +1700,34 @@
         <!-- 导航栏 -->
         <nav>
             <div class="layui-container school-nav">
-                <a href="">
+                <a href="{:url('case_center/medical')}">
                     <!-- <i class="icon-nav-item icon-nav-home"></i> -->
                     <span>医疗</span>
                 </a>
-                <a href="" class="active">
+                <a href="{:url('case_center/education')}">
                     <!-- <i class="icon-nav-item icon-nav-home"></i> -->
                     <span>教育</span>
                     </a>
-                <a href="">
+                <a href="{:url('case_center/finance')}">
                     <!-- <i class="icon-nav-item icon-nav-home"></i> -->
                     <span>金融</span>
                     </a>
-                <a href="">
+                <a href="{:url('case_center/car')}" >
                     <!-- <i class="icon-nav-item icon-nav-home"></i> -->
                     <span>汽车</span>
                     </a>
-                <a href="">
+                <a href="{:url('case_center/technology')}" class="active">
                     <span>科技</span>
                 </a>
-                <a href="">
+                <a href="{:url('case_center/property')}">
                     <span>地产</span>
                 </a>
             </div>
         </nav>
         <!-- 内容区域 -->
         <section id="content-center">
-              <!-- 大家都在看 -->
-              <div class="layui-container category-look-con">
-                <div class="category-look-tags">
-                    <span>大家都在看：</span>
-                    <a href="" class="category-look-tag">企业培训</a>
-                    <a href="" class="category-look-tag">数字化转型</a>
-                    <a href="" class="category-look-tag">无延迟直播</a>
-                    <a href="" class="category-look-tag">手术示教</a>
-                    <a href="" class="category-look-tag">线上直播</a>
-                    <a href="" class="category-look-tag">企业培训</a>
-                    <a href="" class="category-look-tag">数字化转型</a>
-                    <a href="" class="category-look-tag">直播</a>
-                    <a href="" class="category-look-tag">手术示教</a>
-                    <a href="" class="category-look-tag">网校</a>
-                </div>
-              </div>
-            
             <div class="layui-container flex-space-between">
                 <div class="school-left-con">
-                    <!-- 轮播图 -->
-                    <div id="banner">
-                        <div class="layui-carousel" id="banners">
-                            <div carousel-item class="lunbo-box">
-                                <img src="/static/image/index/banner.png" alt="">
-                                <img src="/static/image/index/banner.png" alt="">
-                                <img src="/static/image/index/banner.png" alt="">
-                            </div>
-                        </div>
-                    </div>
                     <!-- 课程区域 -->
                     <div class="cause-con">
                          <ul>
@@ -1778,14 +1747,14 @@
                                      <div class="cause-tags">
                                          <span class="post-time">2021-1-18</span>
                                          <i class="vertical-bar">|</i>
-                                         <span class="category">案例解析</span>
-                                         <i class="vertical-bar">|</i>
+                                         <!-- <span class="category">案例解析</span>
+                                         <i class="vertical-bar">|</i> -->
                                          <a href="" class="cause-tag-item">在线直播平台</a>
                                          <a href="" class="cause-tag-item">培训直播</a>
-                                         <span class="post-views">
+                                         <!-- <span class="post-views">
                                              <i class="icon-view"></i>
                                              222
-                                         </span>
+                                         </span> -->
                                      </div>
                                  </div>
                              </li>
@@ -1805,14 +1774,14 @@
                                     <div class="cause-tags">
                                         <span class="post-time">2021-1-18</span>
                                         <i class="vertical-bar">|</i>
-                                        <span class="category">案例解析</span>
-                                        <i class="vertical-bar">|</i>
+                                        <!-- <span class="category">案例解析</span>
+                                        <i class="vertical-bar">|</i> -->
                                         <a href="" class="cause-tag-item">在线直播平台</a>
                                         <a href="" class="cause-tag-item">培训直播</a>
-                                        <span class="post-views">
+                                        <!-- <span class="post-views">
                                             <i class="icon-view"></i>
                                             222
-                                        </span>
+                                        </span> -->
                                     </div>
                                 </div>
                             </li>
@@ -1832,14 +1801,14 @@
                                     <div class="cause-tags">
                                         <span class="post-time">2021-1-18</span>
                                         <i class="vertical-bar">|</i>
-                                        <span class="category">案例解析</span>
-                                        <i class="vertical-bar">|</i>
+                                        <!-- <span class="category">案例解析</span>
+                                        <i class="vertical-bar">|</i> -->
                                         <a href="" class="cause-tag-item">在线直播平台</a>
                                         <a href="" class="cause-tag-item">培训直播</a>
-                                        <span class="post-views">
+                                        <!-- <span class="post-views">
                                             <i class="icon-view"></i>
                                             222
-                                        </span>
+                                        </span> -->
                                     </div>
                                 </div>
                             </li>
@@ -1859,14 +1828,14 @@
                                     <div class="cause-tags">
                                         <span class="post-time">2021-1-18</span>
                                         <i class="vertical-bar">|</i>
-                                        <span class="category">案例解析</span>
-                                        <i class="vertical-bar">|</i>
+                                        <!-- <span class="category">案例解析</span>
+                                        <i class="vertical-bar">|</i> -->
                                         <a href="" class="cause-tag-item">在线直播平台</a>
                                         <a href="" class="cause-tag-item">培训直播</a>
-                                        <span class="post-views">
+                                        <!-- <span class="post-views">
                                             <i class="icon-view"></i>
                                             222
-                                        </span>
+                                        </span> -->
                                     </div>
                                 </div>
                             </li>
@@ -1886,14 +1855,14 @@
                                     <div class="cause-tags">
                                         <span class="post-time">2021-1-18</span>
                                         <i class="vertical-bar">|</i>
-                                        <span class="category">案例解析</span>
-                                        <i class="vertical-bar">|</i>
+                                        <!-- <span class="category">案例解析</span>
+                                        <i class="vertical-bar">|</i> -->
                                         <a href="" class="cause-tag-item">在线直播平台</a>
                                         <a href="" class="cause-tag-item">培训直播</a>
-                                        <span class="post-views">
+                                        <!-- <span class="post-views">
                                             <i class="icon-view"></i>
                                             222
-                                        </span>
+                                        </span> -->
                                     </div>
                                 </div>
                             </li>
@@ -1913,14 +1882,14 @@
                                     <div class="cause-tags">
                                         <span class="post-time">2021-1-18</span>
                                         <i class="vertical-bar">|</i>
-                                        <span class="category">案例解析</span>
-                                        <i class="vertical-bar">|</i>
+                                        <!-- <span class="category">案例解析</span>
+                                        <i class="vertical-bar">|</i> -->
                                         <a href="" class="cause-tag-item">在线直播平台</a>
                                         <a href="" class="cause-tag-item">培训直播</a>
-                                        <span class="post-views">
+                                        <!-- <span class="post-views">
                                             <i class="icon-view"></i>
                                             222
-                                        </span>
+                                        </span> -->
                                     </div>
                                 </div>
                             </li>
@@ -2121,7 +2090,7 @@
                     </div>
 
                     <!-- 热门产品 -->
-                    <div class="siderbar-item">
+                    <!-- <div class="siderbar-item">
                           <div class="siderbar-item-head">
                               <h2>
                                   <span>
@@ -2155,7 +2124,7 @@
                                 </a>
                             </li>
                           </ul>
-                    </div>
+                    </div> -->
 
                     <!-- 热门标签 -->
                     <div class="siderbar-item siderbar-item-label">
@@ -2194,7 +2163,7 @@
                               <p style="line-height: 2;">
                                 更多直播干货<br>
                                 尽在轻直播公众号
-                            </p>
+                              </p>
                         </div>
                       </div>
                 </div>

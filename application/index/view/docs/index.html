@@ -118,11 +118,17 @@
                 justify-content: space-between;
                 padding-bottom: 15px;
                 border-bottom: 1px solid #eae9e9;
+               
             }
-
             .listContainerTitle>p {
-                font-size: 20px;
-                color: #333;
+                display: inline-block;
+                color: #333333;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 30px;
+            }
+            .listContainerTitle>p>span {
+                color: #00cc99;
             }
 
             .listContainerTitle>.search {
@@ -145,27 +151,34 @@
             .listGuideContent {
                 margin: 5px;
                 margin-bottom: 50px;
-            }
-
-            .listGuideContent>ul {
+                padding: 20px 0;
                 display: flex;
                 flex-wrap: wrap;
             }
-
-            .listGuideContent>ul>li {
-                margin-top: 15px;
-                width: 50%;
-
+            .listGuideContent>a {
+                width: 25%;
+                height: 200px;
+                padding: 20px 0;
+                text-align: center;
+                box-sizing: border-box;
+            }
+            .listGuideContent>a img {
+                width: 80px;
+                height: 80px;
+                background-color: #00cc99;
+                border-radius: 13px;
+                margin-bottom: 14px;
+            }
+            .listGuideContent>a p {
+                color: #000;
+                font-weight: 600;
+                width: 60%;
+                padding-bottom: 10px;
+                margin: 0 auto;
+                border-bottom: 1px solid #00cc99;
             }
 
-            .listGuideContent>ul>li>a {
-                color: #666666;
-                font-size: 14px;
-            }
-
-            .listGuideContent>ul>li:hover a {
-                color: #0099ff;
-            }
+       
         }
         @media screen and (max-width: 1200px) and (min-width: 992px) {
             .layui-container {
@@ -272,10 +285,15 @@
             }
 
             .listContainerTitle>p {
-                font-size: 20px;
-                color: #333;
+                display: inline-block;
+                color: #333333;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 30px;
             }
-
+            .listContainerTitle>p>span {
+                color: #00cc99;
+            }
             .listContainerTitle>.search {
                 width: 153px;
                 height: 30px;
@@ -296,27 +314,33 @@
             .listGuideContent {
                 margin: 5px;
                 margin-bottom: 50px;
-            }
-
-            .listGuideContent>ul {
+                padding: 16px 0;
                 display: flex;
                 flex-wrap: wrap;
             }
-
-            .listGuideContent>ul>li {
-                margin-top: 15px;
-                width: 50%;
-
+            .listGuideContent>a {
+                width: 25%;
+                height: 160px;
+                padding: 16px 0;
+                text-align: center;
+                box-sizing: border-box;
+            }
+            .listGuideContent>a img {
+                width: 60px;
+                height: 60px;
+                background-color: #00cc99;
+                border-radius: 10px;
+                margin-bottom: 12px;
+            }
+            .listGuideContent>a p {
+                color: #000;
+                font-weight: 600;
+                width: 66%;
+                padding-bottom: 10px;
+                margin: 0 auto;
+                border-bottom: 1px solid #00cc99;
             }
 
-            .listGuideContent>ul>li>a {
-                color: #666666;
-                font-size: 14px;
-            }
-
-            .listGuideContent>ul>li:hover a {
-                color: #0099ff;
-            }
         }
 
         @media screen and (max-width: 992px) and (min-width: 768px) {
@@ -424,8 +448,14 @@
             }
 
             .listContainerTitle>p {
-                font-size: 20px;
-                color: #333;
+                display: inline-block;
+                color: #333333;
+                font-weight: 600;
+                font-size: 13px;
+                line-height: 30px;
+            }
+            .listContainerTitle>p>span {
+                color: #00cc99;
             }
 
             .listContainerTitle>.search {
@@ -448,20 +478,32 @@
             .listGuideContent {
                 margin: 5px;
                 margin-bottom: 50px;
+                padding: 12px 0;
+                display: flex;
+                flex-wrap: wrap;
             }
-            .listGuideContent>ul>li {
-                margin-top: 15px;
-                /* width: 50%; */
-
+            .listGuideContent>a {
+                width: 25%;
+                height: 120px;
+                padding: 12px 0;
+                text-align: center;
+                box-sizing: border-box;
             }
-
-            .listGuideContent>ul>li>a {
-                color: #666666;
-                font-size: 14px;
+            .listGuideContent>a img {
+                width: 60px;
+                height: 60px;
+                background-color: #00cc99;
+                border-radius: 10px;
+                margin-bottom: 12px;
             }
-
-            .listGuideContent>ul>li:hover a {
-                color: #0099ff;
+            .listGuideContent>a p {
+                color: #000;
+                font-weight: 600;
+                font-size: 13px;
+                width: 75%;
+                padding-bottom: 10px;
+                margin: 0 auto;
+                border-bottom: 1px solid #00cc99;
             }
         }
             
@@ -514,75 +556,36 @@
                 <div class="baike-list">
                     <div class="listContainer">
                         <div class="listContainerTitle">
-                            <p>直播频道</p>
+                            <p> 关键词
+                                <span>"摄像直播"</span>
+                                搜索结果如下：</p>
                             <div class="search">
                                 <input type="text" placeholder="搜索">
                                 <i class="layui-icon layui-icon-search"></i>
                             </div>
+                          
                         </div>
                         <div class="listGuideContent">
-                            <ul>
-                                <li>
-                                    <a href="">
-                                        桌面直播工具-网络监测及时间显示
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        桌面直播工具-网络监测及时间显示
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        桌面直播工具-网络监测及时间显示
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        桌面直播工具-网络监测及时间显示
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        桌面直播工具-网络监测及时间显示
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        桌面直播工具-网络监测及时间显示
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        桌面直播工具-网络监测及时间显示
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        桌面直播工具-网络监测及时间显示
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        桌面直播工具-网络监测及时间显示
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        桌面直播工具-网络监测及时间显示
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        桌面直播工具-网络监测及时间显示
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        桌面直播工具-网络监测及时间显示
-                                    </a>
-                                </li>
-                            </ul>
+                           <a href="">
+                               <img src="/static/image/docs/icon-1-2.png" alt="摄像直播">
+                               <p>摄像直播</p>
+                           </a>
+                           <a href="">
+                            <img src="/static/image/docs/icon-1-2.png" alt="摄像直播">
+                            <p>摄像直播</p>
+                           </a>
+                           <a href="">
+                            <img src="/static/image/docs/icon-1-2.png" alt="摄像直播">
+                            <p>摄像直播</p>
+                        </a>
+                        <a href="">
+                            <img src="/static/image/docs/icon-1-2.png" alt="摄像直播">
+                            <p>摄像直播</p>
+                        </a>
+                        <a href="">
+                            <img src="/static/image/docs/icon-1-2.png" alt="摄像直播">
+                            <p>摄像直播</p>
+                        </a>
                         </div>
                     </div>
                 </div>

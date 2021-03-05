@@ -16,7 +16,12 @@
         #docs-container {
             background: #f9f9f9;
         }
-
+        .searchContainer {
+                display: none;
+            }
+        .listGuideContent {
+            display: none;
+        }
         @media screen and (min-width: 1200px) {
             .layui-container {
                 width: 1200px !important;
@@ -113,6 +118,7 @@
                 overflow: hidden;
                 width: 90%;
                 margin: 20px auto;
+                padding: 20px 0;
             }
 
             .listContainerTitle {
@@ -163,10 +169,62 @@
                  color: #999999;
              }
              .articleCon {
-                 margin: 8px;
+                 margin: 16px 8px 8px;
+             }
+             .articleCon>h2 {
+                font-size: 20px;
+                font-family: Microsoft YaHei;
+                font-weight: 600;
+                color: #333333;
+                text-align: center;
+             }
+             .article-body {
+                 width: 100%;
+                 margin-top: 26px;
+                 min-height: 500px;
              }
 
-           
+             /* 搜索结果 */
+
+             .listGuideContent {
+                margin: 5px;
+                margin-bottom: 50px;
+                padding: 20px 0;
+                flex-wrap: wrap;
+            }
+            .listGuideContent>a {
+                width: 25%;
+                height: 200px;
+                padding: 20px 0;
+                text-align: center;
+                box-sizing: border-box;
+            }
+            .listGuideContent>a img {
+                width: 80px;
+                height: 80px;
+                background-color: #00cc99;
+                border-radius: 13px;
+                margin-bottom: 14px;
+            }
+            .listGuideContent>a p {
+                color: #000;
+                font-weight: 600;
+                width: 60%;
+                padding-bottom: 10px;
+                margin: 0 auto;
+                border-bottom: 1px solid #00cc99;
+            }
+         
+            .searchContainer>p {
+                display: inline-block;
+                color: #333333;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 30px;
+            }
+            .searchContainer>p>span {
+                color: #00cc99;
+            }
         }
         @media screen and (max-width: 1200px) and (min-width: 992px) {
             .layui-container {
@@ -263,6 +321,7 @@
                 overflow: hidden;
                 width: 90%;
                 margin: 20px auto;
+                padding: 20px 0;
             }
 
             .listContainerTitle {
@@ -314,8 +373,62 @@
                  color: #999999;
              }
              .articleCon {
-                 margin: 8px;
+                 margin: 14px 8px 8px;
              }
+             .articleCon>h2 {
+                font-size: 16px;
+                font-family: Microsoft YaHei;
+                font-weight: 600;
+                color: #333333;
+                text-align: center;
+             }
+             .article-body {
+                 width: 100%;
+                 margin-top: 22px;
+                 min-height: 500px;
+             }
+
+             /* 搜索结果 */
+             .listGuideContent {
+                margin: 5px;
+                margin-bottom: 50px;
+                padding: 16px 0;
+                flex-wrap: wrap;
+            }
+            .listGuideContent>a {
+                width: 25%;
+                height: 160px;
+                padding: 16px 0;
+                text-align: center;
+                box-sizing: border-box;
+            }
+            .listGuideContent>a img {
+                width: 60px;
+                height: 60px;
+                background-color: #00cc99;
+                border-radius: 10px;
+                margin-bottom: 12px;
+            }
+            .listGuideContent>a p {
+                color: #000;
+                font-weight: 600;
+                width: 66%;
+                padding-bottom: 10px;
+                margin: 0 auto;
+                border-bottom: 1px solid #00cc99;
+            }
+         
+            .searchContainer>p {
+                display: inline-block;
+                color: #333333;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 30px;
+            }
+            .searchContainer>p>span {
+                color: #00cc99;
+            }
+
         }
 
         @media screen and (max-width: 992px) and (min-width: 768px) {
@@ -412,6 +525,7 @@
                 overflow: hidden;
                 width: 90%;
                 margin: 20px auto;
+                padding: 20px 0;
             }
 
             .listContainerTitle {
@@ -462,8 +576,259 @@
                  color: #999999;
              }
              .articleCon {
-                 margin: 8px;
+                 margin: 14px 8px 8px;
              }
+             .articleCon>h2 {
+                font-size: 14px;
+                font-family: Microsoft YaHei;
+                font-weight: 600;
+                color: #333333;
+                text-align: center;
+             }
+             .article-body {
+                 width: 100%;
+                 margin-top: 20px;
+                 min-height: 500px;
+             }
+             /* 搜索区域 */
+             .listGuideContent {
+                margin: 5px;
+                margin-bottom: 50px;
+                padding: 12px 0;
+                flex-wrap: wrap;
+            }
+            .listGuideContent>a {
+                width: 25%;
+                height: 120px;
+                padding: 12px 0;
+                text-align: center;
+                box-sizing: border-box;
+            }
+            .listGuideContent>a img {
+                width: 60px;
+                height: 60px;
+                background-color: #00cc99;
+                border-radius: 10px;
+                margin-bottom: 12px;
+            }
+            .listGuideContent>a p {
+                color: #000;
+                font-weight: 600;
+                font-size: 13px;
+                width: 75%;
+                padding-bottom: 10px;
+                margin: 0 auto;
+                border-bottom: 1px solid #00cc99;
+            }
+
+            .searchContainer>p {
+                display: inline-block;
+                color: #333333;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 30px;
+            }
+            .searchContainer>p>span {
+                color: #00cc99;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .docs-content {
+                padding-top: 32px;
+            }
+
+            .docs-content::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+            .baike-menu {
+                width: 100%;
+                /* margin-right: 30px; */
+                overflow: hidden;
+            }
+
+            .baikeMenuTitle {
+                display: none;
+                width: 180px;
+                height: 45px;
+                background: #00cc99;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+            }
+
+            .baikeMenuTitle>p {
+                color: #ffffff;
+                font-size: 20px;
+                padding: 10px;
+            }
+
+            .baike-menu>.baikeMenuList {
+                background: #ffffff;
+                padding: 10px 0;
+            }
+
+            .baikeMenu>.baikeMenuList li {
+                width: 100%;
+            }
+
+            .baikeMenuContent>a>.layui-icon {
+                position: absolute;
+                right: 6px;
+                top: calc( 50% - 9.2px );
+                transform: rotate(180deg);
+                transition: all .25s linear;
+             }
+            .baikeMenuContent>a {
+                font-size: 16px;
+                position: relative;
+            }
+
+            .baikeMenuList a {
+                width: 100%;
+                display: inline-block;
+                padding: 10px;
+                color: #000;
+                box-sizing: border-box;
+            }
+
+            .baikeMenu-child>dd {
+                padding-left: 25px;
+                box-sizing: border-box;
+            }
+
+            .baikeMenuList>ul>ul>li>a {
+                font-size: 14px;
+            }
+
+            .baikeMenuContent>a:hover, .baikeMenu-child>dd.active, .baikeMenu-child>dd:hover {
+                color: #49a6f7;
+                border-left: 2px solid #49a6f7;
+                background-color: rgba(73, 166, 247, 0.2);
+            }
+            .baikeMenu-child>dd:hover a, .baikeMenu-child>dd.active a {
+                color: #39a6f7;
+            }
+            .baike-list {
+                /* width: 540px; */
+                width: 100%;
+                min-height: 649px;
+                background: #ffffff;
+                border-radius: 5px;
+            }
+
+            .listContainer {
+                overflow: hidden;
+                width: 94%;
+                margin: 12px auto;
+                padding: 16px 0;
+            }
+
+            .listContainerTitle {
+                display: none;
+                justify-content: space-between;
+                padding-bottom: 15px;
+                border-bottom: 1px solid #eae9e9;
+            }
+
+            .listContainerTitle>p {
+                font-size: 20px;
+                color: #333;
+            }
+
+            .listContainerTitle>.search {
+                width: 153px;
+                height: 30px;
+                border: 1px solid #e5e5e5;
+                border-radius: 15px;
+                padding-left: 15px;
+                box-sizing: border-box;
+            }
+
+            .listContainerTitle>.search>input {
+                border: none;
+                width: 80%;
+                height: 28px;
+                font-size: 14px;
+                color: #999999;
+            }
+            .listContainerBread {
+                 display: none;
+             }
+             .listContainerBread>li {
+                display: inline-block;
+                vertical-align: middle;
+                font-size: 13px;
+                font-family: 'Microsoft YaHei';
+             }
+             .listContainerBread>li>a.hoverstyle {
+                 color: #333333;
+             }
+             .listContainerBread>li>a.hoverstyle:hover {
+                 color: #00cc99;
+             }
+             .listContainerBread>li>a {
+                 color: #999999;
+             }
+             .articleCon {
+                 /* margin: 14px 8px 8px; */
+             }
+             .articleCon>h2 {
+                font-size: 14px;
+                font-family: Microsoft YaHei;
+                font-weight: 600;
+                color: #333333;
+                text-align: center;
+             }
+             .article-body {
+                 width: 100%;
+                 margin-top: 20px;
+                 min-height: 500px;
+             }
+             /* 搜索区域 */
+             .listGuideContent {
+                display: none;
+                margin: 5px;
+                margin-bottom: 50px;
+                padding: 12px 0;
+                flex-wrap: wrap;
+            }
+            .listGuideContent>a {
+                width: 25%;
+                height: 120px;
+                padding: 12px 0;
+                text-align: center;
+                box-sizing: border-box;
+            }
+            .listGuideContent>a img {
+                width: 60px;
+                height: 60px;
+                background-color: #00cc99;
+                border-radius: 10px;
+                margin-bottom: 12px;
+            }
+            .listGuideContent>a p {
+                color: #000;
+                font-weight: 600;
+                font-size: 13px;
+                width: 75%;
+                padding-bottom: 10px;
+                margin: 0 auto;
+                border-bottom: 1px solid #00cc99;
+            }
+
+            .searchContainer>p {
+                display: inline-block;
+                color: #333333;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 30px;
+            }
+            .searchContainer>p>span {
+                color: #00cc99;
+            }
         }
     </style>
 </head>
@@ -530,7 +895,41 @@
                         </ul>
                         <!-- 文章显示区域 -->
                         <div class="articleCon">
+                              <h2>
+                                桌面直播工具-网络监测及时间显示
+                              </h2>
+                              <div class="article-body">
 
+                              </div>
+                        </div>
+                        <!--搜索关键字  -->
+                        <div class="searchContainer">
+                            <p> 关键词
+                                <span>"摄像直播"</span>
+                                搜索结果如下：</p>
+                        </div>
+                        <!-- 搜索结果 -->
+                        <div class="listGuideContent">
+                            <a href="">
+                                <img src="/static/image/docs/icon-1-2.png" alt="摄像直播">
+                                <p>摄像直播</p>
+                            </a>
+                            <a href="">
+                             <img src="/static/image/docs/icon-1-2.png" alt="摄像直播">
+                             <p>摄像直播</p>
+                            </a>
+                            <a href="">
+                             <img src="/static/image/docs/icon-1-2.png" alt="摄像直播">
+                             <p>摄像直播</p>
+                         </a>
+                         <a href="">
+                             <img src="/static/image/docs/icon-1-2.png" alt="摄像直播">
+                             <p>摄像直播</p>
+                         </a>
+                         <a href="">
+                             <img src="/static/image/docs/icon-1-2.png" alt="摄像直播">
+                             <p>摄像直播</p>
+                         </a>
                         </div>
                     </div>
                 </div>
@@ -558,7 +957,23 @@
                  'transform': 'rotate(180deg)'
              })
           }
+    })
+    // 搜索按钮
+    $('.layui-icon-search').on('click', function() {
+        $('.listContainerBread').hide();
+        $('.articleCon').hide();
+        $('.searchContainer').show();
+        $('.listGuideContent').css({
+            "display": 'flex'
+        });
+    })
 
+    // 点击直播百科左侧导航栏
+    $('.baikeMenu-child dd').on('click', function() {
+        $('.listContainerBread').show();
+        $('.articleCon').show();
+        $('.searchContainer').hide();
+        $('.listGuideContent').hide();
     })
 </script>
 

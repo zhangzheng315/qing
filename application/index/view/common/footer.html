@@ -54,11 +54,10 @@
             font-family: 'Microsoft YaHei';
             cursor: pointer;
         }
-        .language {
+        /* .language {
             width: 130px;
             height: 40px;
             line-height: 40px;
-            /* text-align: center; */
             border: 1px solid #FFFFFF;
             border-radius: 20px;
             color: #FFFFFF;
@@ -74,7 +73,90 @@
         }
         .language>span.select-down {
             margin-left: 10px;
+        } */
+
+        /* 语言选择 */
+        .footer-select-language {    
+            width: 144px;
+            z-index: 99;
+            position: relative;
+            margin-left: 50px;
+         }
+         .footer-select-language .footer-select-trigger {
+            display: block;
+            position: relative;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 0 40px;
+            border-radius: 20px;
+            width: 144px;
+            height: 40px;
+            font-size: 12px;
+            border: 1px solid #FFFFFF;
+            white-space: nowrap;
+            overflow: hidden;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            line-height: 40px;
+            color: #ffffff;
+            cursor: pointer;
         }
+        .footer-select-language:hover .footer-dropdown {
+            display: block;
+        }
+        .footer-select-language .footer-select-trigger::before {
+            content: "";
+            background-image: url(/static/image/map.png);
+            background-size: contain;
+            width: 16px;
+            height: 16px;
+            display: block;
+            position: absolute;
+            top: 10px;
+            left: 7px;
+        }
+        .footer-select-language .footer-select-trigger::after {
+                content: "";
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                margin-top: -2px;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 6px 6px 0;
+                border-color: #ffffff transparent;
+                -webkit-transition: transform .2s ease,-webkit-transform .2s ease;
+                transition: transform .2s ease,-webkit-transform .2s ease;
+        }
+        .footer-select-language:hover .footer-select-trigger::after {
+            transform: rotate(-180deg);
+        }
+        .footer-select-language .footer-dropdown {
+                position: absolute;
+                left: 0;
+                bottom: 100%;
+                z-index: 99;
+                width: 144px;
+                background: #333333;
+                border-radius: 5px;
+                display: none;
+        }
+        .footer-dropdown .footer-dropdown-option {
+                display: block;
+                padding: 0 12px;
+                height: 34px;
+                line-height: 34px;
+                font-size: 12px;
+                color: #fff;
+                -webkit-transition: all .25s ease;
+                -o-transition: all .25s ease;
+                transition: all .25s ease;
+        }
+        .footer-dropdown-option:hover {
+            color: #00cc99;
+        }
+
         .footer-right>dl {
             color: #FFFFFF;
             width: 125px;
@@ -199,6 +281,90 @@
         .language>span.select-down {
             margin-left: 10px;
         }
+        
+         /* 语言选择 */
+         .footer-select-language {    
+            width: 130px;
+            z-index: 99;
+            position: relative;
+            margin-left: 35px;
+         }
+         .footer-select-language .footer-select-trigger {
+            display: block;
+            position: relative;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 0 40px;
+            border-radius: 18px;
+            width: 130px;
+            height: 36px;
+            font-size: 12px;
+            border: 1px solid #FFFFFF;
+            white-space: nowrap;
+            overflow: hidden;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            line-height: 36px;
+            color: #ffffff;
+            cursor: pointer;
+        }
+        .footer-select-language:hover .footer-dropdown {
+            display: block;
+        }
+        .footer-select-language .footer-select-trigger::before {
+            content: "";
+            background-image: url(/static/image/map.png);
+            background-size: contain;
+            width: 16px;
+            height: 16px;
+            display: block;
+            position: absolute;
+            top: 8px;
+            left: 7px;
+        }
+        .footer-select-language .footer-select-trigger::after {
+                content: "";
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                margin-top: -2px;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 6px 6px 0;
+                border-color: #ffffff transparent;
+                -webkit-transition: transform .2s ease,-webkit-transform .2s ease;
+                transition: transform .2s ease,-webkit-transform .2s ease;
+        }
+        .footer-select-language:hover .footer-select-trigger::after {
+            transform: rotate(-180deg);
+        }
+        .footer-select-language .footer-dropdown {
+                position: absolute;
+                left: 0;
+                bottom: 100%;
+                z-index: 99;
+                width: 130px;
+                background: #333333;
+                border-radius: 5px;
+                display: none;
+        }
+        .footer-dropdown .footer-dropdown-option {
+                display: block;
+                padding: 0 8px;
+                height: 30px;
+                line-height: 30px;
+                font-size: 12px;
+                color: #fff;
+                -webkit-transition: all .25s ease;
+                -o-transition: all .25s ease;
+                transition: all .25s ease;
+        }
+        .footer-dropdown-option:hover {
+            color: #00cc99;
+        }
+
+
         .footer-right>dl {
             color: #FFFFFF;
             width: 100px;
@@ -323,6 +489,88 @@
         }
         .language>span.select-down {
             margin-left: 8px;
+        }
+
+          /* 语言选择 */
+          .footer-select-language {    
+            width: 100px;
+            z-index: 99;
+            position: relative;
+            margin-left: 35px;
+         }
+         .footer-select-language .footer-select-trigger {
+            display: block;
+            position: relative;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 0 30px;
+            border-radius: 15px;
+            width: 100px;
+            height: 30px;
+            font-size: 12px;
+            border: 1px solid #FFFFFF;
+            white-space: nowrap;
+            overflow: hidden;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            line-height: 30px;
+            color: #ffffff;
+            cursor: pointer;
+        }
+        .footer-select-language:hover .footer-dropdown {
+            display: block;
+        }
+        .footer-select-language .footer-select-trigger::before {
+            content: "";
+            background-image: url(/static/image/map.png);
+            background-size: contain;
+            width: 14px;
+            height: 14px;
+            display: block;
+            position: absolute;
+            top: 7px;
+            left: 7px;
+        }
+        .footer-select-language .footer-select-trigger::after {
+                content: "";
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                margin-top: -2px;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 4px 4px 0;
+                border-color: #ffffff transparent;
+                -webkit-transition: transform .2s ease,-webkit-transform .2s ease;
+                transition: transform .2s ease,-webkit-transform .2s ease;
+        }
+        .footer-select-language:hover .footer-select-trigger::after {
+            transform: rotate(-180deg);
+        }
+        .footer-select-language .footer-dropdown {
+                position: absolute;
+                left: 0;
+                bottom: 100%;
+                z-index: 99;
+                width: 100px;
+                background: #333333;
+                border-radius: 5px;
+                display: none;
+        }
+        .footer-dropdown .footer-dropdown-option {
+                display: block;
+                padding: 0 8px;
+                height: 30px;
+                line-height: 30px;
+                font-size: 12px;
+                color: #fff;
+                -webkit-transition: all .25s ease;
+                -o-transition: all .25s ease;
+                transition: all .25s ease;
+        }
+        .footer-dropdown-option:hover {
+            color: #00cc99;
         }
         .footer-right>dl {
             color: #FFFFFF;
@@ -545,7 +793,6 @@
             justify-content: space-between;
         }
        
-     
     </style>
 </head>
 <body>
@@ -565,7 +812,7 @@
                 <div class="yanshi">
                     预约上门演示 >
                 </div>
-                <div class="language">
+                <!-- <div class="language">
                    <span class="language-map">
                        <img src="/static/image/map.png" alt="">
                    </span> 
@@ -573,6 +820,17 @@
                    <span class="select-down">
                        <img src="/static/image/down.png" alt="">
                    </span>
+                </div> -->
+                <div class="footer-select-language">
+                    <a href="javascript:;" class="footer-select-trigger">
+                        <span class="footer-select-text">中文</span>
+                    </a>
+                    <div class="footer-dropdown">
+                        <ul class="footer-dropdown-menu">
+                            <li><a href="" class="footer-dropdown-option">中文</a></li>
+                            <li><a href="" class="footer-dropdown-option">English</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
           </div>
@@ -723,39 +981,17 @@
             </dl>
             </div>
             <!-- 关注我们 -->
-            <div class="watchus">
+            <!-- <div class="watchus">
                  <h3>关注我们</h3>
                  <span>
-                     <!-- <img src="" alt=""> -->
                  </span>
                  <span></span>
                  <span></span>
                  <span></span>
                  <span></span>
                  <span></span>
-            </div>
+            </div> -->
          </div>    
-              <!-- <div class="footer-footer">
-                <div class="map">
-                  <span class="span-left">
-                    <a href="">增值电信经营许可证</a>
-                  </span>
-                  <span class="span-content">网站地图</span>
-                  <span class="span-content">
-                    <a href="">法律声明</a>
-                  </span>
-                  <span class="span-content">
-                    <a href="">隐私协议</a>
-                  </span>
-                  <span class="span-content">
-                    <a href="">服务协议</a>
-                  </span>
-                </div>
-                <div class="copy">
-                  <span class="span-right">©2020 Copyright SHANGHAI BONWEY TECHNOLOGY CO. LTD；. All right</span>
-                  <span style="cursor:pointer;">沪ICP备20004241号-4</span>
-                </div>
-              </div>      -->
       </div>  
       </div>
       <div class="pc-footer-bottom">
