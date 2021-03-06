@@ -304,6 +304,15 @@ class ArticleService extends Common{
         return $res;
     }
 
+    /**
+     * 获取文章详情
+     * @param $id
+     * @param $pid
+     * @return array|bool
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
     public function articleInfoById($id,$pid)
     {
         $where = [
@@ -316,6 +325,9 @@ class ArticleService extends Common{
             $this->setError('查询有误');
             return false;
         }
+        //浏览量自增1
+        $this->article->where($where)->setInc('browse');
+
         $info['label'] = explode(',', $info['label']);
         $info['time'] = date('Y-m-d', $info['created_time']);
 
@@ -343,7 +355,7 @@ class ArticleService extends Common{
             }
         }
 
-        if ($index - 1  > 0) {
+        if ($index - 1  >= 0) {
             $pre_btn = 1;
             $pre_article = $article_list[$index - 1];
         }
