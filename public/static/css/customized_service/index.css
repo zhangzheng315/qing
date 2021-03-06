@@ -16,6 +16,9 @@
   height: 600px;
   position: relative;
 }
+#customized #banner .lunbo-box img {
+  object-fit: cover;
+}
 #customized #banner .layui-carousel .layui-carousel-ind {
   display: none !important;
 }
@@ -126,14 +129,18 @@
   border-radius: 30px;
   outline: none;
   background-color: transparent;
+  cursor: pointer;
+}
+#customized #fiveG .fiveg-content button a {
   font-size: 28px;
   color: #FFFFFF;
-  cursor: pointer;
 }
 #customized #fiveG .fiveg-content button:hover {
   background-color: #00cc99;
-  color: #fff;
   border: 0;
+}
+#customized #fiveG .fiveg-content button:hover a {
+  color: #fff;
 }
 @media screen and (min-width: 768px) and (max-width: 1300px) {
   #customized .layui-container {
@@ -173,6 +180,8 @@
   #customized #fiveG .fiveg-content button {
     width: 28%;
     height: 50px;
+  }
+  #customized #fiveG .fiveg-content button a {
     font-size: 25px;
   }
 }
@@ -214,6 +223,8 @@
   #customized #fiveG .fiveg-content button {
     width: 28%;
     height: 45px;
+  }
+  #customized #fiveG .fiveg-content button a {
     font-size: 18px;
   }
 }
@@ -301,6 +312,8 @@
   #customized #fiveG .fiveg-content button {
     width: 46%;
     height: 40px;
+  }
+  #customized #fiveG .fiveg-content button a {
     font-size: 14px;
   }
 }

@@ -16,6 +16,9 @@
   height: 600px;
   position: relative;
 }
+#service #banner .lunbo-box img {
+  object-fit: cover;
+}
 #service #banner .layui-carousel .layui-carousel-ind {
   display: none !important;
 }

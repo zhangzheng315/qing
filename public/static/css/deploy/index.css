@@ -200,14 +200,18 @@
   border-radius: 30px;
   outline: none;
   background-color: transparent;
+  cursor: pointer;
+}
+#deploy #fiveG .fiveg-content button a {
   font-size: 28px;
   color: #FFFFFF;
-  cursor: pointer;
 }
 #deploy #fiveG .fiveg-content button:hover {
   background-color: #00cc99;
-  color: #fff;
   border: 0;
+}
+#deploy #fiveG .fiveg-content button:hover a {
+  color: #fff;
 }
 @media screen and (min-width: 768px) and (max-width: 1300px) {
   #deploy .layui-container {
@@ -312,6 +316,8 @@
   #deploy #fiveG .fiveg-content button {
     width: 28%;
     height: 50px;
+  }
+  #deploy #fiveG .fiveg-content button a {
     font-size: 25px;
   }
 }
@@ -347,6 +353,8 @@
   #deploy #fiveG .fiveg-content button {
     width: 28%;
     height: 45px;
+  }
+  #deploy #fiveG .fiveg-content button a {
     font-size: 18px;
   }
 }
@@ -464,6 +472,8 @@
   #deploy #fiveG .fiveg-content button {
     width: 46%;
     height: 40px;
+  }
+  #deploy #fiveG .fiveg-content button a {
     font-size: 14px;
   }
 }
