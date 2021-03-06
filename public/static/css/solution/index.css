@@ -10,6 +10,9 @@
   height: 600px;
   position: relative;
 }
+#solution #banner .lunbo-box img {
+  object-fit: cover;
+}
 #solution #banner .layui-carousel .layui-carousel-ind {
   display: none !important;
 }

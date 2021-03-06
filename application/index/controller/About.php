@@ -16,4 +16,29 @@ class About extends Controller
         $contact_list = $contactService->contactList();
         return $this->fetch('',compact('join_list','contact_list'));
     }
+    public function joinUs()
+    {
+        $joinUsService = new JoinUsService();
+        $contactService = new ContactService();
+        $join_list = $joinUsService->joinUsList();
+        $contact_list = $contactService->contactList();
+        return $this->fetch('',compact('join_list','contact_list'));
+    }
+    public function contactUs()
+    {
+        $joinUsService = new JoinUsService();
+        $contactService = new ContactService();
+        $join_list = $joinUsService->joinUsList();
+        $contact_list = $contactService->contactList();
+        return $this->fetch('',compact('join_list','contact_list'));
+    }
+
+    public function news()
+    {
+        $joinUsService = new JoinUsService();
+        $contactService = new ContactService();
+        $join_list = $joinUsService->joinUsList();
+        $contact_list = $contactService->contactList();
+        return $this->fetch('',compact('join_list','contact_list'));
+    }
 }

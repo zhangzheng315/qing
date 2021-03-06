@@ -26,11 +26,15 @@
 }
 
 #banner {
-    // margin-top: 65px;
     height: 600px;
     position: relative;
 
     .layui-carousel {
+        .lunbo-box {
+            img {
+                object-fit: cover;
+            }
+        }
         .layui-carousel-ind {
             display: none !important;
         }
@@ -160,7 +164,7 @@
     box-sizing: border-box;
 
     .product-content {
-        width: 90%;
+        width: 100%;
         margin: 0 auto;
         margin-top: 46px;
         display: flex;
@@ -219,8 +223,11 @@
                     font-size: 14px;
                     outline: none;
                     border: none;
-                    color: #333;
                     cursor: pointer;
+                    a {
+                        color: #333;
+
+                    }
                 }
 
                 .more {
@@ -228,7 +235,10 @@
                 }
 
                 .free {
-                    color: #fff;
+                    a {
+                        color: #fff;
+
+                    }
                     background-color: #00cc99;
                     border-radius: 0 0 10px 0;
 
@@ -378,10 +388,11 @@
                 display: none;
 
                 h6 {
+                    height: 50px;
                     font-size: 18px;
                     color: #FFFFFF;
                     font-weight: 700;
-                    margin-bottom: 39px;
+                    margin-bottom: 30px;
                 }
 
                 .text-box {
@@ -392,9 +403,10 @@
 
                     li {
                         width: 45%;
+                        height: 55px;
                         display: flex;
                         align-items: center;
-                        margin-bottom: 40px;
+                        margin-bottom: 30px;
 
                         img {
                             width: 40px;
@@ -409,6 +421,7 @@
                             font-size: 14px;
                             color: #fff;
                             letter-spacing: .3px;
+                            box-sizing: border-box;
                         }
                     }
                 }
@@ -416,18 +429,22 @@
                 button {
                     width: 130px;
                     height: 40px;
-                    font-size: 14px;
-                    color: #fff;
                     border: 1px solid rgba(255, 255, 255, .3);
                     outline: none;
                     background-color: transparent;
                     border-radius: 20px;
                     cursor: pointer;
-
+                    float: right;
+                    a {
+                        font-size: 14px;
+                        color: #fff;
+                    }
                     &:hover {
                         background-color: #00cc99;
-                        color: #fff;
                         border: 0;
+                        a {
+                            color: #fff;
+                        }
                     }
                 }
             }
@@ -529,7 +546,6 @@
 
 // 赋能「100,000+」企业
 #qiye {
-    // height: 829px;
     background-color: #fff;
     padding: 60px 0 20px;
 
@@ -549,13 +565,9 @@
 
             .active {
                 background-color: #00cc99;
-                // padding: 0 15px;
                 border-radius: 20px;
-
                 span {
                     color: #fff;
-                    // font-weight: bold;
-
                 }
             }
 
@@ -567,23 +579,43 @@
                 line-height: 32px;
                 text-align: center;
                 padding: 0 15px;
-
-                &:hover {
-                    background-color: #00cc99;
-                    border-radius: 20px;
-
-                    span {
-                        color: #fff;
-                        // font-weight: bold;
-
-                    }
-                }
+                position: relative;
 
                 span {
                     font-size: 18px;
                     color: #666;
                     margin-bottom: 5px;
                     text-align: center;
+                }
+
+                &:after,&:before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 0;
+                    height: 32px;
+                    background: #fff;
+                    z-index:-2;
+                    border-radius: 20px;
+                }
+    
+                &:hover{
+                    z-index:1;
+                    background:transparent;
+                    span {
+                        color: #fff;
+                    }
+                }            
+              
+                &:before {
+                    transition: .4s;
+                    background: #00cc99;
+                    z-index:-1;
+                }          
+    
+                &:hover:after,&:hover:before {
+                    width: 100%;
                 }
             }
         }
@@ -815,7 +847,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 70px 0 0;
+        padding: 110px 0 0;
         box-sizing: border-box;
 
         h2 {
@@ -839,14 +871,19 @@
             border-radius: 30px;
             outline: none;
             background-color: transparent;
-            font-size: 30px;
-            color: #FFFFFF;
+            
             cursor: pointer;
-
+            a {
+                font-size: 30px;
+                color: #FFFFFF;
+            }
             &:hover {
                 background-color: #00cc99;
-                color: #fff;
                 border: 0;
+                a {
+                    color: #fff;
+
+                }
             }
         }
     }
@@ -1014,10 +1051,12 @@
                     h6 {
                         font-size: 16px;
                         margin-bottom: 45px;
+                        height: 45px;
                     }
 
                     .text-box {
                         li {
+                            height: 48px;
                             margin-bottom: 32px;
 
                             img {
@@ -1637,15 +1676,42 @@
                     flex-shrink: 0;
                     width: 14%;
                     padding: 0px;
-                    // margin-bottom: 5px;
                     height: 25px;
                     line-height: 25px;
 
                     span {
                         margin: 0;
-                        // padding: 0 10px;
                         font-size: 14px;
 
+                    }
+                    &:after,&:before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 0;
+                        height: 25px;
+                        background: #fff;
+                        z-index:-2;
+                        border-radius: 20px;
+
+                    }
+                    &:hover{
+                        z-index:1;
+                        background:transparent;
+                        span {
+                            color: #fff;
+                        }
+                    }            
+                  
+                    &:before {
+                        transition: .4s;
+                        background: #00cc99;
+                        z-index:-1;
+                    }          
+        
+                    &:hover:after,&:hover:before {
+                        width: 100%;
                     }
                 }
             }

@@ -25,6 +25,9 @@
   height: 600px;
   position: relative;
 }
+#banner .layui-carousel .lunbo-box img {
+  object-fit: cover;
+}
 #banner .layui-carousel .layui-carousel-ind {
   display: none !important;
 }
@@ -126,7 +129,7 @@
   box-sizing: border-box;
 }
 #product .product-content {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   margin-top: 46px;
   display: flex;
@@ -180,16 +183,20 @@
   font-size: 14px;
   outline: none;
   border: none;
-  color: #333;
   cursor: pointer;
+}
+#product .product-content .product-item .item-footer button a {
+  color: #333;
 }
 #product .product-content .product-item .item-footer .more {
   border-radius: 0 0 0 10px;
 }
 #product .product-content .product-item .item-footer .free {
-  color: #fff;
   background-color: #00cc99;
   border-radius: 0 0 10px 0;
+}
+#product .product-content .product-item .item-footer .free a {
+  color: #fff;
 }
 #light-live {
   background-color: #fff;
@@ -304,10 +311,11 @@
   display: none;
 }
 #advantage .advantage-content .content-right .right-item h6 {
+  height: 50px;
   font-size: 18px;
   color: #FFFFFF;
   font-weight: 700;
-  margin-bottom: 39px;
+  margin-bottom: 30px;
 }
 #advantage .advantage-content .content-right .right-item .text-box {
   display: flex;
@@ -317,9 +325,10 @@
 }
 #advantage .advantage-content .content-right .right-item .text-box li {
   width: 45%;
+  height: 55px;
   display: flex;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 #advantage .advantage-content .content-right .right-item .text-box li img {
   width: 40px;
@@ -333,22 +342,28 @@
   font-size: 14px;
   color: #fff;
   letter-spacing: 0.3px;
+  box-sizing: border-box;
 }
 #advantage .advantage-content .content-right .right-item button {
   width: 130px;
   height: 40px;
-  font-size: 14px;
-  color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.3);
   outline: none;
   background-color: transparent;
   border-radius: 20px;
   cursor: pointer;
+  float: right;
+}
+#advantage .advantage-content .content-right .right-item button a {
+  font-size: 14px;
+  color: #fff;
 }
 #advantage .advantage-content .content-right .right-item button:hover {
   background-color: #00cc99;
-  color: #fff;
   border: 0;
+}
+#advantage .advantage-content .content-right .right-item button:hover a {
+  color: #fff;
 }
 #advantage .advantage-content .content-right .actives {
   display: block;
@@ -457,19 +472,41 @@
   line-height: 32px;
   text-align: center;
   padding: 0 15px;
-}
-#qiye nav .logo-title li:hover {
-  background-color: #00cc99;
-  border-radius: 20px;
-}
-#qiye nav .logo-title li:hover span {
-  color: #fff;
+  position: relative;
 }
 #qiye nav .logo-title li span {
   font-size: 18px;
   color: #666;
   margin-bottom: 5px;
   text-align: center;
+}
+#qiye nav .logo-title li:after,
+#qiye nav .logo-title li:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 32px;
+  background: #fff;
+  z-index: -2;
+  border-radius: 20px;
+}
+#qiye nav .logo-title li:hover {
+  z-index: 1;
+  background: transparent;
+}
+#qiye nav .logo-title li:hover span {
+  color: #fff;
+}
+#qiye nav .logo-title li:before {
+  transition: 0.4s;
+  background: #00cc99;
+  z-index: -1;
+}
+#qiye nav .logo-title li:hover:after,
+#qiye nav .logo-title li:hover:before {
+  width: 100%;
 }
 #qiye .logo-box .logo-imgs {
   display: none;
@@ -648,7 +685,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 70px 0 0;
+  padding: 110px 0 0;
   box-sizing: border-box;
 }
 #fiveG .fiveg-content h2 {
@@ -670,14 +707,18 @@
   border-radius: 30px;
   outline: none;
   background-color: transparent;
+  cursor: pointer;
+}
+#fiveG .fiveg-content button a {
   font-size: 30px;
   color: #FFFFFF;
-  cursor: pointer;
 }
 #fiveG .fiveg-content button:hover {
   background-color: #00cc99;
-  color: #fff;
   border: 0;
+}
+#fiveG .fiveg-content button:hover a {
+  color: #fff;
 }
 @media screen and (min-width: 768px) and (max-width: 1300px) {
   #banner {
@@ -788,8 +829,10 @@
   #advantage .advantage-content .content-right .right-item h6 {
     font-size: 16px;
     margin-bottom: 45px;
+    height: 45px;
   }
   #advantage .advantage-content .content-right .right-item .text-box li {
+    height: 48px;
     margin-bottom: 32px;
   }
   #advantage .advantage-content .content-right .right-item .text-box li img {
@@ -1222,6 +1265,34 @@
   #qiye nav .logo-title li span {
     margin: 0;
     font-size: 14px;
+  }
+  #qiye nav .logo-title li:after,
+  #qiye nav .logo-title li:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 25px;
+    background: #fff;
+    z-index: -2;
+    border-radius: 20px;
+  }
+  #qiye nav .logo-title li:hover {
+    z-index: 1;
+    background: transparent;
+  }
+  #qiye nav .logo-title li:hover span {
+    color: #fff;
+  }
+  #qiye nav .logo-title li:before {
+    transition: 0.4s;
+    background: #00cc99;
+    z-index: -1;
+  }
+  #qiye nav .logo-title li:hover:after,
+  #qiye nav .logo-title li:hover:before {
+    width: 100%;
   }
   #qiye .logo-box .logo-imgs li {
     width: 19%;
