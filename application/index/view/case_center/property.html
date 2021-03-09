@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="renderer" content="webkit">
     <title>轻直播_企业直播服务平台,医疗直播领军者,营销直播定制服务商</title>
-    <meta name="keywords"  content="企业直播平台,医疗直播,营销直播,活动直播,直播定制服务"/>
+    <meta name="keywords"  content="企业直播平台,医疗直播,营销直播,活动直播,直播定制服务" />
     <meta name="description"
          content="轻直播是国内知名的企业级直播定制化服务平台,服务全球500强,为企业提供医疗直播、手术直播、活动直播、会议直播、营销直播、年会直播等全场景解决方案,热线:400-920-1599。" />
     <link rel="stylesheet" href="/static/layui/css/layui.css">
@@ -1678,146 +1678,338 @@
 </head>
 
 <body cz-shortcut-listen="true">
-<div id="qingschool">
-    <!-- 头部 -->
-    <header>
-        <div class="layui-container flex-center-space-between header-nav">
-            <div class="logo">
-                <a href="{:url('/')}"><img src="/static/image/logo.png" alt=""></a>
-            </div>
-            <div class="head-right">
-                <div class="text">
-                    <a href="{:url('/')}">轻直播首页</a>
-                    <a href="{:url('case_center/index')}">案例中心</a>
+    <div id="qingschool">
+        <!-- 头部 -->
+        <header>
+            <div class="layui-container flex-center-space-between header-nav">
+                <div class="logo">
+                    <a href="{:url('/')}"><img src="/static/image/logo.png" alt=""></a>
                 </div>
-                <div class="btns">
-                    <button class="login">登录</button>
-                    <button class="free-btn">免费试用</button>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- 导航栏 -->
-    <nav>
-        <div class="layui-container school-nav">
-            <a href="{:url('case_center/medical')}">
-                <!-- <i class="icon-nav-item icon-nav-home"></i> -->
-                <span>医疗</span>
-            </a>
-            <a href="{:url('case_center/education')}">
-                <!-- <i class="icon-nav-item icon-nav-home"></i> -->
-                <span>教育</span>
-            </a>
-            <a href="{:url('case_center/finance')}">
-                <!-- <i class="icon-nav-item icon-nav-home"></i> -->
-                <span>金融</span>
-            </a>
-            <a href="{:url('case_center/car')}">
-                <!-- <i class="icon-nav-item icon-nav-home"></i> -->
-                <span>汽车</span>
-            </a>
-            <a href="{:url('case_center/technology')}">
-                <span>科技</span>
-            </a>
-            <a href="{:url('case_center/property')}" class="active">
-                <span>地产</span>
-            </a>
-        </div>
-    </nav>
-    <!-- 内容区域 -->
-    <section id="content-center">
-        <div class="layui-container flex-space-between">
-            <div class="school-left-con">
-                <!-- 课程区域 -->
-                <div class="cause-con">
-                    <ul>
-                        {if(isset($case_list))}
-                        {foreach($case_list as $item)}
-                        <li class="cause-item">
-                            <a href="/index/case_center/caseDetail?type_id=4&id={$item.id}" class="cause-cover"
-                               target="_blank"
-                               style="background: url({$item.cover_img_url});background-size: cover;
- background-position: center;">
-                            </a>
-                            <div class="cause-des">
-                                <a href="" class="cause-title">
-                                    <h3>
-                                        <i class="cause-icon icon-item-solution"></i>
-                                        {$item.title}
-                                    </h3>
-                                    <p class="cause-intro">
-                                        {$item.second_title}
-                                    </p>
-                                </a>
-                                <div class="cause-tags">
-                                    <span class="post-time">{$item.time}</span>
-                                    <i class="vertical-bar">|</i>
-
-                                    {if(!empty($item['label']))}
-                                    {foreach($item['label'] as $val)}
-                                    <a href="" class="cause-tag-item">{$val}</a>
-                                    {/foreach}
-                                    {/if}
-
-                                </div>
-                            </div>
-                        </li>
-                        {/foreach}
-                        {/if}
-                    </ul>
-                    <div class="cause-bottom">
-                        <span class="cause-more">点击加载更多</span>
+                <div class="head-right">
+                    <div class="text">
+                        <a href="{:url('/')}">轻直播首页</a>
+                        <a href="{:url('case_center/index')}">案例中心</a>
+                    </div>
+                    <div class="btns">
+                        <button class="login">登录</button>
+                        <button class="free-btn">免费试用</button>
                     </div>
                 </div>
-                <!-- 移动端 -->
-                <div class="m-cause-con">
-                    <ul>
-                        {if(isset($case_list))}
-                        {foreach($case_list as $item)}
-                        <li class="cause-item">
-                            <a href="/index/case_center/caseDetail?type_id=4&id={$item.id}">
-                                <h3>
-                                    {$item.title}
-                                </h3>
-                            </a>
-
-                            <div class="cause-tags">
-                                <span class="post-time">{$item.time}</span>
-                                <i class="vertical-bar">|</i>
-                                {if(!empty($item['label']))}
-                                {foreach($item['label'] as $val)}
-                                <a href="" class="cause-tag-item">{$val}</a>
-                                {/foreach}
-                                {/if}
-                            </div>
-                            <a href="" class="cause-item-desc">
-                                <img src="{$item.cover_img_url}" alt="">
-                                <p>{$item.second_title}</p>
-                            </a>
-                        </li>
-                        {/foreach}
-                        {/if}
-                    </ul>
-                </div>
             </div>
-            <div class="school-right-con">
-                <div class="siderbar-item siderbar-item-search">
-                    <form action="" class="search-form" id="search-form">
-                        <input type="text" class="searchInput" placeholder="输入关键词" autocomplete="off">
-                        <input type="submit" class="submitInput" alt="search">
-                    </form>
+        </header>
+        <!-- 导航栏 -->
+        <nav>
+            <div class="layui-container school-nav">
+                <a href="{:url('case_center/medical')}">
+                    <!-- <i class="icon-nav-item icon-nav-home"></i> -->
+                    <span>医疗</span>
+                </a>
+                <a href="{:url('case_center/education')}">
+                    <!-- <i class="icon-nav-item icon-nav-home"></i> -->
+                    <span>教育</span>
+                    </a>
+                <a href="{:url('case_center/finance')}">
+                    <!-- <i class="icon-nav-item icon-nav-home"></i> -->
+                    <span>金融</span>
+                    </a>
+                <a href="{:url('case_center/car')}">
+                    <!-- <i class="icon-nav-item icon-nav-home"></i> -->
+                    <span>汽车</span>
+                    </a>
+                <a href="{:url('case_center/technology')}">
+                    <span>科技</span>
+                </a>
+                <a href="{:url('case_center/property')}" class="active">
+                    <span>地产</span>
+                </a>
+            </div>
+        </nav>
+        <!-- 内容区域 -->
+        <section id="content-center">
+            <div class="layui-container flex-space-between">
+                <div class="school-left-con">
+                    <!-- 课程区域 -->
+                    <div class="cause-con">
+                         <ul>
+                             <li class="cause-item">
+                                 <a href="" class="cause-cover" target="_blank" style="background: url(/static/image/qingschool/cause-item.png);">   
+                                 </a>
+                                 <div class="cause-des">
+                                     <a href="" class="cause-title">
+                                         <h3>
+                                             <i class="cause-icon icon-item-solution"></i>
+                                             500强银行直播揭秘：中国银行、建设银行都这么做！
+                                         </h3>
+                                         <p class="cause-intro">
+                                            工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。
+                                         </p>
+                                     </a>
+                                     <div class="cause-tags">
+                                         <span class="post-time">2021-1-18</span>
+                                         <i class="vertical-bar">|</i>
+                                         <!-- <span class="category">案例解析</span>
+                                         <i class="vertical-bar">|</i> -->
+                                         <a href="" class="cause-tag-item">在线直播平台</a>
+                                         <a href="" class="cause-tag-item">培训直播</a>
+                                         <!-- <span class="post-views">
+                                             <i class="icon-view"></i>
+                                             222
+                                         </span> -->
+                                     </div>
+                                 </div>
+                             </li>
+                             <li class="cause-item">
+                                <a href="" class="cause-cover" target="_blank" style="background: url(/static/image/qingschool/cause-item.png);">   
+                                </a>
+                                <div class="cause-des">
+                                    <a href="" class="cause-title">
+                                        <h3>
+                                            <i class="cause-icon icon-item-solution"></i>
+                                            500强银行直播揭秘：中国银行、建设银行都这么做！
+                                        </h3>
+                                        <p class="cause-intro">
+                                           工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。
+                                        </p>
+                                    </a>
+                                    <div class="cause-tags">
+                                        <span class="post-time">2021-1-18</span>
+                                        <i class="vertical-bar">|</i>
+                                        <!-- <span class="category">案例解析</span>
+                                        <i class="vertical-bar">|</i> -->
+                                        <a href="" class="cause-tag-item">在线直播平台</a>
+                                        <a href="" class="cause-tag-item">培训直播</a>
+                                        <!-- <span class="post-views">
+                                            <i class="icon-view"></i>
+                                            222
+                                        </span> -->
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="cause-item">
+                                <a href="" class="cause-cover" target="_blank" style="background: url(/static/image/qingschool/cause-item.png);">   
+                                </a>
+                                <div class="cause-des">
+                                    <a href="" class="cause-title">
+                                        <h3>
+                                            <i class="cause-icon icon-item-solution"></i>
+                                            500强银行直播揭秘：中国银行、建设银行都这么做！
+                                        </h3>
+                                        <p class="cause-intro">
+                                           工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。
+                                        </p>
+                                    </a>
+                                    <div class="cause-tags">
+                                        <span class="post-time">2021-1-18</span>
+                                        <i class="vertical-bar">|</i>
+                                        <!-- <span class="category">案例解析</span>
+                                        <i class="vertical-bar">|</i> -->
+                                        <a href="" class="cause-tag-item">在线直播平台</a>
+                                        <a href="" class="cause-tag-item">培训直播</a>
+                                        <!-- <span class="post-views">
+                                            <i class="icon-view"></i>
+                                            222
+                                        </span> -->
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="cause-item">
+                                <a href="" class="cause-cover" target="_blank" style="background: url(/static/image/qingschool/cause-item.png);">   
+                                </a>
+                                <div class="cause-des">
+                                    <a href="" class="cause-title">
+                                        <h3>
+                                            <i class="cause-icon icon-item-solution"></i>
+                                            500强银行直播揭秘：中国银行、建设银行都这么做！
+                                        </h3>
+                                        <p class="cause-intro">
+                                           工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。
+                                        </p>
+                                    </a>
+                                    <div class="cause-tags">
+                                        <span class="post-time">2021-1-18</span>
+                                        <i class="vertical-bar">|</i>
+                                        <!-- <span class="category">案例解析</span>
+                                        <i class="vertical-bar">|</i> -->
+                                        <a href="" class="cause-tag-item">在线直播平台</a>
+                                        <a href="" class="cause-tag-item">培训直播</a>
+                                        <!-- <span class="post-views">
+                                            <i class="icon-view"></i>
+                                            222
+                                        </span> -->
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="cause-item">
+                                <a href="" class="cause-cover" target="_blank" style="background: url(/static/image/qingschool/cause-item.png);">   
+                                </a>
+                                <div class="cause-des">
+                                    <a href="" class="cause-title">
+                                        <h3>
+                                            <i class="cause-icon icon-item-solution"></i>
+                                            500强银行直播揭秘：中国银行、建设银行都这么做！
+                                        </h3>
+                                        <p class="cause-intro">
+                                           工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。
+                                        </p>
+                                    </a>
+                                    <div class="cause-tags">
+                                        <span class="post-time">2021-1-18</span>
+                                        <i class="vertical-bar">|</i>
+                                        <!-- <span class="category">案例解析</span>
+                                        <i class="vertical-bar">|</i> -->
+                                        <a href="" class="cause-tag-item">在线直播平台</a>
+                                        <a href="" class="cause-tag-item">培训直播</a>
+                                        <!-- <span class="post-views">
+                                            <i class="icon-view"></i>
+                                            222
+                                        </span> -->
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="cause-item">
+                                <a href="" class="cause-cover" target="_blank" style="background: url(/static/image/qingschool/cause-item.png);">   
+                                </a>
+                                <div class="cause-des">
+                                    <a href="" class="cause-title">
+                                        <h3>
+                                            <i class="cause-icon icon-item-solution"></i>
+                                            500强银行直播揭秘：中国银行、建设银行都这么做！
+                                        </h3>
+                                        <p class="cause-intro">
+                                           工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。
+                                        </p>
+                                    </a>
+                                    <div class="cause-tags">
+                                        <span class="post-time">2021-1-18</span>
+                                        <i class="vertical-bar">|</i>
+                                        <!-- <span class="category">案例解析</span>
+                                        <i class="vertical-bar">|</i> -->
+                                        <a href="" class="cause-tag-item">在线直播平台</a>
+                                        <a href="" class="cause-tag-item">培训直播</a>
+                                        <!-- <span class="post-views">
+                                            <i class="icon-view"></i>
+                                            222
+                                        </span> -->
+                                    </div>
+                                </div>
+                            </li>
+                         </ul>
+                         <div class="cause-bottom">
+                              <span class="cause-more">点击加载更多</span>
+                         </div>
+                    </div>
+                    <!-- 移动端 -->
+                    <div class="m-cause-con">
+                         <ul>
+                            <li class="cause-item">
+                                <a href="">
+                                    <h3>
+                                        <!-- <i class="cause-icon icon-item-solution"></i> -->
+                                        500强银行直播揭秘：中国银行、建设银行都这么做！
+                                    </h3>
+                                </a>
+                              
+                                <div class="cause-tags">
+                                    <span class="post-time">2021-1-18</span>
+                                    <i class="vertical-bar">|</i>
+                                    <span class="category">案例解析</span>
+                                    <!-- <i class="vertical-bar">|</i>
+                                    <a href="" class="cause-tag-item">在线直播平台</a>
+                                    <a href="" class="cause-tag-item">培训直播</a>
+                                    <span class="post-views">
+                                        <i class="icon-view"></i>
+                                        222
+                                    </span> -->
+                                </div>
+                                <a href="" class="cause-item-desc">
+                                    <img src="/static/image/qingschool/cause-item.png" alt="">
+                                    <p>工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。</p>
+                                </a>
+                            </li>
+                            <li class="cause-item">
+                                <a href="">
+                                    <h3>
+                                        <!-- <i class="cause-icon icon-item-solution"></i> -->
+                                        500强银行直播揭秘：中国银行、建设银行都这么做！
+                                    </h3>
+                                </a>
+                              
+                                <div class="cause-tags">
+                                    <span class="post-time">2021-1-18</span>
+                                    <i class="vertical-bar">|</i>
+                                    <span class="category">案例解析</span>
+                                    <!-- <i class="vertical-bar">|</i>
+                                    <a href="" class="cause-tag-item">在线直播平台</a>
+                                    <a href="" class="cause-tag-item">培训直播</a>
+                                    <span class="post-views">
+                                        <i class="icon-view"></i>
+                                        222
+                                    </span> -->
+                                </div>
+                                <a href="" class="cause-item-desc">
+                                    <img src="/static/image/qingschool/cause-item.png" alt="">
+                                    <p>工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。</p>
+                                </a>
+                            </li>
+                            <li class="cause-item">
+                                <a href="">
+                                    <h3>
+                                        <!-- <i class="cause-icon icon-item-solution"></i> -->
+                                        500强银行直播揭秘：中国银行、建设银行都这么做！
+                                    </h3>
+                                </a>
+                              
+                                <div class="cause-tags">
+                                    <span class="post-time">2021-1-18</span>
+                                    <i class="vertical-bar">|</i>
+                                    <span class="category">案例解析</span>
+                                    <!-- <i class="vertical-bar">|</i>
+                                    <a href="" class="cause-tag-item">在线直播平台</a>
+                                    <a href="" class="cause-tag-item">培训直播</a>
+                                    <span class="post-views">
+                                        <i class="icon-view"></i>
+                                        222
+                                    </span> -->
+                                </div>
+                                <a href="" class="cause-item-desc">
+                                    <img src="/static/image/qingschool/cause-item.png" alt="">
+                                    <p>工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。</p>
+                                </a>
+                            </li>
+                            <li class="cause-item">
+                                <a href="">
+                                    <h3>
+                                        <!-- <i class="cause-icon icon-item-solution"></i> -->
+                                        500强银行直播揭秘：中国银行、建设银行都这么做！
+                                    </h3>
+                                </a>
+                              
+                                <div class="cause-tags">
+                                    <span class="post-time">2021-1-18</span>
+                                    <i class="vertical-bar">|</i>
+                                    <span class="category">案例解析</span>
+                                    <!-- <i class="vertical-bar">|</i>
+                                    <a href="" class="cause-tag-item">在线直播平台</a>
+                                    <a href="" class="cause-tag-item">培训直播</a>
+                                    <span class="post-views">
+                                        <i class="icon-view"></i>
+                                        222
+                                    </span> -->
+                                </div>
+                                <a href="" class="cause-item-desc">
+                                    <img src="/static/image/qingschool/cause-item.png" alt="">
+                                    <p>工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。</p>
+                                </a>
+                            </li>
+                         </ul>
+                    </div>
                 </div>
-                <!-- 热门文章 -->
-                <div class="siderbar-item siderbar-item-article">
-                    <div class="siderbar-item-head">
-                        <h2>
-                            <span>热门文章</span>
-                            <div class="switch-article">
-                                <div class="switch-article-btn active">热门</div>
-                                <div class="switch-article-btn">推荐</div>
-                            </div>
-                        </h2>
-
+                <div class="school-right-con">
+                    <div class="siderbar-item siderbar-item-search">
+                       <form action="" class="search-form" id="search-form">
+                             <input type="text" class="searchInput" placeholder="输入关键词" autocomplete="off">
+                             <input type="submit" class="submitInput" alt="search">
+                       </form>
                     </div>
                     <!-- 热门文章 -->
                     <div class="siderbar-item siderbar-item-article">
@@ -1894,66 +2086,86 @@
                                    <span class="time">2021-12-06</span>
                               </a>
                           </li>
-                          <li>
-                            <a href="" class="hot-products-item" target="_blank">
-                                <i class="icon-hot-product icon-hot-product_2"></i>
-                                <span>培训直播</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="" class="hot-products-item" target="_blank">
-                                <i class="icon-hot-product icon-hot-product_3"></i>
-                                <span>视频点播</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="" class="hot-products-item" target="_blank">
-                                <i class="icon-hot-product icon-hot-product_4"></i>
-                                <span>视频混合云</span>
-                            </a>
-                        </li>
-                      </ul>
-                </div> -->
+                        </ul>
+                    </div>
 
-                <!-- 热门标签 -->
-                <div class="siderbar-item siderbar-item-label">
-                    <div class="siderbar-item-head">
-                        <h2>
+                    <!-- 热门产品 -->
+                    <!-- <div class="siderbar-item">
+                          <div class="siderbar-item-head">
+                              <h2>
+                                  <span>
+                                      热门产品
+                                  </span>
+                              </h2>
+                          </div>
+                          <ul class="hot-products-list">
+                              <li>
+                                  <a href="" class="hot-products-item" target="_blank">
+                                      <i class="icon-hot-product icon-hot-product_1"></i>
+                                      <span>企业直播</span>
+                                  </a>
+                              </li>
+                              <li>
+                                <a href="" class="hot-products-item" target="_blank">
+                                    <i class="icon-hot-product icon-hot-product_2"></i>
+                                    <span>培训直播</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="hot-products-item" target="_blank">
+                                    <i class="icon-hot-product icon-hot-product_3"></i>
+                                    <span>视频点播</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="hot-products-item" target="_blank">
+                                    <i class="icon-hot-product icon-hot-product_4"></i>
+                                    <span>视频混合云</span>
+                                </a>
+                            </li>
+                          </ul>
+                    </div> -->
+
+                    <!-- 热门标签 -->
+                    <div class="siderbar-item siderbar-item-label">
+                        <div class="siderbar-item-head">
+                            <h2>
                                 <span>
                                     热门标签
                                 </span>
-                            <a href="" class="hot-tags-more" rel="tag">更多</a>
-                        </h2>
+                                <a href="" class="hot-tags-more" rel="tag">更多</a>
+                            </h2>
+                        </div>
+                        <ul class="hot-tags-list">
+                             <li><a href="" class="hot-tag-item">轻直播</a></li>
+                             <li><a href="" class="hot-tag-item">医学会议</a></li>
+                             <li><a href="" class="hot-tag-item">医学会议</a></li>
+                             <li><a href="" class="hot-tag-item">云视频服务</a></li>
+                             <li><a href="" class="hot-tag-item">视频托管</a></li>
+                             <li><a href="" class="hot-tag-item">直播</a></li>
+                             <li><a href="" class="hot-tag-item">手术直播</a></li>
+                             <li><a href="" class="hot-tag-item">年会直播</a></li>
+                             <li><a href="" class="hot-tag-item">企业直播</a></li>
+                             <li><a href="" class="hot-tag-item">企业培训</a></li>
+                        </ul>
                     </div>
-                    <ul class="hot-tags-list">
-                        <li><a href="" class="hot-tag-item">轻直播</a></li>
-                        <li><a href="" class="hot-tag-item">医学会议</a></li>
-                        <li><a href="" class="hot-tag-item">医学会议</a></li>
-                        <li><a href="" class="hot-tag-item">云视频服务</a></li>
-                        <li><a href="" class="hot-tag-item">视频托管</a></li>
-                        <li><a href="" class="hot-tag-item">直播</a></li>
-                        <li><a href="" class="hot-tag-item">手术直播</a></li>
-                        <li><a href="" class="hot-tag-item">年会直播</a></li>
-                        <li><a href="" class="hot-tag-item">企业直播</a></li>
-                        <li><a href="" class="hot-tag-item">企业培训</a></li>
-                    </ul>
-                </div>
-                <!-- 微信公众号 -->
-                <div class="siderbar-item">
-                    <div class="siderbar-item-head">
-                        <h2>
+                    <!-- 微信公众号 -->
+                      <div class="siderbar-item">
+                        <div class="siderbar-item-head">
+                            <h2>
                                 <span>
                                     微信公众号
                                 </span>
-                        </h2>
-                    </div>
-                    <div class="wechat-public">
-                        <img src="/static/image/qingschool/wechat_public.png" alt="更多视频云干货，尽在轻直播公众号">
-                        <p style="line-height: 2;">
-                            更多直播干货<br>
-                            尽在轻直播公众号
-                        </p>
-                    </div>
+                            </h2>
+                        </div>
+                        <div class="wechat-public">
+                              <img src="/static/image/qingschool/wechat_public.png" alt="更多视频云干货，尽在轻直播公众号">
+                              <p style="line-height: 2;">
+                                更多直播干货<br>
+                                尽在轻直播公众号
+                              </p>
+                        </div>
+                      </div>
                 </div>
             </div>
         </section>
@@ -1961,7 +2173,7 @@
 
 </body>
 <script>
-    layui.use('carousel', function () {
+     layui.use('carousel', function () {
         var carousel = layui.carousel;
         //建造实例
         carousel.render({
