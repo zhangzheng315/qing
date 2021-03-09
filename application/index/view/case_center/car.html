@@ -1975,6 +1975,7 @@
                 <div class="cause-con">
                     <ul>
                         {if(isset($case_list))}
+                        {if($case_list)}
                         {foreach($case_list as $item)}
                         <li class="cause-item">
                             <a href="/index/case_center/caseDetail?type_id=4&id={$item.id}" class="cause-cover"
@@ -2006,6 +2007,9 @@
                             </div>
                         </li>
                         {/foreach}
+                        {else}
+                        <div style="text-align: center">空空如也</div>
+                        {/if}
                         {/if}
                     </ul>
                     <div class="cause-bottom">
@@ -2045,9 +2049,10 @@
             </div>
             <div class="school-right-con">
                 <div class="siderbar-item siderbar-item-search">
-                    <form action="" class="search-form" id="search-form">
-                        <input type="text" class="searchInput" placeholder="输入关键词" autocomplete="off">
+                    <form action="/index/case_center/{$action}" class="search-form" id="search-form">
+                        <input type="text" name="word" value="{:request()->param('word')}" class="searchInput" placeholder="输入关键词" autocomplete="off">
                         <input type="submit" class="submitInput" alt="search">
+                        <input type="hidden" name="'pid" value="{$pid}">
                     </form>
                 </div>
                 <!-- 热门文章 -->
@@ -2063,68 +2068,28 @@
 
                     </div>
                     <ul class="hot-article-list active">
+                        {if($hot_and_rem['hot_case'])}
+                        {foreach($hot_and_rem['hot_case'] as $item)}
                         <li class="article-item">
-                            <a href="" class="link" title="做一场成功的年会直播，要注意这几点" target="_blank" rel="noopener noreferrer">
-                                <p>一场成功的直播是怎么互动的? 轻直播6大互动功能，点燃你的直播间</p>
-                                <span class="time">2021-12-06</span>
+                            <a href="/index/case_center/caseDetail?type_id=2&id={$item.id}" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
+                                <p>{$item.title}</p>
+                                <span class="time">{$item.time}</span>
                             </a>
                         </li>
-                        <li class="article-item">
-                            <a href="" class="link" title="做一场成功的年会直播，要注意这几点" target="_blank" rel="noopener noreferrer">
-                                <p>一场成功的直播是怎么互动的? 轻直播6大互动功能，点燃你的直播间</p>
-                                <span class="time">2021-12-06</span>
-                            </a>
-                        </li>
-                        <li class="article-item">
-                            <a href="" class="link" title="做一场成功的年会直播，要注意这几点" target="_blank" rel="noopener noreferrer">
-                                <p>一场成功的直播是怎么互动的? 轻直播6大互动功能，点燃你的直播间</p>
-                                <span class="time">2021-12-06</span>
-                            </a>
-                        </li>
-                        <li class="article-item">
-                            <a href="" class="link" title="做一场成功的年会直播，要注意这几点" target="_blank" rel="noopener noreferrer">
-                                <p>一场成功的直播是怎么互动的? 轻直播6大互动功能，点燃你的直播间</p>
-                                <span class="time">2021-12-06</span>
-                            </a>
-                        </li>
-                        <li class="article-item">
-                            <a href="" class="link" title="做一场成功的年会直播，要注意这几点" target="_blank" rel="noopener noreferrer">
-                                <p>一场成功的直播是怎么互动的? 轻直播6大互动功能，点燃你的直播间</p>
-                                <span class="time">2021-12-06</span>
-                            </a>
-                        </li>
+                        {/foreach}
+                        {/if}
                     </ul>
                     <ul class="hot-article-list">
+                        {if($hot_and_rem['recommend_case'])}
+                        {foreach($hot_and_rem['recommend_case'] as $item)}
                         <li class="article-item">
-                            <a href="" class="link" title="做一场成功的年会直播，要注意这几点" target="_blank" rel="noopener noreferrer">
-                                <p>一场成功的直播是怎么互动的? 轻直播6大互动功能，点燃你的直播间</p>
-                                <span class="time">2021-12-06</span>
+                            <a href="/index/case_center/caseDetail?type_id=2&id={$item.id}" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
+                                <p>{$item.title}</p>
+                                <span class="time">{$item.time}</span>
                             </a>
                         </li>
-                        <li class="article-item">
-                            <a href="" class="link" title="做一场成功的年会直播，要注意这几点" target="_blank" rel="noopener noreferrer">
-                                <p>一场成功的直播是怎么互动的? 轻直播6大互动功能，点燃你的直播间</p>
-                                <span class="time">2021-12-06</span>
-                            </a>
-                        </li>
-                        <li class="article-item">
-                            <a href="" class="link" title="做一场成功的年会直播，要注意这几点" target="_blank" rel="noopener noreferrer">
-                                <p>一场成功的直播是怎么互动的? 轻直播6大互动功能，点燃你的直播间</p>
-                                <span class="time">2021-12-06</span>
-                            </a>
-                        </li>
-                        <li class="article-item">
-                            <a href="" class="link" title="做一场成功的年会直播，要注意这几点" target="_blank" rel="noopener noreferrer">
-                                <p>一场成功的直播是怎么互动的? 轻直播6大互动功能，点燃你的直播间</p>
-                                <span class="time">2021-12-06</span>
-                            </a>
-                        </li>
-                        <li class="article-item">
-                            <a href="" class="link" title="做一场成功的年会直播，要注意这几点" target="_blank" rel="noopener noreferrer">
-                                <p>一场成功的直播是怎么互动的? 轻直播6大互动功能，点燃你的直播间</p>
-                                <span class="time">2021-12-06</span>
-                            </a>
-                        </li>
+                        {/foreach}
+                        {/if}
                     </ul>
                 </div>
 
@@ -2176,16 +2141,11 @@
                         </h2>
                     </div>
                     <ul class="hot-tags-list">
-                        <li><a href="" class="hot-tag-item">轻直播</a></li>
-                        <li><a href="" class="hot-tag-item">医学会议</a></li>
-                        <li><a href="" class="hot-tag-item">医学会议</a></li>
-                        <li><a href="" class="hot-tag-item">云视频服务</a></li>
-                        <li><a href="" class="hot-tag-item">视频托管</a></li>
-                        <li><a href="" class="hot-tag-item">直播</a></li>
-                        <li><a href="" class="hot-tag-item">手术直播</a></li>
-                        <li><a href="" class="hot-tag-item">年会直播</a></li>
-                        <li><a href="" class="hot-tag-item">企业直播</a></li>
-                        <li><a href="" class="hot-tag-item">企业培训</a></li>
+                        {if(!empty($label_list))}
+                        {foreach($label_list as $item)}
+                        <li><a href="/index/case_center/{$action}?pid={$pid}&label={$item.name}" class="hot-tag-item">{$item.name}</a></li>
+                        {/foreach}
+                        {/if}
                     </ul>
                 </div>
                 <!-- 微信公众号 -->
