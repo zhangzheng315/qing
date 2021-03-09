@@ -71,6 +71,7 @@ class CaseService extends Common{
         $info->label = explode(',', $info->label);
         $info->case_type = $case_type;
         $info->label_list = $label_list;
+        $info->time = date('Y-m-d', $info->created_time);
         if(!$info){
             $this->setError('暂无数据');
             return false;
@@ -225,5 +226,77 @@ class CaseService extends Common{
         }
         $this->setMessage('查询成功');
         return $res;
+    }
+
+    /**
+     * $type_id  1精选案例  2热门案例   3推荐案例   4全部案例
+     * @param $id
+     * @param $type_id
+     */
+    public function preAndNext($id,$type_id,$pid)
+    {
+        $where = [
+            'deleted_time' => 0,
+            'status' => 1,
+        ];
+        $pre_btn = 0;
+        $nex_btn = 0;
+        $pre_case = [];
+        $nex_case = [];
+        if ($type_id == 1) {
+            $where['case_selected'] = 1;
+            $case_list = $this->case->where($where)->order('order', 'desc')->select();
+        } elseif ($type_id == 2) {
+            $case_list = $this->case->where($where)->order('browse', 'desc')->limit(0, 5)->select();
+        } elseif ($type_id == 3) {
+            $where['case_recommend'] = 1;
+            $case_list = $this->case->where($where)->order('recommend_order', 'desc')->limit(0, 5)->select();
+        } else{
+            $where['pid'] = $pid;
+            $case_list = $this->case->where($where)->order('order', 'desc')->select();
+        }
+        $last_index = count($case_list) - 1;
+        $index = 0;
+        foreach ($case_list as $key => $value) {
+            if ($value['id'] == $id) {
+                $index = $key;
+            }
+        }
+
+        if ($index - 1  >= 0) {
+            $pre_btn = 1;
+            $pre_case = $case_list[$index - 1];
+        }
+        if ($index + 1 <= $last_index) {
+            $nex_btn = 1;
+            $nex_case = $case_list[$index + 1];
+        }
+        $pre_nex = [
+            'type_id' => $type_id,
+            'pre_btn' => $pre_btn,
+            'pre_case' => $pre_case,
+            'nex_btn' => $nex_btn,
+            'nex_case' => $nex_case,
+        ];
+        return $pre_nex;
+    }
+
+    public function hotAndRem()
+    {
+        $where = [
+            'deleted_time' => 0,
+            'status'=>1
+        ];
+        $data['hot_case'] = $this->case->where($where)->order('browse', 'desc')->limit(0, 5)->select();
+        foreach ($data['hot_case'] as &$val) {
+            $val['time'] = date('Y-m-d', $val['created_time']);
+        }
+
+        $where['case_recommend'] = 1;
+        $data['recommend_case'] = $this->case->where($where)->order('recommend_order', 'desc')->limit(0, 5)->select();
+        foreach ($data['recommend_case'] as &$item) {
+            $item['time'] = date('Y-m-d', $item['created_time']);
+        }
+        return $data;
     }
 }

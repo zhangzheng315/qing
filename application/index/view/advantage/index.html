@@ -69,6 +69,16 @@
                                 <div class="text-right active">结束</div>
                             </div>
                         </li>
+                        <li>
+                            <img src="/static/image/advantage/kv2.png" alt="">
+                            <div class="text">
+                                <div class="text-left">
+                                    <h6>上海智慧城市大讲堂</h6>
+                                    <p>2022-08-20 08:00:02</p>
+                                </div>
+                                <div class="text-right">案例</div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -99,13 +109,22 @@
         <!-- 案例部分 -->
         <div class="case">
             <div class="layui-container">
-                <ul class="case-nav">
+                <!-- <ul class="case-nav">
                     <li class="active" onclick="casePoint(3)">金融</li>
                     <li onclick="casePoint(2)">教育</li>
                     <li onclick="casePoint(1)">医疗</li>
                     <li onclick="casePoint(4)">汽车</li>
                     <li onclick="casePoint(5)">科技</li>
                     <li onclick="casePoint(6)">地产</li>
+                </ul> -->
+
+                <ul class="logo-title">
+                    <li class="active" onclick="casePoint(3)"><span>金融</span></li>
+                    <li onclick="casePoint(2)"><span>教育</span></li>
+                    <li onclick="casePoint(1)"><span>医疗</span></li>
+                    <li onclick="casePoint(4)"><span>汽车</span></li>
+                    <li onclick="casePoint(5)"><span>科技</span></li>
+                    <li onclick="casePoint(6)"><span>地产</span></li>
                 </ul>
                 <div class="case-box">
                     <ul class="case_list">
@@ -238,12 +257,12 @@
     // 案例切换
     $('.case').each(function (index, element) {
         var obj = $(this);
-        obj.find('.case-nav').children().on('click li', function () {
+        obj.find('.logo-title').children().on('click li', function () {
             $(this).addClass('active').siblings().removeClass('active');
             if (obj.find('.case-box').children().eq($(this).index()).length > 0)
                 obj.find('.case-box').children().hide().eq($(this).index()).show();
         });
-        setTimeout(function () { obj.find('.case-nav .active').trigger('li'); }, 100);
+        setTimeout(function () { obj.find('.logo-title .active').trigger('li'); }, 100);
     });
 </script>
 

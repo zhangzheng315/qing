@@ -41,6 +41,8 @@ class VideoService extends Common{
             'pid' => $param['pid'],
             'pid_name' => $pid_name,
             'title' => $param['title'] ?: '',
+            'describe' => $param['describe'] ?: '',
+            'content' => $param['content'] ?: '',
             'video_selected' => $video_selected,
             'label' => $label,
             'status' => $param['status'],

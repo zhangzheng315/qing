@@ -82,6 +82,7 @@
                         a {
                             color: #00cc99;
                         }
+
                         color: #00cc99;
 
                         border-bottom: 3px solid #00cc99;
@@ -90,7 +91,11 @@
 
                 .active {
                     border-bottom: 3px solid #00cc99;
-                    color: #00cc99;
+
+                    a {
+                        color: #00cc99;
+
+                    }
                 }
             }
         }
@@ -570,10 +575,13 @@
                         background: linear-gradient(90deg, #009CA9, #39D6AF);
                         border-radius: 20px;
                         border: none;
-                        color: #fff;
                         display: block;
                         margin: 0 auto;
-                        font-size: 20px;
+
+                        a {
+                            color: #fff;
+                            font-size: 20px;
+                        }
                     }
                 }
             }
@@ -822,6 +830,7 @@
                             display: flex;
                             padding: 34px 30px 20px;
                             cursor: pointer;
+
                             .item-left {
                                 width: 100px;
                                 height: 100px;
@@ -918,6 +927,7 @@
                             padding: 34px 30px 20px;
                             margin-bottom: 45px;
                             cursor: pointer;
+
                             .item-left {
                                 width: 100px;
                                 height: 100px;
@@ -1321,7 +1331,10 @@
                         button {
                             width: 168px;
                             height: 40px;
-                            font-size: 16px;
+
+                            a {
+                                font-size: 16px;
+                            }
                         }
                     }
                 }
@@ -1483,8 +1496,6 @@
                                                 font-size: 14px;
                                             }
                                         }
-
-                                        img {}
                                     }
                                 }
 
@@ -2137,7 +2148,7 @@
 
                 .free {
                     height: 240px;
-                    padding-top: 50px;
+                    padding-top: 75px;
 
                     .layui-container {
                         h3 {
@@ -2148,7 +2159,9 @@
                         button {
                             width: 138px;
                             height: 35px;
-                            font-size: 14px;
+                            a {
+                                font-size: 14px;
+                            }
                         }
                     }
                 }
@@ -2492,7 +2505,5 @@
                 }
             }
         }
-
     }
-
 }
