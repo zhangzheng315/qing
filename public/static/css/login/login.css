@@ -71,4 +71,27 @@
   background: #FFFFFF;
   box-shadow: 0px 9px 35px 0px rgba(0, 95, 71, 0.17);
   border-radius: 20px;
+  padding: 0 80px;
+  box-sizing: border-box;
+}
+#login section .layui-container .sec-right h4 {
+  font-size: 25px;
+  font-weight: bold;
+}
+#login footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 65px;
+  width: 100%;
+  line-height: 65px;
+  background-color: #fff;
+}
+#login footer .layui-container p {
+  color: #333;
+  font-size: 12px;
+  text-align: center;
+}
+#login footer .layui-container p a {
+  margin-left: 30px;
 }
