@@ -87,8 +87,7 @@
                         {if isset($article_list)}
                         {foreach($article_list as $item)}
                         <li class="cause-item">
-                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>0])}" class="cause-cover" target="_blank"
-                               style="background: url({$item.cover_img_url});background-size: cover">
+                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>0])}" class="cause-cover" style="background: url({$item.cover_img_url});background-size: cover">
                             </a>
                             <div class="cause-des">
                                 <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>0])}" class="cause-title">
@@ -130,7 +129,7 @@
                         {if isset($article_list)}
                         {foreach($article_list as $item)}
                         <li class="cause-item">
-                            <a href="">
+                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>0])}">
                                 <h3>
                                     {$item.title}
                                 </h3>
@@ -141,7 +140,7 @@
                                 <i class="vertical-bar">|</i>
                                 <span class="category">{$item.pid_name}</span>
                             </div>
-                            <a href="" class="cause-item-desc">
+                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>0])}" class="cause-item-desc">
                                 <img src="{$item.cover_img_url}" alt="">
                                 <p>{$item.second_title}</p>
                             </a>

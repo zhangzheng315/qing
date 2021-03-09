@@ -2129,7 +2129,7 @@
                         <ul class="hot-tags-list">
                             {if(!empty($label_list))}
                             {foreach($label_list as $item)}
-                            <li><a href="" class="hot-tag-item">{$item.name}</a></li>
+                            <li><a href="/index/case_center/{$pid.action}?pid={$info['pid']}&label={$item.name}" class="hot-tag-item">{$item.name}</a></li>
                             {/foreach}
                             {/if}
                         </ul>
