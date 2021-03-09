@@ -375,4 +375,30 @@ class ArticleService extends Common{
         $this->setMessage('查询成功');
         return $data;
     }
+
+    public function articleSearch($param)
+    {
+        $where = [
+            'deleted_time' => 0,
+            'status' => 1,
+        ];
+        if ($param['pid'] == 0) {
+            $where['content_center'] = $param['pid'];
+        }else{
+            $where['pid'] = $param['pid'];
+        }
+        if (isset($param['word']) && $param['word']) {
+            $where['title'] = ['like','%'.$param['word'].'%'];
+        }
+        if (isset($param['label']) && $param['label']) {
+            $where['label'] = ['like', '%' . $param['label'] . '%'];
+        }
+        $search_list = $this->article->where($where)->order('order', 'desc')->select();
+        if (!$search_list) {
+            $this->setError('暂无数据');
+            return false;
+        }
+        $this->setMessage('查询成功');
+        return $search_list;
+    }
 }

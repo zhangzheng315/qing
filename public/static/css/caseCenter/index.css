@@ -257,6 +257,9 @@
   background-color: #00cc99;
   border-radius: 0 0 10px 0;
 }
+#case-center #product .product-content .product-item .item-footer .free a {
+  color: #fff;
+}
 #case-center #jiejue {
   height: 260px;
   background: url('/static/image/index/fiveG.png') no-repeat;
@@ -511,14 +514,14 @@
     padding: 30px 0 40px;
   }
   #case-center #all-case .layui-container {
-    padding: 0 5px;
+    padding: 0 10px;
   }
   #case-center #all-case .layui-container .title {
     margin-bottom: 25px;
   }
   #case-center #all-case .layui-container .all-nav {
     padding: 0 15px;
-    margin-bottom: 33px;
+    margin-bottom: 25px;
   }
   #case-center #all-case .layui-container .all-nav li {
     font-size: 12px;
@@ -526,7 +529,7 @@
   #case-center #all-case .layui-container .all-box ul li {
     width: 48%;
     height: 160px;
-    margin: 0 auto 15px;
+    margin: 0 2% 15px 0;
   }
   #case-center #all-case .layui-container .all-box ul li img {
     height: 45%;
@@ -561,6 +564,9 @@
     margin: 0 3px;
   }
   #case-center #all-case .layui-container .all-box ul li:nth-child(4n) {
+    margin-right: 0;
+  }
+  #case-center #all-case .layui-container .all-box ul li:nth-child(2n) {
     margin-right: 0;
   }
   #case-center #product {

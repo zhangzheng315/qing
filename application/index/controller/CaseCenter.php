@@ -62,7 +62,9 @@ class CaseCenter extends Controller
     /* 医疗案例 */
     public function medical()
     {
-        return $this->fetch();
+        $pid = 1;
+        $case_list = $this->case_service->caseByPid($pid);
+        return $this->fetch('',compact('case_list','pid'));
     }
     /* 案例详情 */
     /**
@@ -113,26 +115,43 @@ class CaseCenter extends Controller
     /* 金融案例 */
     public function finance()
     {
-        return $this->fetch();
+        $pid = 3;
+        $case_list = $this->case_service->caseByPid($pid);
+        return $this->fetch('',compact('case_list','pid'));
     }
     /* 教育案例 */
     public function education()
     {
-        return $this->fetch();
+        $pid = 2;
+        $case_list = $this->case_service->caseByPid($pid);
+        return $this->fetch('',compact('case_list','pid'));
     }
     /* 汽车案例 */
     public function car()
     {
-        return $this->fetch();
+        $pid = 4;
+        $case_list = $this->case_service->caseByPid($pid);
+        return $this->fetch('',compact('case_list','pid'));
     }
     /* 科技案例*/
     public function technology()
     {
-        return $this->fetch();
+        $pid = 5;
+        $case_list = $this->case_service->caseByPid($pid);
+        return $this->fetch('',compact('case_list','pid'));
     }
     /* 地产案例*/
     public function property()
     {
-        return $this->fetch();
+        $pid = 6;
+        $case_list = $this->case_service->caseByPid($pid);
+        return $this->fetch('',compact('case_list','pid'));
+    }
+
+    public function caseByWhere()
+    {
+        $param = request()->param();
+        $case_list = $this->case_service->caseByWhere($param);
+        return $this->fetch('',compact('case_list'));
     }
 }
