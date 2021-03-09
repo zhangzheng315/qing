@@ -61,7 +61,7 @@
      }
      .school-nav>a {
              font-size: 16px;
-             margin-right: 90px;
+             margin-right: 100px;
              display: inline-block;
              height: 65px;
              line-height: 65px;
@@ -145,7 +145,7 @@
              align-items: center;
          }
          .school-nav>a {
-             margin-right: 90px;
+             margin-right: 100px;
          }
         
          .school-left-con {
@@ -627,7 +627,7 @@
              align-items: center;
          }
          .school-nav>a {
-             margin-right: 45px;
+             margin-right: 80px;
          }
          .school-left-con {
              margin-top: 40px;
@@ -1111,7 +1111,7 @@
              align-items: center;
          }
          .school-nav>a {
-             margin-right: 20px;
+             margin-right: 40px;
          }
          .flex-space-between {
              display: flex;
