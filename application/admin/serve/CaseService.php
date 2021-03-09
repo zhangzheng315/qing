@@ -71,6 +71,7 @@ class CaseService extends Common{
         $info->label = explode(',', $info->label);
         $info->case_type = $case_type;
         $info->label_list = $label_list;
+        $info->time = date('Y-m-d', $info->created_time);
         if(!$info){
             $this->setError('暂无数据');
             return false;
@@ -201,7 +202,7 @@ class CaseService extends Common{
     }
 
     /**
-     * 关于轻直播--我们的优势--合作伙伴
+     * 关于轻直播--我们的优势--案例
      * @param $pid
      * @return bool|false|\PDOStatement|string|\think\Collection
      * @throws \think\db\exception\DataNotFoundException
@@ -218,6 +219,147 @@ class CaseService extends Common{
         $res = $this->case->where($where)->limit(0,9)->select();
         foreach ($res as &$item) {
             $item['time'] = $item['updated_time'] == 0 ? date('Y-m-d H:i', $item['updated_time']) : date('Y-m-d H:i', $item['created_time']);
+        }
+        if (!$res) {
+            $this->setError('暂无数据');
+            return false;
+        }
+        $this->setMessage('查询成功');
+        return $res;
+    }
+
+    /**
+     * $type_id  1精选案例  2热门案例   3推荐案例   4全部案例
+     * @param $id
+     * @param $type_id
+     */
+    public function preAndNext($id,$type_id,$pid)
+    {
+        $where = [
+            'deleted_time' => 0,
+            'status' => 1,
+        ];
+        $pre_btn = 0;
+        $nex_btn = 0;
+        $pre_case = [];
+        $nex_case = [];
+        if ($type_id == 1) {
+            $where['case_selected'] = 1;
+            $case_list = $this->case->where($where)->order('order', 'desc')->select();
+        } elseif ($type_id == 2) {
+            $case_list = $this->case->where($where)->order('browse', 'desc')->limit(0, 5)->select();
+        } elseif ($type_id == 3) {
+            $where['case_recommend'] = 1;
+            $case_list = $this->case->where($where)->order('recommend_order', 'desc')->limit(0, 5)->select();
+        } else{
+            $where['pid'] = $pid;
+            $case_list = $this->case->where($where)->order('order', 'desc')->select();
+        }
+        $last_index = count($case_list) - 1;
+        $index = 0;
+        foreach ($case_list as $key => $value) {
+            if ($value['id'] == $id) {
+                $index = $key;
+            }
+        }
+
+        if ($index - 1  >= 0) {
+            $pre_btn = 1;
+            $pre_case = $case_list[$index - 1];
+        }
+        if ($index + 1 <= $last_index) {
+            $nex_btn = 1;
+            $nex_case = $case_list[$index + 1];
+        }
+        $pre_nex = [
+            'type_id' => $type_id,
+            'pre_btn' => $pre_btn,
+            'pre_case' => $pre_case,
+            'nex_btn' => $nex_btn,
+            'nex_case' => $nex_case,
+        ];
+        return $pre_nex;
+    }
+
+    /**
+     * 热门案例   推荐案例
+     * @return mixed
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
+    public function hotAndRem()
+    {
+        $where = [
+            'deleted_time' => 0,
+            'status'=>1
+        ];
+        $data['hot_case'] = $this->case->where($where)->order('browse', 'desc')->limit(0, 5)->select();
+        foreach ($data['hot_case'] as &$val) {
+            $val['time'] = date('Y-m-d', $val['created_time']);
+        }
+
+        $where['case_recommend'] = 1;
+        $data['recommend_case'] = $this->case->where($where)->order('recommend_order', 'desc')->limit(0, 5)->select();
+        foreach ($data['recommend_case'] as &$item) {
+            $item['time'] = date('Y-m-d', $item['created_time']);
+        }
+        return $data;
+    }
+
+    /**
+     * 案例列表
+     * @param $pid
+     * @return bool|false|\PDOStatement|string|\think\Collection
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
+    public function caseByPid($pid)
+    {
+        $where = [
+            'status'=>1,
+            'deleted_time' => 0,
+            'pid' => $pid,
+        ];
+        $res = $this->case->where($where)->order('order','desc')->select();
+        foreach ($res as &$item) {
+            $item['time'] = $item['updated_time'] == 0 ? date('Y-m-d H:i', $item['updated_time']) : date('Y-m-d H:i', $item['created_time']);
+            $item['label'] = explode(',', $item['label']);
+        }
+        if (!$res) {
+            $this->setError('暂无数据');
+            return false;
+        }
+        $this->setMessage('查询成功');
+        return $res;
+    }
+
+    /**
+     * 案例列表  by where
+     * @param $param
+     * @return bool|false|\PDOStatement|string|\think\Collection
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
+    public function caseByWhere($param)
+    {
+        $where = [
+            'status'=>1,
+            'deleted_time' => 0,
+            'pid'=>$param['pid'],
+        ];
+        if (isset($param['word']) && $param['word']) {
+            $where['title'] = ['like', '%' . $param['word'] . '%'];
+        }
+        if (isset($param['label']) && $param['label']) {
+            $where['label'] = ['like', '%' . $param['label'] . '%',];
+        }
+        $res = $this->case->where($where)->order('order','desc')->select();
+        foreach ($res as &$item) {
+            $item['time'] = $item['updated_time'] == 0 ? date('Y-m-d H:i', $item['updated_time']) : date('Y-m-d H:i', $item['created_time']);
+            $item['label'] = explode(',', $item['label']);
         }
         if (!$res) {
             $this->setError('暂无数据');

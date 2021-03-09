@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .q-sidebar-right {
+            position: fixed;
+            right: 18px;
+            z-index: 999;
+            bottom: 15%;
+        }
+        .q-sidebar-right>.q-sidebar-content>.r-sidebar-item {
+            position: relative;
+            display: block;
+            box-sizing: border-box;
+            cursor: pointer;
+            background-color: #ffffff;
+            text-align: center;
+            border: 1px solid #e5e5e5;
+            overflow: visible;
+            transition: all .25s ease-in-out;
+        }
+        .q-sidebar-right>.q-sidebar-content>.r-sidebar-item:hover {
+            background-color: #00cc99;
+            border: transparent;
+        }
+        .r-sidebar-item:hover .icon-item+span {
+            color: #ffffff;
+        }
+        .r-sidebar-item>.icon-item {
+            display: inline-block;
+            vertical-align: top;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+        .r-sidebar-item>.icon-item+span {
+            display: block;
+            margin-top: 4px;
+            font-size: 14px;
+            line-height: 14px;
+            color: #333333;
+            margin-top: 6px;
+        }
+        .r-sidebar-item>.icon-item.icon-consulting {
+            background-image: url(/static/image/icon-consulting.png);
+        }
+        .r-sidebar-item>.icon-item.icon-telephone {
+            background-image: url(/static/image/icon-telephone.png);
+        }
+        .r-sidebar-item>.icon-item.icon-trial {
+            background-image: url(/static/image/icon-free.png);
+        }
+        .r-sidebar-item>.icon-item.icon-wechat {
+            background-image: url(/static/image/icon-wechat.png);
+        }
+        .r-sidebar-item>.icon-item.icon-top {
+            background-image: url(/static/image/icon-top.png);
+        }
+        .r-sidebar-item:hover>.icon-item.icon-consulting {
+            background-image: url(/static/image/icon-w_consulting.png);
+        }
+        .r-sidebar-item:hover>.icon-item.icon-telephone {
+            background-image: url(/static/image/icon-w_telephone.png);
+        }
+        .r-sidebar-item:hover>.icon-item.icon-trial {
+            background-image: url(/static/image/icon-w_free.png);
+        }
+        .r-sidebar-item:hover>.icon-item.icon-wechat {
+            background-image: url(/static/image/icon-w_wechat.png);
+        }
+        .r-sidebar-item:hover>.icon-item.icon-top {
+            background-image: url(/static/image/icon-w_top.png);
+        }
+        #return-top {
+            display: none;
+        }
+        .telephone-fixed {
+            position: absolute;
+            top: 50%;
+            box-sizing: border-box;
+            transform: translateY(-50%);
+            /* background-color: #ffffff; */
+            visibility: hidden;
+            opacity: 0;
+            background: url('/static/image/telephone_bg.png') no-repeat center;
+            background-size: contain;
+        }
+        .r-sidebar-item:hover .telephone-fixed, .r-sidebar-item:hover .wechat-fixed{
+            visibility: visible;
+            opacity: 1;
+        }
+        .telephone-fixed span {
+            color: #333333;
+            white-space: nowrap;
+        }
+        .wechat-fixed {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            box-sizing: border-box;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+            background: url('/static/image/qrcode.png') no-repeat center;
+            background-size: contain;
+        }
+
+        @media screen and (min-width: 1200px) {
+            .q-sidebar-right>.q-sidebar-content>.r-sidebar-item {
+            padding: 10px 0 6px;
+            width: 110px;
+            height: 84px;
+            border-radius: 10px;
+            margin-top: 10px;
+           }
+           .r-sidebar-item>.icon-item {
+            width: 32px;
+            height: 32px;
+           }
+            .telephone-fixed {
+            right: 100px;
+            width: 200px;
+            height: 66px;
+            line-height: 62px;
+            padding-right: 7px;
+            /* background-color: #ffffff; */
+            border-radius: 6px;
+        }
+        .telephone-fixed span {
+            font-size: 16px;
+        }
+         .wechat-fixed {
+            right: 125px;
+            width: 200px;
+            height: 180px;
+            padding: 16px;
+            border-radius: 6px;
+        }
+        }
+        @media screen and (max-width: 1200px) and (min-width: 820px) {
+            .q-sidebar-right>.q-sidebar-content>.r-sidebar-item {
+            padding: 8px 0 4px;
+            width: 96px;
+            height: 68px;
+            border-radius: 8px;
+            margin-top: 8px;
+           }
+           .r-sidebar-item>.icon-item {
+            width: 28px;
+            height: 28px;
+           }
+            .telephone-fixed {
+            right: 100px;
+            width: 180px;
+            height: 66px;
+            line-height: 62px;
+            padding-right: 7px;
+            /* background-color: #ffffff; */
+            border-radius: 6px;
+        }
+        .telephone-fixed span {
+            font-size: 16px;
+        }
+         .wechat-fixed {
+            right: 100px;
+            width: 180px;
+            height: 180px;
+            padding: 16px;
+            border-radius: 6px;
+        }
+        }
+        @media screen and (max-width: 819px) {
+            .q-sidebar-right>.q-sidebar-content>.r-sidebar-item {
+            padding: 6px 0 4px;
+            width: 88px;
+            height: 60px;
+            border-radius: 4px;
+            margin-top: 6px;
+           }
+           .r-sidebar-item>.icon-item {
+            width: 22px;
+            height: 22px;
+           }
+            .telephone-fixed {
+            right: 80px;
+            width: 160px;
+            height: 45px;
+            line-height: 45px;
+            padding-right: 7px;
+            /* background-color: #ffffff; */
+            border-radius: 4px;
+        }
+        .telephone-fixed span {
+            font-size: 14px;
+        }
+         .wechat-fixed {
+            right: 80px;
+            width: 160px;
+            height: 160px;
+            padding: 16px;
+            border-radius: 6px;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="q-sidebar-right">
+        <ul class="q-sidebar-content">
+            <li class="r-sidebar-item">
+                <div class="icon-item icon-consulting"></div>
+                <span>在线咨询</span>
+            </li>
+            <li class="r-sidebar-item">
+                <div class="icon-item icon-telephone"></div>
+                <span>电话咨询</span>
+                <div class="sidebar-item-fixed telephone-fixed">
+                    <span>400-920-1599</span>
+                </div>
+            </li>
+            <a href="" class="r-sidebar-item">
+               <div class="icon-item icon-trial"></div>
+               <span>免费试用</span>
+            </a>
+            <li class="r-sidebar-item">
+                <div class="icon-item icon-wechat"></div>
+                <span>关注我们</span>
+                <div class="sidebar-item-fixed wechat-fixed">
+                </div>
+            </li>
+            <li class="r-sidebar-item" id="return-top">
+                <div class="icon-item icon-top"></div>
+                <span>回到顶部</span>
+            </li>
+        </ul>
+    </div>
+    <script>
+     
+    //网页向下滑动，
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        // document.getElementById("myBtn").style.display = "block";
+        $('#return-top').show();
+
+      } else {
+        $('#return-top').hide();
+    }
+    } 
+
+     //返回顶部
+     $('#return-top').on('click', function() {
+        $('html,body').animate({scrollTop: '0'}, 600);
+        return false;
+     })
+
+    </script>
+</body>
+</html>

@@ -4,17 +4,30 @@ namespace app\index\controller;
 
 use app\admin\serve\BannerService;
 use app\admin\serve\CaseService;
+use app\admin\serve\LabelService;
 use think\Controller;
 use think\Request;
 use think\Validate;
 
 class CaseCenter extends Controller
 {
+    public $case_service;
+    public $labelService;
+    public function __construct(Request $request = null)
+    {
+        parent::__construct($request);
+        $this->case_service = new CaseService();
+        $this->labelService = new LabelService();
+        $hot_and_rem = $this->case_service->hotAndRem();
+        $label_list = $this->labelService->labelList();
+        $this->assign('hot_and_rem', $hot_and_rem);
+        $this->assign('label_list', $label_list);
+    }
+
     public function index()
     {
         //精选案例
-        $case_service = new CaseService();
-        $case_selected = $case_service->getCaseSelected();
+        $case_selected = $this->case_service->getCaseSelected();
         //案例轮播图
         $banner_service = new BannerService();
         $data = request()->param();
@@ -38,47 +51,107 @@ class CaseCenter extends Controller
         if(!$validate->check($request->param())){
             return show(401,$validate->getError());
         }
-        $case_service = new CaseService();
-        $res = $case_service->getCaseByWhere($request->param());
+
+        $res = $this->case_service->getCaseByWhere($request->param());
         if($res){
-            return show(200,$case_service->message,$res);
+            return show(200,$this->case_service->message,$res);
         }else{
-            return show(401,$case_service->error);
+            return show(401,$this->case_service->error);
         }
     }
     /* 医疗案例 */
     public function medical()
     {
-        return $this->fetch();
+        $pid = 1;
+        $case_list = $this->case_service->caseByPid($pid);
+        return $this->fetch('',compact('case_list','pid'));
     }
     /* 案例详情 */
+    /**
+     * $type_id  1精选案例  2热门案例   3全部案例
+     * @param $id
+     * @param $type_id
+     * @return mixed
+     */
     public function caseDetail()
     {
-        return $this->fetch();
+        $param = request()->param();
+        $id = $param['id'];
+        $type_id = $param['type_id'];
+        $param['browse'] = 1;
+
+        $info = $this->case_service->caseInfo($param);
+        switch ($info['pid']) {
+            case 1:
+                $pid_name = '医疗';
+                $pid_url = '/index/case_center/medical';
+                break;
+            case 2:
+                $pid_name = '教育';
+                $pid_url = '/index/case_center/education';
+                break;
+            case 3:
+                $pid_name = '金融';
+                $pid_url = '/index/case_center/finance';
+                break;
+            case 4:
+                $pid_name = '汽车';
+                $pid_url = '/index/case_center/car';
+                break;
+            case 5:
+                $pid_name = '科技';
+                $pid_url = '/index/case_center/technology';
+                break;
+            case 6:
+                $pid_name = '地产';
+                $pid_url = '/index/case_center/property';
+                break;
+        }
+        $pid = ['pid_name' => $pid_name, 'pid_url' => $pid_url,];
+        $pre_and_nex = $this->case_service->preAndNext($id, $type_id, $info['pid']);
+
+        return $this->fetch('',compact('info','pid','pre_and_nex'));
     }
     /* 金融案例 */
     public function finance()
     {
-        return $this->fetch();
+        $pid = 3;
+        $case_list = $this->case_service->caseByPid($pid);
+        return $this->fetch('',compact('case_list','pid'));
     }
     /* 教育案例 */
     public function education()
     {
-        return $this->fetch();
+        $pid = 2;
+        $case_list = $this->case_service->caseByPid($pid);
+        return $this->fetch('',compact('case_list','pid'));
     }
     /* 汽车案例 */
     public function car()
     {
-        return $this->fetch();
+        $pid = 4;
+        $case_list = $this->case_service->caseByPid($pid);
+        return $this->fetch('',compact('case_list','pid'));
     }
     /* 科技案例*/
     public function technology()
     {
-        return $this->fetch();
+        $pid = 5;
+        $case_list = $this->case_service->caseByPid($pid);
+        return $this->fetch('',compact('case_list','pid'));
     }
     /* 地产案例*/
     public function property()
     {
-        return $this->fetch();
+        $pid = 6;
+        $case_list = $this->case_service->caseByPid($pid);
+        return $this->fetch('',compact('case_list','pid'));
+    }
+
+    public function caseByWhere()
+    {
+        $param = request()->param();
+        $case_list = $this->case_service->caseByWhere($param);
+        return $this->fetch('',compact('case_list'));
     }
 }

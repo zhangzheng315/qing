@@ -143,8 +143,15 @@
                 </div>
             </div>
         </div>
+
         <div class="layui-form-item layui-form-text">
             <label class="layui-form-label">简介</label>
+            <div class="layui-input-block">
+                <textarea name="describe" placeholder="请输入内容" class="layui-textarea"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">内容</label>
             <div class="layui-input-block">
                 <textarea name="content" id="myEdit" lay-verify="fu_content" placeholder="请输入内容" class="layui-textarea"></textarea>
             </div>
@@ -249,6 +256,12 @@
         </div>
         <div class="layui-form-item layui-form-text">
             <label class="layui-form-label">简介</label>
+            <div class="layui-input-block">
+                <textarea name="describe" id="describe" placeholder="请输入内容" class="layui-textarea"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">内容</label>
             <div class="layui-input-block">
                 <textarea name="content" id="articleEdit" lay-verify="fu_content" placeholder="请输入内容" class="layui-textarea"></textarea>
             </div>
@@ -519,6 +532,7 @@
                         $('.video_show').css('display','block');
                         $('.video_url').val(res.data.video_url);
                         $('.img_url').val(res.data.cover_img_url);
+                        $('#describe').val(res.data.describe);
                         $('#pid').empty();
                         $('#label_check').empty();
 
