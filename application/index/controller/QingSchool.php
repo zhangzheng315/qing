@@ -172,4 +172,11 @@ class QingSchool extends Controller
         curl_close($curl); // 关闭CURL会话
         return $res;
     }
+
+
+    // 直播百科
+    public function article()
+    {
+        return $this->fetch();
+    }
 }

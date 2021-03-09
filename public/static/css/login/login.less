@@ -1,0 +1,88 @@
+@media screen and (min-width: 1200px) {
+    .layui-container {
+        width: 1200px !important;
+        padding: 0 !important;
+    }
+}
+
+@font-face {
+    font-family: AxureHandwriting-Italic;
+    src: url('/static/css/login/AxureHandwriting-Italic.otf');
+}
+
+#login {
+    background: url('/static/image/login/bg.png') no-repeat;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    zoom: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+
+    header {
+        height: 65px;
+        line-height: 65px;
+        background: #fff;
+
+        .layui-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .text {
+                a {
+                    color: #333;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    section {
+        padding-top: 105px;
+
+        .layui-container {
+            display: flex;
+
+            .sec-left {
+                flex: 5.5;
+                padding-top: 60px;
+                margin-right: 20px;
+                h3 {
+                    font-size: 40px;
+                    color: #fff;
+                    text-align: center;
+                    margin-bottom: 30px;
+                }
+
+                h5 {
+                    font-size: 25px;
+                    color: #fff;
+                    font-family: 'AxureHandwriting-Italic';
+                    text-align: center;
+                    letter-spacing: .5px;
+                }
+                img {
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .sec-right {
+                flex: 4;
+                height: 550px;
+                background: #FFFFFF;
+                box-shadow: 0px 9px 35px 0px rgba(0, 95, 71, 0.17);
+                border-radius: 20px;
+
+            }
+        }
+
+    }
+}

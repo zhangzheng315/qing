@@ -1,19 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <meta name="renderer" content="webkit">
-    <title>轻直播_企业直播服务平台,医疗直播领军者,营销直播定制服务商</title>
-    <meta name="keywords"  content="企业直播平台,医疗直播,营销直播,活动直播,直播定制服务"/>
-    <meta name="description"
-           content="轻直播是国内知名的企业级直播定制化服务平台,服务全球500强,为企业提供医疗直播、手术直播、活动直播、会议直播、营销直播、年会直播等全场景解决方案,热线:400-920-1599。"/>
-    <link rel="stylesheet" href="/static/layui/css/layui.css">
-    <link rel="stylesheet" href="/static/css/style.css">
-    <script type='text/javascript' src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    <script src="/static/layui/layui.js"></script>
-    <style>
 
         .flex-center-space-between {
             display: flex;
@@ -69,7 +53,6 @@
         }
 
         @media screen and (min-width: 1300px) {
-
             .layui-container {
                 width: 1200px !important;
                 padding: 0 !important;
@@ -117,6 +100,7 @@
                 margin-left: 41px;
             }
 
+            /* 导航栏 */
             /* 导航栏 */
             .school-nav {
                 height: 65px;
@@ -171,174 +155,191 @@
                 opacity: 1;
             }
 
-            #content-center {
-                padding-bottom: 80px;
+            /* 大家都在看 */
+            .category-look-con {
+                padding: 24px 0 !important;
             }
 
-            /* 面包屑导航栏 */
-            .single-breadcrumb {
-                padding: 24px 0;
+            .category-look-tags {
+                height: 50px;
+                overflow: hidden;
+            }
+
+            .category-look-tags > span {
+                color: #999999;
+                font-size: 16px;
+                line-height: 20px;
+            }
+
+            .category-look-tags > .category-look-tag {
+                display: inline-block;
+                padding: 7px 14px;
+                margin: 8px;
                 color: #666666;
+                background: #e9e9e9;
+                border-radius: 4px;
+                transition: all .3s ease-in-out;
             }
 
-            .breadcrumb-link {
-                color: #00cc99;
-                font-size: 14px;
-            }
-
-            .breadcrumb-link:hover {
-                color: #00cc99;
+            .category-look-tags > .category-look-tag:hover {
+                color: #ffffff;
+                background: #00cc99;
             }
 
             .school-left-con {
-                /* margin-top: 58px; */
                 width: 65%;
+                margin-top: 50px;
             }
 
             .school-right-con {
-                /* margin-top: 58px; */
                 width: 32%;
+                margin-top: 50px;
             }
 
-            /* 文章详情页 */
-            .single-article-content {
-                padding: 40px;
-                background: #ffffff;
-                border: 1px solid #e5eaf1;
-                /* min-height: 600px; */
-                border-radius: 5px;
+            /* 课程区域 */
+            .cause-con {
+                background-color: #ffffff;
+                border-radius: 10px;
+                min-height: 600px;
+                box-sizing: border-box;
             }
 
-            .article-head-title > h2 {
-                font-size: 24px;
-                line-height: 36px;
-                color: #333333;
-                font-weight: 600;
-                text-align: justify;
+            .cause-item {
+                /* display: flex; */
+                transition: all .25s ease-in-out;
+                padding: 30px 24px 32px;
+                border-bottom: 1px solid #e5e5e5;
             }
 
-            .article-head > .article-head-desc {
+            .cause-item > .cause-cover {
                 position: relative;
-                margin-top: 24px;
-                font-size: 12px;
-                line-height: 22px;
-                color: #999999;
+                width: 236px;
+                height: 133px;
+                overflow: hidden;
+                background-size: cover;
+                background-position: center;
+                display: inline-block;
+                vertical-align: middle;
             }
 
-            .article-head-desc .time, .article-head-desc .category {
-                font-size: 12px;
-                line-height: 22px;
-                color: #999999;
+            .cause-des {
+                margin-left: 20px;
+                width: 445px;
+                display: inline-block;
+                font-size: 14px;
+                vertical-align: middle;
             }
 
-            .article-head-desc .vertical-bar {
+            /* .cause-title {
+                padding-top: 5px;
+                display: flex;
+            } */
+            .cause-title:hover h3 {
+                color: #00cc99;
+            }
+
+            .cause-title > h3 {
+                position: relative;
+                padding-left: 36px;
+                text-align: justify;
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 1.2;
+                overflow: hidden;
+                white-space: nowrap;
+                transition: all .25s ease-in-out;
+                color: #333333;
+            }
+
+            .cause-title > h3 .cause-icon {
+                position: absolute;
+                display: block;
+                left: 0;
+                width: 24px;
+                height: 24px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            .cause-title > h3 .cause-icon.icon-item-solution {
+                background-image: url(/static/image/qingschool/cause-icon.png);
+            }
+
+            .cause-title > .cause-intro {
+                font-size: 14px;
+                color: #666666;
+                margin-top: 12px;
+                line-height: 25px;
+                min-height: 42px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+            }
+
+            .cause-tags {
+                position: relative;
+                font-size: 0;
+                margin-top: 10px;
+                line-height: 22px;
+                color: #8c8d9e;
+            }
+
+            .cause-tags > .post-time, .cause-tags > .category {
+                font-size: 12px;
+            }
+
+            .cause-tags > .vertical-bar {
                 display: inline-block;
                 margin: 0 12px;
+                font-size: 12px;
             }
 
-            .article-head-desc .tags-box {
+            .cause-tags > .cause-tag-item {
                 display: inline-block;
-            }
-
-            .article-head-desc .tags-box .tag-item {
-                display: inline-block;
-                margin: 0 4px;
-                padding: 6px 8px;
-                color: currentColor;
-                background: #f5f5f5;
-                border-radius: 2px;
-                -webkit-transition: all .25s ease-in-out;
-                -o-transition: all .25s ease-in-out;
+                color: #707481;
+                margin: 0 8px;
+                font-size: 12px;
+                padding: 1px 8px;
+                height: 24px;
+                background-color: #f6f6f6;
+                border-radius: 1px;
                 transition: all .25s ease-in-out;
             }
 
-            .reading-box {
+            .cause-tags > .post-views {
+                font-size: 12px;
                 position: absolute;
                 right: 0;
-                top: 50%;
-                transform: translateY(-50%);
             }
 
-            .reading-box .icon-view {
+            .cause-tags > .post-views > .icon-view {
                 display: inline-block;
-                width: 14px;
-                height: 14px;
+                width: 32px;
+                height: 12px;
                 background: url(/static/image/qingschool/eyes.svg) no-repeat center;
                 background-size: contain;
-                vertical-align: middle;
+                margin-right: 6px;
             }
 
-            .article-head-desc .reading-box span {
+            .cause-bottom {
+                text-align: center;
+                padding: 30px 0;
+            }
+
+            .cause-bottom > .cause-more {
                 display: inline-block;
-                color: #8c8d9e;
-                font-size: 12px;
-                line-height: 22px;
-                vertical-align: middle;
-            }
-
-            .article-head-desc .tags-box .tag-item:hover {
-                background: #00cc99;
-                color: #fff;
-            }
-
-            /* 摘要 */
-            .article-excerpt {
-                margin-top: 24px;
-                padding: 16px 24px;
-                background: #f5f5f5;
-            }
-
-            .article-excerpt p {
-                position: relative;
-                color: #464964;
-                padding-left: 48px;
+                width: 135px;
+                height: 40px;
+                border: 1px solid #00cc99;
+                line-height: 40px;
+                border-radius: 20px;
                 font-size: 14px;
-                line-height: 24px;
-            }
-
-            .article-excerpt p span {
-                position: absolute;
-                top: 2px;
-                left: 0;
-                color: #171c3c;
-                font-size: 16px;
-                font-weight: 600;
-            }
-
-            /* 文章主体 */
-            .article-body {
-                margin-top: 24px;
-                color: #464964;
-                line-height: 2;
-            }
-
-            /* 分割线 */
-            .divider {
-                margin: 40px 0;
-                width: 100%;
-                height: 1px;
-                background: #e5e5e5;
-            }
-
-            /* 上一篇下一篇 */
-            .article-link .article-link-item {
-                color: #171c3c;
-                font-size: 14px;
-                line-height: 20px;
-            }
-
-            .article-link .article-link-item + .article-link-item {
-                margin-top: 16px;
-            }
-
-            .article-link .article-link-item a {
-                color: #171c3c;
-                font-size: 14px;
-                line-height: 20px;
-            }
-
-            .article-link .article-link-item a:hover {
+                text-align: center;
                 color: #00cc99;
+                cursor: pointer;
             }
 
             .siderbar-item {
@@ -457,6 +458,9 @@
             .article-item {
                 position: relative;
                 padding: 14px 0 14px 48px;
+                /* background-repeat: no-repeat;
+                background-size: 30px 30px;
+                background-position-y: 16px; */
             }
 
             .article-item:not(:first-child) {
@@ -669,44 +673,39 @@
                 color: #333333;
                 transform: translateY(-50%);
             }
-
             #kefu {
-                height: 300px;
+                margin-top: 109px;
+                height: 352px;
                 background: linear-gradient(97deg, #87D2D0, #BBDCCA);
             }
-
             .kefu-content {
-                padding-top: 90px;
+                padding-top: 102px;
                 text-align: center;
             }
-
-            .kefu-content > h2 {
-                font-size: 50px;
-                font-family: Microsoft YaHei;
-                font-weight: bold;
-                color: #FFFFFF;
-                text-align: center;
+            .kefu-content>h2 {
+               font-size: 60px;
+               font-family: Microsoft YaHei;
+               font-weight: bold;
+               color: #FFFFFF;
+               text-align: center;
             }
-
-            .kefu-content > button {
-                width: 240px;
+            .kefu-content>button {
+                width: 328px;
                 height: 60px;
                 border: 0;
                 border: 2px solid #ffffff;
                 border-radius: 30px;
                 outline: none;
                 background-color: transparent;
-                font-size: 28px;
+                font-size: 30px;
                 color: #ffffff;
                 cursor: pointer;
                 margin-top: 37px;
-                transition: all .25s ease-in-out;
             }
-
-            .kefu-content > button:hover {
-                background-color: #00cc99;
-                color: #fff;
-                border: 0;
+            .kefu-content>button:hover {
+               background-color: #00cc99;
+               color: #fff;
+               border: 0;
             }
         }
 
@@ -758,6 +757,7 @@
                 margin-left: 20px;
             }
 
+            /* 导航栏 */
             /* 导航栏 */
             .school-nav {
                 height: 65px;
@@ -812,172 +812,199 @@
                 opacity: 1;
             }
 
-            #content-center {
-                padding-bottom: 60px;
+            /* 大家都在看 */
+            .category-look-con {
+                padding: 18px 0 !important;
             }
 
-            /* 面包屑导航栏 */
-            .single-breadcrumb {
-                padding: 24px 0;
-                color: #666666;
+            .category-look-tags {
+                height: 40px;
+                overflow: hidden;
             }
 
-            .breadcrumb-link {
-                color: #00cc99;
+            .category-look-tags > span {
+                color: #999999;
                 font-size: 14px;
+                line-height: 20px;
             }
 
-            .breadcrumb-link:hover {
-                color: #00cc99;
+            .category-look-tags > .category-look-tag {
+                display: inline-block;
+                padding: 7px 10px;
+                margin: 8px;
+                color: #666666;
+                background: #e9e9e9;
+                border-radius: 4px;
+                transition: all .3s ease-in-out;
+            }
+
+            .category-look-tags > .category-look-tag:hover {
+                color: #ffffff;
+                background: #00cc99;
             }
 
             .school-left-con {
+                margin-top: 40px;
                 width: 67%;
             }
 
             .school-right-con {
+                margin-top: 40px;
                 width: 30%;
             }
 
-            /* 文章详情页 */
-            .single-article-content {
-                padding: 32px;
-                background: #ffffff;
-                border: 1px solid #e5eaf1;
-                /* min-height: 600px; */
+            .school-left-con > #banner {
+                width: 100%;
+                height: 320px;
                 border-radius: 5px;
             }
 
-            .article-head-title > h2 {
-                font-size: 22px;
-                line-height: 36px;
-                color: #333333;
-                font-weight: 600;
-                text-align: justify;
+            /* 课程区域 */
+            .cause-con {
+                /* margin-top: 30px; */
+                background-color: #ffffff;
+                border-radius: 10px;
+                min-height: 600px;
+                box-sizing: border-box;
             }
 
-            .article-head > .article-head-desc {
+            .cause-item {
+                /* display: flex; */
+                transition: all .25s ease-in-out;
+                padding: 24px 18px 26px;
+                border-bottom: 1px solid #e5e5e5;
+            }
+
+            .cause-item > .cause-cover {
                 position: relative;
-                margin-top: 18px;
-                font-size: 12px;
+                width: 200px;
+                height: 112px;
+                overflow: hidden;
+                background-size: cover;
+                background-position: center;
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            .cause-des {
+                margin-left: 14px;
+                width: 395px;
+                display: inline-block;
+                font-size: 14px;
+                vertical-align: middle;
+            }
+
+            /* .cause-title {
+                padding-top: 5px;
+                display: flex;
+            } */
+            .cause-title:hover h3 {
+                color: #00cc99;
+            }
+
+            .cause-title > h3 {
+                position: relative;
+                padding-left: 30px;
+                text-align: justify;
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 1.2;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                transition: all .25s ease-in-out;
+                color: #333333;
+            }
+
+            .cause-title > h3 .cause-icon {
+                position: absolute;
+                display: block;
+                left: 0;
+                width: 18px;
+                height: 18px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            .cause-title > h3 .cause-icon.icon-item-solution {
+                background-image: url(/static/image/qingschool/cause-icon.png);
+            }
+
+            .cause-title > .cause-intro {
+                font-size: 14px;
+                color: #666666;
+                margin-top: 12px;
+                line-height: 25px;
+                min-height: 42px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+            }
+
+            .cause-tags {
+                position: relative;
+                font-size: 0;
+                margin-top: 10px;
                 line-height: 22px;
-                color: #999999;
+                color: #8c8d9e;
             }
 
-            .article-head-desc .time, .article-head-desc .category {
+            .cause-tags > .post-time, .cause-tags > .category {
                 font-size: 12px;
-                line-height: 22px;
-                color: #999999;
             }
 
-            .article-head-desc .vertical-bar {
+            .cause-tags > .vertical-bar {
                 display: inline-block;
-                margin: 0 10px;
+                margin: 0 12px;
+                font-size: 12px;
             }
 
-            .article-head-desc .tags-box {
+            .cause-tags > .cause-tag-item {
                 display: inline-block;
-            }
-
-            .article-head-desc .tags-box .tag-item {
-                display: inline-block;
-                margin: 0 4px;
-                padding: 4px 6px;
-                color: currentColor;
-                background: #f5f5f5;
-                border-radius: 2px;
-                -webkit-transition: all .25s ease-in-out;
-                -o-transition: all .25s ease-in-out;
+                color: #707481;
+                margin: 0 8px;
+                font-size: 12px;
+                padding: 1px 8px;
+                height: 24px;
+                background-color: #f6f6f6;
+                border-radius: 1px;
                 transition: all .25s ease-in-out;
             }
 
-            .reading-box {
+            .cause-tags > .post-views {
+                font-size: 12px;
                 position: absolute;
                 right: 0;
-                top: 50%;
-                transform: translateY(-50%);
             }
 
-            .reading-box .icon-view {
+            .cause-tags > .post-views > .icon-view {
                 display: inline-block;
-                width: 14px;
-                height: 14px;
+                width: 32px;
+                height: 12px;
                 background: url(/static/image/qingschool/eyes.svg) no-repeat center;
                 background-size: contain;
-                vertical-align: middle;
+                margin-right: 6px;
             }
 
-            .article-head-desc .reading-box span {
+            .cause-bottom {
+                text-align: center;
+                padding: 30px 0;
+            }
+
+            .cause-bottom > .cause-more {
                 display: inline-block;
-                color: #8c8d9e;
-                font-size: 12px;
-                line-height: 22px;
-                vertical-align: middle;
-            }
-
-            .article-head-desc .tags-box .tag-item:hover {
-                background: #00cc99;
-                color: #fff;
-            }
-
-            /* 摘要 */
-            .article-excerpt {
-                margin-top: 20px;
-                padding: 12px 20px;
-                background: #f5f5f5;
-            }
-
-            .article-excerpt p {
-                position: relative;
-                color: #464964;
-                padding-left: 48px;
+                width: 135px;
+                height: 40px;
+                border: 1px solid #00cc99;
+                line-height: 40px;
+                border-radius: 20px;
                 font-size: 14px;
-                line-height: 24px;
-            }
-
-            .article-excerpt p span {
-                position: absolute;
-                top: 0px;
-                left: 0;
-                color: #171c3c;
-                font-size: 16px;
-                font-weight: 600;
-            }
-
-            /* 文章主体 */
-            .article-body {
-                margin-top: 24px;
-                color: #464964;
-                line-height: 2;
-            }
-
-            /* 分割线 */
-            .divider {
-                margin: 40px 0;
-                width: 100%;
-                height: 1px;
-                background: #e5e5e5;
-            }
-
-            /* 上一篇下一篇 */
-            .article-link .article-link-item {
-                color: #171c3c;
-                font-size: 14px;
-                line-height: 20px;
-            }
-
-            .article-link .article-link-item + .article-link-item {
-                margin-top: 16px;
-            }
-
-            .article-link .article-link-item a {
-                color: #171c3c;
-                font-size: 14px;
-                line-height: 20px;
-            }
-
-            .article-link .article-link-item a:hover {
+                text-align: center;
                 color: #00cc99;
+                cursor: pointer;
             }
 
             .siderbar-item {
@@ -1312,42 +1339,38 @@
             }
 
             #kefu {
-                height: 240px;
+                margin-top: 90px;
+                height: 300px;
                 background: linear-gradient(97deg, #87D2D0, #BBDCCA);
             }
-
             .kefu-content {
-                padding-top: 60px;
+                padding-top: 80px;
                 text-align: center;
             }
-
-            .kefu-content > h2 {
-                font-size: 40px;
-                font-family: Microsoft YaHei;
-                font-weight: bold;
-                color: #FFFFFF;
-                text-align: center;
+            .kefu-content>h2 {
+               font-size: 48px;
+               font-family: Microsoft YaHei;
+               font-weight: bold;
+               color: #FFFFFF;
+               text-align: center;
             }
-
-            .kefu-content > button {
-                width: 180px;
-                height: 50px;
+            .kefu-content>button {
+                width: 280px;
+                height: 46px;
                 border: 0;
-                border: 1px solid #ffffff;
-                border-radius: 25px;
+                border: 2px solid #ffffff;
+                border-radius: 23px;
                 outline: none;
                 background-color: transparent;
-                font-size: 22px;
+                font-size: 24px;
                 color: #ffffff;
                 cursor: pointer;
-                margin-top: 24px;
-                transition: all .25s ease-in-out;
+                margin-top: 50px;
             }
-
-            .kefu-content > button:hover {
-                background-color: #00cc99;
-                color: #fff;
-                border: 0;
+            .kefu-content>button:hover {
+               background-color: #00cc99;
+               color: #fff;
+               border: 0;
             }
         }
 
@@ -1453,12 +1476,45 @@
                 opacity: 1;
             }
 
+            /* 大家都在看 */
+            .category-look-con {
+                padding: 18px 0 !important;
+            }
+
+            .category-look-tags {
+                height: 40px;
+                overflow: hidden;
+            }
+
+            .category-look-tags > span {
+                color: #999999;
+                font-size: 12px;
+                line-height: 20px;
+            }
+
+            .category-look-tags > .category-look-tag {
+                font-size: 12px;
+                display: inline-block;
+                padding: 5px 10px;
+                margin: 6px;
+                color: #666666;
+                background: #e9e9e9;
+                border-radius: 4px;
+                transition: all .3s ease-in-out;
+            }
+
+            .category-look-tags > .category-look-tag:hover {
+                color: #ffffff;
+                background: #00cc99;
+            }
+
             .flex-space-between {
                 display: flex;
                 justify-content: center;
             }
 
             .school-left-con {
+                /* margin-top: 40px; */
                 width: 100%;
             }
 
@@ -1466,217 +1522,198 @@
                 display: none;
             }
 
-            #content-center {
-                padding-bottom: 60px;
-            }
-
-            /* 面包屑导航栏 */
-            .single-breadcrumb {
-                padding: 24px 0;
-                color: #666666;
-            }
-
-            .breadcrumb-link {
-                color: #00cc99;
-                font-size: 14px;
-            }
-
-            .breadcrumb-link:hover {
-                color: #00cc99;
-            }
-
-            /* 文章详情页 */
-            .single-article-content {
-                padding: 32px;
-                background: #ffffff;
-                border: 1px solid #e5eaf1;
-                /* min-height: 600px; */
+            .school-left-con > #banner {
+                width: 100%;
+                height: 344px;
                 border-radius: 5px;
             }
 
-            .article-head-title > h2 {
-                font-size: 22px;
-                line-height: 36px;
-                color: #333333;
-                font-weight: 600;
-                text-align: justify;
+            /* 课程区域 */
+            .cause-con {
+                margin-top: 40px;
+                background-color: #ffffff;
+                border-radius: 10px;
+                min-height: 600px;
+                box-sizing: border-box;
             }
 
-            .article-head > .article-head-desc {
-                position: relative;
-                margin-top: 18px;
-                font-size: 12px;
-                line-height: 22px;
-                color: #999999;
-            }
-
-            .article-head-desc .time, .article-head-desc .category {
-                font-size: 12px;
-                line-height: 22px;
-                color: #999999;
-            }
-
-            .article-head-desc .vertical-bar {
-                display: inline-block;
-                margin: 0 10px;
-            }
-
-            .article-head-desc .tags-box {
-                display: inline-block;
-            }
-
-            .article-head-desc .tags-box .tag-item {
-                display: inline-block;
-                margin: 0 4px;
-                padding: 4px 6px;
-                color: currentColor;
-                background: #f5f5f5;
-                border-radius: 2px;
-                -webkit-transition: all .25s ease-in-out;
-                -o-transition: all .25s ease-in-out;
+            .cause-item {
+                /* display: flex; */
                 transition: all .25s ease-in-out;
+                padding: 30px 24px 32px;
+                border-bottom: 1px solid #e5e5e5;
             }
 
-            .reading-box {
-                position: absolute;
-                right: 0;
-                top: 50%;
-                transform: translateY(-50%);
-            }
-
-            .reading-box .icon-view {
-                display: inline-block;
-                width: 14px;
-                height: 14px;
-                background: url(/static/image/qingschool/eyes.svg) no-repeat center;
-                background-size: contain;
-                vertical-align: middle;
-            }
-
-            .article-head-desc .reading-box span {
-                display: inline-block;
-                color: #8c8d9e;
-                font-size: 12px;
-                line-height: 22px;
-                vertical-align: middle;
-            }
-
-            .article-head-desc .tags-box .tag-item:hover {
-                background: #00cc99;
-                color: #fff;
-            }
-
-            /* 摘要 */
-            .article-excerpt {
-                margin-top: 20px;
-                padding: 12px 20px;
-                background: #f5f5f5;
-            }
-
-            .article-excerpt p {
+            .cause-item > .cause-cover {
                 position: relative;
-                color: #464964;
-                padding-left: 48px;
+                width: 218px;
+                height: 123px;
+                overflow: hidden;
+                background-size: cover;
+                background-position: center;
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            .cause-des {
+                margin-left: 20px;
+                width: 445px;
+                display: inline-block;
                 font-size: 14px;
-                line-height: 24px;
+                vertical-align: middle;
             }
 
-            .article-excerpt p span {
-                position: absolute;
-                top: 0px;
-                left: 0;
-                color: #171c3c;
-                font-size: 16px;
-                font-weight: 600;
-            }
-
-            /* 文章主体 */
-            .article-body {
-                margin-top: 24px;
-                color: #464964;
-                line-height: 2;
-            }
-
-            /* 分割线 */
-            .divider {
-                margin: 40px 0;
-                width: 100%;
-                height: 1px;
-                background: #e5e5e5;
-            }
-
-            /* 上一篇下一篇 */
-            .article-link .article-link-item {
-                color: #171c3c;
-                font-size: 14px;
-                line-height: 20px;
-            }
-
-            .article-link .article-link-item + .article-link-item {
-                margin-top: 16px;
-            }
-
-            .article-link .article-link-item a {
-                color: #171c3c;
-                font-size: 14px;
-                line-height: 20px;
-            }
-
-            .article-link .article-link-item a:hover {
+            /* .cause-title {
+                padding-top: 5px;
+                display: flex;
+            } */
+            .cause-title:hover h3 {
                 color: #00cc99;
             }
 
-            #kefu {
-                height: 200px;
-                background: linear-gradient(97deg, #87D2D0, #BBDCCA);
+            .cause-title > h3 {
+                position: relative;
+                padding-left: 36px;
+                text-align: justify;
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 1.2;
+                overflow: hidden;
+                white-space: nowrap;
+                transition: all .25s ease-in-out;
+                color: #333333;
             }
 
-            .kefu-content {
-                padding-top: 40px;
-                text-align: center;
+            .cause-title > h3 .cause-icon {
+                position: absolute;
+                display: block;
+                left: 0;
+                width: 24px;
+                height: 24px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
             }
 
-            .kefu-content > h2 {
-                font-size: 40px;
-                font-family: Microsoft YaHei;
-                font-weight: bold;
-                color: #FFFFFF;
-                text-align: center;
+            .cause-title > h3 .cause-icon.icon-item-solution {
+                background-image: url(/static/image/qingschool/cause-icon.png);
             }
 
-            .kefu-content > button {
-                width: 130px;
-                height: 40px;
-                border: 0;
-                border: 1px solid #ffffff;
-                border-radius: 20px;
-                outline: none;
-                background-color: transparent;
-                font-size: 18px;
-                color: #ffffff;
-                cursor: pointer;
-                margin-top: 24px;
+            .cause-title > .cause-intro {
+                font-size: 14px;
+                color: #666666;
+                margin-top: 12px;
+                line-height: 25px;
+                min-height: 42px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+            }
+
+            .cause-tags {
+                position: relative;
+                font-size: 0;
+                margin-top: 10px;
+                line-height: 22px;
+                color: #8c8d9e;
+            }
+
+            .cause-tags > .post-time, .cause-tags > .category {
+                font-size: 12px;
+            }
+
+            .cause-tags > .vertical-bar {
+                display: inline-block;
+                margin: 0 12px;
+                font-size: 12px;
+            }
+
+            .cause-tags > .cause-tag-item {
+                display: inline-block;
+                color: #707481;
+                margin: 0 8px;
+                font-size: 12px;
+                padding: 1px 8px;
+                height: 24px;
+                background-color: #f6f6f6;
+                border-radius: 1px;
                 transition: all .25s ease-in-out;
             }
 
-            .kefu-content > button:hover {
-                background-color: #00cc99;
-                color: #fff;
-                border: 0;
+            .cause-tags > .post-views {
+                font-size: 12px;
+                position: absolute;
+                right: 0;
             }
 
+            .cause-tags > .post-views > .icon-view {
+                display: inline-block;
+                width: 32px;
+                height: 12px;
+                background: url(/static/image/qingschool/eyes.svg) no-repeat center;
+                background-size: contain;
+                margin-right: 6px;
+            }
 
+            .cause-bottom {
+                text-align: center;
+                padding: 30px 0;
+            }
+
+            .cause-bottom > .cause-more {
+                display: inline-block;
+                width: 135px;
+                height: 40px;
+                border: 1px solid #00cc99;
+                line-height: 40px;
+                border-radius: 20px;
+                font-size: 14px;
+                text-align: center;
+                color: #00cc99;
+                cursor: pointer;
+            }
+            
+         #kefu {
+             margin-top: 60px;
+            height: 260px;
+            background: linear-gradient(97deg, #87D2D0, #BBDCCA);
+        }
+        .kefu-content {
+            padding-top: 60px;
+            text-align: center;
+        }
+        .kefu-content>h2 {
+           font-size: 36px;
+           font-family: Microsoft YaHei;
+           font-weight: bold;
+           color: #FFFFFF;
+           text-align: center;
+        }
+        .kefu-content>button {
+            width: 240px;
+            height: 40px;
+            border: 0;
+            border: 2px solid #ffffff;
+            border-radius: 20px;
+            outline: none;
+            background-color: transparent;
+            font-size: 20px;
+            color: #ffffff;
+            cursor: pointer;
+            margin-top: 36px;
+        }
+        .kefu-content>button:hover {
+           background-color: #00cc99;
+           color: #fff;
+           border: 0;
+        }
         }
 
         @media screen and (max-width: 768px) {
-            .layui-container {
-                width: 100%;
-                padding: 0;
-            }
-
             .header-nav {
                 height: 45px;
-                padding: 0 15px;
             }
 
             .logo img {
@@ -1735,8 +1772,6 @@
                 /* min-width: 500px; */
                 width: auto;
                 overflow-x: auto;
-                padding: 0 15px;
-                box-sizing: border-box;
             }
 
             .school-nav > a {
@@ -1769,12 +1804,18 @@
                 border-bottom: 3px solid #00ac81;
             }
 
+            /* 大家都在看 */
+            .category-look-con {
+                display: none;
+            }
+
             .flex-space-between {
                 display: flex;
                 justify-content: center;
             }
 
             .school-left-con {
+                margin-top: 20px;
                 width: 100%;
             }
 
@@ -1782,485 +1823,217 @@
                 display: none;
             }
 
-            #content-center {
-                padding-bottom: 30px;
-            }
-
-            /* 面包屑导航栏 */
-            .single-breadcrumb {
-                /* padding: 24px 0;
-                color: #666666; */
-                display: none;
-            }
-
-            .breadcrumb-link {
-                color: #00cc99;
-                font-size: 14px;
-            }
-
-            .breadcrumb-link:hover {
-                color: #00cc99;
-            }
-
-            /* 文章详情页 */
-            .single-article-content {
-                padding: 20px 16px;
-                background: #ffffff;
-                border: 1px solid #e5eaf1;
-                /* min-height: 600px; */
+            .school-left-con > #banner {
+                width: 100%;
+                height: 200px;
                 border-radius: 5px;
             }
 
-            .article-head-title > h2 {
-                font-size: 18px;
-                line-height: 28px;
-                color: #333333;
-                font-weight: 600;
-                text-align: justify;
-            }
-
-            .article-head > .article-head-desc {
-                position: relative;
-                margin-top: 10px;
-                font-size: 12px;
-                line-height: 22px;
-                color: #999999;
-            }
-
-            .article-head-desc .time, .article-head-desc .category {
-                font-size: 12px;
-                line-height: 22px;
-                color: #999999;
-            }
-
-            .article-head-desc .vertical-bar {
-                display: inline-block;
-                margin: 0 10px;
-            }
-
-            .article-head-desc .vertical-bar:last-of-type {
+            /* 课程区域 */
+            .cause-con {
                 display: none;
             }
 
-            .article-head-desc .tags-box {
-                display: none;
+            .m-cause-con {
+                display: block;
+                background-color: #ffffff;
+                min-height: 600px;
+                margin-top: 30px;
+                border-radius: 5px;
             }
 
-            .article-head-desc .tags-box .tag-item {
-                display: inline-block;
-                margin: 0 4px;
-                padding: 4px 6px;
-                color: currentColor;
-                background: #f5f5f5;
-                border-radius: 2px;
-                -webkit-transition: all .25s ease-in-out;
-                -o-transition: all .25s ease-in-out;
+            .cause-item {
                 transition: all .25s ease-in-out;
+                padding: 15px 10px 16px;
+                border-bottom: 1px solid #e5e5e5;
+                justify-content: space-between;
             }
 
-            .reading-box {
-                position: absolute;
-                right: 0;
-                top: 50%;
-                transform: translateY(-50%);
-            }
-
-            .reading-box .icon-view {
-                display: inline-block;
-                width: 14px;
-                height: 14px;
-                background: url(/static/image/qingschool/eyes.svg) no-repeat center;
-                background-size: contain;
-                vertical-align: middle;
-            }
-
-            .article-head-desc .reading-box span {
-                display: inline-block;
-                color: #8c8d9e;
-                font-size: 12px;
-                line-height: 22px;
-                vertical-align: middle;
-            }
-
-            .article-head-desc .tags-box .tag-item:hover {
-                background: #00cc99;
-                color: #fff;
-            }
-
-            /* 摘要 */
-            .article-excerpt {
-                margin-top: 16px;
-                padding: 10px 18px;
-                background: #f5f5f5;
-            }
-
-            .article-excerpt p {
+            .cause-item > a > h3 {
                 position: relative;
-                color: #464964;
-                font-size: 12px;
-                line-height: 20px;
+                text-align: justify;
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 1.2;
+                overflow: hidden;
+                white-space: nowrap;
+                transition: all .25s ease-in-out;
+                color: #333333;
+                text-overflow: ellipsis;
             }
 
-            .article-excerpt p span {
-                display: none;
+            .cause-item > .cause-cover {
+                position: relative;
+                width: 34%;
+                height: 100px;
+                overflow: hidden;
+                background-size: cover;
+                background-position: center;
+                display: inline-block;
+                vertical-align: middle;
             }
 
-            /* 文章主体 */
-            .article-body {
-                margin-top: 20px;
-                color: #464964;
-                line-height: 1.8;
+            .cause-des {
+                /* margin-left: 20px; */
+                width: 62%;
+                display: inline-block;
+                font-size: 14px;
+                vertical-align: middle;
             }
 
-            /* 分割线 */
-            .divider {
-                margin: 26px 0;
-                width: 100%;
-                height: 1px;
-                background: #e5e5e5;
-            }
-
-            /* 上一篇下一篇 */
-            .article-link .article-link-item {
-                color: #171c3c;
-                font-size: 12px;
-                line-height: 20px;
-            }
-
-            .article-link .article-link-item + .article-link-item {
-                margin-top: 12px;
-            }
-
-            .article-link .article-link-item a {
-                color: #171c3c;
-                font-size: 12px;
-                line-height: 18px;
-            }
-
-            .article-link .article-link-item a:hover {
+            /* .cause-title {
+                padding-top: 5px;
+                display: flex;
+            } */
+            .cause-title:hover h3 {
                 color: #00cc99;
             }
 
-            #kefu {
-                height: 150px;
-                background: linear-gradient(97deg, #87D2D0, #BBDCCA);
+            .cause-title > h3 .cause-icon {
+                position: absolute;
+                display: block;
+                left: 0;
+                width: 24px;
+                height: 24px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
             }
 
+            .cause-title > h3 .cause-icon.icon-item-solution {
+                background-image: url(/static/image/qingschool/cause-icon.png);
+            }
+
+            .cause-title > .cause-intro {
+                font-size: 14px;
+                color: #666666;
+                margin-top: 12px;
+                line-height: 25px;
+                min-height: 42px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+            }
+
+            .cause-tags {
+                position: relative;
+                font-size: 0;
+                margin-top: 10px;
+                line-height: 22px;
+                color: #8c8d9e;
+            }
+
+            .cause-tags > .post-time, .cause-tags > .category {
+                font-size: 12px;
+            }
+
+            .cause-tags > .vertical-bar {
+                display: inline-block;
+                margin: 0 12px;
+                font-size: 12px;
+            }
+
+            .cause-tags > .cause-tag-item {
+                display: inline-block;
+                color: #707481;
+                margin: 0 8px;
+                font-size: 12px;
+                padding: 1px 8px;
+                height: 24px;
+                background-color: #f6f6f6;
+                border-radius: 1px;
+                transition: all .25s ease-in-out;
+            }
+
+            .cause-tags > .post-views {
+                font-size: 12px;
+                position: absolute;
+                right: 0;
+            }
+
+            .cause-tags > .post-views > .icon-view {
+                display: inline-block;
+                width: 32px;
+                height: 12px;
+                background: url(/static/image/qingschool/eyes.svg) no-repeat center;
+                background-size: contain;
+                margin-right: 6px;
+            }
+
+            .cause-bottom {
+                text-align: center;
+                padding: 30px 0;
+            }
+
+            .cause-bottom > .cause-more {
+                display: inline-block;
+                width: 135px;
+                height: 40px;
+                border: 1px solid #00cc99;
+                line-height: 40px;
+                border-radius: 20px;
+                font-size: 14px;
+                text-align: center;
+                color: #00cc99;
+                cursor: pointer;
+            }
+
+            .cause-item-desc {
+                display: block;
+                margin-top: 12px;
+            }
+
+            .cause-item-desc > img {
+                width: 100%;
+                max-height: 200px;
+            }
+
+            .cause-item-desc > p {
+                font-size: 12px;
+                color: #666666;
+                margin-top: 12px;
+                line-height: 24px;
+                min-height: 42px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+            }
+            #kefu {
+                margin-top: 40px;
+                height: 200px;
+                background: linear-gradient(97deg, #87D2D0, #BBDCCA);
+            }
             .kefu-content {
                 padding-top: 30px;
                 text-align: center;
             }
-
-            .kefu-content > h2 {
-                font-size: 20px;
-                font-family: Microsoft YaHei;
-                font-weight: bold;
-                color: #FFFFFF;
-                text-align: center;
+            .kefu-content>h2 {
+               font-size: 26px;
+               font-family: Microsoft YaHei;
+               font-weight: bold;
+               color: #FFFFFF;
+               text-align: center;
             }
-
-            .kefu-content > button {
-                width: 100px;
-                height: 32px;
+            .kefu-content>button {
+                width: 180px;
+                height: 40px;
                 border: 0;
-                border-radius: 16px;
+                border: 2px solid #ffffff;
+                border-radius: 20px;
                 outline: none;
                 background-color: transparent;
-                font-size: 14px;
-                background-color: #00cc99;
-                color: #fff;
+                font-size: 20px;
+                color: #ffffff;
                 cursor: pointer;
-                margin-top: 20px;
-                transition: all .25s ease-in-out;
+                margin-top: 28px;
+            }
+            .kefu-content>button:hover {
+               background-color: #00cc99;
+               color: #fff;
+               border: 0;
             }
         }
-
-
-    </style>
-</head>
-
-<body cz-shortcut-listen="true">
-<div id="qingschool">
-    <!-- 头部 -->
-    <header>
-        <div class="layui-container flex-center-space-between header-nav">
-            <div class="logo">
-                <a href="{:url('/')}"><img src="/static/image/logo.png" alt=""></a>
-            </div>
-            <div class="head-right">
-                <div class="text">
-                    <a href="{:url('/')}">轻直播首页</a>
-                    <a href="{:url('/')}">产品功能</a>
-                </div>
-                <div class="btns">
-                    <button class="login">登录</button>
-                    <button class="free-btn">免费试用</button>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- 导航栏 -->
-    <nav>
-        <div class="layui-container school-nav">
-            <a href="{:url('qing_school/index')}" class="{$pid == 0 ? 'active' : ''}">
-                <!-- <img src="/static/image/qingschool/school-home.png" alt=""> -->
-                <i class="icon-nav-item icon-nav-home"></i>
-                <span>内容中心</span>
-            </a>
-            <a href="{:url('qing_school/caseAn')}" class="{$pid == 1 ? 'active' : ''}">
-                <i class="icon-nav-item icon-nav-home"></i>
-                <span>案例解析</span>
-            </a>
-            <a href="{:url('qing_school/products')}" class="{$pid == 2 ? 'active' : ''}">
-                <i class="icon-nav-item icon-nav-home"></i>
-                <span>产品动态</span>
-            </a>
-            <a href="{:url('qing_school/liveNews')}" class="{$pid == 3 ? 'active' : ''}">
-                <i class="icon-nav-item icon-nav-home"></i>
-                <span>直播资讯</span>
-            </a>
-            <a href="{:url('index/qing_school/videoCourse')}">
-                <span>视频学院</span>
-            </a>
-            <a href="{:url('qing_school/article')}">
-                <i class="icon-nav-item icon-nav-case"></i>
-                <span>直播百科</span>
-            </a>
-        </div>
-    </nav>
-    <!-- 内容区域 -->
-    <section id="content-center">
-        <!-- 文章面包屑导航 -->
-        <div class="layui-container">
-            <div class="single-breadcrumb">
-                <a href="{$top_url}" class="breadcrumb-link">{$top_name} ></a>
-                {$article_info['info']['title']}
-            </div>
-        </div>
-        <div class="layui-container flex-space-between">
-            <div class="school-left-con">
-                <!-- 文章详情-->
-                <div class="single-article-content">
-                    <!-- 文章标题 -->
-                    <div class="article-head">
-                        <div class="article-head-title">
-                            <h2>{$article_info['info']['title']}</h2>
-                        </div>
-                        <div class="article-head-desc">
-                            <span class="time">{$article_info['info']['time']}</span>
-                            <i class="vertical-bar">|</i>
-                            <span class="category">{$article_info['info']['pid_name']}</span>
-                            <i class="vertical-bar">|</i>
-                            <div class="tags-box">
-                                {if(!empty($article_info['info']['label']))}
-                                {foreach($article_info['info']['label'] as $item)}
-                                <a href="" class="tag-item">{$item}</a>
-                                {/foreach}
-                                {/if}
-
-                            </div>
-                            <div class="reading-box">
-                                <i class="icon-view"></i>
-                                <span>{$article_info['info']['browse']}</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 摘要 -->
-                    <div class="article-excerpt">
-                        <p>
-                            <span>摘要：</span>
-                            {$article_info['info']['second_title']}
-                        </p>
-                    </div>
-                    <!-- 文章内容 -->
-                    <div class="article-body">
-                        {$article_info['info']['content']}
-                    </div>
-                    <!-- 分割线 -->
-                    <div class="divider"></div>
-                    <!-- 上一篇下一篇 -->
-                    <div class="article-link">
-                        {if($article_info['pre_nex']['pre_btn'] == 1)}
-                        <div class="article-link-item">
-                            上一篇
-                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$article_info['pre_nex']['pre_article']['id'],'pid'=>$pid])}">
-                                {$article_info['pre_nex']['pre_article']['title']}
-                            </a>
-                        </div>
-                        {/if}
-                        {if($article_info['pre_nex']['nex_btn'] == 1)}
-                        <div class="article-link-item">
-                            下一篇
-                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$article_info['pre_nex']['nex_article']['id'],'pid'=>$pid])}">
-                                {$article_info['pre_nex']['nex_article']['title']}
-                            </a>
-                        </div>
-                        {/if}
-                    </div>
-                </div>
-            </div>
-            <div class="school-right-con">
-                <div class="siderbar-item siderbar-item-search">
-                    <form action="" class="search-form" id="search-form">
-                        <input type="text" class="searchInput" placeholder="输入关键词" autocomplete="off">
-                        <input type="submit" class="submitInput" alt="search">
-                    </form>
-                </div>
-                <!-- 热门文章 -->
-                <div class="siderbar-item siderbar-item-article">
-                    <div class="siderbar-item-head">
-                        <h2>
-                            <span>热门文章</span>
-                            <div class="switch-article">
-                                <div class="switch-article-btn active" data-name="hot">热门</div>
-                                <div class="switch-article-btn" data-name="recommend">推荐</div>
-                            </div>
-                        </h2>
-
-                    </div>
-                    <ul class="hot-article-list active" data-name="hot">
-                        {if(isset($list))}
-                        {foreach($list['hot_article'] as $item)}
-                        <li class="article-item">
-                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>20])}" class="link" title="{$item.second_title}" target="_blank"
-                               rel="noopener noreferrer">
-                                <p>{$item.title}</p>
-                                <span class="time">{$item.time}</span>
-                            </a>
-                        </li>
-                        {/foreach}
-                        {/if}
-                    </ul>
-                    <ul class="hot-article-list" data-name="recommend">
-                        {if(isset($list))}
-                        {foreach($list['recommend'] as $item)}
-                        <li class="article-item">
-                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>20])}" class="link" title="{$item.second_title}" target="_blank"
-                               rel="noopener noreferrer">
-                                <p>{$item.title}</p>
-                                <span class="time">{$item.time}</span>
-                            </a>
-                        </li>
-                        {/foreach}
-                        {/if}
-                    </ul>
-                </div>
-
-                <!-- 热门产品 -->
-                <div class="siderbar-item">
-                    <div class="siderbar-item-head">
-                        <h2>
-                                  <span>
-                                      热门产品
-                                  </span>
-                        </h2>
-                    </div>
-                    <ul class="hot-products-list">
-                        <li>
-                            <a href="{:url('/index/video_cloud/index')}" class="hot-products-item" target="_blank">
-                                <i class="icon-hot-product icon-hot-product_1"></i>
-                                <span>企业直播</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="" class="hot-products-item" target="_blank">
-                                <i class="icon-hot-product icon-hot-product_2"></i>
-                                <span>培训直播</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="" class="hot-products-item" target="_blank">
-                                <i class="icon-hot-product icon-hot-product_3"></i>
-                                <span>视频点播</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="" class="hot-products-item" target="_blank">
-                                <i class="icon-hot-product icon-hot-product_4"></i>
-                                <span>视频混合云</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- 热门标签 -->
-                <div class="siderbar-item siderbar-item-label">
-                    <div class="siderbar-item-head">
-                        <h2>
-                                <span>
-                                    热门标签
-                                </span>
-                            <a href="" class="hot-tags-more" rel="tag">更多</a>
-                        </h2>
-                    </div>
-                    <ul class="hot-tags-list">
-                        {if(isset($hot_label))}
-                        {foreach($hot_label as $item)}
-                        <li><a href="" class="hot-tag-item">{$item.name}</a></li>
-                        {/foreach}
-                        {/if}
-                    </ul>
-                </div>
-                <!-- 微信公众号 -->
-                <div class="siderbar-item">
-                    <div class="siderbar-item-head">
-                        <h2>
-                                <span>
-                                    微信公众号
-                                </span>
-                        </h2>
-                    </div>
-                    <div class="wechat-public">
-                        <img src="/static/image/qingschool/wechat_public.png" alt="更多视频云干货，尽在轻直播公众号">
-                        <p style="line-height: 2;">
-                            更多直播干货<br>
-                            尽在轻直播公众号
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--  -->
-    <div id="kefu">
-        <div class="layui-container">
-            <div class="kefu-content">
-                <h2>轻直播为您提供一站式企业视频解决方案</h2>
-                <button>立即咨询</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-</body>
-<script>
-    layui.use('carousel', function () {
-        var carousel = layui.carousel;
-        //建造实例
-        carousel.render({
-            elem: '#banners'
-            , width: '100%' // 设置容器宽度
-            , height: '100%'
-            , arrow: 'none' // 始终显示箭头
-            // , anim: 'updown' // 切换动画方式
-            , interval: 3000 // 轮播间隔时间
-        });
-    });
-
-     // 热门文章点击切换
-     $('.switch-article .switch-article-btn').on('click', function () {
-        $(this).siblings().removeClass('active');
-        $(this).addClass('active');
-        let dataName = $(this).attr('data-name');
-        if(dataName == 'hot') {
-            $('.hot-article-list').eq(0).show();
-            $('.hot-article-list').eq(1).hide();
-
-        } else if (dataName == 'recommend') {
-            $('.hot-article-list').eq(0).hide();
-            $('.hot-article-list').eq(1).show();
-        }
-    })
-</script>
-
-</html>
