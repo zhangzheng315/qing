@@ -1152,7 +1152,7 @@
                                 '                        </div>\n' +
                                 '                    </div>\n' +
                                 '                </li>');
-                        } else if (item.id == 6) {
+                        } else if (item.id === 6) {
                             if (item.sub.length !== 0) {
                                 var child = aboutChild(item.sub, res.nav_id.id);
                             }
@@ -1271,6 +1271,7 @@
         }
 
         function pingSon(arr, id) {
+
             let son = '';
             if (arr.length === 0) {
                 return '';
@@ -1280,6 +1281,8 @@
                 if (item.id === id) {
                     active = 'p-active';
                 }
+                console.log(id);
+                console.log(item.id)
                 son += '<li><a href="' + item.route + '" class="' + active + '">' + item.menu_name + '</a></li>'
             }
             return son;
