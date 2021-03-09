@@ -127,6 +127,10 @@ class QingSchool extends Controller
         return $this->fetch('',compact('article_info','pid','top_name','top_url'));
     }
 
+    /**
+     * @param Request $request
+     * @return \think\response\Json
+     */
     public function getVideoListByWhere(Request $request){
         $rules =
             [
@@ -171,5 +175,16 @@ class QingSchool extends Controller
 
         curl_close($curl); // 关闭CURL会话
         return $res;
+    }
+
+    public function articleSearch()
+    {
+        $param = request()->param();
+        $search_list = $this->articleService->articleSearch($param['pid'], $param['word']);
+        if($search_list){
+            return show(200,$this->articleService->message,$search_list);
+        }else{
+            return show(401,$this->articleService->error);
+        }
     }
 }

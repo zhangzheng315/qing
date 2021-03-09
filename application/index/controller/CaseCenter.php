@@ -62,7 +62,8 @@ class CaseCenter extends Controller
     /* 医疗案例 */
     public function medical()
     {
-        return $this->fetch();
+        $case_list = $this->case_service->caseByPid(1);
+        return $this->fetch('',compact('case_list'));
     }
     /* 案例详情 */
     /**
@@ -113,26 +114,31 @@ class CaseCenter extends Controller
     /* 金融案例 */
     public function finance()
     {
-        return $this->fetch();
+        $case_list = $this->case_service->caseByPid(3);
+        return $this->fetch('',compact('case_list'));
     }
     /* 教育案例 */
     public function education()
     {
-        return $this->fetch();
+        $case_list = $this->case_service->caseByPid(2);
+        return $this->fetch('',compact('case_list'));
     }
     /* 汽车案例 */
     public function car()
     {
-        return $this->fetch();
+        $case_list = $this->case_service->caseByPid(4);
+        return $this->fetch('',compact('case_list'));
     }
     /* 科技案例*/
     public function technology()
     {
-        return $this->fetch();
+        $case_list = $this->case_service->caseByPid(5);
+        return $this->fetch('',compact('case_list'));
     }
     /* 地产案例*/
     public function property()
     {
-        return $this->fetch();
+        $case_list = $this->case_service->caseByPid(6);
+        return $this->fetch('',compact('case_list'));
     }
 }

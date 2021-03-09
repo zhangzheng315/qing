@@ -1731,168 +1731,37 @@
                     <!-- 课程区域 -->
                     <div class="cause-con">
                          <ul>
+                             {if(isset($case_list))}
+                             {foreach($case_list as $item)}
                              <li class="cause-item">
-                                 <a href="" class="cause-cover" target="_blank" style="background: url(/static/image/qingschool/cause-item.png);">   
+                                 <a href="/index/case_center/caseDetail?type_id=4&id={$item.id}" class="cause-cover" target="_blank"
+                                    style="background: url({$item.cover_img_url});">
                                  </a>
                                  <div class="cause-des">
                                      <a href="" class="cause-title">
                                          <h3>
                                              <i class="cause-icon icon-item-solution"></i>
-                                             500强银行直播揭秘：中国银行、建设银行都这么做！
+                                             {$item.title}
                                          </h3>
                                          <p class="cause-intro">
-                                            工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。
+                                             {$item.second_title}
                                          </p>
                                      </a>
                                      <div class="cause-tags">
-                                         <span class="post-time">2021-1-18</span>
+                                         <span class="post-time">{$item.time}</span>
                                          <i class="vertical-bar">|</i>
-                                         <!-- <span class="category">案例解析</span>
-                                         <i class="vertical-bar">|</i> -->
-                                         <a href="" class="cause-tag-item">在线直播平台</a>
-                                         <a href="" class="cause-tag-item">培训直播</a>
-                                         <!-- <span class="post-views">
-                                             <i class="icon-view"></i>
-                                             222
-                                         </span> -->
+
+                                         {if(!empty($item['label']))}
+                                         {foreach($item['label'] as $val)}
+                                         <a href="" class="cause-tag-item">{$val}</a>
+                                         {/foreach}
+                                         {/if}
+
                                      </div>
                                  </div>
                              </li>
-                             <li class="cause-item">
-                                <a href="" class="cause-cover" target="_blank" style="background: url(/static/image/qingschool/cause-item.png);">   
-                                </a>
-                                <div class="cause-des">
-                                    <a href="" class="cause-title">
-                                        <h3>
-                                            <i class="cause-icon icon-item-solution"></i>
-                                            500强银行直播揭秘：中国银行、建设银行都这么做！
-                                        </h3>
-                                        <p class="cause-intro">
-                                           工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。
-                                        </p>
-                                    </a>
-                                    <div class="cause-tags">
-                                        <span class="post-time">2021-1-18</span>
-                                        <i class="vertical-bar">|</i>
-                                        <!-- <span class="category">案例解析</span>
-                                        <i class="vertical-bar">|</i> -->
-                                        <a href="" class="cause-tag-item">在线直播平台</a>
-                                        <a href="" class="cause-tag-item">培训直播</a>
-                                        <!-- <span class="post-views">
-                                            <i class="icon-view"></i>
-                                            222
-                                        </span> -->
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="cause-item">
-                                <a href="" class="cause-cover" target="_blank" style="background: url(/static/image/qingschool/cause-item.png);">   
-                                </a>
-                                <div class="cause-des">
-                                    <a href="" class="cause-title">
-                                        <h3>
-                                            <i class="cause-icon icon-item-solution"></i>
-                                            500强银行直播揭秘：中国银行、建设银行都这么做！
-                                        </h3>
-                                        <p class="cause-intro">
-                                           工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。
-                                        </p>
-                                    </a>
-                                    <div class="cause-tags">
-                                        <span class="post-time">2021-1-18</span>
-                                        <i class="vertical-bar">|</i>
-                                        <!-- <span class="category">案例解析</span>
-                                        <i class="vertical-bar">|</i> -->
-                                        <a href="" class="cause-tag-item">在线直播平台</a>
-                                        <a href="" class="cause-tag-item">培训直播</a>
-                                        <!-- <span class="post-views">
-                                            <i class="icon-view"></i>
-                                            222
-                                        </span> -->
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="cause-item">
-                                <a href="" class="cause-cover" target="_blank" style="background: url(/static/image/qingschool/cause-item.png);">   
-                                </a>
-                                <div class="cause-des">
-                                    <a href="" class="cause-title">
-                                        <h3>
-                                            <i class="cause-icon icon-item-solution"></i>
-                                            500强银行直播揭秘：中国银行、建设银行都这么做！
-                                        </h3>
-                                        <p class="cause-intro">
-                                           工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。
-                                        </p>
-                                    </a>
-                                    <div class="cause-tags">
-                                        <span class="post-time">2021-1-18</span>
-                                        <i class="vertical-bar">|</i>
-                                        <!-- <span class="category">案例解析</span>
-                                        <i class="vertical-bar">|</i> -->
-                                        <a href="" class="cause-tag-item">在线直播平台</a>
-                                        <a href="" class="cause-tag-item">培训直播</a>
-                                        <!-- <span class="post-views">
-                                            <i class="icon-view"></i>
-                                            222
-                                        </span> -->
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="cause-item">
-                                <a href="" class="cause-cover" target="_blank" style="background: url(/static/image/qingschool/cause-item.png);">   
-                                </a>
-                                <div class="cause-des">
-                                    <a href="" class="cause-title">
-                                        <h3>
-                                            <i class="cause-icon icon-item-solution"></i>
-                                            500强银行直播揭秘：中国银行、建设银行都这么做！
-                                        </h3>
-                                        <p class="cause-intro">
-                                           工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。
-                                        </p>
-                                    </a>
-                                    <div class="cause-tags">
-                                        <span class="post-time">2021-1-18</span>
-                                        <i class="vertical-bar">|</i>
-                                        <!-- <span class="category">案例解析</span>
-                                        <i class="vertical-bar">|</i> -->
-                                        <a href="" class="cause-tag-item">在线直播平台</a>
-                                        <a href="" class="cause-tag-item">培训直播</a>
-                                        <!-- <span class="post-views">
-                                            <i class="icon-view"></i>
-                                            222
-                                        </span> -->
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="cause-item">
-                                <a href="" class="cause-cover" target="_blank" style="background: url(/static/image/qingschool/cause-item.png);">   
-                                </a>
-                                <div class="cause-des">
-                                    <a href="" class="cause-title">
-                                        <h3>
-                                            <i class="cause-icon icon-item-solution"></i>
-                                            500强银行直播揭秘：中国银行、建设银行都这么做！
-                                        </h3>
-                                        <p class="cause-intro">
-                                           工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。
-                                        </p>
-                                    </a>
-                                    <div class="cause-tags">
-                                        <span class="post-time">2021-1-18</span>
-                                        <i class="vertical-bar">|</i>
-                                        <!-- <span class="category">案例解析</span>
-                                        <i class="vertical-bar">|</i> -->
-                                        <a href="" class="cause-tag-item">在线直播平台</a>
-                                        <a href="" class="cause-tag-item">培训直播</a>
-                                        <!-- <span class="post-views">
-                                            <i class="icon-view"></i>
-                                            222
-                                        </span> -->
-                                    </div>
-                                </div>
-                            </li>
+                             {/foreach}
+                             {/if}
                          </ul>
                          <div class="cause-bottom">
                               <span class="cause-more">点击加载更多</span>
@@ -1901,106 +1770,31 @@
                     <!-- 移动端 -->
                     <div class="m-cause-con">
                          <ul>
-                            <li class="cause-item">
-                                <a href="">
-                                    <h3>
-                                        <!-- <i class="cause-icon icon-item-solution"></i> -->
-                                        500强银行直播揭秘：中国银行、建设银行都这么做！
-                                    </h3>
-                                </a>
-                              
-                                <div class="cause-tags">
-                                    <span class="post-time">2021-1-18</span>
-                                    <i class="vertical-bar">|</i>
-                                    <span class="category">案例解析</span>
-                                    <!-- <i class="vertical-bar">|</i>
-                                    <a href="" class="cause-tag-item">在线直播平台</a>
-                                    <a href="" class="cause-tag-item">培训直播</a>
-                                    <span class="post-views">
-                                        <i class="icon-view"></i>
-                                        222
-                                    </span> -->
-                                </div>
-                                <a href="" class="cause-item-desc">
-                                    <img src="/static/image/qingschool/cause-item.png" alt="">
-                                    <p>工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。</p>
-                                </a>
-                            </li>
-                            <li class="cause-item">
-                                <a href="">
-                                    <h3>
-                                        <!-- <i class="cause-icon icon-item-solution"></i> -->
-                                        500强银行直播揭秘：中国银行、建设银行都这么做！
-                                    </h3>
-                                </a>
-                              
-                                <div class="cause-tags">
-                                    <span class="post-time">2021-1-18</span>
-                                    <i class="vertical-bar">|</i>
-                                    <span class="category">案例解析</span>
-                                    <!-- <i class="vertical-bar">|</i>
-                                    <a href="" class="cause-tag-item">在线直播平台</a>
-                                    <a href="" class="cause-tag-item">培训直播</a>
-                                    <span class="post-views">
-                                        <i class="icon-view"></i>
-                                        222
-                                    </span> -->
-                                </div>
-                                <a href="" class="cause-item-desc">
-                                    <img src="/static/image/qingschool/cause-item.png" alt="">
-                                    <p>工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。</p>
-                                </a>
-                            </li>
-                            <li class="cause-item">
-                                <a href="">
-                                    <h3>
-                                        <!-- <i class="cause-icon icon-item-solution"></i> -->
-                                        500强银行直播揭秘：中国银行、建设银行都这么做！
-                                    </h3>
-                                </a>
-                              
-                                <div class="cause-tags">
-                                    <span class="post-time">2021-1-18</span>
-                                    <i class="vertical-bar">|</i>
-                                    <span class="category">案例解析</span>
-                                    <!-- <i class="vertical-bar">|</i>
-                                    <a href="" class="cause-tag-item">在线直播平台</a>
-                                    <a href="" class="cause-tag-item">培训直播</a>
-                                    <span class="post-views">
-                                        <i class="icon-view"></i>
-                                        222
-                                    </span> -->
-                                </div>
-                                <a href="" class="cause-item-desc">
-                                    <img src="/static/image/qingschool/cause-item.png" alt="">
-                                    <p>工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。</p>
-                                </a>
-                            </li>
-                            <li class="cause-item">
-                                <a href="">
-                                    <h3>
-                                        <!-- <i class="cause-icon icon-item-solution"></i> -->
-                                        500强银行直播揭秘：中国银行、建设银行都这么做！
-                                    </h3>
-                                </a>
-                              
-                                <div class="cause-tags">
-                                    <span class="post-time">2021-1-18</span>
-                                    <i class="vertical-bar">|</i>
-                                    <span class="category">案例解析</span>
-                                    <!-- <i class="vertical-bar">|</i>
-                                    <a href="" class="cause-tag-item">在线直播平台</a>
-                                    <a href="" class="cause-tag-item">培训直播</a>
-                                    <span class="post-views">
-                                        <i class="icon-view"></i>
-                                        222
-                                    </span> -->
-                                </div>
-                                <a href="" class="cause-item-desc">
-                                    <img src="/static/image/qingschool/cause-item.png" alt="">
-                                    <p>工商银行、中国银行、建设银行等大型银行，今年都通过轻直播进行了培训、营销、大会等多个场景的直播应用，实现了多场金融会议。</p>
-                                </a>
-                            </li>
+                             {if(isset($case_list))}
+                             {foreach($case_list as $item)}
+                             <li class="cause-item">
+                                 <a href="/index/case_center/caseDetail?type_id=4&id={$item.id}">
+                                     <h3>
+                                         {$item.title}
+                                     </h3>
+                                 </a>
+
+                                 <div class="cause-tags">
+                                     <span class="post-time">{$item.time}</span>
+                                     <i class="vertical-bar">|</i>
+                                     {if(!empty($item['label']))}
+                                     {foreach($item['label'] as $val)}
+                                     <a href="" class="cause-tag-item">{$val}</a>
+                                     {/foreach}
+                                     {/if}
+                                 </div>
+                                 <a href="" class="cause-item-desc">
+                                     <img src="{$item.cover_img_url}" alt="">
+                                     <p>{$item.second_title}</p>
+                                 </a>
+                             </li>
+                             {/foreach}
+                             {/if}
                          </ul>
                     </div>
                 </div>
