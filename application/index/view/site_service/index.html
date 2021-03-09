@@ -255,6 +255,17 @@
             }
         }
     });
+
+    $('#service').each(function (index, element) {
+        var obj = $(this);
+        obj.find('.nav-content').children().on('click li', function () {
+            console.log(1);
+            $(this).addClass('active').siblings().removeClass('active');
+            // if (obj.find('.about-boxs').children().eq($(this).index()).length > 0)
+            //     obj.find('.about-boxs').children().hide().eq($(this).index()).show();
+        });
+        setTimeout(function () { obj.find('.nav-content .active').trigger('li'); }, 100);
+    });
 </script>
 
 </html>

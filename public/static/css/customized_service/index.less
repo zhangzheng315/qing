@@ -18,11 +18,13 @@
     #banner {
         height: 600px;
         position: relative;
+
         .lunbo-box {
             img {
                 object-fit: cover;
             }
         }
+
         .layui-carousel {
             .layui-carousel-ind {
                 display: none !important;
@@ -33,8 +35,9 @@
     nav {
         height: 60px;
         line-height: 60px;
-        background-color: #26242F;
         margin-bottom: 100px;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 6px 0px rgba(193, 193, 193, 0.28);
 
         .layui-container {
             ul {
@@ -43,8 +46,20 @@
                 justify-content: space-between;
 
                 li {
-                    color: #fff;
+                    height: 60px;
+                    font-size: 16px;
+                    color: #333;
+                    box-sizing: border-box;
                     cursor: pointer;
+
+                    &:hover {
+                        color: #00CC99;
+                        border-bottom: 3px solid #00CC99;
+                    }
+                }
+                .active {
+                    color: #00CC99;
+                    border-bottom: 3px solid #00CC99;
                 }
             }
         }
@@ -177,6 +192,7 @@
                 outline: none;
                 background-color: transparent;
                 cursor: pointer;
+
                 a {
                     font-size: 28px;
                     color: #FFFFFF;
@@ -247,6 +263,7 @@
                 button {
                     width: 28%;
                     height: 50px;
+
                     a {
                         font-size: 25px;
                     }
@@ -308,6 +325,7 @@
                 button {
                     width: 28%;
                     height: 45px;
+
                     a {
                         font-size: 18px;
                     }
@@ -430,6 +448,7 @@
                 button {
                     width: 46%;
                     height: 40px;
+
                     a {
                         font-size: 14px;
                     }
