@@ -2107,7 +2107,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="school-right-con">
                 <div class="siderbar-item siderbar-item-search">
                     <form action="/index/case_center/{$pid.action}" class="search-form" id="search-form">
@@ -2134,14 +2133,6 @@
                             {/if}
                         </ul>
                     </div>
-                    <ul class="hot-tags-list">
-                        {if(!empty($label_list))}
-                        {foreach($label_list as $item)}
-                        <li><a href="/index/case_center/{$pid.action}?pid={$info['pid']}&label={$item.name}" class="hot-tag-item">{$item.name}</a></li>
-                        {/foreach}
-                        {/if}
-                    </ul>
-                </div>
                 <!-- 热门文章 -->
                 <div class="siderbar-item siderbar-item-article">
                     <div class="siderbar-item-head">
