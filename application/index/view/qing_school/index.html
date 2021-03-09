@@ -59,6 +59,10 @@
                 <i class="icon-nav-item icon-nav-video"></i>
                 <span>视频学院</span>
             </a>
+            <a href="{:url('qing_school/article')}">
+                <i class="icon-nav-item icon-nav-case"></i>
+                <span>直播百科</span>
+            </a>
         </div>
     </nav>
     <!-- 内容区域 -->
@@ -83,11 +87,11 @@
                         {if isset($article_list)}
                         {foreach($article_list as $item)}
                         <li class="cause-item">
-                            <a href="" class="cause-cover" target="_blank"
+                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>0])}" class="cause-cover" target="_blank"
                                style="background: url({$item.cover_img_url});background-size: cover">
                             </a>
                             <div class="cause-des">
-                                <a href="" class="cause-title">
+                                <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>0])}" class="cause-title">
                                     <h3>
                                         <i class="cause-icon icon-item-solution"></i>
                                         {$item.title}

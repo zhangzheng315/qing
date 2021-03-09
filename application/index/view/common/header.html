@@ -1075,7 +1075,6 @@
             const unfold = $(this).attr('unfold');
             const unfold_sibling = $(this).siblings('.nav-product').attr('unfold')
             const realHeight = $(this).find('.nav-pro-con').attr('real-height');
-            console.log(realHeight);
             if (unfold && unfold == '1') {
                 $(this).find('.nav-product-span>i')[0].innerText = '-';
                 $(this).find('.nav-pro-con').css({
@@ -1153,7 +1152,7 @@
                                 '                        </div>\n' +
                                 '                    </div>\n' +
                                 '                </li>');
-                        } else if (item.id === 6) {
+                        } else if (item.id == 6) {
                             if (item.sub.length !== 0) {
                                 var child = aboutChild(item.sub, res.nav_id.id);
                             }
