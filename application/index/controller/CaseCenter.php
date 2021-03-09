@@ -63,8 +63,11 @@ class CaseCenter extends Controller
     public function medical()
     {
         $pid = 1;
-        $case_list = $this->case_service->caseByPid($pid);
-        return $this->fetch('',compact('case_list','pid'));
+        $param = request()->param();
+        $param['pid'] = $pid;
+        $case_list = $this->case_service->caseByWhere($param);
+        $action = 'medical';
+        return $this->fetch('',compact('case_list','pid','action'));
     }
     /* 案例详情 */
     /**
@@ -85,29 +88,35 @@ class CaseCenter extends Controller
             case 1:
                 $pid_name = '医疗';
                 $pid_url = '/index/case_center/medical';
+                $action = 'medical';
                 break;
             case 2:
                 $pid_name = '教育';
                 $pid_url = '/index/case_center/education';
+                $action = 'education';
                 break;
             case 3:
                 $pid_name = '金融';
                 $pid_url = '/index/case_center/finance';
+                $action = 'finance';
                 break;
             case 4:
                 $pid_name = '汽车';
                 $pid_url = '/index/case_center/car';
+                $action = 'car';
                 break;
             case 5:
                 $pid_name = '科技';
                 $pid_url = '/index/case_center/technology';
+                $action = 'technology';
                 break;
             case 6:
                 $pid_name = '地产';
                 $pid_url = '/index/case_center/property';
+                $action = 'property';
                 break;
         }
-        $pid = ['pid_name' => $pid_name, 'pid_url' => $pid_url,];
+        $pid = ['pid_name' => $pid_name, 'pid_url' => $pid_url,'action'=>$action];
         $pre_and_nex = $this->case_service->preAndNext($id, $type_id, $info['pid']);
 
         return $this->fetch('',compact('info','pid','pre_and_nex'));
@@ -116,42 +125,50 @@ class CaseCenter extends Controller
     public function finance()
     {
         $pid = 3;
-        $case_list = $this->case_service->caseByPid($pid);
-        return $this->fetch('',compact('case_list','pid'));
+        $param = request()->param();
+        $param['pid'] = $pid;
+        $case_list = $this->case_service->caseByWhere($param);
+        $action = 'finance';
+        return $this->fetch('',compact('case_list','pid','action'));
     }
     /* 教育案例 */
     public function education()
     {
         $pid = 2;
-        $case_list = $this->case_service->caseByPid($pid);
-        return $this->fetch('',compact('case_list','pid'));
+        $param = request()->param();
+        $param['pid'] = $pid;
+        $case_list = $this->case_service->caseByWhere($param);
+        $action = 'education';
+        return $this->fetch('',compact('case_list','pid','action'));
     }
     /* 汽车案例 */
     public function car()
     {
         $pid = 4;
-        $case_list = $this->case_service->caseByPid($pid);
-        return $this->fetch('',compact('case_list','pid'));
+        $param = request()->param();
+        $param['pid'] = $pid;
+        $case_list = $this->case_service->caseByWhere($param);
+        $action = 'car';
+        return $this->fetch('',compact('case_list','pid','action'));
     }
     /* 科技案例*/
     public function technology()
     {
         $pid = 5;
-        $case_list = $this->case_service->caseByPid($pid);
-        return $this->fetch('',compact('case_list','pid'));
+        $param = request()->param();
+        $param['pid'] = $pid;
+        $case_list = $this->case_service->caseByWhere($param);
+        $action = 'technology';
+        return $this->fetch('',compact('case_list','pid','action'));
     }
     /* 地产案例*/
     public function property()
     {
         $pid = 6;
-        $case_list = $this->case_service->caseByPid($pid);
-        return $this->fetch('',compact('case_list','pid'));
-    }
-
-    public function caseByWhere()
-    {
         $param = request()->param();
+        $param['pid'] = $pid;
         $case_list = $this->case_service->caseByWhere($param);
-        return $this->fetch('',compact('case_list'));
+        $action = 'property';
+        return $this->fetch('',compact('case_list','pid','action'));
     }
 }

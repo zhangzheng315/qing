@@ -53,7 +53,7 @@
                         <ul class="flex-box">
                             {foreach($article_list['all_article'] as $val)}
                             {if($val.pid == $item.id)}
-                            <li >
+                            <li>
                                 <a class="flex-box" href="{:url('/index/docs/article',['id'=>$val.id])}">
                                     <img src="{$val.icon_img_url}" alt="">
                                     <div class="text">
@@ -174,5 +174,4 @@
         });
     });
 </script>
-
 </html>

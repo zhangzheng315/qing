@@ -25,8 +25,9 @@
 #customized nav {
   height: 60px;
   line-height: 60px;
-  background-color: #26242F;
   margin-bottom: 100px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 6px 0px rgba(193, 193, 193, 0.28);
 }
 #customized nav .layui-container ul {
   display: flex;
@@ -34,8 +35,19 @@
   justify-content: space-between;
 }
 #customized nav .layui-container ul li {
-  color: #fff;
+  height: 60px;
+  font-size: 16px;
+  color: #333;
+  box-sizing: border-box;
   cursor: pointer;
+}
+#customized nav .layui-container ul li:hover {
+  color: #00CC99;
+  border-bottom: 3px solid #00CC99;
+}
+#customized nav .layui-container ul .active {
+  color: #00CC99;
+  border-bottom: 3px solid #00CC99;
 }
 #customized #zhibo .layui-container .title {
   margin-bottom: 70px;

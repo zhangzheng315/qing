@@ -52,6 +52,12 @@
 #service nav .layui-container .nav-content li:hover a {
   color: #00cc99;
 }
+#service nav .layui-container .nav-content .active {
+  border-bottom: 3px solid #00cc99;
+}
+#service nav .layui-container .nav-content .active a {
+  color: #00cc99;
+}
 #service .module {
   padding: 100px 0 110px;
 }
