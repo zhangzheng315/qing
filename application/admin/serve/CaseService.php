@@ -334,4 +334,38 @@ class CaseService extends Common{
         $this->setMessage('查询成功');
         return $res;
     }
+
+    /**
+     * 案例列表  by where
+     * @param $param
+     * @return bool|false|\PDOStatement|string|\think\Collection
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
+    public function caseByWhere($param)
+    {
+        $where = [
+            'status'=>1,
+            'deleted_time' => 0,
+            'pid'=>$param['pid'],
+        ];
+        if (isset($param['word']) && $param['word']) {
+            $where['title'] = ['like', '%' . $param['word'] . '%'];
+        }
+        if (isset($param['label']) && $param['label']) {
+            $where['label'] = ['like', '%' . $param['label'] . '%',];
+        }
+        $res = $this->case->where($where)->order('order','desc')->select();
+        foreach ($res as &$item) {
+            $item['time'] = $item['updated_time'] == 0 ? date('Y-m-d H:i', $item['updated_time']) : date('Y-m-d H:i', $item['created_time']);
+            $item['label'] = explode(',', $item['label']);
+        }
+        if (!$res) {
+            $this->setError('暂无数据');
+            return false;
+        }
+        $this->setMessage('查询成功');
+        return $res;
+    }
 }

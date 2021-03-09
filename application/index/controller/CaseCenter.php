@@ -62,8 +62,9 @@ class CaseCenter extends Controller
     /* 医疗案例 */
     public function medical()
     {
-        $case_list = $this->case_service->caseByPid(1);
-        return $this->fetch('',compact('case_list'));
+        $pid = 1;
+        $case_list = $this->case_service->caseByPid($pid);
+        return $this->fetch('',compact('case_list','pid'));
     }
     /* 案例详情 */
     /**
@@ -114,31 +115,43 @@ class CaseCenter extends Controller
     /* 金融案例 */
     public function finance()
     {
-        $case_list = $this->case_service->caseByPid(3);
-        return $this->fetch('',compact('case_list'));
+        $pid = 3;
+        $case_list = $this->case_service->caseByPid($pid);
+        return $this->fetch('',compact('case_list','pid'));
     }
     /* 教育案例 */
     public function education()
     {
-        $case_list = $this->case_service->caseByPid(2);
-        return $this->fetch('',compact('case_list'));
+        $pid = 2;
+        $case_list = $this->case_service->caseByPid($pid);
+        return $this->fetch('',compact('case_list','pid'));
     }
     /* 汽车案例 */
     public function car()
     {
-        $case_list = $this->case_service->caseByPid(4);
-        return $this->fetch('',compact('case_list'));
+        $pid = 4;
+        $case_list = $this->case_service->caseByPid($pid);
+        return $this->fetch('',compact('case_list','pid'));
     }
     /* 科技案例*/
     public function technology()
     {
-        $case_list = $this->case_service->caseByPid(5);
-        return $this->fetch('',compact('case_list'));
+        $pid = 5;
+        $case_list = $this->case_service->caseByPid($pid);
+        return $this->fetch('',compact('case_list','pid'));
     }
     /* 地产案例*/
     public function property()
     {
-        $case_list = $this->case_service->caseByPid(6);
+        $pid = 6;
+        $case_list = $this->case_service->caseByPid($pid);
+        return $this->fetch('',compact('case_list','pid'));
+    }
+
+    public function caseByWhere()
+    {
+        $param = request()->param();
+        $case_list = $this->case_service->caseByWhere($param);
         return $this->fetch('',compact('case_list'));
     }
 }

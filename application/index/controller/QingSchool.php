@@ -180,7 +180,7 @@ class QingSchool extends Controller
     public function articleSearch()
     {
         $param = request()->param();
-        $search_list = $this->articleService->articleSearch($param['pid'], $param['word']);
+        $search_list = $this->articleService->articleSearch($param);
         if($search_list){
             return show(200,$this->articleService->message,$search_list);
         }else{

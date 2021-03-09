@@ -1977,8 +1977,10 @@
                         {if(isset($case_list))}
                         {foreach($case_list as $item)}
                         <li class="cause-item">
-                            <a href="/index/case_center/caseDetail?type_id=4&id={$item.id}" class="cause-cover" target="_blank"
-                               style="background: url({$item.cover_img_url});">
+                            <a href="/index/case_center/caseDetail?type_id=4&id={$item.id}" class="cause-cover"
+                               target="_blank"
+                               style="background: url({$item.cover_img_url});background-size: cover;
+ background-position: center;">
                             </a>
                             <div class="cause-des">
                                 <a href="" class="cause-title">
