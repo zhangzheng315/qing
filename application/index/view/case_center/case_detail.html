@@ -2107,14 +2107,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="school-right-con">
-                    <div class="siderbar-item siderbar-item-search">
-                        <form action="/index/case_center/caseByWhere" class="search-form" id="search-form">
-                            <input type="text" class="searchInput" placeholder="输入关键词" name="word" autocomplete="off">
-                            <input type="submit" class="submitInput" alt="search">
-                            <input type="hidden" name="pid" value="{$info.pid}">
-                        </form>
-                    </div>
+            </div>
+            <div class="school-right-con">
+                <div class="siderbar-item siderbar-item-search">
+                    <form action="/index/case_center/{$pid.action}" class="search-form" id="search-form">
+                        <input type="text" name="word" class="searchInput" placeholder="输入关键词" autocomplete="off">
+                        <input type="submit" class="submitInput" alt="search">
+                        <input type="hidden" name="pid" value="{$info['pid']}">
+                    </form>
+                </div>
 
                     <!-- 热门标签 -->
                     <div class="siderbar-item siderbar-item-label">
@@ -2133,16 +2134,24 @@
                             {/if}
                         </ul>
                     </div>
-                    <!-- 热门文章 -->
-                    <div class="siderbar-item siderbar-item-article">
-                        <div class="siderbar-item-head">
-                            <h2>
-                                <span>热门文章</span>
-                                <div class="switch-article">
-                                    <div class="switch-article-btn active" data-name="hot">热门</div>
-                                    <div class="switch-article-btn" data-name="recommend">推荐</div>
-                                </div>
-                            </h2>
+                    <ul class="hot-tags-list">
+                        {if(!empty($label_list))}
+                        {foreach($label_list as $item)}
+                        <li><a href="/index/case_center/{$pid.action}?pid={$info['pid']}&label={$item.name}" class="hot-tag-item">{$item.name}</a></li>
+                        {/foreach}
+                        {/if}
+                    </ul>
+                </div>
+                <!-- 热门文章 -->
+                <div class="siderbar-item siderbar-item-article">
+                    <div class="siderbar-item-head">
+                        <h2>
+                            <span>热门文章</span>
+                            <div class="switch-article">
+                                <div class="switch-article-btn active" data-name="hot">热门</div>
+                                <div class="switch-article-btn" data-name="recommend">推荐</div>
+                            </div>
+                        </h2>
 
                         </div>
                         <ul class="hot-article-list active" data-name="hot">
