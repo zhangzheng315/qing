@@ -1,3 +1,4 @@
+
 .flex-center-space-between {
     display: flex;
     justify-content: space-between;
@@ -42,23 +43,6 @@ nav {
 .m-cause-con {
     display: none;
 }
-/* 导航栏背景图 */
-  .icon-nav-home {
-         background-image: url(/static/image/qingschool/school-home.png);
-  }
-  .icon-nav-case {
-         background-image: url(/static/image/qingschool/case-icon.png);
-  }
-  .icon-nav-product {
-         background-image: url(/static/image/qingschool/product-icon.png);
-  }
-  .icon-nav-live {
-         background-image: url(/static/image/qingschool/live-icon.png);
-  }
-  .icon-nav-video {
-         background-image: url(/static/image/qingschool/video-icon.png);
-  }
-
 @media screen and (min-width: 1300px){
     .layui-container {
         width: 1200px !important;
@@ -100,6 +84,8 @@ nav {
         color: #ffffff;
         margin-left: 41px;
     }
+
+    /* 导航栏 */
    /* 导航栏 */
    .school-nav {
          height: 65px;
@@ -108,7 +94,7 @@ nav {
      }
      .school-nav>a {
          font-size: 16px;
-         margin-right: 90px;
+         margin-right: 100px;
          display: inline-block;
          height: 65px;
          line-height: 65px;
@@ -120,7 +106,6 @@ nav {
          width: 18px;
          height: 18px;
          margin-right: 5px;
-         background-repeat: no-repeat;
          background-size: contain;
          opacity: 0;
          transition: opacity .25s;
@@ -131,7 +116,9 @@ nav {
          color: #333333;
          vertical-align: middle;
      }
-    
+     .icon-nav-home {
+         background-image: url(/static/image/qingschool/school-home.png);
+     }
      .school-nav>a:hover span, .school-nav>a.active span {
        color: #00cc81;
      }
@@ -173,18 +160,14 @@ nav {
      
      .school-left-con {
          width: 65%;
+         margin-top: 50px;
      }
      .school-right-con {
          width: 32%;
-     }
-     .school-left-con>#banner {
-         width: 100%;
-         height: 344px;
-         border-radius: 5px;
+         margin-top: 50px;
      }
      /* 课程区域 */
      .cause-con {
-         margin-top: 40px;
          background-color: #ffffff;
          border-radius: 10px;
          min-height: 600px;
@@ -600,6 +583,45 @@ nav {
           color: #333333;
           transform: translateY(-50%);
       }
+      /* 底部导航栏 */
+      #kefu {
+          margin-top: 109px;
+          height: 300px;
+          background: linear-gradient(97deg, #87D2D0, #BBDCCA);
+      }
+
+      .kefu-content {
+          padding-top: 90px;
+          text-align: center;
+      }
+
+      .kefu-content > h2 {
+          font-size: 50px;
+          font-family: Microsoft YaHei;
+          font-weight: bold;
+          color: #FFFFFF;
+          text-align: center;
+      }
+
+      .kefu-content > button {
+          width: 240px;
+          height: 60px;
+          border: 0;
+          border: 2px solid #ffffff;
+          border-radius: 30px;
+          outline: none;
+          background-color: transparent;
+          font-size: 28px;
+          color: #ffffff;
+          cursor: pointer;
+          margin-top: 37px;
+          transition: all .25s ease-in-out;
+      }
+      .kefu-content > button:hover {
+          background-color: #00cc99;
+          color: #fff;
+          border: 0;
+      }
   }
 
  @media screen and (max-width: 1300px) and (min-width: 992px) {
@@ -653,7 +675,7 @@ nav {
      }
      .school-nav>a {
          font-size: 16px;
-         margin-right: 45px;
+         margin-right: 80px;
          display: inline-block;
          height: 65px;
          line-height: 65px;
@@ -666,7 +688,6 @@ nav {
          height: 18px;
          margin-right: 5px;
          background-size: contain;
-         background-repeat: no-repeat;
          opacity: 0;
          transition: opacity .25s;
          vertical-align: middle;
@@ -675,6 +696,9 @@ nav {
          font-size: 16px;
          color: #333333;
          vertical-align: middle;
+     }
+     .icon-nav-home {
+         background-image: url(/static/image/qingschool/school-home.png);
      }
      .school-nav>a:hover span, .school-nav>a.active span {
        color: #00cc81;
@@ -717,11 +741,11 @@ nav {
      }
 
      .school-left-con {
-         /* margin-top: 40px; */
+         margin-top: 40px;
          width: 67%;
      }
      .school-right-con {
-         /* margin-top: 40px; */
+         margin-top: 40px;
          width: 30%;
      }
      .school-left-con>#banner {
@@ -731,7 +755,7 @@ nav {
      }
      /* 课程区域 */
      .cause-con {
-         margin-top: 30px;
+         /* margin-top: 30px; */
          background-color: #ffffff;
          border-radius: 10px;
          min-height: 600px;
@@ -1147,6 +1171,46 @@ nav {
           color: #333333;
           transform: translateY(-50%);
       }
+
+      #kefu {
+          margin-top: 90px;
+          height: 240px;
+          background: linear-gradient(97deg, #87D2D0, #BBDCCA);
+      }
+
+      .kefu-content {
+          padding-top: 60px;
+          text-align: center;
+      }
+
+      .kefu-content > h2 {
+          font-size: 40px;
+          font-family: Microsoft YaHei;
+          font-weight: bold;
+          color: #FFFFFF;
+          text-align: center;
+      }
+
+      .kefu-content > button {
+          width: 180px;
+          height: 50px;
+          border: 0;
+          border: 1px solid #ffffff;
+          border-radius: 25px;
+          outline: none;
+          background-color: transparent;
+          font-size: 22px;
+          color: #ffffff;
+          cursor: pointer;
+          margin-top: 24px;
+          transition: all .25s ease-in-out;
+      }
+
+      .kefu-content > button:hover {
+          background-color: #00cc99;
+          color: #fff;
+          border: 0;
+      }
  }
 
  @media screen and (max-width:992px) and (min-width: 769px) {
@@ -1199,7 +1263,7 @@ nav {
      }
      .school-nav>a {
          font-size: 16px;
-         margin-right: 20px;
+         margin-right: 40px;
          display: inline-block;
          height: 65px;
          line-height: 65px;
@@ -1212,7 +1276,6 @@ nav {
          height: 18px;
          margin-right: 5px;
          background-size: contain;
-         background-repeat: no-repeat;
          opacity: 0;
          transition: opacity .25s;
          vertical-align: middle;
@@ -1221,6 +1284,9 @@ nav {
          font-size: 16px;
          color: #333333;
          vertical-align: middle;
+     }
+     .icon-nav-home {
+         background-image: url(/static/image/qingschool/school-home.png);
      }
      .school-nav>a:hover span, .school-nav>a.active span {
        color: #00cc81;
@@ -1409,6 +1475,45 @@ nav {
            text-align: center;
            color: #00cc99;
            cursor: pointer;
+      }
+      #kefu {
+          margin-top: 80px;
+          height: 200px;
+          background: linear-gradient(97deg, #87D2D0, #BBDCCA);
+      }
+
+      .kefu-content {
+          padding-top: 40px;
+          text-align: center;
+      }
+
+      .kefu-content > h2 {
+          font-size: 40px;
+          font-family: Microsoft YaHei;
+          font-weight: bold;
+          color: #FFFFFF;
+          text-align: center;
+      }
+
+      .kefu-content > button {
+          width: 130px;
+          height: 40px;
+          border: 0;
+          border: 1px solid #ffffff;
+          border-radius: 20px;
+          outline: none;
+          background-color: transparent;
+          font-size: 18px;
+          color: #ffffff;
+          cursor: pointer;
+          margin-top: 24px;
+          transition: all .25s ease-in-out;
+      }
+
+      .kefu-content > button:hover {
+          background-color: #00cc99;
+          color: #fff;
+          border: 0;
       }
  }
 
@@ -1667,5 +1772,38 @@ nav {
           display: -webkit-box;
           -webkit-line-clamp: 2;
           -webkit-box-orient: vertical;
+      }
+      #kefu {
+          margin-top: 40px;
+          height: 150px;
+          background: linear-gradient(97deg, #87D2D0, #BBDCCA);
+      }
+
+      .kefu-content {
+          padding-top: 30px;
+          text-align: center;
+      }
+
+      .kefu-content > h2 {
+          font-size: 20px;
+          font-family: Microsoft YaHei;
+          font-weight: bold;
+          color: #FFFFFF;
+          text-align: center;
+      }
+
+      .kefu-content > button {
+          width: 100px;
+          height: 32px;
+          border: 0;
+          border-radius: 16px;
+          outline: none;
+          background-color: transparent;
+          font-size: 14px;
+          background-color: #00cc99;
+          color: #fff;
+          cursor: pointer;
+          margin-top: 20px;
+          transition: all .25s ease-in-out;
       }
  }
