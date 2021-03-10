@@ -66,7 +66,7 @@
   object-fit: cover;
 }
 #login section .layui-container .sec-right {
-  flex: 4;
+  flex: 3;
   height: 550px;
   background: #FFFFFF;
   box-shadow: 0px 9px 35px 0px rgba(0, 95, 71, 0.17);

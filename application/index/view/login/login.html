@@ -22,7 +22,7 @@
                 <div class="text">
                     <a href="{:url('/')}">首页</a>
                     <!-- <span>|</span> -->
-
+                    <span id="language">切换语言</span>
                 </div>
             </div>
         </header>
@@ -43,7 +43,7 @@
                         <input id="pwd" type="password" name="pwd" placeholder="请输入登录密码">
                         <p>
                             <label for="">
-                                <input type="checkbox" name="checkbox">记住账号
+                                <input id="checkbox" type="checkbox" name="checkbox">记住账号
                             </label>
                             <a href="">忘记密码</a>
                         </p>
@@ -63,46 +63,52 @@
 </body>
 <!-- 引入cookie插件 -->
 <script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="/static/common/js/language.js"></script>
 <script>
-    var phone = loginForm.phone.value // 手机号
-    var pwd = loginForm.pwd.value
-    var cookieObj = {
-        phone: phone,
-        pwd: pwd
-    }
-    if ($.cookie('rmbUser')) {
-        $("#phone").val($.cookie('rmbUser'.phone));
-        $("#pwd").val($.cookie('rmbUser'.pwd));
-
+    // 如果本地存有cookie，在登录页面显示账号密码
+    if ($.cookie('rmbUser') == 'true') {
+        $("#phone").val($.cookie('phone'));
+        $("#pwd").val($.cookie('pwd'));
+        $("#checkbox").attr('checked', true);
     }
     layui.use('layer', function () {
         var layer = layui.layer;
     });
-    var checkbox = loginForm.checkbox.value // 记住账号
 
-    function save() {
-        console.log(checkbox);
-        return
-
-        if (checkbox) {
-            $.cookie("rmbUser", cookieObj, {
+    // 存cookie
+    function save(num, password) {
+        // 如果勾选记住账号则存cookie
+        if ($("#checkbox").is(":checked")) {
+            // 存储一个带14天期限的cookie
+            $.cookie("rmbUser", 'true', {
                 expires: 14
-            }); //存储一个带14天期限的cookie
+            });
+            $.cookie("phone", num, {
+                expires: 14
+            });
+            $.cookie("pwd", password, {
+                expires: 14
+            });
 
         } else {
-            $.cookie("rmbUser", null, {
+            $.cookie("rmbUser", 'false', {
                 expire: -1
             });
+            $.cookie("phone", '', {
+                expire: -1
+            });
+            $.cookie("pwd", '', {
+                expire: -1
+            });
+
         }
     };
+
     $('#login-btn').click(function () {
-        save()
-        return
         var phoneReg = /^1[0-9]{10}$/ // 校验手机号码
         // var pwdReg = /^1[0-9]{10}$/ // 校验密码
         var phone = loginForm.phone.value // 手机号
         var pwd = loginForm.pwd.value // 密码
-
         if (phone == '' || pwd == '') {
             layer.msg('请输入完整信息');
             return false
@@ -119,7 +125,12 @@
                 success: function (res) {
                     if (res.status == 200) {
                         layer.msg('登录成功');
-                        save()
+                        // 存cookie的方法
+                        save(phone, pwd)
+                        localStorage.setItem('tvToken', res.data.token)
+                        setTimeout(() => {
+                            window.location.href = "/index/index.html"
+                        }, 500);
                     } else {
                         layer.msg(res.message);
                     }
@@ -129,6 +140,10 @@
                 }
             })
         }
+    })
+
+    $('#language').click(function(){
+        translate()
     })
 </script>
 
