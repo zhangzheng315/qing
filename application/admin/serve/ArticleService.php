@@ -226,12 +226,18 @@ class ArticleService extends Common{
      * @throws \think\db\exception\ModelNotFoundException
      * @throws \think\exception\DbException
      */
-    public function articleContentCenter()
+    public function articleContentCenter($param)
     {
         $where = [
             'status'=>1,
             'deleted_time' => 0,
         ];
+        if (isset($param['word']) && $param['word']) {
+            $where['title'] = ['like','%'.$param['word'].'%'];
+        }
+        if (isset($param['label']) && $param['label']) {
+            $where['label'] = ['like', '%' . $param['label'] . '%'];
+        }
         $content_center = new ContentCenter();
         $res = $content_center->where($where)->order('order', 'desc')->select();
         foreach ($res as &$item) {
@@ -241,7 +247,7 @@ class ArticleService extends Common{
         }
         if (!$res) {
             $this->setError('暂无数据');
-            return false;
+            return $res = [];
         }
         $this->setMessage('查询成功');
         return $res;
@@ -256,12 +262,13 @@ class ArticleService extends Common{
      */
     public function hotArticleList()
     {
+        $where = ['deleted_time' => 0, 'status' => 1];
         $hotArticle = new HotArticle();
-        $hotArticleList = $hotArticle->order('order', 'desc')->select();
+        $hotArticleList = $this->article->where($where)->order('browse', 'desc')->limit(0, 5)->select();
         foreach ($hotArticleList as &$item) {
             $item['time'] = $item['updated_time'] ? date('Y-m-d', $item['updated_time']) : date('Y-m-d', $item['created_time']);
         }
-        $recommendList = $this->article->where(['deleted_time' => 0, 'status' => 1])->order('order', 'desc')->limit(0, 5)->select();
+        $recommendList = $this->article->where($where)->order('order', 'desc')->limit(0, 5)->select();
         foreach ($recommendList as &$item) {
             $item['time'] = $item['updated_time'] ? date('Y-m-d', $item['updated_time']) : date('Y-m-d', $item['created_time']);
         }
@@ -376,7 +383,7 @@ class ArticleService extends Common{
         return $data;
     }
 
-    public function articleSearch($param)
+    public function articleByWhere($param)
     {
         $where = [
             'deleted_time' => 0,

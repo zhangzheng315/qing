@@ -152,8 +152,8 @@
             </div>
             <div class="school-right-con">
                 <div class="siderbar-item siderbar-item-search">
-                    <form action="" class="search-form" id="search-form">
-                        <input type="text" class="searchInput" placeholder="输入关键词" autocomplete="off">
+                    <form action="/index/qing_school/index" class="search-form" id="search-form">
+                        <input type="text" name="word" value="{:request()->param('word')}" class="searchInput" placeholder="输入关键词" autocomplete="off">
                         <input type="submit" class="submitInput" alt="search">
                     </form>
                 </div>
@@ -245,7 +245,7 @@
                     <ul class="hot-tags-list">
                         {if(isset($hot_label))}
                         {foreach($hot_label as $item)}
-                        <li><a href="" class="hot-tag-item">{$item.name}</a></li>
+                        <li><a href="/index/qing_school/index?label={$item.name}" class="hot-tag-item">{$item.name}</a></li>
                         {/foreach}
                         {/if}
                     </ul>

@@ -40,8 +40,9 @@ class QingSchool extends Controller
     /* 内容中心*/
     public function index()
     {
+        $param = request()->param();
         $banner_list = $this->qBannerService->QBannerListByPid(0);
-        $article_list = $this->articleService->articleContentCenter();
+        $article_list = $this->articleService->articleContentCenter($param);
 
         return $this->fetch('', compact('banner_list', 'article_list'));
     }
@@ -178,5 +179,12 @@ class QingSchool extends Controller
     public function article()
     {
         return $this->fetch();
+    }
+
+    public function articleByWhere()
+    {
+        $param = request()->param();
+        $this->articleService->articleByWhere($param);
+
     }
 }
