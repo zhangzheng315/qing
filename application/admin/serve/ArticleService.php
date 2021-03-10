@@ -268,6 +268,7 @@ class ArticleService extends Common{
         foreach ($hotArticleList as &$item) {
             $item['time'] = $item['updated_time'] ? date('Y-m-d', $item['updated_time']) : date('Y-m-d', $item['created_time']);
         }
+        $where['hot_article'] = 1;
         $recommendList = $this->article->where($where)->order('order', 'desc')->limit(0, 5)->select();
         foreach ($recommendList as &$item) {
             $item['time'] = $item['updated_time'] ? date('Y-m-d', $item['updated_time']) : date('Y-m-d', $item['created_time']);
@@ -349,8 +350,17 @@ class ArticleService extends Common{
         $pre_article = [];
         $nex_article = [];
         if ($pid == 0) {
+            //内容中心
             $article_list = $this->content_center->where($page_where)->order('order', 'desc')->select();
-        }else{
+        } elseif ($pid == 11) {
+            //热门文章
+            $article_list = $this->article->where($page_where)->order('browse', 'desc')->limit(0, 5)->select();
+        } elseif ($pid == 12) {
+            //推荐文章
+            $page_where['hot_article'] = 1;
+            $article_list = $this->article->where($page_where)->order('order', 'desc')->limit(0, 5)->select();
+        }
+        else{
             $page_where['pid'] = $pid;
             $article_list = $this->article->where($page_where)->order('order', 'desc')->select();
         }
@@ -404,6 +414,11 @@ class ArticleService extends Common{
         if (!$search_list) {
             $this->setError('暂无数据');
             return false;
+        }
+        foreach ($search_list as &$item) {
+            $item['browse'] = $this->article->where(['id' => $item['id']])->value('browse');
+            $item['label'] = explode(',', $item['label']);
+            $item['time'] = $item['updated_time'] ? date('Y-m-d', $item['updated_time']) : date('Y-m-d', $item['created_time']);
         }
         $this->setMessage('查询成功');
         return $search_list;

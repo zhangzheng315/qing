@@ -173,7 +173,7 @@
                         {if(isset($list))}
                         {foreach($list['hot_article'] as $item)}
                         <li class="article-item">
-                            <a href="" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
+                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>11])}" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
                                 <p>{$item.title}</p>
                                 <span class="time">{$item.time}</span>
                             </a>
@@ -185,7 +185,7 @@
                         {if(isset($list))}
                         {foreach($list['recommend'] as $item)}
                         <li class="article-item">
-                            <a href="" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
+                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>12])}" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
                                 <p>{$item.title}</p>
                                 <span class="time">{$item.time}</span>
                             </a>
@@ -206,7 +206,7 @@
                     </div>
                     <ul class="hot-products-list">
                         <li>
-                            <a href="" class="hot-products-item" target="_blank">
+                            <a href="{:url('/index/video_cloud/index')}" class="hot-products-item" target="_blank">
                                 <i class="icon-hot-product icon-hot-product_1"></i>
                                 <span>企业直播</span>
                             </a>
@@ -239,7 +239,6 @@
                                 <span>
                                     热门标签
                                 </span>
-                            <a href="" class="hot-tags-more" rel="tag">更多</a>
                         </h2>
                     </div>
                     <ul class="hot-tags-list">
