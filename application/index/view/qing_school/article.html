@@ -107,7 +107,7 @@
                 font-size: 14px;
             }
 
-            .baikeMenuContent > a:hover, .baikeMenu-child > dd.active, .baikeMenu-child > dd:hover {
+            .baikeMenuContent > a:hover, .baikeMenuContent.active > a {
                 color: #49a6f7;
                 border-left: 2px solid #49a6f7;
                 background-color: rgba(73, 166, 247, 0.2);
@@ -920,7 +920,7 @@
                     <ul>
                         {if isset($article)}
                         {foreach($article['article_type'] as $item)}
-                        <li id="menu-item-1" class="baikeMenuContent" onclick="pointClick({$item.id})">
+                        <li class="baikeMenuContent" onclick="pointClick({$item.id})">
                             <a href="javascript:;">
                                 {$item.name}
                             </a>
@@ -1025,6 +1025,12 @@
             "display": 'flex'
         });
     })
+     // 键盘回车事件
+     $(document).keydown(function(e) {
+            if(e.keyCode == 13) {
+                $('.layui-icon-search').click();
+            }
+        })
 
     // 点击直播百科左侧导航栏
     $('.baikeMenu-child dd').on('click', function () {
@@ -1057,6 +1063,11 @@
             }
         })
     }
+    // 左侧导航栏点击切换类名
+    $('li.baikeMenuContent').on('click', function() {
+        $(this).addClass('active');
+        $(this).siblings().removeClass('active');
+    })
 
     function articleInfo(id) {
         $.ajax({
