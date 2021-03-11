@@ -29,7 +29,13 @@
                     color: #333;
                     margin-right: 41px;
                     font-size: 16px;
-
+                    cursor: pointer;
+                    &:hover{
+                        color: #00cc99;
+                    }
+                }
+                .active {
+                    color: #00cc99;
                 }
             }
 
@@ -142,8 +148,16 @@
                         font-size: 16px;
                         color: #333;
                     }
+                    &:hover {
+                        a {
+                            color: #00cc99;
+                        }
+                    }
 
-                    .active {
+                    
+                }
+                .active {
+                    a{
                         color: #00cc99;
                     }
                 }
@@ -258,7 +272,7 @@
 
     .price-content {
         padding: 71px 0 85px;
-        background-color: #F5F6FA;
+        background-color: #f2f4f7;
 
         .layui-container {
             .study-item {
@@ -271,9 +285,10 @@
                         width: 23%;
                         margin-right: 25px;
                         margin-bottom: 20px;
-                        height: 226px;
+                        height: 246px;
                         border: 1px solid #E5E5E5;
                         border-radius: 10px;
+                        background-color: #fff;
                         cursor: pointer;
 
                         &:nth-child(4n) {
@@ -285,18 +300,20 @@
                         }
 
                         img {
+                            height: 51%;
                             width: 100%;
                             object-fit: cover;
+                            border-radius: 10px;
                         }
 
                         .txt {
                             padding-left: 11px;
                             box-sizing: border-box;
-                            margin-top: 20px;
+                            margin-top: 25px;
 
                             h6 {
                                 color: #333;
-                                margin-bottom: 15px;
+                                margin-bottom: 20px;
                                 font-size: 16px;
 
                             }

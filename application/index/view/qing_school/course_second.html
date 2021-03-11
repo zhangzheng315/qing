@@ -20,11 +20,12 @@
     <header>
         <div class="layui-container flexs">
             <div class="logo"><a href="{:url('/')}"><img src="/static/image/index1/logo_text.svg" alt="首页"></a></div>
-            <ul class="flexs">
-                <li>企培用户专区</li>
-                <li>直播快速入门</li>
-                <li>点播快速入门</li>
-                <li>线上沙龙课</li>
+            <ul class="flexs head-ul">
+                {if(isset($video_type))}
+                {foreach($video_type as $item)}
+                <li class="">{$item.name}</li>
+                {/foreach}
+                {/if}
             </ul>
             <div class="layui-form-item">
                 <div class="layui-input-block flexs">
@@ -48,7 +49,7 @@
         <div class="layui-container">
             <a href="{:url('/index/qing_school/videoCourse')}">首页</a>
             <i class="layui-icon layui-icon-right"></i>
-            <span class="active">全部课程</span>
+            <span >全部课程</span>
             <i class="layui-icon layui-icon-right"></i>
             <span>企培用户专区</span>
         </div>
@@ -57,8 +58,8 @@
         <div class="layui-container">
             <div class="direction-item flexs">
                 <div class="item-title">学习方向</div>
-                <ul class="flexs">
-                    <li><a href="">全部</a></li>
+                <ul class="flexs study-ul">
+                    <li class="active"><a href="">全部</a></li>
                     <li><a href="">产品动态</a></li>
                     <li><a href="">直播资讯</a></li>
                     <li><a href="">直播新用户快速入门</a></li>
@@ -68,8 +69,8 @@
             </div>
             <div class="direction-item flexs">
                 <div class="item-title">课程类型</div>
-                <ul class="flex">
-                    <li><a href="" class="active">全部</a></li>
+                <ul class="flex study-ul">
+                    <li class="active"><a href="" >全部</a></li>
                     <li><a href="">视频直播</a></li>
                     <li><a href="">视频点播</a></li>
                 </ul>
@@ -80,40 +81,40 @@
         <div class="layui-container">
             <ul class="checkboxs flexs">
                 <li>
-                    <label for="">
-                        <input type="checkbox">
+                    <label for="mianfei">
+                        <input id="mianfei" type="checkbox">
                         <span>免费</span>
                     </label>
                     <!-- <input type="checkbox" name="" title="发呆" lay-skin="primary"> -->
                     <i>|</i>
                 </li>
                 <li>
-                    <label for="">
-                        <input type="checkbox">
+                    <label for="fufei">
+                        <input id="fufei" type="checkbox">
                         <span>付费</span>
                     </label>
                     <!-- <input type="checkbox" name="" title="发呆" lay-skin="primary"> -->
                     <i>|</i>
                 </li>
                 <li>
-                    <label for="">
-                        <input type="checkbox">
+                    <label for="lubo">
+                        <input id="lubo" type="checkbox">
                         <span>录播</span>
                     </label>
                     <!-- <input type="checkbox" name="" title="发呆" lay-skin="primary"> -->
                     <i>|</i>
                 </li>
                 <li>
-                    <label for="">
-                        <input type="checkbox">
+                    <label for="zhibo">
+                        <input id="zhibo" type="checkbox">
                         <span>直播</span>
                     </label>
                     <!-- <input type="checkbox" name="" title="发呆" lay-skin="primary"> -->
                     <i>|</i>
                 </li>
                 <li>
-                    <label for="">
-                        <input type="checkbox">
+                    <label for="vip">
+                        <input id="vip" type="checkbox">
                         <span>VIP免费</span>
                     </label>
                     <!-- <input type="checkbox" name="" title="发呆" lay-skin="primary"> -->
@@ -245,7 +246,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="study-item">
+                <!--<div class="study-item">
                     <ul class="study-box">
                         <li>
                             <a href="{:url('/index/tutorial/index')}">
@@ -311,7 +312,7 @@
                             </a>
                         </li>
                     </ul>
-                </div>
+                </div>-->
                 <div id="test1"></div>
             </div>
         </div>
@@ -336,17 +337,73 @@
         }, 100);
     });
 
-    layui.use('laypage', function () {
-        var laypage = layui.laypage;
-        //执行一个laypage实例
-        laypage.render({
-            elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
-            , count: 16 //数据总数，从服务端得到
-            , prev: '<'         // 上一页按钮内容
-            , next: '>'         // 下一页按钮内容
-            , theme: '#00cc99'
+    // 头部导航点击高亮
+    $('header').each(function (index, element) {
+        var obj = $(this);
+        obj.find('.head-ul').children().on('click li', function () {
+            $(this).addClass('active').siblings().removeClass('active');
         });
     });
+
+    // 学习方向点击高亮
+    $('.study-direction').each(function (index, element) {
+        var obj = $(this);
+        obj.find('.study-ul').children().on('click li', function () {
+            $(this).addClass('active').siblings().removeClass('active');
+        });
+    });
+
+    //分页方法
+    function layPage(data) {
+        layui.use('laypage', function () {
+            var laypage = layui.laypage;
+
+            //执行一个laypage实例
+            laypage.render({
+                elem: 'test1'       //注意，这里的 test1 是分页容器ID，不用加 # 号
+                , count: data.count //数据总数
+                , curr: data.curr   //当前页
+                , limit:12
+                , prev: '<'         // 上一页按钮内容
+                , next: '>'         // 下一页按钮内容
+                , theme: '#00cc99'
+                , jump: function (obj, first) {
+                    currPage = obj.curr; //这里是后台返回给前端的当前页数
+                    if (!first) {         //点击跳页触发函数自身，并传递当前页：obj.curr  ajax 再次请求
+                        casePoint(data.index, currPage);     //调用ajax请求数据
+                    }
+                }
+            });
+        });
+    }
+
+
+    videoPage(1);
+    function videoPage(index, curr = 1) {
+        $.ajax({
+            url: "{:url('/index/qing_school/videoListByWhere')}",
+            data: {'pid': index, 'curr': curr},
+            type: 'get',
+            success: function (res) {
+                if (res.status === 200) {
+                    console.log(res)
+                    $('.study-box').empty()
+                    for (let item of res.data.data) {
+                        $('.study-box').append('<li>\n' +
+                            '                            <a href="/index/tutorial/index?browse=1&id='+item.id+'">\n' +
+                            '                                <img src="'+item.cover_img_url+'" alt="">\n' +
+                            '                                <div class="txt">\n' +
+                            '                                    <h6>'+item.title+'</h6>\n' +
+                            '                                    <p><span>免费</span><span>'+item.browse+'人已学习</span></p>\n' +
+                            '                                </div>\n' +
+                            '                            </a>\n' +
+                            '                        </li>')
+                    }
+                    layPage(res.data); 
+                }
+            }
+        })
+    }
 </script>
 
 </html>

@@ -374,6 +374,7 @@
   color: #fff;
 }
 #video_cloud .hezuo .hezuo-nav .logo-title li {
+  position: relative;
   cursor: pointer;
   height: 32px;
   width: 8%;
@@ -382,18 +383,39 @@
   text-align: center;
   padding: 0 15px;
 }
-#video_cloud .hezuo .hezuo-nav .logo-title li:hover {
-  background-color: #00cc99;
-  border-radius: 20px;
-}
-#video_cloud .hezuo .hezuo-nav .logo-title li:hover span {
-  color: #fff;
-}
 #video_cloud .hezuo .hezuo-nav .logo-title li span {
   font-size: 18px;
   color: #666;
   margin-bottom: 5px;
   text-align: center;
+}
+#video_cloud .hezuo .hezuo-nav .logo-title li:after,
+#video_cloud .hezuo .hezuo-nav .logo-title li:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 32px;
+  background: #fff;
+  z-index: -2;
+  border-radius: 20px;
+}
+#video_cloud .hezuo .hezuo-nav .logo-title li:hover {
+  z-index: 1;
+  background: transparent;
+}
+#video_cloud .hezuo .hezuo-nav .logo-title li:hover span {
+  color: #fff;
+}
+#video_cloud .hezuo .hezuo-nav .logo-title li:before {
+  transition: 0.4s;
+  background: #00cc99;
+  z-index: -1;
+}
+#video_cloud .hezuo .hezuo-nav .logo-title li:hover:after,
+#video_cloud .hezuo .hezuo-nav .logo-title li:hover:before {
+  width: 100%;
 }
 #video_cloud .hezuo .logo-box .logo-imgs {
   display: none;

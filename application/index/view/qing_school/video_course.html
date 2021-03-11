@@ -44,7 +44,7 @@
                 <a href="{:url('/index/qing_school/videoCourse')}" class="active">首页</a>
                 {if(isset($video_type))}
                 {foreach($video_type as $item)}
-                <a href="{:url('/index/qing_school/courseSecond')}">{$item.name}</a>
+                <a href="{:url('/index/qing_school/courseSecond',['all'=>1,'pid'=>$item.id])}">{$item.name}</a>
                 {/foreach}
                 {/if}
 
@@ -98,7 +98,7 @@
 
                         </ul>
                         <button>
-                            <a href="{:url('/index/qing_school/video_course')}">点击加载更多</a>
+                            <a href="/index/qing_school/courseSecond?all=1&pid=1" class="point_more">点击加载更多</a>
                         </button>
                     </div>
                 </div>
@@ -301,6 +301,7 @@
                             '                         </a>\n' +
                             '                    </li>')
                     }
+                    $('.point_more').attr('href', '/index/qing_school/courseSecond?all=1&pid=' + pid);
                 }
             },
             error: function (err) {

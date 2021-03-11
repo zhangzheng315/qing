@@ -137,6 +137,11 @@ class QingSchool extends Controller
         return $this->fetch('',compact('article_info','pid','top_name','top_url'));
     }
 
+    /**
+     * 按条件获取分类视频列表
+     * @param Request $request
+     * @return \think\response\Json
+     */
     public function getVideoListByWhere(Request $request){
         $rules =
             [
@@ -192,6 +197,10 @@ class QingSchool extends Controller
         return $this->fetch('',compact('article','article_list'));
     }
 
+    /**
+     * 按条件获取文章百科   文章列表
+     * @return array|int[]
+     */
     public function articleByWhere()
     {
         $param = request()->param();
@@ -202,6 +211,13 @@ class QingSchool extends Controller
         return ['status'=>200,'data'=>$article_list];
     }
 
+    /**
+     * 文章百科--文章详情
+     * @param $id
+     * @return array|int[]
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     */
     public function articleInfo($id)
     {
         $info = $this->common_article_service->getArticleInfo($id);
@@ -209,5 +225,34 @@ class QingSchool extends Controller
             return ['status'=>401];
         }
         return ['status'=>200,'data'=>$info];
+    }
+
+    /**
+     * 视频分页列表
+     * @param Request $request
+     * @return \think\response\Json
+     */
+    public function videoListByWhere(Request $request){
+        $rules =
+            [
+                'pid' => 'require',
+                'curr' => 'require',
+            ];
+        $msg =
+            [
+                'pid' => '缺少参数@pid',
+                'curr' => '缺少参数@curr',
+            ];
+        $validate = new Validate($rules,$msg);
+        if(!$validate->check($request->param())){
+            return show(401,$validate->getError());
+        }
+
+        $res = $this->videoService->videoListByWhere($request->param());
+        if($res){
+            return show(200,$this->videoService->message,$res);
+        }else{
+            return show(401,$this->videoService->error);
+        }
     }
 }

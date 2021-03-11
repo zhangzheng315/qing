@@ -182,6 +182,13 @@ class VideoService extends Common{
         return true;
     }
 
+    /**
+     * 视频学院首页显示
+     * @return array|bool|false|\PDOStatement|string|\think\Model
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
     public function videoHomeFirst()
     {
         $where = [
@@ -197,6 +204,14 @@ class VideoService extends Common{
         return $info;
     }
 
+    /**
+     * 按条件获取视频列表
+     * @param $param
+     * @return bool|false|\PDOStatement|string|\think\Collection
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
     public function getVideoListByWhere($param)
     {
         $where = [
@@ -204,7 +219,11 @@ class VideoService extends Common{
             'status' => 1,
             'pid' => $param['pid'],
         ];
-        $list = $this->video->where($where)->order('order', 'desc')->limit(0, 8)->select();
+        if (isset($param['all'])) {
+            $list = $this->video->where($where)->order('order', 'desc')->select();
+        }else{
+            $list = $this->video->where($where)->order('order', 'desc')->limit(0, 8)->select();
+        }
         foreach ($list as &$item) {
             $item['time'] = date('Y-m-d', $item['created_time']);
         }
@@ -214,6 +233,26 @@ class VideoService extends Common{
         }
         $this->setMessage('查询成功');
         return $list;
+    }
+
+    public function videoListByWhere($param)
+    {
+        $limit = 8;
+        $offset = ($param['curr'] - 1) * $limit;
+        $where = [
+            'deleted_time' => 0,
+            'status' => 1,
+            'pid' => $param['pid'],
+        ];
+        $res = $this->video->where($where)->limit($offset,$limit)->select();
+        if (!$res) {
+            $this->setError('暂无数据');
+            return false;
+        }
+
+        $count = $this->video->where($where)->count('id');
+        $this->setMessage('查询成功');
+        return ['data'=>$res,'count'=>$count,'index'=>$param['pid'],'curr'=>$param['curr']];
     }
 
 }

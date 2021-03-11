@@ -24,6 +24,13 @@
   color: #333;
   margin-right: 41px;
   font-size: 16px;
+  cursor: pointer;
+}
+#course header .layui-container ul li:hover {
+  color: #00cc99;
+}
+#course header .layui-container ul .active {
+  color: #00cc99;
 }
 #course header .layui-container .layui-form-item {
   height: 34px;
@@ -117,7 +124,10 @@
   font-size: 16px;
   color: #333;
 }
-#course .study-direction .direction-item ul li .active {
+#course .study-direction .direction-item ul li:hover a {
+  color: #00cc99;
+}
+#course .study-direction .direction-item ul .active a {
   color: #00cc99;
 }
 #course .checkbox {
@@ -202,7 +212,7 @@
 }
 #course .price-content {
   padding: 71px 0 85px;
-  background-color: #F5F6FA;
+  background-color: #f2f4f7;
 }
 #course .price-content .layui-container .study-item {
   display: none;
@@ -213,9 +223,10 @@
   width: 23%;
   margin-right: 25px;
   margin-bottom: 20px;
-  height: 226px;
+  height: 246px;
   border: 1px solid #E5E5E5;
   border-radius: 10px;
+  background-color: #fff;
   cursor: pointer;
 }
 #course .price-content .layui-container .study-item .study-box li:nth-child(4n) {
@@ -225,17 +236,19 @@
   box-shadow: 0px 5px 9px 0px rgba(20, 20, 20, 0.11);
 }
 #course .price-content .layui-container .study-item .study-box li img {
+  height: 51%;
   width: 100%;
   object-fit: cover;
+  border-radius: 10px;
 }
 #course .price-content .layui-container .study-item .study-box li .txt {
   padding-left: 11px;
   box-sizing: border-box;
-  margin-top: 20px;
+  margin-top: 25px;
 }
 #course .price-content .layui-container .study-item .study-box li .txt h6 {
   color: #333;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   font-size: 16px;
 }
 #course .price-content .layui-container .study-item .study-box li .txt p {

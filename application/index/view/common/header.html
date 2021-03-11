@@ -40,12 +40,28 @@
             .layui-container>.q-logo {
                 width: 124px;
             }
+
             .q-logo h1 img {
                 width: 124px;
                 height: 45px;
             }
+
             .nav-menu {
                 width: 50%;
+            }
+
+            .nav-btn {
+                display: flex;
+                align-items: center;
+            }
+
+            .nav-btn .layui-nav {
+                background-color: #fff;
+
+            }
+
+            .nav-btn .layui-nav:hover {
+                border: none;
             }
 
             .nav-btn>span {
@@ -212,6 +228,7 @@
             .nav-menu {
                 width: 60%;
             }
+
             .pc-layui-container>.q-logo {
                 width: 124px;
             }
@@ -220,6 +237,7 @@
                 width: 124px;
                 height: 45px;
             }
+
             .menu>.menu-item>a {
                 font-size: 16px;
                 font-weight: 400;
@@ -925,20 +943,25 @@
             background-position: center center;
             background-repeat: no-repeat;
         }
+
         .product-pannel>dl>dd.dd10::after {
-           background-image: url('/static/image/index1/bushu.svg');
+            background-image: url('/static/image/index1/bushu.svg');
         }
+
         .product-pannel>dl>dd.dd12::after {
-           background-image: url('/static/image/index1/pingtai.svg');
+            background-image: url('/static/image/index1/pingtai.svg');
         }
+
         .product-pannel>dl>dd.dd13::after {
-           background-image: url('/static/image/index1/jicheng.svg');
+            background-image: url('/static/image/index1/jicheng.svg');
         }
+
         .product-pannel>dl>dd.dd23::after {
-           background-image: url('/static/image/index1/app.svg');
+            background-image: url('/static/image/index1/app.svg');
         }
+
         .product-pannel>dl>dd.dd24::after {
-           background-image: url('/static/image/index1/xianchang.svg');
+            background-image: url('/static/image/index1/xianchang.svg');
         }
 
         .product-pannel>dl>dt,
@@ -1013,6 +1036,15 @@
                 <span class="login">
                     登录
                 </span>
+                <ul class="layui-nav">
+                    <li class="layui-nav-item">
+                        <a id="img-a" href=""><img src="//t.cn/RCzsdCq" class="layui-nav-img"></a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">退出登录</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+
                 <span class="free-use">
                     免费试用
                 </span>
@@ -1115,7 +1147,7 @@
                 $(this).find('.nav-product-span>i')[0].innerText = '+'
             }
             $(this).attr('unfold', unfold === '0' ? '1' : '0');
-             
+
             // $(this).siblings().attr('unfold', )
         })
 
@@ -1202,11 +1234,11 @@
                         }
                         if (item.sub.length !== 0) {
                             let child = mobileChild(item.sub);
-                            m_menu +=' <li class="nav-product" unfold="1">\n' +
-                                '<span class="nav-product-span">' + item.menu_name + '<i>+</i></span>\n'+
-                                '<div class="nav-pro-con">\n'+
-                                     child +
-                                 '</div>\n'+
+                            m_menu += ' <li class="nav-product" unfold="1">\n' +
+                                '<span class="nav-product-span">' + item.menu_name + '<i>+</i></span>\n' +
+                                '<div class="nav-pro-con">\n' +
+                                child +
+                                '</div>\n' +
                                 '</li>';
                         }
                     }
@@ -1262,7 +1294,7 @@
                 if (item.id === id) {
                     active = 'p-active';
                 }
-                sun += '<dd class="dd'+item.id+'">\n' +
+                sun += '<dd class="dd' + item.id + '">\n' +
                     '       <a href="' + item.route + '" class="pink-item">\n' +
                     '           <p class="' + active + '">' + item.menu_name + '</p>\n' +
                     // '           <span>企业级视频云直播平台</span>\n' +
@@ -1307,7 +1339,20 @@
         }
 
     </script>
-
+    <script>
+        layui.use('element', function () {
+            var element = layui.element;
+        });
+        var tvInfo = JSON.parse(localStorage.getItem('tvInfo'))
+        console.log(tvInfo);
+        if (tvInfo.token) {
+            $('.login').hide();
+            // var img = ''
+            // img += `<img src="${tvInfo.avatar}" class="layui-nav-img">`
+            // $('#img-a').append(img)
+            $('.layui-nav-img').attr('src',tvInfo.avatar)
+        }
+    </script>
 </body>
 
 </html>

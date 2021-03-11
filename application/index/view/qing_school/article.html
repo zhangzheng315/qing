@@ -920,7 +920,7 @@
                     <ul>
                         {if isset($article)}
                         {foreach($article['article_type'] as $item)}
-                        <li class="baikeMenuContent" onclick="pointClick({$item.id})">
+                        <li class="baikeMenuContent {$item.id == 1?'active':''}" onclick="pointClick({$item.id})">
                             <a href="javascript:;">
                                 {$item.name}
                             </a>

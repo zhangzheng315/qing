@@ -163,12 +163,21 @@
          }
          /* 课程区域 */
          .cause-con {
+             position: relative;
              margin-top: 40px;
              background-color: #ffffff;
              border-radius: 10px;
              min-height: 600px;
              box-sizing: border-box;
          }
+         .cause-con ul img {
+             position: absolute;
+             top: 15%;
+             left: 50%;
+             width: 30%;
+             transform: translateX(-50%);
+         }
+         
          .cause-item {
              /* display: flex; */
              transition: all .25s ease-in-out;
@@ -1364,12 +1373,20 @@
             display: none;
          }
          .m-cause-con {
+            position: relative;
              display: block;
              background-color: #ffffff;
              min-height: 600px;
              margin-top: 30px;
              border-radius: 5px;
          }
+        .m-cause-con ul img {
+           position: absolute;
+           top: 10%;
+           left: 50%;
+           width: 40%;
+           transform: translateX(-50%);
+       }
          .cause-item {
              transition: all .25s ease-in-out;
              padding: 15px 10px 16px;
