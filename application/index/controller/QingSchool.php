@@ -5,6 +5,7 @@ namespace app\index\controller;
 // use app\admin\serve\JoinUsService;
 use app\admin\serve\ArticleService;
 use app\admin\serve\CaseService;
+use app\admin\serve\CommonArticleService;
 use app\admin\serve\LabelService;
 use app\admin\serve\QBannerService;
 use app\admin\serve\VideoService;
@@ -20,6 +21,7 @@ class QingSchool extends Controller
     public $labelService;
     public $videoTypeService;
     public $videoService;
+    public $common_article_service;
 
     public function __construct(Request $request = null)
     {
@@ -29,6 +31,7 @@ class QingSchool extends Controller
         $this->labelService = new LabelService();
         $this->videoTypeService = new VideoTypeService();
         $this->videoService = new VideoService();
+        $this->common_article_service = new CommonArticleService();
         $list = $this->articleService->hotArticleList();
         $hot_label = $this->labelService->hotLabelList();
         $video_type = $this->videoTypeService->videoTypeList();
@@ -184,6 +187,27 @@ class QingSchool extends Controller
     // 直播百科
     public function article()
     {
-        return $this->fetch();
+        $article = $this->common_article_service->commonArticleList();
+        $article_list = $this->common_article_service->articleByWhere(['pid'=>1]);
+        return $this->fetch('',compact('article','article_list'));
+    }
+
+    public function articleByWhere()
+    {
+        $param = request()->param();
+        $article_list = $this->common_article_service->articleByWhere($param);
+        if (!$article_list) {
+            return ['status'=>401];
+        }
+        return ['status'=>200,'data'=>$article_list];
+    }
+
+    public function articleInfo($id)
+    {
+        $info = $this->common_article_service->getArticleInfo($id);
+        if (!$info) {
+            return ['status'=>401];
+        }
+        return ['status'=>200,'data'=>$info];
     }
 }

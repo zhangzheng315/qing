@@ -232,4 +232,25 @@ class CommonArticleService extends Common{
         $this->setMessage('查询成功');
         return $new_add;
     }
+
+    public function articleByWhere($param)
+    {
+        $where = [
+            'deleted_time' => 0,
+            'status' => 1,
+        ];
+        if (isset($param['pid'])) {
+            $where['pid'] = $param['pid'];
+        }
+        if (isset($param['word']) && $param['word']) {
+            $where['title'] = ['like', ['%' . $param['word'] . '%']];
+        }
+        $article_list = $this->commonArticle->field(['id','icon_img_url','title'])->where($where)->order('order', 'desc')->select();
+        if (!$article_list) {
+            $this->setError('暂无数据');
+            return false;
+        }
+        $this->setMessage('查询成功');
+        return $article_list;
+    }
 }
