@@ -803,7 +803,7 @@
       <div class="layui-container flex">
         <div class="footer-left">
             <div class="footer-left-img">
-              <img src="/static/image/index1/logo_white.svg" alt="" />
+              <img src="/static/image/logo-white.png" alt="" />
             </div>
             <div class="footer-left-phone">
               <span class="span-dot">服务热线: <span style="color: #00cc99">400-920-1599</span></span><br />
@@ -976,7 +976,7 @@
                     </a>
                 </dd>
                 <dd>
-                    <a href="">
+                    <a href="javascript:void(0)" class="footer-order">
                         预约演示
                     </a>
                 </dd>
@@ -1059,7 +1059,7 @@
                     <a href="">试用教程</a>
                     <a href="">在线答疑</a>
                     <a href="">直播课堂</a>
-                    <a href="">预约演示</a>
+                    <a href="javascript:void(0)" class="footer-order">预约演示</a>
                </div>
                 </li>
             </ul>
@@ -1119,7 +1119,14 @@
     //     }
     //  })
 
-
+      $('.yanshi').on('click', function() {
+            $('#order-container').show();
+            $('.q-modal').show();
+      })
+      $('.footer-order').on('click', function() {
+            $('#order-container').show();
+            $('.q-modal').show();
+      })
     </script>
 </body>
 </html>
