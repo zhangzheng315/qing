@@ -490,7 +490,7 @@
   }
   #course header .layui-container > a {
     font-size: 12px;
-    margin: 0 25px;
+    margin: 0 20px;
   }
   #course header .layui-container .login {
     display: none;
@@ -555,7 +555,7 @@
     border-radius: 4px;
   }
   #course .checkbox .layui-container .checkboxs li i {
-    margin: 0 12px;
+    margin: 0 6px;
   }
   #course .price {
     height: 45px;

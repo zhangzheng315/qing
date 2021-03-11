@@ -248,9 +248,11 @@
   border: none;
   color: #333;
   cursor: pointer;
+  background-color: #e5e5e5;
 }
 #case-center #product .product-content .product-item .item-footer .more {
   border-radius: 0 0 0 10px;
+  background-color: #e5e5e5;
 }
 #case-center #product .product-content .product-item .item-footer .free {
   color: #fff;
