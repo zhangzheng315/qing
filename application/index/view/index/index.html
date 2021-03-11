@@ -23,7 +23,9 @@
         
         <!-- 咨询版块 -->
         {include file="common/siderbar-right"}
-        <!-- banner板块 -->
+        <!-- 申请试用弹窗 -->
+        {include file="common/order_box"}
+       <!-- banner板块 -->
         <div id="banner">
             <div class="layui-carousel" id="banners">
                 <div carousel-item class="lunbo-box">
@@ -423,7 +425,7 @@
                         </div>
                     </div>
                 </div>
-                <button>获取专属解决方案</button>
+                <button class="order-solution">获取专属解决方案</button>
             </div>
         </div>
 
@@ -682,6 +684,12 @@
                 }
             });
         }
+    })
+
+    // 点击获取专属解决方案，弹出预约演示弹出框
+    $('.order-solution').on('click', function() {
+        $('#order-container').show();
+        $('.q-modal').show();
     })
 </script>
 
