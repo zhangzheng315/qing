@@ -24,6 +24,10 @@
   color: #333;
   margin-right: 41px;
   font-size: 16px;
+  cursor: pointer;
+}
+#course header .layui-container ul li:hover {
+  color: #00cc99;
 }
 #course header .layui-container .layui-form-item {
   height: 34px;
@@ -116,6 +120,9 @@
 #course .study-direction .direction-item ul li a {
   font-size: 16px;
   color: #333;
+}
+#course .study-direction .direction-item ul li:hover a {
+  color: #00cc99;
 }
 #course .study-direction .direction-item ul li .active {
   color: #00cc99;
