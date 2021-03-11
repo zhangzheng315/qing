@@ -1,0 +1,185 @@
+@media screen and (min-width: 1200px) {
+  .layui-container {
+    width: 1200px !important;
+    padding: 0 !important;
+  }
+}
+@font-face {
+  font-family: AxureHandwriting-Italic;
+  src: url('/static/css/login/AxureHandwriting-Italic.otf');
+}
+#login {
+  background: url('/static/image/login/bg.png') no-repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  zoom: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
+}
+#login header {
+  height: 65px;
+  line-height: 65px;
+  background: #fff;
+}
+#login header .layui-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#login header .layui-container .text a {
+  color: #333;
+  font-size: 16px;
+}
+#login section {
+  padding-top: 105px;
+}
+#login section .layui-container {
+  display: flex;
+}
+#login section .layui-container .sec-left {
+  flex: 5.5;
+  padding-top: 60px;
+  margin-right: 20px;
+}
+#login section .layui-container .sec-left h3 {
+  font-size: 40px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 30px;
+}
+#login section .layui-container .sec-left h5 {
+  font-size: 25px;
+  color: #fff;
+  font-family: 'AxureHandwriting-Italic';
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+#login section .layui-container .sec-left img {
+  width: 100%;
+  object-fit: cover;
+}
+#login section .layui-container .sec-right {
+  flex: 3;
+  height: 550px;
+  background: #FFFFFF;
+  box-shadow: 0px 9px 35px 0px rgba(0, 95, 71, 0.17);
+  border-radius: 20px;
+  padding: 100px 80px 0;
+  box-sizing: border-box;
+}
+#login section .layui-container .sec-right h4 {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 50px;
+}
+#login section .layui-container .sec-right .type {
+  margin-bottom: 35px;
+}
+#login section .layui-container .sec-right .type a {
+  color: #666;
+  font-size: 16px;
+  margin-right: 33px;
+}
+#login section .layui-container .sec-right .type a:hover {
+  color: #00cc99;
+}
+#login section .layui-container .sec-right .type .active {
+  color: #00cc99;
+}
+#login section .layui-container .sec-right form input {
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  margin-bottom: 26px;
+  color: #333;
+  text-indent: 10px;
+}
+#login section .layui-container .sec-right form input:nth-child(-n + 2) {
+  height: 42px;
+}
+#login section .layui-container .sec-right form input:nth-child(4) {
+  margin: 26px 0;
+  height: 42px;
+  background-color: #00cc99;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+}
+#login section .layui-container .sec-right form p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#login section .layui-container .sec-right form p label {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 16px;
+  color: #333;
+}
+#login section .layui-container .sec-right form p label input {
+  height: auto !important;
+  width: auto !important;
+  margin-bottom: 0 !important;
+  margin-right: 6px;
+}
+#login section .layui-container .sec-right form p a {
+  font-size: 16px;
+  color: #333;
+}
+#login section .layui-container .sec-right form p a:hover {
+  color: #00cc99;
+}
+#login section .layui-container .sec-right form > a {
+  color: #00cc99;
+  font-size: 16px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  cursor: pointer;
+}
+#login section .layui-container .sec-right form input::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #c2c2c2;
+}
+#login section .layui-container .sec-right form :-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #c2c2c2;
+}
+#login section .layui-container .sec-right form ::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #c2c2c2;
+}
+#login section .layui-container .sec-right form input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #c2c2c2;
+}
+#login section .layui-container .sec-right form input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #c2c2c2;
+}
+#login footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 65px;
+  width: 100%;
+  line-height: 65px;
+  background-color: #fff;
+}
+#login footer .layui-container p {
+  color: #333;
+  font-size: 12px;
+  text-align: center;
+}
+#login footer .layui-container p a {
+  margin-left: 30px;
+}

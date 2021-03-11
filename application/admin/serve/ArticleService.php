@@ -226,12 +226,18 @@ class ArticleService extends Common{
      * @throws \think\db\exception\ModelNotFoundException
      * @throws \think\exception\DbException
      */
-    public function articleContentCenter()
+    public function articleContentCenter($param)
     {
         $where = [
             'status'=>1,
             'deleted_time' => 0,
         ];
+        if (isset($param['word']) && $param['word']) {
+            $where['title'] = ['like','%'.$param['word'].'%'];
+        }
+        if (isset($param['label']) && $param['label']) {
+            $where['label'] = ['like', '%' . $param['label'] . '%'];
+        }
         $content_center = new ContentCenter();
         $res = $content_center->where($where)->order('order', 'desc')->select();
         foreach ($res as &$item) {
@@ -241,7 +247,7 @@ class ArticleService extends Common{
         }
         if (!$res) {
             $this->setError('暂无数据');
-            return false;
+            return $res = [];
         }
         $this->setMessage('查询成功');
         return $res;
@@ -256,12 +262,14 @@ class ArticleService extends Common{
      */
     public function hotArticleList()
     {
+        $where = ['deleted_time' => 0, 'status' => 1];
         $hotArticle = new HotArticle();
-        $hotArticleList = $hotArticle->order('order', 'desc')->select();
+        $hotArticleList = $this->article->where($where)->order('browse', 'desc')->limit(0, 5)->select();
         foreach ($hotArticleList as &$item) {
             $item['time'] = $item['updated_time'] ? date('Y-m-d', $item['updated_time']) : date('Y-m-d', $item['created_time']);
         }
-        $recommendList = $this->article->where(['deleted_time' => 0, 'status' => 1])->order('order', 'desc')->limit(0, 5)->select();
+        $where['hot_article'] = 1;
+        $recommendList = $this->article->where($where)->order('order', 'desc')->limit(0, 5)->select();
         foreach ($recommendList as &$item) {
             $item['time'] = $item['updated_time'] ? date('Y-m-d', $item['updated_time']) : date('Y-m-d', $item['created_time']);
         }
@@ -342,8 +350,17 @@ class ArticleService extends Common{
         $pre_article = [];
         $nex_article = [];
         if ($pid == 0) {
+            //内容中心
             $article_list = $this->content_center->where($page_where)->order('order', 'desc')->select();
-        }else{
+        } elseif ($pid == 11) {
+            //热门文章
+            $article_list = $this->article->where($page_where)->order('browse', 'desc')->limit(0, 5)->select();
+        } elseif ($pid == 12) {
+            //推荐文章
+            $page_where['hot_article'] = 1;
+            $article_list = $this->article->where($page_where)->order('order', 'desc')->limit(0, 5)->select();
+        }
+        else{
             $page_where['pid'] = $pid;
             $article_list = $this->article->where($page_where)->order('order', 'desc')->select();
         }
@@ -376,7 +393,7 @@ class ArticleService extends Common{
         return $data;
     }
 
-    public function articleSearch($param)
+    public function articleByWhere($param)
     {
         $where = [
             'deleted_time' => 0,
@@ -397,6 +414,11 @@ class ArticleService extends Common{
         if (!$search_list) {
             $this->setError('暂无数据');
             return false;
+        }
+        foreach ($search_list as &$item) {
+            $item['browse'] = $this->article->where(['id' => $item['id']])->value('browse');
+            $item['label'] = explode(',', $item['label']);
+            $item['time'] = $item['updated_time'] ? date('Y-m-d', $item['updated_time']) : date('Y-m-d', $item['created_time']);
         }
         $this->setMessage('查询成功');
         return $search_list;

@@ -40,8 +40,9 @@ class QingSchool extends Controller
     /* 内容中心*/
     public function index()
     {
+        $param = request()->param();
         $banner_list = $this->qBannerService->QBannerListByPid(0);
-        $article_list = $this->articleService->articleContentCenter();
+        $article_list = $this->articleService->articleContentCenter($param);
 
         return $this->fetch('', compact('banner_list', 'article_list'));
     }
@@ -56,24 +57,30 @@ class QingSchool extends Controller
     /* 案例解析*/
     public function caseAn()
     {
+        $param = request()->param();
+        $param['pid'] = 1;
         $banner_list = $this->qBannerService->QBannerListByPid(1);
-        $article_list = $this->articleService->articleByPid(1);
+        $article_list = $this->articleService->articleByWhere($param);
         return $this->fetch('', compact('banner_list', 'article_list'));
     }
 
     /*产品动态 */
     public function products()
     {
+        $param = request()->param();
+        $param['pid'] = 2;
         $banner_list = $this->qBannerService->QBannerListByPid(2);
-        $article_list = $this->articleService->articleByPid(2);
+        $article_list = $this->articleService->articleByWhere($param);
         return $this->fetch('', compact('banner_list', 'article_list'));
     }
 
     /* 直播资讯*/
     public function liveNews()
     {
+        $param = request()->param();
+        $param['pid'] = 3;
         $banner_list = $this->qBannerService->QBannerListByPid(3);
-        $article_list = $this->articleService->articleByPid(3);
+        $article_list = $this->articleService->articleByWhere($param);
         return $this->fetch('', compact('banner_list', 'article_list'));
     }
 

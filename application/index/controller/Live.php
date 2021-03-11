@@ -33,9 +33,9 @@ class Live extends Controller
         $res = $this->liveCurl($data, $url);
         $res = json_decode($res, true);
         if ($res['code'] == '200') {
-            return show(200, $res['message'],$res['data']);
+            return ['status'=>200, 'msg'=>$res['message'],'data'=>$res['data']];
         }
-        return show(401, $res['error']);
+        return ['status'=>401, 'msg'=>$res['error']];
     }
 
     public function liveCurl($data,$url)

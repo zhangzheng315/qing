@@ -133,6 +133,7 @@
                 <div class="cause-con">
                     <ul>
                         {if isset($article_list)}
+                        {if($article_list)}
                         {foreach($article_list as $item)}
                         <li class="cause-item">
                             <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>1])}" class="cause-cover"
@@ -166,6 +167,9 @@
                             </div>
                         </li>
                         {/foreach}
+                        {else}
+                        <div style="text-align: center">空空如也</div>
+                        {/if}
                         {/if}
                     </ul>
                     <div class="cause-bottom">
@@ -176,9 +180,10 @@
                 <div class="m-cause-con">
                     <ul>
                         {if isset($article_list)}
+                        {if($article_list)}
                         {foreach($article_list as $item)}
                         <li class="cause-item">
-                            <a href="">
+                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>1])}">
                                 <h3>
                                     {$item.title}
                                 </h3>
@@ -189,20 +194,24 @@
                                 <i class="vertical-bar">|</i>
                                 <span class="category">{$item.pid_name}</span>
                             </div>
-                            <a href="" class="cause-item-desc">
+                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>1])}" class="cause-item-desc">
                                 <img src="{$item.cover_img_url}" alt="">
                                 <p>{$item.second_title}</p>
                             </a>
                         </li>
                         {/foreach}
+                        {else}
+                        <div style="text-align: center">空空如也</div>
+                        {/if}
                         {/if}
                     </ul>
                 </div>
             </div>
             <div class="school-right-con">
                 <div class="siderbar-item siderbar-item-search">
-                    <form action="" class="search-form" id="search-form">
-                        <input type="text" class="searchInput" placeholder="输入关键词" autocomplete="off">
+                    <form action="/index/qing_school/caseAn" class="search-form" id="search-form">
+                        <input type="text" name="word" value="{:request()->param('word')}" class="searchInput" placeholder="输入关键词" autocomplete="off">
+                        <input type="hidden" name="pid" value="1">
                         <input type="submit" class="submitInput" alt="search">
                     </form>
                 </div>
@@ -222,7 +231,7 @@
                         {if(isset($list))}
                         {foreach($list['hot_article'] as $item)}
                         <li class="article-item">
-                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>20])}" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
+                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>11])}" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
                                 <p>{$item.title}</p>
                                 <span class="time">{$item.time}</span>
                             </a>
@@ -234,7 +243,7 @@
                         {if(isset($list))}
                         {foreach($list['recommend'] as $item)}
                         <li class="article-item">
-                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>20])}" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
+                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>12])}" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
                                 <p>{$item.title}</p>
                                 <span class="time">{$item.time}</span>
                             </a>
@@ -288,13 +297,12 @@
                                 <span>
                                     热门标签
                                 </span>
-                            <a href="" class="hot-tags-more" rel="tag">更多</a>
                         </h2>
                     </div>
                     <ul class="hot-tags-list">
                         {if(isset($hot_label))}
                         {foreach($hot_label as $item)}
-                        <li><a href="" class="hot-tag-item">{$item.name}</a></li>
+                        <li><a href="/index/qing_school/caseAn?pid=1&label={$item.name}" class="hot-tag-item">{$item.name}</a></li>
                         {/foreach}
                         {/if}
                     </ul>

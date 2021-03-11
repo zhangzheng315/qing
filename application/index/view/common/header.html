@@ -38,7 +38,10 @@
             }
 
             .layui-container>.q-logo {
-                width: 10%;
+                width: 124px;
+            }
+            .q-logo>a>h1>img {
+                width: 124px;
             }
 
             .nav-menu {
@@ -205,6 +208,9 @@
             .mobile-layui-container {
                 display: none !important;
             }
+            .q-logo h1 img {
+                width: 110px;
+            }
 
             .nav-menu {
                 width: 60%;
@@ -369,7 +375,7 @@
             }
 
             .q-logo h1 img {
-                width: 100%;
+                width: 100px;
             }
 
             .nav-menu {
@@ -544,7 +550,7 @@
             }
 
             .q-logo h1 img {
-                width: 100%;
+                width: 100px;
             }
 
             .navbar-toggle {
@@ -686,7 +692,7 @@
             }
 
             .q-logo>h1>img {
-                width: 100%;
+                width: 100px;
             }
 
             .navbar-toggle {
@@ -980,7 +986,7 @@
             <div class="q-logo">
                 <a href="/" style="display: block;height: 100%;">
                     <h1>
-                        <img src="/static/image/logo.png" alt="">
+                        <img src="/static/image/index1/logo_text.svg" alt="">
                     </h1>
                 </a>
             </div>
@@ -1003,7 +1009,7 @@
             <!-- 轻直播logo -->
             <div class="q-logo">
                 <h1>
-                    <img src="/static/image/logo.png" alt="">
+                    <img src="/static/image/index1/logo_text.svg" alt="">
                 </h1>
             </div>
             <div class="navbar-toggle">
@@ -1152,7 +1158,7 @@
                                 '                        </div>\n' +
                                 '                    </div>\n' +
                                 '                </li>');
-                        } else if (item.id == 6) {
+                        } else if (item.id === 6) {
                             if (item.sub.length !== 0) {
                                 var child = aboutChild(item.sub, res.nav_id.id);
                             }
@@ -1271,6 +1277,7 @@
         }
 
         function pingSon(arr, id) {
+
             let son = '';
             if (arr.length === 0) {
                 return '';
@@ -1280,6 +1287,8 @@
                 if (item.id === id) {
                     active = 'p-active';
                 }
+                console.log(id);
+                console.log(item.id)
                 son += '<li><a href="' + item.route + '" class="' + active + '">' + item.menu_name + '</a></li>'
             }
             return son;

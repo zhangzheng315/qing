@@ -78,8 +78,7 @@
                         <li class="cause-item">
                             <a href="/index/case_center/caseDetail?type_id=4&id={$item.id}" class="cause-cover"
                                target="_blank"
-                               style="background: url({$item.cover_img_url}); background-size: cover;
-         background-position: center;">
+                               style="background: url({$item.cover_img_url}); background-size: cover;background-position: center;">
                             </a>
                             <div class="cause-des">
                                 <a href="" class="cause-title">
@@ -106,7 +105,7 @@
                         </li>
                         {/foreach}
                         {else}
-                        <div style="text-align: center">空空如也</div>
+                        <img class="null-data" src="/static/image/null_data.svg" alt="">
                         {/if}
                         {/if}
 
