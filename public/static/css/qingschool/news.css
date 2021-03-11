@@ -44,20 +44,20 @@ nav {
 }
 /* 导航栏背景图 */
   .icon-nav-home {
-         background-image: url(/static/image/qingschool/school-home.png);
-  }
-  .icon-nav-case {
-         background-image: url(/static/image/qingschool/case-icon.png);
-  }
-  .icon-nav-product {
-         background-image: url(/static/image/qingschool/product-icon.png);
-  }
-  .icon-nav-live {
-         background-image: url(/static/image/qingschool/live-icon.png);
-  }
-  .icon-nav-video {
-         background-image: url(/static/image/qingschool/video-icon.png);
-  }
+    background-image: url(/static/image/qingschool1/zhongxin.svg);
+}
+.icon-nav-case {
+    background-image: url(/static/image/qingschool1/anli.svg);
+}
+.icon-nav-product {
+    background-image: url(/static/image/qingschool1/dongtai.svg);
+}
+.icon-nav-video {
+    background-image: url(/static/image/qingschool1/shipin.svg);
+}
+.icon-nav-live {
+    background-image: url(/static/image/qingschool1/zixun.svg);
+}
 
 @media screen and (min-width: 1300px){
     .layui-container {
@@ -510,16 +510,16 @@ nav {
           vertical-align: middle;
       }
       .hot-products-list .hot-products-item .icon-hot-product.icon-hot-product_1 {
-          background-image: url(/static/image/qingschool/hot_product-1.png);
+          background-image: url(/static/image/qingschool1/qiye.svg);
       }
       .hot-products-list .hot-products-item .icon-hot-product.icon-hot-product_2 {
-          background-image: url(/static/image/qingschool/hot_product-2.png);
+          background-image: url(/static/image/qingschool1/peixun.svg);
       }
       .hot-products-list .hot-products-item .icon-hot-product.icon-hot-product_3 {
-          background-image: url(/static/image/qingschool/hot_product-3.png);
+          background-image: url(/static/image/qingschool1/dianbo.svg);
       }
       .hot-products-list .hot-products-item .icon-hot-product.icon-hot-product_4 {
-          background-image: url(/static/image/qingschool/hot_product-4.png);
+          background-image: url(/static/image/qingschool1/hunhe.svg);
       }
       .hot-products-item span {
           font-size: 16px;
@@ -1057,17 +1057,17 @@ nav {
           vertical-align: middle;
       }
       .hot-products-list .hot-products-item .icon-hot-product.icon-hot-product_1 {
-          background-image: url(/static/image/qingschool/hot_product-1.png);
-      }
-      .hot-products-list .hot-products-item .icon-hot-product.icon-hot-product_2 {
-          background-image: url(/static/image/qingschool/hot_product-2.png);
-      }
-      .hot-products-list .hot-products-item .icon-hot-product.icon-hot-product_3 {
-          background-image: url(/static/image/qingschool/hot_product-3.png);
-      }
-      .hot-products-list .hot-products-item .icon-hot-product.icon-hot-product_4 {
-          background-image: url(/static/image/qingschool/hot_product-4.png);
-      }
+        background-image: url(/static/image/qingschool1/qiye.svg);
+    }
+    .hot-products-list .hot-products-item .icon-hot-product.icon-hot-product_2 {
+        background-image: url(/static/image/qingschool1/peixun.svg);
+    }
+    .hot-products-list .hot-products-item .icon-hot-product.icon-hot-product_3 {
+        background-image: url(/static/image/qingschool1/dianbo.svg);
+    }
+    .hot-products-list .hot-products-item .icon-hot-product.icon-hot-product_4 {
+        background-image: url(/static/image/qingschool1/hunhe.svg);
+    }
       .hot-products-item span {
           font-size: 14px;
           line-height: 1;
