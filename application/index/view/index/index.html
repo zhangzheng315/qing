@@ -20,16 +20,45 @@
     <div id="index">
         <!-- 头部 -->
         {include file="common/header"}
-        
+
         <!-- 咨询版块 -->
         {include file="common/siderbar-right"}
         <!-- banner板块 -->
         <div id="banner">
             <div class="layui-carousel" id="banners">
                 <div carousel-item class="lunbo-box">
+
                     {if isset($banner_list)}
                     {foreach $banner_list as $item}
-                    <img src="{$item.img_url}" alt="">
+                    <div class="banner-item">
+                        <img class="banner-img" src="{$item.img_url}" alt="">
+                        <div class="text-left">
+                            <h2 style="font-size: 45px;
+                            font-weight: bold;
+                            color: #1DECFF;
+                            background: linear-gradient(257deg, #73FFE0 0%, #3EC0A5 100%);
+                            -webkit-background-clip: text;
+                            text-align: left;
+                            -webkit-text-fill-color: transparent;">企业级云视频定制服务平台</h2>
+                            <h5 style=" color: #fff;
+                            opacity: .8;
+                            font-size: 16px;
+                            width: 70%;
+                            margin: 78px 0 103px;
+                            line-height: 1.5;">专注于企业级直播领域全案定制，让直播+迸发新的想象空间，
+                                轻松打造企业客户专属直播间</h5>
+                            <a class="banner-a" href="" style="z-index: 10;
+                            display: block;
+                            width: 167px;
+                            height: 44px;
+                            border: 1px solid #FFFFFF;
+                            color: #fff;
+                            text-align: center;
+                            line-height: 44px;
+                            font-size: 18px;">立即咨询</a>
+                        </div>
+                    </div>
+
                     {/foreach}
                     {/if}
                 </div>
@@ -138,7 +167,7 @@
                             <p>轻直播平台全球化部署的企业级云视频平台 ，支持数百万并发，支持8K、4K、1080P 清晰度直播，300+增强功能，稳定可靠， 便捷易用。</p>
                         </div>
                         <div class="item-footer">
-                            <button class="more"><a href="{:url('/index/about/index')}">了解更多</a>
+                            <button class="more"><a href="{:url('/index/video_cloud/index')}">了解更多</a>
                             </button>
                             <button class="free"><a href="http://login.lighos.com/signUp"
                                     target="_blank">免费试用</a></button>
@@ -153,7 +182,7 @@
                             <p>快捷响应，为用户提供深度定制服务，支持 与用户既有OA、CRM、视频会议系统等集 成化开发，打造用户专属直播平台。</p>
                         </div>
                         <div class="item-footer">
-                            <button class="more"><a href="{:url('/index/about/index')}">了解更多</a></button>
+                            <button class="more"><a href="{:url('/index/customized_service/index')}">了解更多</a></button>
                             <button class="free"><a href="http://login.lighos.com/signUp"
                                     target="_blank">免费试用</a></button>
                         </div>
@@ -170,7 +199,7 @@
                                 案。</p>
                         </div>
                         <div class="item-footer">
-                            <button class="more"><a href="{:url('/index/about/index')}">了解更多</a></button>
+                            <button class="more"><a href="{:url('/index/site_service/index')}">了解更多</a></button>
                             <button class="free"><a href="http://login.lighos.com/signUp"
                                     target="_blank">免费试用</a></button>
                         </div>

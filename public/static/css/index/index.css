@@ -25,8 +25,81 @@
   height: 600px;
   position: relative;
 }
-#banner .layui-carousel .lunbo-box img {
+#banner .layui-carousel #banners .layui-carousel > [carousel-item] .banner-item {
+  position: relative;
+}
+#banner .layui-carousel .banner-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
   object-fit: cover;
+  z-index: 0;
+}
+#banner .layui-carousel .text-left {
+  position: absolute;
+  top: 25%;
+  left: 20%;
+}
+#banner .layui-carousel .text-left h2 {
+  font-size: 45px;
+  font-weight: bold;
+  color: #1DECFF;
+  background: linear-gradient(257deg, #73FFE0 0%, #3EC0A5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: left;
+}
+#banner .layui-carousel .text-left h5 {
+  color: #fff;
+  opacity: 0.8;
+  font-size: 16px;
+  width: 70%;
+  margin: 78px auto 103px;
+  line-height: 1.5;
+}
+#banner .layui-carousel .text-left .banner-a {
+  z-index: 10;
+  display: block;
+  width: 167px;
+  height: 44px;
+  border: 1px solid #FFFFFF;
+  color: #fff;
+  text-align: center;
+  line-height: 44px;
+  font-size: 18px;
+}
+#banner .layui-carousel .text-center {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#banner .layui-carousel .text-center h5 {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+#banner .layui-carousel .text-center .banner-a {
+  margin: 0 auto;
+}
+#banner .layui-carousel .text-right {
+  position: absolute;
+  top: 25%;
+  right: 7%;
+}
+#banner .layui-carousel .text-right h2 {
+  text-align: left ;
+}
+#banner .layui-carousel .text-right h5 {
+  width: 80%;
+  margin-left: 100%;
+  margin: 78px 0 103px ;
+  text-align: left;
+}
+#banner .layui-carousel .text-right .banner-a {
+  float: left;
 }
 #banner .layui-carousel .layui-carousel-ind {
   display: none !important;
