@@ -20,6 +20,9 @@
   width: 100%;
   height: 100%;
 }
+#video_cloud #banner .layui-carousel .lunbo-box img {
+  object-fit: cover;
+}
 #video_cloud #banner .layui-carousel .layui-carousel-ind {
   display: none !important;
 }
@@ -64,6 +67,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+#video_cloud .tedian .layui-container .tedian-content li img {
+  width: 62px;
 }
 #video_cloud .tedian .layui-container .tedian-content li h5 {
   margin: 20px 0 18px;
@@ -138,7 +144,7 @@
 }
 #video_cloud .mature .mature-content {
   height: 600px;
-  background: url('/static/image/videoCloud/women.png') no-repeat;
+  background: url('/static/image/video_cloud/women.png') no-repeat;
 }
 #video_cloud .mature .mature-content .layui-container .mature-box {
   display: flex;
@@ -203,6 +209,7 @@
 }
 #video_cloud .qiye {
   padding: 101px 0 109px;
+  background-color: #fff;
 }
 #video_cloud .qiye .layui-container .title {
   margin-bottom: 70px;
@@ -216,7 +223,7 @@
   width: 50%;
   height: 168px;
   display: flex;
-  padding: 40px 0 0 60px;
+  padding: 25px 0 0 60px;
   border-bottom: 1px solid #e5e5e5;
   box-sizing: border-box;
   cursor: pointer;
