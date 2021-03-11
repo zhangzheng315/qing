@@ -23,7 +23,7 @@
             <ul class="flexs">
                 {if(isset($video_type))}
                 {foreach($video_type as $item)}
-                <li>{$item.name}</li>
+                <li class="active">{$item.name}</li>
                 {/foreach}
                 {/if}
             </ul>
@@ -49,7 +49,7 @@
         <div class="layui-container">
             <a href="{:url('/index/qing_school/videoCourse')}">首页</a>
             <i class="layui-icon layui-icon-right"></i>
-            <span class="active">全部课程</span>
+            <span >全部课程</span>
             <i class="layui-icon layui-icon-right"></i>
             <span>企培用户专区</span>
         </div>
@@ -246,7 +246,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="study-item">
+                <!--<div class="study-item">
                     <ul class="study-box">
                         <li>
                             <a href="{:url('/index/tutorial/index')}">
@@ -312,7 +312,7 @@
                             </a>
                         </li>
                     </ul>
-                </div>
+                </div>-->
                 <div id="test1"></div>
             </div>
         </div>
@@ -337,17 +337,55 @@
         }, 100);
     });
 
-    layui.use('laypage', function () {
-        var laypage = layui.laypage;
-        //执行一个laypage实例
-        laypage.render({
-            elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
-            , count: 16 //数据总数，从服务端得到
-            , prev: '<'         // 上一页按钮内容
-            , next: '>'         // 下一页按钮内容
-            , theme: '#00cc99'
+    //分页方法
+    function layPage(data) {
+        layui.use('laypage', function () {
+            var laypage = layui.laypage;
+
+            //执行一个laypage实例
+            laypage.render({
+                elem: 'test1'       //注意，这里的 test1 是分页容器ID，不用加 # 号
+                , count: data.count //数据总数
+                , curr: data.curr   //当前页
+                , limit:12
+                , prev: '<'         // 上一页按钮内容
+                , next: '>'         // 下一页按钮内容
+                , theme: '#00cc99'
+                , jump: function (obj, first) {
+                    currPage = obj.curr; //这里是后台返回给前端的当前页数
+                    if (!first) {         //点击跳页触发函数自身，并传递当前页：obj.curr  ajax 再次请求
+                        casePoint(data.index, currPage);     //调用ajax请求数据
+                    }
+                }
+            });
         });
-    });
+    }
+
+    videoPage(1);
+    function videoPage(index, curr = 1) {
+        $.ajax({
+            url: "{:url('/index/qing_school/videoListByWhere')}",
+            data: {'pid': index, 'curr': curr},
+            type: 'get',
+            success: function (res) {
+                if (res.status === 200) {
+                    console.log(res)
+                    $('.study-box').empty()
+                    for (let item of res.data.data) {
+                        $('.study-box').append('<li>\n' +
+                            '                            <a href="/index/tutorial/index">\n' +
+                            '                                <img src="'+item.cover_img_url+'" alt="">\n' +
+                            '                                <div class="txt">\n' +
+                            '                                    <h6>'+item.title+'</h6>\n' +
+                            '                                    <p><span>免费</span><span>'+item.browse+'人已学习</span></p>\n' +
+                            '                                </div>\n' +
+                            '                            </a>\n' +
+                            '                        </li>')
+                    }
+                }
+            }
+        })
+    }
 </script>
 
 </html>

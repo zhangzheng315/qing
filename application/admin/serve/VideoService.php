@@ -235,4 +235,24 @@ class VideoService extends Common{
         return $list;
     }
 
+    public function videoListByWhere($param)
+    {
+        $limit = 8;
+        $offset = ($param['curr'] - 1) * $limit;
+        $where = [
+            'deleted_time' => 0,
+            'status' => 1,
+            'pid' => $param['pid'],
+        ];
+        $res = $this->video->where($where)->limit($offset,$limit)->select();
+        if (!$res) {
+            $this->setError('暂无数据');
+            return false;
+        }
+
+        $count = $this->video->where($where)->count('id');
+        $this->setMessage('查询成功');
+        return ['data'=>$res,'count'=>$count,'index'=>$param['pid'],'curr'=>$param['curr']];
+    }
+
 }
