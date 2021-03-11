@@ -21,10 +21,11 @@
         <div class="layui-container flexs">
             <div class="logo"><a href="{:url('/')}"><img src="/static/image/index1/logo_text.svg" alt="首页"></a></div>
             <ul class="flexs">
-                <li>企培用户专区</li>
-                <li>直播快速入门</li>
-                <li>点播快速入门</li>
-                <li>线上沙龙课</li>
+                {if(isset($video_type))}
+                {foreach($video_type as $item)}
+                <li>{$item.name}</li>
+                {/foreach}
+                {/if}
             </ul>
             <div class="layui-form-item">
                 <div class="layui-input-block flexs">
