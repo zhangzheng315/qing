@@ -20,10 +20,10 @@
     <header>
         <div class="layui-container flexs">
             <div class="logo"><a href="{:url('/')}"><img src="/static/image/index1/logo_text.svg" alt="首页"></a></div>
-            <ul class="flexs">
+            <ul class="flexs head-ul">
                 {if(isset($video_type))}
                 {foreach($video_type as $item)}
-                <li class="active">{$item.name}</li>
+                <li class="">{$item.name}</li>
                 {/foreach}
                 {/if}
             </ul>
@@ -58,8 +58,8 @@
         <div class="layui-container">
             <div class="direction-item flexs">
                 <div class="item-title">学习方向</div>
-                <ul class="flexs">
-                    <li><a class="active" href="">全部</a></li>
+                <ul class="flexs study-ul">
+                    <li class="active"><a href="">全部</a></li>
                     <li><a href="">产品动态</a></li>
                     <li><a href="">直播资讯</a></li>
                     <li><a href="">直播新用户快速入门</a></li>
@@ -69,8 +69,8 @@
             </div>
             <div class="direction-item flexs">
                 <div class="item-title">课程类型</div>
-                <ul class="flex">
-                    <li><a href="" class="active">全部</a></li>
+                <ul class="flex study-ul">
+                    <li class="active"><a href="" >全部</a></li>
                     <li><a href="">视频直播</a></li>
                     <li><a href="">视频点播</a></li>
                 </ul>
@@ -337,6 +337,22 @@
         }, 100);
     });
 
+    // 头部导航点击高亮
+    $('header').each(function (index, element) {
+        var obj = $(this);
+        obj.find('.head-ul').children().on('click li', function () {
+            $(this).addClass('active').siblings().removeClass('active');
+        });
+    });
+
+    // 学习方向点击高亮
+    $('.study-direction').each(function (index, element) {
+        var obj = $(this);
+        obj.find('.study-ul').children().on('click li', function () {
+            $(this).addClass('active').siblings().removeClass('active');
+        });
+    });
+
     //分页方法
     function layPage(data) {
         layui.use('laypage', function () {
@@ -361,6 +377,7 @@
         });
     }
 
+
     videoPage(1);
     function videoPage(index, curr = 1) {
         $.ajax({
@@ -373,7 +390,7 @@
                     $('.study-box').empty()
                     for (let item of res.data.data) {
                         $('.study-box').append('<li>\n' +
-                            '                            <a href="/index/tutorial/index">\n' +
+                            '                            <a href="/index/tutorial/index?browse=1&id='+item.id+'">\n' +
                             '                                <img src="'+item.cover_img_url+'" alt="">\n' +
                             '                                <div class="txt">\n' +
                             '                                    <h6>'+item.title+'</h6>\n' +
@@ -382,6 +399,7 @@
                             '                            </a>\n' +
                             '                        </li>')
                     }
+                    layPage(res.data); 
                 }
             }
         })
