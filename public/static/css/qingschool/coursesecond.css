@@ -12,9 +12,13 @@
   height: 90px;
   box-sizing: border-box;
   padding-top: 23px;
+  background-color: #fff;
 }
 #course header .layui-container .logo {
   margin-right: 41px;
+}
+#course header .layui-container .logo img {
+  width: 124px;
 }
 #course header .layui-container ul li {
   color: #333;
@@ -50,6 +54,9 @@
   text-align: center;
   line-height: 2.3;
   cursor: pointer;
+}
+#course header .layui-container .layui-form-item .layui-input-block .icons img {
+  width: 18px;
 }
 #course header .layui-container > a {
   color: #333;
@@ -456,7 +463,7 @@
   #course header .layui-container .layui-form-item {
     height: 26px;
     width: 128px;
-    margin-left: 5px;
+    margin-left: 15px;
   }
   #course header .layui-container .layui-form-item .layui-input-block .layui-input {
     font-size: 12px;
@@ -470,7 +477,10 @@
   }
   #course header .layui-container > a {
     font-size: 12px;
-    margin: 0 15px;
+    margin: 0 25px;
+  }
+  #course header .layui-container .login {
+    display: none;
   }
   #course header .layui-container .login button {
     font-size: 12px;
