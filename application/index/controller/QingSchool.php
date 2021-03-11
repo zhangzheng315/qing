@@ -226,4 +226,33 @@ class QingSchool extends Controller
         }
         return ['status'=>200,'data'=>$info];
     }
+
+    /**
+     * 视频分页列表
+     * @param Request $request
+     * @return \think\response\Json
+     */
+    public function videoListByWhere(Request $request){
+        $rules =
+            [
+                'pid' => 'require',
+                'curr' => 'require',
+            ];
+        $msg =
+            [
+                'pid' => '缺少参数@pid',
+                'curr' => '缺少参数@curr',
+            ];
+        $validate = new Validate($rules,$msg);
+        if(!$validate->check($request->param())){
+            return show(401,$validate->getError());
+        }
+
+        $res = $this->videoService->videoListByWhere($request->param());
+        if($res){
+            return show(200,$this->videoService->message,$res);
+        }else{
+            return show(401,$this->videoService->error);
+        }
+    }
 }
