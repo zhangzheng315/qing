@@ -135,7 +135,61 @@
              background: #F2F4F7;
              padding-bottom: 90px;
          }
-
+         .p-icon_item {
+             background-size: contain;
+             display: inline-block;
+             background-repeat: no-repeat;
+             background-position: center;
+         }
+         .p-icon_item_fugai {
+            background-image: url(/static/image/solution1/fugai.svg);
+         }
+         .p-icon_item_bushu {
+            background-image: url(/static/image/solution1/bushu.svg);
+         }
+         .p-icon_item_quanxian {
+            background-image: url(/static/image/solution1/quanxian.svg);
+         }
+         .p-icon_item_jiagou {
+            background-image: url(/static/image/solution1/jiagou.svg);
+         }
+         .p-icon_item_anquan {
+            background-image: url(/static/image/solution1/anquan.svg);
+         }
+         .p-icon_item_hudong {
+            background-image: url(/static/image/solution1/hudong.svg);
+         }
+         .p-icon_item_fenxi {
+            background-image: url(/static/image/solution1/fenxi.svg);
+         }
+         .p-icon_item_kaifa {
+            background-image: url(/static/image/solution1/kaifa.svg);
+         }
+         /* hover */
+         .advantage-con>li:hover .p-icon_item_fugai {
+            background-image: url(/static/image/solution1/fugai_white.svg);
+         }
+         .advantage-con>li:hover .p-icon_item_bushu {
+            background-image: url(/static/image/solution1/bushu_white.svg);
+         }
+         .advantage-con>li:hover .p-icon_item_quanxian{
+            background-image: url(/static/image/solution1/quanxian_white.svg);
+         }
+         .advantage-con>li:hover .p-icon_item_jiagou {
+            background-image: url(/static/image/solution1/jiagou_white.svg);
+         }
+         .advantage-con>li:hover .p-icon_item_anquan {
+            background-image: url(/static/image/solution1/anquan_white.svg);
+         }
+         .advantage-con>li:hover .p-icon_item_hudong {
+            background-image: url(/static/image/solution1/hudong_white.svg);
+         }
+         .advantage-con>li:hover .p-icon_item_fenxi {
+            background-image: url(/static/image/solution1/fenxi_white.svg);
+         }
+         .advantage-con>li:hover .p-icon_item_kaifa{
+            background-image: url(/static/image/solution1/kaifa_white.svg);
+         }
       
         @media screen and (min-width: 1200px) {
             .layui-container {
@@ -372,6 +426,10 @@
          .advantage-con>li>.p-icon {
              text-align: center;
              margin-top: 40px;
+         }
+         .p-icon_item {
+             width: 58px;
+             height: 58px;
          }
          .advantage-con>li>h3 {
              font-size: 20px;
@@ -809,6 +867,10 @@
          .advantage-con>li>.p-icon {
              text-align: center;
              margin-top: 20px;
+         }
+         .p-icon_item {
+             width: 58px;
+             height: 58px;
          }
          .advantage-con>li>h3 {
              font-size: 16px;
@@ -1251,6 +1313,10 @@
              text-align: center;
              margin-top: 20px;
          }
+         .p-icon_item {
+             width: 36px;
+             height: 36px;
+         }
          .advantage-con>li>h3 {
              font-size: 16px;
              font-weight: 500;
@@ -1622,6 +1688,10 @@
          .advantage-con>li>.p-icon {
              text-align: center;
              margin-top: 20px;
+         }
+         .p-icon_item {
+             width: 32px;
+             height: 32px;
          }
          .advantage-con>li>h3 {
              font-size: 16px;
@@ -2012,56 +2082,64 @@
             <ul class="advantage-con">
                 <li>
                     <p class="p-icon">
-                        <img src="/static/image/solution/pro-advantage-icon.png" alt="">
+                        <!-- <img src="/static/image/solution1/fugai.svg" alt=""> -->
+                         <i class="p-icon_item p-icon_item_fugai"></i>
                     </p>
                     <h3>多场景全覆盖</h3>
                     <p class="p-text">实现品牌传播、对外营销、内部培训、协同沟通等视频直播的各类需求。</p>
                 </li>
                 <li>
                   <p class="p-icon">
-                      <img src="/static/image/solution/pro-advantage-icon.png" alt="">
+                      <!-- <img src="/static/image/solution1/bushu.svg" alt=""> -->
+                      <i class="p-icon_item p-icon_item_bushu"></i>
                   </p>
                   <h3>企业定制部署</h3>
                   <p class="p-text">企业自定义包含logo、直播背景、水印、引导页、注册页、预约提醒、预告和回放等功能。</p>
                 </li>
                 <li>
                   <p class="p-icon">
-                      <img src="/static/image/solution/pro-advantage-icon.png" alt="">
+                      <!-- <img src="/static/image/solution1/quanxian.svg" alt=""> -->
+                      <i class="p-icon_item p-icon_item_quanxian"></i>
                   </p>
                   <h3>丰富管理权限</h3>
                   <p class="p-text">专人部分授权、多人协作。每一步都有操作日志，责任更加明确。</p>
                 </li>
                 <li>
                   <p class="p-icon">
-                      <img src="/static/image/solution/pro-advantage-icon.png" alt="">
+                      <!-- <img src="/static/image/solution1/jiagou.svg" alt=""> -->
+                      <i class="p-icon_item p-icon_item_jiagou"></i>
                   </p>
                   <h3>企业级云架构</h3>
                   <p class="p-text">负载均衡部署，支持百万人观看。自适应视频码流，弱网环境也可流畅播放。</p>
                 </li>
                 <li>
                   <p class="p-icon">
-                      <img src="/static/image/solution/pro-advantage-icon.png" alt="">
+                      <!-- <img src="/static/image/solution1/anquan.svg" alt=""> -->
+                      <i class="p-icon_item p-icon_item_anquan"></i>
                   </p>
                   <h3>多重安全机制</h3>
                   <p class="p-text">多种鉴权机制，数据传输多重加密。播出防盗链、防劫持，30天数据找回功能。</p>
                 </li>
                 <li>
                   <p class="p-icon">
-                      <img src="/static/image/solution/pro-advantage-icon.png" alt="">
+                      <!-- <img src="/static/image/solution1/hudong.svg" alt=""> -->
+                      <i class="p-icon_item p-icon_item_hudong"></i>
                   </p>
                   <h3>增强互动体验</h3>
                   <p class="p-text"> 公聊、私聊、红包、问答、打赏、抽奖、图文等多种互动方式，提升参与体验，激发互动氛围。</p>
                 </li>
                 <li>
                   <p class="p-icon">
-                      <img src="/static/image/solution/pro-advantage-icon.png" alt="">
+                      <!-- <img src="/static/image/solution1/fenxi.svg" alt=""> -->
+                      <i class="p-icon_item p-icon_item_fenxi"></i>
                   </p>
                   <h3>多维数据分析</h3>
                   <p class="p-text">实时在线用户分析、热度分析、终端分析、观看行为分析，用户关注度分析等。</p>
                 </li>
                 <li>
                   <p class="p-icon">
-                      <img src="/static/image/solution/pro-advantage-icon.png" alt="">
+                      <!-- <img src="/static/image/solution1/kaifa.svg" alt=""> -->
+                      <i class="p-icon_item p-icon_item_kaifa"></i>
                   </p>
                   <h3>集成开发支持</h3>
                   <p class="p-text">提供丰富的API&SDK，直播可嵌入APP/WeChat/web等，从0到1快速构建专属直播间。</p>
