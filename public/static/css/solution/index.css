@@ -143,6 +143,7 @@
   color: #fff;
 }
 #solution #qiye nav .logo-title li {
+  position: relative;
   cursor: pointer;
   height: 32px;
   width: 8%;
@@ -151,18 +152,39 @@
   text-align: center;
   padding: 0 15px;
 }
-#solution #qiye nav .logo-title li:hover {
-  background-color: #00cc99;
-  border-radius: 20px;
-}
-#solution #qiye nav .logo-title li:hover span {
-  color: #fff;
-}
 #solution #qiye nav .logo-title li span {
   font-size: 18px;
   color: #666;
   margin-bottom: 5px;
   text-align: center;
+}
+#solution #qiye nav .logo-title li:after,
+#solution #qiye nav .logo-title li:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 32px;
+  background: #fff;
+  z-index: -2;
+  border-radius: 20px;
+}
+#solution #qiye nav .logo-title li:hover {
+  z-index: 1;
+  background: transparent;
+}
+#solution #qiye nav .logo-title li:hover span {
+  color: #fff;
+}
+#solution #qiye nav .logo-title li:before {
+  transition: 0.4s;
+  background: #00cc99;
+  z-index: -1;
+}
+#solution #qiye nav .logo-title li:hover:after,
+#solution #qiye nav .logo-title li:hover:before {
+  width: 100%;
 }
 #solution #qiye .logo-box .logo-imgs {
   display: none;

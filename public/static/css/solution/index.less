@@ -190,6 +190,7 @@
                 }
 
                 li {
+                    position: relative;
                     cursor: pointer;
                     height: 32px;
                     width: 8%;
@@ -198,22 +199,41 @@
                     text-align: center;
                     padding: 0 15px;
 
-                    &:hover {
-                        background-color: #00cc99;
-                        border-radius: 20px;
-
-                        span {
-                            color: #fff;
-                            // font-weight: bold;
-
-                        }
-                    }
-
                     span {
                         font-size: 18px;
                         color: #666;
                         margin-bottom: 5px;
                         text-align: center;
+                    }
+    
+                    &:after,&:before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 0;
+                        height: 32px;
+                        background: #fff;
+                        z-index:-2;
+                        border-radius: 20px;
+                    }
+        
+                    &:hover{
+                        z-index:1;
+                        background:transparent;
+                        span {
+                            color: #fff;
+                        }
+                    }            
+                  
+                    &:before {
+                        transition: .4s;
+                        background: #00cc99;
+                        z-index:-1;
+                    }          
+        
+                    &:hover:after,&:hover:before {
+                        width: 100%;
                     }
                 }
             }
