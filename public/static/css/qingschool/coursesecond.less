@@ -15,10 +15,13 @@
         height: 90px;
         box-sizing: border-box;
         padding-top: 23px;
-
+        background-color: #fff;
         .layui-container {
             .logo {
                 margin-right: 41px;
+                img {
+                    width: 124px;
+                }
             }
 
             ul {
@@ -60,6 +63,9 @@
                         text-align: center;
                         line-height: 2.3;
                         cursor: pointer;
+                        img {
+                            width: 18px;
+                        }
                     }
                 }
             }
@@ -615,7 +621,7 @@
                 .layui-form-item {
                     height: 26px;
                     width: 128px;
-                    margin-left: 5px;
+                    margin-left: 15px;
 
                     .layui-input-block {
                         .layui-input {
@@ -634,10 +640,11 @@
 
                 &>a {
                     font-size: 12px;
-                    margin: 0 15px;
+                    margin: 0 25px;
                 }
 
                 .login {
+                    display: none;
                     button {
                         font-size: 12px;
                     }
