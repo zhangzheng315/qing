@@ -775,39 +775,42 @@
     width: 100%;
     margin-right: 0;
   }
-  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left section {
+  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left section img {
+    max-width: 100%;
+  }
+  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left .section {
     margin-bottom: 25px;
     padding: 10px 15px 0;
   }
-  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left section:last-child {
+  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left .section:last-child {
     margin-bottom: 0;
   }
-  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left section h5 {
+  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left .section h5 {
     padding-bottom: 8px;
     margin-bottom: 10px;
   }
-  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left section h5 i {
+  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left .section h5 i {
     width: 4px;
     height: 18px;
     border-radius: 4px;
     font-style: normal;
     margin-right: 10px;
   }
-  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left section h5 span {
+  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left .section h5 span {
     font-size: 14px;
   }
-  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left section p {
+  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left .section p {
     padding-left: 15px;
     padding-bottom: 8px;
     margin-bottom: 10px;
   }
-  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left section p img {
+  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left .section p img {
     margin-right: 12px;
   }
-  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left section p span {
+  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left .section p span {
     margin-right: 20px;
   }
-  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left section p:last-child {
+  #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-left .section p:last-child {
     border: 0;
   }
   #tutorial .nav-tab .tab-content .layui-container .content-item .item-box .item-right {

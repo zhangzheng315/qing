@@ -188,6 +188,7 @@
 }
 #product .product-content .product-item .item-footer .more {
   border-radius: 0 0 0 10px;
+  background-color: #e5e5e5;
 }
 #product .product-content .product-item .item-footer .free {
   background-color: #00cc99;
@@ -1100,7 +1101,7 @@
   #banner #high-lights {
     width: 92%;
     bottom: -78%;
-    height: 210px;
+    height: 215px;
   }
   #banner #high-lights .layui-container {
     padding: 0px;
@@ -1128,13 +1129,13 @@
     margin-bottom: 3px;
   }
   #banner #high-lights .layui-container .stars li a p {
-    margin-top: 8px;
+    margin-top: 5px;
     text-align: center;
   }
   #banner #high-lights .layui-container .stars li:nth-child(n + 4) {
     border-bottom: 0;
     padding-bottom: 0;
-    margin-bottom: 0;
+    margin-bottom: 12px;
   }
   #product {
     margin-top: 150px;
