@@ -126,7 +126,7 @@
                         layer.msg('登录成功');
                         // 存cookie的方法
                         save(phone, pwd)
-                        localStorage.setItem('tvToken', res.data.token)
+                        localStorage.setItem('tvInfo', JSON.stringify(res.data))
                         setTimeout(() => {
                             window.location.href = "/index/index.html"
                         }, 500);
