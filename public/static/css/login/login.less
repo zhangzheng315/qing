@@ -54,6 +54,7 @@
                 flex: 5.5;
                 padding-top: 60px;
                 margin-right: 20px;
+
                 h3 {
                     font-size: 40px;
                     color: #fff;
@@ -68,6 +69,7 @@
                     text-align: center;
                     letter-spacing: .5px;
                 }
+
                 img {
                     width: 100%;
                     object-fit: cover;
@@ -75,21 +77,134 @@
             }
 
             .sec-right {
-                flex: 4;
+                flex: 3;
                 height: 550px;
                 background: #FFFFFF;
                 box-shadow: 0px 9px 35px 0px rgba(0, 95, 71, 0.17);
                 border-radius: 20px;
-                padding: 0 80px;
+                padding: 100px 80px 0;
                 box-sizing: border-box;
+
                 h4 {
                     font-size: 25px;
                     font-weight: bold;
+                    text-align: center;
+                    margin-bottom: 50px;
+
+                }
+
+                .type {
+                    margin-bottom: 35px;
+
+                    a {
+                        color: #666;
+                        font-size: 16px;
+                        margin-right: 33px;
+
+                        &:hover {
+                            color: #00cc99;
+                        }
+                    }
+
+                    .active {
+                        color: #00cc99;
+                    }
+                }
+
+                form {
+                    input {
+                        width: 100%;
+                        background: #FFFFFF;
+                        border: 1px solid #E5E5E5;
+                        margin-bottom: 26px;
+                        color: #333;
+                        text-indent: 10px;
+
+                        &:nth-child(-n + 2) {
+                            height: 42px;
+                        }
+
+                        &:nth-child(4) {
+                            margin: 26px 0;
+                            height: 42px;
+                            background-color: #00cc99;
+                            color: #fff;
+                            font-size: 16px;
+                            border: none;
+                        }
+                    }
+
+                    p {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        label {
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+
+                            input {
+                                height: auto !important;
+                                width: auto !important;
+                                margin-bottom: 0 !important;
+                                margin-right: 6px;
+                            }
+
+                            font-size: 16px;
+                            color: #333;
+                        }
+
+                        a {
+                            font-size: 16px;
+                            color: #333;
+
+                            &:hover {
+                                color: #00cc99;
+                            }
+                        }
+                    }
+                    &>a {
+                        color: #00cc99;
+                        font-size: 16px;
+                        display: block;
+                        margin: 0 auto;
+                        text-align: center;
+                        cursor: pointer;
+                    }
+
+
+
+                    input::-webkit-input-placeholder {
+                        /* WebKit, Blink, Edge */
+                        color: #c2c2c2;
+                    }
+
+                    :-moz-placeholder {
+                        /* Mozilla Firefox 4 to 18 */
+                        color: #c2c2c2;
+                    }
+
+                    ::-moz-placeholder {
+                        /* Mozilla Firefox 19+ */
+                        color: #c2c2c2;
+                    }
+
+                    input:-ms-input-placeholder {
+                        /* Internet Explorer 10-11 */
+                        color: #c2c2c2;
+                    }
+
+                    input::-ms-input-placeholder {
+                        /* Microsoft Edge */
+                        color: #c2c2c2;
+                    }
                 }
             }
         }
 
     }
+
     footer {
         position: fixed;
         left: 0;
@@ -98,12 +213,13 @@
         width: 100%;
         line-height: 65px;
         background-color: #fff;
-       
+
         .layui-container {
             p {
                 color: #333;
                 font-size: 12px;
                 text-align: center;
+
                 a {
                     margin-left: 30px;
                 }

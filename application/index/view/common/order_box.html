@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #order-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 2037;
+        }
+
+        .q-modal {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: .2;
+            background: #000;
+            z-index: 2036;
+        }
+
+        .order-box {
+            position: relative;
+            top: calc(50% - 325px);
+            display: inline-block;
+            box-sizing: border-box;
+            vertical-align: middle;
+            background-color: #fff;
+            border-radius: 4px;
+            border: 1px solid #ebeef5;
+            box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+            text-align: left;
+            overflow: hidden;
+            backface-visibility: hidden;
+        }
+
+        .order-box>.left-pic {
+            float: left;
+            border-right: 1px solid #dcdcdc;
+            position: relative;
+        }
+
+        .left-pic>img {
+            box-sizing: content-box;
+        }
+
+        #apply-demo-form-wrapper {
+            float: left;
+            vertical-align: top;
+        }
+
+        .order-form>.header {
+            color: #333333;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .order-form-item {
+            font-size: 12px;
+            color: rgba(0, 0, 0, .65);
+            vertical-align: top;
+        }
+
+        .order-row {
+            position: relative;
+            margin-left: 0;
+            margin-right: 0;
+            height: auto;
+            zoom: 1;
+            display: block;
+        }
+
+        .order-row>.order-input {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            box-sizing: border-box;
+            outline: none;
+            background-color: #fff;
+            border: 1px solid #e5e5e5;
+            transition: all .3s;
+        }
+
+        .order-input:focus {
+            border: 1px solid #00cc99;
+        }
+
+        .order-input::-webkit-input-placeholder {
+            font-size: 13px;
+            color: #c2c2c2;
+        }
+
+        .order-checkbox-wrapper {
+            position: relative;
+            cursor: pointer;
+            font-size: 12px;
+            display: inline-block;
+        }
+
+        .order-checkbox {
+            white-space: nowrap;
+            cursor: pointer;
+            outline: none;
+            display: inline-block;
+            line-height: 1;
+            position: relative;
+            vertical-align: text-bottom;
+        }
+
+        .order-checkbox-input {
+            position: absolute;
+            left: 0;
+            z-index: 1;
+            cursor: pointer;
+            opacity: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 14px;
+            height: 14px;
+        }
+
+        .order-check-inner {
+            position: relative;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 14px;
+            height: 14px;
+            border: 1px solid #d9d9d9;
+            border-radius: 2px;
+            background-color: #fff;
+            transition: all .3s;
+            box-sizing: border-box;
+        }
+
+        .order-check-inner::after {
+            transform: rotate(45deg) scale(1);
+            position: absolute;
+            display: table;
+            border: 2px solid #fff;
+            border-top: 0;
+            border-left: 0;
+            content: '';
+            transition: all .2s cubic-bezier(0.39, 0.575, 0.565, 1);
+        }
+
+        .order-checkbox-checked>.order-check-inner {
+            background-color: #00cc99;
+            border-color: #00cc99;
+        }
+
+        .order-checkbox-checked:after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 2px;
+            border: 1px solid #00cc99;
+            content: '';
+            -webkit-animation: antCheckboxEffect 0.36s ease-in-out;
+            animation: antCheckboxEffect 0.36s ease-in-out;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            visibility: hidden;
+        }
+
+        .order-btn {
+            margin: auto;
+            display: block;
+            color: #fff;
+            background-color: #00cc99;
+            border-color: #00cc99;
+            font-weight: 500;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            border: none;
+        }
+
+        .order-close {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            cursor: pointer;
+        }
+
+        @media screen and (min-width: 1300px) {
+            .order-box {
+                width: 1100px;
+                height: 650px;
+                padding-bottom: 10px;
+                font-size: 18px;
+                box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+            }
+
+            .order-box>.left-pic {
+                margin-top: 94px;
+                margin-left: 57px;
+            }
+
+            .left-pic>img {
+                width: 520px;
+                height: 350px;
+                padding-right: 44px;
+                padding-top: 33px;
+                padding-bottom: 34px;
+            }
+
+            #apply-demo-form-wrapper {
+                margin-left: 56px;
+                margin-top: 49px;
+                width: 352px;
+            }
+
+            .order-form>.header {
+                font-size: 25px;
+            }
+
+            .order-form-item {
+                font-size: 12px;
+                margin-bottom: 22px;
+            }
+
+            .order-form-item:nth-of-type(2) {
+                margin-top: 30px;
+            }
+
+            textarea.order-input {
+                height: 80px !important;
+                font-size: 12px;
+            }
+
+            .order-row>.order-input {
+                padding: 6px 7px;
+                height: 32px;
+                line-height: 1.5;
+                border-radius: 4px;
+                text-indent: 10px;
+            }
+
+            .order-checkbox-wrapper {
+                margin-top: 10px;
+                font-size: 12px;
+            }
+
+            .order-check-inner::after {
+                width: 5px;
+                height: 8px;
+                left: 3px;
+                top: -1px;
+            }
+
+            .order-btn {
+                width: 350px;
+                margin-top: 40px;
+                height: 42px;
+                font-size: 14px;
+                line-height: 1.15;
+                border-radius: 4px;
+            }
+
+            .order-close>img {
+                width: 32px;
+                height: 32px;
+            }
+        }
+
+        @media screen and (min-width: 992px) and (max-width: 1299px) {
+            .order-box {
+                width: 800px;
+                height: 600px;
+                padding-bottom: 10px;
+                font-size: 18px;
+                box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+            }
+
+            .order-box>.left-pic {
+                margin-top: 64px;
+                margin-left: 30px;
+            }
+
+            .left-pic>img {
+                width: 330px;
+                height: 300px;
+                padding-right: 30px;
+                padding-top: 23px;
+                padding-bottom: 26px;
+            }
+
+            #apply-demo-form-wrapper {
+                margin-left: 30px;
+                margin-top: 35px;
+                width: 300px;
+            }
+
+            .order-form>.header {
+                font-size: 22px;
+            }
+
+            .order-form-item:nth-of-type(2) {
+                margin-top: 20px;
+            }
+
+            .order-form-item {
+                font-size: 12px;
+                margin-bottom: 18px;
+            }
+
+            textarea.order-input {
+                height: 80px !important;
+                font-size: 12px;
+            }
+
+            .order-row>.order-input {
+                padding: 6px 7px;
+                height: 32px;
+                line-height: 1.5;
+                border-radius: 4px;
+                text-indent: 10px;
+            }
+
+            .order-checkbox-wrapper {
+                margin-top: 10px;
+                font-size: 12px;
+            }
+
+            .order-check-inner::after {
+                width: 5px;
+                height: 8px;
+                left: 3px;
+                top: -1px;
+            }
+
+            .order-btn {
+                width: 300px;
+                margin-top: 30px;
+                height: 38px;
+                font-size: 14px;
+                line-height: 1.15;
+                border-radius: 4px;
+            }
+
+            .order-close>img {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        @media screen and (min-width: 821px) and (max-width: 993px) {
+            .order-box {
+                width: 500px;
+                height: 600px;
+                padding-bottom: 10px;
+                font-size: 18px;
+                box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+            }
+
+            .order-box>.left-pic {
+                margin-top: 64px;
+                margin-left: 30px;
+                display: none;
+            }
+
+            .left-pic>img {
+                width: 330px;
+                height: 300px;
+                padding-right: 30px;
+                padding-top: 23px;
+                padding-bottom: 26px;
+            }
+
+            #apply-demo-form-wrapper {
+                margin-left: 75px;
+                margin-top: 35px;
+                width: 350px;
+            }
+
+            .order-form>.header {
+                font-size: 22px;
+            }
+
+            .order-form-item:nth-of-type(2) {
+                margin-top: 20px;
+            }
+
+            .order-form-item {
+                font-size: 12px;
+                margin-bottom: 18px;
+            }
+
+            textarea.order-input {
+                height: 80px !important;
+                font-size: 12px;
+            }
+
+            .order-row>.order-input {
+                padding: 6px 7px;
+                height: 32px;
+                line-height: 1.5;
+                border-radius: 4px;
+                text-indent: 10px;
+            }
+
+            .order-checkbox-wrapper {
+                margin-top: 10px;
+                font-size: 12px;
+            }
+
+            .order-check-inner::after {
+                width: 5px;
+                height: 8px;
+                left: 3px;
+                top: -1px;
+            }
+
+            .order-btn {
+                width: 350px;
+                margin-top: 30px;
+                height: 38px;
+                font-size: 14px;
+                line-height: 1.15;
+                border-radius: 4px;
+            }
+            .order-close>img {
+                width: 28px;
+                height: 28px;
+            }
+        }
+        @media screen and (min-width: 768px) and (max-width: 820px) {
+            .order-box {
+                width: 500px;
+                height: 600px;
+                padding-bottom: 10px;
+                font-size: 18px;
+                box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+            }
+
+            .order-box>.left-pic {
+                margin-top: 64px;
+                margin-left: 30px;
+                display: none;
+            }
+
+            .left-pic>img {
+                width: 330px;
+                height: 300px;
+                padding-right: 30px;
+                padding-top: 23px;
+                padding-bottom: 26px;
+            }
+
+            #apply-demo-form-wrapper {
+                margin-left: 75px;
+                margin-top: 35px;
+                width: 350px;
+            }
+
+            .order-form>.header {
+                font-size: 22px;
+            }
+
+            .order-form-item:nth-of-type(2) {
+                margin-top: 20px;
+            }
+
+            .order-form-item {
+                font-size: 12px;
+                margin-bottom: 18px;
+            }
+
+            textarea.order-input {
+                height: 80px !important;
+                font-size: 12px;
+            }
+
+            .order-row>.order-input {
+                padding: 6px 7px;
+                height: 32px;
+                line-height: 1.5;
+                border-radius: 4px;
+                text-indent: 10px;
+            }
+
+            .order-checkbox-wrapper {
+                margin-top: 10px;
+                font-size: 12px;
+            }
+
+            .order-check-inner::after {
+                width: 5px;
+                height: 8px;
+                left: 3px;
+                top: -1px;
+            }
+
+            .order-btn {
+                width: 350px;
+                margin-top: 30px;
+                height: 38px;
+                font-size: 14px;
+                line-height: 1.15;
+                border-radius: 4px;
+            }
+            .order-close>img {
+                width: 28px;
+                height: 28px;
+            }
+        }
+        @media screen and (max-width: 767px){
+            .order-box {
+                width: 350px;
+                height: 580px;
+                /* padding-bottom: 10px; */
+                font-size: 18px;
+                box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+                /* text-align: center; */
+            }
+
+            .order-box>.left-pic {
+                margin-top: 64px;
+                margin-left: 30px;
+                display: none;
+            }
+
+            .left-pic>img {
+                width: 330px;
+                height: 300px;
+                padding-right: 30px;
+                padding-top: 23px;
+                padding-bottom: 26px;
+            }
+
+            #apply-demo-form-wrapper {
+                margin-left: 35px;
+                margin-top: 35px;
+                width: 280px;
+            }
+
+            .order-form>.header {
+                font-size: 22px;
+            }
+
+            .order-form-item:nth-of-type(2) {
+                margin-top: 20px;
+            }
+
+            .order-form-item {
+                font-size: 12px;
+                margin-bottom: 18px;
+            }
+
+            textarea.order-input {
+                height: 80px !important;
+                font-size: 12px;
+            }
+
+            .order-row>.order-input {
+                padding: 6px 7px;
+                height: 32px;
+                line-height: 1.5;
+                border-radius: 4px;
+                text-indent: 10px;
+            }
+
+            .order-checkbox-wrapper {
+                margin-top: 10px;
+                font-size: 12px;
+            }
+
+            .order-check-inner::after {
+                width: 5px;
+                height: 8px;
+                left: 3px;
+                top: -1px;
+            }
+
+            .order-btn {
+                width: 280px;
+                margin-top: 30px;
+                height: 38px;
+                font-size: 14px;
+                line-height: 1.15;
+                border-radius: 4px;
+            }
+            .order-close>img {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="order-container">
+        <div class="order-box">
+            <span class="order-close">
+                <img src="/static/image/close-icon.svg" alt="">
+            </span>
+            <div class="left-pic">
+                <img src="/static/image/order_bg.png" alt="">
+            </div>
+            <div id="apply-demo-form-wrapper">
+                <form action="" class="order-form">
+                    <div class="header">获得免费试用</div>
+                    <div class="order-row order-form-item">
+                        <input type="text" placeholder="请填写您的姓名" class="order-input">
+                    </div>
+                    <div class="order-row order-form-item">
+                        <input type="text" placeholder="请填写公司名称" class="order-input">
+                    </div>
+                    <div class="order-row order-form-item">
+                        <input type="text" placeholder="请填写所在行业" class="order-input">
+                    </div>
+                    <div class="order-row order-form-item">
+                        <input type="text" placeholder="请填写邮箱" class="order-input">
+                    </div>
+                    <div class="order-row order-form-item">
+                        <input type="text" placeholder="请填写手机号" class="order-input">
+                    </div>
+                    <div class="order-row order-form-item">
+                        <textarea name="" id="" rows="3" placeholder="需求描述" class="order-input"></textarea>
+                    </div>
+                    <label class="order-checkbox-wrapper">
+                        <span class="order-checkbox">
+                            <input type="checkbox" class="order-checkbox-input">
+                            <span class="order-check-inner"></span>
+                        </span>
+                        <span>
+                            <span>同意并遵守</span>
+                            <a href="" style="color:#00A67C">轻直播平台服务条款</a>
+                        </span>
+                    </label>
+                    <button type="submit" class="order-btn">
+                        <span>申请试用</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="q-modal"></div>
+    <script>
+        $('.order-checkbox').on('click', function () {
+            $(this).toggleClass('order-checkbox-checked');
+        })
+        $('.order-close').on('click', function () {
+            $('#order-container').hide();
+            $('.q-modal').hide();
+        })
+
+        
+    </script>
+</body>
+
+</html>

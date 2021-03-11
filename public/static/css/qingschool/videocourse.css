@@ -16,6 +16,9 @@
 #video header .layui-container {
   justify-content: space-between;
 }
+#video header .layui-container .logo a img {
+  width: 124px;
+}
 #video header .layui-container .head-right .text {
   margin-right: 64px;
 }

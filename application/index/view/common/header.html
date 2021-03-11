@@ -38,9 +38,12 @@
             }
 
             .layui-container>.q-logo {
-                width: 10%;
+                width: 124px;
             }
-
+            .q-logo h1 img {
+                width: 124px;
+                height: 45px;
+            }
             .nav-menu {
                 width: 50%;
             }
@@ -209,7 +212,14 @@
             .nav-menu {
                 width: 60%;
             }
+            .pc-layui-container>.q-logo {
+                width: 124px;
+            }
 
+            .q-logo h1 img {
+                width: 124px;
+                height: 45px;
+            }
             .menu>.menu-item>a {
                 font-size: 16px;
                 font-weight: 400;
@@ -365,11 +375,12 @@
             }
 
             .pc-layui-container>.q-logo {
-                width: 12%;
+                width: 124px;
             }
 
             .q-logo h1 img {
-                width: 100%;
+                width: 90px;
+                height: 36px;
             }
 
             .nav-menu {
@@ -565,7 +576,6 @@
             /* .navbar-collpase.collpase-true {
                 top: 65px;
             } */
-            .navbar-nav {}
 
             .navbar-nav>li {
                 padding: 10px 0;
@@ -708,10 +718,6 @@
             /* .navbar-collpase.collpase-true {
                 top: 65px;
             } */
-            .navbar-nav {
-                /* margin: 7.5px 0; */
-            }
-
             .navbar-nav>li {
                 padding: 10px 0;
                 position: relative;
@@ -918,7 +924,21 @@
             left: -30px;
             background-position: center center;
             background-repeat: no-repeat;
-            background: url('/static/image/logo-icon.png');
+        }
+        .product-pannel>dl>dd.dd10::after {
+           background-image: url('/static/image/index1/bushu.svg');
+        }
+        .product-pannel>dl>dd.dd12::after {
+           background-image: url('/static/image/index1/pingtai.svg');
+        }
+        .product-pannel>dl>dd.dd13::after {
+           background-image: url('/static/image/index1/jicheng.svg');
+        }
+        .product-pannel>dl>dd.dd23::after {
+           background-image: url('/static/image/index1/app.svg');
+        }
+        .product-pannel>dl>dd.dd24::after {
+           background-image: url('/static/image/index1/xianchang.svg');
         }
 
         .product-pannel>dl>dt,
@@ -980,7 +1000,7 @@
             <div class="q-logo">
                 <a href="/" style="display: block;height: 100%;">
                     <h1>
-                        <img src="/static/image/logo.png" alt="">
+                        <img src="/static/image/index1/logo_text.svg" alt="">
                     </h1>
                 </a>
             </div>
@@ -1003,7 +1023,7 @@
             <!-- 轻直播logo -->
             <div class="q-logo">
                 <h1>
-                    <img src="/static/image/logo.png" alt="">
+                    <img src="/static/image/index1/logo_text.svg" alt="">
                 </h1>
             </div>
             <div class="navbar-toggle">
@@ -1152,7 +1172,7 @@
                                 '                        </div>\n' +
                                 '                    </div>\n' +
                                 '                </li>');
-                        } else if (item.id === 6) {
+                        } else if (item.id == 6) {
                             if (item.sub.length !== 0) {
                                 var child = aboutChild(item.sub, res.nav_id.id);
                             }
@@ -1242,7 +1262,7 @@
                 if (item.id === id) {
                     active = 'p-active';
                 }
-                sun += '<dd>\n' +
+                sun += '<dd class="dd'+item.id+'">\n' +
                     '       <a href="' + item.route + '" class="pink-item">\n' +
                     '           <p class="' + active + '">' + item.menu_name + '</p>\n' +
                     // '           <span>企业级视频云直播平台</span>\n' +
@@ -1271,7 +1291,6 @@
         }
 
         function pingSon(arr, id) {
-
             let son = '';
             if (arr.length === 0) {
                 return '';
