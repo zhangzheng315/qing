@@ -137,6 +137,11 @@ class QingSchool extends Controller
         return $this->fetch('',compact('article_info','pid','top_name','top_url'));
     }
 
+    /**
+     * 按条件获取分类视频列表
+     * @param Request $request
+     * @return \think\response\Json
+     */
     public function getVideoListByWhere(Request $request){
         $rules =
             [
@@ -192,6 +197,10 @@ class QingSchool extends Controller
         return $this->fetch('',compact('article','article_list'));
     }
 
+    /**
+     * 按条件获取文章百科   文章列表
+     * @return array|int[]
+     */
     public function articleByWhere()
     {
         $param = request()->param();
@@ -202,6 +211,13 @@ class QingSchool extends Controller
         return ['status'=>200,'data'=>$article_list];
     }
 
+    /**
+     * 文章百科--文章详情
+     * @param $id
+     * @return array|int[]
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     */
     public function articleInfo($id)
     {
         $info = $this->common_article_service->getArticleInfo($id);
