@@ -1,63 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-
         body {
             background-color: #f2f4f7;
         }
-        @media screen and (min-width:1200px ) {
+
+        @media screen and (min-width:1200px) {
             .mobile-footer-top {
-               display: none;
+                display: none;
             }
+
             .mobile-footer-bottom {
                 display: none;
             }
+
             .pc-footer-top {
-            padding-bottom: 30px;
-            padding-top: 50px;
-           }
-           .footer-left-img{
-          width: 180px;
-          height: 67px;
-        }   
-        .footer-left-phone {
-            margin-top: 35px;
-        } 
-        .span-dot {  
-            font-size: 16px;
-            font-family: Microsoft YaHei;
-            font-weight: 400;
-            color: #f3f3f3;
-        }
-        .span-doot {
-            display: inline-block;
-            font-size: 16px;
-            font-family: 'Microsoft YaHei';
-            font-weight: 400;
-            color: #f3f3f3;
-            margin-top: 22px;
-        } 
-        .yuyue {
-            margin-top: 80px;
-            display: flex;
-        }
-        .yanshi {
-            width: 152px;
-            height: 40px;
-            line-height: 40px;
-            text-align: center;
-            border: 1px solid #f3f3f3;
-            border-radius: 20px;
-            color: #f3f3f3;
-            font-size: 16px; 
-            font-family: 'Microsoft YaHei';
-            cursor: pointer;
-        }
-        /* .language {
+                padding-bottom: 30px;
+                padding-top: 50px;
+            }
+
+            .footer-left-img {
+                width: 180px;
+                height: 67px;
+            }
+
+            .footer-left-phone {
+                margin-top: 35px;
+            }
+
+            .span-dot {
+                font-size: 16px;
+                font-family: Microsoft YaHei;
+                font-weight: 400;
+                color: #f3f3f3;
+            }
+
+            .span-doot {
+                display: inline-block;
+                font-size: 16px;
+                font-family: 'Microsoft YaHei';
+                font-weight: 400;
+                color: #f3f3f3;
+                margin-top: 22px;
+            }
+
+            .yuyue {
+                margin-top: 80px;
+                display: flex;
+            }
+
+            .yanshi {
+                width: 152px;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                border: 1px solid #f3f3f3;
+                border-radius: 20px;
+                color: #f3f3f3;
+                font-size: 16px;
+                font-family: 'Microsoft YaHei';
+                cursor: pointer;
+            }
+
+            /* .language {
             width: 130px;
             height: 40px;
             line-height: 40px;
@@ -78,47 +88,51 @@
             margin-left: 10px;
         } */
 
-        /* 语言选择 */
-        .footer-select-language {    
-            width: 144px;
-            z-index: 99;
-            position: relative;
-            margin-left: 50px;
-         }
-         .footer-select-language .footer-select-trigger {
-            display: block;
-            position: relative;
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-            padding: 0 40px;
-            border-radius: 20px;
-            width: 144px;
-            height: 40px;
-            font-size: 12px;
-            border: 1px solid #f3f3f3;
-            white-space: nowrap;
-            overflow: hidden;
-            -o-text-overflow: ellipsis;
-            text-overflow: ellipsis;
-            line-height: 40px;
-            color: #f3f3f3;
-            cursor: pointer;
-        }
-        .footer-select-language:hover .footer-dropdown {
-            display: block;
-        }
-        .footer-select-language .footer-select-trigger::before {
-            content: "";
-            background-image: url(/static/image/map.png);
-            background-size: contain;
-            width: 16px;
-            height: 16px;
-            display: block;
-            position: absolute;
-            top: 10px;
-            left: 7px;
-        }
-        .footer-select-language .footer-select-trigger::after {
+            /* 语言选择 */
+            .footer-select-language {
+                width: 144px;
+                z-index: 99;
+                position: relative;
+                margin-left: 50px;
+            }
+
+            .footer-select-language .footer-select-trigger {
+                display: block;
+                position: relative;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+                padding: 0 40px;
+                border-radius: 20px;
+                width: 144px;
+                height: 40px;
+                font-size: 12px;
+                border: 1px solid #f3f3f3;
+                white-space: nowrap;
+                overflow: hidden;
+                -o-text-overflow: ellipsis;
+                text-overflow: ellipsis;
+                line-height: 40px;
+                color: #f3f3f3;
+                cursor: pointer;
+            }
+
+            .footer-select-language:hover .footer-dropdown {
+                display: block;
+            }
+
+            .footer-select-language .footer-select-trigger::before {
+                content: "";
+                background-image: url(/static/image/map.png);
+                background-size: contain;
+                width: 16px;
+                height: 16px;
+                display: block;
+                position: absolute;
+                top: 10px;
+                left: 7px;
+            }
+
+            .footer-select-language .footer-select-trigger::after {
                 content: "";
                 position: absolute;
                 right: 10px;
@@ -129,13 +143,15 @@
                 border-style: solid;
                 border-width: 6px 6px 0;
                 border-color: #f3f3f3 transparent;
-                -webkit-transition: transform .2s ease,-webkit-transform .2s ease;
-                transition: transform .2s ease,-webkit-transform .2s ease;
-        }
-        .footer-select-language:hover .footer-select-trigger::after {
-            transform: rotate(-180deg);
-        }
-        .footer-select-language .footer-dropdown {
+                -webkit-transition: transform .2s ease, -webkit-transform .2s ease;
+                transition: transform .2s ease, -webkit-transform .2s ease;
+            }
+
+            .footer-select-language:hover .footer-select-trigger::after {
+                transform: rotate(-180deg);
+            }
+
+            .footer-select-language .footer-dropdown {
                 position: absolute;
                 left: 0;
                 bottom: 100%;
@@ -144,8 +160,9 @@
                 background: #333333;
                 border-radius: 5px;
                 display: none;
-        }
-        .footer-dropdown .footer-dropdown-option {
+            }
+
+            .footer-dropdown .footer-dropdown-option {
                 display: block;
                 padding: 0 12px;
                 height: 34px;
@@ -155,176 +172,200 @@
                 -webkit-transition: all .25s ease;
                 -o-transition: all .25s ease;
                 transition: all .25s ease;
-        }
-        .footer-dropdown-option:hover {
-            color: #00cc99;
+            }
+
+            .footer-dropdown-option:hover {
+                color: #00cc99;
+            }
+
+            .footer-right>dl {
+                color: #f3f3f3;
+                width: 125px;
+                margin-left: 40px;
+            }
+
+            .footer-right>dl>dt {
+                font-size: 24px;
+                font-family: Microsoft YaHei;
+                font-weight: 400;
+                color: #f3f3f3;
+                margin-bottom: 20px;
+            }
+
+            .footer-right>dl>dd>a {
+                font-size: 16px;
+                font-family: Microsoft YaHei;
+                font-weight: 400;
+                color: #f3f3f3;
+                line-height: 34px;
+                height: 34px;
+            }
+
+            .watchus {
+                margin-top: 100px;
+                color: #f3f3f3;
+                margin-left: 40px;
+            }
+
+            .watchus>h3 {
+                font-size: 24px;
+                font-family: Microsoft YaHei;
+                font-weight: 400;
+                color: #f3f3f3;
+            }
+
+            .pc-footer-bottom {
+                height: 50px;
+            }
+
+            .pc-footer-bottom-left {
+                width: 336px;
+            }
+
+            .pc-footer-bottom-right {
+                width: 825px;
+            }
+
+            .pc-footer-bottom-left>span {
+                color: #f3f3f3;
+                font-size: 14px;
+                line-height: 50px;
+                height: 50px;
+            }
+
+            .pc-footer-bottom-right>span {
+                color: #f3f3f3;
+                font-size: 12px;
+                line-height: 50px;
+                height: 50px;
+            }
         }
 
-        .footer-right>dl {
-            color: #f3f3f3;
-            width: 125px;
-            margin-left: 40px;
-        }
-        .footer-right>dl>dt {       
-            font-size: 24px;
-            font-family: Microsoft YaHei;
-            font-weight: 400;
-            color: #f3f3f3;
-            margin-bottom: 20px;
-        }
-        .footer-right>dl>dd>a {
-            font-size: 16px;
-            font-family: Microsoft YaHei;
-            font-weight: 400;
-            color: #f3f3f3;
-            line-height: 34px;
-            height: 34px;
-        }
-        
-        .watchus {
-            margin-top: 100px;
-            color: #f3f3f3;
-            margin-left: 40px;
-        }
-        .watchus>h3 {     
-            font-size: 24px;
-            font-family: Microsoft YaHei;
-            font-weight: 400;
-            color: #f3f3f3;
-        }
-        .pc-footer-bottom {
-            height: 50px;
-        }
-        .pc-footer-bottom-left {
-            width: 336px;
-        }
-        .pc-footer-bottom-right {
-            width: 825px;
-        }
-        .pc-footer-bottom-left>span {
-            color: #f3f3f3;
-            font-size: 14px;
-            line-height: 50px;
-            height: 50px;
-        }
-        .pc-footer-bottom-right>span {
-            color: #f3f3f3;
-            font-size: 12px;
-            line-height: 50px;
-            height: 50px;
-        }
-        }
-        @media screen and (max-width: 1200px) and (min-width: 1000px){
+        @media screen and (max-width: 1200px) and (min-width: 1000px) {
             .mobile-footer-top {
-               display: none;
+                display: none;
             }
+
             .mobile-footer-bottom {
                 display: none;
             }
-            .pc-footer-top {
-            padding-bottom: 20px;
-            padding-top: 40px;
-           }
-           .footer-left-img{
-          width: 160px;
-          height: 55px;
-        }   
-        .footer-left-phone {
-            margin-top: 30px;
-        } 
-        .span-dot {  
-            font-size: 16px;
-            font-family: Microsoft YaHei;
-            font-weight: 400;
-            color: #f3f3f3;
-        }
-        .span-doot {
-            display: inline-block;
-            font-size: 16px;
-            font-family: 'Microsoft YaHei';
-            font-weight: 400;
-            color: #f3f3f3;
-            margin-top: 22px;
-        } 
-        .yuyue {
-            margin-top: 65px;
-            display: flex;
-        }
-        .yanshi {
-            width: 130px;
-            height: 36px;
-            line-height: 36px;
-            text-align: center;
-            border: 1px solid #f3f3f3;
-            border-radius: 18px;
-            color: #f3f3f3;
-            font-size: 14px; 
-            font-family: 'Microsoft YaHei';
-            cursor: pointer;
-        }
-        .language {
-            width: 130px;
-            height: 36px;
-            line-height: 36px;
-            /* text-align: center; */
-            border: 1px solid #f3f3f3;
-            border-radius: 18px;
-            color: #f3f3f3;
-            font-size: 14px; 
-            font-family: 'Microsoft YaHei';
-            cursor: pointer;
-            margin-left: 30px;
-            position: relative;
-        }
 
-        .language>span.language-map {
-            margin-left: 10px;
-        }
-        .language>span.select-down {
-            margin-left: 10px;
-        }
-        
-         /* 语言选择 */
-         .footer-select-language {    
-            width: 130px;
-            z-index: 99;
-            position: relative;
-            margin-left: 35px;
-         }
-         .footer-select-language .footer-select-trigger {
-            display: block;
-            position: relative;
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-            padding: 0 40px;
-            border-radius: 18px;
-            width: 130px;
-            height: 36px;
-            font-size: 12px;
-            border: 1px solid #f3f3f3;
-            white-space: nowrap;
-            overflow: hidden;
-            -o-text-overflow: ellipsis;
-            text-overflow: ellipsis;
-            line-height: 36px;
-            color: #f3f3f3;
-            cursor: pointer;
-        }
-        .footer-select-language:hover .footer-dropdown {
-            display: block;
-        }
-        .footer-select-language .footer-select-trigger::before {
-            content: "";
-            background-image: url(/static/image/map.png);
-            background-size: contain;
-            width: 16px;
-            height: 16px;
-            display: block;
-            position: absolute;
-            top: 8px;
-            left: 7px;
-        }
-        .footer-select-language .footer-select-trigger::after {
+            .pc-footer-top {
+                padding-bottom: 20px;
+                padding-top: 40px;
+            }
+
+            .footer-left-img {
+                width: 160px;
+                height: 55px;
+            }
+
+            .footer-left-phone {
+                margin-top: 30px;
+            }
+
+            .span-dot {
+                font-size: 16px;
+                font-family: Microsoft YaHei;
+                font-weight: 400;
+                color: #f3f3f3;
+            }
+
+            .span-doot {
+                display: inline-block;
+                font-size: 16px;
+                font-family: 'Microsoft YaHei';
+                font-weight: 400;
+                color: #f3f3f3;
+                margin-top: 22px;
+            }
+
+            .yuyue {
+                margin-top: 65px;
+                display: flex;
+            }
+
+            .yanshi {
+                width: 130px;
+                height: 36px;
+                line-height: 36px;
+                text-align: center;
+                border: 1px solid #f3f3f3;
+                border-radius: 18px;
+                color: #f3f3f3;
+                font-size: 14px;
+                font-family: 'Microsoft YaHei';
+                cursor: pointer;
+            }
+
+            .language {
+                width: 130px;
+                height: 36px;
+                line-height: 36px;
+                /* text-align: center; */
+                border: 1px solid #f3f3f3;
+                border-radius: 18px;
+                color: #f3f3f3;
+                font-size: 14px;
+                font-family: 'Microsoft YaHei';
+                cursor: pointer;
+                margin-left: 30px;
+                position: relative;
+            }
+
+            .language>span.language-map {
+                margin-left: 10px;
+            }
+
+            .language>span.select-down {
+                margin-left: 10px;
+            }
+
+            /* 语言选择 */
+            .footer-select-language {
+                width: 130px;
+                z-index: 99;
+                position: relative;
+                margin-left: 35px;
+            }
+
+            .footer-select-language .footer-select-trigger {
+                display: block;
+                position: relative;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+                padding: 0 40px;
+                border-radius: 18px;
+                width: 130px;
+                height: 36px;
+                font-size: 12px;
+                border: 1px solid #f3f3f3;
+                white-space: nowrap;
+                overflow: hidden;
+                -o-text-overflow: ellipsis;
+                text-overflow: ellipsis;
+                line-height: 36px;
+                color: #f3f3f3;
+                cursor: pointer;
+            }
+
+            .footer-select-language:hover .footer-dropdown {
+                display: block;
+            }
+
+            .footer-select-language .footer-select-trigger::before {
+                content: "";
+                background-image: url(/static/image/map.png);
+                background-size: contain;
+                width: 16px;
+                height: 16px;
+                display: block;
+                position: absolute;
+                top: 8px;
+                left: 7px;
+            }
+
+            .footer-select-language .footer-select-trigger::after {
                 content: "";
                 position: absolute;
                 right: 10px;
@@ -335,13 +376,15 @@
                 border-style: solid;
                 border-width: 6px 6px 0;
                 border-color: #f3f3f3 transparent;
-                -webkit-transition: transform .2s ease,-webkit-transform .2s ease;
-                transition: transform .2s ease,-webkit-transform .2s ease;
-        }
-        .footer-select-language:hover .footer-select-trigger::after {
-            transform: rotate(-180deg);
-        }
-        .footer-select-language .footer-dropdown {
+                -webkit-transition: transform .2s ease, -webkit-transform .2s ease;
+                transition: transform .2s ease, -webkit-transform .2s ease;
+            }
+
+            .footer-select-language:hover .footer-select-trigger::after {
+                transform: rotate(-180deg);
+            }
+
+            .footer-select-language .footer-dropdown {
                 position: absolute;
                 left: 0;
                 bottom: 100%;
@@ -350,8 +393,9 @@
                 background: #333333;
                 border-radius: 5px;
                 display: none;
-        }
-        .footer-dropdown .footer-dropdown-option {
+            }
+
+            .footer-dropdown .footer-dropdown-option {
                 display: block;
                 padding: 0 8px;
                 height: 30px;
@@ -361,178 +405,201 @@
                 -webkit-transition: all .25s ease;
                 -o-transition: all .25s ease;
                 transition: all .25s ease;
-        }
-        .footer-dropdown-option:hover {
-            color: #00cc99;
-        }
+            }
+
+            .footer-dropdown-option:hover {
+                color: #00cc99;
+            }
 
 
-        .footer-right>dl {
-            color: #f3f3f3;
-            width: 100px;
-            margin-left: 30px;
-        }
-        .footer-right>dl>dt {       
-            font-size: 20px;
-            font-family: Microsoft YaHei;
-            font-weight: 400;
-            color: #f3f3f3;
-            margin-bottom: 25px;
-        }
-        .footer-right>dl>dd>a {
-            font-size: 14px;
-            font-family: Microsoft YaHei;
-            font-weight: 400;
-            color: #f3f3f3;
-            line-height: 30px;
-            height: 30px;
-        }
-        
-        .watchus {
-            margin-top: 60px;
-            color: #f3f3f3;
-            margin-left: 30px;
-        }
-        .watchus>h3 {     
-            font-size: 20px;
-            font-family: Microsoft YaHei;
-            font-weight: 400;
-            color: #f3f3f3;
-        }
-        .pc-footer-bottom {
-            height: 50px;
-        }
-        .pc-footer-bottom-left {
-            width: 336px;
-        }
-        .pc-footer-bottom-right {
-            width: 825px;
-        }
-        .pc-footer-bottom-left>span {
-            color: #f3f3f3;
-            font-size: 14px;
-            line-height: 50px;
-            height: 50px;
-        }
-        .pc-footer-bottom-right>span {
-            color: #f3f3f3;
-            font-size: 12px;
-            line-height: 50px;
-            height: 50px;
-        } 
+            .footer-right>dl {
+                color: #f3f3f3;
+                width: 100px;
+                margin-left: 30px;
+            }
+
+            .footer-right>dl>dt {
+                font-size: 20px;
+                font-family: Microsoft YaHei;
+                font-weight: 400;
+                color: #f3f3f3;
+                margin-bottom: 25px;
+            }
+
+            .footer-right>dl>dd>a {
+                font-size: 14px;
+                font-family: Microsoft YaHei;
+                font-weight: 400;
+                color: #f3f3f3;
+                line-height: 30px;
+                height: 30px;
+            }
+
+            .watchus {
+                margin-top: 60px;
+                color: #f3f3f3;
+                margin-left: 30px;
+            }
+
+            .watchus>h3 {
+                font-size: 20px;
+                font-family: Microsoft YaHei;
+                font-weight: 400;
+                color: #f3f3f3;
+            }
+
+            .pc-footer-bottom {
+                height: 50px;
+            }
+
+            .pc-footer-bottom-left {
+                width: 336px;
+            }
+
+            .pc-footer-bottom-right {
+                width: 825px;
+            }
+
+            .pc-footer-bottom-left>span {
+                color: #f3f3f3;
+                font-size: 14px;
+                line-height: 50px;
+                height: 50px;
+            }
+
+            .pc-footer-bottom-right>span {
+                color: #f3f3f3;
+                font-size: 12px;
+                line-height: 50px;
+                height: 50px;
+            }
 
         }
 
         @media screen and (max-width: 1000px) and (min-width: 820px) {
             .mobile-footer-top {
-               display: none;
+                display: none;
             }
+
             .mobile-footer-bottom {
                 display: none;
             }
+
             .pc-footer-top {
-            padding-bottom: 20px;
-            padding-top: 40px;
-           }
-           .footer-left-img{
-          width: 100px;
-        }   
-        .footer-left-phone {
-            margin-top: 20px;
-        } 
-        .span-dot {  
-            font-size: 14px;
-            font-family: Microsoft YaHei;
-            font-weight: 400;
-            color: #f3f3f3;
-        }
-        .span-doot {
-            display: inline-block;
-            font-size: 14px;
-            font-family: 'Microsoft YaHei';
-            font-weight: 400;
-            color: #f3f3f3;
-            margin-top: 18px;
-        } 
-        .yuyue {
-            margin-top: 40px;
-            display: flex;
-        }
-        .yanshi {
-            width: 100px;
-            height: 30px;
-            line-height: 30px;
-            text-align: center;
-            border: 1px solid #f3f3f3;
-            border-radius: 15px;
-            color: #f3f3f3;
-            font-size: 12px; 
-            font-family: 'Microsoft YaHei';
-            cursor: pointer;
-        }
-        .language {
-            width: 100px;
-            height: 30px;
-            line-height: 30px;
-            /* text-align: center; */
-            border: 1px solid #f3f3f3;
-            border-radius: 15px;
-            color: #f3f3f3;
-            font-size: 12px; 
-            font-family: 'Microsoft YaHei';
-            cursor: pointer;
-            margin-left: 15px;
-            position: relative;
-        }
+                padding-bottom: 20px;
+                padding-top: 40px;
+            }
 
-        .language>span.language-map {
-            margin-left: 8px;
-        }
-        .language>span.select-down {
-            margin-left: 8px;
-        }
+            .footer-left-img {
+                width: 100px;
+            }
 
-          /* 语言选择 */
-          .footer-select-language {    
-            width: 100px;
-            z-index: 99;
-            position: relative;
-            margin-left: 35px;
-         }
-         .footer-select-language .footer-select-trigger {
-            display: block;
-            position: relative;
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-            padding: 0 30px;
-            border-radius: 15px;
-            width: 100px;
-            height: 30px;
-            font-size: 12px;
-            border: 1px solid #f3f3f3;
-            white-space: nowrap;
-            overflow: hidden;
-            -o-text-overflow: ellipsis;
-            text-overflow: ellipsis;
-            line-height: 30px;
-            color: #f3f3f3;
-            cursor: pointer;
-        }
-        .footer-select-language:hover .footer-dropdown {
-            display: block;
-        }
-        .footer-select-language .footer-select-trigger::before {
-            content: "";
-            background-image: url(/static/image/map.png);
-            background-size: contain;
-            width: 14px;
-            height: 14px;
-            display: block;
-            position: absolute;
-            top: 7px;
-            left: 7px;
-        }
-        .footer-select-language .footer-select-trigger::after {
+            .footer-left-phone {
+                margin-top: 20px;
+            }
+
+            .span-dot {
+                font-size: 14px;
+                font-family: Microsoft YaHei;
+                font-weight: 400;
+                color: #f3f3f3;
+            }
+
+            .span-doot {
+                display: inline-block;
+                font-size: 14px;
+                font-family: 'Microsoft YaHei';
+                font-weight: 400;
+                color: #f3f3f3;
+                margin-top: 18px;
+            }
+
+            .yuyue {
+                margin-top: 40px;
+                display: flex;
+            }
+
+            .yanshi {
+                width: 100px;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                border: 1px solid #f3f3f3;
+                border-radius: 15px;
+                color: #f3f3f3;
+                font-size: 12px;
+                font-family: 'Microsoft YaHei';
+                cursor: pointer;
+            }
+
+            .language {
+                width: 100px;
+                height: 30px;
+                line-height: 30px;
+                /* text-align: center; */
+                border: 1px solid #f3f3f3;
+                border-radius: 15px;
+                color: #f3f3f3;
+                font-size: 12px;
+                font-family: 'Microsoft YaHei';
+                cursor: pointer;
+                margin-left: 15px;
+                position: relative;
+            }
+
+            .language>span.language-map {
+                margin-left: 8px;
+            }
+
+            .language>span.select-down {
+                margin-left: 8px;
+            }
+
+            /* 语言选择 */
+            .footer-select-language {
+                width: 100px;
+                z-index: 99;
+                position: relative;
+                margin-left: 35px;
+            }
+
+            .footer-select-language .footer-select-trigger {
+                display: block;
+                position: relative;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+                padding: 0 30px;
+                border-radius: 15px;
+                width: 100px;
+                height: 30px;
+                font-size: 12px;
+                border: 1px solid #f3f3f3;
+                white-space: nowrap;
+                overflow: hidden;
+                -o-text-overflow: ellipsis;
+                text-overflow: ellipsis;
+                line-height: 30px;
+                color: #f3f3f3;
+                cursor: pointer;
+            }
+
+            .footer-select-language:hover .footer-dropdown {
+                display: block;
+            }
+
+            .footer-select-language .footer-select-trigger::before {
+                content: "";
+                background-image: url(/static/image/map.png);
+                background-size: contain;
+                width: 14px;
+                height: 14px;
+                display: block;
+                position: absolute;
+                top: 7px;
+                left: 7px;
+            }
+
+            .footer-select-language .footer-select-trigger::after {
                 content: "";
                 position: absolute;
                 right: 10px;
@@ -543,13 +610,15 @@
                 border-style: solid;
                 border-width: 4px 4px 0;
                 border-color: #f3f3f3 transparent;
-                -webkit-transition: transform .2s ease,-webkit-transform .2s ease;
-                transition: transform .2s ease,-webkit-transform .2s ease;
-        }
-        .footer-select-language:hover .footer-select-trigger::after {
-            transform: rotate(-180deg);
-        }
-        .footer-select-language .footer-dropdown {
+                -webkit-transition: transform .2s ease, -webkit-transform .2s ease;
+                transition: transform .2s ease, -webkit-transform .2s ease;
+            }
+
+            .footer-select-language:hover .footer-select-trigger::after {
+                transform: rotate(-180deg);
+            }
+
+            .footer-select-language .footer-dropdown {
                 position: absolute;
                 left: 0;
                 bottom: 100%;
@@ -558,8 +627,9 @@
                 background: #333333;
                 border-radius: 5px;
                 display: none;
-        }
-        .footer-dropdown .footer-dropdown-option {
+            }
+
+            .footer-dropdown .footer-dropdown-option {
                 display: block;
                 padding: 0 8px;
                 height: 30px;
@@ -569,65 +639,77 @@
                 -webkit-transition: all .25s ease;
                 -o-transition: all .25s ease;
                 transition: all .25s ease;
-        }
-        .footer-dropdown-option:hover {
-            color: #00cc99;
-        }
-        .footer-right>dl {
-            color: #f3f3f3;
-            width: 80px;
-            margin-left: 20px;
-        }
-        .footer-right>dl>dt {       
-            font-size: 16px;
-            font-family: Microsoft YaHei;
-            font-weight: 400;
-            color: #f3f3f3;
-            margin-bottom: 20px;
-        }
-        .footer-right>dl>dd>a {
-            font-size: 12px;
-            font-family: Microsoft YaHei;
-            font-weight: 400;
-            color: #f3f3f3;
-            line-height: 24px;
-            height: 24px;
-        }
-        .watchus {
-            margin-top: 35px;
-            color: #f3f3f3;
-            margin-left: 20px;
-        }
-        .watchus>h3 {     
-            font-size: 16px;
-            font-family: Microsoft YaHei;
-            font-weight: 400;
-            color: #f3f3f3;
-        }
-        .pc-footer-bottom {
-            height: 40px;
-        }
-        .pc-footer-bottom-left {
-            width: 250px;
-        }
-        .map-span {
-            margin-left: 20px;
-        }
-        .pc-footer-bottom-right {
-            width: 500px;
-        }
-        .pc-footer-bottom-left>span {
-            color: #f3f3f3;
-            font-size: 12px;
-            line-height: 40px;
-            height: 40px;
-        }
-        .pc-footer-bottom-right>span {
-            color: #f3f3f3;
-            font-size: 12px;
-            line-height: 40px;
-            height: 40px;
-        } 
+            }
+
+            .footer-dropdown-option:hover {
+                color: #00cc99;
+            }
+
+            .footer-right>dl {
+                color: #f3f3f3;
+                width: 80px;
+                margin-left: 20px;
+            }
+
+            .footer-right>dl>dt {
+                font-size: 16px;
+                font-family: Microsoft YaHei;
+                font-weight: 400;
+                color: #f3f3f3;
+                margin-bottom: 20px;
+            }
+
+            .footer-right>dl>dd>a {
+                font-size: 12px;
+                font-family: Microsoft YaHei;
+                font-weight: 400;
+                color: #f3f3f3;
+                line-height: 24px;
+                height: 24px;
+            }
+
+            .watchus {
+                margin-top: 35px;
+                color: #f3f3f3;
+                margin-left: 20px;
+            }
+
+            .watchus>h3 {
+                font-size: 16px;
+                font-family: Microsoft YaHei;
+                font-weight: 400;
+                color: #f3f3f3;
+            }
+
+            .pc-footer-bottom {
+                height: 40px;
+            }
+
+            .pc-footer-bottom-left {
+                width: 250px;
+            }
+
+            .map-span {
+                margin-left: 20px;
+            }
+
+            .pc-footer-bottom-right {
+                width: 500px;
+            }
+
+            .pc-footer-bottom-left>span {
+                color: #f3f3f3;
+                font-size: 12px;
+                line-height: 40px;
+                height: 40px;
+            }
+
+            .pc-footer-bottom-right>span {
+                color: #f3f3f3;
+                font-size: 12px;
+                line-height: 40px;
+                height: 40px;
+            }
         }
 
         /* 移动端 */
@@ -635,17 +717,21 @@
             .pc-footer-top {
                 display: none !important;
             }
+
             .pc-footer-bottom {
                 display: none !important;
             }
+
             .mobile-footer-top {
-               padding: 20px 15px 20px;
+                padding: 20px 15px 20px;
             }
+
             .mobile-footer-nav>li {
                 border-bottom: 1px solid #353535;
                 color: #f3f3f3;
                 position: relative;
             }
+
             .mobile-footer-nav>li>span {
                 display: inline-block;
                 width: 100%;
@@ -654,58 +740,67 @@
                 font-size: 16px;
                 cursor: pointer;
             }
+
             .mobile-footer-nav>li>span>i {
                 position: absolute;
-                 font-size: 24px;
-                 top: 0px;
-                 right: 15px;
+                font-size: 24px;
+                top: 0px;
+                right: 15px;
             }
+
             .mobile-footer-bottom>li {
                 height: 40px;
                 text-align: center;
                 color: #f3f3f3;
             }
+
             .footer-item {
                 /* padding: 10px 0; */
                 padding-left: 16px;
                 /* display: none; */
                 overflow: hidden;
-               transition: height 0.5s;
+                transition: height 0.5s;
             }
+
             .footer-item.footer-item-show {
                 display: block;
             }
-            .footer-item>a{
-              display: inline-block;
-              width: 100%;
-              height: 30px;
-              line-height: 30px;
-              font-size: 12px;
-              color: #afafaf;
+
+            .footer-item>a {
+                display: inline-block;
+                width: 100%;
+                height: 30px;
+                line-height: 30px;
+                font-size: 12px;
+                color: #afafaf;
             }
 
             .footer-item>a:hover {
                 color: #00cc99;
             }
-            
+
 
         }
 
-        @media screen  and (max-width: 768px){
+        @media screen and (max-width: 768px) {
             .pc-footer-top {
                 display: none !important;
             }
+
             .pc-footer-bottom {
                 display: none !important;
             }
+
             .mobile-footer-top {
-               padding: 20px 15px 20px;
+                padding: 20px 15px 20px;
             }
+
             .mobile-footer-nav>li {
                 border-bottom: 1px solid #353535;
                 color: #f3f3f3;
                 position: relative;
             }
+
             .mobile-footer-nav>li>span {
                 display: inline-block;
                 width: 100%;
@@ -714,104 +809,111 @@
                 font-size: 16px;
                 cursor: pointer;
             }
+
             .mobile-footer-nav>li>span>i {
                 position: absolute;
-                 font-size: 24px;
-                 top: 0px;
-                 right: 15px;
+                font-size: 24px;
+                top: 0px;
+                right: 15px;
             }
+
             .mobile-footer-bottom>li {
                 height: 40px;
                 text-align: center;
                 color: #f3f3f3;
             }
+
             .footer-item {
                 /* padding: 10px 0; */
                 /* display: none; */
                 padding-left: 16px;
                 overflow: hidden;
-               transition: height 0.5s;
+                transition: height 0.5s;
             }
+
             .footer-item.footer-item-show {
                 display: block;
             }
-            .footer-item>a{
-              display: inline-block;
-              width: 100%;
-              height: 30px;
-              line-height: 30px;
-              font-size: 12px;
-              color: #afafaf;
+
+            .footer-item>a {
+                display: inline-block;
+                width: 100%;
+                height: 30px;
+                line-height: 30px;
+                font-size: 12px;
+                color: #afafaf;
             }
 
             .footer-item>a:hover {
                 color: #00cc99;
             }
         }
+
         .footer {
             width: 100%;
             box-sizing: border-box;
             background: #252525;
         }
+
         /* .pc-footer-top {
             padding-bottom: 30px;
             padding-top: 75px;
             border: 1px solid rgba(221, 218, 211, .3);
         } */
-        .footer-left{
-           text-align: left;
+        .footer-left {
+            text-align: left;
         }
-     
+
         .footer-left-img>img {
             width: 100%;
             height: 100%;
         }
-       
+
         .yanshi:hover {
             border: 1px solid #00cc99;
             background: #00cc99;
             color: #f3f3f3;
         }
-       
+
         .language:hover {
             background: #00cc99;
             color: #f3f3f3;
             border: 1px solid #00cc99;
         }
-     
+
         .footer-right {
             display: flex;
         }
-       
-         .footer-right>dl>dd:hover a {
-             color: #00cc99;
-         }
-       
+
+        .footer-right>dl>dd:hover a {
+            color: #00cc99;
+        }
+
         .flex {
             display: flex;
             justify-content: space-between;
         }
-       
     </style>
 </head>
+
 <body>
     <div class="footer">
-      <div class="pc-footer-top">
-      <div class="layui-container flex">
-        <div class="footer-left">
-            <div class="footer-left-img">
-              <img src="/static/image/index1/logo_white.svg" alt="" />
-            </div>
-            <div class="footer-left-phone">
-              <span class="span-dot">服务热线: <span style="color: #00cc99">400-920-1599</span></span><br />
-              <span class="span-doot">商务合作: <span>frank.fu@sicbon.com</span></span><br/>
-              <span class="span-doot">投诉建议: <span>frank.fu@sicbon.com</span></span>
-            </div>
-            <div class="yuyue">
-                <div class="yanshi">
-                    预约上门演示 >
-                </div>
-                <!-- <div class="language">
+        <div class="pc-footer-top">
+            <div class="layui-container flex">
+                <div class="footer-left">
+                    <div class="footer-left-img">
+                        <img src="/static/image/index1/logo_white.svg" alt="" />
+                    </div>
+                    <div class="footer-left-phone">
+                        <span class="span-dot">服务热线: <span style="color: #00cc99">400-920-1599</span></span><br />
+                        <span class="span-doot">商务合作: <span>frank.fu@sicbon.com</span></span><br />
+                        <span class="span-doot">投诉建议: <span>frank.fu@sicbon.com</span></span>
+                    </div>
+                    <div class="yuyue">
+                        <div class="yanshi">
+                            预约上门演示 >
+                        </div>
+                        <!-- <div class="language">
                    <span class="language-map">
                        <img src="/static/image/map.png" alt="">
                    </span> 
@@ -820,167 +922,197 @@
                        <img src="/static/image/down.png" alt="">
                    </span>
                 </div> -->
-                <div class="footer-select-language">
-                    <a href="javascript:;" class="footer-select-trigger">
-                        <span class="footer-select-text">中文</span>
-                    </a>
-                    <div class="footer-dropdown">
-                        <ul class="footer-dropdown-menu">
-                            <li><a href="" class="footer-dropdown-option">中文</a></li>
-                            <li><a href="" class="footer-dropdown-option">English</a></li>
-                        </ul>
+                        <div class="footer-select-language">
+                            <a href="javascript:;" class="footer-select-trigger">
+                                <span class="footer-select-text">中文</span>
+                            </a>
+                            <div class="footer-dropdown">
+                                <ul class="footer-dropdown-menu">
+                                    <li><a href="" class="footer-dropdown-option">中文</a></li>
+                                    <li><a href="" class="footer-dropdown-option">English</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-          </div>
-         <div>
-             <div class="footer-right">
-              <dl>
-                  <dt>关于轻直播</dt>
-                  <dd>
-                      <a href="">关于我们</a>
-                  </dd>
-                  <dd>
-                      <a href="">
-                          服务案例
-                      </a>
-                  </dd>
-                  <dd>
-                      <a href="">
-                          团队风采
-                      </a>
-                  </dd>
-                  <dd>
-                      <a href="">
-                          新闻中心
-                      </a>
-                  </dd>
-                  <dd>
-                      <a href="">
-                          战略合作
-                      </a>
-                  </dd>
-              </dl>
-              <dl>
-                <dt>
-                    服务支持
-                </dt>
-                <dd>
-                    <a href="">轻直播</a>
-                </dd>
-                <dd>
-                    <a href="">
-                        轻会议
-                    </a>
-                </dd>
-                <dd>
-                    <a href="">
-                        轻课堂
-                    </a>
-                </dd>
-                <dd>
-                    <a href="">
-                        直播策划
-                    </a>
-                </dd>
-                <dd>
-                    <a href="">
-                        现场执行
-                    </a>
-                </dd>
-                <dd>
-                    <a href="">
-                        服务体系
-                    </a>
-                </dd>
-            </dl>
-            <dl>
-                <dt>
-                    行业方案
-                </dt>
-                <dd>
-                    <a href="">医疗行业</a>
-                </dd>
-                <dd>
-                    <a href="">
-                        教育行业
-                    </a>
-                </dd>
-                <dd>
-                    <a href="">金融行业</a>
-                </dd>
-                <dd>
-                    <a href="">科技行业</a>
-                </dd>
-                <dd>
-                    <a href="">
-                        媒体行业
-                    </a>
-                </dd>
-            </dl>
-            <dl>
-                <dt>
-                    场景方案
-                </dt>
-                <dd>
-                    <a href="">
-                        手术直播
-                    </a>
-                </dd>
-                <dd>
-                    <a href="">
-                        活动直播
-                    </a>
-                </dd>
-                <dd>
-                    <a href="">
-                        企业培训
-                    </a>
-                </dd>
-                <dd>
-                    <a href="">
-                        营销直播
-                    </a>
-                </dd>
-                <dd>
-                    <a href="">
-                        年会直播
-                    </a>
-                </dd>
-                <dd>
-                    <a href="">
-                        行业峰会直播
-                    </a>
-                </dd>
-            </dl>
-            <dl>
-                <dt>
-                    轻学院
-                </dt>
-                <dd>
-                    <a href="">
-                        使用教程
-                    </a>
-                </dd>
-                <dd>
-                    <a href="">
-                        在线答疑
-                    </a>
-                </dd>
-                <dd>
-                    <a href="">
-                        直播课堂
-                    </a>
-                </dd>
-                <dd>
-                    <a href="javascript:void(0)" class="footer-order">
-                        预约演示
-                    </a>
-                </dd>
-            </dl>
-            </div>
-            <!-- 关注我们 -->
-            <!-- <div class="watchus">
+                <div>
+                    <div class="footer-right">
+                        <dl>
+                            <dt>关于轻直播</dt>
+                            <dd>
+                                <a href="{:url('/index/about/index')}">公司介绍</a>
+                            </dd>
+                            <dd>
+                                <a href="{:url('/index/advantage/index')}">
+                                    我们的优势
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="{:url('/index/corporate_news/news')}">
+                                    企业新闻
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="{:url('/index/channel/index')}">
+                                    渠道合作
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="{:url('/index/join/joinUs')}">
+                                    加入我们
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="{:url('/index/contact/contactUs')}">
+                                    联系我们
+                                </a>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                服务支持
+                            </dt>
+                            <dd>
+                                <a href="{:url('/index/deploy/index')}">私有化部署</a>
+                            </dd>
+                            <dd>
+                                <a href="{:url('/index/video_cloud/index')}">
+                                    轻直播平台
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="{:url('/index/customized_service/index')}">
+                                    直播集成开发
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="{:url('')}">
+                                    APP/小程序开发
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="{:url('/index/site_service/index')}">
+                                    现场服务
+                                </a>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                行业案例
+                            </dt>
+                            <dd>
+                                <a href="{:url('/index/case_center/medical')}">医疗行业</a>
+                            </dd>
+                            <dd>
+                                <a href="{:url('/index/case_center/education')}">
+                                    教育行业
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="{:url('/index/case_center/finance')}">金融行业</a>
+                            </dd>
+                            <dd>
+                                <a href="{:url('/index/case_center/technology')}">科技行业</a>
+                            </dd>
+                            <dd>
+                                <a href="{:url('/index/case_center/car')}">
+                                    汽车行业
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="{:url('/index/case_center/property')}">
+                                    地产行业
+                                </a>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                场景方案
+                            </dt>
+                            <dd>
+                                <a href="{:url('/index/solution/corporate')}">
+                                    企业会议
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="{:url('/index/solution/training')}">
+                                    企业培训
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="{:url('/index/solution/onlineClass')}">
+                                    在线课堂
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="{:url('/index/solution/marketActivities')}">
+                                    营销大会
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="{:url('/index/solution/medical')}">
+                                    医学教育
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="{:url('/index/solution/operation')}">
+                                    手术示教
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="{:url('/index/solution/financial')}">
+                                    金融保险
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="{:url('/index/solution/meetingLive')}">
+                                    大会直播
+                                </a>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                轻学院
+                            </dt>
+                            <dd>
+                                <a href="{:url('/index/qing_school/index')}">
+                                    内容中心
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="{:url('/index/qing_school/casean')}">
+                                    案例解析
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="{:url('/index/qing_school/product')}">
+                                    产品动态
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="{:url('/index/qing_school/livenews')}">
+                                    直播咨询
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="{:url('/index/qing_school/videocourse')}">
+                                    视频学院
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="{:url('/index/qing_school/article')}">
+                                    直播百科
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:void(0)" class="footer-order">
+                                    预约演示
+                                </a>
+                            </dd>
+                        </dl>
+                    </div>
+                    <!-- 关注我们 -->
+                    <!-- <div class="watchus">
                  <h3>关注我们</h3>
                  <span>
                  </span>
@@ -990,88 +1122,143 @@
                  <span></span>
                  <span></span>
             </div> -->
-         </div>    
-      </div>  
-      </div>
-      <div class="pc-footer-bottom">
-          <div class="layui-container flex">
-              <div class="pc-footer-bottom-left">
-                   <span>增值电信经营许可证</span>
-                   <span class="map-span">网站地图</span>
-              </div>
-              <div class="pc-footer-bottom-right flex">
-                  <span>©2021 Copyright SHANGHAI BONWEY TECHNOLOGY CO. LTD；. All right</span>
-                  <span>沪ICP备20004241号-4</span>
-              </div>
-          </div>
-      </div>
-      <div class="mobile-footer-top">
+                </div>
+            </div>
+        </div>
+        <div class="pc-footer-bottom">
+            <div class="layui-container flex">
+                <div class="pc-footer-bottom-left">
+                    <span>增值电信经营许可证</span>
+                    <span class="map-span">网站地图</span>
+                </div>
+                <div class="pc-footer-bottom-right flex">
+                    <span>©2021 Copyright SHANGHAI BONWEY TECHNOLOGY CO. LTD；. All right</span>
+                    <span>沪ICP备20004241号-4</span>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-footer-top">
             <ul class="mobile-footer-nav">
                 <li unfold='1'>
                     <span>关于轻直播<i>+</i></span>
                     <div class="footer-item footer-about-item">
-                         <a href="">关于我们</a>
-                         <a href="">服务案例</a>
-                         <a href="">团队风采</a>
-                         <a href="">新闻中心</a>
-                         <a href="">战略合作</a>
+                        <a href="{:url('/index/about/index')}">公司介绍</a>
+                        <a href="{:url('/index/advantage/index')}">
+                            我们的优势
+                        </a>
+                        <a href="{:url('/index/corporate_news/news')}">
+                            企业新闻
+                        </a>
+                        <a href="{:url('/index/channel/index')}">
+                            渠道合作
+                        </a>
+                        <a href="{:url('/index/join/joinUs')}">
+                            加入我们
+                        </a>
+                        <a href="{:url('/index/contact/contactUs')}">
+                            联系我们
+                        </a>
                     </div>
                 </li>
                 <li unfold='1'>
-                    <span>服务支持<i>+</i></span> 
+                    <span>服务支持<i>+</i></span>
                     <div class="footer-item footer-service-item">
-                        <a href="">轻直播</a>
-                        <a href="">轻会议</a>
-                        <a href="">轻课堂</a>
-                        <a href="">直播策划</a>
-                        <a href="">现场执行</a>
-                        <a href="">服务体系</a>
-                   </div>
+                        <a href="{:url('/index/deploy/index')}">私有化部署</a>
+                        <a href="{:url('/index/video_cloud/index')}">
+                            轻直播平台
+                        </a>
+                        <a href="{:url('/index/customized_service/index')}">
+                            直播集成开发
+                        </a>
+                        <a href="{:url('')}">
+                            APP/小程序开发
+                        </a>
+                        <a href="{:url('/index/site_service/index')}">
+                            现场服务
+                        </a>
+                    </div>
                 </li>
                 <li unfold='1'>
                     <span>行业方案<i>+</i></span>
                     <div class="footer-item footer-industry-item">
-                        <a href="">医疗行业</a>
-                        <a href="">教育行业</a>
-                        <a href="">金融行业</a>
-                        <a href="">科技行业</a>
-                        <a href="">媒体行业</a>
+                        <a href="{:url('/index/case_center/medical')}">医疗行业</a>
+                        <a href="{:url('/index/case_center/education')}">
+                            教育行业
+                        </a>
+                        <a href="{:url('/index/case_center/finance')}">金融行业</a>
+                        <a href="{:url('/index/case_center/technology')}">科技行业</a>
+                        <a href="{:url('/index/case_center/car')}">
+                            汽车行业
+                        </a>
+                        <a href="{:url('/index/case_center/property')}">
+                            地产行业
+                        </a>
                         <!-- <a href="">服务体系</a> -->
-                   </div>
+                    </div>
                 </li>
                 <li unfold='1'>
                     <span>场景方案<i>+</i></span>
                     <div class="footer-item footer-scene-item">
-                        <a href="">手术直播</a>
-                        <a href="">活动直播</a>
-                        <a href="">企业培训</a>
-                        <a href="">营销直播</a>
-                        <a href="">年会直播</a>
-                        <a href="">行业峰会直播</a>
-                   </div>
+                        <a href="{:url('/index/solution/corporate')}">
+                            企业会议
+                        </a>
+                        <a href="{:url('/index/solution/training')}">
+                            企业培训
+                        </a>
+                        <a href="{:url('/index/solution/marketActivities')}">
+                            营销大会
+                        </a>
+                        <a href="{:url('/index/solution/medical')}">
+                            医学教育
+                        </a>
+                        <a href="{:url('/index/solution/operation')}">
+                            手术示教
+                        </a>
+                        <a href="{:url('/index/solution/financial')}">
+                            金融保险
+                        </a>
+                        <a href="{:url('/index/solution/meetingLive')}">
+                            大会直播
+                        </a>
+                    </div>
                 </li>
                 <li unfold='1'>
-                   <span>轻学院<i>+</i></span>
-                   <div class="footer-item footer-college-item">
-                    <a href="">试用教程</a>
-                    <a href="">在线答疑</a>
-                    <a href="">直播课堂</a>
-                    <a href="javascript:void(0)" class="footer-order">预约演示</a>
-               </div>
+                    <span>轻学院<i>+</i></span>
+                    <div class="footer-item footer-college-item">
+                        <a href="{:url('/index/qing_school/index')}">
+                            内容中心
+                        </a>
+                        <a href="{:url('/index/qing_school/casean')}">
+                            案例解析
+                        </a>
+                        <a href="{:url('/index/qing_school/product')}">
+                            产品动态
+                        </a>
+                        <a href="{:url('/index/qing_school/livenews')}">
+                            直播咨询
+                        </a>
+                        <a href="{:url('/index/qing_school/videocourse')}">
+                            视频学院
+                        </a>
+                        <a href="{:url('/index/qing_school/article')}">
+                            直播百科
+                        </a>
+                        <a href="javascript:void(0)" class="footer-order">预约演示</a>
+                    </div>
                 </li>
             </ul>
-      </div>
-      <div class="mobile-footer-bottom">
-          <li style="font-size: 14px;">
-              增值电信经营许可证
-          </li>
-          <li style="font-size: 12px;">
-            ©2021 Copyright SHANGHAI BONWEY TECHNOLOGY CO., LTD；. All rights reserved.         沪ICP备16029097号-7
-          </li>
-      </div>
+        </div>
+        <div class="mobile-footer-bottom">
+            <li style="font-size: 14px;">
+                增值电信经营许可证
+            </li>
+            <li style="font-size: 12px;">
+                ©2021 Copyright SHANGHAI BONWEY TECHNOLOGY CO., LTD；. All rights reserved. 沪ICP备16029097号-7
+            </li>
+        </div>
     </div>
     <script>
-        $('.mobile-footer-nav li').on('click', function() {
+        $('.mobile-footer-nav li').on('click', function () {
             //  $(this).toggleClass('footer-item-show')
             const unfold = $(this).attr('unfold');
             const realHeight = $(this).find('.footer-item').attr('real-height');
@@ -1083,47 +1270,48 @@
             //     $(this).find('span>i')[0].innerText = '+';
             //     $(this).find('.footer-item').hide();
             //  }
-           
-            if(unfold && unfold == '1') {
-                $(this).find('span>i')[0].innerText = '-';
-               $(this).find('.footer-item').css({
-                'height':  realHeight + 'px',
-            });
-         } else {
-            $(this).find('.footer-item').css({
-                'height': '0',
-            });
-            $(this).find('span>i')[0].innerText = '+';
-         }
 
-         $(this).attr('unfold', unfold === '0' ? '1' : '0');
+            if (unfold && unfold == '1') {
+                $(this).find('span>i')[0].innerText = '-';
+                $(this).find('.footer-item').css({
+                    'height': realHeight + 'px',
+                });
+            } else {
+                $(this).find('.footer-item').css({
+                    'height': '0',
+                });
+                $(this).find('span>i')[0].innerText = '+';
+            }
+
+            $(this).attr('unfold', unfold === '0' ? '1' : '0');
 
         })
 
 
-    //     function init(){
-    //      $('.footer-item').attr('real-height', $('.footer-about-item').height());
-    //      $('.footer-item').attr('real-height', $('.footer-service-item').height());
-    //      $('.footer-item').css({
-    //          'height': '0px'
-    //      })
-    //  }
+        //     function init(){
+        //      $('.footer-item').attr('real-height', $('.footer-about-item').height());
+        //      $('.footer-item').attr('real-height', $('.footer-service-item').height());
+        //      $('.footer-item').css({
+        //          'height': '0px'
+        //      })
+        //  }
 
-    //  $(document).ready(function() {
-    //     const deviceWidth = $(window).width();
-    //     if(deviceWidth < 820) {
-    //         init();
-    //     }
-    //  })
-    //   显示预约演示弹出框
-      $('.yanshi').on('click', function() {
+        //  $(document).ready(function() {
+        //     const deviceWidth = $(window).width();
+        //     if(deviceWidth < 820) {
+        //         init();
+        //     }
+        //  })
+        //   显示预约演示弹出框
+        $('.yanshi').on('click', function () {
             $('#order-container').show();
             $('.q-modal').show();
-      })
-      $('.footer-order').on('click', function() {
+        })
+        $('.footer-order').on('click', function () {
             $('#order-container').show();
             $('.q-modal').show();
-      })
+        })
     </script>
 </body>
+
 </html>
