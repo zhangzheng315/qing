@@ -102,8 +102,7 @@
   align-items: center;
 }
 #banner #high-lights .stars li a div img {
-  width: 26px;
-  height: 23px;
+  width: 27px;
   object-fit: cover;
   margin-right: 8px;
 }
@@ -152,7 +151,6 @@
 }
 #product .product-content .product-item .item-head img {
   width: 30px;
-  height: 30px;
   margin: 0 21px 0 11.5%;
 }
 #product .product-content .product-item .item-head h5 {
@@ -751,7 +749,6 @@
   }
   #banner #high-lights .layui-container .stars li a div img {
     width: 22px;
-    height: 20px;
   }
   #banner #high-lights .layui-container .stars li a p {
     margin-top: 12px;
@@ -771,7 +768,6 @@
   }
   #product .product-content .product-item .item-head img {
     width: 25px;
-    height: 25px;
   }
   #product .product-content .product-item .item-head img h5 {
     font-size: 18px;
@@ -1128,8 +1124,7 @@
     flex-direction: column;
   }
   #banner #high-lights .layui-container .stars li a div img {
-    width: 23px;
-    height: 20px;
+    width: 21px;
     margin-bottom: 3px;
   }
   #banner #high-lights .layui-container .stars li a p {
@@ -1160,7 +1155,6 @@
   }
   #product .product-content .product-item .item-head img {
     width: 23px;
-    height: 23px;
   }
   #product .product-content .product-item .item-head h5 {
     font-size: 16px;
@@ -1345,7 +1339,7 @@
     height: 260px;
   }
   #fiveG .fiveg-content {
-    padding: 30px 0 20px;
+    padding: 35px 0 0;
   }
   #fiveG .fiveg-content h2 {
     font-size: 22px;
@@ -1353,11 +1347,13 @@
   #fiveG .fiveg-content h5 {
     font-size: 18px;
     text-align: center;
-    margin: 31px auto 40px;
+    margin: 35px auto 20px;
   }
   #fiveG .fiveg-content button {
-    width: 46%;
+    width: 42%;
     height: 40px;
+  }
+  #fiveG .fiveg-content button a {
     font-size: 14px;
   }
 }
