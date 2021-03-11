@@ -118,7 +118,7 @@
                 <div class="m-cause-con">
                     <ul>
                         {if(isset($case_list))}
-                        {if(!empty($case_list))}
+                        {if($case_list)}
                         {foreach($case_list as $item)}
                         <li class="cause-item">
                             <a href="/index/case_center/caseDetail?type_id=4&id={$item.id}">
@@ -142,6 +142,8 @@
                             </a>
                         </li>
                         {/foreach}
+                        {else}
+                        <img class="null-data" src="/static/image/null_data.svg" alt="">
                         {/if}
                         {/if}
 

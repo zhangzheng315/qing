@@ -85,6 +85,7 @@
                 <div class="cause-con">
                     <ul>
                         {if isset($article_list)}
+                        {if($article_list)}
                         {foreach($article_list as $item)}
                         <li class="cause-item">
                             <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>0])}" class="cause-cover" style="background: url({$item.cover_img_url});background-size: cover">
@@ -117,6 +118,9 @@
                             </div>
                         </li>
                         {/foreach}
+                        {else}
+                        <div style="text-align: center">空空如也</div>
+                        {/if}
                         {/if}
                     </ul>
                     <div class="cause-bottom">
@@ -127,6 +131,7 @@
                 <div class="m-cause-con">
                     <ul>
                         {if isset($article_list)}
+                        {if($article_list)}
                         {foreach($article_list as $item)}
                         <li class="cause-item">
                             <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>0])}">
@@ -146,6 +151,9 @@
                             </a>
                         </li>
                         {/foreach}
+                        {else}
+                        <div style="text-align: center">空空如也</div>
+                        {/if}
                         {/if}
                     </ul>
                 </div>

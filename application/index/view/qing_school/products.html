@@ -72,16 +72,11 @@
         <div class="layui-container category-look-con">
             <div class="category-look-tags">
                 <span>大家都在看：</span>
-                <a href="" class="category-look-tag">企业培训</a>
-                <a href="" class="category-look-tag">数字化转型</a>
-                <a href="" class="category-look-tag">无延迟直播</a>
-                <a href="" class="category-look-tag">手术示教</a>
-                <a href="" class="category-look-tag">线上直播</a>
-                <a href="" class="category-look-tag">企业培训</a>
-                <a href="" class="category-look-tag">数字化转型</a>
-                <a href="" class="category-look-tag">直播</a>
-                <a href="" class="category-look-tag">手术示教</a>
-                <a href="" class="category-look-tag">网校</a>
+                {if(isset($hot_label))}
+                {foreach($hot_label as $item)}
+                <a href="/index/qing_school/caseAn?pid=1&label={$item.name}" class="category-look-tag">{$item.name}</a>
+                {/foreach}
+                {/if}
             </div>
         </div>
         <div class="layui-container flex-space-between">
@@ -102,6 +97,7 @@
                 <div class="cause-con">
                     <ul>
                         {if isset($article_list)}
+                        {if($article_list)}
                         {foreach($article_list as $item)}
                         <li class="cause-item">
                             <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>2])}"
@@ -137,6 +133,9 @@
                             </div>
                         </li>
                         {/foreach}
+                        {else}
+                        <div style="text-align: center">空空如也</div>
+                        {/if}
                         {/if}
                     </ul>
                     <div class="cause-bottom">
