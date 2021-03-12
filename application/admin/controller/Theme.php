@@ -28,7 +28,7 @@ class Theme extends Common{
     public function getThemeList(){
         $data = input('get.');
         $data['deleted_time'] = 0;
-        $str = ThemeService::data_paging($data,'theme','order');
+        $str = ThemeService::data_paging($data,'theme');
         foreach ($str['data'] as &$value) {
             $value['status'] = $value['status'] == 1 ? '显示' : '不显示';
         }
@@ -39,7 +39,7 @@ class Theme extends Common{
      * 添加视频主题
      * @return mixed
      */
-    public function caseCreate(Request $request){
+    public function themeCreate(Request $request){
         $rules =
             [
                 'theme_name' => 'require',

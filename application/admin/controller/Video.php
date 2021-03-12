@@ -4,6 +4,7 @@ namespace app\admin\controller;
 use app\admin\serve\BannerService;
 use app\admin\serve\LabelService;
 use app\admin\serve\NavigationService;
+use app\admin\serve\ThemeService;
 use app\admin\serve\VideoService;
 use app\admin\serve\VideoTypeService;
 use think\Request;
@@ -13,21 +14,24 @@ class Video extends Common{
     public $videoService;
     public $videoTypeService;
     public $labelService;
-    public function __construct(VideoService $videoService,VideoTypeService $videoTypeService, LabelService $labelService)
+    public $themeService;
+    public function __construct(VideoService $videoService,VideoTypeService $videoTypeService, LabelService $labelService, ThemeService $themeService)
     {
         parent::__construct();
         $this->videoService = $videoService;
         $this->videoTypeService = $videoTypeService;
         $this->labelService = $labelService;
+        $this->themeService = $themeService;
     }
 
     public function index()
     {
         $video_type_list = $this->videoTypeService->videoTypeList();
         $label_list = $this->labelService->labelList();
+        $video_theme = $this->themeService->themeList();
         $add_url = '/admin/video/videoCreate'; //添加
         $edit_url = '/admin/video/videoEdit';  //修改
-        return $this->fetch('',compact('video_type_list','label_list','add_url','edit_url'));
+        return $this->fetch('',compact('video_theme','video_type_list','label_list','add_url','edit_url'));
     }
 
     /**
@@ -52,6 +56,7 @@ class Video extends Common{
         $rules =
             [
                 'pid' => 'require',
+                'theme_id' => 'require',
                 'video_url' => 'require',
                 'title' => 'require',
                 'cover_img_url' => 'require',
@@ -59,6 +64,7 @@ class Video extends Common{
         $msg =
             [
                 'pid' => '缺少参数@pid',
+                'theme_id' => '缺少参数@theme_id',
                 'video_url' => '缺少参数@video_url',
                 'title' => '缺少参数@title',
                 'cover_img_url' => '缺少参数@cover_img_url',

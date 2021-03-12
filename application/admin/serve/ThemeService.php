@@ -112,7 +112,7 @@ class ThemeService extends Common{
             'status'=>1,
             'deleted_time' => 0,
         ];
-        $res = $this->theme->field(['id','theme'])->where($where)->order('order','desc')->select();
+        $res = $this->theme->field(['id','theme_name'])->where($where)->select();
         if (!$res) {
             $this->setError('暂无数据');
             return false;
