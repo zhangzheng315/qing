@@ -14,36 +14,6 @@
     <link rel="stylesheet" href="/static/css/style.css">
     <script type='text/javascript' src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="/static/layui/layui.js"></script>
-    <style>
-        .video-free {
-            height: 400px;
-            background: url('/static/image/qingschool/banner_bottom.png') no-repeat;
-            background-size: cover;
-            padding-top: 111px;
-            box-sizing: border-box;
-        }
-        .video-free .layui-container h3 {
-            font-size: 50px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 90px;
-            text-align: center;
-        }
-        .video-free .layui-container button {
-            width: 168px;
-            height: 40px;
-            background: linear-gradient(90deg, #009CA9, #39D6AF);
-            border-radius: 20px;
-            border: none;
-            display: block;
-            margin: 0 auto;
-            cursor: pointer;
-        }
-        .video-free .layui-container button a {
-            color: #fff;
-            font-size: 20px;
-        }
-    </style>
 </head>
 
 <body cz-shortcut-listen="true">
@@ -319,15 +289,11 @@
             </div>
         </div>
     </section>
-      <!-- 免费试用 -->
-      <!-- <div class="video-free">
-        <div class="layui-container">
-            <h3>全功能免费试用，0成本体验轻直播带来的改变</h3>
-            <button>
-                <a href="http://login.lighos.com/" target="_blank">免费体验</a>
-            </button>
-        </div>
-    </div> -->
+       <!-- 免费试用 -->
+       <div id="free-banner">
+        <h2>全功能免费试用，0成本体验轻直播带来的改变</h2>
+        <a href="" class="free_btn">免费试用</a>
+     </div>
     <!-- 底部 -->
     {include file="common/footer"}
 </div>

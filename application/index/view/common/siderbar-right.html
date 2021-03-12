@@ -76,7 +76,7 @@
             background-image: url(/static/image/icon-w_top.png);
         }
         #return-top {
-            display: none;
+            opacity: 0;
         }
         .telephone-fixed {
             position: absolute;
@@ -250,10 +250,14 @@
     function scrollFunction() {
         if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
         // document.getElementById("myBtn").style.display = "block";
-        $('#return-top').show();
+        $('#return-top').css({
+            'opacity': '1'
+        });
 
       } else {
-        $('#return-top').hide();
+        $('#return-top').css({
+            'opacity': '0'
+        });
     }
     } 
 

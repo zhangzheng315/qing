@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>轻直播_客户案例_直播定制化服务</title>
-    <meta name="keywords"  content="轻直播,经典案例"/>
+    <meta name="keywords"  content="轻直播,经典案例" />
     <meta name="description"
-           content="轻直播提供私有化部署,全方位全场景直播一站式服务,服务范围涵盖医疗、教育、金融、科技等各行业,已获得上海医师协会、瀚晖制药、四川大学、等国内知名企业的高度认可。"/>
+         content="轻直播提供私有化部署,全方位全场景直播一站式服务,服务范围涵盖医疗、教育、金融、科技等各行业,已获得上海医师协会、瀚晖制药、四川大学、等国内知名企业的高度认可。" />
     <link rel="stylesheet" href="/static/layui/css/layui.css">
     <link rel="stylesheet" href="/static/css/style.css">
     <script type='text/javascript' src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
@@ -20,14 +20,37 @@
         .searchContainer {
             display: none;
         }
+
         .articleCon {
             display: none;
         }
+
         .listContainerBread {
             display: none;
         }
+
         .listGuideContent {
             display: flex;
+        }
+
+        /* 免费试用banner */
+        #free-banner {
+            box-sizing: border-box;
+            background: url('/static/image/qingschool/free_banner.png') no-repeat center;
+            background-size: cover;
+            text-align: center;
+        }
+
+        #free-banner>h2 {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        #free-banner>.free_btn {
+            display: inline-block;
+            color: #ffffff;
+            font-weight: 400;
+            background: linear-gradient(90deg, #009CA9, #39D6AF);
         }
 
         @media screen and (min-width: 1200px) {
@@ -61,23 +84,23 @@
                 border-top-right-radius: 5px;
             }
 
-            .baikeMenuTitle > p {
+            .baikeMenuTitle>p {
                 color: #ffffff;
                 font-size: 20px;
                 padding: 10px;
             }
 
-            .baike-menu > .baikeMenuList {
+            .baike-menu>.baikeMenuList {
                 background: #ffffff;
                 padding-top: 10px;
                 min-height: 500px;
             }
 
-            .baikeMenu > .baikeMenuList li {
+            .baikeMenu>.baikeMenuList li {
                 width: 100%;
             }
 
-            .baikeMenuContent > a > .layui-icon {
+            .baikeMenuContent>a>.layui-icon {
                 position: absolute;
                 right: 6px;
                 top: calc(50% - 9.2px);
@@ -85,7 +108,7 @@
                 transition: all .25s linear;
             }
 
-            .baikeMenuContent > a {
+            .baikeMenuContent>a {
                 font-size: 16px;
                 position: relative;
             }
@@ -98,22 +121,24 @@
                 box-sizing: border-box;
             }
 
-            .baikeMenu-child > dd {
+            .baikeMenu-child>dd {
                 padding-left: 25px;
                 box-sizing: border-box;
             }
 
-            .baikeMenuList > ul > ul > li > a {
+            .baikeMenuList>ul>ul>li>a {
                 font-size: 14px;
             }
 
-            .baikeMenuContent > a:hover, .baikeMenuContent.active > a {
+            .baikeMenuContent>a:hover,
+            .baikeMenuContent.active>a {
                 color: #49a6f7;
                 border-left: 2px solid #49a6f7;
                 background-color: rgba(73, 166, 247, 0.2);
             }
 
-            .baikeMenu-child > dd:hover a, .baikeMenu-child > dd.active a {
+            .baikeMenu-child>dd:hover a,
+            .baikeMenu-child>dd.active a {
                 color: #39a6f7;
             }
 
@@ -139,12 +164,12 @@
                 border-bottom: 1px solid #eae9e9;
             }
 
-            .listContainerTitle > p {
+            .listContainerTitle>p {
                 font-size: 20px;
                 color: #333;
             }
 
-            .listContainerTitle > .search {
+            .listContainerTitle>.search {
                 width: 153px;
                 height: 30px;
                 border: 1px solid #e5e5e5;
@@ -153,7 +178,7 @@
                 box-sizing: border-box;
             }
 
-            .listContainerTitle > .search > input {
+            .listContainerTitle>.search>input {
                 border: none;
                 width: 80%;
                 height: 28px;
@@ -166,22 +191,22 @@
                 line-height: 40px;
             }
 
-            .listContainerBread > li {
+            .listContainerBread>li {
                 display: inline-block;
                 vertical-align: middle;
                 font-size: 13px;
                 font-family: 'Microsoft YaHei';
             }
 
-            .listContainerBread > li > a.hoverstyle {
+            .listContainerBread>li>a.hoverstyle {
                 color: #333333;
             }
 
-            .listContainerBread > li > a.hoverstyle:hover {
+            .listContainerBread>li>a.hoverstyle:hover {
                 color: #00cc99;
             }
 
-            .listContainerBread > li > a {
+            .listContainerBread>li>a {
                 color: #999999;
             }
 
@@ -189,7 +214,7 @@
                 margin: 16px 8px 8px;
             }
 
-            .articleCon > h2 {
+            .articleCon>h2 {
                 font-size: 20px;
                 font-family: Microsoft YaHei;
                 font-weight: 600;
@@ -211,7 +236,7 @@
                 flex-wrap: wrap;
             }
 
-            .listGuideContent > a {
+            .listGuideContent>a {
                 width: 25%;
                 height: 200px;
                 padding: 20px 0;
@@ -219,7 +244,7 @@
                 box-sizing: border-box;
             }
 
-            .listGuideContent > a img {
+            .listGuideContent>a img {
                 width: 80px;
                 height: 80px;
                 background-color: #00cc99;
@@ -227,7 +252,7 @@
                 margin-bottom: 14px;
             }
 
-            .listGuideContent > a p {
+            .listGuideContent>a p {
                 color: #000;
                 font-weight: 600;
                 width: 60%;
@@ -236,7 +261,7 @@
                 border-bottom: 1px solid #00cc99;
             }
 
-            .searchContainer > p {
+            .searchContainer>p {
                 display: inline-block;
                 color: #333333;
                 font-weight: 600;
@@ -244,8 +269,28 @@
                 line-height: 30px;
             }
 
-            .searchContainer > p > span {
+            .searchContainer>p>span {
                 color: #00cc99;
+            }
+
+            #free-banner {
+                height: 300px;
+                padding: 60px 0;
+                margin-top: 100px;
+            }
+
+            #free-banner>h2 {
+                color: #ffffff;
+                font-size: 50px;
+            }
+
+            #free-banner>.free_btn {
+                width: 168px;
+                height: 40px;
+                line-height: 40px;
+                margin-top: 60px;
+                font-size: 20px;
+                border-radius: 20px;
             }
         }
 
@@ -280,23 +325,23 @@
                 border-top-right-radius: 5px;
             }
 
-            .baikeMenuTitle > p {
+            .baikeMenuTitle>p {
                 color: #ffffff;
                 font-size: 20px;
                 padding: 10px;
             }
 
-            .baike-menu > .baikeMenuList {
+            .baike-menu>.baikeMenuList {
                 background: #ffffff;
                 padding-top: 10px;
                 min-height: 500px;
             }
 
-            .baikeMenu > .baikeMenuList li {
+            .baikeMenu>.baikeMenuList li {
                 width: 100%;
             }
 
-            .baikeMenuContent > a > .layui-icon {
+            .baikeMenuContent>a>.layui-icon {
                 position: absolute;
                 right: 6px;
                 top: calc(50% - 9.2px);
@@ -304,7 +349,7 @@
                 transition: all .25s linear;
             }
 
-            .baikeMenuContent > a {
+            .baikeMenuContent>a {
                 font-size: 16px;
                 position: relative;
             }
@@ -317,22 +362,25 @@
                 box-sizing: border-box;
             }
 
-            .baikeMenu-child > dd {
+            .baikeMenu-child>dd {
                 padding-left: 25px;
                 box-sizing: border-box;
             }
 
-            .baikeMenuList > ul > ul > li > a {
+            .baikeMenuList>ul>ul>li>a {
                 font-size: 14px;
             }
 
-            .baikeMenuContent > a:hover, .baikeMenu-child > dd.active, .baikeMenu-child > dd:hover {
+            .baikeMenuContent>a:hover,
+            .baikeMenu-child>dd.active,
+            .baikeMenu-child>dd:hover {
                 color: #49a6f7;
                 border-left: 2px solid #49a6f7;
                 background-color: rgba(73, 166, 247, 0.2);
             }
 
-            .baikeMenu-child > dd:hover a, .baikeMenu-child > dd.active a {
+            .baikeMenu-child>dd:hover a,
+            .baikeMenu-child>dd.active a {
                 color: #39a6f7;
             }
 
@@ -358,12 +406,12 @@
                 border-bottom: 1px solid #eae9e9;
             }
 
-            .listContainerTitle > p {
+            .listContainerTitle>p {
                 font-size: 20px;
                 color: #333;
             }
 
-            .listContainerTitle > .search {
+            .listContainerTitle>.search {
                 width: 153px;
                 height: 30px;
                 border: 1px solid #e5e5e5;
@@ -372,7 +420,7 @@
                 box-sizing: border-box;
             }
 
-            .listContainerTitle > .search > input {
+            .listContainerTitle>.search>input {
                 border: none;
                 width: 80%;
                 height: 28px;
@@ -385,22 +433,22 @@
                 line-height: 40px;
             }
 
-            .listContainerBread > li {
+            .listContainerBread>li {
                 display: inline-block;
                 vertical-align: middle;
                 font-size: 13px;
                 font-family: 'Microsoft YaHei';
             }
 
-            .listContainerBread > li > a.hoverstyle {
+            .listContainerBread>li>a.hoverstyle {
                 color: #333333;
             }
 
-            .listContainerBread > li > a.hoverstyle:hover {
+            .listContainerBread>li>a.hoverstyle:hover {
                 color: #00cc99;
             }
 
-            .listContainerBread > li > a {
+            .listContainerBread>li>a {
                 color: #999999;
             }
 
@@ -408,7 +456,7 @@
                 margin: 14px 8px 8px;
             }
 
-            .articleCon > h2 {
+            .articleCon>h2 {
                 font-size: 16px;
                 font-family: Microsoft YaHei;
                 font-weight: 600;
@@ -430,7 +478,7 @@
                 flex-wrap: wrap;
             }
 
-            .listGuideContent > a {
+            .listGuideContent>a {
                 width: 25%;
                 height: 160px;
                 padding: 16px 0;
@@ -438,7 +486,7 @@
                 box-sizing: border-box;
             }
 
-            .listGuideContent > a img {
+            .listGuideContent>a img {
                 width: 60px;
                 height: 60px;
                 background-color: #00cc99;
@@ -446,7 +494,7 @@
                 margin-bottom: 12px;
             }
 
-            .listGuideContent > a p {
+            .listGuideContent>a p {
                 color: #000;
                 font-weight: 600;
                 width: 66%;
@@ -455,7 +503,7 @@
                 border-bottom: 1px solid #00cc99;
             }
 
-            .searchContainer > p {
+            .searchContainer>p {
                 display: inline-block;
                 color: #333333;
                 font-weight: 600;
@@ -463,9 +511,26 @@
                 line-height: 30px;
             }
 
-            .searchContainer > p > span {
+            .searchContainer>p>span {
                 color: #00cc99;
             }
+            #free-banner {
+        height: 280px;
+        padding: 50px 0;
+        margin-top: 80px;
+    }
+    #free-banner>h2 {
+        color: #ffffff;
+        font-size: 40px;
+    }
+    #free-banner>.free_btn {
+        width: 158px;
+        height: 40px;
+        line-height: 40px;
+        margin-top: 60px;
+        font-size: 20px;
+        border-radius: 20px;
+    }
 
         }
 
@@ -499,23 +564,23 @@
                 border-top-right-radius: 5px;
             }
 
-            .baikeMenuTitle > p {
+            .baikeMenuTitle>p {
                 color: #ffffff;
                 font-size: 20px;
                 padding: 10px;
             }
 
-            .baike-menu > .baikeMenuList {
+            .baike-menu>.baikeMenuList {
                 background: #ffffff;
                 padding-top: 10px;
                 min-height: 500px;
             }
 
-            .baikeMenu > .baikeMenuList li {
+            .baikeMenu>.baikeMenuList li {
                 width: 100%;
             }
 
-            .baikeMenuContent > a > .layui-icon {
+            .baikeMenuContent>a>.layui-icon {
                 position: absolute;
                 right: 6px;
                 top: calc(50% - 9.2px);
@@ -523,7 +588,7 @@
                 transition: all .25s linear;
             }
 
-            .baikeMenuContent > a {
+            .baikeMenuContent>a {
                 font-size: 16px;
                 position: relative;
             }
@@ -536,22 +601,25 @@
                 box-sizing: border-box;
             }
 
-            .baikeMenu-child > dd {
+            .baikeMenu-child>dd {
                 padding-left: 25px;
                 box-sizing: border-box;
             }
 
-            .baikeMenuList > ul > ul > li > a {
+            .baikeMenuList>ul>ul>li>a {
                 font-size: 14px;
             }
 
-            .baikeMenuContent > a:hover, .baikeMenu-child > dd.active, .baikeMenu-child > dd:hover {
+            .baikeMenuContent>a:hover,
+            .baikeMenu-child>dd.active,
+            .baikeMenu-child>dd:hover {
                 color: #49a6f7;
                 border-left: 2px solid #49a6f7;
                 background-color: rgba(73, 166, 247, 0.2);
             }
 
-            .baikeMenu-child > dd:hover a, .baikeMenu-child > dd.active a {
+            .baikeMenu-child>dd:hover a,
+            .baikeMenu-child>dd.active a {
                 color: #39a6f7;
             }
 
@@ -577,12 +645,12 @@
                 border-bottom: 1px solid #eae9e9;
             }
 
-            .listContainerTitle > p {
+            .listContainerTitle>p {
                 font-size: 20px;
                 color: #333;
             }
 
-            .listContainerTitle > .search {
+            .listContainerTitle>.search {
                 width: 153px;
                 height: 30px;
                 border: 1px solid #e5e5e5;
@@ -591,7 +659,7 @@
                 box-sizing: border-box;
             }
 
-            .listContainerTitle > .search > input {
+            .listContainerTitle>.search>input {
                 border: none;
                 width: 80%;
                 height: 28px;
@@ -604,22 +672,22 @@
                 line-height: 40px;
             }
 
-            .listContainerBread > li {
+            .listContainerBread>li {
                 display: inline-block;
                 vertical-align: middle;
                 font-size: 13px;
                 font-family: 'Microsoft YaHei';
             }
 
-            .listContainerBread > li > a.hoverstyle {
+            .listContainerBread>li>a.hoverstyle {
                 color: #333333;
             }
 
-            .listContainerBread > li > a.hoverstyle:hover {
+            .listContainerBread>li>a.hoverstyle:hover {
                 color: #00cc99;
             }
 
-            .listContainerBread > li > a {
+            .listContainerBread>li>a {
                 color: #999999;
             }
 
@@ -627,7 +695,7 @@
                 margin: 14px 8px 8px;
             }
 
-            .articleCon > h2 {
+            .articleCon>h2 {
                 font-size: 14px;
                 font-family: Microsoft YaHei;
                 font-weight: 600;
@@ -649,7 +717,7 @@
                 flex-wrap: wrap;
             }
 
-            .listGuideContent > a {
+            .listGuideContent>a {
                 width: 25%;
                 height: 120px;
                 padding: 12px 0;
@@ -657,7 +725,7 @@
                 box-sizing: border-box;
             }
 
-            .listGuideContent > a img {
+            .listGuideContent>a img {
                 width: 60px;
                 height: 60px;
                 background-color: #00cc99;
@@ -665,7 +733,7 @@
                 margin-bottom: 12px;
             }
 
-            .listGuideContent > a p {
+            .listGuideContent>a p {
                 color: #000;
                 font-weight: 600;
                 font-size: 13px;
@@ -675,7 +743,7 @@
                 border-bottom: 1px solid #00cc99;
             }
 
-            .searchContainer > p {
+            .searchContainer>p {
                 display: inline-block;
                 color: #333333;
                 font-weight: 600;
@@ -683,9 +751,26 @@
                 line-height: 30px;
             }
 
-            .searchContainer > p > span {
+            .searchContainer>p>span {
                 color: #00cc99;
             }
+            #free-banner {
+        height: 220px;
+        padding: 50px 0;
+        margin-top: 80px;
+    }
+    #free-banner>h2 {
+        color: #ffffff;
+        font-size: 30px;
+    }
+    #free-banner>.free_btn {
+        width: 148px;
+        height: 34px;
+        line-height: 34px;
+        margin-top: 40px;
+        font-size: 18px;
+        border-radius: 17px;
+    }
         }
 
         @media screen and (max-width: 767px) {
@@ -714,22 +799,22 @@
                 border-top-right-radius: 5px;
             }
 
-            .baikeMenuTitle > p {
+            .baikeMenuTitle>p {
                 color: #ffffff;
                 font-size: 20px;
                 padding: 10px;
             }
 
-            .baike-menu > .baikeMenuList {
+            .baike-menu>.baikeMenuList {
                 background: #ffffff;
                 padding: 10px 0;
             }
 
-            .baikeMenu > .baikeMenuList li {
+            .baikeMenu>.baikeMenuList li {
                 width: 100%;
             }
 
-            .baikeMenuContent > a > .layui-icon {
+            .baikeMenuContent>a>.layui-icon {
                 position: absolute;
                 right: 6px;
                 top: calc(50% - 9.2px);
@@ -737,7 +822,7 @@
                 transition: all .25s linear;
             }
 
-            .baikeMenuContent > a {
+            .baikeMenuContent>a {
                 font-size: 16px;
                 position: relative;
             }
@@ -750,22 +835,25 @@
                 box-sizing: border-box;
             }
 
-            .baikeMenu-child > dd {
+            .baikeMenu-child>dd {
                 padding-left: 25px;
                 box-sizing: border-box;
             }
 
-            .baikeMenuList > ul > ul > li > a {
+            .baikeMenuList>ul>ul>li>a {
                 font-size: 14px;
             }
 
-            .baikeMenuContent > a:hover, .baikeMenu-child > dd.active, .baikeMenu-child > dd:hover {
+            .baikeMenuContent>a:hover,
+            .baikeMenu-child>dd.active,
+            .baikeMenu-child>dd:hover {
                 color: #49a6f7;
                 border-left: 2px solid #49a6f7;
                 background-color: rgba(73, 166, 247, 0.2);
             }
 
-            .baikeMenu-child > dd:hover a, .baikeMenu-child > dd.active a {
+            .baikeMenu-child>dd:hover a,
+            .baikeMenu-child>dd.active a {
                 color: #39a6f7;
             }
 
@@ -791,12 +879,12 @@
                 border-bottom: 1px solid #eae9e9;
             }
 
-            .listContainerTitle > p {
+            .listContainerTitle>p {
                 font-size: 20px;
                 color: #333;
             }
 
-            .listContainerTitle > .search {
+            .listContainerTitle>.search {
                 width: 153px;
                 height: 30px;
                 border: 1px solid #e5e5e5;
@@ -805,7 +893,7 @@
                 box-sizing: border-box;
             }
 
-            .listContainerTitle > .search > input {
+            .listContainerTitle>.search>input {
                 border: none;
                 width: 80%;
                 height: 28px;
@@ -817,22 +905,22 @@
                 display: none;
             }
 
-            .listContainerBread > li {
+            .listContainerBread>li {
                 display: inline-block;
                 vertical-align: middle;
                 font-size: 13px;
                 font-family: 'Microsoft YaHei';
             }
 
-            .listContainerBread > li > a.hoverstyle {
+            .listContainerBread>li>a.hoverstyle {
                 color: #333333;
             }
 
-            .listContainerBread > li > a.hoverstyle:hover {
+            .listContainerBread>li>a.hoverstyle:hover {
                 color: #00cc99;
             }
 
-            .listContainerBread > li > a {
+            .listContainerBread>li>a {
                 color: #999999;
             }
 
@@ -840,7 +928,7 @@
                 /* margin: 14px 8px 8px; */
             }
 
-            .articleCon > h2 {
+            .articleCon>h2 {
                 font-size: 14px;
                 font-family: Microsoft YaHei;
                 font-weight: 600;
@@ -863,7 +951,7 @@
                 flex-wrap: wrap;
             }
 
-            .listGuideContent > a {
+            .listGuideContent>a {
                 width: 25%;
                 height: 120px;
                 padding: 12px 0;
@@ -871,7 +959,7 @@
                 box-sizing: border-box;
             }
 
-            .listGuideContent > a img {
+            .listGuideContent>a img {
                 width: 60px;
                 height: 60px;
                 background-color: #00cc99;
@@ -879,7 +967,7 @@
                 margin-bottom: 12px;
             }
 
-            .listGuideContent > a p {
+            .listGuideContent>a p {
                 color: #000;
                 font-weight: 600;
                 font-size: 13px;
@@ -889,7 +977,7 @@
                 border-bottom: 1px solid #00cc99;
             }
 
-            .searchContainer > p {
+            .searchContainer>p {
                 display: inline-block;
                 color: #333333;
                 font-weight: 600;
@@ -897,92 +985,117 @@
                 line-height: 30px;
             }
 
-            .searchContainer > p > span {
+            .searchContainer>p>span {
                 color: #00cc99;
             }
+            #free-banner {
+        height: 160px;
+        padding: 40px 0;
+        margin-top: 40px;
+    }
+    #free-banner>h2 {
+        color: #ffffff;
+        font-size: 16px;
+    }
+    #free-banner>.free_btn {
+        width: 110px;
+        height: 30px;
+        line-height: 30px;
+        margin-top: 28px;
+        font-size: 14px;
+        border-radius: 15px;
+    }
         }
     </style>
 </head>
 
 <body>
-<div id="container">
-    <!-- 头部 -->
-    {include file="common/header"}
-    <!-- 直播百科 -->
-    <div id="docs-container">
-        <div class="layui-container docs-content">
-            <!-- 菜单栏 -->
-            <div class="baike-menu">
-                <div class="baikeMenuTitle">
-                    <p>直播百科</p>
-                </div>
-                <div class="baikeMenuList">
-                    <ul>
-                        {if isset($article)}
-                        {foreach($article['article_type'] as $item)}
-                        <li class="baikeMenuContent {$item.id == 1?'active':''}" onclick="pointClick({$item.id})">
-                            <a href="javascript:;">
-                                {$item.name}
-                            </a>
-                        </li>
-                        {/foreach}
-                        {/if}
-                    </ul>
-                </div>
-            </div>
-            <!-- 直播百科内容区 -->
-            <div class="baike-list">
-                <div class="listContainer">
-                    <div class="listContainerTitle">
-                        <p>直播频道</p>
-                        <div class="search">
-                            <input type="text" id="word" placeholder="搜索">
-                            <i class="layui-icon layui-icon-search"></i>
-                        </div>
+    <div id="container">
+        <!-- 头部 -->
+        {include file="common/header"}
+        <!-- 直播百科 -->
+        <div id="docs-container">
+            <div class="layui-container docs-content">
+                <!-- 菜单栏 -->
+                <div class="baike-menu">
+                    <div class="baikeMenuTitle">
+                        <p>直播百科</p>
                     </div>
-                    <ul class="listContainerBread">
-                        <li>
-                            <a href="javascript:;" class="hoverstyle">直播百科</a>
-                            <span>>></span>
-                        </li>
-                        <li>
-                            <a href="javascript:;" class="hoverstyle pid_name">频道管理</a>
-                            <span>>></span>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" class="article_title">口令红包</a>
-                        </li>
-                    </ul>
-                    <!-- 文章显示区域 -->
-                    <div class="articleCon">
-                        <h2 class="content_title">
-                        </h2>
-                        <div class="article-body">
+                    <div class="baikeMenuList">
+                        <ul>
+                            {if isset($article)}
+                            {foreach($article['article_type'] as $item)}
+                            <li class="baikeMenuContent {$item.id == 1?'active':''}" onclick="pointClick({$item.id})">
+                                <a href="javascript:;">
+                                    {$item.name}
+                                </a>
+                            </li>
+                            {/foreach}
+                            {/if}
+                        </ul>
+                    </div>
+                </div>
+                <!-- 直播百科内容区 -->
+                <div class="baike-list">
+                    <div class="listContainer">
+                        <div class="listContainerTitle">
+                            <p>直播频道</p>
+                            <div class="search">
+                                <input type="text" id="word" placeholder="搜索">
+                                <i class="layui-icon layui-icon-search"></i>
+                            </div>
+                        </div>
+                        <ul class="listContainerBread">
+                            <li>
+                                <a href="javascript:;" class="hoverstyle">直播百科</a>
+                                <span>>></span>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="hoverstyle pid_name">频道管理</a>
+                                <span>>></span>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="article_title">口令红包</a>
+                            </li>
+                        </ul>
+                        <!-- 文章显示区域 -->
+                        <div class="articleCon">
+                            <h2 class="content_title">
+                            </h2>
+                            <div class="article-body">
 
+                            </div>
                         </div>
-                    </div>
-                    <!--搜索关键字  -->
-                    <div class="searchContainer">
-                        <p> 关键词
-                            <span class="kay_word">"摄像直播"</span>
-                            搜索结果如下：</p>
-                    </div>
-                    <!-- 搜索结果 -->
-                    <div class="listGuideContent">
-                        {if(isset($article_list))}
-                        {foreach($article_list as $item)}
-                        <a href="javascript:;" onclick="articleInfo({$item.id})">
-                            <img src="{$item.icon_img_url}" alt="{$item.title}">
-                            <p>{$item.title}</p>
-                        </a>
-                        {/foreach}
-                        {/if}
+                        <!--搜索关键字  -->
+                        <div class="searchContainer">
+                            <p> 关键词
+                                <span class="kay_word">"摄像直播"</span>
+                                搜索结果如下：
+                            </p>
+                        </div>
+                        <!-- 搜索结果 -->
+                        <div class="listGuideContent">
+                            {if(isset($article_list))}
+                            {foreach($article_list as $item)}
+                            <a href="javascript:;" onclick="articleInfo({$item.id})">
+                                <img src="{$item.icon_img_url}" alt="{$item.title}">
+                                <p>{$item.title}</p>
+                            </a>
+                            {/foreach}
+                            {/if}
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- 免费试用 -->
+        <div id="free-banner">
+            <h2>全功能免费试用，0成本体验轻直播带来的改变</h2>
+            <a href="" class="free_btn">免费试用</a>
+        </div>
+        <!-- 底部 -->
+        {include file="common/footer"}
     </div>
-</div>
 </body>
 <script src="/static/common/js/header-footer.js"></script>
 <script type="text/javascript">
@@ -994,20 +1107,20 @@
         let html_word = '';
         if (word.length === 0) {
             html_word = "为空默认搜索全部";
-        }else{
+        } else {
             html_word = '"' + word + '"';
         }
         $('.kay_word').html(html_word);
         $.ajax({
             url: "{:url('/index/qing_school/articleByWhere')}",
-            data: {'word': word},
-            success:function (res) {
+            data: { 'word': word },
+            success: function (res) {
                 $('.listGuideContent').empty();
                 if (res.status === 200) {
                     for (let item of res.data) {
-                        $('.listGuideContent').append('<a href="javascript:;" onclick="articleInfo('+item.id+')">\n' +
-                            '                            <img src="'+item.icon_img_url+'" alt="'+item.title+'">\n' +
-                            '                            <p>'+item.title+'</p>\n' +
+                        $('.listGuideContent').append('<a href="javascript:;" onclick="articleInfo(' + item.id + ')">\n' +
+                            '                            <img src="' + item.icon_img_url + '" alt="' + item.title + '">\n' +
+                            '                            <p>' + item.title + '</p>\n' +
                             '                        </a>')
                     }
                 }
@@ -1025,12 +1138,12 @@
             "display": 'flex'
         });
     })
-     // 键盘回车事件
-     $(document).keydown(function(e) {
-            if(e.keyCode == 13) {
-                $('.layui-icon-search').click();
-            }
-        })
+    // 键盘回车事件
+    $(document).keydown(function (e) {
+        if (e.keyCode == 13) {
+            $('.layui-icon-search').click();
+        }
+    })
 
     // 点击直播百科左侧导航栏
     $('.baikeMenu-child dd').on('click', function () {
@@ -1044,14 +1157,14 @@
     function pointClick(index) {
         $.ajax({
             url: "{:url('/index/qing_school/articleByWhere')}",
-            data: {'pid': index},
-            success:function (res) {
+            data: { 'pid': index },
+            success: function (res) {
                 if (res.status === 200) {
                     $('.listGuideContent').empty();
                     for (let item of res.data) {
-                        $('.listGuideContent').append('<a href="javascript:;" onclick="articleInfo('+item.id+')">\n' +
-                            '                            <img src="'+item.icon_img_url+'" alt="'+item.title+'">\n' +
-                            '                            <p>'+item.title+'</p>\n' +
+                        $('.listGuideContent').append('<a href="javascript:;" onclick="articleInfo(' + item.id + ')">\n' +
+                            '                            <img src="' + item.icon_img_url + '" alt="' + item.title + '">\n' +
+                            '                            <p>' + item.title + '</p>\n' +
                             '                        </a>')
                     }
                 }
@@ -1064,7 +1177,7 @@
         })
     }
     // 左侧导航栏点击切换类名
-    $('li.baikeMenuContent').on('click', function() {
+    $('li.baikeMenuContent').on('click', function () {
         $(this).addClass('active');
         $(this).siblings().removeClass('active');
     })
@@ -1072,8 +1185,8 @@
     function articleInfo(id) {
         $.ajax({
             url: "{:url('/index/qing_school/articleInfo')}",
-            data: {'id': id},
-            success:function (res) {
+            data: { 'id': id },
+            success: function (res) {
                 if (res.status === 200) {
                     $('.article-body').empty();
                     $('.pid_name').html(res.data.pid_name);
