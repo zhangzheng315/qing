@@ -2,7 +2,7 @@
 
 namespace app\index\controller;
 
-use app\admin\serve\CaseService;
+use app\admin\serve\ThemeService;
 use app\admin\serve\LogoWallService;
 use think\Controller;
 
@@ -17,7 +17,7 @@ class Advantage extends Controller
 
     public function caseListByTypeId($pid)
     {
-        $case_service = new CaseService();
+        $case_service = new ThemeService();
         $res = $case_service->caseListByPid($pid);
         if($res){
             return show(200,$case_service->message,$res);

@@ -1,46 +1,33 @@
 <?php
 namespace app\admin\serve;
-use app\admin\model\Navigation;
-use app\admin\model\VideoType;
+use app\admin\model\Theme;
 use think\Request;
 
 
-class VideoTypeService extends Common{
+class ThemeService extends Common{
 
-    public $videoType;
-    public $navigation;
+    public $theme;
     public function __construct(Request $request = null)
     {
         parent::__construct($request);
-        $this->videoType = new VideoType();
-        $this->navigation = new Navigation();
-    }
-
-    public function videoTypeList()
-    {
-        $where = [
-            'deleted_time' => 0,
-            'status' => 1,
-        ];
-        $video_type_list = $this->videoType->where($where)->select();
-        return $video_type_list;
+        $this->theme = new Theme();
     }
 
     /**
-     * 创建视频分类
+     * 创建视频主题
      * @param $data
      * @return bool
      */
-    public function videoTypeCreate($param){
+    public function themeCreate($param){
         $status = isset($param['status']) ? $param['status'] : 0;
         $data = [
-            'name' => $param['name'],
+            'theme_name' => $param['theme_name'],
             'status' => $status,
             'created_time' => time(),
             'updated_time' => 0,
             'deleted_time' => 0,
         ];
-        $res = $this->videoType->insertGetId($data);
+        $res = $this->theme->insertGetId($data);
         if(!$res){
             $this->setError('添加失败');
             return false;
@@ -50,20 +37,21 @@ class VideoTypeService extends Common{
     }
 
     /**
-     * 视频分类详情
+     * 视频主题详情
      * @param $param
      * @return array|bool|false|\PDOStatement|string|\think\Model
      * @throws \think\db\exception\DataNotFoundException
      * @throws \think\db\exception\ModelNotFoundException
      * @throws \think\exception\DbException
      */
-    public function videoTypeInfo($param)
+    public function themeInfo($param)
     {
         $id = $param['id'];
         $where = ['id' => $id];
-        $info = $this->videoType->find($where);
+        $info = $this->theme->find($where);
+        $info->time = date('Y-m-d', $info->created_time);
         if(!$info){
-            $this->setError('查询失败');
+            $this->setError('暂无数据');
             return false;
         }
         $this->setMessage('查询成功');
@@ -71,20 +59,16 @@ class VideoTypeService extends Common{
     }
 
     /**
-     * 视频分类修改
+     * 视频主题修改
      * @param $data
      * @return bool
      */
-    public function videoTypeEdit($data)
+    public function themeEdit($data)
     {
         if(!isset($data['status'])) $data['status'] = 0;
-        if (isset($data['file'])) {
-            //layui富文本自带file参数
-            unset($data['file']);
-        }
         $where = ['id' => $data['id']];
         $data['updated_time'] = time();
-        $res = $this->videoType->update($data,$where);
+        $res = $this->theme->update($data,$where);
         if(!$res){
             $this->setError('修改失败');
             return false;
@@ -94,18 +78,18 @@ class VideoTypeService extends Common{
     }
 
     /**
-     * 视频分类删除
+     * 视频主题删除
      * @param $param
      * @return bool
      */
-    public function videoTypeDelete($param)
+    public function themeDelete($param)
     {
         $where = ['id' => $param['id']];
         $data = [
             'updated_time' => time(),
             'deleted_time' => time(),
         ];
-        $res = $this->videoType->update($data,$where);
+        $res = $this->theme->update($data,$where);
         if(!$res){
             $this->setError('删除失败');
             return false;
@@ -114,14 +98,26 @@ class VideoTypeService extends Common{
         return true;
     }
 
-    public function videoTypeName($id)
+    /**
+     * 主题列表
+     * @param $param
+     * @return bool|false|\PDOStatement|string|\think\Collection
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
+    public function themeList()
     {
-        $name = $this->videoType->where(['id' => $id])->value('name');
-        if(!$name){
-            $this->setError('查询失败');
+        $where = [
+            'status'=>1,
+            'deleted_time' => 0,
+        ];
+        $res = $this->theme->field(['id','theme'])->where($where)->order('order','desc')->select();
+        if (!$res) {
+            $this->setError('暂无数据');
             return false;
         }
         $this->setMessage('查询成功');
-        return $name;
+        return $res;
     }
 }

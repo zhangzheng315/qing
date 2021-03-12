@@ -1,6 +1,5 @@
 <?php
 namespace app\admin\controller;
-use app\admin\controller\Common;
 use app\admin\serve\ArticleService;
 use app\admin\serve\CaseService;
 use app\admin\serve\VideoService;

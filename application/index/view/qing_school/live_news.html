@@ -74,7 +74,7 @@
                 <span>大家都在看：</span>
                 {if(isset($hot_label))}
                 {foreach($hot_label as $item)}
-                <a href="/index/qing_school/caseAn?pid=1&label={$item.name}" class="category-look-tag">{$item.name}</a>
+                <a href="/index/qing_school/liveNews?pid=1&label={$item.name}" class="category-look-tag">{$item.name}</a>
                 {/foreach}
                 {/if}
             </div>
@@ -138,11 +138,6 @@
                         {/if}
                         {/if}
                     </ul>
-                    {if(isset($article_list) && $article_list)}
-                    <div class="cause-bottom">
-                        <span class="cause-more">点击加载更多</span>
-                    </div>
-                    {/if}
                 </div>
                 <!-- 移动端 -->
                 <div class="m-cause-con">

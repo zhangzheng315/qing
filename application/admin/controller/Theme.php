@@ -1,68 +1,70 @@
 <?php
 namespace app\admin\controller;
 
+use app\admin\serve\ThemeService;
 use app\admin\serve\CaseTypeService;
-use app\admin\serve\NavigationService;
+use app\admin\serve\LabelService;
 use think\Request;
 use think\Validate;
 
-class CaseType extends Common{
-    public $caseTypeService;
-    public $navigationService;
-    public function __construct(CaseTypeService $caseTypeService, NavigationService $navigationService)
+class Theme extends Common{
+    public $themeService;
+    public function __construct(ThemeService $themeService)
     {
         parent::__construct();
-        $this->caseTypeService = $caseTypeService;
-        $this->navigationService = $navigationService;
+        $this->themeService = $themeService;
     }
 
     public function index()
     {
-        $add_url = '/admin/case_type/caseTypeCreate';
-        $edit_url = '/admin/case_type/caseTypeEdit';
+        $add_url = '/admin/theme/themeCreate';
+        $edit_url = '/admin/theme/themeEdit';
         return $this->fetch('',compact('add_url','edit_url'));
     }
 
     /**
-     * 分页获取文章列表
+     * 分页获取视频主题列表
      */
-    public function getCaseTypeList(){
+    public function getThemeList(){
         $data = input('get.');
         $data['deleted_time'] = 0;
-        $str = CaseTypeService::data_paging($data,'case_type','order');
+        $str = ThemeService::data_paging($data,'theme','order');
+        foreach ($str['data'] as &$value) {
+            $value['status'] = $value['status'] == 1 ? '显示' : '不显示';
+        }
         return layshow($this->code,'ok',$str['data'],$str['count']);
     }
 
     /**
-     * 添加文章
+     * 添加视频主题
      * @return mixed
      */
-    public function caseTypeCreate(Request $request){
+    public function caseCreate(Request $request){
         $rules =
             [
-                'name' => 'require',
+                'theme_name' => 'require',
             ];
         $msg =
             [
-                'name' => '缺少参数@name',
+                'theme_name' => '缺少参数@theme_name',
             ];
         $validate = new Validate($rules,$msg);
         if(!$validate->check($request->param())){
             return show($this->fail,$validate->getError());
         }
-        $res = $this->caseTypeService->caseTypeCreate($request->param());
+        $res = $this->themeService->themeCreate($request->param());
         if($res){
-            return show($this->ok,$this->caseTypeService->message);
+            return show($this->ok,$this->themeService->message);
         }else{
-            return show($this->fail,$this->caseTypeService->error);
+            return show($this->fail,$this->themeService->error);
         }
     }
 
     /**
-     * 文章详情
+     * 视频主题详情
      * @return mixed
      */
-    public function caseTypeInfo(Request $request){
+    public function themeInfo(Request $request){
         $rules =
             [
                 'id' => 'require',
@@ -75,45 +77,45 @@ class CaseType extends Common{
         if(!$validate->check($request->param())){
             return show($this->fail,$validate->getError());
         }
-        $res = $this->caseTypeService->caseTypeInfo($request->param());
+        $res = $this->themeService->themeInfo($request->param());
         if($res){
-            return show($this->ok,$this->caseTypeService->message,$res);
+            return show($this->ok,$this->themeService->message,$res);
         }else{
-            return show($this->fail,$this->caseTypeService->error);
+            return show($this->fail,$this->themeService->error);
         }
     }
 
     /**
-     * 文章修改
+     * 视频主题修改
      * @return mixed
      */
-    public function caseTypeEdit(){
+    public function themeEdit(){
         $data = input('post.');
         $rules =
             [
-                'name' => 'require',
+                'theme_name' => 'require',
             ];
         $msg =
             [
-                'name' => '缺少参数@name',
+                'theme_name' => '缺少参数@theme_name',
             ];
         $validate = new Validate($rules,$msg);
         if(!$validate->check($data)){
             return show($this->fail,$validate->getError());
         }
-        $res = $this->caseTypeService->caseTypeEdit($data);
+        $res = $this->themeService->themeEdit($data);
         if($res){
-            return show($this->ok,$this->caseTypeService->message,$res);
+            return show($this->ok,$this->themeService->message,$res);
         }else{
-            return show($this->fail,$this->caseTypeService->error);
+            return show($this->fail,$this->themeService->error);
         }
     }
 
     /**
-     * 文章删除
+     * 视频主题删除
      * @return mixed
      */
-    public function caseTypeDelete(){
+    public function themeDelete(){
         $data = input('post.');
         $rules =
             [
@@ -127,11 +129,11 @@ class CaseType extends Common{
         if(!$validate->check($data)){
             return show($this->fail,$validate->getError());
         }
-        $res = $this->caseTypeService->caseTypeDelete($data);
+        $res = $this->themeService->themeDelete($data);
         if($res){
-            return show($this->ok,$this->caseTypeService->message,$res);
+            return show($this->ok,$this->themeService->message,$res);
         }else{
-            return show($this->fail,$this->caseTypeService->error);
+            return show($this->fail,$this->themeService->error);
         }
     }
 }
