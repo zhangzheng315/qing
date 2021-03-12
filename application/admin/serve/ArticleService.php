@@ -34,6 +34,7 @@ class ArticleService extends Common{
         $status = isset($param['status']) ? $param['status'] : 0;
         $hot_article = isset($param['hot_article']) ? $param['hot_article'] : 0;
         $content_center = isset($param['content_center']) ? $param['content_center'] : 0;
+        $first_home = isset($param['first_home']) ? $param['first_home'] : 0;
         $pid_name = $this->articleType->where(['id' => $param['pid']])->value('name');
         $label = '';
         if (isset($param['label'])) {
@@ -47,6 +48,7 @@ class ArticleService extends Common{
             'pid_name'=>$pid_name,
             'content' => $param['content'],
             'status' => $status,
+            'first_home' => $first_home,
             'label' => $label,
             'hot_article' => $hot_article,
             'content_center' => $content_center,
@@ -123,6 +125,7 @@ class ArticleService extends Common{
         if(!isset($data['status'])) $data['status'] = 0;
         if(!isset($data['hot_article'])) $data['hot_article'] = 0;
         if(!isset($data['content_center'])) $data['content_center'] = 0;
+        if(!isset($data['first_home'])) $data['first_home'] = 0;
         if (isset($data['file'])) {
             //layui富文本自带file参数
             unset($data['file']);
@@ -422,5 +425,32 @@ class ArticleService extends Common{
         }
         $this->setMessage('查询成功');
         return $search_list;
+    }
+
+    /**
+     * 网站首页文章
+     * @return bool|false|\PDOStatement|string|\think\Collection
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
+    public function getFirstHome()
+    {
+        $where = [
+            'deleted_time' => 0,
+            'status' => 1,
+            'first_home' => 1,
+        ];
+        $list = $this->article->where($where)->order('updated_time', 'desc')->limit(0,9)->select();
+        if (!$list) {
+            $this->setError('暂无数据');
+            return false;
+        }
+        foreach ($list as &$item) {
+            $item['time'] = $item['updated_time'] ? date('Y-m-d', $item['updated_time']) : date('Y-m-d', $item['created_time']);
+        }
+        $this->setMessage('查询成功');
+        $res = array_chunk($list, 3);
+        return $res;
     }
 }
