@@ -366,13 +366,12 @@
         header {
             height: 60px;
             line-height: 60px;
-            padding-top: 12px;
+            padding-top: 0;
 
             .layui-container {
                 width: 100% !important;
-
                 .logo {
-                    margin-right: 15px;
+                    margin-right: 5px;
 
                     img {
                         width: 86px;
@@ -381,7 +380,7 @@
 
                 ul {
                     li {
-                        margin-right: 15px;
+                        margin-right: 5px;
                         font-size: 12px;
 
                     }
@@ -417,6 +416,12 @@
                     span {
                         margin: 0 7px;
                     }
+                }
+                .layui-nav {
+                    padding: 0;
+                }
+                .layui-nav-child {
+                    top: 60px;
                 }
             }
         }
@@ -612,7 +617,7 @@
     @media screen and (max-width:768px) {
         header {
             height: 80px;
-            line-height: 80px;
+            line-height: 14px;
             padding-top: 0px;
             position: relative;
 
@@ -671,6 +676,9 @@
                     span {
                         margin: 0 7px;
                     }
+                }
+                .layui-nav {
+                    display: none !important;
                 }
             }
         }

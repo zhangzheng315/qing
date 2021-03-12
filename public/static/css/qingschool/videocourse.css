@@ -384,7 +384,7 @@
 @media screen and (min-width: 768px) and (max-width: 1300px) {
   #video header {
     height: 60px;
-    padding: 10px 0;
+    line-height: 60px;
   }
   #video header .layui-container {
     width: 100% !important;
@@ -403,6 +403,11 @@
   }
   #video header .layui-container .head-right .btns .login {
     margin-right: 31px;
+  }
+  #video header .layui-container .head-right .layui-nav-child {
+    left: 19%;
+    top: 60px;
+    min-width: 80%;
   }
   #video .video-nav {
     height: 60px;
@@ -673,7 +678,7 @@
 @media screen and (max-width: 768px) {
   #video header {
     height: 40px;
-    padding: 5px 0;
+    padding: 0;
   }
   #video header .layui-container {
     padding: 0 15px !important;
@@ -699,6 +704,9 @@
   }
   #video header .layui-container .head-right .btns .login {
     margin-right: 0px;
+  }
+  #video header .layui-container .head-right .layui-nav {
+    display: none !important;
   }
   #video .video-nav {
     height: 40px;

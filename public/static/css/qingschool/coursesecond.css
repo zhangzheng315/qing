@@ -282,19 +282,19 @@
   #course header {
     height: 60px;
     line-height: 60px;
-    padding-top: 12px;
+    padding-top: 0;
   }
   #course header .layui-container {
     width: 100% !important;
   }
   #course header .layui-container .logo {
-    margin-right: 15px;
+    margin-right: 5px;
   }
   #course header .layui-container .logo img {
     width: 86px;
   }
   #course header .layui-container ul li {
-    margin-right: 15px;
+    margin-right: 5px;
     font-size: 12px;
   }
   #course header .layui-container .layui-form-item {
@@ -318,6 +318,12 @@
   }
   #course header .layui-container .login span {
     margin: 0 7px;
+  }
+  #course header .layui-container .layui-nav {
+    padding: 0;
+  }
+  #course header .layui-container .layui-nav-child {
+    top: 60px;
   }
   #course .nav-second {
     height: 70px;
@@ -453,7 +459,7 @@
 @media screen and (max-width: 768px) {
   #course header {
     height: 80px;
-    line-height: 80px;
+    line-height: 14px;
     padding-top: 0px;
     position: relative;
   }
@@ -502,6 +508,9 @@
   }
   #course header .layui-container .login span {
     margin: 0 7px;
+  }
+  #course header .layui-container .layui-nav {
+    display: none !important;
   }
   #course .nav-second {
     height: 50px;
