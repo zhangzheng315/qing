@@ -11,7 +11,7 @@
 #course header {
   height: 90px;
   box-sizing: border-box;
-  padding-top: 23px;
+  line-height: 90px;
   background-color: #fff;
 }
 #course header .layui-container .logo {
@@ -281,6 +281,7 @@
 @media screen and (min-width: 768px) and (max-width: 1300px) {
   #course header {
     height: 60px;
+    line-height: 60px;
     padding-top: 12px;
   }
   #course header .layui-container {
@@ -452,6 +453,7 @@
 @media screen and (max-width: 768px) {
   #course header {
     height: 80px;
+    line-height: 80px;
     padding-top: 0px;
     position: relative;
   }

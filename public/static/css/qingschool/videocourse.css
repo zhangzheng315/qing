@@ -10,7 +10,7 @@
 }
 #video header {
   height: 65px;
-  padding: 10px 0;
+  line-height: 65px;
   box-sizing: border-box;
 }
 #video header .layui-container {
