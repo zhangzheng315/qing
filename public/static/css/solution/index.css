@@ -115,6 +115,9 @@
 #solution #scene .scene-content li:hover div {
   background-color: #00cc99;
 }
+#solution #scene .scene-content li:hover div p {
+  border-bottom: 2px solid #fff;
+}
 #solution #scene .scene-content li:hover div img {
   display: block;
 }

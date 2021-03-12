@@ -51,6 +51,19 @@
 #video_cloud .navbar .layui-container ul li:hover .transition {
   color: #00cc99 !important;
 }
+#video_cloud .navbar .layui-container ul .active {
+  border-bottom: 3px solid #00cc99;
+}
+#video_cloud .navbar .layui-container ul .active .transition {
+  color: #00cc99 !important;
+}
+#video_cloud .video-nav-fixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 999;
+}
 #video_cloud .tedian {
   padding: 100px 0 30px;
 }

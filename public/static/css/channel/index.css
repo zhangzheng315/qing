@@ -233,6 +233,7 @@
 }
 #channel .become-part {
   padding: 73px 0 49px;
+  background-color: #fff;
 }
 #channel .become-part .layui-container .title {
   margin-bottom: 98px;
