@@ -48,11 +48,13 @@
                     {if isset($solution_list['ind_res'])}
                     {foreach($solution_list['ind_res'] as $item)}
                     <li>
+                        <a href="{$item.link}" class="turn">
                         <img src="{$item.img_url}" alt="">
                         <div class="text">
                             <h6>{$item.title}</h6>
                             <p>{$item.introduction}</p>
                         </div>
+                        </a>
                     </li>
                     {/foreach}
                     {/if}
