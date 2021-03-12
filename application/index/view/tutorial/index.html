@@ -51,7 +51,7 @@
             <i class="layui-icon layui-icon-right"></i>
             <a class="active" href="{:url('/index/qing_school/courseSecond')}">{$info['pid_name']}</a>
             <i class="layui-icon layui-icon-right"></i>
-            <span>{$info['title']}</span>
+            <span>{$info['theme_name']}</span>
         </div>
     </nav>
 
@@ -65,13 +65,13 @@
             </div>
             <div class="video-list">
                 <div class="list-head">
-                    <h4>轻直播操作入门课程</h4>
-                    <p>主讲老师：jade/1120人在浏览</p>
+                    <h4>{$info['theme_name']}</h4>
+                    <p>主讲老师：轻直播/{$info['browse']}人在浏览</p>
                 </div>
                 <div class="list-body">
                     <div class="title">
                         <h6>介绍说明</h6>
-                        <p>轻直播产品介绍<span>00:15:24</span></p>
+                        <p>轻直播产品介绍<span>{$info['catalog']['all_dur']}</span></p>
                     </div>
                 </div>
                 <div class="list-content">
@@ -111,7 +111,7 @@
                             <i>00:15:24</i>
                         </li>
                     </ul>
-                    <ul>
+                    <!--<ul>
                         <h6>第三课 发起直播</h6>
                         <li>
                             <img src="/static/image/tutorial/video_btn.png" alt="">
@@ -128,7 +128,7 @@
                             <span>创建直播频道</span>
                             <i>00:15:24</i>
                         </li>
-                    </ul>
+                    </ul>-->
                 </div>
             </div>
         </div>
