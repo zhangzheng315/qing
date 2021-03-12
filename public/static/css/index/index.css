@@ -1156,6 +1156,62 @@
   #banner {
     height: 300px;
   }
+  #banner .text-left {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+  }
+  #banner .text-left h2 {
+    font-size: 22px;
+  }
+  #banner .text-left h5 {
+    font-size: 14px;
+    width: 70%;
+    margin: 28px auto 33px;
+    line-height: 1.5;
+  }
+  #banner .text-left .banner-a {
+    z-index: 10;
+    display: block;
+    width: 167px;
+    height: 44px;
+    border: 1px solid #FFFFFF;
+    color: #fff;
+    text-align: center;
+    line-height: 44px;
+    font-size: 18px;
+  }
+  #banner .text-center {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  #banner .text-center h5 {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  #banner .text-center .banner-a {
+    margin: 0 auto;
+  }
+  #banner .text-right {
+    position: absolute;
+    top: 25%;
+    right: 7%;
+  }
+  #banner .text-right h2 {
+    text-align: left;
+  }
+  #banner .text-right h5 {
+    width: 80%;
+    margin-left: 100%;
+    margin: 78px 0 103px;
+    text-align: left;
+  }
+  #banner .text-right .banner-a {
+    float: left;
+  }
   #banner .icons {
     top: 93%;
     width: 95%;
