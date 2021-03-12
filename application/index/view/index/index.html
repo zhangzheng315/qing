@@ -487,85 +487,45 @@
                     <div class="college-left">
                         <div class="layui-carousel" id="test1">
                             <div carousel-item class="lunbo-box">
+                                {if(isset($article_list))}
+                                {foreach($article_list[0] as $item)}
                                 <div class="lunbo-item">
-                                    <img src="/static/image/index/jiesuo.png" alt="">
+                                    <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>$item.pid])}">
+                                    <img src="{$item.cover_img_url}" alt="">
                                     <div class="text-box">
-                                        <h6>直播赋能”云会展“，轻直播助力会展伙伴”云上“复工</h6>
-                                        <p>”云会展“伊然成为目前整个行业破局的关键它可以
-                                            结合5G,AI,大数据直播等新技术...</p>
+                                        <h6>{$item.title}</h6>
+                                        <p>{$item.second_title}</p>
                                     </div>
+                                    </a>
                                 </div>
-                                <div class="lunbo-item">
-                                    <img src="/static/image/index/jiesuo.png" alt="">
-                                    <div class="text-box">
-                                        <h6>直播赋能”云会展“，轻直播助力会展伙伴”云上“复工</h6>
-                                        <p>”云会展“伊然成为目前整个行业破局的关键它可以
-                                            结合5G,AI,大数据直播等新技术...</p>
-                                    </div>
-                                </div>
-                                <div class="lunbo-item">
-                                    <img src="/static/image/index/jiesuo.png" alt="">
-                                    <div class="text-box">
-                                        <h6>直播赋能”云会展“，轻直播助力会展伙伴”云上“复工</h6>
-                                        <p>”云会展“伊然成为目前整个行业破局的关键它可以
-                                            结合5G,AI,大数据直播等新技术...</p>
-                                    </div>
-                                </div>
+                                {/foreach}
+                                {/if}
                             </div>
                         </div>
                     </div>
                     <div class="college-right">
                         <div class="layui-carousel" id="test2">
                             <div carousel-item>
-                                <ul>
-                                    <li>
-                                        <div class="type">案例解析</div>
-                                        <div class="titles">
-                                            <h6>如何使用轻直播开启企业视频云营销</h6>
-                                            <p>如何使用轻直播开启企业视频云营销如何使用轻直播开启
-                                                如何使用轻直播开启企业视频云营销...</p>
-                                            <span>2021-11-06</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="type">案例解析</div>
-                                        <div class="titles">
-                                            <h6>如何使用轻直播开启企业视频云营销</h6>
-                                            <p>如何使用轻直播开启企业视频云营销如何使用轻直播开启
-                                                如何使用轻直播开启企业视频云营销...</p>
-                                            <span>2021-11-06</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="type">案例解析</div>
-                                        <div class="titles">
-                                            <h6>如何使用轻直播开启企业视频云营销</h6>
-                                            <p>如何使用轻直播开启企业视频云营销如何使用轻直播开启
-                                                如何使用轻直播开启企业视频云营销...</p>
-                                            <span>2021-11-06</span>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <ul>
-                                    <li>
-                                        <div class="type">案例解析</div>
-                                        <div class="titles">
-                                            <h6>如何使用轻直播开启企业视频云营销</h6>
-                                            <p>如何使用轻直播开启企业视频云营销如何使用轻直播开启
-                                                如何使用轻直播开启企业视频云营销...</p>
-                                            <span>2021-11-06</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="type">案例解析</div>
-                                        <div class="titles">
-                                            <h6>如何使用轻直播开启企业视频云营销</h6>
-                                            <p>如何使用轻直播开启企业视频云营销如何使用轻直播开启
-                                                如何使用轻直播开启企业视频云营销...</p>
-                                            <span>2021-11-06</span>
-                                        </div>
-                                    </li>
-                                </ul>
+                                {for start="1" end="2" comparison="elt"}
+                                {if(isset($article_list[$i]))}
+                                    <ul>
+                                        {foreach($article_list[$i] as $item)}
+                                        <li>
+                                            <a href="" style="display: flex;width: 100%;">
+                                            <div class="type">{$item.pid_name}</div>
+                                            <div class="titles">
+                                                <h6>{$item.title}</h6>
+                                                <p>{$item.second_title}</p>
+                                                <span>{$item.time}</span>
+                                            </div>
+                                            </a>
+                                        </li>
+                                        {/foreach}
+
+                                    </ul>
+                                {/if}
+                                {/for}
+
                             </div>
                         </div>
                     </div>
