@@ -480,6 +480,7 @@
   #solution #industry .layui-container .industry-content li .text p {
     width: 90%;
     font-size: 12px;
+    text-align: center;
   }
   #solution #scene {
     padding: 30px 0 40px;
@@ -534,7 +535,35 @@
   }
   #solution #qiye nav .logo-title li span {
     margin: 0;
-    font-size: 14px;
+    font-size: 12px;
+  }
+  #solution #qiye nav .logo-title li:after,
+  #solution #qiye nav .logo-title li:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 25px;
+    background: #fff;
+    z-index: -2;
+    border-radius: 20px;
+  }
+  #solution #qiye nav .logo-title li:hover {
+    z-index: 1;
+    background: transparent;
+  }
+  #solution #qiye nav .logo-title li:hover span {
+    color: #fff;
+  }
+  #solution #qiye nav .logo-title li:before {
+    transition: 0.4s;
+    background: #00cc99;
+    z-index: -1;
+  }
+  #solution #qiye nav .logo-title li:hover:after,
+  #solution #qiye nav .logo-title li:hover:before {
+    width: 100%;
   }
   #solution #qiye .logo-box .logo-imgs li {
     width: 19%;
@@ -546,14 +575,15 @@
     height: 150px;
   }
   #solution #kefu .kefu-content {
-    padding: 25px 0 15px;
+    padding: 35px 0 15px;
   }
   #solution #kefu .kefu-content h2 {
     font-size: 22px;
+    margin: 0 auto 28px;
   }
   #solution #kefu .kefu-content button {
-    width: 36%;
-    height: 40px;
+    width: 34%;
+    height: 36px;
     font-size: 14px;
   }
 }

@@ -1012,6 +1012,12 @@
         .panel-left li a.p-active {
             color: #00cc99;
         }
+        .layui-nav {
+            display: none;
+        }
+        .layui-nav .layui-nav-item a {
+            color: #333;
+        }
     </style>
 </head>
 
@@ -1038,7 +1044,7 @@
                 </span>
                 <ul class="layui-nav">
                     <li class="layui-nav-item">
-                        <a id="img-a" href=""><img src="//t.cn/RCzsdCq" class="layui-nav-img"></a>
+                        <a id="img-a" href=""><img src="//t.cn/RCzsdCq" class="layui-nav-img"><span class="name">11</span></a>
                         <dl class="layui-nav-child">
                             <dd><a href="javascript:;">退出登录</a></dd>
                         </dl>
@@ -1346,11 +1352,13 @@
         var tvInfo = JSON.parse(localStorage.getItem('tvInfo'))
         console.log(tvInfo);
         if (tvInfo.token) {
+            $('.layui-nav').show()
             $('.login').hide();
             // var img = ''
             // img += `<img src="${tvInfo.avatar}" class="layui-nav-img">`
             // $('#img-a').append(img)
             $('.layui-nav-img').attr('src',tvInfo.avatar)
+            $('#img-a .name').html(tvInfo.name)
         }
     </script>
 </body>

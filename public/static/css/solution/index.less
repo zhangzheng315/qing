@@ -181,7 +181,6 @@
                     background-color: #00cc99;
                     // padding: 0 15px;
                     border-radius: 20px;
-
                     span {
                         color: #fff;
                         // font-weight: bold;
@@ -626,7 +625,7 @@
                             p {
                                 width: 90%;
                                 font-size: 12px;
-
+                                text-align: center;
                             }
                         }
                     }
@@ -701,8 +700,36 @@
                         span {
                             margin: 0;
                             // padding: 0 10px;
-                            font-size: 14px;
-
+                            font-size: 12px;
+                        }
+                        &:after,&:before {
+                            content: '';
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            width: 0;
+                            height: 25px;
+                            background: #fff;
+                            z-index:-2;
+                            border-radius: 20px;
+                        }
+            
+                        &:hover{
+                            z-index:1;
+                            background:transparent;
+                            span {
+                                color: #fff;
+                            }
+                        }            
+                      
+                        &:before {
+                            transition: .4s;
+                            background: #00cc99;
+                            z-index:-1;
+                        }          
+            
+                        &:hover:after,&:hover:before {
+                            width: 100%;
                         }
                     }
                 }
@@ -724,15 +751,16 @@
             height: 150px;
 
             .kefu-content {
-                padding: 25px 0 15px;
+                padding: 35px 0 15px;
 
                 h2 {
                     font-size: 22px;
+                    margin: 0 auto 28px;
                 }
 
                 button {
-                    width: 36%;
-                    height: 40px;
+                    width: 34%;
+                    height: 36px;
                     font-size: 14px;
                 }
             }

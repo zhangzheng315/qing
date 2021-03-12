@@ -1,9 +1,10 @@
   // 解决方案吸顶操作
-    
-  let solutionnav = $('#solution-nav');
+ let serviceWidth = $(document).width();
+ let solutionnav = $('#solution-nav');
   let height = solutionnav.offset().top;
   let winheight = $(window).height();
  //设置监听事件
+ if(serviceWidth > 768) {
  $(window).scroll(function() {
      let scrollHeight = $(document).scrollTop();
      if( scrollHeight > $('#section-1').offset().top && scrollHeight < $('#section-1').height() + $('#section-1').offset().top ) {
@@ -38,6 +39,7 @@
          })
      }
  })
+}
  $('.nav-content li').on('click', function() {
      if(!$(this).hasClass('active')) {
      $(this).siblings().removeClass('active');
