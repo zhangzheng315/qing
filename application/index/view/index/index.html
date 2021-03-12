@@ -511,7 +511,7 @@
                                     <ul>
                                         {foreach($article_list[$i] as $item)}
                                         <li>
-                                            <a href="" style="display: flex;width: 100%;">
+                                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>$item.pid])}" style="display: flex;width: 100%;">
                                             <div class="type">{$item.pid_name}</div>
                                             <div class="titles">
                                                 <h6>{$item.title}</h6>
