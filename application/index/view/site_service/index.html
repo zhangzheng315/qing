@@ -30,15 +30,15 @@
         </div>
 
         <!-- 导航栏 -->
-        <nav>
+        <nav class="site-nav">
             <div class="layui-container">
-                <div class="nav-content">
-                    <li><a class="transition" href="#section-1">服务范围</a></li>
+                <ul class="nav-content">
+                    <li class="active"><a class="transition" href="#section-1">服务范围</a></li>
                     <li><a class="transition" href="#section-2">方案设计</a></li>
                     <li><a class="transition" href="#section-3">搭建支持</a></li>
                     <li><a class="transition" href="#section-4">现场保障</a></li>
                     <li><a class="transition" href="#section-5">数据报告</a></li>
-                </div>
+                </ul>
             </div>
         </nav>
 
@@ -229,6 +229,7 @@
     </div>
 </body>
 <script src="/static/common/js/header-footer.js"></script>
+<script src="/static/common/js/site_service.js"></script>
 <script type="text/javascript">
     layui.use('carousel', function () {
         var carousel = layui.carousel;

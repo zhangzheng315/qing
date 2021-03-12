@@ -3,7 +3,7 @@
 namespace app\index\controller;
 
 use app\admin\serve\BannerService;
-use app\admin\serve\CaseService;
+use app\admin\serve\ThemeService;
 use app\admin\serve\LabelService;
 use think\Controller;
 use think\Request;
@@ -16,7 +16,7 @@ class CaseCenter extends Controller
     public function __construct(Request $request = null)
     {
         parent::__construct($request);
-        $this->case_service = new CaseService();
+        $this->case_service = new ThemeService();
         $this->labelService = new LabelService();
         $hot_and_rem = $this->case_service->hotAndRem();
         $label_list = $this->labelService->labelList();

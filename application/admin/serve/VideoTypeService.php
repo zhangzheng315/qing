@@ -113,4 +113,15 @@ class VideoTypeService extends Common{
         $this->setMessage('删除成功');
         return true;
     }
+
+    public function videoTypeName($id)
+    {
+        $name = $this->videoType->where(['id' => $id])->value('name');
+        if(!$name){
+            $this->setError('查询失败');
+            return false;
+        }
+        $this->setMessage('查询成功');
+        return $name;
+    }
 }

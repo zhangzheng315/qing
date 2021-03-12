@@ -286,7 +286,6 @@
             data: { 'pid': pid },
             type: 'get',
             success: function (res) {
-                console.log(res)
                 if (res.status === 200) {
                     $('.study-box').empty();
                     for (let item of res.data) {

@@ -1,8 +1,7 @@
 .idea
-composer.lock
 *.log
 thinkphp
 runtime/
-vendor/
+
 public/.htaccess
 public/nginx.htaccess

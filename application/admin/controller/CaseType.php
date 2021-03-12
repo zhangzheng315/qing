@@ -1,7 +1,6 @@
 <?php
 namespace app\admin\controller;
 
-use app\admin\serve\CaseService;
 use app\admin\serve\CaseTypeService;
 use app\admin\serve\NavigationService;
 use think\Request;

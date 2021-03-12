@@ -2,7 +2,7 @@
 
 namespace app\index\controller;
 
-use app\admin\serve\CaseService;
+use app\admin\serve\ThemeService;
 use app\admin\serve\LogoWallService;
 use think\Controller;
 

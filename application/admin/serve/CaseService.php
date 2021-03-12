@@ -151,8 +151,10 @@ class CaseService extends Common{
         $where = [
             'status'=>1,
             'deleted_time' => 0,
-            'pid' => $param['pid'],
         ];
+        if ($param['pid'] > 0) {
+            $where['pid'] = $param['pid'];
+        }
         $res = $this->case->where($where)->limit($offset,$limit)->select();
         if (!$res) {
             $this->setError('暂无数据');

@@ -164,6 +164,7 @@
 }
 #advantage .kehu {
   padding: 294px 0 66px;
+  background-color: #fff;
 }
 #advantage .kehu .layui-container .title {
   margin-bottom: 147px;
@@ -216,7 +217,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin-bottom: 50px;
+  margin: 0 auto 50px;
 }
 #advantage .case .layui-container .logo-title .active {
   background-color: #00cc99;
