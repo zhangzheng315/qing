@@ -4,7 +4,7 @@ namespace app\index\controller;
 
 // use app\admin\serve\JoinUsService;
 use app\admin\serve\ArticleService;
-use app\admin\serve\CaseService;
+use app\admin\serve\ThemeService;
 use app\admin\serve\CommonArticleService;
 use app\admin\serve\LabelService;
 use app\admin\serve\QBannerService;
@@ -87,9 +87,16 @@ class QingSchool extends Controller
         return $this->fetch('', compact('banner_list', 'article_list'));
     }
 
+    /**
+     * 视频学院二级页面
+     * @return mixed
+     */
     public function courseSecond()
     {
-        return $this->fetch();
+        $param = request()->param();
+        $pid = $param['pid'];
+        $pid_name = $this->videoTypeService->videoTypeName($param['pid']);
+        return $this->fetch('',compact('pid_name'));
     }
 
     /* 新闻详情页 */

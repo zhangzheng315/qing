@@ -106,6 +106,16 @@
                 <input type="text" id="title" name="title" placeholder="请输入" autocomplete="off" class="layui-input">
             </div>
         </div>
+        <!--<div class="layui-form-item">
+            <label class="layui-form-label">字体颜色大小</label>
+            <div class="layui-input-block">
+                    <div id="colorpicker"></div>
+                <input type="text" id="title_color" name="title_color" placeholder="请输入颜色" autocomplete="off" class="layui-input-inline layui-input">
+                <div class="layui-inline">
+                    <input type="number" id="title_size" min="12" name="title_size" placeholder="请输入字体大小" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+        </div>-->
         <div class="layui-form-item layui-form-text">
             <label class="layui-form-label">简介</label>
             <div class="layui-input-block">
@@ -180,7 +190,6 @@
     })
     //无限分类递归
     function childSub(arr) {
-        console.log(11);
         if(arr.length === 0) return false;
         child_num++;
         let aa = '';
@@ -222,11 +231,20 @@
         });
     }
 
-    layui.use(['form', 'table','upload'], function () {
+    layui.use(['form', 'table','upload','colorpicker'], function () {
         var form = layui.form;
         var table = layui.table;
         var upload = layui.upload;
-
+        var colorpicker = layui.colorpicker;
+        //渲染
+        colorpicker.render({
+            elem: '#colorpicker'  //绑定元素
+            ,predefine: true
+            ,colors: ['#F00','#0F0','#00F','rgb(255, 69, 0)','rgba(255, 69, 0, 0.5)']
+            ,done:function (color) {
+                $('#title_color').val(color);
+            }
+        });
         //图片上传接口
         upload.render({
             elem:'.fileUp'
@@ -265,7 +283,6 @@
 
             if (layEvent === 'info') { //查看
                 $.post('/admin/banner/bannerInfo', {id: data.id}, (res) => {
-                    console.log(res);
                     if (res.status === 200) {
                         layer.open({
                             type: 1,
