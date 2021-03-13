@@ -227,10 +227,10 @@
   height: 100%;
   object-fit: cover;
 }
-#service .plans:nth-child(2n) .layui-container .plans-text {
-  margin-right: 0px;
+#service .plans:nth-child(2n - 1) .layui-container .plans-text {
+  margin-right: 150px;
 }
-#service .plans:nth-child(2n) .layui-container .plans-img {
+#service .plans:nth-child(2n - 1) .layui-container .plans-img {
   margin-right: 150px;
 }
 #service #fiveG {
@@ -371,9 +371,12 @@
     object-fit: cover;
   }
   #service .plans:nth-child(2n) .layui-container .plans-text {
-    margin-right: 0px;
+    margin-right: 60px;
   }
   #service .plans:nth-child(2n) .layui-container .plans-img {
+    margin-right: 130px;
+  }
+  #service .plans:nth-child(2n - 1) .layui-container .plans-text {
     margin-right: 130px;
   }
   #service #fiveG {
@@ -413,7 +416,7 @@
     height: 350px;
   }
   #service .plans:nth-child(2n) .layui-container .plans-text {
-    margin-right: 0px;
+    margin-right: 140px;
   }
   #service .plans:nth-child(2n) .layui-container .plans-img {
     margin-right: 160px;
@@ -504,10 +507,10 @@
     object-fit: cover;
   }
   #service nav .layui-container {
-    width: 90%;
+    width: 100%;
   }
-  #service nav .layui-container .nav-content li {
-    font-size: 14px;
+  #service nav .layui-container .nav-content li a {
+    font-size: 12px !important;
   }
   #service .module {
     padding: 60px 0 50px;
@@ -544,6 +547,10 @@
   }
   #service .module .layui-container .module-content li .text p {
     font-size: 12px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
   }
   #service .module .layui-container button {
     width: 90px;
@@ -579,7 +586,8 @@
     font-size: 14px;
   }
   #service .plans {
-    padding: 40px 0;
+    padding: 40px 0 70px;
+    position: relative;
   }
   #service .plans .layui-container {
     padding: 0 !important;
@@ -599,6 +607,7 @@
   }
   #service .plans .layui-container .plans-text .text-head,
   #service .plans .layui-container .plans-text p {
+    text-align: center;
     width: 80%;
     margin: 0 auto;
     font-size: 12px;
@@ -614,19 +623,23 @@
     font-size: 18px;
   }
   #service .plans .layui-container .plans-text button {
+    position: absolute;
+    bottom: -50px;
     display: block;
     width: 100px;
-    height: 35px;
-    margin: 20px auto 0;
+    height: 32px;
+    left: 50%;
+    transform: translateX(-50%);
   }
   #service .plans .layui-container .plans-img {
     width: 230px;
     height: 210px;
   }
-  #service .plans:nth-child(2n) .layui-container .plans-text {
+  #service .plans:nth-child(2n - 1) .layui-container .plans-text {
     order: -1;
+    margin-right: 0px;
   }
-  #service .plans:nth-child(2n) .layui-container .plans-img {
+  #service .plans:nth-child(2n - 1) .layui-container .plans-img {
     margin-right: 0px;
   }
   #service #fiveG {

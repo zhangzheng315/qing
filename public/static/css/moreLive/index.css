@@ -34,7 +34,6 @@
   vertical-align: middle;
 }
 #more-live .functions .layui-container .func-nav .nav-right li {
-  width: 88px;
   height: 30px;
   background: #00CC99;
   border-radius: 2px;
@@ -43,6 +42,7 @@
   font-size: 14px;
   line-height: 30px;
   text-align: center;
+  padding: 0 10px;
 }
 #more-live .functions .layui-container .func-content .func-item {
   margin-bottom: 70px;
@@ -201,11 +201,11 @@
     margin-left: 4px;
   }
   #more-live .functions .layui-container .func-nav .nav-right li {
-    width: 88px;
     height: 30px;
     margin-right: 24px;
     font-size: 14px;
     line-height: 30px;
+    padding: 0 10px;
   }
   #more-live .functions .layui-container .func-content .func-item {
     margin-bottom: 70px;
@@ -304,11 +304,11 @@
     margin-left: 4px;
   }
   #more-live .functions .layui-container .func-nav .nav-right li {
-    width: 68px;
     height: 26px;
     margin-right: 15px;
     font-size: 12px;
     line-height: 26px;
+    padding: 0 7px;
   }
   #more-live .functions .layui-container .func-content .func-item {
     margin-bottom: 50px;
@@ -371,12 +371,12 @@
     flex-wrap: wrap;
   }
   #more-live .functions .layui-container .func-nav .nav-right li {
-    width: 22%;
     height: 26px;
     margin-right: 5px;
     margin-bottom: 5px;
     font-size: 12px;
     line-height: 26px;
+    padding: 0 7px;
   }
   #more-live .functions .layui-container .func-content .func-item {
     margin-bottom: 30px;

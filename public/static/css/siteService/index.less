@@ -18,11 +18,13 @@
     #banner {
         height: 600px;
         position: relative;
+
         .lunbo-box {
             img {
                 object-fit: cover;
             }
         }
+
         .layui-carousel {
             .layui-carousel-ind {
                 display: none !important;
@@ -49,12 +51,14 @@
                 li {
                     height: 60px;
                     line-height: 60px;
-                    
+
                     cursor: pointer;
+
                     a {
                         font-size: 16px;
                         color: #333;
                     }
+
                     &:hover {
                         a {
                             color: #00cc99;
@@ -63,16 +67,19 @@
                         border-bottom: 3px solid #00cc99;
                     }
                 }
+
                 .active {
                     a {
                         color: #00cc99;
                     }
+
                     border-bottom: 3px solid #00cc99;
                 }
             }
         }
 
     }
+
     .site-nav-fixed {
         position: fixed;
         left: 0;
@@ -274,10 +281,10 @@
             }
         }
 
-        &:nth-child(2n) {
+        &:nth-child(2n - 1) {
             .layui-container {
                 .plans-text {
-                    margin-right: 0px;
+                    margin-right: 150px;
 
                 }
 
@@ -462,12 +469,22 @@
             &:nth-child(2n) {
                 .layui-container {
                     .plans-text {
-                        margin-right: 0px;
+                        margin-right: 60px;
 
                     }
 
                     .plans-img {
                         margin-right: 130px;
+                    }
+                }
+
+            }
+
+            &:nth-child(2n - 1) {
+                .layui-container {
+                    .plans-text {
+                        margin-right: 130px;
+
                     }
                 }
 
@@ -522,7 +539,7 @@
             &:nth-child(2n) {
                 .layui-container {
                     .plans-text {
-                        margin-right: 0px;
+                        margin-right: 140px;
 
                     }
 
@@ -654,11 +671,14 @@
 
         nav {
             .layui-container {
-                width: 90%;
+                width: 100%;
 
                 .nav-content {
                     li {
-                        font-size: 14px;
+                        a {
+                            font-size: 12px !important;
+
+                        }
                     }
                 }
             }
@@ -704,7 +724,10 @@
 
                             p {
                                 font-size: 12px;
-
+                                display: -webkit-box;
+                                -webkit-box-orient: vertical;
+                                -webkit-line-clamp: 2;
+                                overflow: hidden;
                             }
                         }
                     }
@@ -757,8 +780,8 @@
 
 
         .plans {
-            padding: 40px 0;
-
+            padding: 40px 0 70px;
+            position: relative;
             .layui-container {
                 padding: 0 !important;
                 width: 98%;
@@ -778,6 +801,7 @@
 
                     .text-head,
                     p {
+                        text-align: center;
                         width: 80%;
                         margin: 0 auto;
                         font-size: 12px;
@@ -799,10 +823,13 @@
                     }
 
                     button {
+                        position: absolute;
+                        bottom: -50px;
                         display: block;
                         width: 100px;
-                        height: 35px;
-                        margin: 20px auto 0;
+                        height: 32px;
+                        left: 50%;
+                        transform: translateX(-50%);
                     }
                 }
 
@@ -812,10 +839,11 @@
                 }
             }
 
-            &:nth-child(2n) {
+            &:nth-child(2n - 1) {
                 .layui-container {
                     .plans-text {
                         order: -1;
+                        margin-right: 0px;
                     }
 
                     .plans-img {
