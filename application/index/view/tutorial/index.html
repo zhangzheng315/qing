@@ -78,9 +78,11 @@
                     <ul>
                         {foreach $info['catalog']['catalog'] as $item}
                         <li>
+                            <a href="{:url('/index/tutorial/index',['browse'=>1,'id'=>$item['id']])}">
                             <img src="/static/image/tutorial/video_btn.png" alt="">
                             <span>{$item['title']}</span>
                             <i>{$item['duration']}</i>
+                            </a>
                         </li>
                         {/foreach}
                     </ul>
