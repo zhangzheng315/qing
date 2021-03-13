@@ -245,15 +245,29 @@ class VideoService extends Common{
         return $list;
     }
 
-    public function videoListByWhere($param)
+    /**
+     * 分页视频列表
+     * @param $param
+     * @return array|bool
+     * @throws \think\Exception
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
+    public function videoListByPage($param)
     {
-        $limit = 8;
+        $limit = 12;
         $offset = ($param['curr'] - 1) * $limit;
         $where = [
             'deleted_time' => 0,
             'status' => 1,
-            'pid' => $param['pid'],
         ];
+        if (isset($param['word']) && $param['word']) {
+            $where['title'] = ['like', '%' . $param['word'] . '%'];
+        }
+        if (isset($param['pid']) && $param['pid']) {
+            $where['pid'] = $param['pid'];
+        }
         $res = $this->video->where($where)->limit($offset,$limit)->select();
         if (!$res) {
             $this->setError('暂无数据');
@@ -262,7 +276,7 @@ class VideoService extends Common{
 
         $count = $this->video->where($where)->count('id');
         $this->setMessage('查询成功');
-        return ['data'=>$res,'count'=>$count,'index'=>$param['pid'],'curr'=>$param['curr']];
+        return ['data'=>$res,'count'=>$count,'index'=>$param['pid'],'word'=>$param['word'],'curr'=>$param['curr']];
     }
 
     /**
@@ -294,6 +308,11 @@ class VideoService extends Common{
     }
 
 
+    /**
+     * 将秒数转换为时长  格式：00:00:00
+     * @param $duration
+     * @return string
+     */
     public function getDuration($duration)
     {
         $result = '00:00:00';
@@ -309,6 +328,25 @@ class VideoService extends Common{
             $result = $hour.':'.$minute.':'.$second;
         }
         return $result;
+    }
+
+
+    public function videoWordSearch($param)
+    {
+        $where = [
+            'deleted_time' => 0,
+            'status' => 1,
+        ];
+        if (isset($param['word']) && $param['word']) {
+            $where['title'] = ['like', '%' . $param['word'] . '%'];
+        }
+        $video_list = $this->video->where($where)->order('order', 'desc')->select();
+        if (!$video_list) {
+            $this->setError('暂无数据');
+            return false;
+        }
+        $this->setMessage('查询成功');
+        return $video_list;
     }
 
     /**
