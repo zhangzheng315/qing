@@ -66,8 +66,8 @@
         <div class="layui-container">
             <h2 class="title">全部案例</h2>
             <ul class="all-nav">
-                <li>全部</li>
-                <li class="active" onclick="casePoint(1)">医疗</li>
+                <li class="active" onclick="casePoint(0)">全部</li>
+                <li onclick="casePoint(1)">医疗</li>
                 <li onclick="casePoint(2)">教育</li>
                 <li onclick="casePoint(3)">金融</li>
                 <li onclick="casePoint(4)">汽车</li>
@@ -190,7 +190,7 @@
                 elem: 'test1'       //注意，这里的 test1 是分页容器ID，不用加 # 号
                 , count: data.count //数据总数
                 , curr: data.curr   //当前页
-                , limit: 8
+                , limit: 12
                 , prev: '<'         // 上一页按钮内容
                 , next: '>'         // 下一页按钮内容
                 , theme: '#00cc99'
@@ -204,7 +204,7 @@
         });
     }
 
-    casePoint(1)
+    casePoint(0)
 
     function casePoint(index, curr = 1) {
         $.ajax({
