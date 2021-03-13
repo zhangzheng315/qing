@@ -204,21 +204,27 @@
   margin-bottom: 15px;
 }
 #tutorial .video-box .layui-container .video-list .list-content ul li {
-  color: #b6b6b6;
   padding-bottom: 9px;
   border-bottom: 1px solid #666666;
   margin-bottom: 15px;
   font-size: 12px;
   cursor: pointer;
 }
-#tutorial .video-box .layui-container .video-list .list-content ul li:hover {
+#tutorial .video-box .layui-container .video-list .list-content ul li a:hover span,
+#tutorial .video-box .layui-container .video-list .list-content ul li a:hover i {
   color: #00cc99;
 }
-#tutorial .video-box .layui-container .video-list .list-content ul li span {
+#tutorial .video-box .layui-container .video-list .list-content ul li a span {
+  color: #b6b6b6;
   margin: 0 30px 0 7px;
 }
-#tutorial .video-box .layui-container .video-list .list-content ul li i {
+#tutorial .video-box .layui-container .video-list .list-content ul li a i {
+  color: #b6b6b6;
   font-style: normal;
+}
+#tutorial .video-box .layui-container .video-list .list-content ul .active a span,
+#tutorial .video-box .layui-container .video-list .list-content ul .active a i {
+  color: #00cc99;
 }
 #tutorial .nav-tab {
   background-color: #f2f4f7;

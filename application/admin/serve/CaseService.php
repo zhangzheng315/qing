@@ -146,7 +146,7 @@ class CaseService extends Common{
      */
     public function getCaseByWhere($param)
     {
-        $limit = 8;
+        $limit = 12;
         $offset = ($param['curr'] - 1) * $limit;
         $where = [
             'status'=>1,

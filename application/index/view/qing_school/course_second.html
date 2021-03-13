@@ -68,6 +68,13 @@
             background-color: #00cc99;
             color: #fff
         }
+        .null-data{
+            position: relative;
+            top: 16%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 35%;
+        }
     </style>
 </head>
 
@@ -86,9 +93,9 @@
             </ul>
             <div class="layui-form-item">
                 <div class="layui-input-block flexs">
-                    <input type="text" name="title" required lay-verify="required" placeholder="课程/关键词"
+                    <input type="text" name="word" id="word" required lay-verify="required" placeholder="课程/关键词"
                            autocomplete="off" class="layui-input">
-                    <div class="icons">
+                    <div class="icons" id="icon_search">
                         <img src="/static/image/qingschool1/search_white.svg" alt="">
                     </div>
                 </div>
@@ -330,7 +337,7 @@
                 , jump: function (obj, first) {
                     currPage = obj.curr; //这里是后台返回给前端的当前页数
                     if (!first) {         //点击跳页触发函数自身，并传递当前页：obj.curr  ajax 再次请求
-                        casePoint(data.index, currPage);     //调用ajax请求数据
+                        videoPage(data.index, data.word, currPage);     //调用ajax请求数据
                     }
                 }
             });
@@ -339,15 +346,14 @@
 
 
     videoPage(1);
-    function videoPage(index, curr = 1) {
+    function videoPage(index, word='', curr = 1) {
         $.ajax({
-            url: "{:url('/index/qing_school/videoListByWhere')}",
-            data: {'pid': index, 'curr': curr},
+            url: "{:url('/index/qing_school/videoListByPage')}",
+            data: {'pid': index, 'word':word, 'curr': curr},
             type: 'get',
             success: function (res) {
+                $('.study-box').empty()
                 if (res.status === 200) {
-                    console.log(res)
-                    $('.study-box').empty()
                     for (let item of res.data.data) {
                         $('.study-box').append('<li>\n' +
                             '                            <a href="/index/tutorial/index?browse=1&id='+item.id+'">\n' +
@@ -359,11 +365,19 @@
                             '                            </a>\n' +
                             '                        </li>')
                     }
-                    layPage(res.data); 
+                    layPage(res.data);
+                }else{
+                    $('.study-box').append('<img class="null-data" src="/static/image/null_data.svg" alt="">');
                 }
             }
         })
     }
+
+    //搜索
+    $('#icon_search').on('click',function () {
+        let word = $('#word').val();
+        videoPage('', word);
+    })
 </script>
 <script>
     // 登录成功后显示个人信息
