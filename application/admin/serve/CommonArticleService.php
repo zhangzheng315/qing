@@ -218,6 +218,13 @@ class CommonArticleService extends Common{
         return $info;
     }
 
+    /**
+     * 更多直播功能   最新添加
+     * @return bool|false|\PDOStatement|string|\think\Collection
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
     public function newAdd()
     {
         $where = [
@@ -233,6 +240,14 @@ class CommonArticleService extends Common{
         return $new_add;
     }
 
+    /**
+     * 文章百科列表By where
+     * @param $param
+     * @return bool|false|\PDOStatement|string|\think\Collection
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
     public function articleByWhere($param)
     {
         $where = [

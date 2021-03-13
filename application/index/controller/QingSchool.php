@@ -215,15 +215,13 @@ class QingSchool extends Controller
      * @param Request $request
      * @return \think\response\Json
      */
-    public function videoListByWhere(Request $request){
+    public function videoListByPage(Request $request){
         $rules =
             [
-                'pid' => 'require',
                 'curr' => 'require',
             ];
         $msg =
             [
-                'pid' => '缺少参数@pid',
                 'curr' => '缺少参数@curr',
             ];
         $validate = new Validate($rules,$msg);
@@ -231,11 +229,21 @@ class QingSchool extends Controller
             return show(401,$validate->getError());
         }
 
-        $res = $this->videoService->videoListByWhere($request->param());
+        $res = $this->videoService->videoListByPage($request->param());
         if($res){
             return show(200,$this->videoService->message,$res);
         }else{
             return show(401,$this->videoService->error);
         }
+    }
+
+    public function videoWordSearch()
+    {
+        $param = request()->param();
+        $video_list = $this->videoService->videoWordSearch($param);
+        if (!$video_list) {
+            return ['status'=>401];
+        }
+        return ['status'=>200,'data'=>$video_list];
     }
 }
