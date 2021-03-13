@@ -54,7 +54,7 @@
                             {foreach($article_list['all_article'] as $val)}
                             {if($val.pid == $item.id)}
                             <li>
-                                <a class="flex-box" href="{:url('/index/docs/article',['id'=>$val.id])}">
+                                <a class="flex-box" href="{:url('/index/qing_school/article',['id'=>$val.id])}">
                                     <img src="{$val.icon_img_url}" alt="">
                                     <div class="text">
                                         <h6>{$val.title}</h6>

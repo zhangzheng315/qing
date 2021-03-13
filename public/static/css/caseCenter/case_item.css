@@ -51,6 +51,11 @@
         .m-cause-con {
             display: none;
         }
+        .btns > a {
+            display: inline-block;
+            text-align: center;
+            box-sizing: border-box;
+        }
 
         @media screen and (min-width: 1300px) {
             .layui-container {
@@ -61,7 +66,11 @@
             .header-nav {
                 height: 65px;
             }
-
+            .logo img {
+                width: 124px;
+                height: 45px;
+            } 
+             
             .head-right > .text {
                 margin-right: 64px;
                 height: 30px;
@@ -77,7 +86,7 @@
                 margin-right: 48px;
             }
 
-            .btns > button {
+            .btns > a {
                 width: 103px;
                 height: 30px;
                 line-height: 30px;
@@ -88,14 +97,14 @@
                 cursor: pointer;
             }
 
-            .btns > button.login {
+            .btns > a.login {
                 background: #fff;
                 border: 1px solid #00cc99;
                 color: #00cc99;
             }
 
-            .btns > button.free-btn {
-                background: #00AC81;
+            .btns > a.free-btn {
+                background: #00cc99;
                 color: #ffffff;
                 margin-left: 41px;
             }
@@ -144,7 +153,7 @@
             }
 
             .school-nav > a:hover, .school-nav > a.active {
-                border-bottom: 3px solid #00ac81;
+                border-bottom: 3px solid #00cc99;
             }
 
             .school-nav > a.active .icon-nav-item {
@@ -718,7 +727,11 @@
             .header-nav {
                 height: 65px;
             }
-
+            .logo img {
+                width: 100px;
+                height: 40px;
+            }
+    
             .head-right > .text {
                 margin-right: 40px;
                 height: 30px;
@@ -734,7 +747,7 @@
                 margin-right: 24px;
             }
 
-            .btns > button {
+            .btns > a {
                 width: 96px;
                 height: 30px;
                 line-height: 30px;
@@ -745,14 +758,14 @@
                 cursor: pointer;
             }
 
-            .btns > button.login {
+            .btns > a.login {
                 background: #fff;
                 border: 1px solid #00cc99;
                 color: #00cc99;
             }
 
-            .btns > button.free-btn {
-                background: #00AC81;
+            .btns > a.free-btn {
+                background: #00cc99;
                 color: #ffffff;
                 margin-left: 20px;
             }
@@ -801,7 +814,7 @@
             }
 
             .school-nav > a:hover, .school-nav > a.active {
-                border-bottom: 3px solid #00ac81;
+                border-bottom: 3px solid #00cc99;
             }
 
             .school-nav > a.active .icon-nav-item {
@@ -1383,7 +1396,10 @@
             .header-nav {
                 height: 65px;
             }
-
+            .logo img {
+                width: 90px;
+                height: 36px;
+            }
             .head-right > .text {
                 margin-right: 40px;
                 height: 30px;
@@ -1399,7 +1415,7 @@
                 margin-right: 32px;
             }
 
-            .btns > button {
+            .btns > a {
                 width: 103px;
                 height: 30px;
                 line-height: 30px;
@@ -1410,14 +1426,14 @@
                 cursor: pointer;
             }
 
-            .btns > button.login {
+            .btns > a.login {
                 background: #fff;
                 border: 1px solid #00cc99;
                 color: #00cc99;
             }
 
-            .btns > button.free-btn {
-                background: #00AC81;
+            .btns > a.free-btn {
+                background: #00cc99;
                 color: #ffffff;
                 margin-left: 20px;
             }
@@ -1465,7 +1481,7 @@
             }
 
             .school-nav > a:hover, .school-nav > a.active {
-                border-bottom: 3px solid #00ac81;
+                border-bottom: 3px solid #00cc99;
             }
 
             .school-nav > a.active .icon-nav-item {
@@ -1740,7 +1756,7 @@
                 display: none;
             }
 
-            .btns > button {
+            .btns > a {
                 width: 103px;
                 height: 30px;
                 line-height: 30px;
@@ -1751,14 +1767,14 @@
                 cursor: pointer;
             }
 
-            .btns > button.login {
+            .btns > a.login {
                 background: #fff;
                 border: 1px solid #00cc99;
                 color: #00cc99;
             }
 
-            .btns > button.free-btn {
-                background: #00AC81;
+            .btns > a.free-btn {
+                background: #00cc99;
                 color: #ffffff;
                 margin-left: 20px;
             }
@@ -1801,7 +1817,7 @@
             }
 
             .school-nav > a:hover, .school-nav > a.active {
-                border-bottom: 3px solid #00ac81;
+                border-bottom: 3px solid #00cc99;
             }
 
             /* 大家都在看 */
