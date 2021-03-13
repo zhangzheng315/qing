@@ -115,25 +115,27 @@
                 margin-right: 48px;
             }
 
-            .btns > button {
+            .btns > a {
+                display: inline-block;
+                text-align: center;
                 width: 103px;
                 height: 30px;
                 line-height: 30px;
                 font-size: 14px;
                 border-radius: 15px;
-                outline: none;
+                box-sizing: border-box;
                 border: none;
                 cursor: pointer;
             }
 
-            .btns > button.login {
+            .btns > a.login {
                 background: #fff;
                 border: 1px solid #00cc99;
                 color: #00cc99;
                 margin-right: 25px;
             }
 
-            .btns > button.free-btn {
+            .btns > a.free-btn {
                 background: #00cc99;
                 color: #ffffff;
             }
@@ -757,24 +759,26 @@
                 margin-right: 24px;
             }
 
-            .btns > button {
+            .btns > a {
+                display: inline-block;
+                text-align: center;
                 width: 96px;
                 height: 30px;
                 line-height: 30px;
                 font-size: 14px;
                 border-radius: 15px;
-                outline: none;
+                box-sizing: border-box;
                 border: none;
                 cursor: pointer;
             }
 
-            .btns > button.login {
+            .btns > a.login {
                 background: #fff;
                 border: 1px solid #00cc99;
                 color: #00cc99;
             }
 
-            .btns > button.free-btn {
+            .btns > a.free-btn {
                 background: #00cc99;
                 color: #ffffff;
                 margin-left: 20px;
@@ -1399,24 +1403,26 @@
                 margin-right: 32px;
             }
 
-            .btns > button {
+            .btns > a {
+                display: inline-block;
+                text-align: center;
                 width: 103px;
                 height: 30px;
                 line-height: 30px;
                 font-size: 14px;
                 border-radius: 15px;
-                outline: none;
                 border: none;
                 cursor: pointer;
+                box-sizing: border-box;
             }
 
-            .btns > button.login {
+            .btns > a.login {
                 background: #fff;
                 border: 1px solid #00cc99;
                 color: #00cc99;
             }
 
-            .btns > button.free-btn {
+            .btns > a.free-btn {
                 background: #00cc99;
                 color: #ffffff;
                 margin-left: 20px;
@@ -1724,7 +1730,7 @@
                 display: none;
             }
 
-            .btns > button {
+            .btns > a {
                 width: 103px;
                 height: 30px;
                 line-height: 30px;
@@ -1735,13 +1741,13 @@
                 cursor: pointer;
             }
 
-            .btns > button.login {
+            .btns > a.login {
                 background: #fff;
                 border: 1px solid #00cc99;
                 color: #00cc99;
             }
 
-            .btns > button.free-btn {
+            .btns > a.free-btn {
                 background: #00cc99;
                 color: #ffffff;
                 margin-left: 20px;
@@ -2014,8 +2020,8 @@
                     <a href="{:url('/')}">产品功能</a>
                 </div>
                 <div class="btns">
-                    <a class="login" href="">登录</a>
-                    <a class="free-btn" href="">免费试用</a>
+                    <a class="login" href="{:url('/index/login/login')}">登录</a>
+                    <a class="free-btn" href="http://login.lighos.com/signUp" target="_blank">免费试用</a>
                 </div>
             </div>
         </div>
