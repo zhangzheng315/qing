@@ -107,41 +107,50 @@ class QingSchool extends Controller
             case 0:
                 $top_name = '内容中心';
                 $top_url = '/index/qing_school/index';
+                $action = 'index';
                 break;
             case 1:
                 $top_name = '案例解析';
                 $top_url = '/index/qing_school/caseAn';
+                $action = 'caseAn';
                 break;
             case 2:
                 $top_name = '产品动态';
                 $top_url = '/index/qing_school/products';
+                $action = 'products';
                 break;
             case 3:
                 $top_name = '直播资讯';
                 $top_url = '/index/qing_school/liveNews';
+                $action = 'liveNews';
                 break;
             default :
                 $top_name = '';
                 $top_url = '';
+                $action = '';
         }
         if (!$top_name) {
             $top_name = $article_info['info']['pid_name'];
             switch ($top_name) {
                 case '内容中心':
                     $top_url = '/index/qing_school/index';
+                    $action = 'index';
                     break;
                 case '案例解析':
                     $top_url = '/index/qing_school/caseAn';
+                    $action = 'caseAn';
                     break;
                 case '产品动态':
                     $top_url = '/index/qing_school/products';
+                    $action = 'products';
                     break;
                 case '直播资讯':
                     $top_url = '/index/qing_school/liveNews';
+                    $action = 'liveNews';
                     break;
             }
         }
-        return $this->fetch('',compact('article_info','pid','top_name','top_url'));
+        return $this->fetch('',compact('article_info','pid','top_name','top_url','action'));
     }
 
     /**
