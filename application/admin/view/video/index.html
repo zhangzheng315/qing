@@ -72,6 +72,19 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">选择主题</label>
+            <div class="layui-input-block">
+                <select name="theme_id">
+                    <option value="0">--请选择--</option>
+                    {if isset($video_theme)}
+                    {foreach $video_theme as $item }
+                    <option value="{$item.id}">{$item.theme_name}</option>
+                    {/foreach}
+                    {/if}
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
             <label class="layui-form-label">标题</label>
             <div class="layui-input-block">
                 <input type="text" name="title" placeholder="请输入" autocomplete="off" class="layui-input">
@@ -176,6 +189,19 @@
                     {if isset($video_type_list)}
                     {foreach $video_type_list as $item }
                     <option value="{$item.id}">{$item.name}</option>
+                    {/foreach}
+                    {/if}
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">选择主题</label>
+            <div class="layui-input-block">
+                <select name="theme_id" id="theme_id">
+                    <option value="0">--请选择--</option>
+                    {if isset($video_theme)}
+                    {foreach $video_theme as $item }
+                    <option value="{$item.id}">{$item.theme_name}</option>
                     {/foreach}
                     {/if}
                 </select>
@@ -462,6 +488,7 @@
 
                 , {field: 'cover_img_url', title: '封面图', templet:'#imgtmp'}
                 , {field: 'pid_name',title:'所属分类'}
+                , {field: 'theme_name',title:'视频主题'}
                 , {field: 'title', title: '标题'}
                 , {field: 'video_selected', title: '内容中心'}
                 , {field: 'browse', title: '浏览量'}
@@ -535,6 +562,7 @@
                         $('#describe').val(res.data.describe);
                         $('#pid').empty();
                         $('#label_check').empty();
+                        $('#theme_id').empty();
 
                         //状态
                         if (res.data.status === 0) {
@@ -554,6 +582,14 @@
                                 $('#pid').append('<option value="' + item.id + '" selected>' + item.name + '</option>')
                             } else {
                                 $('#pid').append('<option value="' + item.id + '">' + item.name + '</option>')
+                            }
+                        }
+                        //主题
+                        for (let item of res.data.video_theme) {
+                            if (res.data.theme_id === item.id) {
+                                $('#theme_id').append('<option value="' + item.id + '" selected>' + item.theme_name + '</option>')
+                            } else {
+                                $('#theme_id').append('<option value="' + item.id + '">' + item.theme_name + '</option>')
                             }
                         }
                         //标签

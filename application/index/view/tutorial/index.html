@@ -51,7 +51,7 @@
             <i class="layui-icon layui-icon-right"></i>
             <a class="active" href="{:url('/index/qing_school/courseSecond')}">{$info['pid_name']}</a>
             <i class="layui-icon layui-icon-right"></i>
-            <span>{$info['title']}</span>
+            <span>{$info['theme_name']}</span>
         </div>
     </nav>
 
@@ -65,53 +65,26 @@
             </div>
             <div class="video-list">
                 <div class="list-head">
-                    <h4>轻直播操作入门课程</h4>
-                    <p>主讲老师：jade/1120人在浏览</p>
+                    <h4>{$info['theme_name']}</h4>
+                    <p>主讲老师：轻直播/{$info['browse']}人在浏览</p>
                 </div>
                 <div class="list-body">
                     <div class="title">
                         <h6>介绍说明</h6>
-                        <p>轻直播产品介绍<span>00:15:24</span></p>
+                        <p>轻直播产品介绍<span>{$info['catalog']['all_dur']}</span></p>
                     </div>
                 </div>
                 <div class="list-content">
                     <ul>
-                        <h6>第一课 创建频道</h6>
+                        {foreach $info['catalog']['catalog'] as $item}
                         <li>
                             <img src="/static/image/tutorial/video_btn.png" alt="">
-                            <span>创建直播频道</span>
-                            <i>00:15:24</i>
+                            <span>{$item['title']}</span>
+                            <i>{$item['duration']}</i>
                         </li>
-                        <li>
-                            <img src="/static/image/tutorial/video_btn.png" alt="">
-                            <span>创建直播频道</span>
-                            <i>00:15:24</i>
-                        </li>
-                        <li>
-                            <img src="/static/image/tutorial/video_btn.png" alt="">
-                            <span>创建直播频道</span>
-                            <i>00:15:24</i>
-                        </li>
+                        {/foreach}
                     </ul>
-                    <ul>
-                        <h6>第二课 安装客户端</h6>
-                        <li>
-                            <img src="/static/image/tutorial/video_btn.png" alt="">
-                            <span>创建直播频道</span>
-                            <i>00:15:24</i>
-                        </li>
-                        <li>
-                            <img src="/static/image/tutorial/video_btn.png" alt="">
-                            <span>创建直播频道</span>
-                            <i>00:15:24</i>
-                        </li>
-                        <li>
-                            <img src="/static/image/tutorial/video_btn.png" alt="">
-                            <span>创建直播频道</span>
-                            <i>00:15:24</i>
-                        </li>
-                    </ul>
-                    <ul>
+                    <!--<ul>
                         <h6>第三课 发起直播</h6>
                         <li>
                             <img src="/static/image/tutorial/video_btn.png" alt="">
@@ -128,7 +101,7 @@
                             <span>创建直播频道</span>
                             <i>00:15:24</i>
                         </li>
-                    </ul>
+                    </ul>-->
                 </div>
             </div>
         </div>
@@ -198,11 +171,11 @@
                                 <h5 class="flex-box"><i></i><span>介绍说明</span></h5>
                                 <p class="flex-box active">
                                     <img src="/static/image/tutorial/video_b.png" alt="">
-                                    <span>轻直播操作入门课程</span>
-                                    <span>00:15:24</span>
+                                    <span>{$info['theme_name']}</span>
+                                    <span>{$info['catalog']['all_dur']}</span>
                                 </p>
                             </section>
-                            <section class="section">
+                            <!--<section class="section">
                                 <h5 class="flex-box"><i></i><span>第一课 创建频道</span></h5>
                                 <p class="flex-box">
                                     <img src="/static/image/tutorial/video_b.png" alt="">
@@ -219,42 +192,15 @@
                                     <span>轻直播操作入门课程</span>
                                     <span>00:15:24</span>
                                 </p>
-                            </section>
+                            </section>-->
                             <section class="section">
-                                <h5 class="flex-box"><i></i><span>第二课 安装客户端</span></h5>
+                                {foreach $info['catalog']['catalog'] as $item}
                                 <p class="flex-box">
                                     <img src="/static/image/tutorial/video_b.png" alt="">
-                                    <span>轻直播操作入门课程</span>
-                                    <span>00:15:24</span>
+                                    <span>{$item['title']}</span>
+                                    <span>{$item.duration}</span>
                                 </p>
-                                <p class="flex-box">
-                                    <img src="/static/image/tutorial/video_b.png" alt="">
-                                    <span>轻直播操作入门课程</span>
-                                    <span>00:15:24</span>
-                                </p>
-                                <p class="flex-box">
-                                    <img src="/static/image/tutorial/video_b.png" alt="">
-                                    <span>轻直播操作入门课程</span>
-                                    <span>00:15:24</span>
-                                </p>
-                            </section>
-                            <section class="section">
-                                <h5 class="flex-box"><i></i><span>第三课 发起直播</span></h5>
-                                <p class="flex-box">
-                                    <img src="/static/image/tutorial/video_b.png" alt="">
-                                    <span>轻直播操作入门课程</span>
-                                    <span>00:15:24</span>
-                                </p>
-                                <p class="flex-box">
-                                    <img src="/static/image/tutorial/video_b.png" alt="">
-                                    <span>轻直播操作入门课程</span>
-                                    <span>00:15:24</span>
-                                </p>
-                                <p class="flex-box">
-                                    <img src="/static/image/tutorial/video_b.png" alt="">
-                                    <span>轻直播操作入门课程</span>
-                                    <span>00:15:24</span>
-                                </p>
+                                {/foreach}
                             </section>
                         </div>
                         <div class="item-right">

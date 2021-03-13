@@ -409,7 +409,7 @@
   flex-wrap: wrap;
 }
 #about .about-boxs section .hope .layui-container .icons li {
-  margin-right: 133px;
+  margin-right: 19.5%;
   margin-bottom: 64px;
   display: flex;
   flex-direction: column;
@@ -486,6 +486,9 @@
 #about .about-boxs section .lianxi .layui-container .lianxi-content .content-left li .imgs span {
   font-size: 20px;
   color: #333;
+}
+#about .about-boxs section .lianxi .layui-container .lianxi-content .content-left li .imgs img {
+  width: 90px;
 }
 #about .about-boxs section .lianxi .layui-container .lianxi-content .content-left li p {
   font-size: 26px;

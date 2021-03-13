@@ -172,6 +172,9 @@
   flex-direction: column;
   margin: 0 45px 37px 0;
 }
+#channel .partner .layui-container .part-content li img {
+  width: 48px;
+}
 #channel .partner .layui-container .part-content li:nth-child(4n) {
   margin: 0 0 37px 0;
 }
@@ -206,6 +209,9 @@
 #channel .part-term .layui-container .term-content li {
   width: 188px;
   flex-direction: column;
+}
+#channel .part-term .layui-container .term-content li img {
+  width: 50px;
 }
 #channel .part-term .layui-container .term-content li:nth-child(2n) {
   width: 2px;

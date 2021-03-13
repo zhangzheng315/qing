@@ -83,6 +83,12 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">网站首页</label>
+            <div class="layui-input-block">
+                <input name="first_home" value="1" type="checkbox" lay-skin="switch">
+            </div>
+        </div>
+        <div class="layui-form-item">
             <label class="layui-form-label">启用</label>
             <div class="layui-input-block">
                 <input name="status" value="1" type="checkbox" checked lay-skin="switch">
@@ -172,6 +178,12 @@
             <label class="layui-form-label">内容中心</label>
             <div class="layui-input-block">
                 <input name="content_center" id="content_center" value="1" type="checkbox" lay-skin="switch">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">网站首页</label>
+            <div class="layui-input-block">
+                <input name="first_home" id="first_home" value="1" type="checkbox" lay-skin="switch">
             </div>
         </div>
         <div class="layui-form-item">
@@ -285,10 +297,11 @@
                 , {field: 'pid_name', title: '所属分类'}
                 , {field: 'hot_article', title: '热门文章'}
                 , {field: 'content_center', title: '内容中心'}
+                , {field: 'first_home', title: '网站首页'}
                 , {field: 'browse', title: '浏览量'}
                 , {field: 'order', title: '排序'}
                 , {field: 'status', title: '状态'}
-                , {fixed: 'right', width: 150, title: '操作', align: 'center', toolbar: '#barDemo'}
+                , {width: 160, title: '操作', align: 'center', toolbar: '#barDemo'}
             ]]
         });
 
@@ -369,6 +382,12 @@
                             $('#content_center').removeAttr('checked');
                         } else {
                             $('#content_center').attr('checked', true);
+                        }
+                        //内容中心
+                        if (res.data.first_home === 0) {
+                            $('#first_home').removeAttr('checked');
+                        } else {
+                            $('#first_home').attr('checked', true);
                         }
                         for (let item of res.data.article_type) {
                             if (res.data.pid === item.id) {

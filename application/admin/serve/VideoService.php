@@ -1,5 +1,6 @@
 <?php
 namespace app\admin\serve;
+use app\admin\model\Theme;
 use app\admin\model\Video;
 use app\admin\model\VideoType;
 use think\Request;
@@ -10,12 +11,14 @@ class VideoService extends Common{
     public $video;
     public $videoType;
     public $labelService;
+    public $theme;
     public function __construct(Request $request = null)
     {
         parent::__construct($request);
         $this->video = new Video();
         $this->videoType = new VideoType();
         $this->labelService = new LabelService();
+        $this->theme = new Theme();
     }
 
     /**
@@ -24,8 +27,8 @@ class VideoService extends Common{
      * @return bool
      */
     public function videoCreate($param){
-        if ($param['pid'] == 0) {
-            $this->setError('请选择父类');
+        if ($param['pid'] == 0 || $param['theme_id']) {
+            $this->setError('请选择父类或主题');
             return false;
         }
         if(!isset($param['status'])) $param['status'] = 0;
@@ -35,11 +38,14 @@ class VideoService extends Common{
             $label = implode(',', $param['label']);
         }
         $pid_name = $this->videoType->where(['id' => $param['pid']])->value('name');
+        $theme_name = $this->theme->where(['id' => $param['theme_id']])->value('theme_name');
         $data = [
             'video_url' => $param['video_url'],
             'cover_img_url' => $param['cover_img_url'],
             'pid' => $param['pid'],
             'pid_name' => $pid_name,
+            'theme_id' => $param['theme_id'],
+            'theme_name' => $theme_name,
             'title' => $param['title'] ?: '',
             'describe' => $param['describe'] ?: '',
             'content' => $param['content'] ?: '',
@@ -77,6 +83,7 @@ class VideoService extends Common{
         $info = $this->video->find($where);
         $info->label = explode(',', $info->label);
         $info->video_type_list = $this->videoType->where(['deleted_time' => 0,'status'=>1])->select();
+        $info->video_theme = $this->theme->where(['deleted_time' => 0, 'status' => 1])->select();
         $info->label_list = $this->labelService->labelList();
         if(!$info){
             $this->setError('查询失败');
@@ -85,6 +92,7 @@ class VideoService extends Common{
         //前端点击的 增加浏览量
         if (isset($param['browse'])) {
             $this->video->where($where)->setInc('browse');
+            $info->catalog = $this->videoCatalog($info['theme_id']);
         }
         $this->setMessage('查询成功');
         return $info;
@@ -119,7 +127,9 @@ class VideoService extends Common{
 
         $where = ['id' => $data['id']];
         $pid_name = $this->videoType->where(['id' => $data['pid']])->value('name');
+        $theme_name = $this->theme->where(['id' => $data['theme_id']])->value('theme_name');
         $data['pid_name'] = $pid_name;
+        $data['theme_name'] = $theme_name;
         $data['updated_time'] = time();
         $add_id = $this->video->update($data,$where);
         if(!$add_id){
@@ -253,6 +263,76 @@ class VideoService extends Common{
         $count = $this->video->where($where)->count('id');
         $this->setMessage('查询成功');
         return ['data'=>$res,'count'=>$count,'index'=>$param['pid'],'curr'=>$param['curr']];
+    }
+
+    /**
+     * 获取视频详情页视频目录
+     * @param $theme_id
+     * @return bool|false|\PDOStatement|string|\think\Collection
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
+    public function videoCatalog($theme_id)
+    {
+        $where = [
+            'deleted_time' => 0,
+            'status' => 1,
+            'theme_id' => $theme_id,
+        ];
+        $catalog = $this->video->where($where)->order('order', 'desc')->select();
+        $all_dur = 0;
+        foreach ($catalog as $item) {
+            $data = $this->liveCurl($item['video_url'].'?avinfo');
+            $json = json_decode($data);
+            $duration = (int)$json->format->duration;
+            $all_dur += $duration;
+            $item['duration'] = $this->getDuration($duration);
+        }
+        $all_dur = $this->getDuration($all_dur);
+        return ['catalog'=>$catalog,'all_dur'=>$all_dur];
+    }
+
+
+    public function getDuration($duration)
+    {
+        $result = '00:00:00';
+        if ($duration>0) {
+            $hour = floor($duration/3600);
+            $minute = floor(($duration-3600 * $hour)/60);
+            $second = floor((($duration-3600 * $hour) - 60 * $minute) % 60);
+
+
+            $hour = strlen($hour) == 1 ? '0' . $hour : $hour;
+            $minute = strlen($minute) == 1 ? '0' . $minute : $minute;
+            $second = strlen($second) == 1 ? '0' . $second : $second;
+            $result = $hour.':'.$minute.':'.$second;
+        }
+        return $result;
+    }
+
+    /**
+     * @param $url
+     * @return bool|string
+     */
+    public function liveCurl($url)
+    {
+        $curl = curl_init(); // 启动一个CURL会话
+        curl_setopt($curl, CURLOPT_URL, $url); // 要访问的地址
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0); // 对认证证书来源的检查
+        //curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 1); //  如果不是https的就注释 从证书中检查SSL加密算法是否存在
+        curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']); // 模拟用户使用的浏览器
+        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1); // 使用自动跳转
+        curl_setopt($curl, CURLOPT_AUTOREFERER, 1); // 自动设置Referer
+        curl_setopt($curl, CURLOPT_POST, 1); // 发送一个常规的Post请求
+//        curl_setopt($curl, CURLOPT_POSTFIELDS, $data); // Post提交的数据包
+        curl_setopt($curl, CURLOPT_TIMEOUT, 30); // 设置超时限制防止死循环
+        curl_setopt($curl, CURLOPT_HEADER, 0); // 显示返回的Header区域内容
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1); // 获取的信息以文件流的形式返回
+        $res = curl_exec($curl); // 执行操作
+
+        curl_close($curl); // 关闭CURL会话
+        return $res;
     }
 
 }
