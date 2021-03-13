@@ -19,7 +19,7 @@ class Industry extends Controller
         return $this->fetch('',compact( 'banner_list','solution_list'));
     }
     /* 行业解决方案-医疗*/
-    public function medical_care()
+    public function medicalCare()
     {
       return $this->fetch();
     }
