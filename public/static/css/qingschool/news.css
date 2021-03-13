@@ -75,6 +75,10 @@ nav {
     font-weight: 400;
     background: linear-gradient(90deg, #009CA9, #39D6AF);
 }
+.btns>a {
+    text-align: center;
+    box-sizing: border-box;
+}
 
 @media screen and (min-width: 1300px){
     .layui-container {
@@ -84,7 +88,10 @@ nav {
     .header-nav {
         height: 65px;
     }
-
+    .logo img {
+        width: 124px;
+        height: 45px;
+    }
     .head-right>.text{
       margin-right: 64px;
       height: 30px;
@@ -97,7 +104,8 @@ nav {
   .head-right>.text>a:first-child {
       margin-right: 48px;
   }
-    .btns>button {
+    .btns>a {
+        display: inline-block;
         width: 103px;
         height: 30px;
         line-height: 30px;
@@ -107,15 +115,15 @@ nav {
         border: none;
         cursor: pointer;
     }
-    .btns>button.login {
+    .btns>a.login {
         background: #fff;
         border: 1px solid #00cc99;
         color: #00cc99;
+        margin-right: 25px;
     }
-    .btns>button.free-btn {
+    .btns>a.free-btn {
         background: #00cc99;
         color: #ffffff;
-        margin-left: 41px;
     }
    /* 导航栏 */
    .school-nav {
@@ -652,7 +660,10 @@ nav {
     .header-nav {
         height: 65px;
     }
-
+    .logo img {
+        width: 100px;
+        height: 40px;
+    }
     .head-right>.text{
       margin-right: 40px;
       height: 30px;
@@ -665,7 +676,7 @@ nav {
   .head-right>.text>a:first-child {
       margin-right: 24px;
   }
-    .btns>button {
+    .btns>a {
         width: 96px;
         height: 30px;
         line-height: 30px;
@@ -675,15 +686,15 @@ nav {
         border: none;
         cursor: pointer;
     }
-    .btns>button.login {
+    .btns>a.login {
         background: #fff;
         border: 1px solid #00cc99;
         color: #00cc99;
+        margin-right: 25px;
     }
-    .btns>button.free-btn {
+    .btns>a.free-btn {
         background: #00cc99;
         color: #ffffff;
-        margin-left: 20px;
     }
 
     /* 导航栏 */
@@ -1215,9 +1226,12 @@ nav {
         padding: 0 !important;
     }
     .header-nav {
-        height: 65px;
+        height: 56px;
     }
-
+    .logo img {
+        width: 90px;
+        height: 36px;
+    }
     .head-right>.text{
       margin-right: 40px;
       height: 30px;
@@ -1230,7 +1244,7 @@ nav {
   .head-right>.text>a:first-child {
       margin-right: 32px;
   }
-    .btns>button {
+    .btns>a {
         width: 103px;
         height: 30px;
         line-height: 30px;
@@ -1240,15 +1254,15 @@ nav {
         border: none;
         cursor: pointer;
     }
-    .btns>button.login {
+    .btns>a.login {
         background: #fff;
         border: 1px solid #00cc99;
         color: #00cc99;
+        margin-right: 25px;
     }
-    .btns>button.free-btn {
+    .btns>a.free-btn {
         background: #00cc99;
         color: #ffffff;
-        margin-left: 20px;
     }
 
     /* 导航栏 */
@@ -1268,9 +1282,9 @@ nav {
      }
      .school-nav>a>.icon-nav-item {
          display: inline-block;
-         width: 18px;
-         height: 18px;
-         margin-right: 5px;
+         width: 16px;
+         height: 16px;
+         /* margin-right: 5px; */
          background-size: contain;
          background-repeat: no-repeat;
          opacity: 0;
@@ -1278,7 +1292,7 @@ nav {
          vertical-align: middle;
      }
      .school-nav>a>span {
-         font-size: 16px;
+         font-size: 14px;
          color: #333333;
          vertical-align: middle;
      }
@@ -1512,7 +1526,7 @@ nav {
   .btns {
       display: none;
   }
-    .btns>button {
+    .btns>a {
         width: 103px;
         height: 30px;
         line-height: 30px;
@@ -1522,15 +1536,15 @@ nav {
         border: none;
         cursor: pointer;
     }
-    .btns>button.login {
+    .btns>a.login {
         background: #fff;
         border: 1px solid #00cc99;
         color: #00cc99;
+        margin-right: 25px;
     }
-    .btns>button.free-btn {
+    .btns>a.free-btn {
         background: #00cc99;
         color: #ffffff;
-        margin-left: 20px;
     }
 
      /* 导航栏 */
