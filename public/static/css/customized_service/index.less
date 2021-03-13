@@ -47,18 +47,25 @@
 
                 li {
                     height: 60px;
-                    font-size: 16px;
-                    color: #333;
+                    
                     box-sizing: border-box;
                     cursor: pointer;
-
+                    a {
+                        font-size: 16px;
+                        color: #333;
+                    }
                     &:hover {
-                        color: #00CC99;
+                        a {
+                            color: #00CC99;
+
+                        }
                         border-bottom: 3px solid #00CC99;
                     }
                 }
                 .active {
-                    color: #00CC99;
+                    a {
+                        color: #00CC99;
+                    }
                     border-bottom: 3px solid #00CC99;
                 }
             }
