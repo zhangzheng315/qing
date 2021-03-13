@@ -156,8 +156,16 @@ class ArticleService extends Common{
                 return false;
             }
         }
-        if ($data['hot_article']) {
+        if ($hot_info && $data['hot_article']) {
             $rt = $this->hotArticle->allowField(true)->save($data,$where);
+            if(!$rt){
+                $this->setError('修改失败');
+                Db::rollback();
+                return false;
+            }
+        }
+        if (!$hot_info && $data['hot_article']) {
+            $rt = $this->hotArticle->allowField(true)->save($data);
             if(!$rt){
                 $this->setError('修改失败');
                 Db::rollback();
@@ -174,8 +182,16 @@ class ArticleService extends Common{
                 return false;
             }
         }
-        if ($data['content_center']) {
+        if ($content_info && $data['content_center']) {
             $rt = $this->content_center->allowField(true)->save($data,$where);
+            if(!$rt){
+                $this->setError('修改失败');
+                Db::rollback();
+                return false;
+            }
+        }
+        if (!$content_info && $data['content_center']) {
+            $rt = $this->content_center->allowField(true)->save($data);
             if(!$rt){
                 $this->setError('修改失败');
                 Db::rollback();
