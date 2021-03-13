@@ -68,6 +68,13 @@
             background-color: #00cc99;
             color: #fff
         }
+        .null-data{
+            position: relative;
+            top: 16%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 35%;
+        }
     </style>
 </head>
 
@@ -345,8 +352,8 @@
             data: {'pid': index, 'word':word, 'curr': curr},
             type: 'get',
             success: function (res) {
+                $('.study-box').empty()
                 if (res.status === 200) {
-                    $('.study-box').empty()
                     for (let item of res.data.data) {
                         $('.study-box').append('<li>\n' +
                             '                            <a href="/index/tutorial/index?browse=1&id='+item.id+'">\n' +
@@ -358,7 +365,9 @@
                             '                            </a>\n' +
                             '                        </li>')
                     }
-                    layPage(res.data); 
+                    layPage(res.data);
+                }else{
+                    $('.study-box').append('<img class="null-data" src="/static/image/null_data.svg" alt="">');
                 }
             }
         })
