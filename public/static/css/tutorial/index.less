@@ -257,24 +257,39 @@
                         }
 
                         li {
-                            color: #b6b6b6;
                             padding-bottom: 9px;
                             border-bottom: 1px solid #666666;
                             margin-bottom: 15px;
                             font-size: 12px;
                             cursor: pointer;
 
-                            &:hover {
-                                color: #00cc99;
+                            a {
+                                &:hover {
 
+                                    span,
+                                    i {
+                                        color: #00cc99;
+                                    }
+                                }
+
+                                span {
+                                    color: #b6b6b6;
+                                    margin: 0 30px 0 7px;
+                                }
+
+                                i {
+                                    color: #b6b6b6;
+
+                                    font-style: normal;
+                                }
                             }
 
-                            span {
-                                margin: 0 30px 0 7px;
-                            }
-
-                            i {
-                                font-style: normal;
+                        }
+                        .active {
+                            a {
+                                span,i {
+                                    color: #00cc99;
+                                }
                             }
                         }
                     }
@@ -1032,11 +1047,13 @@
                             .item-left {
                                 width: 100%;
                                 margin-right: 0;
+
                                 section {
                                     img {
                                         max-width: 100%;
                                     }
                                 }
+
                                 .section {
                                     margin-bottom: 25px;
                                     padding: 10px 15px 0;

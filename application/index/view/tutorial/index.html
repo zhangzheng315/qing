@@ -78,9 +78,11 @@
                     <ul>
                         {foreach $info['catalog']['catalog'] as $item}
                         <li>
-                            <img src="/static/image/tutorial/video_btn.png" alt="">
-                            <span>{$item['title']}</span>
-                            <i>{$item['duration']}</i>
+                            <a href="">
+                                <img src="/static/image/tutorial/video_btn.png" alt="">
+                                <span>{$item['title']}</span>
+                                <i>{$item['duration']}</i>
+                            </a>
                         </li>
                         {/foreach}
                     </ul>
