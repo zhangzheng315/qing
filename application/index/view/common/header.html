@@ -16,6 +16,13 @@
         body {
             overflow-x: hidden;
         }
+        .nav-btn>a {
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .nav-btn>a.login {
+            border: 1px solid #00cc99;
+        }
         .nav-btn>a.login:hover {
             color: #00cc99;
         }
@@ -55,10 +62,10 @@
                 width: 50%;
             }
 
-            .nav-btn {
+            /* .nav-btn {
                 display: flex;
                 align-items: center;
-            }
+            } */
 
             .nav-btn .layui-nav {
                 background-color: #fff;
@@ -71,19 +78,20 @@
 
             .nav-btn>a {
                 display: inline-block;
-                width: 90px;
-                height: 36px;
-                line-height: 36px;
-                border-radius: 18px;
-                font-size: 16px;
-                text-align: center;
+                width: 103px;
+                height: 30px;
+                line-height: 30px;
+                font-size: 14px;
+                border-radius: 15px;
+                outline: none;
+                border: none;
                 cursor: pointer;
             }
 
             .login {
                 border: 1px solid #00cc99;
                 color: #00cc99;
-                margin-right: 20px;
+                margin-right: 25px;
             }
 
             .menu>.menu-item>a {
@@ -251,19 +259,20 @@
 
             .nav-btn>a {
                 display: inline-block;
-                width: 80px;
+                width: 103px;
                 height: 30px;
                 line-height: 30px;
-                border-radius: 15px;
                 font-size: 14px;
-                text-align: center;
+                border-radius: 15px;
+                outline: none;
+                border: none;
                 cursor: pointer;
             }
 
             .login {
                 border: 1px solid #00cc99;
                 color: #00cc99;
-                margin-right: 20px;
+                margin-right: 25px;
             }
 
             .product-pannel {
@@ -422,12 +431,13 @@
 
             .nav-btn>a {
                 display: inline-block;
-                width: 72px;
+                width: 96px;
                 height: 30px;
                 line-height: 30px;
+                font-size: 14px;
                 border-radius: 15px;
-                font-size: 12px;
-                text-align: center;
+                outline: none;
+                border: none;
                 cursor: pointer;
             }
 
@@ -435,7 +445,7 @@
             .login {
                 border: 1px solid #00cc99;
                 color: #00cc99;
-                margin-right: 20px;
+                margin-right: 25px;
             }
 
             .product-pannel {
@@ -1097,7 +1107,7 @@
                 <a class="login" href="{:url('/index/login/login')}">
                     登录
                 </a>
-                <a class="free-use" href="http://login.lighos.com/signUp">
+                <a class="free-use" href="http://login.lighos.com/signUp" target="_blank">
                     免费试用
                 </a>
             </div>

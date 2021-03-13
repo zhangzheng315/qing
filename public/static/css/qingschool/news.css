@@ -78,6 +78,7 @@ nav {
 .btns>a {
     text-align: center;
     box-sizing: border-box;
+    display: inline-block;
 }
 
 @media screen and (min-width: 1300px){
