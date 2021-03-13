@@ -66,7 +66,9 @@
         .m-cause-con {
             display: none;
         }
-
+        .article-body img {
+            max-width: 100%;
+        }
         @media screen and (min-width: 1300px) {
 
             .layui-container {
@@ -1987,7 +1989,6 @@
                 transition: all .25s ease-in-out;
             }
         }
-        
     </style>
 </head>
 
@@ -2011,6 +2012,8 @@
                 </div>
             </div>
         </header>
+        <!-- 咨询版块 -->
+      {include file="common/siderbar-right"}
         <!-- 导航栏 -->
         <!-- <nav>
         <div class="layui-container school-nav">
@@ -2129,7 +2132,7 @@
                         <ul class="hot-tags-list">
                             {if(!empty($label_list))}
                             {foreach($label_list as $item)}
-                            <li><a href="/index/case_center/{$pid.action}?pid={$info['pid']}&label={$item.name}" class="hot-tag-item">{$item.name}</a></li>
+                            <li><a href="" class="hot-tag-item">{$item.name}</a></li>
                             {/foreach}
                             {/if}
                         </ul>

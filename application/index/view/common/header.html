@@ -16,7 +16,12 @@
         body {
             overflow-x: hidden;
         }
-
+        .nav-btn>a.login:hover {
+            color: #00cc99;
+        }
+        .nav-btn>a.free-use:hover {
+            color: #ffffff;
+        }
         @media screen and (min-width: 1200px) {
 
             /* .layui-container {
@@ -64,7 +69,7 @@
                 border: none;
             }
 
-            .nav-btn>span {
+            .nav-btn>a {
                 display: inline-block;
                 width: 90px;
                 height: 36px;
@@ -244,7 +249,7 @@
                 color: #000000;
             }
 
-            .nav-btn>span {
+            .nav-btn>a {
                 display: inline-block;
                 width: 80px;
                 height: 30px;
@@ -415,7 +420,7 @@
                 color: #000000;
             }
 
-            .nav-btn>span {
+            .nav-btn>a {
                 display: inline-block;
                 width: 72px;
                 height: 30px;
@@ -1089,12 +1094,12 @@
                 </ul>
             </div>
             <div class="nav-btn">
-                <span class="login">
+                <a class="login" href="{:url('/index/login/login')}">
                     登录
-                </span>
-                <span class="free-use">
+                </a>
+                <a class="free-use" href="http://login.lighos.com/signUp">
                     免费试用
-                </span>
+                </a>
             </div>
             <ul class="layui-nav" lay-filter="leftNav">
                 <li class="layui-nav-item">
@@ -1152,7 +1157,7 @@
                     <span><a href="">加入我们</a></span>
                     <span><a href="">联系我们</a></span>
                 </div>
-            </li>
+            </li> -->
             </ul>
             <ul class="login-nav">
                 <li class="mobile-login">
@@ -1160,7 +1165,7 @@
                 </li>
                 <li class="mobile-freeuse">
                     免费试用
-                </li> -->
+                </li>
             </ul>
         </div>
 
