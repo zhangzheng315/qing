@@ -29,25 +29,37 @@ class Industry extends Controller
     /* 行业解决方案-医疗*/
     public function medicalCare()
     {
-      return $this->fetch();
+        $data = request()->param();
+        $pid = isset($data['id']) ? $data['id'] : 30;
+        $banner_list = $this->banner_service->bannerListByPid($pid);
+        return $this->fetch('', compact('banner_list'));
     }
 
     /* 行业解决方案-教育*/
     public function education()
     {
-      return $this->fetch();
+        $data = request()->param();
+        $pid = isset($data['id']) ? $data['id'] : 32;
+        $banner_list = $this->banner_service->bannerListByPid($pid);
+        return $this->fetch('', compact('banner_list'));
     }
 
     /* 行业解决方案-金融*/
     public function banking()
     {
-      return $this->fetch();
+        $data = request()->param();
+        $pid = isset($data['id']) ? $data['id'] : 33;
+        $banner_list = $this->banner_service->bannerListByPid($pid);
+        return $this->fetch('', compact('banner_list'));
     }
 
     /* 行业解决方案-传媒*/
     public function media()
     {
-      return $this->fetch();
+        $data = request()->param();
+        $pid = isset($data['id']) ? $data['id'] : 34;
+        $banner_list = $this->banner_service->bannerListByPid($pid);
+        return $this->fetch('', compact('banner_list'));
     }
     
 }

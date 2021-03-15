@@ -2225,9 +2225,11 @@
         <div id="banner">
             <div class="layui-carousel" id="banners">
                 <div carousel-item class="lunbo-box">
-                    <img src="/static/image/index/banner.png" alt="">
-                    <img src="/static/image/index/banner.png" alt="">
-                    <img src="/static/image/index/banner.png" alt="">
+                    {if isset($banner_list)}
+                    {foreach $banner_list as $item}
+                    <img src="{$item.img_url}" alt="">
+                    {/foreach}
+                    {/if}
                 </div>
             </div>
         </div>
@@ -2468,37 +2470,7 @@
                 </div>
                 <div class="case-con">
                     <ul class="case-imgs active">
-                        <li>
-                            <img src="/static/image/solution/case-logo/case1.png" alt="">
-                        </li>
-                        <li>
-                            <img src="/static/image/solution/case-logo/case2.png" alt="">
-                        </li>
-                        <li>
-                            <img src="/static/image/solution/case-logo/case3.png" alt="">
-                        </li>
-                        <li>
-                            <img src="/static/image/solution/case-logo/case4.png" alt="">
-                        </li>
-                        <li>
-                            <img src="/static/image/solution/case-logo/case5.png" alt="">
-                        </li>
-                        <li>
-                            <img src="/static/image/solution/case-logo/case6.png" alt="">
-                        </li>
 
-                        <li>
-                            <img src="/static/image/solution/case-logo/case7.png" alt="">
-                        </li>
-                        <li>
-                            <img src="/static/image/solution/case-logo/case8.png" alt="">
-                        </li>
-                        <li>
-                            <img src="/static/image/solution/case-logo/case9.png" alt="">
-                        </li>
-                        <li>
-                            <img src="/static/image/solution/case-logo/case11.png" alt="">
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -2590,6 +2562,26 @@
         });
         setTimeout(function () { obj.find('.case-nav .active').trigger('li'); }, 100);
     });
+
+    logoPoint(0);
+    function logoPoint(index) {
+        $.ajax({
+            url: "{:url('/index/logo_wall/getLogoByWhere')}",
+            data: { 'pid': 37, 'type_id': index },
+            type: 'get',
+            success: function (res) {
+                if (res.status === 200) {
+                    $('.case-imgs').empty();
+                    for (let item of res.data) {
+                        $('.case-imgs').append('<li><img src="' + item.img_url + '" alt=""></li>');
+                    }
+                }
+            },
+            error: function (err) {
+                console.log(err)
+            }
+        })
+    }
 </script>
 
 </html>

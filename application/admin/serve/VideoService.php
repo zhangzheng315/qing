@@ -27,7 +27,7 @@ class VideoService extends Common{
      * @return bool
      */
     public function videoCreate($param){
-        if ($param['pid'] == 0 || $param['theme_id']) {
+        if ($param['pid'] == 0 || $param['theme_id'] == 0) {
             $this->setError('请选择父类或主题');
             return false;
         }

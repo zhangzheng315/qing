@@ -307,6 +307,7 @@
         upload.render({
             elem:'.cover_img_url'
             ,url: "{:url('admin/common_file/uploadFile')}"
+            ,accept:'file'
             ,ext: 'jpg|jpeg|svg|png|gif'
             ,acceptMime: 'image/*'
             ,done: function(res){
