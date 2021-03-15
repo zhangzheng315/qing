@@ -9,6 +9,8 @@
     <meta name="description"  content="轻直播专注为医疗机构打造稳定安全的视频云平台，提供医学在线培训、手术直播、医学会议、医疗产品推介等全场景视频解决方案" />
     <link rel="stylesheet" href="/static/layui/css/layui.css">
     <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/common/banner_common.css">
+
     <script type='text/javascript' src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="/static/layui/layui.js"></script>
     <style>
@@ -1690,7 +1692,35 @@
             <div carousel-item class="lunbo-box">
                 {if(isset($banner_list) && $banner_list)}
                 {foreach $banner_list as $item}
-                <img src="{$item.img_url}" alt="">
+                <div class="banner-item">
+                    <img class="banner-img" src="{$item.img_url}" alt="">
+                    <div class="text-{$item.format}">
+                        <h2 style='font-size: {$item.title_size}px;
+                        font-weight: bold;
+                        color:{$item.title_color};
+                        text-align: {$item.format};'>{$item.title}</h2>
+                        <h5 style=' color: {$item.in_color};
+                        opacity: .8;
+                        font-size: {$item.in_size}px;
+                        width: 64%;
+                        margin: 78px auto 103px;
+                        text-align: {$item.format};
+                        line-height: 1.5;'>{$item.introduction}</h5>
+
+                        <a class="banner-a" href="" style='z-index: 10;
+                        display: block;
+                        width: 189px;
+                        height: 42px;
+                        color: {$item.button_color};
+                        text-align: center;
+                        line-height: 44px;
+                        margin:0 auto;
+                        font-size: {$item.button_size}px;
+                        background: #00CC99;
+                        border-radius: 21px;
+                        '>{$item.button_text}</a>
+                    </div>
+                </div>
                 {/foreach}
                 {/if}
             </div>
