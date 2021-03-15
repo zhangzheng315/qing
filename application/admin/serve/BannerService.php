@@ -40,6 +40,7 @@ class BannerService extends Common{
             'button_text' => $param['button_text'] ?: '',
             'button_color' => $param['button_color'] ?: '',
             'button_size' => $param['button_size'] ?: 12,
+            'format' => $param['format'] ?: 'left',
             'status' => $param['status'],
             'order' => $param['order'] ?: 0,
             'created_time' => time(),
@@ -134,7 +135,23 @@ class BannerService extends Common{
             'pid' => $pid,
         ];
         $res = $this->banner->where($where)->select();
-        return $res ? $res : false;
+        if (!$res) {
+            return [];
+        }
+        foreach ($res as &$item) {
+            if ($item['format'] == 'left') {
+                $item['width'] = '70%';
+            }else{
+                $item['width'] = '100%';
+            }
+
+            if ($item['format'] == 'right') {
+                $item['float'] = 'right';
+            }else{
+                $item['float'] = 'left';
+            }
+        }
+        return $res;
     }
 
 }
