@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>轻直播_企业直播服务平台,医疗直播领军者,营销直播定制服务商</title>
-    <meta name="keywords"  content="企业直播平台,医疗直播,营销直播,活动直播,直播定制服务"/>
+    <meta name="keywords"  content="企业直播平台,医疗直播,营销直播,活动直播,直播定制服务" />
     <meta name="description"
-           content="轻直播是国内知名的企业级直播定制化服务平台,服务全球500强,为企业提供医疗直播、手术直播、活动直播、会议直播、营销直播、年会直播等全场景解决方案,热线:400-920-1599。"/>
+         content="轻直播是国内知名的企业级直播定制化服务平台,服务全球500强,为企业提供医疗直播、手术直播、活动直播、会议直播、营销直播、年会直播等全场景解决方案,热线:400-920-1599。" />
     <link rel="stylesheet" href="/static/css/index/index.css">
     <link rel="stylesheet" href="/static/layui/css/layui.css">
     <link rel="stylesheet" href="/static/css/style.css">
@@ -16,23 +16,23 @@
 </head>
 
 <body>
-<!-- 首页 -->
-<div id="index">
-    <!-- 头部 -->
-    {include file="common/header"}
+    <!-- 首页 -->
+    <div id="index">
+        <!-- 头部 -->
+        {include file="common/header"}
 
-    <!-- 咨询版块 -->
-    {include file="common/siderbar-right"}
-    <!-- banner板块 -->
-    <div id="banner">
-        <div class="layui-carousel" id="banners">
-            <div carousel-item class="lunbo-box">
-                {if(isset($banner_list) && $banner_list)}
-                {foreach $banner_list as $item}
-                <div class="banner-item">
-                    <img class="banner-img" src="{$item.img_url}" alt="">
-                    <div class="text-{$item.format}">
-                        <h2 style='font-size: {$item.title_size}px;
+        <!-- 咨询版块 -->
+        {include file="common/siderbar-right"}
+        <!-- banner板块 -->
+        <div id="banner">
+            <div class="layui-carousel" id="banners">
+                <div carousel-item class="lunbo-box">
+                    {if(isset($banner_list) && $banner_list)}
+                    {foreach $banner_list as $item}
+                    <div class="banner-item">
+                        <img class="banner-img" src="{$item.img_url}" alt="">
+                        <div class="text-{$item.format}">
+                            <h2 style='font-size: {$item.title_size}px;
                             font-weight: bold;
                             color:{$item.title_color};
                             background: linear-gradient(257deg, #73FFE0 0%, #3EC0A5 100%);
@@ -40,7 +40,7 @@
                             text-align: {$item.format};
                             -webkit-text-fill-color: transparent;'>{$item.title}</h2>
 
-                        <h5 style=' color: {$item.in_color};
+                            <h5 style=' color: {$item.in_color};
                             opacity: .8;
                             font-size: {$item.in_size}px;
                             width: {$item.width};
@@ -48,8 +48,8 @@
                             text-align: {$item.format};
                             line-height: 1.5;'>{$item.introduction}</h5>
 
-                        {if($item.button_status == 1)}
-                        <a class="banner-a" href="{$item.button_link}" style='z-index: 10;
+                            {if($item.button_status == 1)}
+                            <a class="banner-a" href="{$item.button_link}" style='z-index: 10;
                             display: block;
                             width: 167px;
                             height: 44px;
@@ -59,7 +59,8 @@
                             line-height: 44px;
                             float: {$item.float};
                             font-size: {$item.button_size}px;'>{$item.button_text}</a>
-                        {/if}
+                            {/if}
+                        </div>
                     </div>
                     {/foreach}
                     {/if}
@@ -172,7 +173,7 @@
                             <button class="more"><a href="{:url('/index/video_cloud/index')}">了解更多</a>
                             </button>
                             <button class="free"><a href="http://login.lighos.com/signUp"
-                                                    target="_blank">免费试用</a></button>
+                                    target="_blank">免费试用</a></button>
                         </div>
                     </div>
                     <div class="product-item">
@@ -187,7 +188,7 @@
                         <div class="item-footer">
                             <button class="more"><a href="{:url('/index/customized_service/index')}">了解更多</a></button>
                             <button class="free"><a href="http://login.lighos.com/signUp"
-                                                    target="_blank">免费试用</a></button>
+                                    target="_blank">免费试用</a></button>
                         </div>
                     </div>
                     <div class="product-item">
@@ -201,7 +202,7 @@
                         <div class="item-footer">
                             <button class="more"><a href="{:url('/index/site_service/index')}">了解更多</a></button>
                             <button class="free"><a href="http://login.lighos.com/signUp"
-                                                    target="_blank">免费试用</a></button>
+                                    target="_blank">免费试用</a></button>
                         </div>
                     </div>
                 </div>
@@ -508,7 +509,7 @@
                                     as $item)}
                                     <li>
                                         <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>$item.pid])}"
-                                           style="display: flex;width: 100%;">
+                                            style="display: flex;width: 100%;">
                                             <div class="type">
                                                 {$item.pid_name}
                                             </div>
@@ -623,7 +624,7 @@
     function logoPoint(index) {
         $.ajax({
             url: "{:url('/index/logo_wall/getLogoByWhere')}",
-            data: {'pid': 1, 'type_id': index},
+            data: { 'pid': 1, 'type_id': index },
             type: 'get',
             success: function (res) {
                 if (res.status === 200) {
