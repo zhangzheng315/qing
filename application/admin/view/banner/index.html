@@ -74,6 +74,17 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">按钮</label>
+            <div class="layui-input-block">
+                <input type="text"  name="button_text" placeholder="请输入按钮文字" autocomplete="off" class="layui-input-inline layui-input button_text">
+                <div id="add_button_colorpicker"></div>
+                <input type="text"  name="button_color" placeholder="请输入颜色" autocomplete="off" class="layui-input-inline layui-input add_button_colorpicker">
+                <div class="layui-inline">
+                    <input type="number" min="12" name="button_size" placeholder="字体大小默认12像素" autocomplete="off" class="layui-input add_button_size">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
             <label class="layui-form-label">启用</label>
             <div class="layui-input-block">
                 <input name="status" value="1" type="checkbox" checked lay-skin="switch">
@@ -155,6 +166,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">按钮</label>
             <div class="layui-input-block">
+                <input type="text"  name="button_text" placeholder="请输入按钮文字" autocomplete="off" class="layui-input-inline layui-input button_text">
                 <div id="edit_button_colorpicker"></div>
                 <input type="text"  name="button_color" placeholder="请输入颜色" autocomplete="off" class="layui-input-inline layui-input edit_button_colorpicker">
                 <div class="layui-inline">
@@ -385,9 +397,12 @@
                         $('.pid').empty();
                         $('#introduction').val(res.data.introduction);
                         $('.edit_title_colorpicker').val(res.data.title_color);
-                        $('.edit_in_colorpicker').val(res.data.in_color);
                         $('.edit_title_size').val(res.data.title_size);
+                        $('.edit_in_colorpicker').val(res.data.in_color);
                         $('.edit_in_size').val(res.data.in_size);
+                        $('.button_text').val(res.data.button_text);
+                        $('.edit_button_colorpicker').val(res.data.button_color);
+                        $('.edit_button_size').val(res.data.button_size);
 
                         selected = res.data.pid;
                         if (res.data.status === 0) {
