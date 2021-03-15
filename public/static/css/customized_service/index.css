@@ -36,18 +36,24 @@
 }
 #customized nav .layui-container ul li {
   height: 60px;
-  font-size: 16px;
-  color: #333;
   box-sizing: border-box;
   cursor: pointer;
 }
+#customized nav .layui-container ul li a {
+  font-size: 16px;
+  color: #333;
+}
 #customized nav .layui-container ul li:hover {
-  color: #00CC99;
   border-bottom: 3px solid #00CC99;
 }
-#customized nav .layui-container ul .active {
+#customized nav .layui-container ul li:hover a {
   color: #00CC99;
+}
+#customized nav .layui-container ul .active {
   border-bottom: 3px solid #00CC99;
+}
+#customized nav .layui-container ul .active a {
+  color: #00CC99;
 }
 #customized #zhibo .layui-container .title {
   margin-bottom: 70px;

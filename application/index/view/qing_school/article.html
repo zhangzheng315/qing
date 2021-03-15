@@ -1040,7 +1040,7 @@
                 </div>
                 <div class="baikeMenuList">
                     <ul>
-                        {if isset($article)}
+                        {if(isset($article) && $article)}
                         {foreach($article['article_type'] as $item)}
                         <li class="baikeMenuContent {$item.id == 1?'active':''}" onclick="pointClick({$item.id})">
                             <a href="javascript:;">

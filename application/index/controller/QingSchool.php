@@ -184,6 +184,7 @@ class QingSchool extends Controller
     // 直播百科
     public function article()
     {
+        $param = request()->param();
         $article = $this->common_article_service->commonArticleList();
         $article_list = $this->common_article_service->articleByWhere(['pid'=>1]);
         return $this->fetch('',compact('article','article_list'));

@@ -17,6 +17,65 @@
     <script src="/static/layui/layui.js"></script>
     <!--mp4视频插件-->
     <script src="/static/common/js/jsmodern.min.js"></script>
+    <style>
+        .layui-nav {
+            background-color: #f2f4f7;
+            display: none;
+        }
+
+        .layui-nav .layui-nav-item a {
+            color: #333;
+        }
+
+        .layui-nav .layui-nav-item a:hover {
+            color: #333;
+        }
+
+        .layui-nav-child dd.layui-this {
+            background-color: #fff;
+            color: #00cc99;
+        }
+
+        .layui-nav .layui-nav-more {
+            border-top-color: #333;
+        }
+
+        .layui-nav .layui-nav-mored {
+            border-color: transparent transparent #333;
+        }
+
+        .layui-nav-bar {
+            display: none;
+            background-color: #fff;
+        }
+
+        .layui-nav-child {
+            left: 16%;
+            top: 75px;
+            min-width: 85%;
+        }
+
+        .layui-nav-child dd a {
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .layui-nav-child dd:hover a {
+            color: #00cc99 !important;
+        }
+
+        .layui-nav .layui-nav-child a:hover {
+            background-color: #f2f2f2;
+            color: #00cc99 !important;
+        }
+
+        .layui-nav .layui-nav-child dd.layui-this a,
+        .layui-nav-child dd.layui-this {
+            background-color: #00cc99 !important;
+            color: #fff
+        }
+    </style>
 </head>
 
 <body>
@@ -38,6 +97,16 @@
                     <button>登录</button>
                     <button>注册</button>
                 </div>
+                <ul class="layui-nav" lay-filter="leftNav">
+                    <li class="layui-nav-item">
+                        <a id="img-a" href=""><img src="//t.cn/RCzsdCq" class="layui-nav-img"><span
+                                class="name">11</span></a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;" data-id="1">账户中心</a></dd>
+                            <dd><a href="javascript:;" data-id="2">退出登录</a></dd>
+                        </dl>
+                    </li>
+                </ul>
             </div>
         </header>
 
@@ -291,6 +360,39 @@
         setTimeout(function () {
             obj.find('.tab-title .active').trigger('li');
         }, 100);
+    });
+</script>
+<script>
+    // 登录成功后显示个人信息
+    var tvInfo = JSON.parse(localStorage.getItem('tvInfo'))
+    console.log(tvInfo);
+    if (tvInfo.token) {
+        $('.layui-nav').show()
+        // 隐藏登录按钮
+        $('.login').hide();
+        $('.layui-nav-img').attr('src', tvInfo.avatar) // 头像
+        $('#img-a .name').html(tvInfo.name) // 昵称
+    }
+
+    // 提示框
+    layui.use('layer', function () {
+        var layer = layui.layer;
+    });
+
+    layui.use('element', function () {
+        var element = layui.element;
+        element.on('nav(leftNav)', function (ele) {
+            var id = ele.attr('data-id');
+            // console.log(id);
+            // 退出登录
+            if (id == 2) {
+                localStorage.removeItem('tvInfo')
+                layer.msg('您已退出登录');
+                setTimeout(() => {
+                    window.location.href = "/index/login/login.html"
+                }, 500);
+            }
+        });
     });
 </script>
 

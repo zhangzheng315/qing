@@ -16,4 +16,14 @@ class CustomizedService extends Controller
         $banner_list = $banner_service->bannerListByPid($pid);
         return $this->fetch('',compact('banner_list'));
     }
+
+    //定制化服务--app/小程序
+    public function applets()
+    {
+        $banner_service = new BannerService();
+        $data = request()->param();
+        $pid = isset($data['id']) ? $data['id'] : 13;
+        $banner_list = $banner_service->bannerListByPid($pid);
+        return $this->fetch('',compact('banner_list'));
+    }
 }
