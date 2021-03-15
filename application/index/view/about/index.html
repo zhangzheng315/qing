@@ -96,73 +96,32 @@
                 <div class="fazhan">
                     <div class="layui-container">
                         <div class="title">发展历程</div>
+                        {if(isset($development_list) && $development_list)}
                         <ul class="year">
-                            <li class="li-active">2020</li>
-                            <li>2019</li>
-                            <li>2018</li>
-                            <li>2017</li>
-                            <li>2016</li>
-                            <li>2015</li>
+                            {foreach($development_list as $key => $item)}
+                            <li class="{$key == 0 ? 'li-active' : ''}">{$item.time}</li>
+                            {/foreach}
+
                         </ul>
                         <div class="left-line"></div>
                         <ul class="dot">
+                            {foreach($development_list as $key => $item)}
                             <li>
                                 <div></div>
                             </li>
-                            <li>
-                                <div></div>
-                            </li>
-                            <li>
-                                <div></div>
-                            </li>
-                            <li>
-                                <div></div>
-                            </li>
-                            <li>
-                                <div></div>
-                            </li>
-                            <li>
-                                <div></div>
-                            </li>
+                            {/foreach}
                         </ul>
                         <div class="stories">
-                            <div class="year-story actives">
-                                <h4>2020</h4>
+                            {foreach($development_list as $key => $item)}
+                            <div class="year-story {$key == 0 ? 'actives' : ''}">
+                                <h4>{$item.time}</h4>
                                 <p><i>●</i>
-                                    <span>2020年2月，公司创始人在杭州创办直播实验室，开展直播技术平台的前期开发工作。</span>
+                                    <span>{$item.content}</span>
                                 </p>
                             </div>
-                            <div class="year-story">
-                                <h4>2019</h4>
-                                <p><i>●</i>
-                                    <span>2015年2月，公司创始人在杭州创办直播实验室，开展直播技术平台的前期开发工作。</span>
-                                </p>
-                            </div>
-                            <div class="year-story">
-                                <h4>2018</h4>
-                                <p><i>●</i>
-                                    <span>2015年2月，公司创始人在杭州创办直播实验室，开展直播技术平台的前期开发工作。</span>
-                                </p>
-                            </div>
-                            <div class="year-story">
-                                <h4>2017</h4>
-                                <p><i>●</i>
-                                    <span>2015年2月，公司创始人在杭州创办直播实验室，开展直播技术平台的前期开发工作。</span>
-                                </p>
-                            </div>
-                            <div class="year-story">
-                                <h4>2016</h4>
-                                <p><i>●</i>
-                                    <span>2015年2月，公司创始人在杭州创办直播实验室，开展直播技术平台的前期开发工作。</span>
-                                </p>
-                            </div>
-                            <div class="year-story">
-                                <h4>2015</h4>
-                                <p><i>●</i>
-                                    <span>2015年2月，公司创始人在杭州创办直播实验室，开展直播技术平台的前期开发工作。</span>
-                                </p>
-                            </div>
+                            {/foreach}
                         </div>
+                        {/if}
                     </div>
                 </div>
 
