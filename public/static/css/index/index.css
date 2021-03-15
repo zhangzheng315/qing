@@ -105,7 +105,7 @@
 #banner .layui-carousel .text-right {
   position: absolute;
   top: 25%;
-  right: 7%;
+  right: 16%;
 }
 #banner .layui-carousel .text-right h2 {
   font-size: 45px;
@@ -825,6 +825,75 @@
   #banner {
     height: 400px;
   }
+  #banner .layui-carousel .text-left {
+    position: absolute;
+    top: 17%;
+    left: 13%;
+  }
+  #banner .layui-carousel .text-left h2 {
+    font-size: 32px !important;
+    text-align: left;
+  }
+  #banner .layui-carousel .text-left h5 {
+    font-size: 14px !important;
+    width: 70%;
+    margin: 48px 0 63px !important;
+    line-height: 1.5;
+  }
+  #banner .layui-carousel .text-left .banner-a {
+    width: 127px !important;
+    height: 38px !important;
+    line-height: 38px !important;
+    font-size: 14px !important;
+  }
+  #banner .layui-carousel .text-center {
+    position: absolute;
+    top: 17% !important;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  #banner .layui-carousel .text-center h2 {
+    font-size: 32px !important;
+    text-align: center !important;
+  }
+  #banner .layui-carousel .text-center h5 {
+    font-size: 14px;
+    width: 100% !important;
+    margin: 48px 0 63px !important;
+    line-height: 1.5;
+    text-align: center !important;
+  }
+  #banner .layui-carousel .text-center .banner-a {
+    margin: 0 auto;
+    width: 127px !important;
+    height: 38px !important;
+    line-height: 38px !important;
+    font-size: 14px !important;
+  }
+  #banner .layui-carousel .text-right {
+    position: absolute;
+    top: 15%;
+    right: 5%;
+  }
+  #banner .layui-carousel .text-right h2 {
+    font-size: 35px !important;
+    text-align: right !important;
+  }
+  #banner .layui-carousel .text-right h5 {
+    width: 100% !important;
+    margin-left: 100%;
+    margin: 38px 0 63px !important;
+    text-align: right !important;
+    font-size: 14px !important;
+    line-height: 1.5;
+  }
+  #banner .layui-carousel .text-right .banner-a {
+    width: 127px !important;
+    height: 38px !important;
+    line-height: 38px !important;
+    font-size: 14px !important;
+    float: right !important;
+  }
   #banner .icons {
     width: 51%;
   }
@@ -1185,59 +1254,72 @@
   }
   #banner .text-left {
     position: absolute;
-    top: 15%;
-    left: 10%;
+    top: 15% !important;
+    left: 10% !important;
   }
   #banner .text-left h2 {
-    font-size: 22px;
+    font-size: 22px !important;
   }
   #banner .text-left h5 {
-    font-size: 14px;
+    font-size: 12px !important;
     width: 70%;
-    margin: 28px auto 33px;
+    margin: 28px 0 33px !important;
     line-height: 1.5;
   }
   #banner .text-left .banner-a {
-    z-index: 10;
-    display: block;
-    width: 167px;
-    height: 44px;
-    border: 1px solid #FFFFFF;
-    color: #fff;
+    width: 107px !important;
+    height: 32px !important;
     text-align: center;
-    line-height: 44px;
-    font-size: 18px;
+    line-height: 32px !important;
+    font-size: 12px !important;
   }
   #banner .text-center {
-    position: absolute;
-    top: 25%;
+    width: 90%;
+    top: 19% !important;
     left: 50%;
     transform: translateX(-50%);
   }
+  #banner .text-center h2 {
+    font-size: 22px !important;
+    text-align: center !important;
+  }
   #banner .text-center h5 {
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
+    width: 80% !important;
+    margin: 38px auto 43px !important;
+    text-align: center !important;
+    font-size: 12px !important;
   }
   #banner .text-center .banner-a {
     margin: 0 auto;
+    width: 107px !important;
+    height: 32px !important;
+    text-align: center;
+    line-height: 32px !important;
+    font-size: 12px !important;
   }
   #banner .text-right {
     position: absolute;
-    top: 25%;
-    right: 7%;
+    top: 20% !important;
+    right: 7% !important;
   }
   #banner .text-right h2 {
-    text-align: left;
+    font-size: 22px !important;
+    text-align: right !important;
   }
   #banner .text-right h5 {
-    width: 80%;
+    width: 100% !important;
     margin-left: 100%;
-    margin: 78px 0 103px;
-    text-align: left;
+    margin: 38px 0 43px !important;
+    text-align: right !important;
+    font-size: 12px !important;
   }
   #banner .text-right .banner-a {
-    float: left;
+    float: right !important;
+    width: 107px !important;
+    height: 32px !important;
+    text-align: center;
+    line-height: 32px !important;
+    font-size: 12px !important;
   }
   #banner .icons {
     top: 93%;

@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="/static/css/video_cloud/index.css">
     <link rel="stylesheet" href="/static/layui/css/layui.css">
     <link rel="stylesheet" href="/static/css/style.css">
+    <!-- banner部分的轮播样式 -->
+    <link rel="stylesheet" href="/static/css/common/banner_common.css">
     <script type='text/javascript' src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="/static/layui/layui.js"></script>
 </head>
@@ -26,7 +28,34 @@
                 <div carousel-item class="lunbo-box">
                     {if isset($banner_list)}
                     {foreach $banner_list as $item}
-                    <img src="{$item.img_url}" alt="">
+                    <div class="banner-item">
+                        <img class="banner-img" src="{$item.img_url}" alt="">
+                        <div class="text-left">
+                            <h2 style='color: #fff;font-size: {$item.title_size}px;font-weight: bold;
+                            color:{$item.title_color};
+                            background: linear-gradient(257deg, #73FFE0 0%, #3EC0A5 100%);
+                            -webkit-background-clip: text;
+                            text-align: left;
+                            -webkit-text-fill-color: transparent;'>{$item.title}</h2>
+
+                            <h5 style=' color: {$item.in_color};
+                            opacity: .8;
+                            font-size: {$item.in_size}px;
+                            width: 70%;
+                            margin: 78px 0 103px;
+                            line-height: 1.5;'>{$item.introduction}</h5>
+
+                            <a class="banner-a" href="" style='z-index: 10;
+                            display: block;
+                            width: 167px;
+                            height: 44px;
+                            border: 1px solid {$item.button_color};
+                            color: {$item.button_color};
+                            text-align: center;
+                            line-height: 44px;
+                            font-size: {$item.button_size}px;'>{$item.button_text}</a>
+                        </div>
+                    </div>
                     {/foreach}
                     {/if}
                 </div>
