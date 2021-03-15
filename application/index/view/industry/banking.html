@@ -387,6 +387,10 @@
                 font-weight: bold;
                 color: #666666;
                 line-height: 1.8;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3;
+                overflow: hidden;
 
             }
 
@@ -1873,10 +1877,11 @@
                     {foreach $banner_list as $item}
                     <div class="banner-item">
                         <img class="banner-img" src="{$item.img_url}" alt="">
-                        <div class="text-left">
-                            <h2 style='color: #fff;font-size: {$item.title_size}px;font-weight: bold;
+                        <div class="text-{$item.format}">
+                            <h2 style='font-size: {$item.title_size}px;
+                            font-weight: bold;
                             color:{$item.title_color};
-                            text-align: left;'>{$item.title}</h2>
+                            text-align: {$item.format};'>{$item.title}</h2>
 
                             <h5 style=' color: {$item.in_color};
                             opacity: .8;

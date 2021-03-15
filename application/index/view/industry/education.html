@@ -2252,13 +2252,11 @@
                     {foreach $banner_list as $item}
                     <div class="banner-item">
                         <img class="banner-img" src="{$item.img_url}" alt="">
-                        <div class="text-left">
-                            <h2 style='color: #fff;font-size: {$item.title_size}px;font-weight: bold;
+                        <div class="text-{$item.format}">
+                            <h2 style='font-size: {$item.title_size}px;
+                            font-weight: bold;
                             color:{$item.title_color};
-                            background: linear-gradient(257deg, #73FFE0 0%, #3EC0A5 100%);
-                            -webkit-background-clip: text;
-                            text-align: left;
-                            -webkit-text-fill-color: transparent;'>{$item.title}</h2>
+                            text-align: {$item.format};'>{$item.title}</h2>
 
                             <h5 style=' color: {$item.in_color};
                             opacity: .8;
@@ -2288,22 +2286,22 @@
             <div class="layui-container">
                 <div class="nav-content">
                     <li class="active">
-                        <a href="#section-1">痛点解析</a>
+                        <a class="transition" href="#section-1">痛点解析</a>
                     </li>
                     <li>
-                        <a href="#section-2">应用场景</a>
+                        <a class="transition" href="#section-2">应用场景</a>
                     </li>
                     <li>
-                        <a href="#section-3">功能特色</a>
+                        <a class="transition" href="#section-3">功能特色</a>
                     </li>
                     <li>
-                        <a href="#section-4">产品优势</a>
+                        <a class="transition" href="#section-4">产品优势</a>
                     </li>
                     <li>
-                        <a href="#section-5">客户案例</a>
+                        <a class="transition" href="#section-5">客户案例</a>
                     </li>
                     <li>
-                        <a href="#section-6">相关产品</a>
+                        <a class="transition" href="#section-6">相关产品</a>
                     </li>
                 </div>
             </div>
@@ -2629,6 +2627,19 @@
             }
         })
     }
+
+    // 锚点定位缓慢滚动
+    $(".transition").click(function () {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var $target = $(this.hash);
+            $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');
+            if ($target.length) {
+                var targetOffset = $target.offset().top;
+                $('html,body').animate({ scrollTop: targetOffset }, 400);
+                return false;
+            }
+        }
+    });
 </script>
 
 </html>

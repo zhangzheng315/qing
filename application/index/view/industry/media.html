@@ -64,7 +64,7 @@
 
         /* 痛点解析 */
         .difficulty-analysis {
-            padding-top: 60px;
+            padding-top: 80px;
             background: #ffffff;
             padding-bottom: 60px;
         }
@@ -85,14 +85,14 @@
 
         /* 应用场景 */
         .use-scene {
-            padding-top: 60px;
+            padding-top: 80px;
             background: #F2F4F7;
             padding-bottom: 75px;
         }
 
         /* 功能特色 */
         .pro-func {
-            padding-top: 61px;
+            padding-top: 81px;
             background: #236762;
         }
 
@@ -136,19 +136,19 @@
 
         /* 产品优势 */
         .pro-advantage {
-            padding-top: 78px;
+            padding-top: 108px;
             background: #ffffff;
         }
 
         /* 客户案例 */
         .custome-case {
-            padding-top: 100px;
+            padding-top: 120px;
             background: #ffffff;
         }
 
         /* 轻产品与服务 */
         .product-service {
-            padding-top: 66px;
+            padding-top: 106px;
             background: #F2F4F7;
             padding-bottom: 90px;
         }
@@ -554,6 +554,10 @@
                 margin-top: 26px;
                 font-size: 14px;
                 color: #666666;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3;
+                overflow: hidden;
             }
 
             .advantage-con>li:hover {
@@ -2245,13 +2249,11 @@
                     {foreach $banner_list as $item}
                     <div class="banner-item">
                         <img class="banner-img" src="{$item.img_url}" alt="">
-                        <div class="text-left">
-                            <h2 style='color: #fff;font-size: {$item.title_size}px;font-weight: bold;
+                        <div class="text-{$item.format}">
+                            <h2 style='font-size: {$item.title_size}px;
+                            font-weight: bold;
                             color:{$item.title_color};
-                            background: linear-gradient(257deg, #73FFE0 0%, #3EC0A5 100%);
-                            -webkit-background-clip: text;
-                            text-align: left;
-                            -webkit-text-fill-color: transparent;'>{$item.title}</h2>
+                            text-align: {$item.format};'>{$item.title}</h2>
 
                             <h5 style=' color: {$item.in_color};
                             opacity: .8;
@@ -2281,19 +2283,22 @@
             <div class="layui-container">
                 <div class="nav-content">
                     <li class="active">
-                        <a href="#section-1">痛点解析</a>
+                        <a class="transition" href="#section-1">痛点解析</a>
                     </li>
                     <li>
-                        <a href="#section-2">应用场景</a>
+                        <a class="transition" href="#section-2">应用场景</a>
                     </li>
                     <li>
-                        <a href="#section-3">功能特色</a>
+                        <a class="transition" href="#section-3">功能特色</a>
                     </li>
                     <li>
-                        <a href="#section-4">客户案例</a>
+                        <a class="transition" href="#section-4">产品优势</a>
                     </li>
                     <li>
-                        <a href="#section-5">相关产品</a>
+                        <a class="transition" href="#section-5">客户案例</a>
+                    </li>
+                    <li>
+                        <a class="transition" href="#section-6">相关产品</a>
                     </li>
                 </div>
             </div>
@@ -2429,7 +2434,7 @@
         </section>
 
         <!-- 产品优势 -->
-        <section id="section-3" class="pro-advantage">
+        <section id="section-4" class="pro-advantage">
             <div class="layui-container">
                 <h3 class="section-title">产品优势</h3>
                 <ul class="advantage-con">
@@ -2501,7 +2506,7 @@
             </div>
         </section>
         <!-- 客户案列 -->
-        <section id="section-4" class="custome-case">
+        <section id="section-5" class="custome-case">
             <div class="layui-container">
                 <h3 class="section-title">客户案例</h3>
                 <div class="case-nav">
@@ -2522,7 +2527,7 @@
         </section>
 
         <!-- 轻产品与服务 -->
-        <section id="section-5" class="product-service">
+        <section id="section-6" class="product-service">
             <div class="layui-container">
                 <h3 class="section-title">「轻」产品与服务</h3>
                 <ul class="service-con">
@@ -2627,6 +2632,19 @@
             }
         })
     }
+
+    // 锚点定位缓慢滚动
+    $(".transition").click(function () {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var $target = $(this.hash);
+            $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');
+            if ($target.length) {
+                var targetOffset = $target.offset().top;
+                $('html,body').animate({ scrollTop: targetOffset }, 400);
+                return false;
+            }
+        }
+    });
 </script>
 
 </html>
