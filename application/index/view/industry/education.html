@@ -9,6 +9,8 @@
     <meta name="description"  content="轻直播特有的沉浸式应用场景解决方案,符合多行业用户选择，独特双语直播模式，服务全球用户。" />
     <link rel="stylesheet" href="/static/layui/css/layui.css">
     <link rel="stylesheet" href="/static/css/style.css">
+    <!-- banner部分的轮播样式 -->
+    <link rel="stylesheet" href="/static/css/common/banner_common.css">
     <script type='text/javascript' src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="/static/layui/layui.js"></script>
     <style>
@@ -222,8 +224,9 @@
         .advantage-con>li:hover .p-icon_item_kaifa {
             background-image: url(/static/image/solution1/kaifa_white.svg);
         }
-         /* 客户案例品牌 */
-         .case-nav>li.active {
+
+        /* 客户案例品牌 */
+        .case-nav>li.active {
             background: #00cc99;
             border-radius: 20px;
         }
@@ -231,6 +234,7 @@
         .case-nav>li.active>span {
             color: #ffffff;
         }
+
         .case-nav>li::after,
         .case-nav>li::before {
             content: '';
@@ -242,21 +246,27 @@
             border-radius: 20px;
             z-index: 2;
         }
+
         .case-nav>li::before {
             transition: .4s;
             background: #00cc99;
             z-index: -1;
         }
-        .case-nav>li:hover::before,.case-nav>li:hover::after {
+
+        .case-nav>li:hover::before,
+        .case-nav>li:hover::after {
             width: 100%;
         }
+
         .case-nav>li:hover {
-                z-index: 1;
-                background: transparent;
-            }
+            z-index: 1;
+            background: transparent;
+        }
+
         .case-nav>li:hover>span {
             color: #ffffff;
         }
+
         @media screen and (min-width: 1200px) {
             .layui-container {
                 width: 1200px !important;
@@ -1093,7 +1103,7 @@
             }
 
 
-           /* 客户案例 */
+            /* 客户案例 */
             .case-nav {
                 display: flex;
                 justify-content: space-around;
@@ -1597,8 +1607,8 @@
                 color: #666666;
             }
 
-           /* 客户案例 */
-        .case-nav {
+            /* 客户案例 */
+            .case-nav {
                 display: flex;
                 justify-content: space-around;
                 margin-top: 50px;
@@ -2034,7 +2044,7 @@
                 align-items: center;
             }
 
-          
+
             .case-nav>li {
                 position: relative;
                 cursor: pointer;
@@ -2054,20 +2064,22 @@
                 position: relative;
                 cursor: pointer;
             }
+
             .case-nav>li:hover>span {
                 color: #ffffff;
             }
+
             .case-nav>li::after,
             .case-nav>li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 0;
-            height: 25px;
-            border-radius: 20px;
-            /* background-color: #ffffff; */
-            z-index: 0;
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 0;
+                height: 25px;
+                border-radius: 20px;
+                /* background-color: #ffffff; */
+                z-index: 0;
             }
 
 
@@ -2238,7 +2250,34 @@
                 <div carousel-item class="lunbo-box">
                     {if(isset($banner_list) && $banner_list)}
                     {foreach $banner_list as $item}
-                    <img src="{$item.img_url}" alt="">
+                    <div class="banner-item">
+                        <img class="banner-img" src="{$item.img_url}" alt="">
+                        <div class="text-left">
+                            <h2 style='color: #fff;font-size: {$item.title_size}px;font-weight: bold;
+                            color:{$item.title_color};
+                            background: linear-gradient(257deg, #73FFE0 0%, #3EC0A5 100%);
+                            -webkit-background-clip: text;
+                            text-align: left;
+                            -webkit-text-fill-color: transparent;'>{$item.title}</h2>
+
+                            <h5 style=' color: {$item.in_color};
+                            opacity: .8;
+                            font-size: {$item.in_size}px;
+                            width: 70%;
+                            margin: 78px 0 103px;
+                            line-height: 1.5;'>{$item.introduction}</h5>
+
+                            <a class="banner-a" href="" style='z-index: 10;
+                            display: block;
+                            width: 167px;
+                            height: 44px;
+                            border: 1px solid {$item.button_color};
+                            color: {$item.button_color};
+                            text-align: center;
+                            line-height: 44px;
+                            font-size: {$item.button_size}px;'>{$item.button_text}</a>
+                        </div>
+                    </div>
                     {/foreach}
                     {/if}
                 </div>
@@ -2479,7 +2518,7 @@
                     <li onclick="logoPoint(3)"><span>金融</span></li>
                     <li onclick="logoPoint(4)"><span>汽车</span></li>
                     <li onclick="logoPoint(5)"><span>科技</span></li>
-                    <li onclick="logoPoint(6)"><span>地产</span></li> 
+                    <li onclick="logoPoint(6)"><span>地产</span></li>
                 </div>
                 <div class="case-con">
                     <ul class="case-imgs active">
@@ -2565,8 +2604,8 @@
         });
     });
 
-     // 客户案例切换
-     $('#section-4').each(function (index, element) {
+    // 客户案例切换
+    $('#section-4').each(function (index, element) {
         var obj = $(this);
         obj.find('.case-nav').children().on('click li', function () {
             $(this).addClass('active').siblings().removeClass('active');
