@@ -40,6 +40,7 @@
                             -webkit-background-clip: text;
                             text-align: {$item.format};
                             -webkit-text-fill-color: transparent;'>{$item.title}</h2>
+
                         <h5 style=' color: {$item.in_color};
                             opacity: .8;
                             font-size: {$item.in_size}px;
@@ -47,6 +48,7 @@
                             margin: 78px 0 103px;
                             text-align: {$item.format};
                             line-height: 1.5;'>{$item.introduction}</h5>
+
                         <a class="banner-a" href="" style='z-index: 10;
                             display: block;
                             width: 167px;
@@ -633,6 +635,8 @@
         })
     }
 
+
+    // 数字递增
     let liveheight = $('#light-live').offset().top;
     $(window).scroll(function () {
         let scrollHeight = $(document).scrollTop();

@@ -9,8 +9,8 @@
     <meta name="keywords"  content="企业直播平台,医疗直播,营销直播,活动直播,直播定制服务"/>
     <meta name="description"
            content="轻直播是国内知名的企业级直播定制化服务平台,服务全球500强,为企业提供医疗直播、手术直播、活动直播、会议直播、营销直播、年会直播等全场景解决方案,热线:400-920-1599。"/>
-    <link rel="stylesheet" href="/static/css/caseCenter/case_item.css">
     <link rel="stylesheet" href="/static/layui/css/layui.css">
+    <link rel="stylesheet" href="/static/css/caseCenter/case_item.css">
     <link rel="stylesheet" href="/static/css/style.css">
     <script type='text/javascript' src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="/static/layui/layui.js"></script>
@@ -31,8 +31,18 @@
                 </div>
                 <div class="btns">
                     <a class="login" href="{:url('/index/login/login')}">登录</a>
-                    <a class="free-btn" href="http://login.lighos.com/signUp">免费试用</a>
+                    <a class="free-btn" href="http://login.lighos.com/signUp" target="_blank">免费试用</a>
                 </div>
+                <ul class="layui-nav" lay-filter="leftNav">
+                    <li class="layui-nav-item">
+                        <a id="img-a" href=""><img src="//t.cn/RCzsdCq" class="layui-nav-img"><span
+                                class="name">11</span></a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;" data-id="1">账户中心</a></dd>
+                            <dd><a href="javascript:;" data-id="2">退出登录</a></dd>
+                        </dl>
+                    </li>
+                </ul>
             </div>
         </div>
     </header>
@@ -309,6 +319,37 @@
             $('.hot-article-list').eq(1).show();
         }
     })
+
+    // 登录成功后显示个人信息
+    var tvInfo = JSON.parse(localStorage.getItem('tvInfo'))
+        if (tvInfo.token) {
+            $('.layui-nav').show()
+            // 隐藏登录按钮
+            $('.btns').hide();
+            $('.layui-nav-img').attr('src', tvInfo.avatar) // 头像
+            $('#img-a .name').html(tvInfo.name) // 昵称
+        }
+
+        // 提示框
+        layui.use('layer', function () {
+            var layer = layui.layer;
+        });
+
+        layui.use('element', function () {
+            var element = layui.element;
+            element.on('nav(leftNav)', function (ele) {
+                var id = ele.attr('data-id');
+                // console.log(id);
+                // 退出登录
+                if (id == 2) {
+                    localStorage.removeItem('tvInfo')
+                    layer.msg('您已退出登录');
+                    setTimeout(() => {
+                        window.location.href = "/index/login/login.html"
+                    }, 500);
+                }
+            });
+        });
 </script>
 
 </html>

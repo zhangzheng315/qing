@@ -41,6 +41,7 @@
   height: 60px;
   line-height: 60px;
   cursor: pointer;
+  box-sizing: border-box;
 }
 #service .site-nav .layui-container .nav-content li a {
   font-size: 16px;
@@ -89,13 +90,13 @@
   box-sizing: border-box;
 }
 #service .module .module-content li .text h5 {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
   color: #333;
   margin-bottom: 15px;
 }
 #service .module .module-content li .text p {
-  font-size: 16px;
+  font-size: 14px;
   color: #333;
   line-height: 1.5;
 }
@@ -484,7 +485,7 @@
     font-size: 18px;
   }
   #service .module .layui-container .module-content li .text p {
-    font-size: 14px;
+    font-size: 12px;
   }
   #service .module .layui-container button {
     width: 90px;
