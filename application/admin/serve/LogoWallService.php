@@ -30,7 +30,10 @@ class LogoWallService extends Common{
      */
     public function logoWallCreate($param){
         if(!isset($param['status'])) $param['status'] = 0;
-        $pid_name = $this->navigation->where(['id' => $param['pid']])->value('menu_name');
+        $pid_name = '';
+        if ($param['pid'] != 0) {
+            $pid_name = $this->navigation->where(['id' => $param['pid']])->value('menu_name');
+        }
         $type_name = $this->caseType->where(['id'=>$param['type_id']])->value('name');
         $data = [
             'img_url' => $param['img_url'],
@@ -85,16 +88,15 @@ class LogoWallService extends Common{
      */
     public function logoWallEdit($data)
     {
-        if ($data['pid'] == 0) {
-            $this->setError('请选择父类');
-            return false;
-        }
         if(!isset($data['status'])) $data['status'] = 0;
         if (isset($data['file'])) {
             //layui富文本自带file参数
             unset($data['file']);
         }
-        $pid_name = $this->navigation->where(['id' => $data['pid']])->value('menu_name');
+        $pid_name = '';
+        if ($data['pid'] != 0) {
+            $pid_name = $this->navigation->where(['id' => $data['pid']])->value('menu_name');
+        }
         $type_name = $this->caseType->where(['id'=>$data['type_id']])->value('name');
 
         $where = ['id' => $data['id']];
