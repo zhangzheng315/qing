@@ -23,7 +23,7 @@
     <div id="banner">
         <div class="layui-carousel" id="banners">
             <div carousel-item class="lunbo-box">
-                {if isset($banner_list)}
+                {if(isset($banner_list) && $banner_list)}
                 {foreach($banner_list as $item)}
                 <div class="lunbo-item">
                     <div class="hover">
