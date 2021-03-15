@@ -56,7 +56,7 @@
   opacity: 0.8;
   font-size: 16px;
   width: 70%;
-  margin: 78px auto 103px;
+  margin: 78px 0 103px;
   line-height: 1.5;
 }
 #banner .layui-carousel .text-left .banner-a {
@@ -81,6 +81,24 @@
   margin: 0 auto;
   text-align: center;
 }
+#banner .layui-carousel .text-center h2 {
+  font-size: 45px;
+  font-weight: bold;
+  color: #1DECFF;
+  background: linear-gradient(257deg, #73FFE0 0%, #3EC0A5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+#banner .layui-carousel .text-center h5 {
+  color: #fff;
+  opacity: 0.8;
+  font-size: 16px;
+  width: 100%;
+  margin: 78px 0 103px;
+  line-height: 1.5;
+  text-align: center;
+}
 #banner .layui-carousel .text-center .banner-a {
   margin: 0 auto;
 }
@@ -90,6 +108,12 @@
   right: 7%;
 }
 #banner .layui-carousel .text-right h2 {
+  font-size: 45px;
+  font-weight: bold;
+  color: #1DECFF;
+  background: linear-gradient(257deg, #73FFE0 0%, #3EC0A5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-align: left;
 }
 #banner .layui-carousel .text-right h5 {
@@ -97,6 +121,10 @@
   margin-left: 100%;
   margin: 78px 0 103px;
   text-align: left;
+  color: #fff;
+  opacity: 0.8;
+  font-size: 16px;
+  line-height: 1.5;
 }
 #banner .layui-carousel .text-right .banner-a {
   float: left;

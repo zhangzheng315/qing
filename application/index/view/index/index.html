@@ -33,19 +33,21 @@
                     <div class="banner-item">
                         <img class="banner-img" src="{$item.img_url}" alt="">
                         <div class="text-left">
-                            <h2 style="font-size: 45px;
+                            <!-- font-size: 45px;
                             font-weight: bold;
                             color: #1DECFF;
                             background: linear-gradient(257deg, #73FFE0 0%, #3EC0A5 100%);
                             -webkit-background-clip: text;
                             text-align: left;
-                            -webkit-text-fill-color: transparent;">企业级云视频定制服务平台</h2>
-                            <h5 style=" color: #fff;
+                            -webkit-text-fill-color: transparent; -->
+                            <h2 style="">企业级云视频定制服务平台</h2>
+                            <!-- color: #fff;
                             opacity: .8;
                             font-size: 16px;
                             width: 70%;
                             margin: 78px 0 103px;
-                            line-height: 1.5;">专注于企业级直播领域全案定制，让直播+迸发新的想象空间，
+                            line-height: 1.5; -->
+                            <h5 style=" ">专注于企业级直播领域全案定制，让直播+迸发新的想象空间，
                                 轻松打造企业客户专属直播间</h5>
                             <a class="banner-a" href="" style="z-index: 10;
                             display: block;
@@ -626,6 +628,8 @@
         })
     }
 
+
+    // 数字递增
     let liveheight = $('#light-live').offset().top;
     $(window).scroll(function () {
         let scrollHeight = $(document).scrollTop();
