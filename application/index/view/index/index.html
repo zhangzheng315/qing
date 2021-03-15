@@ -23,6 +23,8 @@
 
         <!-- 咨询版块 -->
         {include file="common/siderbar-right"}
+        <!--演示框 -->
+        {include file="common/order_box"}
         <!-- banner板块 -->
         <div id="banner">
             <div class="layui-carousel" id="banners">
@@ -32,7 +34,7 @@
                     {foreach $banner_list as $item}
                     <div class="banner-item">
                         <img class="banner-img" src="{$item.img_url}" alt="">
-                        <div class="text-center">
+                        <div class="text-left">
                             <h2 style='color: #fff;font-size: {$item.title_size}px;font-weight: bold;
                             color:{$item.title_color};
                             background: linear-gradient(257deg, #73FFE0 0%, #3EC0A5 100%);
@@ -152,6 +154,7 @@
                 </div>
             </div>
         </div>
+
 
         <!-- 产品与服务 -->
         <div id="product">
@@ -482,11 +485,11 @@
                                 {foreach($article_list[0] as $item)}
                                 <div class="lunbo-item">
                                     <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>$item.pid])}">
-                                    <img src="{$item.cover_img_url}" alt="">
-                                    <div class="text-box">
-                                        <h6>{$item.title}</h6>
-                                        <p>{$item.second_title}</p>
-                                    </div>
+                                        <img src="{$item.cover_img_url}" alt="">
+                                        <div class="text-box">
+                                            <h6>{$item.title}</h6>
+                                            <p>{$item.second_title}</p>
+                                        </div>
                                     </a>
                                 </div>
                                 {/foreach}
@@ -499,21 +502,22 @@
                             <div carousel-item>
                                 {for start="1" end="2" comparison="elt"}
                                 {if(isset($article_list[$i]))}
-                                    <ul>
-                                        {foreach($article_list[$i] as $item)}
-                                        <li>
-                                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>$item.pid])}" style="display: flex;width: 100%;">
+                                <ul>
+                                    {foreach($article_list[$i] as $item)}
+                                    <li>
+                                        <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>$item.pid])}"
+                                            style="display: flex;width: 100%;">
                                             <div class="type">{$item.pid_name}</div>
                                             <div class="titles">
                                                 <h6>{$item.title}</h6>
                                                 <p>{$item.second_title}</p>
                                                 <span>{$item.time}</span>
                                             </div>
-                                            </a>
-                                        </li>
-                                        {/foreach}
+                                        </a>
+                                    </li>
+                                    {/foreach}
 
-                                    </ul>
+                                </ul>
                                 {/if}
                                 {/for}
 
@@ -665,6 +669,8 @@
             });
         }
     })
+
+
 </script>
 
 </html>
