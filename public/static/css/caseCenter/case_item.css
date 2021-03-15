@@ -56,6 +56,55 @@
             text-align: center;
             box-sizing: border-box;
         }
+         /* 登录成功，显示头像样式 */
+         .layui-nav {
+            background-color: #f2f4f7;
+            display: none;
+        }
+
+        .layui-nav .layui-nav-item a {
+            color: #333;
+        }
+
+        .layui-nav .layui-nav-item a:hover {
+            color: #333;
+        }
+
+        .layui-nav-child dd.layui-this {
+            background-color: #fff;
+            color: #00cc99;
+        }
+
+        .layui-nav .layui-nav-more {
+            border-top-color: #333;
+        }
+
+        .layui-nav .layui-nav-mored {
+            border-color: transparent transparent #333;
+        }
+
+        .layui-nav-bar {
+            display: none;
+            background-color: #fff;
+        }
+        .layui-nav-child dd a {
+            text-align: center;
+        }
+
+        .layui-nav-child dd:hover a {
+            color: #00cc99;
+        }
+
+        .layui-nav .layui-nav-child a:hover {
+            background-color: #f2f2f2;
+            color: #00cc99
+        }
+
+        .layui-nav .layui-nav-child dd.layui-this a,
+        .layui-nav-child dd.layui-this {
+            background-color: #00cc99;
+            color: #fff
+        }
 
         @media screen and (min-width: 1300px) {
             .layui-container {
@@ -715,6 +764,16 @@
                background-color: #00cc99;
                color: #fff;
                border: 0;
+            }
+
+                /* 登录成功后，显示头像样式 */
+            .layui-nav>.layui-nav-item {
+                line-height: 65px;
+            }
+            .layui-nav-child {
+                left: 16%;
+                top: 62px;
+                min-width: 85%;
             }
         }
 
@@ -1385,6 +1444,16 @@
                color: #fff;
                border: 0;
             }
+
+                /* 登录成功后，显示头像样式 */
+            .layui-nav>.layui-nav-item {
+                line-height: 65px;
+            }
+            .layui-nav-child {
+                left: 16%;
+                top: 62px;
+                min-width: 85%;
+            }
         }
 
         @media screen and (max-width: 992px) and (min-width: 769px) {
@@ -1725,6 +1794,17 @@
            color: #fff;
            border: 0;
         }
+
+         /* 登录成功后，显示头像样式 */
+         .layui-nav>.layui-nav-item {
+            line-height: 56px;
+        }
+        .layui-nav-child {
+            left: 16%;
+            top: 62px;
+            min-width: 85%;
+        }
+
         }
 
         @media screen and (max-width: 768px) {
@@ -2051,6 +2131,15 @@
                background-color: #00cc99;
                color: #fff;
                border: 0;
+            }
+             /* 登录成功后，显示头像样式 */
+            .layui-nav>.layui-nav-item {
+                line-height: 45px;
+            }
+            .layui-nav-child {
+                left: 16%;
+                top: 62px;
+                min-width: 85%;
             }
         }
         .cause-con {

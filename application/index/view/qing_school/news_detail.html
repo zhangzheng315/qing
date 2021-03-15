@@ -86,6 +86,56 @@
         .article-body img {
             max-width: 100%;
         }
+         /* 登录成功，显示头像样式 */
+         .layui-nav {
+            background-color: #f2f4f7;
+            display: none;
+        }
+
+        .layui-nav .layui-nav-item a {
+            color: #333;
+        }
+
+        .layui-nav .layui-nav-item a:hover {
+            color: #333;
+        }
+
+        .layui-nav-child dd.layui-this {
+            background-color: #fff;
+            color: #00cc99;
+        }
+
+        .layui-nav .layui-nav-more {
+            border-top-color: #333;
+        }
+
+        .layui-nav .layui-nav-mored {
+            border-color: transparent transparent #333;
+        }
+
+        .layui-nav-bar {
+            display: none;
+            background-color: #fff;
+        }
+        .layui-nav-child dd a {
+            text-align: center;
+        }
+
+        .layui-nav-child dd:hover a {
+            color: #00cc99;
+        }
+
+        .layui-nav .layui-nav-child a:hover {
+            background-color: #f2f2f2;
+            color: #00cc99
+        }
+
+        .layui-nav .layui-nav-child dd.layui-this a,
+        .layui-nav-child dd.layui-this {
+            background-color: #00cc99;
+            color: #fff
+        }
+
         @media screen and (min-width: 1300px) {
 
             .layui-container {
@@ -728,6 +778,15 @@
                 background-color: #00cc99;
                 color: #fff;
                 border: 0;
+            }
+            /* 登录成功后，显示头像样式 */
+            .layui-nav>.layui-nav-item {
+                line-height: 65px;
+            }
+            .layui-nav-child {
+                left: 16%;
+                top: 62px;
+                min-width: 85%;
             }
         }
 
@@ -1373,6 +1432,16 @@
                 color: #fff;
                 border: 0;
             }
+
+            /* 登录成功后，显示头像样式 */
+            .layui-nav>.layui-nav-item {
+                line-height: 65px;
+            }
+            .layui-nav-child {
+                left: 16%;
+                top: 62px;
+                min-width: 85%;
+            }
         }
 
         @media screen and (max-width: 992px) and (min-width: 769px) {
@@ -1692,7 +1761,15 @@
                 border: 0;
             }
 
-
+              /* 登录成功后，显示头像样式 */
+            .layui-nav>.layui-nav-item {
+                line-height: 56px;
+            }
+            .layui-nav-child {
+                left: 16%;
+                top: 62px;
+                min-width: 85%;
+            }
         }
 
         @media screen and (max-width: 768px) {
@@ -2000,6 +2077,16 @@
                 margin-top: 20px;
                 transition: all .25s ease-in-out;
             }
+
+             /* 登录成功后，显示头像样式 */
+            .layui-nav>.layui-nav-item {
+                line-height: 45px;
+            }
+            .layui-nav-child {
+                left: 16%;
+                top: 62px;
+                min-width: 85%;
+            }
         }
 
 
@@ -2023,9 +2110,23 @@
                     <a class="login" href="{:url('/index/login/login')}">登录</a>
                     <a class="free-btn" href="http://login.lighos.com/signUp" target="_blank">免费试用</a>
                 </div>
+                <ul class="layui-nav" lay-filter="leftNav">
+                    <li class="layui-nav-item">
+                        <a id="img-a" href=""><img src="//t.cn/RCzsdCq" class="layui-nav-img"><span
+                                class="name">11</span></a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;" data-id="1">账户中心</a></dd>
+                            <dd><a href="javascript:;" data-id="2">退出登录</a></dd>
+                        </dl>
+                    </li>
+                </ul>
             </div>
         </div>
     </header>
+    <!--演示演示弹出框 -->
+    {include file="common/order_box"}
+    <!-- 咨询版块 -->
+    {include file="common/siderbar-right"}
     <!-- 导航栏 -->
     <nav>
         <div class="layui-container school-nav">
@@ -2292,6 +2393,38 @@
             $('.hot-article-list').eq(1).show();
         }
     })
+
+
+     // 登录成功后显示个人信息
+     var tvInfo = JSON.parse(localStorage.getItem('tvInfo'))
+        if (tvInfo.token) {
+            $('.layui-nav').show()
+            // 隐藏登录按钮
+            $('.btns').hide();
+            $('.layui-nav-img').attr('src', tvInfo.avatar) // 头像
+            $('#img-a .name').html(tvInfo.name) // 昵称
+        }
+
+        // 提示框
+        layui.use('layer', function () {
+            var layer = layui.layer;
+        });
+
+        layui.use('element', function () {
+            var element = layui.element;
+            element.on('nav(leftNav)', function (ele) {
+                var id = ele.attr('data-id');
+                // console.log(id);
+                // 退出登录
+                if (id == 2) {
+                    localStorage.removeItem('tvInfo')
+                    layer.msg('您已退出登录');
+                    setTimeout(() => {
+                        window.location.href = "/index/login/login.html"
+                    }, 500);
+                }
+            });
+        });
 </script>
 
 </html>
