@@ -47,10 +47,30 @@
                 <input type="text" name="title" placeholder="请输入" autocomplete="off" class="layui-input">
             </div>
         </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">标题颜色大小</label>
+            <div class="layui-input-block">
+                <div id="add_title_colorpicker"></div>
+                <input type="text" name="title_color" placeholder="请输入颜色" autocomplete="off" class="layui-input-inline layui-input add_title_colorpicker">
+                <div class="layui-inline">
+                    <input type="number" min="12" name="title_size" placeholder="字体大小默认12像素" autocomplete="off" class="layui-input add_title_size">
+                </div>
+            </div>
+        </div>
         <div class="layui-form-item layui-form-text">
             <label class="layui-form-label">简介</label>
             <div class="layui-input-block">
                 <textarea name="introduction" placeholder="请输入内容" class="layui-textarea"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">简介颜色大小</label>
+            <div class="layui-input-block">
+                <div id="add_in_colorpicker"></div>
+                <input type="text" name="in_color" placeholder="请输入颜色" autocomplete="off" class="layui-input-inline layui-input add_in_colorpicker">
+                <div class="layui-inline">
+                    <input type="number" min="12" name="in_size" placeholder="字体大小默认12像素" autocomplete="off" class="layui-input add_in_size">
+                </div>
             </div>
         </div>
         <div class="layui-form-item">
@@ -106,22 +126,43 @@
                 <input type="text" id="title" name="title" placeholder="请输入" autocomplete="off" class="layui-input">
             </div>
         </div>
-        <!--<div class="layui-form-item">
-            <label class="layui-form-label">字体颜色大小</label>
+        <div class="layui-form-item">
+            <label class="layui-form-label">标题颜色大小</label>
             <div class="layui-input-block">
-                    <div id="colorpicker"></div>
-                <input type="text" id="title_color" name="title_color" placeholder="请输入颜色" autocomplete="off" class="layui-input-inline layui-input">
+                <div id="edit_title_colorpicker"></div>
+                <input type="text" id="title_color" name="title_color" placeholder="请输入颜色" autocomplete="off" class="layui-input-inline layui-input edit_title_colorpicker">
                 <div class="layui-inline">
-                    <input type="number" id="title_size" min="12" name="title_size" placeholder="请输入字体大小" autocomplete="off" class="layui-input">
+                    <input type="number" id="title_size" min="12" name="title_size" placeholder="字体大小默认12像素" autocomplete="off" class="layui-input edit_title_size">
                 </div>
             </div>
-        </div>-->
+        </div>
         <div class="layui-form-item layui-form-text">
             <label class="layui-form-label">简介</label>
             <div class="layui-input-block">
                 <textarea name="introduction" id="introduction" placeholder="请输入内容" class="layui-textarea"></textarea>
             </div>
         </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">简介颜色大小</label>
+            <div class="layui-input-block">
+                <div id="edit_in_colorpicker"></div>
+                <input type="text" id="in_color" name="in_color" placeholder="请输入颜色" autocomplete="off" class="layui-input-inline layui-input edit_in_colorpicker">
+                <div class="layui-inline">
+                    <input type="number" id="in_size" min="12" name="in_size" placeholder="字体大小默认12像素" autocomplete="off" class="layui-input edit_in_size">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">按钮</label>
+            <div class="layui-input-block">
+                <div id="edit_button_colorpicker"></div>
+                <input type="text"  name="button_color" placeholder="请输入颜色" autocomplete="off" class="layui-input-inline layui-input edit_button_colorpicker">
+                <div class="layui-inline">
+                    <input type="number" min="12" name="button_size" placeholder="字体大小默认12像素" autocomplete="off" class="layui-input edit_button_size">
+                </div>
+            </div>
+        </div>
+
         <div class="layui-form-item">
             <label class="layui-form-label">启用</label>
             <div class="layui-input-block">
@@ -236,19 +277,64 @@
         var table = layui.table;
         var upload = layui.upload;
         var colorpicker = layui.colorpicker;
-        //渲染
+        //添加--标题颜色选择器
         colorpicker.render({
-            elem: '#colorpicker'  //绑定元素
+            elem: '#add_title_colorpicker'  //绑定元素
             ,predefine: true
             ,colors: ['#F00','#0F0','#00F','rgb(255, 69, 0)','rgba(255, 69, 0, 0.5)']
             ,done:function (color) {
-                $('#title_color').val(color);
+                $('.add_title_colorpicker').val(color);
+            }
+        });
+        //添加--简介颜色选择器
+        colorpicker.render({
+            elem: '#add_in_colorpicker'  //绑定元素
+            ,predefine: true
+            ,colors: ['#F00','#0F0','#00F','rgb(255, 69, 0)','rgba(255, 69, 0, 0.5)']
+            ,done:function (color) {
+                $('.add_in_colorpicker').val(color);
+            }
+        });
+        //添加--按钮颜色选择器
+        colorpicker.render({
+            elem: '#add_button_colorpicker'  //绑定元素0            ,predefine: true
+            ,colors: ['#F00','#0F0','#00F','rgb(255, 69, 0)','rgba(255, 69, 0, 0.5)']
+            ,done:function (color) {
+                $('.add_button_colorpicker').val(color);
+            }
+        });
+        //修改--标题颜色选择器
+        colorpicker.render({
+            elem: '#edit_title_colorpicker'  //绑定元素
+            ,predefine: true
+            ,colors: ['#F00','#0F0','#00F','rgb(255, 69, 0)','rgba(255, 69, 0, 0.5)']
+            ,done:function (color) {
+                $('.edit_title_colorpicker').val(color);
+            }
+        });
+        //修改--简介颜色选择器
+        colorpicker.render({
+            elem: '#edit_in_colorpicker'  //绑定元素
+            ,predefine: true
+            ,colors: ['#F00','#0F0','#00F','rgb(255, 69, 0)','rgba(255, 69, 0, 0.5)']
+            ,done:function (color) {
+                $('.edit_in_colorpicker').val(color);
+            }
+        });
+        //修改--按钮颜色选择器
+        colorpicker.render({
+            elem: '#edit_button_colorpicker'  //绑定元素
+            ,predefine: true
+            ,colors: ['#F00','#0F0','#00F','rgb(255, 69, 0)','rgba(255, 69, 0, 0.5)']
+            ,done:function (color) {
+                $('.edit_button_colorpicker').val(color);
             }
         });
         //图片上传接口
         upload.render({
             elem:'.fileUp'
             ,url: "{:url('admin/common_file/uploadFile')}"
+            ,accept:'file'
             ,ext: 'jpg|jpeg|svg|png|gif'
             ,done: function(res){
                 $('.img-show').attr('src',res.data.src);
@@ -298,6 +384,10 @@
                         $('.img_url').val(res.data.img_url);
                         $('.pid').empty();
                         $('#introduction').val(res.data.introduction);
+                        $('.edit_title_colorpicker').val(res.data.title_color);
+                        $('.edit_in_colorpicker').val(res.data.in_color);
+                        $('.edit_title_size').val(res.data.title_size);
+                        $('.edit_in_size').val(res.data.in_size);
 
                         selected = res.data.pid;
                         if (res.data.status === 0) {

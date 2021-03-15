@@ -273,6 +273,7 @@
         upload.render({
             elem:'.fileUp'
             ,url: "{:url('admin/common_file/uploadFile')}"
+            ,accept:'file'
             ,ext: 'jpg|jpeg|svg|png|gif'
             ,done: function(res){
                 $('.cover_img_show').attr('src',res.data.src);
