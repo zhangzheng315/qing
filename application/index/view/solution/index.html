@@ -50,7 +50,8 @@
                             text-align: {$item.format};
                             line-height: 1.5;'>{$item.introduction}</h5>
 
-                            <a class="banner-a" href="" style='z-index: 10;
+                            {if($item.button_status == 1)}
+                            <a class="banner-a" href="{$item.button_link}" style='z-index: 10;
                             display: block;
                             width: 167px;
                             height: 44px;
@@ -60,6 +61,7 @@
                             line-height: 44px;
                             float: {$item.float};
                             font-size: {$item.button_size}px;'>{$item.button_text}</a>
+                            {/if}
                         </div>
                     </div>
                     {/foreach}

@@ -1711,18 +1711,18 @@
                         text-align: {$item.format};
                         line-height: 1.5;'>{$item.introduction}</h5>
 
-                        <a class="banner-a" href="" style='z-index: 10;
-                        display: block;
-                        width: 189px;
-                        height: 42px;
-                        color: {$item.button_color};
-                        text-align: center;
-                        line-height: 44px;
-                        margin:0 auto;
-                        font-size: {$item.button_size}px;
-                        background: #00CC99;
-                        border-radius: 21px;
-                        '>{$item.button_text}</a>
+                        {if($item.button_status == 1)}
+                        <a class="banner-a" href="{$item.button_link}" style='z-index: 10;
+                            display: block;
+                            width: 167px;
+                            height: 44px;
+                            border: 1px solid {$item.button_color};
+                            color: {$item.button_color};
+                            text-align: center;
+                            line-height: 44px;
+                            float: {$item.float};
+                            font-size: {$item.button_size}px;'>{$item.button_text}</a>
+                        {/if}
                     </div>
                 </div>
                 {/foreach}
@@ -2018,15 +2018,7 @@
     <section id="section-4" class="custome-case">
         <div class="layui-container">
             <h3 class="section-title">客户案例</h3>
-            <div class="case-nav">
-                <li class="active" onclick="logoPoint(0)"><span>全部</span></li>
-                <li onclick="logoPoint(1)"><span>医疗</span></li>
-                <li onclick="logoPoint(2)"><span>教育</span></li>
-                <li onclick="logoPoint(3)"><span>金融</span></li>
-                <li onclick="logoPoint(4)"><span>汽车</span></li>
-                <li onclick="logoPoint(5)"><span>科技</span></li>
-                <li onclick="logoPoint(6)"><span>地产</span></li>
-            </div>        
+
             <div class="case-con">
                 <ul class="case-imgs active">
 
