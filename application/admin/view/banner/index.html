@@ -85,6 +85,14 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">格式</label>
+            <div class="layui-input-block">
+                <input type="radio" name="format" value=left title="居左" checked>
+                <input type="radio" name="format" value="center" title="居中">
+                <input type="radio" name="format" value="right" title="居右">
+            </div>
+        </div>
+        <div class="layui-form-item">
             <label class="layui-form-label">启用</label>
             <div class="layui-input-block">
                 <input name="status" value="1" type="checkbox" checked lay-skin="switch">
@@ -174,7 +182,14 @@
                 </div>
             </div>
         </div>
-
+        <div class="layui-form-item">
+            <label class="layui-form-label">格式</label>
+            <div class="layui-input-block format">
+                <input type="radio" name="format" value=left title="居左" checked>
+                <input type="radio" name="format" value="center" title="居中">
+                <input type="radio" name="format" value="right" title="居右">
+            </div>
+        </div>
         <div class="layui-form-item">
             <label class="layui-form-label">启用</label>
             <div class="layui-input-block">
@@ -403,6 +418,7 @@
                         $('.button_text').val(res.data.button_text);
                         $('.edit_button_colorpicker').val(res.data.button_color);
                         $('.edit_button_size').val(res.data.button_size);
+                        $('.format').empty();
 
                         selected = res.data.pid;
                         if (res.data.status === 0) {
@@ -421,6 +437,10 @@
                                 childSub(item.sub)
                             }
                         }
+
+                        $('.format').append(`<input type="radio" name="format" value=left title="居左" ${res.data.format==="left" ? "checked" : "" }>
+                                            <input type="radio" name="format" value="center" title="居中" ${res.data.format==="center" ? "checked" : ""}>
+                                            <input type="radio" name="format" value="right" title="居右" ${res.data.format==="right" ? "checked" : ""}>`)
 
                         form.render();
                     }
