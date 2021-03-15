@@ -39,7 +39,7 @@ class BannerService extends Common{
             'in_color' => $param['in_color'] ?: '',
             'in_size' => $param['in_size'] ?: 12,
             'button_status' => $param['button_status'],
-            'button_link' => $param['link'] ?: '',
+            'button_link' => $param['button_link'] ?: '',
             'button_text' => $param['button_text'] ?: '',
             'button_color' => $param['button_color'] ?: '',
             'button_size' => $param['button_size'] ?: 12,
