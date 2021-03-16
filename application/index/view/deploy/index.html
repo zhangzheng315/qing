@@ -21,7 +21,12 @@
 <div id="deploy">
     <!-- 头部 -->
     {include file="common/header"}
-
+       <!--预约演示弹出框 -->
+    {include file="common/order_box"}
+    <!-- 咨询版块 -->
+    {include file="common/siderbar-right"}
+    <!-- 免费试用版块 -->
+    {include file="common/free_box"}
     <!-- banner -->
     <div id="banner">
         <div class="layui-carousel" id="banners">
@@ -198,7 +203,7 @@
             <div class="fiveg-content">
                 <h2>顶级视频部署架构</h2>
                 <h5>更符合政企、金融机构、学校、新媒体等的视频应用</h5>
-                <button><a href="http://login.lighos.com/signUp" target="_blank">免费使用</a></button>
+                <button class="free_button"><a href="javascript:;">免费使用</a></button>
             </div>
 
         </div>
@@ -222,6 +227,11 @@
             , interval: 3000 // 轮播间隔时间
         });
     });
+    // 免费试用弹出框
+    $('.free_button').on('click', function() {
+            $('#free-container').show();
+            $('.q-modal').show();
+    })
 </script>
 
 </html>
