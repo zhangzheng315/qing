@@ -107,6 +107,12 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">推荐</label>
+            <div class="layui-input-block">
+                <input name="recommend" value="1" type="checkbox" lay-skin="switch">
+            </div>
+        </div>
+        <div class="layui-form-item">
             <label class="layui-form-label">启用</label>
             <div class="layui-input-block">
                 <input name="status" value="1" type="checkbox" checked lay-skin="switch">
@@ -227,6 +233,12 @@
             <label class="layui-form-label">视频学院首页</label>
             <div class="layui-input-block">
                 <input name="video_selected" id="video_selected" value="1" type="checkbox" lay-skin="switch">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">推荐</label>
+            <div class="layui-input-block">
+                <input name="recommend" id="recommend" value="1" type="checkbox" lay-skin="switch">
             </div>
         </div>
         <div class="layui-form-item">
@@ -492,6 +504,7 @@
                 , {field: 'theme_name',title:'视频主题'}
                 , {field: 'title', title: '标题'}
                 , {field: 'video_selected', title: '内容中心'}
+                , {field: 'recommend', title: '推荐视频'}
                 , {field: 'browse', title: '浏览量'}
                 , {field: 'order', title: '排序'}
                 , {field: 'status', title: '当前状态'}
@@ -549,6 +562,7 @@
                             title: '详情',
                             area: ['900px', '800px'],
                             content: $('#edit'),
+                            anim: 4,
                         });
                         let index = articleEdit();
 
@@ -570,6 +584,12 @@
                             $('#status').removeAttr('checked');
                         } else {
                             $('#status').attr('checked', true);
+                        }
+                        //状态
+                        if (res.data.recommend === 0) {
+                            $('#recommend').removeAttr('checked');
+                        } else {
+                            $('#recommend').attr('checked', true);
                         }
 
                         if (res.data.video_selected === 0) {

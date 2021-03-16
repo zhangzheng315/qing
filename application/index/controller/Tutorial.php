@@ -12,6 +12,7 @@ class Tutorial extends Controller
         $data = request()->param();
         $video_service = new VideoService();
         $info = $video_service->videoInfo($data);
-        return $this->fetch('',compact('info'));
+        $more_video = $video_service->moreLiveVideo();
+        return $this->fetch('',compact('info','more_video'));
     }
 }

@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>轻直播_视频教程</title>
-    <meta name="keywords"  content="轻直播,直播视频教程" />
+    <meta name="keywords"  content="轻直播,直播视频教程"/>
     <meta name="description"
-         content="轻直播是国内知名的企业级直播定制化服务平台,服务全球500强,为企业提供医疗直播、手术直播、活动直播、会议直播、营销直播、年会直播等全场景解决方案,热线:400-920-1599。" />
+           content="轻直播是国内知名的企业级直播定制化服务平台,服务全球500强,为企业提供医疗直播、手术直播、活动直播、会议直播、营销直播、年会直播等全场景解决方案,热线:400-920-1599。"/>
     <link rel="stylesheet" href="/static/css/tutorial/index.css">
     <link rel="stylesheet" href="/static/layui/css/layui.css">
     <link rel="stylesheet" href="/static/css/style.css">
@@ -79,235 +79,215 @@
 </head>
 
 <body>
-    <div id="tutorial">
-        <header>
-            <div class="layui-container flex-box">
-                <div class="logo">
-                    <a href="">
-                        <img src="/static/image/logo.png" alt="">
-                    </a>
-                </div>
-                <div class="layui-form-item">
-                    <div class="layui-input-block flex-box">
+<div id="tutorial">
+    <header>
+        <div class="layui-container flex-box">
+            <div class="logo">
+                <a href="">
+                    <img src="/static/image/logo.png" alt="">
+                </a>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block flex-box">
 
+                </div>
+            </div>
+            <a href="{:url('/')}">轻直播首页</a>
+            <div class="login flex-box">
+                <button>登录</button>
+                <button>注册</button>
+            </div>
+            <ul class="layui-nav" lay-filter="leftNav">
+                <li class="layui-nav-item">
+                    <a id="img-a" href=""><img src="//t.cn/RCzsdCq" class="layui-nav-img"><span
+                            class="name">11</span></a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" data-id="1">账户中心</a></dd>
+                        <dd><a href="javascript:;" data-id="2">退出登录</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <!--演示演示弹出框 -->
+    {include file="common/order_box"}
+    <!-- 咨询版块 -->
+    {include file="common/siderbar-right"}
+    <nav class="nav-second flex-box">
+        <div class="layui-container">
+            <a class="active" href="{:url('/index/qing_school/videoCourse')}">首页</a>
+            <i class="layui-icon layui-icon-right"></i>
+            <a class="active" href="{:url('/index/qing_school/courseSecond')}">{$info['pid_name']}</a>
+            <i class="layui-icon layui-icon-right"></i>
+            <span>{$info['theme_name']}</span>
+        </div>
+    </nav>
+
+    <div class="video-box">
+        <div class="layui-container flex-box">
+            <!-- 视频播放区域 -->
+            <div id="video">
+                <video id="videoShow" src="{$info['video_url']}"></video>
+                <!-- <span class="VideoBtn"><img src="/static/image/about/bofang.png"></span>
+            <img class="video-hover" src="/static/image/about/video.png" alt=""> -->
+            </div>
+            <div class="video-list">
+                <div class="list-head">
+                    <h4>{$info['theme_name']}</h4>
+                    <p>主讲老师：轻直播/{$info['browse']}人在浏览</p>
+                </div>
+                <div class="list-body">
+                    <div class="title">
+                        <h6>介绍说明</h6>
+                        <p>轻直播产品介绍<span>{$info['catalog']['all_dur']}</span></p>
                     </div>
                 </div>
-                <a href="{:url('/')}">轻直播首页</a>
-                <div class="login flex-box">
-                    <button>登录</button>
-                    <button>注册</button>
-                </div>
-                <ul class="layui-nav" lay-filter="leftNav">
-                    <li class="layui-nav-item">
-                        <a id="img-a" href=""><img src="//t.cn/RCzsdCq" class="layui-nav-img"><span
-                                class="name">11</span></a>
-                        <dl class="layui-nav-child">
-                            <dd><a href="javascript:;" data-id="1">账户中心</a></dd>
-                            <dd><a href="javascript:;" data-id="2">退出登录</a></dd>
-                        </dl>
+                <div class="list-content">
+                    <ul>
+                        {foreach $info['catalog']['catalog'] as $item}
+                        <li class="{$info['id'] == $item['id'] ? 'active':''}">
+                            <a href="{:url('/index/tutorial/index',['browse'=>1,'id'=>$item['id']])}">
+                                <img src="/static/image/tutorial/video_btn.png" alt="">
+                                <span>{$item['title']}</span>
+                                <i>{$item['duration']}</i>
+                            </a>
+                        </li>
+                        {/foreach}
+                    </ul>
+                    <!--<ul>
+                    <h6>第三课 发起直播</h6>
+                    <li>
+                        <img src="/static/image/tutorial/video_btn.png" alt="">
+                        <span>创建直播频道</span>
+                        <i>00:15:24</i>
                     </li>
-                </ul>
-            </div>
-        </header>
-        <!--演示演示弹出框 -->
-        {include file="common/order_box"}
-        <!-- 咨询版块 -->
-        {include file="common/siderbar-right"}
-        <nav class="nav-second flex-box">
-            <div class="layui-container">
-                <a class="active" href="{:url('/index/qing_school/videoCourse')}">首页</a>
-                <i class="layui-icon layui-icon-right"></i>
-                <a class="active" href="{:url('/index/qing_school/courseSecond')}">{$info['pid_name']}</a>
-                <i class="layui-icon layui-icon-right"></i>
-                <span>{$info['theme_name']}</span>
-            </div>
-        </nav>
-
-        <div class="video-box">
-            <div class="layui-container flex-box">
-                <!-- 视频播放区域 -->
-                <div id="video">
-                    <video id="videoShow" src="{$info['video_url']}"></video>
-                    <!-- <span class="VideoBtn"><img src="/static/image/about/bofang.png"></span>
-                <img class="video-hover" src="/static/image/about/video.png" alt=""> -->
-                </div>
-                <div class="video-list">
-                    <div class="list-head">
-                        <h4>{$info['theme_name']}</h4>
-                        <p>主讲老师：轻直播/{$info['browse']}人在浏览</p>
-                    </div>
-                    <div class="list-body">
-                        <div class="title">
-                            <h6>介绍说明</h6>
-                            <p>轻直播产品介绍<span>{$info['catalog']['all_dur']}</span></p>
-                        </div>
-                    </div>
-                    <div class="list-content">
-                        <ul>
-                            {foreach $info['catalog']['catalog'] as $item}
-                            <li class="{$info['id'] == $item['id'] ? 'active':''}">
-                                <a href="{:url('/index/tutorial/index',['browse'=>1,'id'=>$item['id']])}">
-                                    <img src="/static/image/tutorial/video_btn.png" alt="">
-                                    <span>{$item['title']}</span>
-                                    <i>{$item['duration']}</i>
-                                </a>
-                            </li>
-                            {/foreach}
-                        </ul>
-                        <!--<ul>
-                        <h6>第三课 发起直播</h6>
-                        <li>
-                            <img src="/static/image/tutorial/video_btn.png" alt="">
-                            <span>创建直播频道</span>
-                            <i>00:15:24</i>
-                        </li>
-                        <li>
-                            <img src="/static/image/tutorial/video_btn.png" alt="">
-                            <span>创建直播频道</span>
-                            <i>00:15:24</i>
-                        </li>
-                        <li>
-                            <img src="/static/image/tutorial/video_btn.png" alt="">
-                            <span>创建直播频道</span>
-                            <i>00:15:24</i>
-                        </li>
-                    </ul>-->
-                    </div>
+                    <li>
+                        <img src="/static/image/tutorial/video_btn.png" alt="">
+                        <span>创建直播频道</span>
+                        <i>00:15:24</i>
+                    </li>
+                    <li>
+                        <img src="/static/image/tutorial/video_btn.png" alt="">
+                        <span>创建直播频道</span>
+                        <i>00:15:24</i>
+                    </li>
+                </ul>-->
                 </div>
             </div>
         </div>
-
-        <div class="nav-tab">
-            <div class="tab-title">
-                <div class="layui-container">
-                    <span class="active">课程介绍</span>
-                    <span>视频课时</span>
-                </div>
-            </div>
-            <div class="tab-content">
-                <div class="layui-container">
-                    <div class="content-item active ">
-                        <div class="item-box flex-box">
-                            <div class="item-left">
-                                <section>
-                                    {$info['content']}
-                                </section>
-                            </div>
-                            <div class="item-right">
-                                <h6>猜你想学</h6>
-                                <div class="right-item">
-                                    <img src="/static/image/qingschool/bg_big.png" alt="">
-                                    <h5>如何在电脑上开启直播...</h5>
-                                    <p class="flex-box">
-                                        <span>轻直播</span>
-                                        <span>1217人在浏览</span>
-                                    </p>
-                                    <p class="free">免费</p>
-                                </div>
-                                <div class="right-item">
-                                    <img src="/static/image/qingschool/bg_big.png" alt="">
-                                    <h5>如何在电脑上开启直播...</h5>
-                                    <p class="flex-box">
-                                        <span>轻直播</span>
-                                        <span>1217人在浏览</span>
-                                    </p>
-                                    <p class="free">免费</p>
-                                </div>
-                                <div class="right-item">
-                                    <img src="/static/image/qingschool/bg_big.png" alt="">
-                                    <h5>如何在电脑上开启直播...</h5>
-                                    <p class="flex-box">
-                                        <span>轻直播</span>
-                                        <span>1217人在浏览</span>
-                                    </p>
-                                    <p class="free">免费</p>
-                                </div>
-                                <div class="right-item">
-                                    <img src="/static/image/qingschool/bg_big.png" alt="">
-                                    <h5>如何在电脑上开启直播...</h5>
-                                    <p class="flex-box">
-                                        <span>轻直播</span>
-                                        <span>1217人在浏览</span>
-                                    </p>
-                                    <p class="free">免费</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content-item">
-                        <div class="item-box flex-box">
-                            <div class="item-left">
-                                <section class="section">
-                                    <h5 class="flex-box"><i></i><span>介绍说明</span></h5>
-                                    <p class="flex-box active">
-                                        <img src="/static/image/tutorial/video_b.png" alt="">
-                                        <span>{$info['theme_name']}</span>
-                                        <span>{$info['catalog']['all_dur']}</span>
-                                    </p>
-                                </section>
-                                <!--<section class="section">
-                                <h5 class="flex-box"><i></i><span>第一课 创建频道</span></h5>
-                                <p class="flex-box">
-                                    <img src="/static/image/tutorial/video_b.png" alt="">
-                                    <span>轻直播操作入门课程</span>
-                                    <span>00:15:24</span>
-                                </p>
-                                <p class="flex-box">
-                                    <img src="/static/image/tutorial/video_b.png" alt="">
-                                    <span>轻直播操作入门课程</span>
-                                    <span>00:15:24</span>
-                                </p>
-                                <p class="flex-box">
-                                    <img src="/static/image/tutorial/video_b.png" alt="">
-                                    <span>轻直播操作入门课程</span>
-                                    <span>00:15:24</span>
-                                </p>
-                            </section>-->
-                                <section class="section">
-                                    {foreach $info['catalog']['catalog'] as $item}
-                                    <p class="flex-box">
-                                        <img src="/static/image/tutorial/video_b.png" alt="">
-                                        <span>{$item['title']}</span>
-                                        <span>{$item.duration}</span>
-                                    </p>
-                                    {/foreach}
-                                </section>
-                            </div>
-                            <div class="item-right">
-                                <h6>猜你想学</h6>
-                                <div class="right-item">
-                                    <img src="/static/image/qingschool/bg_big.png" alt="">
-                                    <h5>如何在电脑上开启直播...</h5>
-                                    <p class="flex-box">
-                                        <span>轻直播</span>
-                                        <span>1217人在浏览</span>
-                                    </p>
-                                    <p class="free">免费</p>
-                                </div>
-                                <div class="right-item">
-                                    <img src="/static/image/qingschool/bg_big.png" alt="">
-                                    <h5>如何在电脑上开启直播...</h5>
-                                    <p class="flex-box">
-                                        <span>轻直播</span>
-                                        <span>1217人在浏览</span>
-                                    </p>
-                                    <p class="free">免费</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="func-free">
-            <h3>全功能免费试用，0成本体验轻直播带来的改变</h3>
-            <button>免费体验</button>
-        </div>
-
-        {include file="common/footer"}
-
     </div>
+
+    <div class="nav-tab">
+        <div class="tab-title">
+            <div class="layui-container">
+                <span class="active">课程介绍</span>
+                <span>视频课时</span>
+            </div>
+        </div>
+        <div class="tab-content">
+            <div class="layui-container">
+                <div class="content-item active ">
+                    <div class="item-box flex-box">
+                        <div class="item-left">
+                            <section>
+                                {$info['content']}
+                            </section>
+                        </div>
+                        <div class="item-right">
+                            <h6>猜你想学</h6>
+                            {if($more_video['new_video'])}
+                            {foreach($more_video['new_video'] as $item)}
+                            <div class="right-item">
+                                <a href="/index/tutorial/index?browse=1&id={$item.id}">
+                                    <img src="{$item.cover_img_url}" alt="">
+                                    <h5>{$item.title}</h5>
+                                    <p class="flex-box">
+                                        <span>轻直播</span>
+                                        <span>{$item.browse}人在浏览</span>
+                                    </p>
+                                    <p class="free">免费</p>
+                                </a>
+                            </div>
+                            {/foreach}
+                            {/if}
+
+                        </div>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <div class="item-box flex-box">
+                        <div class="item-left">
+                            <section class="section">
+                                <h5 class="flex-box"><i></i><span>介绍说明</span></h5>
+                                <p class="flex-box active">
+                                    <img src="/static/image/tutorial/video_b.png" alt="">
+                                    <span>{$info['theme_name']}</span>
+                                    <span>{$info['catalog']['all_dur']}</span>
+                                </p>
+                            </section>
+                            <!--<section class="section">
+                            <h5 class="flex-box"><i></i><span>第一课 创建频道</span></h5>
+                            <p class="flex-box">
+                                <img src="/static/image/tutorial/video_b.png" alt="">
+                                <span>轻直播操作入门课程</span>
+                                <span>00:15:24</span>
+                            </p>
+                            <p class="flex-box">
+                                <img src="/static/image/tutorial/video_b.png" alt="">
+                                <span>轻直播操作入门课程</span>
+                                <span>00:15:24</span>
+                            </p>
+                            <p class="flex-box">
+                                <img src="/static/image/tutorial/video_b.png" alt="">
+                                <span>轻直播操作入门课程</span>
+                                <span>00:15:24</span>
+                            </p>
+                        </section>-->
+                            <section class="section">
+                                {foreach $info['catalog']['catalog'] as $item}
+                                <p class="flex-box">
+                                    <img src="/static/image/tutorial/video_b.png" alt="">
+                                    <span>{$item['title']}</span>
+                                    <span>{$item.duration}</span>
+                                </p>
+                                {/foreach}
+                            </section>
+                        </div>
+                        <div class="item-right">
+                            <h6>猜你想学</h6>
+                            <div class="right-item">
+                                <img src="/static/image/qingschool/bg_big.png" alt="">
+                                <h5>如何在电脑上开启直播...</h5>
+                                <p class="flex-box">
+                                    <span>轻直播</span>
+                                    <span>1217人在浏览</span>
+                                </p>
+                                <p class="free">免费</p>
+                            </div>
+                            <div class="right-item">
+                                <img src="/static/image/qingschool/bg_big.png" alt="">
+                                <h5>如何在电脑上开启直播...</h5>
+                                <p class="flex-box">
+                                    <span>轻直播</span>
+                                    <span>1217人在浏览</span>
+                                </p>
+                                <p class="free">免费</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="func-free">
+        <h3>全功能免费试用，0成本体验轻直播带来的改变</h3>
+        <button>免费体验</button>
+    </div>
+
+    {include file="common/footer"}
+
+</div>
 </body>
 <script src="/static/common/js/header-footer.js"></script>
 <script>
