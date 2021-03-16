@@ -93,21 +93,26 @@
   z-index: 9;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 5px;
+  display: none;
 }
 #case-center #jingxuan .layui-container .anlis li .hover .logo-img {
-  width: 149px;
-  height: 54px;
+  display: block;
+  margin: 25% auto 0;
+  width: 160px;
 }
 #case-center #jingxuan .layui-container .anlis li:nth-child(3n) {
   margin-right: 0;
 }
 #case-center #jingxuan .layui-container .anlis li:nth-child(n + 4) {
   margin-bottom: 0;
+}
+#case-center #jingxuan .layui-container .anlis li:hover .hover {
+  display: block;
 }
 #case-center #all-case {
   background-color: #F2F4F7;
