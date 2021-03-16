@@ -617,22 +617,22 @@
                 <form action="" class="order-form" name="orderForm">
                     <div class="header">获得预约演示</div>
                     <div class="order-row order-form-item">
-                        <input type="text" placeholder="请填写您的姓名" class="order-input" id="name" name="name">
+                        <input type="text" placeholder="请填写您的姓名" class="order-input" id="order_name" name="name">
                     </div>
                     <div class="order-row order-form-item">
-                        <input type="text" placeholder="请填写公司名称" class="order-input" id="company" name="company">
+                        <input type="text" placeholder="请填写公司名称" class="order-input" id="order_company" name="company">
                     </div>
                     <div class="order-row order-form-item">
-                        <input type="text" placeholder="请填写所在行业" class="order-input" id="industry" name="industry">
+                        <input type="text" placeholder="请填写所在行业" class="order-input" id="order_industry" name="industry">
                     </div>
                     <div class="order-row order-form-item">
-                        <input type="text" placeholder="请填写邮箱" class="order-input" id="email" name="email">
+                        <input type="text" placeholder="请填写邮箱" class="order-input" id="order_email" name="email">
                     </div>
                     <div class="order-row order-form-item">
-                        <input type="text" placeholder="请填写手机号" class="order-input" id="phone" name="phone">
+                        <input type="text" placeholder="请填写手机号" class="order-input" id="order_phone" name="phone">
                     </div>
                     <div class="order-row order-form-item">
-                        <textarea rows="3" placeholder="需求描述" class="order-input" id="describe" name="describe"></textarea>
+                        <textarea rows="3" placeholder="需求描述" class="order-input" id="order_describe" name="describe"></textarea>
                     </div>
                     <label class="order-checkbox-wrapper">
                         <span class="order-checkbox">
@@ -658,18 +658,19 @@
             $(this).toggleClass('order-checkbox-checked');
         })
         $('.order-close').on('click', function () {
+             resetForm();
             $('#order-container').hide();
             $('.q-modal').hide();
         })
        
 
         $('.order-btn').on('click', function() {
-            let name = $('#name').val();
-            let phone = $('#phone').val();
-            let company = $('#company').val();
-            let email = $('#email').val();
-            let industry = $('#industry').val();
-            let describe = $('#describe').val();
+            let name = $('#order_name').val();
+            let phone = $('#order_phone').val();
+            let company = $('#order_company').val();
+            let email = $('#order_email').val();
+            let industry = $('#order_industry').val();
+            let describe = $('#order_describe').val();
             let phoneReg = /^1[0-9]{10}$/; // 校验手机号码
             
             if(!$('.order-checkbox').hasClass('order-checkbox-checked')) {
@@ -697,17 +698,29 @@
                     },
                     type: 'post',
                     success: (res) => {
-                        console.log(res);
+                        // console.log(res);
+                        if(res.status == 200) {
+                            layer.msg(res.message);
+                        } else {
+                            layer.msg(res.message);
+                        }
                     },
-                    error: (res) => {
-                        console.log(res);
+                    error: (err) => {
+                         layer.msg(err);
                     }
                 })
             }
-
-
-
         })
+
+        // 重置form表单
+        function resetForm() {
+           $('#order_name').val('');
+           $('#order_phone').val('');
+           $('#order_company').val('');
+           $('#order_email').val('');
+           $('#order_industry').val('');
+           $('#order_describe').val('');
+        }
 
         
     </script>

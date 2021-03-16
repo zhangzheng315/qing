@@ -70,6 +70,8 @@
             font-size: 12px;
             color: rgba(0, 0, 0, .65);
             vertical-align: top;
+            border: 1px solid #e5e5e5;
+            border-radius: 5px;
         }
 
         .free-row {
@@ -80,21 +82,53 @@
             zoom: 1;
             display: block;
         }
+        .phone_prefix {
+            display: inline-block;
+            padding: 0 20px;
+            /* height: 32px; */
+            border-right: 1px solid #e5e5e5;
+        }
+        .verification_code {
+           cursor: pointer;
+        }
+        .free-row>.pwd_icon {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            /* top: 50%;
+            transform: translateY(-50%); */
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            cursor: pointer;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        .free-row>span.show_pwd{
+            background-image: url(/static/image/common/pasword.svg);
+        }
+        .free-row>span.hide_pwd{
+            background-image: url(/static/image/common/text.svg);
+        }
+        /* .free-row>span>img {
+            width: 22px;
+            height: 22px;
+        } */
 
         .free-row>.free-input {
             position: relative;
             display: inline-block;
-            width: 100%;
+            width: 76%;
             box-sizing: border-box;
             outline: none;
             background-color: #fff;
-            border: 1px solid #e5e5e5;
+            border: none;
             transition: all .3s;
         }
 
-        .free-input:focus {
+        /* .free-input:focus {
             border: 1px solid #00cc99;
-        }
+        } */
 
         .free-input::-webkit-input-placeholder {
             font-size: 13px;
@@ -620,19 +654,26 @@
                         <input type="text" placeholder="请填写您的姓名" class="free-input">
                     </div>
                     <div class="free-row free-form-item">
-                        <input type="text" placeholder="请填写公司名称" class="free-input">
+                        <input type="password" placeholder="请输入密码(6-30位字符)" class="free-input input_pwd">
+                        <span class="pwd_icon show_pwd">
+                            <!-- <img src="/static/image/common/pasword.svg" alt=""> -->
+                        </span>
                     </div>
-                    <div class="free-row free-form-item">
+                    <!-- <div class="free-row free-form-item">
                         <input type="text" placeholder="请填写所在行业" class="free-input">
                     </div>
                     <div class="free-row free-form-item">
                         <input type="text" placeholder="请填写邮箱" class="free-input">
-                    </div>
+                    </div> -->
                     <div class="free-row free-form-item">
+                        <span class="phone_prefix">+86</span>
                         <input type="text" placeholder="请填写手机号" class="free-input">
                     </div>
                     <div class="free-row free-form-item">
-                        <textarea name="" id="" rows="3" placeholder="需求描述" class="free-input"></textarea>
+                        <input type="text" placeholder="请输入验证码" class="free-input input_pwd">
+                        <span class="verification_code">
+                            获取验证码
+                        </span>
                     </div>
                     <label class="free-checkbox-wrapper">
                         <span class="free-checkbox">
@@ -661,7 +702,62 @@
             $('.q-modal').hide();
         })
 
-        
+        // 是否显示密码
+        $('.pwd_icon').on('click', function() {
+           if($(this).hasClass('show_pwd')) {
+               $(this).removeClass('show_pwd');
+               $(this).addClass('hide_pwd');
+               $('.input_pwd').attr('type','text');
+           } else {
+               $(this).removeClass('hide_pwd');
+               $(this).addClass('show_pwd');
+               $('.input_pwd').attr('type','password');
+           }
+        })
+        $('.free-input').on('focus', function() {
+            $(this).parent().css({
+                'border': '1px solid #00cc99'
+            })
+        })
+
+        $('.verification_code').on('click', function() {
+            let phone = '18259991030';
+           if(phone == '') {
+               layer.msg('请输入手机号');
+               return false;
+           } else {
+              let reg = /^1[3|4|5|6|7|8|9][0-9]{9}$/;
+             let yanzheng = reg.test(phone);
+             if(yanzheng) {
+            //     $.ajax({
+            //      url: "{:url('/index/live/liveSendCode')}",
+            //      data: {
+            //          'mobile': phone
+            //      },
+            //      type: 'post',
+            //      success: res => {
+                    
+            //      }
+            //  });
+             let i = 10;
+             let timerText = i + 's重新获取';
+             $('.verification_code')[0].innerText = timerText;
+             let timer = setInterval(()=> {
+                 i--;
+                 console.log(i);
+                 timerText = i + 's重新获取';
+                 $('.verification_code')[0].innerText = timerText;
+                 if(i == 0) {
+                    $('.verification_code')[0].innerText = '重新获取';
+                    clearInterval(timer);
+                 }
+             },1000)
+
+             }
+           }
+
+
+        })
     </script>
 </body>
 
