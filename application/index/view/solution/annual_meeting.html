@@ -9,6 +9,8 @@
     <meta name="description"  content="“营销+直播”，让带货更简单，助力商家实现流量高效变现。适用于商业购物、大型商业直播、产品直播、带货直播等营销场景" />
     <link rel="stylesheet" href="/static/layui/css/layui.css">
     <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/common/banner_common.css">
+
     <script type='text/javascript' src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="/static/layui/layui.js"></script>
     <style>
@@ -1650,7 +1652,36 @@
             <div carousel-item class="lunbo-box">
                 {if(isset($banner_list) && $banner_list)}
                 {foreach $banner_list as $item}
-                <img src="{$item.img_url}" alt="">
+                <div class="banner-item">
+                    <img class="banner-img" src="{$item.img_url}" alt="">
+                    <div class="text-{$item.format}">
+                        <h2 style='font-size: {$item.title_size}px;
+                        font-weight: bold;
+                        color:{$item.title_color};
+                        text-align: {$item.format};'>{$item.title}</h2>
+                        <h5 style=' color: {$item.in_color};
+                        opacity: .8;
+                        font-size: {$item.in_size}px;
+                        width: 49%;
+                        margin: 78px auto 103px;
+                        text-align: {$item.format};
+                        line-height: 1.5;'>{$item.introduction}</h5>
+
+                        {if($item.button_status == 1)}
+                        <a class="banner-a" href="javascript:;" style='z-index: 10;
+                            display: block;
+                            margin: 0 auto;
+                            width: 189px;
+                            height: 42px;
+                            background: #00CC99;
+                            color: {$item.button_color};
+                            text-align: center;
+                            line-height: 44px;
+                            border-radius:21px;
+                            font-size: {$item.button_size}px;'>{$item.button_text}</a>
+                        {/if}
+                    </div>
+                </div>
                 {/foreach}
                 {/if}
             </div>
@@ -1678,77 +1709,6 @@
             </div>
         </div>
     </nav>
-    <!-- 痛点解析 -->
-    <!-- <section id="section-1" class="difficulty-analysis">
-        <div class="layui-container">
-            <h3 class="section-title">痛点解析</h3>
-            <div class="flex con-padding">
-                <ul class="difficulty-left">
-                   <li>
-                      <div>
-                          痛点1
-                      </div>
-                       <p>
-                        医疗机构分支多，医务工作者分散，线下组织培训成本高
-                       </p>
-                   </li>
-                   <li>
-                    <div>
-                        痛点2
-                    </div>
-                     <p>
-                        医疗资源分布不均，基层医院难以触达优质资源
-                     </p>
-                   </li>
-                   <li>
-                    <div>
-                        痛点3
-                    </div>
-                     <p>
-                        线下学术会议、医学交流峰会成本高，人员奔波
-                     </p>
-                   </li>
-                   <li>
-                    <div>
-                        痛点4
-                    </div>
-                     <p>
-                        医药和器械企业对外服务网络覆盖有限、效果弱
-                     </p>
-                   </li>
-                </ul>
-                <div class="difficulty-right">
-                    <div class="right-imgcon">
-                        <img src="/static/image/solution/difficulty1.png" alt="">
-                    </div>
-                    <h3>轻直播企业培训解决方案</h3>
-                    <p>轻直播提供稳定可靠、多重鉴权的金融直播平台，全球部署的CDN节点加速播放、自定义授权观看、大数据分析等丰富功能，助力企业获客。
-                    </p>
-                    <div class="live-group-btn">
-                        <a href="">咨询详情</a>
-                        <a href="" class="q-ml--36">免费试用</a>
-                    </div>
-                </div>
-             </div>
-        </div>
-    </section> -->
-    <!-- 手机端痛点解析 -->
-    <!-- <section id="m-difficulty-analysis">
-        <div class="layui-container">
-            <h3 class="m-section-title">痛点解析</h3>
-            <div class="m-difficulty-right">
-                <div class="right-imgcon">
-                    <img src="/static/image/solution/difficulty1.png" alt="">
-                </div>
-                <h3>轻直播金融保险解决方案</h3>
-                <p>轻直播提供稳定可靠、多重鉴权的金融直播平台，全球部署的CDN节点加速播放、自定义授权观看、大数据分析等丰富功能，助力企业获客。</p>
-                <div class="live-group-btn">
-                    <a href="">咨询详情</a>
-                    <a href="" class="q-ml--36">免费试用</a>
-                </div>
-            </div>
-        </div>
-    </section> -->
     <!-- 产品优势 -->
     <section id="section-1" class="pro-advantage">
         <div class="layui-container">
@@ -2137,5 +2097,10 @@
              }
          })
      }
+
+     // 预约按钮
+    $('.banner-a').click(function(){
+         console.log(123)
+     })
 </script>
 </html>
