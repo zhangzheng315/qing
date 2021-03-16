@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>轻直播_企业直播服务平台,医疗直播领军者,营销直播定制服务商</title>
-    <meta name="keywords"  content="企业直播平台,医疗直播,营销直播,活动直播,直播定制服务"/>
+    <meta name="keywords"  content="企业直播平台,医疗直播,营销直播,活动直播,直播定制服务" />
     <meta name="description"
-           content="轻直播是国内知名的企业级直播定制化服务平台,服务全球500强,为企业提供医疗直播、手术直播、活动直播、会议直播、营销直播、年会直播等全场景解决方案,热线:400-920-1599。"/>
+         content="轻直播是国内知名的企业级直播定制化服务平台,服务全球500强,为企业提供医疗直播、手术直播、活动直播、会议直播、营销直播、年会直播等全场景解决方案,热线:400-920-1599。" />
     <link rel="stylesheet" href="/static/css/index/index.css">
     <link rel="stylesheet" href="/static/layui/css/layui.css">
     <link rel="stylesheet" href="/static/css/style.css">
@@ -16,25 +16,25 @@
 </head>
 
 <body>
-<!-- 首页 -->
-<div id="index">
-    <!-- 头部 -->
-    {include file="common/header"}
+    <!-- 首页 -->
+    <div id="index">
+        <!-- 头部 -->
+        {include file="common/header"}
 
-   <!--演示演示弹出框 -->
-   {include file="common/order_box"}
-   <!-- 咨询版块 -->
-   {include file="common/siderbar-right"}
-    <!-- banner板块 -->
-    <div id="banner">
-        <div class="layui-carousel" id="banners">
-            <div carousel-item class="lunbo-box">
-                {if(isset($banner_list) && $banner_list)}
-                {foreach $banner_list as $item}
-                <div class="banner-item">
-                    <img class="banner-img" src="{$item.img_url}" alt="">
-                    <div class="text-{$item.format}">
-                        <h2 style='font-size: {$item.title_size}px;
+        <!--演示演示弹出框 -->
+        {include file="common/order_box"}
+        <!-- 咨询版块 -->
+        {include file="common/siderbar-right"}
+        <!-- banner板块 -->
+        <div id="banner">
+            <div class="layui-carousel" id="banners">
+                <div carousel-item class="lunbo-box">
+                    {if(isset($banner_list) && $banner_list)}
+                    {foreach $banner_list as $item}
+                    <div class="banner-item">
+                        <img class="banner-img" src="{$item.img_url}" alt="">
+                        <div class="text-{$item.format}">
+                            <h2 style='font-size: {$item.title_size}px;
                             font-weight: bold;
                             color:{$item.title_color};
                             background: linear-gradient(257deg, #73FFE0 0%, #3EC0A5 100%);
@@ -42,7 +42,7 @@
                             text-align: {$item.format};
                             -webkit-text-fill-color: transparent;'>{$item.title}</h2>
 
-                        <h5 style=' color: {$item.in_color};
+                            <h5 style=' color: {$item.in_color};
                             opacity: .8;
                             font-size: {$item.in_size}px;
                             width: {$item.width};
@@ -50,8 +50,8 @@
                             text-align: {$item.format};
                             line-height: 1.5;'>{$item.introduction}</h5>
 
-                        {if($item.button_status == 1)}
-                        <a class="banner-a" href="{$item.button_link}" style='z-index: 10;
+                            {if($item.button_status == 1)}
+                            <a class="banner-a" href="{$item.button_link}" style='z-index: 10;
                             display: block;
                             width: 167px;
                             height: 44px;
@@ -61,16 +61,16 @@
                             line-height: 44px;
                             float: {$item.float};
                             font-size: {$item.button_size}px;'>{$item.button_text}</a>
-                        {/if}
+                            {/if}
+                        </div>
                     </div>
+                    {/foreach}
+                    {/if}
                 </div>
-                {/foreach}
-                {/if}
             </div>
-        </div>
 
-        <!-- 6个圆图标 -->
-        <!-- <div class="icons">
+            <!-- 6个圆图标 -->
+            <!-- <div class="icons">
           <ul>
             <li>
                 <div><img src="/static/image/index/seo.png" alt=""></div>
@@ -94,463 +94,463 @@
             </li>
           </ul>
         </div>-->
-        <!-- 主打产品功能模块 -->
-        <div id="high-lights">
+            <!-- 主打产品功能模块 -->
+            <div id="high-lights">
+                <div class="layui-container">
+                    <ul class="stars">
+                        <li>
+                            <a href="">
+                                <div>
+                                    <img src="/static/image/index1/fangan.svg" alt="">
+                                    <h6>医疗直播方案</h6>
+                                </div>
+                                <p>真正全科室覆盖</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{:url('/index/more_live/index')}">
+                                <div>
+                                    <img src="/static/image/index1/daquan.svg" alt="">
+                                    <h6>视频功能大全</h6>
+                                </div>
+                                <p>图文+视频，直观介绍</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div>
+                                    <img src="/static/image/index1/xuanze.svg" alt="">
+                                    <h6>为何选择我们</h6>
+                                </div>
+                                <p>稳定，安全，快速</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div>
+                                    <img src="/static/image/index1/h5.svg" alt="">
+                                    <h6>私有云部署</h6>
+                                </div>
+                                <p>数据私有化隔离</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{:url('/index/qing_school/videoCourse')}">
+                                <div>
+                                    <img src="/static/image/index1/blog.svg" alt="">
+                                    <h6>线上发布会直播</h6>
+                                </div>
+                                <p>全行业场景运用</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div>
+                                    <img src="/static/image/index1/fangan.svg" alt="">
+                                    <h6>轻直播学院</h6>
+                                </div>
+                                <p>轻教学，快速上手</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 产品与服务 -->
+        <div id="product">
             <div class="layui-container">
-                <ul class="stars">
-                    <li>
-                        <a href="">
-                            <div>
-                                <img src="/static/image/index1/fangan.svg" alt="">
-                                <h6>医疗直播方案</h6>
-                            </div>
-                            <p>真正全科室覆盖</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{:url('/index/more_live/index')}">
-                            <div>
-                                <img src="/static/image/index1/daquan.svg" alt="">
-                                <h6>视频功能大全</h6>
-                            </div>
-                            <p>图文+视频，直观介绍</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div>
-                                <img src="/static/image/index1/xuanze.svg" alt="">
-                                <h6>为何选择我们</h6>
-                            </div>
-                            <p>稳定，安全，快速</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div>
-                                <img src="/static/image/index1/h5.svg" alt="">
-                                <h6>私有云部署</h6>
-                            </div>
-                            <p>数据私有化隔离</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{:url('/index/qing_school/videoCourse')}">
-                            <div>
-                                <img src="/static/image/index1/blog.svg" alt="">
-                                <h6>线上发布会直播</h6>
-                            </div>
-                            <p>全行业场景运用</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div>
-                                <img src="/static/image/index1/fangan.svg" alt="">
-                                <h6>轻直播学院</h6>
-                            </div>
-                            <p>轻教学，快速上手</p>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <!-- 产品与服务 -->
-    <div id="product">
-        <div class="layui-container">
-            <h2 class="title">「轻」产品与服务</h2>
-            <div class="product-content">
-                <div class="product-item">
-                    <div class="item-head">
-                        <img src="/static/image/index1/chanping.svg" alt="">
-                        <h5>视频云服务</h5>
-                    </div>
-                    <div class="item-body">
-                        <p>企业级分布式混合云部署，自有第三代直播云技术加持，全球3000+的直播节点，具备8K直播能力，全新网页发起直播，千万级高并发无延迟。
-                        </p>
-                    </div>
-                    <div class="item-footer">
-                        <button class="more"><a href="{:url('/index/video_cloud/index')}">了解更多</a>
-                        </button>
-                        <button class="free"><a href="http://login.lighos.com/signUp"
-                                                target="_blank">免费试用</a></button>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="item-head">
-                        <img src="/static/image/index1/dingzhihua.svg" alt="">
-                        <h5>定制化服务</h5>
-                    </div>
-                    <div class="item-body">
-                        <p>7x24小时响应，深度品牌专属定制，提供灵活、可拓展的API/SDK接口，支持二次开发和接入第三方OA、ERP、CRM等企业办公应用集成服务。
-                        </p>
-                    </div>
-                    <div class="item-footer">
-                        <button class="more"><a href="{:url('/index/customized_service/index')}">了解更多</a></button>
-                        <button class="free"><a href="http://login.lighos.com/signUp"
-                                                target="_blank">免费试用</a></button>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="item-head">
-                        <img src="/static/image/index1/fuwu.svg" alt="">
-                        <h5>现场服务</h5>
-                    </div>
-                    <div class="item-body">
-                        <p>基于用户角度触发，超万次直播服务经验，从方案设计到现场执行，重现每一个细节的把控，致力于为用户提供全行业场景直播解决方案。</p>
-                    </div>
-                    <div class="item-footer">
-                        <button class="more"><a href="{:url('/index/site_service/index')}">了解更多</a></button>
-                        <button class="free"><a href="http://login.lighos.com/signUp"
-                                                target="_blank">免费试用</a></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 轻直播为您创造价值 -->
-    <div id="light-live">
-        <div class="layui-container">
-            <h2 class="title">轻量不轻质，简约不简单</h2>
-            <div class="live-content">
-                <div class="live-item">
-                    <div class="item-top">
-                        <div id="numone" class="nums">8</div>
-                        <span>年</span>
-                    </div>
-                    <p class="item-bottom">行业经验</p>
-                </div>
-                <div class="live-item">
-                    <div class="item-top">
-                        <div id="numtwo" class="nums">10</div>
-                        <span>万</span>
-                        <span>+</span>
-                    </div>
-                    <p class="item-bottom">服务企业</p>
-                </div>
-                <div class="live-item">
-                    <div class="item-top">
-                        <div id="numthree" class="nums">100</div>
-                        <span>+</span>
-                    </div>
-                    <p class="item-bottom">行业解决方案</p>
-                </div>
-                <div class="live-item">
-                    <div class="item-top">
-                        <div id="numfour" class="nums">10</div>
-                        <!-- <div class="nums">%</div> -->
-                        <span>万</span>
-                        <span>+</span>
-                    </div>
-                    <p class="item-bottom">现场服务经验</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 轻直播的优势 -->
-    <div id="advantage">
-        <div class="hover"></div>
-        <div class="layui-container">
-            <h2 class="title">「轻直播」的优势</h2>
-            <div class="advantage-content">
-                <div class="content-left">
-                    <div class="left-item active">
-                        <div>
-                            <img src="/static/image/index1/wending.svg" alt="">
-                            <h5>稳定</h5>
+                <h2 class="title">「轻」产品与服务</h2>
+                <div class="product-content">
+                    <div class="product-item">
+                        <div class="item-head">
+                            <img src="/static/image/index1/chanping.svg" alt="">
+                            <h5>视频云服务</h5>
+                        </div>
+                        <div class="item-body">
+                            <p>企业级分布式混合云部署，自有第三代直播云技术加持，全球3000+的直播节点，具备8K直播能力，全新网页发起直播，千万级高并发无延迟。
+                            </p>
+                        </div>
+                        <div class="item-footer">
+                            <button class="more"><a href="{:url('/index/video_cloud/index')}">了解更多</a>
+                            </button>
+                            <button class="free"><a href="http://login.lighos.com/signUp"
+                                    target="_blank">免费试用</a></button>
                         </div>
                     </div>
-                    <div class="left-item">
-                        <div>
-                            <img src="/static/image/index1/anquan.svg" alt="">
-                            <h5>安全</h5>
+                    <div class="product-item">
+                        <div class="item-head">
+                            <img src="/static/image/index1/dingzhihua.svg" alt="">
+                            <h5>定制化服务</h5>
+                        </div>
+                        <div class="item-body">
+                            <p>7x24小时响应，深度品牌专属定制，提供灵活、可拓展的API/SDK接口，支持二次开发和接入第三方OA、ERP、CRM等企业办公应用集成服务。
+                            </p>
+                        </div>
+                        <div class="item-footer">
+                            <button class="more"><a href="{:url('/index/customized_service/index')}">了解更多</a></button>
+                            <button class="free"><a href="http://login.lighos.com/signUp"
+                                    target="_blank">免费试用</a></button>
                         </div>
                     </div>
-                    <div class="left-item">
-                        <div>
-                            <img src="/static/image/index1/kuaisu.svg" alt="">
-                            <h5>开放</h5>
+                    <div class="product-item">
+                        <div class="item-head">
+                            <img src="/static/image/index1/fuwu.svg" alt="">
+                            <h5>现场服务</h5>
                         </div>
-                    </div>
-                    <div class="left-item">
-                        <div>
-                            <img src="/static/image/index1/chaoqing.svg" alt="">
-                            <h5>超清</h5>
+                        <div class="item-body">
+                            <p>基于用户角度触发，超万次直播服务经验，从方案设计到现场执行，重现每一个细节的把控，致力于为用户提供全行业场景直播解决方案。</p>
+                        </div>
+                        <div class="item-footer">
+                            <button class="more"><a href="{:url('/index/site_service/index')}">了解更多</a></button>
+                            <button class="free"><a href="http://login.lighos.com/signUp"
+                                    target="_blank">免费试用</a></button>
                         </div>
                     </div>
                 </div>
-                <div class="content-right">
-                    <div class="right-item actives">
-                        <h6>多维架构SaaS级应用，优质节点和带宽保障，N+云负载均衡指南流控制监控测机制</h6>
-                        <ul class="text-box">
-                            <li>
-                                <img src="/static/image/index1/check_sign.svg" alt="">
-                                <p>1. 基于集群化的高可靠应用</p>
-                            </li>
-                            <li>
-                                <img src="/static/image/index1/check_sign.svg" alt="">
-                                <p>2. 200T+的带宽能力储备</p>
-                            </li>
-                            <li>
-                                <img src="/static/image/index1/check_sign.svg" alt="">
-                                <p>3. 融合多套CDN分发网络</p>
-                            </li>
-                            <li>
-                                <img src="/static/image/index1/check_sign.svg" alt="">
-                                <p>4. 多副本异地容灾备份</p>
-                            </li>
-                        </ul>
-                        <button><a href="http://login.lighos.com/signUp" target="_blank">免费试用</a></button>
+            </div>
+        </div>
+
+        <!-- 轻直播为您创造价值 -->
+        <div id="light-live">
+            <div class="layui-container">
+                <h2 class="title">轻量不轻质，简约不简单</h2>
+                <div class="live-content">
+                    <div class="live-item">
+                        <div class="item-top">
+                            <div id="numone" class="nums">8</div>
+                            <span>年</span>
+                        </div>
+                        <p class="item-bottom">行业经验</p>
                     </div>
-                    <div class="right-item">
-                        <h6>基于大数据应用，AI智能播出审核，0程序风，智能风控更多安全</h6>
-                        <ul class="text-box">
-                            <li>
-                                <img src="/static/image/index1/check_sign.svg" alt="">
-                                <p>1. 可靠的安全机</p>
-                            </li>
-                            <li>
-                                <img src="/static/image/index1/check_sign.svg" alt="">
-                                <p>2. 行业信息隔离</p>
-                            </li>
-                            <li>
-                                <img src="/static/image/index1/check_sign.svg" alt="">
-                                <p>3. 智能风控过滤敏感信息</p>
-                            </li>
-                            <li>
-                                <img src="/static/image/index1/check_sign.svg" alt="">
-                                <p>4. 云顿加密技术保障</p>
-                            </li>
-                        </ul>
-                        <button><a href="http://login.lighos.com/signUp" target="_blank">免费试用</a></button>
+                    <div class="live-item">
+                        <div class="item-top">
+                            <div id="numtwo" class="nums">10</div>
+                            <span>万</span>
+                            <span>+</span>
+                        </div>
+                        <p class="item-bottom">服务企业</p>
                     </div>
-                    <div class="right-item">
-                        <h6>基于生态开发，具备模块化、灵活组合的aPaaS服务支持，进行快速搭建组合</h6>
-                        <ul class="text-box">
-                            <li>
-                                <img src="/static/image/index1/check_sign.svg" alt="">
-                                <p>1. 提供API/SDK接口</p>
-                            </li>
-                            <li>
-                                <img src="/static/image/index1/check_sign.svg" alt="">
-                                <p>2. 自助式开放平台</p>
-                            </li>
-                            <li>
-                                <img src="/static/image/index1/check_sign.svg" alt="">
-                                <p>3. 支持集成化应用接入</p>
-                            </li>
-                            <li>
-                                <img src="/static/image/index1/check_sign.svg" alt="">
-                                <p>4. 多协议外部收权</p>
-                            </li>
-                        </ul>
-                        <button><a href="http://login.lighos.com/signUp" target="_blank">免费试用</a></button>
+                    <div class="live-item">
+                        <div class="item-top">
+                            <div id="numthree" class="nums">100</div>
+                            <span>+</span>
+                        </div>
+                        <p class="item-bottom">行业解决方案</p>
                     </div>
-                    <div class="right-item">
-                        <h6>具备8K直播能力，降低码率的同时达到50帧极清画质和高达99.1%直播流程度</h6>
-                        <ul class="text-box">
-                            <li>
-                                <img src="/static/image/index1/check_sign.svg" alt="">
-                                <p>1. 具备8K直播能力</p>
-                            </li>
-                            <li>
-                                <img src="/static/image/index1/check_sign.svg" alt="">
-                                <p>2. 3D影院级转播技术</p>
-                            </li>
-                            <li>
-                                <img src="/static/image/index1/check_sign.svg" alt="">
-                                <p>3. 智能切换终端解码播放</p>
-                            </li>
-                            <li>
-                                <img src="/static/image/index1/check_sign.svg" alt="">
-                                <p>4. RTMP/FLV/HLS等格式的播放流</p>
-                            </li>
-                        </ul>
-                        <button><a href="http://login.lighos.com/signUp" target="_blank">免费试用</a></button>
+                    <div class="live-item">
+                        <div class="item-top">
+                            <div id="numfour" class="nums">10</div>
+                            <!-- <div class="nums">%</div> -->
+                            <span>万</span>
+                            <span>+</span>
+                        </div>
+                        <p class="item-bottom">现场服务经验</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- 全行业解决方案 -->
-    <div id="solve">
-        <div class="layui-container">
-            <h2 class="title">「全行业」解决方案</h2>
-            <div class="solve-content">
-                <div class="solve-item">
-                    <img src="/static/image/index/func1.png" alt="">
-                    <div class="text">
-                        <h6>会议培训</h6>
-                        <p>身份认证、会议提问、回放学习多功能集于一身，量化培训效果，助力企业提高培训效率</p>
-                        <img src="/static/image/index1/jiantou_white.svg" alt="">
-                    </div>
-                </div>
-                <div class="solve-item">
-                    <img src="/static/image/index/func2.png" alt="">
-                    <div class="text">
-                        <h6>营销直播</h6>
-                        <p>在线签到、广告引导、营销直播全案专属定制，从0到1快速搭建专属直播建，为品牌赋能</p>
-                        <img src="/static/image/index1/jiantou_white.svg" alt="">
-                    </div>
-                </div>
-                <div class="solve-item">
-                    <img src="/static/image/index/func3.png" alt="">
-                    <div class="text">
-                        <h6>电商直播</h6>
-                        <p>公聊、私聊、沉浸式场景体验，打造带货达人IP，万人同步在线，实时数据流分析监控</p>
-                        <img src="/static/image/index1/jiantou_white.svg" alt="">
-                    </div>
-                </div>
-                <div class="solve-item">
-                    <img src="/static/image/index/func4.png" alt="">
-                    <div class="text">
-                        <h6>企业宣讲会</h6>
-                        <p>异地视频连线，文档PPT展示、画中画等多种宣讲形式，15000+权威媒体资源曝光</p>
-                        <img src="/static/image/index1/jiantou_white.svg" alt="">
-                    </div>
-                </div>
-                <div class="solve-item">
-                    <img src="/static/image/index/func5.png" alt="">
-                    <div class="text">
-                        <h6>医学会议</h6>
-                        <p>多屏连麦、在线交流、远程接诊、急救指导等应用，让每一次的医学会议更有意义
-                        </p>
-                        <img src="/static/image/index1/jiantou_white.svg" alt="">
-                    </div>
-                </div>
-                <div class="solve-item">
-                    <img src="/static/image/index/func6.png" alt="">
-                    <div class="text">
-                        <h6>手术示教</h6>
-                        <p>全科室线上直播，8K画质低延时，独家外科术野拍摄技术，赋能医疗事业更多可能</p>
-                        <img src="/static/image/index1/jiantou_white.svg" alt="">
-                    </div>
-                </div>
-                <div class="solve-item">
-                    <img src="/static/image/index/func7.png" alt="">
-                    <div class="text">
-                        <h6>大会直播</h6>
-                        <p>独具创新互动体验，支持现金打赏、礼包雨，让每一场大会直播都能绽放异彩</p>
-                        <img src="/static/image/index1/jiantou_white.svg" alt="">
-                    </div>
-                </div>
-                <div class="solve-item">
-                    <img src="/static/image/index/func8.png" alt="">
-                    <div class="text">
-                        <h6>年会直播</h6>
-                        <p>同台PK、线上抽奖、竞猜红包等丰富的互动模式，让企业举办的年会盛典更有仪式感
-                        </p>
-                        <img src="/static/image/index1/jiantou_white.svg" alt="">
-                    </div>
-                </div>
-            </div>
-            <button>获取专属解决方案</button>
-        </div>
-    </div>
-
-    <!-- 赋能「100,000+」企业 -->
-    <div id="qiye">
-        <div class="layui-container">
-            <h2 class="title">赋能「100,000+」企业</h2>
-            <nav>
-                <ul class="logo-title">
-                    <li class="active" onclick="logoPoint(0)"><span>全部</span></li>
-                    <li onclick="logoPoint(1)"><span>医疗</span></li>
-                    <li onclick="logoPoint(2)"><span>教育</span></li>
-                    <li onclick="logoPoint(3)"><span>金融</span></li>
-                    <li onclick="logoPoint(4)"><span>汽车</span></li>
-                    <li onclick="logoPoint(5)"><span>科技</span></li>
-                    <li onclick="logoPoint(6)"><span>地产</span></li>
-                </ul>
-            </nav>
-            <div class="logo-box ">
-                <ul class="logo-imgs active">
-                    <!--logo墙-->
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <!-- 解锁更多技能，尽在「轻学院」 -->
-    <div id="college">
-        <div class="layui-container">
-            <h2 class="title">解锁更多技能，尽在「轻学院」</h2>
-            <div class="college-content">
-                <div class="college-left">
-                    <div class="layui-carousel" id="test1">
-                        <div carousel-item class="lunbo-box">
-                            {if(isset($article_list))}
-                            {foreach($article_list[0] as $item)}
-                            <div class="lunbo-item">
-                                <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>$item.pid])}">
-                                    <img src="{$item.cover_img_url}" alt="">
-                                    <div class="text-box">
-                                        <h6>{$item.title}</h6>
-                                        <p>{$item.second_title}</p>
-                                    </div>
-                                </a>
+        <!-- 轻直播的优势 -->
+        <div id="advantage">
+            <div class="hover"></div>
+            <div class="layui-container">
+                <h2 class="title">「轻直播」的优势</h2>
+                <div class="advantage-content">
+                    <div class="content-left">
+                        <div class="left-item active">
+                            <div>
+                                <img src="/static/image/index1/wending.svg" alt="">
+                                <h5>稳定</h5>
                             </div>
-                            {/foreach}
-                            {/if}
+                        </div>
+                        <div class="left-item">
+                            <div>
+                                <img src="/static/image/index1/anquan.svg" alt="">
+                                <h5>安全</h5>
+                            </div>
+                        </div>
+                        <div class="left-item">
+                            <div>
+                                <img src="/static/image/index1/kuaisu.svg" alt="">
+                                <h5>开放</h5>
+                            </div>
+                        </div>
+                        <div class="left-item">
+                            <div>
+                                <img src="/static/image/index1/chaoqing.svg" alt="">
+                                <h5>超清</h5>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="college-right">
-                    <div class="layui-carousel" id="test2">
-                        <div carousel-item>
-                            {for start="1" end="2"
-                            comparison="elt"}
-                            {if(isset($article_list[$i]))}
-                            <ul>
-                                {foreach($article_list[$i]
-                                as $item)}
+                    <div class="content-right">
+                        <div class="right-item actives">
+                            <h6>多维架构SaaS级应用，优质节点和带宽保障，N+云负载均衡指南流控制监控测机制</h6>
+                            <ul class="text-box">
                                 <li>
-                                    <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>$item.pid])}"
-                                       style="display: flex;width: 100%;">
-                                        <div class="type">
-                                            {$item.pid_name}
-                                        </div>
-                                        <div class="titles">
-                                            <h6>{$item.title}
-                                            </h6>
-                                            <p>{$item.second_title}
-                                            </p>
-                                            <span>{$item.time}</span>
+                                    <img src="/static/image/index1/check_sign.svg" alt="">
+                                    <p>1. 基于集群化的高可靠应用</p>
+                                </li>
+                                <li>
+                                    <img src="/static/image/index1/check_sign.svg" alt="">
+                                    <p>2. 200T+的带宽能力储备</p>
+                                </li>
+                                <li>
+                                    <img src="/static/image/index1/check_sign.svg" alt="">
+                                    <p>3. 融合多套CDN分发网络</p>
+                                </li>
+                                <li>
+                                    <img src="/static/image/index1/check_sign.svg" alt="">
+                                    <p>4. 多副本异地容灾备份</p>
+                                </li>
+                            </ul>
+                            <button><a href="http://login.lighos.com/signUp" target="_blank">免费试用</a></button>
+                        </div>
+                        <div class="right-item">
+                            <h6>基于大数据应用，AI智能播出审核，0程序风，智能风控更多安全</h6>
+                            <ul class="text-box">
+                                <li>
+                                    <img src="/static/image/index1/check_sign.svg" alt="">
+                                    <p>1. 可靠的安全机</p>
+                                </li>
+                                <li>
+                                    <img src="/static/image/index1/check_sign.svg" alt="">
+                                    <p>2. 行业信息隔离</p>
+                                </li>
+                                <li>
+                                    <img src="/static/image/index1/check_sign.svg" alt="">
+                                    <p>3. 智能风控过滤敏感信息</p>
+                                </li>
+                                <li>
+                                    <img src="/static/image/index1/check_sign.svg" alt="">
+                                    <p>4. 云顿加密技术保障</p>
+                                </li>
+                            </ul>
+                            <button><a href="http://login.lighos.com/signUp" target="_blank">免费试用</a></button>
+                        </div>
+                        <div class="right-item">
+                            <h6>基于生态开发，具备模块化、灵活组合的aPaaS服务支持，进行快速搭建组合</h6>
+                            <ul class="text-box">
+                                <li>
+                                    <img src="/static/image/index1/check_sign.svg" alt="">
+                                    <p>1. 提供API/SDK接口</p>
+                                </li>
+                                <li>
+                                    <img src="/static/image/index1/check_sign.svg" alt="">
+                                    <p>2. 自助式开放平台</p>
+                                </li>
+                                <li>
+                                    <img src="/static/image/index1/check_sign.svg" alt="">
+                                    <p>3. 支持集成化应用接入</p>
+                                </li>
+                                <li>
+                                    <img src="/static/image/index1/check_sign.svg" alt="">
+                                    <p>4. 多协议外部收权</p>
+                                </li>
+                            </ul>
+                            <button><a href="http://login.lighos.com/signUp" target="_blank">免费试用</a></button>
+                        </div>
+                        <div class="right-item">
+                            <h6>具备8K直播能力，降低码率的同时达到50帧极清画质和高达99.1%直播流程度</h6>
+                            <ul class="text-box">
+                                <li>
+                                    <img src="/static/image/index1/check_sign.svg" alt="">
+                                    <p>1. 具备8K直播能力</p>
+                                </li>
+                                <li>
+                                    <img src="/static/image/index1/check_sign.svg" alt="">
+                                    <p>2. 3D影院级转播技术</p>
+                                </li>
+                                <li>
+                                    <img src="/static/image/index1/check_sign.svg" alt="">
+                                    <p>3. 智能切换终端解码播放</p>
+                                </li>
+                                <li>
+                                    <img src="/static/image/index1/check_sign.svg" alt="">
+                                    <p>4. RTMP/FLV/HLS等格式的播放流</p>
+                                </li>
+                            </ul>
+                            <button><a href="http://login.lighos.com/signUp" target="_blank">免费试用</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 全行业解决方案 -->
+        <div id="solve">
+            <div class="layui-container">
+                <h2 class="title">「全行业」解决方案</h2>
+                <div class="solve-content">
+                    <div class="solve-item">
+                        <img src="/static/image/index/func1.png" alt="">
+                        <div class="text">
+                            <h6>会议培训</h6>
+                            <p>身份认证、会议提问、回放学习多功能集于一身，量化培训效果，助力企业提高培训效率</p>
+                            <img src="/static/image/index1/jiantou_white.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="solve-item">
+                        <img src="/static/image/index/func2.png" alt="">
+                        <div class="text">
+                            <h6>营销直播</h6>
+                            <p>在线签到、广告引导、营销直播全案专属定制，从0到1快速搭建专属直播建，为品牌赋能</p>
+                            <img src="/static/image/index1/jiantou_white.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="solve-item">
+                        <img src="/static/image/index/func3.png" alt="">
+                        <div class="text">
+                            <h6>电商直播</h6>
+                            <p>公聊、私聊、沉浸式场景体验，打造带货达人IP，万人同步在线，实时数据流分析监控</p>
+                            <img src="/static/image/index1/jiantou_white.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="solve-item">
+                        <img src="/static/image/index/func4.png" alt="">
+                        <div class="text">
+                            <h6>企业宣讲会</h6>
+                            <p>异地视频连线，文档PPT展示、画中画等多种宣讲形式，15000+权威媒体资源曝光</p>
+                            <img src="/static/image/index1/jiantou_white.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="solve-item">
+                        <img src="/static/image/index/func5.png" alt="">
+                        <div class="text">
+                            <h6>医学会议</h6>
+                            <p>多屏连麦、在线交流、远程接诊、急救指导等应用，让每一次的医学会议更有意义
+                            </p>
+                            <img src="/static/image/index1/jiantou_white.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="solve-item">
+                        <img src="/static/image/index/func6.png" alt="">
+                        <div class="text">
+                            <h6>手术示教</h6>
+                            <p>全科室线上直播，8K画质低延时，独家外科术野拍摄技术，赋能医疗事业更多可能</p>
+                            <img src="/static/image/index1/jiantou_white.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="solve-item">
+                        <img src="/static/image/index/func7.png" alt="">
+                        <div class="text">
+                            <h6>大会直播</h6>
+                            <p>独具创新互动体验，支持现金打赏、礼包雨，让每一场大会直播都能绽放异彩</p>
+                            <img src="/static/image/index1/jiantou_white.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="solve-item">
+                        <img src="/static/image/index/func8.png" alt="">
+                        <div class="text">
+                            <h6>年会直播</h6>
+                            <p>同台PK、线上抽奖、竞猜红包等丰富的互动模式，让企业举办的年会盛典更有仪式感
+                            </p>
+                            <img src="/static/image/index1/jiantou_white.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <button>获取专属解决方案</button>
+            </div>
+        </div>
+
+        <!-- 赋能「100,000+」企业 -->
+        <div id="qiye">
+            <div class="layui-container">
+                <h2 class="title">赋能「100,000+」企业</h2>
+                <nav>
+                    <ul class="logo-title">
+                        <li class="active" onclick="logoPoint(0)"><span>全部</span></li>
+                        <li onclick="logoPoint(1)"><span>医疗</span></li>
+                        <li onclick="logoPoint(2)"><span>教育</span></li>
+                        <li onclick="logoPoint(3)"><span>金融</span></li>
+                        <li onclick="logoPoint(4)"><span>汽车</span></li>
+                        <li onclick="logoPoint(5)"><span>科技</span></li>
+                        <li onclick="logoPoint(6)"><span>地产</span></li>
+                    </ul>
+                </nav>
+                <div class="logo-box ">
+                    <ul class="logo-imgs active">
+                        <!--logo墙-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 解锁更多技能，尽在「轻学院」 -->
+        <div id="college">
+            <div class="layui-container">
+                <h2 class="title">解锁更多技能，尽在「轻学院」</h2>
+                <div class="college-content">
+                    <div class="college-left">
+                        <div class="layui-carousel" id="test1">
+                            <div carousel-item class="lunbo-box">
+                                {if(isset($article_list))}
+                                {foreach($article_list[0] as $item)}
+                                <div class="lunbo-item">
+                                    <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>$item.pid])}">
+                                        <img src="{$item.cover_img_url}" alt="">
+                                        <div class="text-box">
+                                            <h6>{$item.title}</h6>
+                                            <p>{$item.second_title}</p>
                                         </div>
                                     </a>
-                                </li>
+                                </div>
                                 {/foreach}
+                                {/if}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="college-right">
+                        <div class="layui-carousel" id="test2">
+                            <div carousel-item>
+                                {for start="1" end="2"
+                                comparison="elt"}
+                                {if(isset($article_list[$i]))}
+                                <ul>
+                                    {foreach($article_list[$i]
+                                    as $item)}
+                                    <li>
+                                        <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>$item.pid])}"
+                                            style="display: flex;width: 100%;">
+                                            <div class="type">
+                                                {$item.pid_name}
+                                            </div>
+                                            <div class="titles">
+                                                <h6>{$item.title}
+                                                </h6>
+                                                <p>{$item.second_title}
+                                                </p>
+                                                <span>{$item.time}</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    {/foreach}
 
-                            </ul>
-                            {/if}
-                            {/for}
+                                </ul>
+                                {/if}
+                                {/for}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- “轻”装上阵，玩转企业数字营销5G时代 -->
-    <div id="fiveG">
-        <div class="hover"></div>
-        <div class="layui-container">
-            <div class="fiveg-content">
-                <h2>顶级视频部署架构</h2>
-                <h5>更符合政企、金融机构、学校、新媒体等的视频应用</h5>
-                <button><a href="http://login.lighos.com/signUp" target="_blank">免费使用</a></button>
+        <!-- “轻”装上阵，玩转企业数字营销5G时代 -->
+        <div id="fiveG">
+            <div class="hover"></div>
+            <div class="layui-container">
+                <div class="fiveg-content">
+                    <h2>顶级视频部署架构</h2>
+                    <h5>更符合政企、金融机构、学校、新媒体等的视频应用</h5>
+                    <button><a href="http://login.lighos.com/signUp" target="_blank">免费使用</a></button>
+                </div>
+
             </div>
-
         </div>
-    </div>
 
-    {include file="common/footer"}
-</div>
+        {include file="common/footer"}
+    </div>
 
 </body>
 <script src="/static/common/js/header-footer.js"></script>
@@ -626,7 +626,7 @@
     function logoPoint(index) {
         $.ajax({
             url: "{:url('/index/logo_wall/getLogoByWhere')}",
-            data: {'pid': 1, 'type_id': index},
+            data: { 'pid': 1, 'type_id': index },
             type: 'get',
             success: function (res) {
                 if (res.status === 200) {
