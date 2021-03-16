@@ -496,6 +496,9 @@
 }
 #solve .solve-content .solve-item:hover {
   background-color: #00cc99;
+}
+#solve .solve-content .solve-item:hover h6,
+#solve .solve-content .solve-item:hover p {
   color: #fff;
 }
 #solve .solve-content .solve-item:nth-child(4n) {

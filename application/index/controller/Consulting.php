@@ -44,6 +44,6 @@ class Consulting extends Controller
         if (!$res) {
             return show(401,$consulting_service->error);
         }
-        return show(401,$consulting_service->message);
+        return show(200,$consulting_service->message);
     }
 }
