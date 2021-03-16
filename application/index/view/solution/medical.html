@@ -1919,21 +1919,22 @@
                         <h5 style=' color: {$item.in_color};
                         opacity: .8;
                         font-size: {$item.in_size}px;
-                        width: 64%;
+                        width: 50%;
                         margin: 78px auto 103px;
                         text-align: {$item.format};
                         line-height: 1.5;'>{$item.introduction}</h5>
 
                         {if($item.button_status == 1)}
-                        <a class="banner-a" href="{$item.button_link}" style='z-index: 10;
+                        <a class="banner-a" href="javascript:;" style='z-index: 10;
                             display: block;
-                            width: 167px;
-                            height: 44px;
-                            border: 1px solid {$item.button_color};
+                            margin: 0 auto;
+                            width: 189px;
+                            height: 42px;
+                            background: #00CC99;
                             color: {$item.button_color};
                             text-align: center;
                             line-height: 44px;
-                            float: {$item.float};
+                            border-radius:21px;
                             font-size: {$item.button_size}px;'>{$item.button_text}</a>
                         {/if}
                     </div>
@@ -2264,6 +2265,11 @@
             }
         })
     }
+
+    // 预约按钮
+    $('.banner-a').click(function(){
+         console.log(123)
+     })
 
 </script>
 </html>
