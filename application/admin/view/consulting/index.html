@@ -1,0 +1,170 @@
+{extend name="common::layout"/}
+{block name="main-content"}
+<style>
+    .layui-btn {
+        margin-top: 8px;
+        margin-left: 5px;
+    }
+
+    .btn {
+        margin-top: 0 !important;
+    }
+
+    #add {
+        padding-top: 20px;
+        padding-right: 30px;
+    }
+
+</style>
+<!-- 右侧主体开始 -->
+<div class="page-content">
+    <div class="layui-fluid">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+                <div class="layui-card">
+                    <!-- 动态表格 -->
+                    <table id="table-rule" lay-filter="table-rule"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- 中部结束 -->
+<div id="edit" style="display: none;">
+    <div class="layui-form"> <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
+        <div class="layui-form-item">
+            <label class="layui-form-label">姓名</label>
+            <div class="layui-input-block">
+                <input type="text" id="name" name="name" readonly placeholder="请输入" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">联系电话</label>
+            <div class="layui-input-block">
+                <input type="text" id="phone" name="phone" readonly placeholder="请输入" autocomplete="off"
+                       class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">email</label>
+            <div class="layui-input-block">
+                <input type="text" id="email" name="email" readonly placeholder="请输入" autocomplete="off"
+                       class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">公司名称</label>
+            <div class="layui-input-block">
+                <input type="text" id="company" name="company" readonly placeholder="请输入" autocomplete="off"
+                       class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">所在行业</label>
+            <div class="layui-input-block">
+                <input type="text" id="industry" name="industry" readonly placeholder="请输入" autocomplete="off"
+                       class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">描述</label>
+            <div class="layui-input-block">
+                        <textarea type="text" name="describe" id="describe" readonly class="layui-input"
+                                  style="width: 100%;height: 140px;">
+                        </textarea>
+            </div>
+        </div>
+        <!-- 更多表单结构排版请移步文档左侧【页面元素-表单】一项阅览 -->
+    </div>
+</div>
+
+<script type="text/html" id="barDemo">
+    <a class="layui-btn btn layui-btn-xs" lay-event="info">详情</a>
+    <a class="layui-btn btn layui-btn-danger layui-btn-xs" lay-event="pro">处理</a>
+</script>
+<script>
+
+    layui.use(['form', 'table',], function () {
+        var table = layui.table;
+        var form = layui.form;
+
+        //创建动态表格
+        table.render({
+            elem: '#table-rule'
+            , height: 850
+            , url: '/admin/consulting/getConsultingList' //数据接口
+            , page: true //开启分页
+            , cols: [[ //表头
+                {
+                    field: 'id', title: 'ID', width: 80, sort: true, fixed: 'left'
+                }
+                , {field: 'name', title: '姓名'}
+                , {field: 'phone', title: '联系电话'}
+                , {field: 'company', title: '公司名称'}
+                , {field: 'industry', title: '所在行业'}
+                , {field: 'status_c', title: '状态'}
+                , {width: 160, title: '操作', align: 'center', toolbar: '#barDemo'}
+            ]]
+        });
+
+        //监听工具条
+        table.on('tool(table-rule)', function (obj) { //注：tool 是工具条事件名，test 是 table 原始容器的属性 lay-filter="对应的值"
+            var data = obj.data; //获得当前行数据
+            var layEvent = obj.event; //获得 lay-event 对应的值（也可以是表头的 event 参数对应的值）
+            var tr = obj.tr; //获得当前行 tr 的 DOM 对象（如果有的话）
+
+            if (layEvent === 'info') { //查看
+                $.post('/admin/consulting/consultingInfo', {id: data.id}, (res) => {
+                    if (res.status === 200) {
+                        layer.open({
+                            type: 1,
+                            title: '详情',
+                            anim: 4,
+                            area: ['900px', '800px'],
+                            content: $('#edit'),
+                            btn: ['关闭']
+                        });
+
+                        $('#id').val(res.data.id);
+                        $('#name').val(res.data.name);
+                        $('#phone').val(res.data.phone);
+                        $('#email').val(res.data.email);
+                        $('#company').val(res.data.company);
+                        $('#industry').val(res.data.industry);
+                        $('#describe').html(res.data.describe);
+
+                        //状态
+                        if (res.data.status === 0) {
+                            $('#status').removeAttr('checked');
+                        } else {
+                            $('#status').attr('checked', true);
+                        }
+
+                        form.render();
+                    }
+                })
+
+            } else if (layEvent === 'pro') { //删除
+                layer.confirm('是否确定？', {
+                    btn:['确定吧','取消'],
+                },function () {
+                    $.post('/admin/consulting/checkPro',{id: data.id}, (res) => {
+                        if (res.status === 200) {
+                            layer.msg(res.message);
+                            setTimeout(()=>{
+                                window.location.reload()
+                            },500)
+                        }else{
+                            layer.msg(res.message);
+                        }
+                    })
+                });
+            }
+        });
+
+    });
+
+
+</script>
+{/block}
