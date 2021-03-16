@@ -7,38 +7,7 @@ use think\Validate;
 
 class Live extends Controller
 {
-    public function liveLogin()
-    {
-        $data = input('post.');
-        $rules =
-            [
-                'phone' => 'require|regex:/^1[3456789][0-9]{9}$/',
-                'password' => 'require',
-            ];
-        $msg =
-            [
-                'phone.require' => '手机号不能为空',
-                'phone.regex' => '手机号类型不正确',
-                'password.require' => '密码不能为空',
-            ];
-        $validate = new Validate($rules,$msg);
-        if(!$validate->check($data)){
-            return show(401,$validate->getError());
-        }
-        $data = [
-            'mobile' => $data['phone'],
-            'password' => $data['password'],
-        ];
-        $url = 'https://login.lighos.com/api/v1/admin/login';
-        $res = $this->liveCurl($data, $url);
-        $res = json_decode($res, true);
-        if ($res['code'] == '200') {
-            return ['status'=>200, 'msg'=>$res['message'],'data'=>$res['data']];
-        }
-        return ['status'=>401, 'msg'=>$res['error']];
-    }
-
-    public function liveCurl($data,$url)
+    public function liveCurl($data, $url)
     {
         $curl = curl_init(); // 启动一个CURL会话
         curl_setopt($curl, CURLOPT_URL, $url); // 要访问的地址
@@ -56,5 +25,107 @@ class Live extends Controller
 
         curl_close($curl); // 关闭CURL会话
         return $res;
+    }
+
+    /**
+     * 登陆
+     * @return array|\think\response\Json
+     */
+    public function liveLogin()
+    {
+        $data = input('post.');
+        $rules =
+            [
+                'phone' => 'require|regex:/^1[3456789][0-9]{9}$/',
+                'password' => 'require',
+            ];
+        $msg =
+            [
+                'phone.require' => '手机号不能为空',
+                'phone.regex' => '手机号类型不正确',
+                'password.require' => '密码不能为空',
+            ];
+        $validate = new Validate($rules, $msg);
+        if (!$validate->check($data)) {
+            return show(401, $validate->getError());
+        }
+        $data = [
+            'mobile' => $data['phone'],
+            'password' => $data['password'],
+        ];
+        $url = 'https://login.lighos.com/api/v1/admin/login';
+        $res = $this->liveCurl($data, $url);
+        $res = json_decode($res, true);
+        if ($res['code'] == '200') {
+            return show(200,$res['message'],$res['data']);
+        }
+        return show(401,$res['error']);
+    }
+
+    /**
+     * 试用
+     * @return array|\think\response\Json
+     */
+    public function liveRegister()
+    {
+        $data = input('post.');
+        $rules = [
+            'name' => 'require|max:20',
+            'mobile' => 'require|regex:/^1[3456789][0-9]{9}$/',
+            'password' => 'require|min:6',
+            'company' => 'require|max:64',
+            'email' => 'email',
+            'code' => 'require|max:4|min:4',
+        ];
+        $message = [
+            'name.require' => '姓名不能为空',
+            'name.max' => '姓名过长',
+            'mobile.require' => '手机号不能为空',
+            'mobile.regex' => '手机号类型不正确',
+            'password.min' => '密码最小六位数',
+            'password.require' => '密码不能为空',
+            'company.require' => '公司名称不能为空',
+            'company.max' => '公司名称过长',
+            'email.email' => '邮箱不正确',
+            'code.require' => '验证码不能为空！',
+            'code.max' => '验证码长度为4位！',
+            'code.min' => '验证码长度为4位！',
+        ];
+        $validate = new Validate($rules, $message);
+        if (!$validate->check($data)) {
+            return show(401, $validate->getError());
+        }
+        $url = 'https://login.lighos.com/api/v1/admin/register';
+        $res = $this->liveCurl($data, $url);
+        $res = json_decode($res, true);
+        if ($res['code'] == '200') {
+            return show(200,$res['message'],$res['data']);
+        }
+        return show(401,$res['error']);
+    }
+
+    public function liveSendCode()
+    {
+        $data = input('post.');
+        $rules = [
+            'mobile' => 'require|regex:/^1[3456789][0-9]{9}$/',
+        ];
+        $messages = [
+            'mobile.require' => '请输入手机号',
+            'mobile.regex' => '手机号格式有误',
+        ];
+        // 验证参数，如果验证失败，则会抛出 ValidationException 的异常
+        $validate = new Validate($rules, $messages);
+        if (!$validate->check($data)) {
+            return show(401, $validate->getError());
+        }
+        $data['type'] = 0;
+        $url = 'https://login.lighos.com/api/v1/common/send_captcha';
+        $res = $this->liveCurl($data, $url);
+        $res = json_decode($res, true);
+        if ($res['code'] == '200') {
+            return show(200,$res['message'],$res['data']);
+        }
+        return show(401,$res['error']);
     }
 }
