@@ -55,7 +55,7 @@ class Solution extends Controller
         return $this->fetch('', compact('banner_list'));
     }
 
-    /* 场景解决方案-企业宣讲会*/
+    /* 场景解决方案-空中宣讲会*/
     public function enterprise()
     {
         $data = request()->param();
