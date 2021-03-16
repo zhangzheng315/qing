@@ -1662,23 +1662,24 @@
                         <h5 style=' color: {$item.in_color};
                         opacity: .8;
                         font-size: {$item.in_size}px;
-                        width: 64%;
+                        width: 90%;
                         margin: 78px auto 103px;
                         text-align: {$item.format};
                         line-height: 1.5;'>{$item.introduction}</h5>
 
-                        <a class="banner-a" href="" style='z-index: 10;
-                        display: block;
-                        width: 189px;
-                        height: 42px;
-                        color: {$item.button_color};
-                        text-align: center;
-                        line-height: 44px;
-                        margin:0 auto;
-                        font-size: {$item.button_size}px;
-                        background: #00CC99;
-                        border-radius: 21px;
-                        '>{$item.button_text}</a>
+                        {if($item.button_status == 1)}
+                        <a class="banner-a" href="javascript:;" style='z-index: 10;
+                            display: block;
+                            margin: 0 auto;
+                            width: 189px;
+                            height: 42px;
+                            background: #00CC99;
+                            color: {$item.button_color};
+                            text-align: center;
+                            line-height: 44px;
+                            border-radius:21px;
+                            font-size: {$item.button_size}px;'>{$item.button_text}</a>
+                        {/if}
                     </div>
                 </div>
                 {/foreach}
@@ -1708,77 +1709,6 @@
             </div>
         </div>
     </nav>
-    <!-- 痛点解析 -->
-    <!-- <section id="section-1" class="difficulty-analysis">
-        <div class="layui-container">
-            <h3 class="section-title">痛点解析</h3>
-            <div class="flex con-padding">
-                <ul class="difficulty-left">
-                   <li>
-                      <div>
-                          痛点1
-                      </div>
-                       <p>
-                        医疗机构分支多，医务工作者分散，线下组织培训成本高
-                       </p>
-                   </li>
-                   <li>
-                    <div>
-                        痛点2
-                    </div>
-                     <p>
-                        医疗资源分布不均，基层医院难以触达优质资源
-                     </p>
-                   </li>
-                   <li>
-                    <div>
-                        痛点3
-                    </div>
-                     <p>
-                        线下学术会议、医学交流峰会成本高，人员奔波
-                     </p>
-                   </li>
-                   <li>
-                    <div>
-                        痛点4
-                    </div>
-                     <p>
-                        医药和器械企业对外服务网络覆盖有限、效果弱
-                     </p>
-                   </li>
-                </ul>
-                <div class="difficulty-right">
-                    <div class="right-imgcon">
-                        <img src="/static/image/solution/difficulty1.png" alt="">
-                    </div>
-                    <h3>轻直播企业培训解决方案</h3>
-                    <p>轻直播提供稳定可靠、多重鉴权的金融直播平台，全球部署的CDN节点加速播放、自定义授权观看、大数据分析等丰富功能，助力企业获客。
-                    </p>
-                    <div class="live-group-btn">
-                        <a href="">咨询详情</a>
-                        <a href="" class="q-ml--36">免费试用</a>
-                    </div>
-                </div>
-             </div>
-        </div>
-    </section> -->
-    <!-- 手机端痛点解析 -->
-    <!-- <section id="m-difficulty-analysis">
-        <div class="layui-container">
-            <h3 class="m-section-title">痛点解析</h3>
-            <div class="m-difficulty-right">
-                <div class="right-imgcon">
-                    <img src="/static/image/solution/difficulty1.png" alt="">
-                </div>
-                <h3>轻直播金融保险解决方案</h3>
-                <p>轻直播提供稳定可靠、多重鉴权的金融直播平台，全球部署的CDN节点加速播放、自定义授权观看、大数据分析等丰富功能，助力企业获客。</p>
-                <div class="live-group-btn">
-                    <a href="">咨询详情</a>
-                    <a href="" class="q-ml--36">免费试用</a>
-                </div>
-            </div>
-        </div>
-    </section> -->
     <!-- 产品优势 -->
     <section id="section-1" class="pro-advantage">
         <div class="layui-container">
@@ -1786,67 +1716,61 @@
             <ul class="advantage-con">
                 <li>
                     <p class="p-icon">
-                        <!-- <img src="/static/image/solution1/fugai.svg" alt=""> -->
+                        
                          <i class="p-icon_item p-icon_item_fugai"></i>
                     </p>
-                    <h3>多场景全覆盖</h3>
-                    <p class="p-text">实现品牌传播、对外营销、内部培训、协同沟通等视频直播的各类需求。</p>
+                    <h3>全场景覆盖</h3>
+                    <p class="p-text">满足全行业场景应用需求，助力企业客户快速构建营销直播体系</p>
                 </li>
                 <li>
                   <p class="p-icon">
-                      <!-- <img src="/static/image/solution1/bushu.svg" alt=""> -->
+                      
                       <i class="p-icon_item p-icon_item_bushu"></i>
                   </p>
-                  <h3>企业定制部署</h3>
-                  <p class="p-text">企业自定义包含logo、直播背景、水印、引导页、注册页、预约提醒、预告和回放等功能。</p>
+                  <h3>深度定制服务</h3>
+                  <p class="p-text">支持深度定制服务，满足个性化装修需求，最大化促进品牌传播</p>
                 </li>
                 <li>
                   <p class="p-icon">
-                      <!-- <img src="/static/image/solution1/quanxian.svg" alt=""> -->
                       <i class="p-icon_item p-icon_item_quanxian"></i>
                   </p>
-                  <h3>丰富管理权限</h3>
-                  <p class="p-text">专人部分授权、多人协作。每一步都有操作日志，责任更加明确。</p>
+                  <h3>多样化营销</h3>
+                  <p class="p-text">丰富的在线互动营销模式，精准获客的同时降低企业运营成本</p>
                 </li>
                 <li>
                   <p class="p-icon">
-                      <!-- <img src="/static/image/solution1/jiagou.svg" alt=""> -->
                       <i class="p-icon_item p-icon_item_jiagou"></i>
                   </p>
-                  <h3>企业级云架构</h3>
-                  <p class="p-text">负载均衡部署，支持百万人观看。自适应视频码流，弱网环境也可流畅播放。</p>
+                  <h3>私有化部署</h3>
+                  <p class="p-text">高效的私有化部署模式，更贴合企业营销直播的长远布局和发展</p>
                 </li>
                 <li>
                   <p class="p-icon">
-                      <!-- <img src="/static/image/solution1/anquan.svg" alt=""> -->
                       <i class="p-icon_item p-icon_item_anquan"></i>
                   </p>
-                  <h3>多重安全机制</h3>
-                  <p class="p-text">多种鉴权机制，数据传输多重加密。播出防盗链、防劫持，30天数据找回功能。</p>
+                  <h3>分布式存储</h3>
+                  <p class="p-text">采用多副本异地容灾备份存储，保障企业数据的安全性和稳定性</p>
                 </li>
                 <li>
                   <p class="p-icon">
-                      <!-- <img src="/static/image/solution1/hudong.svg" alt=""> -->
                       <i class="p-icon_item p-icon_item_hudong"></i>
                   </p>
                   <h3>增强互动体验</h3>
-                  <p class="p-text"> 公聊、私聊、红包、问答、打赏、抽奖、图文等多种互动方式，提升参与体验，激发互动氛围。</p>
+                  <p class="p-text">多种在线营销互动模式，零距离互动的同时还原真实营销场景</p>
                 </li>
                 <li>
                   <p class="p-icon">
-                      <!-- <img src="/static/image/solution1/fenxi.svg" alt=""> -->
                       <i class="p-icon_item p-icon_item_fenxi"></i>
                   </p>
                   <h3>多维数据分析</h3>
-                  <p class="p-text">实时在线用户分析、热度分析、终端分析、观看行为分析，用户关注度分析等。</p>
+                  <p class="p-text">多维度实时流水数据统计与分析，为直播运营提供一手参考资料</p>
                 </li>
                 <li>
                   <p class="p-icon">
-                      <!-- <img src="/static/image/solution1/kaifa.svg" alt=""> -->
                       <i class="p-icon_item p-icon_item_kaifa"></i>
                   </p>
-                  <h3>集成开发支持</h3>
-                  <p class="p-text">提供丰富的API&SDK，直播可嵌入APP/WeChat/web等，从0到1快速构建专属直播间。</p>
+                  <h3>观看授权机制</h3>
+                  <p class="p-text">超强加密双重防护，定向授权观看防录盗，严密的保护版权机制</p>
                 </li>
             </ul>
         </div>
@@ -1858,24 +1782,20 @@
             <div class="flex con-padding">
                 <div class="scene-left">
                     <div class="scene-left-con">
-                      <h3>企业会议培训</h3>
-                      <h5>医学考证培训、医疗产品培训、操作规范培训、母婴护育培训</h5>
+                      <h3>发布会</h3>
+                      <h5>新品发布/新闻发布会/品牌发布</h5>
                       <div class="scene-des">
                           <dl>
-                              <dt>培训形式多样：</dt>
-                              <dd>支持文档+讲师影像、屏幕共享、画笔白板等，可插播多媒体视频</dd>
+                              <dt>形式多样：</dt>
+                              <dd>支持同步文档直播、视频插播、屏幕共享、多地协同等功能</dd>
                           </dl>
                           <dl>
-                            <dt>丰富互动：</dt>
-                            <dd>支持聊天弹幕、多人音视频通话、打赏、答题、问卷投票等，活跃气氛，提升培训效率</dd>
+                            <dt>高并发无延时：</dt>
+                            <dd>万人同步在线，高达99.1%直播流畅度，全程不卡顿</dd>
                         </dl>
                         <dl>
-                            <dt>营销转化：</dt>
-                            <dd>全方位观看行为分析，定向引导学员，报名观看、邀请榜等裂变传播、快速获取意向学员</dd>
-                        </dl>
-                        <dl>
-                            <dt>版权变化：</dt>
-                            <dd>视频加密，防录屏、跑马灯、授权学员观看，全面保障视频课程安全</dd>
+                            <dt>媒体资源丰富：</dt>
+                            <dd>国内1500+主流媒体全覆盖，有效提高曝光率</dd>
                         </dl>
                       </div>
                     </div>
@@ -1893,24 +1813,20 @@
               </div>
               <div class="scene-left">
                   <div class="scene-left-con">
-                    <h3>部门协调会</h3>
-                    <h5>医学考证培训、医疗产品培训、操作规范培训、母婴护育培训</h5>
+                    <h3>户外直播</h3>
+                    <h5>产品测试/国际交流/联谊活动</h5>
                     <div class="scene-des">
                         <dl>
-                            <dt>形式多样：</dt>
-                            <dd>支持同步文档直播、视频插播、屏幕共享、多地协同等</dd>
+                            <dt>营销列变：</dt>
+                            <dd>多端社交平台整合,支持嵌入企业办公应用，助力私域流量</dd>
                         </dl>
                         <dl>
-                          <dt>互动功能：</dt>
-                          <dd>支持在线提问、聊天弹幕、投票问卷，增强会议参与感</dd>
+                          <dt>多语直播：</dt>
+                          <dd>中英文双语直播间创建简单，更易触达全球用户</dd>
                       </dl>
                       <dl>
-                          <dt>会议考勤：</dt>
-                          <dd>支持打卡签到、有效参与度分析，生成丰富的会议报告</dd>
-                      </dl>
-                      <dl>
-                          <dt>授权加密：</dt>
-                          <dd>支持员工白名单验证、第三方授权登录，支持与企业OA系统集成</dd>
+                          <dt>主播打赏：</dt>
+                          <dd>支持礼包、现金打赏、竞答红包等多种奖励</dd>
                       </dl>
                     </div>
                   </div>
@@ -1923,24 +1839,20 @@
          <div class="flex con-padding">
           <div class="scene-left">
               <div class="scene-left-con">
-                <h3>网络研讨会</h3>
-                <h5>医学考证培训、医疗产品培训、操作规范培训、母婴护育培训</h5>
+                <h3>主题峰会</h3>
+                <h5>沙龙/数字峰会/行业大会</h5>
                 <div class="scene-des">
                     <dl>
-                        <dt>形式多样：</dt>
-                        <dd>支持同步文档直播、视频插播、屏幕共享、多地协同等</dd>
+                        <dt>互动体验：</dt>
+                        <dd>红包打赏、红包雨、抽奖等互动内容营造更生动线上峰会</dd>
                     </dl>
                     <dl>
-                      <dt>互动功能：</dt>
-                      <dd>支持在线提问、聊天弹幕、投票问卷，增强会议参与感</dd>
+                      <dt>签到打卡：</dt>
+                      <dd>即时掌握参会人员到场率，生成丰富的会议报告</dd>
                   </dl>
                   <dl>
-                      <dt>会议考勤：</dt>
-                      <dd>支持打卡签到、有效参与度分析，生成丰富的会议报告</dd>
-                  </dl>
-                  <dl>
-                      <dt>授权加密：</dt>
-                      <dd>支持员工白名单验证、第三方授权登录，支持与企业OA系统集成</dd>
+                      <dt>在线云剪辑：</dt>
+                      <dd>在线剪辑视频，提高二次分发推广效果</dd>
                   </dl>
                 </div>
               </div>
@@ -1958,24 +1870,20 @@
       </div>
       <div class="scene-left">
           <div class="scene-left-con">
-            <h3>空中宣讲会</h3>
-            <h5>医学考证培训、医疗产品培训、操作规范培训、母婴护育培训</h5>
+            <h3>空中宣讲</h3>
+            <h5>招商引资/产品宣讲/商业路演</h5>
             <div class="scene-des">
                 <dl>
-                    <dt>形式多样：</dt>
-                    <dd>支持同步文档直播、视频插播、屏幕共享、多地协同等</dd>
+                    <dt>授权加密：</dt>
+                    <dd>支持手机白名单、单点定向登录验证，提升私密度</dd>
                 </dl>
                 <dl>
-                  <dt>互动功能：</dt>
-                  <dd>支持在线提问、聊天弹幕、投票问卷，增强会议参与感</dd>
+                  <dt>在线沟通：</dt>
+                  <dd>在线答疑、1对1对多、投票、举手发言等多种互动还原真实场景</dd>
               </dl>
               <dl>
-                  <dt>会议考勤：</dt>
-                  <dd>支持打卡签到、有效参与度分析，生成丰富的会议报告</dd>
-              </dl>
-              <dl>
-                  <dt>授权加密：</dt>
-                  <dd>支持员工白名单验证、第三方授权登录，支持与企业OA系统集成</dd>
+                  <dt>笔记标注：</dt>
+                  <dd>支持文档白板、重点标注、心得总结等形式，加强文化传播效果</dd>
               </dl>
             </div>
           </div>
@@ -1993,48 +1901,40 @@
         <h3 class="section-title">功能特色</h3>
         <ul class="func-con">
             <li>
-               <h3>定制开发支持</h3>
-               <p>轻量定制可实现72小时交付，轻直播提供完整的API&SDK
-                  支持和丰富的外部授权功能</p>
+               <h3>开播预约</h3>
+               <p>提供多种预约直播形式，快速引流裂变，帮助主播积攒认领的同时加速营销能力</p>
             </li>
             <li>
                 <h3>直播形式多样</h3>
-                <p>支持多终端发起直播，支持网页开播、文档同步直播、桌面共
-                  享、低延迟直播等
+                <p>支持网页开播、文档同步直播、画中画、桌面共享、异地同屏连麦等直播形式
                   </p>
             </li>
             <li>
               <h3>丰富互动功能</h3>
-              <p>支持提问、聊天弹幕、投票问卷、红包雨、礼包雨、礼
-                  物打赏等，提升直播的参与感
+              <p>支持提问、聊天弹幕、投票问卷、红包雨、礼包雨、礼物打赏等，提升直播的参与感
                   </p>
             </li>
             <li>
               <h3>多重授权验证</h3>
-              <p>支持单点登录观看、密码观看、付费观看、白名单观看、邀约
-                  观看、授权登录观看等功能
+              <p>支持单点登录观看、密码观看、付费观看、白名单观看、邀约观看、授权登录观看等功能
                   </p>
             </li>
             <li>
-              <h3>营销优化Plus+</h3>
-              <p>支持嵌入微信公众号、小程序、钉钉等社交平台，直观
-                  统计观看者流量，有效分析用户来源
+              <h3>营销优化</h3>
+              <p>支持嵌入微信公众号、小程序、钉钉等社交平台，直观 统计观看者流量，有效分析用户来源
                   </p>
             </li>
             <li>
-              <h3>极速生成回放</h3>
-              <p>直播的同时在媒体中心缓存直播片段，支持在线剪辑、下载存
-                  储或者秒速转为回放视频</p>
+              <h3>AI机器人回复</h3>
+              <p>支持设置机器人自动回复，消息内容可自主设置，提供多人或单人回复模式</p>
             </li>
             <li>
-              <h3>1V1直播客服</h3>
-              <p>专属直播运营团队7X24小时保障，提供专属项目经理，
-                  提供1v1全程技术在线支持</p>
+              <h3>技术支持</h3>
+              <p>专属直播运营团队7X24小时保障，提供专属项目经理， 提供1v1全程技术在线支持</p>
             </li>
             <li>
-              <h3>多端观看支持</h3>
-              <p>轻直播前端技术基于Html5，全平台多终端观看支持，支持嵌
-                  入用户App、小程序播放支持
+              <h3>集成服务</h3>
+              <p>具备模块化aPaaS服务和灵活的API、SDK接口支持，可根据需求快速搭建组合使用
                   </p>
             </li>
         </ul>
@@ -2167,5 +2067,11 @@
              }
          })
      }
+
+
+     // 预约按钮
+    $('.banner-a').click(function(){
+         console.log(123)
+     })
 </script>
 </html>

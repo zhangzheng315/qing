@@ -8,7 +8,7 @@ class Common extends Model{
      * 分页查询
      */
     public static function data_model_paging($map,$form,$size,$model,$order=null){
-        $order = [$order ? $order : 'id'=>'desc'];
+        $order = $order ? $order : ['id'=>'desc'];
         $data = db("$model")
         ->where($map)
         ->order($order)
