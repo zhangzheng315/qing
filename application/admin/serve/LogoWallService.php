@@ -30,11 +30,11 @@ class LogoWallService extends Common{
      */
     public function logoWallCreate($param){
         if(!isset($param['status'])) $param['status'] = 0;
-        $pid_name = '';
-        if ($param['pid'] != 0) {
-            $pid_name = $this->navigation->where(['id' => $param['pid']])->value('menu_name');
+        $type_name = '';
+        $pid_name = $this->navigation->where(['id' => $param['pid']])->value('menu_name');
+        if ($param['type_id'] != 0) {
+            $type_name = $this->caseType->where(['id'=>$param['type_id']])->value('name');
         }
-        $type_name = $this->caseType->where(['id'=>$param['type_id']])->value('name');
         $data = [
             'img_url' => $param['img_url'],
             'pid' => $param['pid'],
