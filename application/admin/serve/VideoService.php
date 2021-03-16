@@ -32,6 +32,7 @@ class VideoService extends Common{
             return false;
         }
         if(!isset($param['status'])) $param['status'] = 0;
+        if(!isset($param['recommend'])) $param['recommend'] = 0;
         $video_selected = isset($param['video_selected']) ? $param['video_selected'] : 0;
         $label = '';
         if (isset($param['label'])) {
@@ -52,9 +53,10 @@ class VideoService extends Common{
             'video_selected' => $video_selected,
             'label' => $label,
             'status' => $param['status'],
+            'recommend' => $param['recommend'],
             'order' => $param['order'] ?: 0,
             'created_time' => time(),
-            'updated_time' => 0,
+            'updated_time' => time(),
             'deleted_time' => 0,
         ];
 
@@ -110,6 +112,7 @@ class VideoService extends Common{
             return false;
         }
         if(!isset($data['status'])) $data['status'] = 0;
+        if(!isset($data['recommend'])) $data['recommend'] = 0;
         if (isset($data['file'])) {
             //layui富文本自带file参数
             unset($data['file']);
@@ -371,6 +374,35 @@ class VideoService extends Common{
 
         curl_close($curl); // 关闭CURL会话
         return $res;
+    }
+
+    /**
+     * 更多直播功能  视频
+     * @return array|bool|false|\PDOStatement|string|\think\Collection
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
+    public function moreLiveVideo()
+    {
+        $where = [
+            'deleted_time' => 0,
+            'status' => 1,
+        ];
+        $new_video = $this->video->where($where)->order('created_time')->limit(0, 4)->select();
+        if (!$new_video) {
+            $new_video = [];
+        }
+        $where['recommend'] = 1;
+        $recommend_video = $this->video->where($where)->order('updated_time')->limit(0,8)->select();
+        if (!$recommend_video) {
+            $recommend_video = [];
+        }
+        $more_list_video = [
+            'new_video' => $new_video,
+            'recommend_video' => $recommend_video,
+        ];
+        return $more_list_video;
     }
 
 }

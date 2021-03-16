@@ -44,6 +44,7 @@ class Video extends Common{
         foreach ($str['data'] as &$value) {
             $value['status'] = $value['status'] == 1 ? '显示' : '不显示';
             $value['video_selected'] = $value['video_selected'] == 1 ? '是' : '否';
+            $value['recommend'] = $value['recommend'] == 1 ? '是' : '否';
         }
         return layshow($this->code,'ok',$str['data'],$str['count']);
     }
