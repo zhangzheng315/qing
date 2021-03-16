@@ -187,9 +187,6 @@
         .case-nav>li.active>span {
             color: #ffffff;
         }
-
-       
-
         .case-nav>li::after,
         .case-nav>li::before {
             content: '';
@@ -199,7 +196,6 @@
             width: 0;
             height: 32px;
             border-radius: 20px;
-            /* background-color: #ffffff; */
             z-index: 2;
         }
         .case-nav>li::before {
@@ -1924,11 +1920,9 @@
         <div id="banner">
             <div class="layui-carousel" id="banners">
                 <div carousel-item class="lunbo-box">
-                    {if(isset($banner_list) && $banner_list)}
-                    {foreach $banner_list as $item}
-                    <img src="{$item.img_url}" alt="">
-                    {/foreach}
-                    {/if}
+                    <img src="/static/image/index/banner.png" alt="">
+                    <img src="/static/image/index/banner.png" alt="">
+                    <img src="/static/image/index/banner.png" alt="">
                 </div>
             </div>
         </div>
@@ -1965,7 +1959,7 @@
                                 痛点1
                             </div>
                             <p>
-                                重复性企业培训耗时耗力，无法系统化留存循环利用
+                                手术示教场地有限，无法同时多人现场观摩
                             </p>
                         </li>
                         <li>
@@ -1973,7 +1967,7 @@
                                 痛点2
                             </div>
                             <p>
-                                企业分支机构和人员分散各地，组织线下会议培训成本高
+                                线下医学研讨会/学术交流会人数限制，来回奔波
                             </p>
                         </li>
                         <li>
@@ -1981,7 +1975,7 @@
                                 痛点3
                             </div>
                             <p>
-                                会议培训内容涉及企业内部业务，传统拍摄留存安全无保障
+                                医药和器械企业对外服务网络覆盖有限、展示效果弱
                             </p>
                         </li>
                         <li>
@@ -1989,7 +1983,7 @@
                                 痛点4
                             </div>
                             <p>
-                                会议培训效果难以清晰量化，参与反馈方式低效落后
+                                医疗资源分布不均，基层医院难以触达优质资源
                             </p>
                         </li>
                     </ul>
@@ -1997,8 +1991,9 @@
                         <div class="right-imgcon">
                             <img src="/static/image/solution/difficulty1.png" alt="">
                         </div>
-                        <h3>企业会议直播+企业内训全方位解决方案</h3>
-                        <p>会议培训是企业高频次场景，轻直播集成开发轻量级企业会议直播系统，提供丰富完善的全方位解决方案，录播回放、自定义授权观看、大数据分析等丰富的功能，助力企业轻松自如重新定义企业会议、企业内训。</p>
+                        <h3>轻直播企业会议解决方案</h3>
+                        <p>一站式企业会议解决方案，从方案设计到执行落地，全程为您的会议直播保驾护航。</p>
+                        <p>咨询详情 免费试用</p>
                         <div class="live-group-btn">
                             <a href="">咨询详情</a>
                             <a href="http://login.lighos.com/signUp" target="_blank" class="q-ml--36">免费试用</a>
@@ -2245,7 +2240,37 @@
                 </ul>
                 <div class="case-con">
                     <ul class="case-imgs active">
+                        <li>
+                            <img src="/static/image/solution/case-logo/case1.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/solution/case-logo/case2.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/solution/case-logo/case3.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/solution/case-logo/case4.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/solution/case-logo/case5.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/solution/case-logo/case6.png" alt="">
+                        </li>
 
+                        <li>
+                            <img src="/static/image/solution/case-logo/case7.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/solution/case-logo/case8.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/solution/case-logo/case9.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/static/image/solution/case-logo/case11.png" alt="">
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -2328,7 +2353,6 @@
     });
 
     // 客户案例切换
-      // logo墙
       $('#section-4').each(function (index, element) {
         var obj = $(this);
         obj.find('.case-nav').children().on('click li', function () {
@@ -2338,26 +2362,6 @@
         });
         setTimeout(function () { obj.find('.case-nav .active').trigger('li'); }, 100);
     });
-
-    logoPoint(0);
-    function logoPoint(index) {
-        $.ajax({
-            url: "{:url('/index/logo_wall/getLogoByWhere')}",
-            data: { 'pid': 31, 'type_id': index },
-            type: 'get',
-            success: function (res) {
-                if (res.status === 200) {
-                    $('.case-imgs').empty();
-                    for (let item of res.data) {
-                        $('.case-imgs').append('<li><img src="' + item.img_url + '" alt=""></li>');
-                    }
-                }
-            },
-            error: function (err) {
-                console.log(err)
-            }
-        })
-    }
 </script>
 <script>
     var _hmt = _hmt || [];
