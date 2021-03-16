@@ -765,6 +765,7 @@
                             display: flex;
                             align-items: center;
                             justify-content: space-between;
+                            background-color: #fff;
 
                             .text {
                                 margin-left: 87px;
@@ -823,14 +824,17 @@
                         display: flex;
                         align-items: center;
                         justify-content: space-between;
-
+                        flex-wrap: wrap;
                         .bottom-item {
-
+                            width: 49%;
                             border: 1px solid #E5E5E5;
                             border-radius: 10px;
                             display: flex;
                             padding: 34px 30px 20px;
+                            margin: 0 2% 30px 0;
                             cursor: pointer;
+                            box-sizing: border-box;
+                            background-color: #fff;
 
                             .item-left {
                                 width: 100px;
@@ -878,6 +882,10 @@
                                     color: #666;
 
                                 }
+                            }
+                            &:nth-child(2n){
+                                margin: 0 0 30px 0;
+
                             }
                         }
                     }

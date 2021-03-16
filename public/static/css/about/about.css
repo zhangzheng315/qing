@@ -595,6 +595,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: #fff;
 }
 #about .about-boxs section .dongtai .layui-container .dt-top .top-item .text {
   margin-left: 87px;
@@ -642,13 +643,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 #about .about-boxs section .dongtai .layui-container .dt-bottom .bottom-item {
+  width: 49%;
   border: 1px solid #E5E5E5;
   border-radius: 10px;
   display: flex;
   padding: 34px 30px 20px;
+  margin: 0 2% 30px 0;
   cursor: pointer;
+  box-sizing: border-box;
+  background-color: #fff;
 }
 #about .about-boxs section .dongtai .layui-container .dt-bottom .bottom-item .item-left {
   width: 100px;
@@ -688,6 +694,9 @@
 #about .about-boxs section .dongtai .layui-container .dt-bottom .bottom-item .item-right p {
   font-size: 14px;
   color: #666;
+}
+#about .about-boxs section .dongtai .layui-container .dt-bottom .bottom-item:nth-child(2n) {
+  margin: 0 0 30px 0;
 }
 #about .about-boxs section .dongtai .layui-container .look-more {
   width: 172px;
