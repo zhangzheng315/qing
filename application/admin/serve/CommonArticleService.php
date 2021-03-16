@@ -147,20 +147,6 @@ class CommonArticleService extends Common{
     }
 
     /**
-     * 公共文章数量
-     * @return int|string
-     * @throws \think\Exception
-     */
-    public function articleCount()
-    {
-        $where = [
-            'deleted_time'=>0
-        ];
-        $count = $this->article->where($where)->count('id');
-        return $count;
-    }
-
-    /**
      * 前端获取文章列表
      * @return array|bool
      * @throws \think\db\exception\DataNotFoundException
@@ -202,18 +188,23 @@ class CommonArticleService extends Common{
      * @throws \think\db\exception\ModelNotFoundException
      * @throws \think\exception\DbException\
      */
-    public function getArticleInfo($id)
+    public function getArticleInfo($param)
     {
         $where = [
             'deleted_time' => 0,
             'status' => 1,
-            'id' => $id,
+            'id' => $param['id'],
         ];
         $info = $this->commonArticle->where($where)->find();
         if (!$info) {
             $this->setError('暂无数据');
             return false;
         }
+        //前端点击的 增加浏览量
+        if (isset($param['browse'])) {
+            $this->commonArticle->where($where)->setInc('browse');
+        }
+
         $this->setMessage('查询成功');
         return $info;
     }

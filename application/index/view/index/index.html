@@ -29,7 +29,6 @@
     <div id="banner">
         <div class="layui-carousel" id="banners">
             <div carousel-item class="lunbo-box">
-
                 {if(isset($banner_list) && $banner_list)}
                 {foreach $banner_list as $item}
                 <div class="banner-item">
@@ -51,7 +50,8 @@
                             text-align: {$item.format};
                             line-height: 1.5;'>{$item.introduction}</h5>
 
-                        <a class="banner-a" href="" style='z-index: 10;
+                        {if($item.button_status == 1)}
+                        <a class="banner-a" href="{$item.button_link}" style='z-index: 10;
                             display: block;
                             width: 167px;
                             height: 44px;
@@ -61,9 +61,9 @@
                             line-height: 44px;
                             float: {$item.float};
                             font-size: {$item.button_size}px;'>{$item.button_text}</a>
+                        {/if}
                     </div>
                 </div>
-
                 {/foreach}
                 {/if}
             </div>
@@ -71,30 +71,29 @@
 
         <!-- 6个圆图标 -->
         <!-- <div class="icons">
-            <ul>
-                <li>
-                    <div><img src="/static/image/index/seo.png" alt=""></div>
-                    <p>SEO优化</p>
-                </li>
-                <li>
-                    <div><img src="/static/image/index/seo.png" alt=""></div>
-                    <p>海外推广</p>
-                </li>
-                <li>
-                    <div><img src="/static/image/index/seo.png" alt=""></div>
-                    <p>品牌推广</p>
-                </li>
-                <li>
-                    <div><img src="/static/image/index/seo.png" alt=""></div>
-                    <p>网站建设</p>
-                </li>
-                <li>
-                    <div><img src="/static/image/index/seo.png" alt=""></div>
-                    <p>展示广告</p>
-                </li>
-            </ul>
-        </div> -->
-
+          <ul>
+            <li>
+                <div><img src="/static/image/index/seo.png" alt=""></div>
+                <p>SEO优化</p>
+            </li>
+            <li>
+                <div><img src="/static/image/index/seo.png" alt=""></div>
+                <p>海外推广</p>
+            </li>
+            <li>
+                <div><img src="/static/image/index/seo.png" alt=""></div>
+                <p>品牌推广</p>
+            </li>
+            <li>
+                <div><img src="/static/image/index/seo.png" alt=""></div>
+                <p>网站建设</p>
+            </li>
+            <li>
+                <div><img src="/static/image/index/seo.png" alt=""></div>
+                <p>展示广告</p>
+            </li>
+          </ul>
+        </div>-->
         <!-- 主打产品功能模块 -->
         <div id="high-lights">
             <div class="layui-container">
@@ -169,7 +168,8 @@
                         <h5>视频云服务</h5>
                     </div>
                     <div class="item-body">
-                        <p>企业级分布式混合云部署，自有第三代直播云技术加持，全球3000+的直播节点，具备8K直播能力，全新网页发起直播，千万级高并发无延迟。</p>
+                        <p>企业级分布式混合云部署，自有第三代直播云技术加持，全球3000+的直播节点，具备8K直播能力，全新网页发起直播，千万级高并发无延迟。
+                        </p>
                     </div>
                     <div class="item-footer">
                         <button class="more"><a href="{:url('/index/video_cloud/index')}">了解更多</a>
@@ -184,7 +184,8 @@
                         <h5>定制化服务</h5>
                     </div>
                     <div class="item-body">
-                        <p>7x24小时响应，深度品牌专属定制，提供灵活、可拓展的API/SDK接口，支持二次开发和接入第三方OA、ERP、CRM等企业办公应用集成服务。</p>
+                        <p>7x24小时响应，深度品牌专属定制，提供灵活、可拓展的API/SDK接口，支持二次开发和接入第三方OA、ERP、CRM等企业办公应用集成服务。
+                        </p>
                     </div>
                     <div class="item-footer">
                         <button class="more"><a href="{:url('/index/customized_service/index')}">了解更多</a></button>
@@ -502,17 +503,23 @@
                 <div class="college-right">
                     <div class="layui-carousel" id="test2">
                         <div carousel-item>
-                            {for start="1" end="2" comparison="elt"}
+                            {for start="1" end="2"
+                            comparison="elt"}
                             {if(isset($article_list[$i]))}
                             <ul>
-                                {foreach($article_list[$i] as $item)}
+                                {foreach($article_list[$i]
+                                as $item)}
                                 <li>
                                     <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>$item.pid])}"
                                        style="display: flex;width: 100%;">
-                                        <div class="type">{$item.pid_name}</div>
+                                        <div class="type">
+                                            {$item.pid_name}
+                                        </div>
                                         <div class="titles">
-                                            <h6>{$item.title}</h6>
-                                            <p>{$item.second_title}</p>
+                                            <h6>{$item.title}
+                                            </h6>
+                                            <p>{$item.second_title}
+                                            </p>
                                             <span>{$item.time}</span>
                                         </div>
                                     </a>
@@ -522,7 +529,6 @@
                             </ul>
                             {/if}
                             {/for}
-
                         </div>
                     </div>
                 </div>
@@ -535,15 +541,14 @@
         <div class="hover"></div>
         <div class="layui-container">
             <div class="fiveg-content">
-                <h2>“轻”装上阵，玩转企业数字营销5G时代</h2>
-                <h5>「轻直播」为您提供一站式企业直播解决方案</h5>
-                <button><a href="http://login.lighos.com/signUp" target="_blank">免费使用</a>
-                </button>
+                <h2>顶级视频部署架构</h2>
+                <h5>更符合政企、金融机构、学校、新媒体等的视频应用</h5>
+                <button><a href="http://login.lighos.com/signUp" target="_blank">免费使用</a></button>
             </div>
 
         </div>
     </div>
-    <!-- 底部 -->
+
     {include file="common/footer"}
 </div>
 

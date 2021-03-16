@@ -1,12 +1,16 @@
 <?php
+
 namespace app\admin\serve;
+
 use think\Request;
 use app\admin\model\Development;
 
 
-class DevelopmentService extends Common{
+class DevelopmentService extends Common
+{
 
     public $development;
+
     public function __construct(Request $request = null)
     {
         parent::__construct($request);
@@ -18,7 +22,8 @@ class DevelopmentService extends Common{
      * @param $data
      * @return bool
      */
-    public function developmentCreate($param){
+    public function developmentCreate($param)
+    {
         $status = isset($param['status']) ? $param['status'] : 0;
         $data = [
             'content' => $param['content'],
@@ -30,7 +35,7 @@ class DevelopmentService extends Common{
             'deleted_time' => 0,
         ];
         $res = $this->development->insertGetId($data);
-        if(!$res){
+        if (!$res) {
             $this->setError('添加失败');
             return false;
         }
@@ -46,12 +51,12 @@ class DevelopmentService extends Common{
      * @throws \think\db\exception\ModelNotFoundException
      * @throws \think\exception\DbException
      */
-    public function  developmentInfo($param)
+    public function developmentInfo($param)
     {
         $id = $param['id'];
         $where = ['id' => $id];
         $info = $this->development->find($where);
-        if(!$info){
+        if (!$info) {
             $this->setError('查询失败');
             return false;
         }
@@ -66,11 +71,11 @@ class DevelopmentService extends Common{
      */
     public function developmentEdit($data)
     {
-        if(!isset($data['status'])) $data['status'] = 0;
+        if (!isset($data['status'])) $data['status'] = 0;
         $where = ['id' => $data['id']];
         $data['updated_time'] = time();
-        $res = $this->development->allowField(true)->save($data,$where);
-        if(!$res){
+        $res = $this->development->allowField(true)->save($data, $where);
+        if (!$res) {
             $this->setError('修改失败');
             return false;
         }
@@ -90,12 +95,34 @@ class DevelopmentService extends Common{
             'updated_time' => time(),
             'deleted_time' => time(),
         ];
-        $res = $this->development->update($data,$where);
-        if(!$res){
+        $res = $this->development->update($data, $where);
+        if (!$res) {
             $this->setError('删除失败');
             return false;
         }
         $this->setMessage('删除成功');
         return true;
+    }
+
+    /**
+     * 发展历程列表
+     * @return bool|false|\PDOStatement|string|\think\Collection
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
+    public function developmentList()
+    {
+        $where = [
+            'status' => 1,
+            'deleted_time' => 0,
+        ];
+        $res = $this->development->where($where)->order('order', 'desc')->select();
+        if (!$res) {
+            $this->setError('暂无数据');
+            return [];
+        }
+        $this->setMessage('查询成功');
+        return $res;
     }
 }

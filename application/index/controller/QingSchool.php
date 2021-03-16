@@ -185,9 +185,16 @@ class QingSchool extends Controller
     public function article()
     {
         $param = request()->param();
+        $param['browse'] = 1;
+        $article_f = 0;
+        $article_info = [];
+        if (isset($param['id'])) {
+            $article_f = 1;
+            $article_info = $this->common_article_service->getArticleInfo($param);
+        }
         $article = $this->common_article_service->commonArticleList();
         $article_list = $this->common_article_service->articleByWhere(['pid'=>1]);
-        return $this->fetch('',compact('article','article_list'));
+        return $this->fetch('',compact('article','article_list','article_f','article_info'));
     }
 
     /**
@@ -213,7 +220,8 @@ class QingSchool extends Controller
      */
     public function articleInfo($id)
     {
-        $info = $this->common_article_service->getArticleInfo($id);
+        $param = ['id' => $id];
+        $info = $this->common_article_service->getArticleInfo($param);
         if (!$info) {
             return ['status'=>401];
         }

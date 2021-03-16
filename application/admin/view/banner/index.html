@@ -53,7 +53,7 @@
                 <div id="add_title_colorpicker"></div>
                 <input type="text" name="title_color" placeholder="请输入颜色" autocomplete="off" class="layui-input-inline layui-input add_title_colorpicker">
                 <div class="layui-inline">
-                    <input type="number" min="12" name="title_size" placeholder="字体大小默认12像素" autocomplete="off" class="layui-input add_title_size">
+                    <input type="number" min="12" name="title_size" placeholder="推荐45px" autocomplete="off" class="layui-input add_title_size">
                 </div>
             </div>
         </div>
@@ -69,8 +69,21 @@
                 <div id="add_in_colorpicker"></div>
                 <input type="text" name="in_color" placeholder="请输入颜色" autocomplete="off" class="layui-input-inline layui-input add_in_colorpicker">
                 <div class="layui-inline">
-                    <input type="number" min="12" name="in_size" placeholder="字体大小默认12像素" autocomplete="off" class="layui-input add_in_size">
+                    <input type="number" min="12" name="in_size" placeholder="推荐16px" autocomplete="off" class="layui-input add_in_size">
                 </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">启用按钮</label>
+            <div class="layui-input-block">
+                <input name="button_status" value="1" type="checkbox" lay-skin="switch">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">按钮连接</label>
+            <div class="layui-input-block">
+                <input type="text" name="button_link" placeholder="请输入" autocomplete="off" class="layui-input">
+                <div class="layui-input-inline" style="color:red;">不启用按钮，请忽略</div>
             </div>
         </div>
         <div class="layui-form-item">
@@ -80,8 +93,9 @@
                 <div id="add_button_colorpicker"></div>
                 <input type="text"  name="button_color" placeholder="请输入颜色" autocomplete="off" class="layui-input-inline layui-input add_button_colorpicker">
                 <div class="layui-inline">
-                    <input type="number" min="12" name="button_size" placeholder="字体大小默认12像素" autocomplete="off" class="layui-input add_button_size">
+                    <input type="number" min="12" name="button_size" placeholder="推荐18px" autocomplete="off" class="layui-input add_button_size">
                 </div>
+                <div class="layui-input-inline" style="color:red;">不启用按钮，请忽略</div>
             </div>
         </div>
         <div class="layui-form-item">
@@ -151,7 +165,7 @@
                 <div id="edit_title_colorpicker"></div>
                 <input type="text" id="title_color" name="title_color" placeholder="请输入颜色" autocomplete="off" class="layui-input-inline layui-input edit_title_colorpicker">
                 <div class="layui-inline">
-                    <input type="number" id="title_size" min="12" name="title_size" placeholder="字体大小默认12像素" autocomplete="off" class="layui-input edit_title_size">
+                    <input type="number" id="title_size" min="12" name="title_size" placeholder="推荐45px" autocomplete="off" class="layui-input edit_title_size">
                 </div>
             </div>
         </div>
@@ -167,8 +181,21 @@
                 <div id="edit_in_colorpicker"></div>
                 <input type="text" id="in_color" name="in_color" placeholder="请输入颜色" autocomplete="off" class="layui-input-inline layui-input edit_in_colorpicker">
                 <div class="layui-inline">
-                    <input type="number" id="in_size" min="12" name="in_size" placeholder="字体大小默认12像素" autocomplete="off" class="layui-input edit_in_size">
+                    <input type="number" id="in_size" min="12" name="in_size" placeholder="推荐16px" autocomplete="off" class="layui-input edit_in_size">
                 </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">启用按钮</label>
+            <div class="layui-input-block">
+                <input name="button_status" id="button_status" value="1" type="checkbox" lay-skin="switch">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">按钮连接</label>
+            <div class="layui-input-block">
+                <input type="text" id="button_link" name="button_link" placeholder="请输入" autocomplete="off" class="layui-input">
+                <div class="layui-input-inline" style="color:red;">不启用按钮，请忽略</div>
             </div>
         </div>
         <div class="layui-form-item">
@@ -178,9 +205,12 @@
                 <div id="edit_button_colorpicker"></div>
                 <input type="text"  name="button_color" placeholder="请输入颜色" autocomplete="off" class="layui-input-inline layui-input edit_button_colorpicker">
                 <div class="layui-inline">
-                    <input type="number" min="12" name="button_size" placeholder="字体大小默认12像素" autocomplete="off" class="layui-input edit_button_size">
+                    <input type="number" min="12" name="button_size" placeholder="推荐18px" autocomplete="off" class="layui-input edit_button_size">
                 </div>
+                <div class="layui-input-inline" style="color:red;">不启用按钮，请忽略</div>
+
             </div>
+            <div></div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">格式</label>
@@ -419,12 +449,18 @@
                         $('.edit_button_colorpicker').val(res.data.button_color);
                         $('.edit_button_size').val(res.data.button_size);
                         $('.format').empty();
+                        $('#button_link').val(res.data.button_link);
 
                         selected = res.data.pid;
                         if (res.data.status === 0) {
                             $('#status').removeAttr('checked');
                         } else {
                             $('#status').attr('checked', true);
+                        }
+                        if (res.data.button_status === 0) {
+                            $('#button_status').removeAttr('checked');
+                        } else {
+                            $('#button_status').attr('checked', true);
                         }
                         for (let item of res.data.navigation_list) {
                             if (res.data.pid === item.id) {

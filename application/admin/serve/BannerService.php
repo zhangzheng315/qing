@@ -26,6 +26,7 @@ class BannerService extends Common{
      */
     public function bannerCreate($param){
         if(!isset($param['status'])) $param['status'] = 0;
+        if(!isset($param['button_status'])) $param['button_status'] = 0;
         $pid_name = $this->navigation->where(['id' => $param['pid']])->value('menu_name');
         $data = [
             'img_url' => $param['img_url'],
@@ -37,6 +38,8 @@ class BannerService extends Common{
             'introduction' => $param['introduction'],
             'in_color' => $param['in_color'] ?: '',
             'in_size' => $param['in_size'] ?: 12,
+            'button_status' => $param['button_status'],
+            'button_link' => $param['button_link'] ?: '',
             'button_text' => $param['button_text'] ?: '',
             'button_color' => $param['button_color'] ?: '',
             'button_size' => $param['button_size'] ?: 12,
@@ -88,6 +91,7 @@ class BannerService extends Common{
     public function bannerEdit($data)
     {
         if(!isset($data['status'])) $data['status'] = 0;
+        if(!isset($data['button_status'])) $data['button_status'] = 0;
         if (isset($data['file'])) {
             //layui富文本自带file参数
             unset($data['file']);

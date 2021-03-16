@@ -123,6 +123,10 @@
   padding: 48px 51px 0;
   box-sizing: border-box;
 }
+#video .all-watch .layui-container .watch-content .all-img {
+  max-width: 100%;
+  max-height: 65%;
+}
 #video .all-watch .layui-container .watch-content .content-text {
   margin-top: 37px;
 }
