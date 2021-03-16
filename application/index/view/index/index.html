@@ -21,10 +21,12 @@
         <!-- 头部 -->
         {include file="common/header"}
 
-        <!--演示演示弹出框 -->
+        <!--预约演示弹出框 -->
         {include file="common/order_box"}
         <!-- 咨询版块 -->
         {include file="common/siderbar-right"}
+        <!-- 免费试用版块 -->
+        {include file="common/free_box"}
         <!-- banner板块 -->
         <div id="banner">
             <div class="layui-carousel" id="banners">
@@ -71,29 +73,29 @@
 
             <!-- 6个圆图标 -->
             <!-- <div class="icons">
-          <ul>
-            <li>
-                <div><img src="/static/image/index/seo.png" alt=""></div>
-                <p>SEO优化</p>
-            </li>
-            <li>
-                <div><img src="/static/image/index/seo.png" alt=""></div>
-                <p>海外推广</p>
-            </li>
-            <li>
-                <div><img src="/static/image/index/seo.png" alt=""></div>
-                <p>品牌推广</p>
-            </li>
-            <li>
-                <div><img src="/static/image/index/seo.png" alt=""></div>
-                <p>网站建设</p>
-            </li>
-            <li>
-                <div><img src="/static/image/index/seo.png" alt=""></div>
-                <p>展示广告</p>
-            </li>
-          </ul>
-        </div>-->
+                <ul>
+                  <li>
+                      <div><img src="/static/image/index/seo.png" alt=""></div>
+                      <p>SEO优化</p>
+                  </li>
+                  <li>
+                      <div><img src="/static/image/index/seo.png" alt=""></div>
+                      <p>海外推广</p>
+                  </li>
+                  <li>
+                      <div><img src="/static/image/index/seo.png" alt=""></div>
+                      <p>品牌推广</p>
+                  </li>
+                  <li>
+                      <div><img src="/static/image/index/seo.png" alt=""></div>
+                      <p>网站建设</p>
+                  </li>
+                  <li>
+                      <div><img src="/static/image/index/seo.png" alt=""></div>
+                      <p>展示广告</p>
+                  </li>
+                </ul>
+            </div>-->
             <!-- 主打产品功能模块 -->
             <div id="high-lights">
                 <div class="layui-container">
@@ -174,8 +176,7 @@
                         <div class="item-footer">
                             <button class="more"><a href="{:url('/index/video_cloud/index')}">了解更多</a>
                             </button>
-                            <button class="free"><a href="http://login.lighos.com/signUp"
-                                    target="_blank">免费试用</a></button>
+                            <button class="free"><a href="javascript:;">免费试用</a></button>
                         </div>
                     </div>
                     <div class="product-item">
@@ -189,8 +190,7 @@
                         </div>
                         <div class="item-footer">
                             <button class="more"><a href="{:url('/index/customized_service/index')}">了解更多</a></button>
-                            <button class="free"><a href="http://login.lighos.com/signUp"
-                                    target="_blank">免费试用</a></button>
+                            <button class="free"><a href="javascript:;">免费试用</a></button>
                         </div>
                     </div>
                     <div class="product-item">
@@ -203,14 +203,12 @@
                         </div>
                         <div class="item-footer">
                             <button class="more"><a href="{:url('/index/site_service/index')}">了解更多</a></button>
-                            <button class="free"><a href="http://login.lighos.com/signUp"
-                                    target="_blank">免费试用</a></button>
+                            <button class="free"><a href="javascript:;">免费试用</a></button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
         <!-- 轻直播为您创造价值 -->
         <div id="light-live">
             <div class="layui-container">
@@ -376,7 +374,6 @@
                 </div>
             </div>
         </div>
-
         <!-- 全行业解决方案 -->
         <div id="solve">
             <div class="layui-container">
@@ -536,6 +533,7 @@
             </div>
         </div>
 
+
         <!-- “轻”装上阵，玩转企业数字营销5G时代 -->
         <div id="fiveG">
             <div class="hover"></div>
@@ -543,13 +541,12 @@
                 <div class="fiveg-content">
                     <h2>顶级视频部署架构</h2>
                     <h5>更符合政企、金融机构、学校、新媒体等的视频应用</h5>
-                    <button><a href="http://login.lighos.com/signUp" target="_blank">免费使用</a></button>
+                    <button class="free_button"><a href="javascript:;">免费试用</a></button>
                 </div>
-
             </div>
         </div>
-
         {include file="common/footer"}
+
     </div>
 
 </body>
@@ -680,6 +677,18 @@
                 }
             });
         }
+    })
+
+
+    // 免费试用弹出框
+    $('.free').on('click', function () {
+        $('#free-container').show();
+        $('.q-modal').show();
+    })
+
+    $('.free_button').on('click', function () {
+        $('#free-container').show();
+        $('.q-modal').show();
     })
 </script>
 

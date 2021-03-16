@@ -2,6 +2,7 @@
 namespace app\admin\controller;
 use app\admin\serve\ArticleService;
 use app\admin\serve\CaseService;
+use app\admin\serve\ConsultingService;
 use app\admin\serve\VideoService;
 
 class Index extends Common{
@@ -10,10 +11,12 @@ class Index extends Common{
         $article_service = new ArticleService();
         $case_service = new CaseService();
         $video_service = new VideoService();
+        $consulting_service = new ConsultingService();
         $time = date('Y-m-d H:i:s');
         $article_count = $article_service->articleCount();
         $case_count = $case_service->caseCount();
         $video_count = $video_service->videoCount();
+        $consulting = $consulting_service->consultingStatistics();
         $data_arr = [
             [
                 'name' => '文章数量',
@@ -31,7 +34,7 @@ class Index extends Common{
                 'link'=>'/admin/video/index'
             ],
         ];
-        return $this->fetch('',compact('time','data_arr'));
+        return $this->fetch('',compact('time','data_arr','consulting'));
     }
 
 }
