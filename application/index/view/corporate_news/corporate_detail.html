@@ -187,7 +187,7 @@
 
             .school-nav>a {
                 font-size: 16px;
-                margin-right: 100px;
+                margin-right: 90px;
                 display: inline-block;
                 height: 65px;
                 line-height: 65px;
@@ -2144,6 +2144,37 @@
         {include file="common/order_box"}
         <!-- 咨询版块 -->
         {include file="common/siderbar-right"}
+
+        <!-- 导航栏 -->
+        <nav>
+            <div class="layui-container school-nav">
+                <a href="{:url('qing_school/index')}" class="{$pid == 0 ? 'active' : ''}">
+                    <!-- <img src="/static/image/qingschool/school-home.png" alt=""> -->
+                    <i class="icon-nav-item icon-nav-home"></i>
+                    <span>内容中心</span>
+                </a>
+                <a href="{:url('qing_school/caseAn')}" class="{$pid == 1 ? 'active' : ''}">
+                    <i class="icon-nav-item icon-nav-case"></i>
+                    <span>案例解析</span>
+                </a>
+                <a href="{:url('qing_school/products')}" class="{$pid == 2 ? 'active' : ''}">
+                    <i class="icon-nav-item icon-nav-product"></i>
+                    <span>产品动态</span>
+                </a>
+                <a href="{:url('qing_school/liveNews')}" class="{$pid == 3 ? 'active' : ''}">
+                    <i class="icon-nav-item icon-nav-live"></i>
+                    <span>直播资讯</span>
+                </a>
+                <a href="{:url('index/qing_school/videoCourse')}">
+                    <i class="icon-nav-item icon-nav-video"></i>
+                    <span>视频学院</span>
+                </a>
+                <a href="{:url('qing_school/article')}">
+                    <i class="icon-nav-item icon-nav-case"></i>
+                    <span>直播百科</span>
+                </a>
+            </div>
+        </nav>
         <!-- 内容区域 -->
         <section id="content-center">
             <!-- 文章面包屑导航 -->
@@ -2217,7 +2248,8 @@
                 <div class="school-right-con">
                     <div class="siderbar-item siderbar-item-search">
                         <form action="/index/corporate_news/categoryNews" class="search-form" id="search-form">
-                            <input type="text" name="word" class="searchInput" value="{:request()->param('word')}" placeholder="输入关键词" autocomplete="off">
+                            <input type="text" name="word" class="searchInput" value="{:request()->param('word')}"
+                                placeholder="输入关键词" autocomplete="off">
                             <input type="submit" class="submitInput" alt="search">
                         </form>
                     </div>
@@ -2234,7 +2266,8 @@
                         <ul class="hot-tags-list">
                             {if(!empty($label_list))}
                             {foreach($label_list as $item)}
-                            <li><a href="/index/corporate_news/categoryNews?label={$item.name}" class="hot-tag-item">{$item.name}</a></li>
+                            <li><a href="/index/corporate_news/categoryNews?label={$item.name}"
+                                    class="hot-tag-item">{$item.name}</a></li>
                             {/foreach}
                             {/if}
                         </ul>
@@ -2255,7 +2288,8 @@
                             {if(isset($list))}
                             {foreach($list['hot_article'] as $item)}
                             <li class="article-item">
-                                <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>11])}" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
+                                <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>11])}"
+                                    class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
                                     <p>{$item.title}</p>
                                     <span class="time">{$item.time}</span>
                                 </a>
@@ -2267,7 +2301,8 @@
                             {if(isset($list))}
                             {foreach($list['recommend'] as $item)}
                             <li class="article-item">
-                                <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>12])}" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
+                                <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>12])}"
+                                    class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
                                     <p>{$item.title}</p>
                                     <span class="time">{$item.time}</span>
                                 </a>

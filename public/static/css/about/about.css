@@ -376,12 +376,16 @@
   background: #00cc99;
   border-radius: 15px;
   border: 0;
+}
+#about .about-boxs section .recruit .layui-container .zhaopin-info li .zhao-bottom button a {
   color: #fff;
 }
 #about .about-boxs section .recruit .layui-container .zhaopin-info li .zhao-bottom button:hover {
-  color: #00cc99;
   border: 1px solid #00cc99;
   background-color: transparent;
+}
+#about .about-boxs section .recruit .layui-container .zhaopin-info li .zhao-bottom button:hover a {
+  color: #00cc99;
 }
 #about .about-boxs section .recruit .layui-container .zhaopin-info li:nth-child(2n) {
   margin-right: 0;
@@ -599,15 +603,17 @@
 }
 #about .about-boxs section .dongtai .layui-container .dt-top .top-item a {
   display: block;
-  width: 77%;
+  width: 65%;
   height: 100%;
 }
 #about .about-boxs section .dongtai .layui-container .dt-top .top-item a img {
   width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 #about .about-boxs section .dongtai .layui-container .dt-top .top-item .text {
-  margin-left: 87px;
+  width: 30%;
+  margin-left: 4%;
 }
 #about .about-boxs section .dongtai .layui-container .dt-top .top-item .text h3 {
   font-size: 20px;

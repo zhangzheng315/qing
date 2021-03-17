@@ -32,7 +32,7 @@
             <div class="layui-container">
                 <ul class="navinfo">
                     <li><a href="{:url('about/index')}">关于我们</a></li>
-                    <li ><a href="{:url('corporate_news/news')}">企业新闻</a></li>
+                    <li><a href="{:url('corporate_news/news')}">企业新闻</a></li>
                     <li class="active"><a href="{:url('join/joinUs')}">加入我们</a></li>
                     <li><a href="{:url('contact/contactUs')}">联系我们</a></li>
                 </ul>
@@ -80,10 +80,13 @@
                             <li>
                                 <h6>{$item.position}</h6>
                                 <div class="zhao-content"><span class="xinzi">{$item.salary}</span><i>|</i><span
-                                        class="diqu">{$item.region}</span><i>|</i><span class="xueli">{$item.education}</span><i>|</i><span
+                                        class="diqu">{$item.region}</span><i>|</i><span
+                                        class="xueli">{$item.education}</span><i>|</i><span
                                         class="nianxian">{$item.years}</span></div>
                                 <div class="zhao-bottom"><span
-                                        class="time">{$item.time}</span><i>|</i><span>投递后：24小时反馈</span><button>立即应聘</button>
+                                        class="time">{$item.time}</span><i>|</i><span>投递后：24小时反馈</span><button><a
+                                            href="https://sou.zhaopin.com/?jl=538&kw=%E8%A1%8C%E9%82%A6%E9%80%9A%E8%AE%AF" target="_blank">立即应聘</a>
+                                        </button>
                                 </div>
                             </li>
                             {/foreach}
