@@ -2180,7 +2180,7 @@
             <!-- 文章面包屑导航 -->
             <div class="layui-container">
                 <div class="single-breadcrumb">
-                    <a href="{:url('/index/corporate_news/categoryNews')}" class="breadcrumb-link">企业新闻 ></a>
+                    <a href="{:url('/news/list')}" class="breadcrumb-link">企业新闻 ></a>
                     {$info['info']['title']}
                 </div>
             </div>
@@ -2228,7 +2228,7 @@
                             <div class="article-link-item">
                                 上一篇
                                 <a
-                                    href="/index/corporate_news/corporateDetail?id={$info['pre_nex']['pre_article']['id']}">
+                                    href="/news/detail?id={$info['pre_nex']['pre_article']['id']}">
                                     {$info['pre_nex']['pre_article']['title']}
                                 </a>
                             </div>
@@ -2237,7 +2237,7 @@
                             <div class="article-link-item">
                                 下一篇
                                 <a
-                                    href="/index/corporate_news/corporateDetail?id={$info['pre_nex']['nex_article']['id']}">
+                                    href="/news/detail?id={$info['pre_nex']['nex_article']['id']}">
                                     {$info['pre_nex']['nex_article']['title']}
                                 </a>
                             </div>
@@ -2247,7 +2247,7 @@
                 </div>
                 <div class="school-right-con">
                     <div class="siderbar-item siderbar-item-search">
-                        <form action="/index/corporate_news/categoryNews" class="search-form" id="search-form">
+                        <form action="/news/list" class="search-form" id="search-form">
                             <input type="text" name="word" class="searchInput" value="{:request()->param('word')}"
                                 placeholder="输入关键词" autocomplete="off">
                             <input type="submit" class="submitInput" alt="search">
@@ -2266,7 +2266,7 @@
                         <ul class="hot-tags-list">
                             {if(!empty($label_list))}
                             {foreach($label_list as $item)}
-                            <li><a href="/index/corporate_news/categoryNews?label={$item.name}"
+                            <li><a href="/news/list?label={$item.name}"
                                     class="hot-tag-item">{$item.name}</a></li>
                             {/foreach}
                             {/if}
@@ -2288,7 +2288,7 @@
                             {if(isset($list))}
                             {foreach($list['hot_article'] as $item)}
                             <li class="article-item">
-                                <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>11])}"
+                                <a href="/blog/detail?id={$item.id}&pid=11"
                                     class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
                                     <p>{$item.title}</p>
                                     <span class="time">{$item.time}</span>
@@ -2301,7 +2301,7 @@
                             {if(isset($list))}
                             {foreach($list['recommend'] as $item)}
                             <li class="article-item">
-                                <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>12])}"
+                                <a href="/blog/detail?id={$item.id}&pid=12"
                                     class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
                                     <p>{$item.title}</p>
                                     <span class="time">{$item.time}</span>

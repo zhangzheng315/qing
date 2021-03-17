@@ -106,22 +106,22 @@ class QingSchool extends Controller
         switch ($pid) {
             case 0:
                 $top_name = '内容中心';
-                $top_url = '/index/qing_school/index';
+                $top_url = '/blog';
                 $action = 'index';
                 break;
             case 1:
                 $top_name = '案例解析';
-                $top_url = '/index/qing_school/caseAn';
+                $top_url = '/blog/demo';
                 $action = 'caseAn';
                 break;
             case 2:
                 $top_name = '产品动态';
-                $top_url = '/index/qing_school/products';
+                $top_url = '/blog/dynamic';
                 $action = 'products';
                 break;
             case 3:
                 $top_name = '直播资讯';
-                $top_url = '/index/qing_school/liveNews';
+                $top_url = '/blog/archives';
                 $action = 'liveNews';
                 break;
             default :
@@ -133,19 +133,19 @@ class QingSchool extends Controller
             $top_name = $article_info['info']['pid_name'];
             switch ($top_name) {
                 case '内容中心':
-                    $top_url = '/index/qing_school/index';
+                    $top_url = '/blog';
                     $action = 'index';
                     break;
                 case '案例解析':
-                    $top_url = '/index/qing_school/caseAn';
+                    $top_url = '/blog/demo';
                     $action = 'caseAn';
                     break;
                 case '产品动态':
-                    $top_url = '/index/qing_school/products';
+                    $top_url = '/blog/dynamic';
                     $action = 'products';
                     break;
                 case '直播资讯':
-                    $top_url = '/index/qing_school/liveNews';
+                    $top_url = '/blog/archives';
                     $action = 'liveNews';
                     break;
             }

@@ -2150,7 +2150,7 @@
                 <i class="icon-nav-item icon-nav-product"></i>
                 <span>产品动态</span>
             </a>
-            <a href="{:url('/blog/archives')}" class="active">
+            <a href="{:url('/blog/archives')}">
                 <i class="icon-nav-item icon-nav-live"></i>
                 <span>直播资讯</span>
             </a>
@@ -2219,7 +2219,7 @@
                         {if($article_info['pre_nex']['pre_btn'] == 1)}
                         <div class="article-link-item">
                             上一篇
-                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$article_info['pre_nex']['pre_article']['id'],'pid'=>$pid])}">
+                            <a href="/blog/detail?id={$article_info['pre_nex']['pre_article']['id']}&pid=>{$pid}">
                                 {$article_info['pre_nex']['pre_article']['title']}
                             </a>
                         </div>
@@ -2227,7 +2227,7 @@
                         {if($article_info['pre_nex']['nex_btn'] == 1)}
                         <div class="article-link-item">
                             下一篇
-                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$article_info['pre_nex']['nex_article']['id'],'pid'=>$pid])}">
+                            <a href="/blog/detail?id={$article_info['pre_nex']['nex_article']['id']}&pid=>{$pid}">
                                 {$article_info['pre_nex']['nex_article']['title']}
                             </a>
                         </div>
@@ -2237,7 +2237,7 @@
             </div>
             <div class="school-right-con">
                 <div class="siderbar-item siderbar-item-search">
-                    <form action="/index/qing_school/{$action}" class="search-form" id="search-form">
+                    <form action="{$top_url}" class="search-form" id="search-form">
                         <input type="text" name="word" class="searchInput" placeholder="输入关键词" autocomplete="off">
                         <input type="submit" class="submitInput" alt="search">
                     </form>
@@ -2271,7 +2271,7 @@
                         {if(isset($list))}
                         {foreach($list['recommend'] as $item)}
                         <li class="article-item">
-                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>20])}" class="link" title="{$item.second_title}" target="_blank"
+                            <a href="/blog/detail?id={$item.id}&pid=>20" class="link" title="{$item.second_title}" target="_blank"
                                rel="noopener noreferrer">
                                 <p>{$item.title}</p>
                                 <span class="time">{$item.time}</span>
@@ -2293,7 +2293,7 @@
                     </div>
                     <ul class="hot-products-list">
                         <li>
-                            <a href="{:url('/index/video_cloud/index')}" class="hot-products-item" target="_blank">
+                            <a href="{:url('/live')}" class="hot-products-item" target="_blank">
                                 <i class="icon-hot-product icon-hot-product_1"></i>
                                 <span>企业直播</span>
                             </a>
@@ -2326,13 +2326,12 @@
                                 <span>
                                     热门标签
                                 </span>
-                            <a href="" class="hot-tags-more" rel="tag">更多</a>
                         </h2>
                     </div>
                     <ul class="hot-tags-list">
                         {if(isset($hot_label))}
                         {foreach($hot_label as $item)}
-                        <li><a href="" class="hot-tag-item">{$item.name}</a></li>
+                        <li><a href="{$top_url}?label={$item.name}" class="hot-tag-item">{$item.name}</a></li>
                         {/foreach}
                         {/if}
                     </ul>

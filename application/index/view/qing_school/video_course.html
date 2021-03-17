@@ -82,7 +82,7 @@
                 <div class="head-right flex">
                     <div class="text">
                         <a href="{:url('/')}">轻直播首页</a>
-                        <a href="{:url('/index/qing_school/index')}">产品功能</a>
+                        <a href="{:url('/blog')}">产品功能</a>
                     </div>
                     <div class="btns">
                         <a href="{:url('/login')}" target="_blank">
@@ -111,10 +111,10 @@
         <!-- 导航栏 -->
         <nav class="video-nav ">
             <div class="layui-container box" style="display: flex;align-items: center;justify-content: flex-start">
-                <a href="{:url('/index/qing_school/videoCourse')}" class="active">首页</a>
+                <a href="{:url('/video')}" class="active">首页</a>
                 {if(isset($video_type))}
                 {foreach($video_type as $item)}
-                <a href="{:url('/index/qing_school/courseSecond',['all'=>1,'pid'=>$item.id])}">{$item.name}</a>
+                <a href="/video/course?all=1&pid={$item.id}">{$item.name}</a>
                 {/foreach}
                 {/if}
 
