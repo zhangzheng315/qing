@@ -1046,8 +1046,8 @@
 @media screen and (min-width: 768px) and (max-width: 1150px) {
   #banner #high-lights {
     width: 70%;
-    height: 135px;
-    bottom: -17%;
+    height: 145px;
+    bottom: -20%;
   }
   #banner #high-lights .layui-container .stars {
     padding: 15px 10px;
