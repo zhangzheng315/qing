@@ -129,6 +129,19 @@ nav {
     background-color: #00cc99;
     color: #fff
 }
+
+.cause-title>h3 .cause-icon.icon-item-solution {
+    background-image: url(/static/image/qingschool1/cause-icon.png);
+}
+.cause-title>h3 .cause-icon.icon-item-case {
+    background-image: url(/static/image/qingschool1/case_icon.svg);
+}
+.cause-title>h3 .cause-icon.icon-item-product {
+    background-image: url(/static/image/qingschool1/product_icon.svg);
+}
+.cause-title>h3 .cause-icon.icon-item-livenews {
+    background-image: url(/static/image/qingschool1/livenews_icon.svg);
+}
 @media screen and (min-width: 1300px){
     .layui-container {
         width: 1200px !important;
@@ -319,6 +332,7 @@ nav {
      .cause-title>h3 .cause-icon {
          position: absolute;
          display: block;
+         top: -3px;
          left: 0;
          width: 24px;
          height: 24px;
@@ -326,9 +340,7 @@ nav {
          background-repeat: no-repeat;
          background-position: center;
      }
-     .cause-title>h3 .cause-icon.icon-item-solution {
-         background-image: url(/static/image/qingschool/cause-icon.png);
-     }
+   
      .cause-title>.cause-intro {
          font-size: 14px;
          color: #666666;
@@ -903,9 +915,7 @@ nav {
          background-repeat: no-repeat;
          background-position: center;
      }
-     .cause-title>h3 .cause-icon.icon-item-solution {
-         background-image: url(/static/image/qingschool/cause-icon.png);
-     }
+
      .cause-title>.cause-intro {
          font-size: 14px;
          color: #666666;
@@ -1482,9 +1492,6 @@ nav {
          background-repeat: no-repeat;
          background-position: center;
      }
-     .cause-title>h3 .cause-icon.icon-item-solution {
-         background-image: url(/static/image/qingschool/cause-icon.png);
-     }
      .cause-title>.cause-intro {
          font-size: 14px;
          color: #666666;
@@ -1752,9 +1759,6 @@ nav {
          background-size: contain;
          background-repeat: no-repeat;
          background-position: center;
-     }
-     .cause-title>h3 .cause-icon.icon-item-solution {
-         background-image: url(/static/image/qingschool/cause-icon.png);
      }
      .cause-title>.cause-intro {
          font-size: 14px;
