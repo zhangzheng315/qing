@@ -214,7 +214,6 @@
 #video .case-study .layui-container .study-content .study-item .study-box li img {
   width: 100%;
   height: 50%;
-  object-fit: cover;
 }
 #video .case-study .layui-container .study-content .study-item .study-box li .txt {
   padding-left: 11px;
