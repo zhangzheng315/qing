@@ -45,8 +45,8 @@ Route::rule('blog/archives', 'index/qing_school/liveNews');  // 轻学院直播�
 Route::rule('video', 'index/qing_school/videoCourse');  // 轻学院视频
 Route::rule('guide', 'index/qing_school/article');  // 直播百科
 Route::rule('blog/detail','index/qing_school/newsDetail'); // 轻学院内容详情页
-Route::rule('video/tutorial','index/tutorial/inde'); // 轻学院视频详情
-Route::rule('video/course','index/qing_school/videoCourse');  // 轻学院视频二级页面
+Route::rule('video/tutorial','index/tutorial/index'); // 轻学院视频详情
+Route::rule('video/second','index/qing_school/courseSecond');  // 轻学院视频二级页面
 // Route::rule('site','index/site_service/index'); // 现场服务
 
 
