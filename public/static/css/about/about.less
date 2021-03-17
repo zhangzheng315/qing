@@ -480,14 +480,17 @@
                                     background: #00cc99;
                                     border-radius: 15px;
                                     border: 0;
+
                                     a {
                                         color: #fff;
                                     }
+
                                     &:hover {
                                         a {
                                             color: #00cc99;
 
                                         }
+
                                         border: 1px solid #00cc99;
                                         background-color: transparent;
                                     }
@@ -724,12 +727,20 @@
                             border: 1px solid #00B689;
                             border-radius: 10px;
 
-                            img {
-                                width: 769px;
-                                height: 409px;
-                                object-fit: cover;
+                            a {
                                 display: none;
+                                img {
+                                    width: 769px;
+                                    height: 409px;
+                                    object-fit: cover;
+                                    transition: all .3s;
+
+                                    &:hover {
+                                        transform: scale(1.05);
+                                    }
+                                }
                             }
+
 
                             .active {
                                 display: block;
@@ -926,13 +937,16 @@
                         cursor: pointer;
                         text-align: center;
                         line-height: 40px;
+
                         a {
                             color: #00cc99;
 
                         }
+
                         &:hover {
                             border: 0;
                             background-color: #00cc99;
+
                             a {
                                 color: #fff;
 

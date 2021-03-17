@@ -567,11 +567,17 @@
   border: 1px solid #00B689;
   border-radius: 10px;
 }
-#about .about-boxs section .fenbu .layui-container .fenbu-content .fenbu-right img {
+#about .about-boxs section .fenbu .layui-container .fenbu-content .fenbu-right a {
+  display: none;
+}
+#about .about-boxs section .fenbu .layui-container .fenbu-content .fenbu-right a img {
   width: 769px;
   height: 409px;
   object-fit: cover;
-  display: none;
+  transition: all 0.3s;
+}
+#about .about-boxs section .fenbu .layui-container .fenbu-content .fenbu-right a img:hover {
+  transform: scale(1.05);
 }
 #about .about-boxs section .fenbu .layui-container .fenbu-content .fenbu-right .active {
   display: block;

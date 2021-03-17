@@ -1871,4 +1871,7 @@ nav {
         top: 62px;
         min-width: 85%;
     }
+    .layui-nav {
+        display: none !important;
+    }
  }

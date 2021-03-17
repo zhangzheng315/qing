@@ -9,7 +9,12 @@
         body {
             background-color: #f2f4f7;
         }
-
+        .pc-footer-bottom-left>a {
+            color: #f3f3f3;
+        }
+        .pc-footer-bottom-left>span:hover, .pc-footer-bottom-left>a:hover {
+            color: #00cc99;
+        }
         @media screen and (min-width:1300px) {
             .mobile-footer-top {
                 display: none;
@@ -188,20 +193,21 @@
             }
 
             .footer-right>dl>dt {
-                font-size: 24px;
+                font-size: 18px;
                 font-family: Microsoft YaHei;
                 font-weight: 400;
                 color: #f3f3f3;
-                margin-bottom: 20px;
+                margin-bottom: 16px;
             }
 
             .footer-right>dl>dd>a {
-                font-size: 16px;
+                display: inline-block;
+                font-size: 12px;
                 font-family: Microsoft YaHei;
                 font-weight: 400;
                 color: #f3f3f3;
-                line-height: 34px;
-                height: 34px;
+                line-height: 30px;
+                height: 30px;
             }
 
             .watchus {
@@ -231,9 +237,12 @@
 
             .pc-footer-bottom-left>span {
                 color: #f3f3f3;
-                font-size: 14px;
+                font-size: 12px;
                 line-height: 50px;
                 height: 50px;
+            }
+            .pc-footer-bottom-left>a {
+                font-size: 12px;
             }
 
             .pc-footer-bottom-right>span,.pc-footer-bottom-right>a {
@@ -426,7 +435,7 @@
             }
 
             .footer-right>dl>dt {
-                font-size: 20px;
+                font-size: 18px;
                 font-family: Microsoft YaHei;
                 font-weight: 400;
                 color: #f3f3f3;
@@ -434,7 +443,7 @@
             }
 
             .footer-right>dl>dd>a {
-                font-size: 14px;
+                font-size: 12px;
                 font-family: Microsoft YaHei;
                 font-weight: 400;
                 color: #f3f3f3;
@@ -1155,11 +1164,11 @@
         <div class="pc-footer-bottom">
             <div class="layui-container flex">
                 <div class="pc-footer-bottom-left">
-                    <a style="color: #fff;" href="{:url('/index/index/licence')}" target="_blank">增值电信经营许可证</a>
+                    <a href="{:url('/index/index/licence')}" target="_blank">增值电信经营许可证</a>
                     <span class="map-span">网站地图</span>
-                    <a style="color: #fff;" href="{:url('/index/index/legalNotice')}" target="_blank">法律声明</a>
-                    <a style="color: #fff;" href="{:url('/index/index/privacy')}" target="_blank">隐私协议</a>
-                    <a style="color: #fff;" href="{:url('/index/index/serviceAgreement')}" target="_blank">服务协议</a>
+                    <a  href="{:url('/index/index/legalNotice')}" target="_blank">法律声明</a>
+                    <a  href="{:url('/index/index/privacy')}" target="_blank">隐私协议</a>
+                    <a  href="{:url('/index/index/serviceAgreement')}" target="_blank">服务协议</a>
                 </div>
                 <div class="pc-footer-bottom-right flex">
                     <span>©2021 Copyright SHANGHAI BONWEY TECHNOLOGY CO. LTD；. All right</span>
