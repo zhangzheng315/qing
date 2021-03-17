@@ -4,10 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>轻直播_企业直播服务平台,医疗直播领军者,营销直播定制服务商</title>
-    <meta name="keywords"  content="企业直播平台,医疗直播,营销直播,活动直播,直播定制服务" />
-    <meta name="description"
-         content="轻直播是国内知名的企业级直播定制化服务平台,服务全球500强,为企业提供医疗直播、手术直播、活动直播、会议直播、营销直播、年会直播等全场景解决方案,热线:400-920-1599。" />
+    <title>视频学院_轻直播学院_企业云视频教程</title>
+    <meta name="keywords"  content="" />
+    <meta name="description"  content="" />
     <link rel="stylesheet" href="/static/css/qingschool/videocourse.css">
     <link rel="stylesheet" href="/static/layui/css/layui.css">
     <link rel="stylesheet" href="/static/css/style.css">
@@ -89,7 +88,8 @@
                         <a href="{:url('/index/login/login')}">
                             <button class="login">登录</button>
                         </a>
-                        <a href="http://login.lighos.com/signUp" target="_blank"><button class="free-btn">免费试用</button></a>
+                        <a href="http://login.lighos.com/signUp" target="_blank"><button
+                                class="free-btn">免费试用</button></a>
                     </div>
                     <ul class="layui-nav" lay-filter="leftNav">
                         <li class="layui-nav-item">
@@ -104,7 +104,7 @@
                 </div>
             </div>
         </header>
-            <!--演示演示弹出框 -->
+        <!--演示演示弹出框 -->
         {include file="common/order_box"}
         <!-- 咨询版块 -->
         {include file="common/siderbar-right"}
@@ -360,7 +360,7 @@
                     $('.study-box').empty();
                     for (let item of res.data) {
                         $('.study-box').append('<li>\n' +
-                            '                        <a href="/index/tutorial/index?browse=1&id='+item.id+'">\n' +
+                            '                        <a href="/index/tutorial/index?browse=1&id=' + item.id + '">\n' +
                             '                              <img src="' + item.cover_img_url + '" alt="">\n' +
                             '                              <div class="txt">\n' +
                             '                                   <h6>' + item.title + '</h6>\n' +
