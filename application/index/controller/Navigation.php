@@ -13,13 +13,14 @@ class Navigation extends Controller
         $nav_list = $navigation_service->navigationListClass();
 
         $url = request()->param()['url'];
+        $url = rtrim($url, '/');
         $last = substr($url, -1);
-        if ($last == '/') {
+        $url_arr = explode('/', $url);
+        $last_url = $url_arr[count($url_arr)-1];
+        if (strstr($last_url, '.')) {
             $nav_id = ['pid'=>1];
         }else{
-            $url_arr = explode('/', $url);
-            $controller = $url_arr[count($url_arr)-2];
-            $nav_id = $navigation_service->getActive($controller);
+            $nav_id = $navigation_service->getActive($last_url);
         }
         return ['status'=>200,'nav_list'=>$nav_list,'nav_id'=>$nav_id];
     }
