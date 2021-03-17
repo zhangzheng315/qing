@@ -1024,12 +1024,18 @@
             width: 30%;
         }
 
-        .hidden{
+        .hidden {
             display: none;
         }
-        .show{
+
+        .display {
             display: block;
         }
+
+        .show {
+            display: flex;
+        }
+
     </style>
 </head>
 
@@ -1073,21 +1079,23 @@
                             <i class="layui-icon layui-icon-search"></i>
                         </div>
                     </div>
-                    <ul class="listContainerBread {$article_f == 1?'show':'hidden'}">
+                    <ul class="listContainerBread {$article_f == 1?'display':'hidden'}">
                         <li>
                             <a href="javascript:;" class="hoverstyle">直播百科</a>
                             <span>>></span>
                         </li>
                         <li>
-                            <a href="javascript:;" class="hoverstyle pid_name">{$article_f == 1?$article_info['pid_name']:''}</a>
+                            <a href="javascript:;" class="hoverstyle pid_name">{$article_f ==
+                                1?$article_info['pid_name']:''}</a>
                             <span>>></span>
                         </li>
                         <li>
-                            <a href="javascript:void(0)" class="article_title">{$article_f == 1?$article_info['title']:''}</a>
+                            <a href="javascript:void(0)" class="article_title">{$article_f ==
+                                1?$article_info['title']:''}</a>
                         </li>
                     </ul>
                     <!-- 文章显示区域 -->
-                    <div class="articleCon {$article_f == 1?'show':'hidden'}">
+                    <div class="articleCon {$article_f == 1?'display':'hidden'}">
                         <h2 class="content_title">
                             {$article_f == 1?$article_info['title']:''}
                         </h2>
@@ -1103,7 +1111,7 @@
                         </p>
                     </div>
                     <!-- 搜索结果 -->
-                    <div class="listGuideContent hidden">
+                    <div class="listGuideContent {$article_f == 0?'show':'hidden'}">
                         {if(isset($article_list))}
                         {foreach($article_list as $item)}
                         <a href="javascript:;" onclick="articleInfo({$item.id})">
