@@ -15,14 +15,23 @@
         height: 90px;
         box-sizing: border-box;
         line-height: 90px;
+
         .logo {
             flex: 5;
+
+            a {
+                img {
+                    width: 126px;
+                }
+            }
         }
+
         .layui-form-item {
             height: 34px;
             width: 208px;
             margin: 0 360px 0 10px;
             display: none;
+
             .layui-input-block {
                 height: 100%;
                 width: 100%;
@@ -51,20 +60,23 @@
             }
         }
 
-        &>a {
+        .shouye {
             color: #333;
             font-size: 16px;
             margin: 0 50px 0 0;
         }
 
         .login {
-            button {
+            a {
+                display: block;
                 width: 103px;
                 height: 30px;
                 border-radius: 15px;
                 font-size: 16px;
                 color: #333;
                 cursor: pointer;
+                line-height: 30px;
+                text-align: center;
 
                 &:nth-child(1) {
                     border: 1px solid #00CC99;
@@ -287,9 +299,12 @@
                             }
 
                         }
+
                         .active {
                             a {
-                                span,i {
+
+                                span,
+                                i {
                                     color: #00cc99;
                                 }
                             }
@@ -349,9 +364,11 @@
                                 border-radius: 10px;
                                 margin-bottom: 36px;
                                 padding: 10px 20px 20px;
+
                                 img {
                                     max-width: 100%;
                                 }
+
                                 &:last-child {
                                     margin-bottom: 0;
                                 }
@@ -538,10 +555,11 @@
                 }
 
                 .login {
-                    button {
+                    a {
                         width: 88px;
                         height: 30px;
                         font-size: 14px;
+                        line-height: 30px;
 
                         &:nth-child(1) {
                             margin-right: 15px;
@@ -790,6 +808,7 @@
 
                 .logo {
                     flex: 6;
+
                     a {
                         img {
                             width: 90px;
@@ -816,10 +835,11 @@
                 }
 
                 .login {
-                    button {
+                    a {
                         width: 60px;
                         height: 26px;
                         font-size: 12px;
+                        line-height: 26px;
 
                         &:nth-child(1) {
                             margin-right: 12px;
@@ -875,10 +895,11 @@
                 .login {
                     display: none;
 
-                    button {
+                    a {
                         width: 88px;
                         height: 30px;
                         font-size: 14px;
+                        line-height: 30px;
 
                         &:nth-child(1) {
                             margin-right: 15px;

@@ -27,7 +27,7 @@
                 <div class="head-right">
                     <div class="text">
                         <a href="{:url('/')}">轻直播首页</a>
-                        <a href="{:url('/index/qing_school/index')}">产品功能</a>
+                        <a href="{:url('/blog')}">产品功能</a>
                     </div>
                     <div class="btns">
                         <a class="login" href="{:url('/login')}">登录</a>
@@ -88,7 +88,7 @@
                 <span>大家都在看：</span>
                 {if(isset($hot_label))}
                 {foreach($hot_label as $item)}
-                <a href="/index/qing_school/products?pid=1&label={$item.name}" class="category-look-tag">{$item.name}</a>
+                <a href="/blog/dynamic?pid=1&label={$item.name}" class="category-look-tag">{$item.name}</a>
                 {/foreach}
                 {/if}
             </div>
@@ -114,12 +114,12 @@
                         {if($article_list)}
                         {foreach($article_list as $item)}
                         <li class="cause-item">
-                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>2])}"
+                            <a href="/blog/detail?id={$item.id}&pid=2"
                                 class="cause-cover"
                                 style="background: url({$item.cover_img_url});background-size: cover">
                             </a>
                             <div class="cause-des">
-                                <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>2])}"
+                                <a href="/blog/detail?id={$item.id}&pid=2"
                                     class="cause-title">
                                     <h3>
                                         <i class="cause-icon icon-item-product"></i>
@@ -160,7 +160,7 @@
                         {if($article_list)}
                         {foreach($article_list as $item)}
                         <li class="cause-item">
-                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>2])}">
+                            <a href="/blog/detail?id={$item.id}&pid=2">
                                 <h3>
                                     {$item.title}
                                 </h3>
@@ -171,7 +171,7 @@
                                 <i class="vertical-bar">|</i>
                                 <span class="category">{$item.pid_name}</span>
                             </div>
-                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>2])}" class="cause-item-desc">
+                            <a href="/blog/detail?id={$item.id}&pid=2}" class="cause-item-desc">
                                 <img src="{$item.cover_img_url}" alt="">
                                 <p>{$item.second_title}</p>
                             </a>
@@ -186,7 +186,7 @@
             </div>
             <div class="school-right-con">
                 <div class="siderbar-item siderbar-item-search">
-                    <form action="/index/qing_school/products" class="search-form" id="search-form">
+                    <form action="/blog/dynamic" class="search-form" id="search-form">
                         <input type="text" name="word" value="{:request()->param('word')}" class="searchInput" placeholder="输入关键词" autocomplete="off">
                         <input type="hidden" name="pid" value="2">
                         <input type="submit" class="submitInput" alt="search">
@@ -208,7 +208,7 @@
                         {if(isset($list))}
                         {foreach($list['hot_article'] as $item)}
                         <li class="article-item">
-                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>11])}" class="link"
+                            <a href="/blog/detail?id={$item.id}&pid=11" class="link"
                                 title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
                                 <p>{$item.title}</p>
                                 <span class="time">{$item.time}</span>
@@ -221,7 +221,7 @@
                         {if(isset($list))}
                         {foreach($list['recommend'] as $item)}
                         <li class="article-item">
-                            <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>12])}" class="link"
+                            <a href="/blog/detail?id={$item.id}&pid=12" class="link"
                                 title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
                                 <p>{$item.title}</p>
                                 <span class="time">{$item.time}</span>
@@ -243,7 +243,7 @@
                     </div>
                     <ul class="hot-products-list">
                         <li>
-                            <a href="{:url('/index/video_cloud/index')}" class="hot-products-item" target="_blank">
+                            <a href="{:url('/live')}" class="hot-products-item" target="_blank">
                                 <i class="icon-hot-product icon-hot-product_1"></i>
                                 <span>企业直播</span>
                             </a>
@@ -281,7 +281,7 @@
                     <ul class="hot-tags-list">
                         {if(isset($hot_label))}
                         {foreach($hot_label as $item)}
-                        <li><a href="/index/qing_school/products?pid=2&label={$item.name}" class="hot-tag-item">{$item.name}</a></li>
+                        <li><a href="/blog/dynamic?pid=2&label={$item.name}" class="hot-tag-item">{$item.name}</a></li>
                         {/foreach}
                         {/if}
                     </ul>

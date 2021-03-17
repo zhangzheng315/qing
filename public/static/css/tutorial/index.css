@@ -16,6 +16,9 @@
 #tutorial header .logo {
   flex: 5;
 }
+#tutorial header .logo a img {
+  width: 126px;
+}
 #tutorial header .layui-form-item {
   height: 34px;
   width: 208px;
@@ -46,36 +49,39 @@
   line-height: 2.3;
   cursor: pointer;
 }
-#tutorial header > a {
+#tutorial header .shouye {
   color: #333;
   font-size: 16px;
   margin: 0 50px 0 0;
 }
-#tutorial header .login button {
+#tutorial header .login a {
+  display: block;
   width: 103px;
   height: 30px;
   border-radius: 15px;
   font-size: 16px;
   color: #333;
   cursor: pointer;
+  line-height: 30px;
+  text-align: center;
 }
-#tutorial header .login button:nth-child(1) {
+#tutorial header .login a:nth-child(1) {
   border: 1px solid #00CC99;
   color: #00CC99;
   background-color: transparent;
   margin-right: 20px;
 }
-#tutorial header .login button:nth-child(1):hover {
+#tutorial header .login a:nth-child(1):hover {
   border: 0;
   color: #fff;
   background-color: #00CC99;
 }
-#tutorial header .login button:nth-child(2) {
+#tutorial header .login a:nth-child(2) {
   border: 0;
   color: #fff;
   background-color: #00CC99;
 }
-#tutorial header .login button:nth-child(2):hover {
+#tutorial header .login a:nth-child(2):hover {
   border: 1px solid #00CC99;
   color: #00CC99;
   background-color: transparent;
@@ -412,12 +418,13 @@
     font-size: 14px;
     margin: 0 40px 0 0;
   }
-  #tutorial header .layui-container .login button {
+  #tutorial header .layui-container .login a {
     width: 88px;
     height: 30px;
     font-size: 14px;
+    line-height: 30px;
   }
-  #tutorial header .layui-container .login button:nth-child(1) {
+  #tutorial header .layui-container .login a:nth-child(1) {
     margin-right: 15px;
   }
   #tutorial .nav-second {
@@ -616,12 +623,13 @@
     font-size: 12px;
     margin: 0 30px 0 0;
   }
-  #tutorial header .layui-container .login button {
+  #tutorial header .layui-container .login a {
     width: 60px;
     height: 26px;
     font-size: 12px;
+    line-height: 26px;
   }
-  #tutorial header .layui-container .login button:nth-child(1) {
+  #tutorial header .layui-container .login a:nth-child(1) {
     margin-right: 12px;
   }
 }
@@ -656,12 +664,13 @@
   #tutorial header .layui-container .login {
     display: none;
   }
-  #tutorial header .layui-container .login button {
+  #tutorial header .layui-container .login a {
     width: 88px;
     height: 30px;
     font-size: 14px;
+    line-height: 30px;
   }
-  #tutorial header .layui-container .login button:nth-child(1) {
+  #tutorial header .layui-container .login a:nth-child(1) {
     margin-right: 15px;
   }
   #tutorial .nav-second {
