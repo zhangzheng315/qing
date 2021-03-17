@@ -22,6 +22,13 @@
     <!-- 头部 -->
     {include file="common/header"}
 
+     <!--预约演示弹出框 -->
+     {include file="common/order_box"}
+     <!-- 咨询版块 -->
+     {include file="common/siderbar-right"}
+     <!-- 免费试用版块 -->
+     {include file="common/free_box"}
+     
     <!-- banner -->
     <div id="banner">
         <div class="layui-carousel" id="banners">
@@ -443,6 +450,12 @@
             }
         }
     });
+
+    //   显示预约演示弹出框
+    $('.banner-a').on('click', function () {
+        $('#order-container').show();
+        $('.q-modal').show();
+    })
 </script>
 
 </html>

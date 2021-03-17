@@ -257,7 +257,13 @@
                 console.log(err)
             }
         })
-    }
+    };
+
+    //   显示预约演示弹出框
+    $('.banner-a').on('click', function () {
+        $('#order-container').show();
+        $('.q-modal').show();
+    })
 </script>
 
 </html>
