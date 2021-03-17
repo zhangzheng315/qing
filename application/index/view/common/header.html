@@ -1108,7 +1108,7 @@
                 </ul>
             </div>
             <div class="nav-btn">
-                <a class="login" href="{:url('/index/login/login')}">
+                <a class="login" href="{:url('/login')}">
                     登录
                 </a>
                 <a class="free-use" href="http://login.lighos.com/signUp" target="_blank">
@@ -1296,7 +1296,7 @@
                                 '</li>');
                         } else {
                             $('.menu_nav').append('<li class="menu-item ' + active + '">\n' +
-                                '                    <a style="cursor: pointer;display: block" href="' + item.route + '">' + item.menu_name + '</a>\n' +
+                                '                    <a style="cursor: pointer;display: block" href="' + item.url_action + '">' + item.menu_name + '</a>\n' +
                                 '                </li>');
                         }
                     }
@@ -1369,7 +1369,7 @@
                     active = 'p-active';
                 }
                 sun += '<dd class="dd' + item.id + '">\n' +
-                    '       <a href="' + item.route + '" class="pink-item">\n' +
+                    '       <a href="' + item.url_action + '" class="pink-item">\n' +
                     '           <p class="' + active + '">' + item.menu_name + '</p>\n' +
                     // '           <span>企业级视频云直播平台</span>\n' +
                     '       </a>\n' +
@@ -1407,7 +1407,7 @@
                     active = 'p-active';
                 }
 
-                son += '<li><a href="' + item.route + '" class="' + active + '">' + item.menu_name + '</a></li>'
+                son += '<li><a href="' + item.url_action + '" class="' + active + '">' + item.menu_name + '</a></li>'
             }
             return son;
         }

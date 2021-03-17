@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="/static/layui/css/layui.css">
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/common/banner_common.css">
-
     <script type='text/javascript' src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="/static/layui/layui.js"></script>
     <script>(function (i, s, o, g, r, a, m) { i["DaoVoiceObject"] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; a.charset = "utf-8"; m.parentNode.insertBefore(a, m) })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/04cefad5.js", "daovoice")</script>
@@ -80,7 +79,7 @@
                     {if isset($solution_list['ind_res'])}
                     {foreach($solution_list['ind_res'] as $item)}
                     <li>
-                        <a href="{$item.link}" class="turn">
+                        <a href="{$item.url_action}" class="turn">
                         <img src="{$item.img_url}" alt="">
                         <div class="text">
                             <h6>{$item.title}</h6>
@@ -102,7 +101,7 @@
                     {if isset($solution_list['sce_res'])}
                     {foreach($solution_list['sce_res'] as $item)}
                     <li>
-                        <a href="{$item.link}" class="turn">
+                        <a href="{$item.url_action}" class="turn">
                             <img class="bg-img" src="{$item.img_url}" alt="">
                             <div>
                                 <p>{$item.title}</p>

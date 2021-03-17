@@ -222,7 +222,7 @@ class CommonArticleService extends Common{
             'deleted_time' => 0,
             'status' => 1,
         ];
-        $new_add = $this->commonArticle->field('title')->where($where)->order('created_time','desc')->limit(0,10)->select();
+        $new_add = $this->commonArticle->field('title')->where($where)->order('created_time','desc')->limit(0,6)->select();
         if (!$new_add) {
             $this->setError('暂无数据');
             return false;

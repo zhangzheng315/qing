@@ -32,6 +32,7 @@ class NavigationService extends Common{
         $route = isset($param['route']) ? $param['route'] : '';
         $data = [
             'menu_name' => $param['menu_name'],
+            'url_action'=>$param['url_action']?:'',
             'route' => $route,
             'pid' => $param['pid'],
             'pid_name' => $pid_name,
@@ -182,7 +183,7 @@ class NavigationService extends Common{
         $where = [
             'deleted_time' => 0,
             'status' => 1,
-            'route'=>['like','%'.$controller.'%']
+            'url_action'=>['like','%'.$controller]
         ];
         $info = $this->navigation->where($where)->find();
         if ($info['pid'] == 0) {
