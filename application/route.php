@@ -45,8 +45,8 @@ Route::rule('blog/archives', 'index/qing_school/liveNews');  // 轻学院直播�
 Route::rule('video', 'index/qing_school/videoCourse');  // 轻学院视频
 Route::rule('guide', 'index/qing_school/article');  // 直播百科
 Route::rule('blog/detail','index/qing_school/newsDetail'); // 轻学院内容详情页
-
-// Route::rule('course','index/qing_school/videoCourse');  // 轻学院视频二级页面
+Route::rule('video/tutorial','index/tutorial/inde'); // 轻学院视频详情
+Route::rule('video/course','index/qing_school/videoCourse');  // 轻学院视频二级页面
 // Route::rule('site','index/site_service/index'); // 现场服务
 
 
@@ -58,10 +58,9 @@ Route::rule('news', 'index/corporate_news/news'); // 企业新闻
 Route::rule('partner', 'index/channel/index'); // 渠道合作
 Route::rule('join', 'index/join/joinUs'); // 加入我们
 Route::rule('contact', 'index/contact/contactUs'); // 联系我们
-// 定制化服务
-Route::rule('customized', 'index/customized_service/index');
-//私有化部署-视频云服务
-Route::rule('deploy', 'index/deploy/index');
+Route::rule('news/detail', 'index/corporate_news/corporateDetail'); // 企业新闻详情
+Route::rule('news/list', 'index/corporate_news/categoryNews'); // 企业新闻详情
+
 
 
 // Route::rule('article','index/docs/article');  // 直播百科

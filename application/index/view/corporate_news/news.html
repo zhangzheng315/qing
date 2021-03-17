@@ -34,10 +34,10 @@
             <div class="layui-container">
                 <ul class="navinfo">
 
-                    <li><a href="{:url('about/index')}">关于我们</a></li>
-                    <li class="active"><a href="{:url('corporate_news/news')}">企业新闻</a></li>
-                    <li><a href="{:url('join/joinUs')}">加入我们</a></li>
-                    <li><a href="{:url('contact/contactUs')}">联系我们</a></li>
+                    <li><a href="{:url('/about')}">关于我们</a></li>
+                    <li class="active"><a href="{:url('/news')}">企业新闻</a></li>
+                    <li><a href="{:url('/join')}">加入我们</a></li>
+                    <li><a href="{:url('/contact')}">联系我们</a></li>
                 </ul>
             </div>
         </nav>
@@ -52,7 +52,7 @@
                             {if($limit_list['top_list'])}
                             {foreach($limit_list['top_list'] as $item)}
                             <div class="top-item">
-                                <a href="/index/corporate_news/corporateDetail?id={$item.id}">
+                                <a href="/news/detail?id={$item.id}">
                                     <img src="{$item.cover_img_url}" alt="">
                                 </a>
                                 <div class="text">
@@ -79,7 +79,7 @@
                             {if($limit_list['bottom_list'])}
                             {foreach($limit_list['bottom_list'] as $item)}
                             <div class="bottom-item">
-                                <a href="/index/corporate_news/corporateDetail?id={$item.id}">
+                                <a href="/news/detail?id={$item.id}">
                                     <div class="item-left">
                                         <span class="num">{$item.day}</span>
                                         <span class="name">{$item.month}</span>
@@ -94,7 +94,7 @@
                             {/if}
                         </div>
 
-                        <button class="look-more"><a href="{:url('/index/corporate_news/categoryNews')}">
+                        <button class="look-more"><a href="{:url('/news/list')}">
                             查看更多
                         </a>
                             </button>
