@@ -238,7 +238,7 @@
 #course .price-content .layui-container .study-item .study-box li img {
   height: 51%;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 10px;
 }
 #course .price-content .layui-container .study-item .study-box li .txt {

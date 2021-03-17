@@ -18,7 +18,9 @@
     <div id="login">
         <header>
             <div class="layui-container">
-                <img src="/static/image/logo.png" alt="">
+                <a href="{:url('/')}">
+                    <img src="/static/image/logo_b_text.svg" alt="">
+                </a>
                 <div class="text">
                     <a href="{:url('/')}">首页</a>
                     <!-- <span>|</span> -->
@@ -35,9 +37,9 @@
                 </div>
                 <div class="sec-right">
                     <h4>欢迎登录QINGTV管理系统</h4>
-                    <div class="type">
+                    <!-- <div class="type">
                         <a class="active" href="">密码登录</a>
-                    </div>
+                    </div> -->
                     <form action="" name="loginForm">
                         <input id="phone" type="text" name="iphone" placeholder="请输入手机号码">
                         <input id="pwd" type="password" name="pwd" placeholder="请输入登录密码">
@@ -45,10 +47,10 @@
                             <label for="">
                                 <input id="checkbox" type="checkbox" name="checkbox">记住账号
                             </label>
-                            <a href="">忘记密码</a>
+                            <a href="http://login.lighos.com/forgetPassword" target="_blank">忘记密码</a>
                         </p>
                         <input type="button" value="登录" id="login-btn">
-                        <a href="">没有账号，我要免费注册>></a>
+                        <a href="http://login.lighos.com/signUp" target="_blank">没有账号，我要免费注册>></a>
                     </form>
                 </div>
             </div>
