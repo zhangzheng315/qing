@@ -49,69 +49,60 @@
                     <div class="layui-container">
                         <div class="title">企业动态</div>
                         <div class="dt-top">
+                            {if($limit_list['top_list'])}
+                            {foreach($limit_list['top_list'] as $item)}
                             <div class="top-item">
-                                <img src="/static/image/about/first.png" alt="">
+                                <a href="/index/corporate_news/corporateDetail?id={$item.id}">
+                                    <img src="{$item.cover_img_url}" alt="">
+                                </a>
                                 <div class="text">
-                                    <h3>互联网周刊：轻直播获评2020企业直播服务商第一名</h3>
-                                    <p>6月9日，由中国科学院主管、科学出版社主办的核心杂志《互联网周刊》，携手eNet研究院联合发布【2020企业直播服务商排行榜】...</p>
-                                    <p class="time">2020-12-06</p>
+                                    <h3>{$item.title}</h3>
+                                    <p>{$item.second_title}</p>
+                                    <p class="time">{$item.time}</p>
                                     <div class="dt-biaoqian">
                                         <ul>
-                                            <li>云视频服务商</li>
-                                            <li>企业培训</li>
-                                            <li>轻直播</li>
+                                            {if($item['label'])}
+                                            {foreach($item['label'] as $val)}
+                                            <li>{$val}</li>
+                                            {/foreach}
+                                            {/if}
                                         </ul>
                                         <img src="/static/image/about/jiantou-r.png" alt="">
                                     </div>
                                 </div>
                             </div>
-                            <div class="top-item">
-                                <img src="/static/image/about/first.png" alt="">
-                                <div class="text">
-                                    <h3>互联网周刊：轻直播获评2020企业直播服务商第一名</h3>
-                                    <p>6月9日，由中国科学院主管、科学出版社主办的核心杂志《互联网周刊》，携手eNet研究院联合发布【2020企业直播服务商排行榜】...</p>
-                                    <p class="time">2020-12-06</p>
-                                    <div class="dt-biaoqian">
-                                        <ul>
-                                            <li>云视频服务商</li>
-                                            <li>企业培训</li>
-                                            <li>轻直播</li>
-                                        </ul>
-                                        <img src="/static/image/about/jiantou-r.png" alt="">
-                                    </div>
-                                </div>
-                            </div>
+                            {/foreach}
+                            {/if}
                         </div>
 
                         <div class="dt-bottom">
+                            {if($limit_list['bottom_list'])}
+                            {foreach($limit_list['bottom_list'] as $item)}
                             <div class="bottom-item">
-                                <div class="item-left">
-                                    <span class="num">01</span>
-                                    <span class="name">jade</span>
-                                </div>
-                                <div class="item-right">
-                                    <h3>轻直播独家发布！2021企业直播运营地图...</h3>
-                                    <p>由中国科学院主管、科学出版社主办的核心杂志《互联...</p>
-                                </div>
+                                <a href="/index/corporate_news/corporateDetail?id={$item.id}">
+                                    <div class="item-left">
+                                        <span class="num">{$item.day}</span>
+                                        <span class="name">{$item.month}</span>
+                                    </div>
+                                    <div class="item-right">
+                                        <h3>{$item.title}</h3>
+                                        <p>{$item.second_title}</p>
+                                    </div>
+                                </a>
                             </div>
-                            <div class="bottom-item">
-                                <div class="item-left">
-                                    <span class="num">02</span>
-                                    <span class="name">jade</span>
-                                </div>
-                                <div class="item-right">
-                                    <h3>轻直播独家发布！2021企业直播运营地图...</h3>
-                                    <p>由中国科学院主管、科学出版社主办的核心杂志《互联...</p>
-                                </div>
-                            </div>
+                            {/foreach}
+                            {/if}
                         </div>
 
-                        <button class="look-more">查看更多</button>
+                        <button class="look-more"><a href="{:url('/index/corporate_news/categoryNews')}">
+                            查看更多
+                        </a>
+                            </button>
                     </div>
                 </div>
 
                 <!-- 新闻报道 -->
-                <div class="news">
+                <div class="news" style="display: none;">
                     <div class="layui-container">
                         <div class="title">新闻报道</div>
                         <div class="dt-bottom">

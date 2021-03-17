@@ -222,11 +222,11 @@
             }
 
             .pc-footer-bottom-left {
-                width: 336px;
+                width: 375px;
             }
 
             .pc-footer-bottom-right {
-                width: 825px;
+                width: 755px;
             }
 
             .pc-footer-bottom-left>span {
@@ -236,7 +236,7 @@
                 height: 50px;
             }
 
-            .pc-footer-bottom-right>span {
+            .pc-footer-bottom-right>span,a {
                 color: #f3f3f3;
                 font-size: 12px;
                 line-height: 50px;
@@ -458,13 +458,17 @@
             .pc-footer-bottom {
                 height: 50px;
             }
+            
 
             .pc-footer-bottom-left {
-                width: 336px;
+                /* width: 336px; */
+                flex: 5;
             }
 
             .pc-footer-bottom-right {
-                width: 825px;
+                /* width: 825px; */
+                /* flex: 5; */
+                justify-content: flex-start;
             }
 
             .pc-footer-bottom-left>span {
@@ -474,11 +478,14 @@
                 height: 50px;
             }
 
-            .pc-footer-bottom-right>span {
+            .pc-footer-bottom-right>span,a {
                 color: #f3f3f3;
                 font-size: 12px;
                 line-height: 50px;
                 height: 50px;
+            }
+            .pc-footer-bottom-right>span:nth-child(1){
+                margin-right: 10px;
             }
 
         }
@@ -696,15 +703,17 @@
             }
 
             .pc-footer-bottom-left {
-                width: 250px;
+                /* width: 250px; */
+                /* flex: 5; */
             }
 
             .map-span {
-                margin-left: 20px;
+                margin-left: 0px;
             }
 
             .pc-footer-bottom-right {
-                width: 500px;
+                /* width: 500px; */
+                /* flex: 5; */
             }
 
             .pc-footer-bottom-left>span {
@@ -714,11 +723,19 @@
                 height: 40px;
             }
 
-            .pc-footer-bottom-right>span {
+            .pc-footer-bottom-right>span,a {
                 color: #f3f3f3;
                 font-size: 12px;
                 line-height: 40px;
                 height: 40px;
+            }
+            .pc-footer-bottom-right>span:nth-child(1){
+                flex: 6;
+            }   
+        }
+        @media screen and (max-width:992px) and (min-width:768px){
+            .layui-container{
+                width: 97% !important;
             }
         }
 
@@ -1138,12 +1155,15 @@
         <div class="pc-footer-bottom">
             <div class="layui-container flex">
                 <div class="pc-footer-bottom-left">
-                    <span>增值电信经营许可证</span>
+                    <a style="color: #fff;" href="{:url('/index/index/licence')}" target="_blank">增值电信经营许可证</a>
                     <span class="map-span">网站地图</span>
+                    <a style="color: #fff;" href="{:url('/index/index/legalNotice')}" target="_blank">法律声明</a>
+                    <a style="color: #fff;" href="{:url('/index/index/privacy')}" target="_blank">隐私协议</a>
+                    <a style="color: #fff;" href="{:url('/index/index/serviceAgreement')}" target="_blank">服务协议</a>
                 </div>
                 <div class="pc-footer-bottom-right flex">
                     <span>©2021 Copyright SHANGHAI BONWEY TECHNOLOGY CO. LTD；. All right</span>
-                    <span>沪ICP备20004241号-4</span>
+                    <a style="color: #fff;" href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank"> 沪ICP备16029097号-7</a>
                 </div>
             </div>
         </div>
@@ -1260,10 +1280,16 @@
         </div>
         <div class="mobile-footer-bottom">
             <li style="font-size: 14px;">
-                增值电信经营许可证
+                <!-- 增值电信经营许可证 -->
+                <a style="color: #fff;" href="{:url('/index/index/licence')}" target="_blank">增值电信经营许可证</a>
+                    <span class="map-span">网站地图</span>
+                    <a style="color: #fff;" href="{:url('/index/index/legalNotice')}" target="_blank">法律声明</a>
+                    <a style="color: #fff;" href="{:url('/index/index/privacy')}" target="_blank">隐私协议</a>
+                    <a style="color: #fff;" href="{:url('/index/index/serviceAgreement')}" target="_blank">服务协议</a>
             </li>
             <li style="font-size: 12px;">
-                ©2021 Copyright SHANGHAI BONWEY TECHNOLOGY CO., LTD；. All rights reserved. 沪ICP备16029097号-7
+                ©2021 Copyright SHANGHAI BONWEY TECHNOLOGY CO., LTD；. All rights reserved. <a style="color: #fff;" href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank"> 沪ICP备16029097号-7</a>
+               
             </li>
         </div>
     </div>

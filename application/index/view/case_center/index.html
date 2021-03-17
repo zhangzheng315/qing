@@ -4,10 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>轻直播_客户案例_直播定制化服务</title>
-    <meta name="keywords"  content="轻直播,经典案例"/>
-    <meta name="description"
-           content="轻直播提供私有化部署,全方位全场景直播一站式服务,服务范围涵盖医疗、教育、金融、科技等各行业,已获得上海医师协会、瀚晖制药、四川大学、等国内知名企业的高度认可。"/>
+    <title>案例中心_轻直播全场景案例_企业直播案例库</title>
+    <meta name="keywords"  content="" />
+    <meta name="description"  content="" />
     <link rel="stylesheet" href="/static/css/caseCenter/index.css">
     <link rel="stylesheet" href="/static/layui/css/layui.css">
     <link rel="stylesheet" href="/static/css/style.css">
@@ -16,141 +15,141 @@
 </head>
 
 <body>
-<div id="case-center">
-    {include file="common/header"}
-    <!--演示演示弹出框 -->
-    {include file="common/order_box"}
-    <!-- 咨询版块 -->
-    {include file="common/siderbar-right"}
-    <!-- banner -->
-    <div id="banner">
-        <div class="layui-carousel" id="banners">
-            <div carousel-item class="lunbo-box">
-                {if(isset($banner_list) && $banner_list)}
-                {foreach($banner_list as $item)}
-                <div class="lunbo-item">
-                    <div class="hover">
-                        <h3>{$item.title}</h3>
-                        <button>立即咨询</button>
-                    </div>
-                    <img src="{$item.img_url}" alt="">
-                </div>
-                {/foreach}
-                {/if}
-
-            </div>
-        </div>
-    </div>
-
-    <!-- 精选案例 -->
-    <div id="jingxuan">
-        <div class="layui-container">
-            <h2 class="title">精选案例</h2>
-            <ul class="anlis">
-                {if isset($case_selected)}
-                {foreach($case_selected as $item)}
-                <li>
-                    <a href="/index/case_center/caseDetail?id={$item.id}&type_id=1">
-                        <img class="bg-img" src="{$item.cover_img_url}" alt="">
+    <div id="case-center">
+        {include file="common/header"}
+        <!--演示演示弹出框 -->
+        {include file="common/order_box"}
+        <!-- 咨询版块 -->
+        {include file="common/siderbar-right"}
+        <!-- banner -->
+        <div id="banner">
+            <div class="layui-carousel" id="banners">
+                <div carousel-item class="lunbo-box">
+                    {if(isset($banner_list) && $banner_list)}
+                    {foreach($banner_list as $item)}
+                    <div class="lunbo-item">
                         <div class="hover">
-                            <img class="logo-img" src="/static/image/logo.png" alt="">
+                            <h3>{$item.title}</h3>
+                            <button>立即咨询</button>
                         </div>
-                    </a>
+                        <img src="{$item.img_url}" alt="">
+                    </div>
+                    {/foreach}
+                    {/if}
 
-                </li>
-                {/foreach}
-                {/if}
-            </ul>
-        </div>
-    </div>
-
-    <!-- 全部案例 -->
-    <div id="all-case">
-        <div class="layui-container">
-            <h2 class="title">全部案例</h2>
-            <ul class="all-nav">
-                <li class="active" onclick="casePoint(0)">全部</li>
-                <li onclick="casePoint(1)">医疗</li>
-                <li onclick="casePoint(2)">教育</li>
-                <li onclick="casePoint(3)">金融</li>
-                <li onclick="casePoint(4)">汽车</li>
-                <li onclick="casePoint(5)">科技</li>
-                <li onclick="casePoint(6)">地产</li>
-            </ul>
-            <div class="all-box">
-                <ul class="case_type"></ul>
-            </div>
-            <div id="test1"></div>
-        </div>
-    </div>
-
-    <!-- 轻产品与服务 -->
-    <div id="product">
-        <div class="layui-container">
-            <h2 class="title">「轻」产品与服务</h2>
-            <div class="product-content">
-                <div class="product-item">
-                    <div class="item-head">
-                        <img src="/static/image/index1/chanping.svg" alt="">
-                        <h5>产品与服务</h5>
-                    </div>
-                    <div class="item-body">
-                        <p>轻直播平台全球化部署的企业级云视频平台 ，支持数百万并发，支持8K、4K、1080P 清晰度直播，300+增强功能，稳定可靠， 便捷易用。</p>
-                    </div>
-                    <div class="item-footer">
-                        <button class="more"><a href="{:url('/index/video_cloud/index')}">了解更多</a></button>
-                        <button class="free"><a href="http://login.lighos.com/signUp"
-                                    target="_blank">免费试用</a></button>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="item-head">
-                        <img src="/static/image/index1/dingzhihua.svg" alt="">
-                        <h5>定制化服务</h5>
-                    </div>
-                    <div class="item-body">
-                        <p>快捷响应，为用户提供深度定制服务，支持 与用户既有OA、CRM、视频会议系统等集 成化开发，打造用户专属直播平台。</p>
-                    </div>
-                    <div class="item-footer">
-                        <button class="more"><a href="{:url('/index/customized_service/index')}">了解更多</a></button>
-                        <button class="free"><a href="http://login.lighos.com/signUp"
-                                    target="_blank">免费试用</a></button>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="item-head">
-                        <img src="/static/image/index1/fuwu.svg" alt="">
-                        <h5>现场服务</h5>
-                    </div>
-                    <div class="item-body">
-                        <p>基于长期深耕于企业直播领域的服务经验，
-                            从方案设计到现场硬件支持，全程跟进方
-                            案落地，为用户提供一站式的直播解决方
-                            案。</p>
-                    </div>
-                    <div class="item-footer">
-                        <button class="more"><a href="{:url('/index/site_service/index')}">了解更多</a></button>
-                        <button class="free"><a href="http://login.lighos.com/signUp"
-                                    target="_blank">免费试用</a></button>
-                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- 轻直播为您提供一站式企业视频解决方案 -->
-    <div id="jiejue">
-        <div class="hover"></div>
-        <div class="layui-container">
-            <div class="jiejue-content">
-                <h2>轻直播为您提供一站式企业视频解决方案</h2>
-                <button>立即咨询</button>
+        <!-- 精选案例 -->
+        <div id="jingxuan">
+            <div class="layui-container">
+                <h2 class="title">精选案例</h2>
+                <ul class="anlis">
+                    {if isset($case_selected)}
+                    {foreach($case_selected as $item)}
+                    <li>
+                        <a href="/index/case_center/caseDetail?id={$item.id}&type_id=1">
+                            <img class="bg-img" src="{$item.cover_img_url}" alt="">
+                            <div class="hover">
+                                <img class="logo-img" src="/static/image/logo_white_text.svg" alt="">
+                            </div>
+                        </a>
+
+                    </li>
+                    {/foreach}
+                    {/if}
+                </ul>
             </div>
         </div>
-    </div>
 
-    {include file="common/footer"}
-</div>
+        <!-- 全部案例 -->
+        <div id="all-case">
+            <div class="layui-container">
+                <h2 class="title">全部案例</h2>
+                <ul class="all-nav">
+                    <li class="active" onclick="casePoint(0)">全部</li>
+                    <li onclick="casePoint(1)">医疗</li>
+                    <li onclick="casePoint(2)">教育</li>
+                    <li onclick="casePoint(3)">金融</li>
+                    <li onclick="casePoint(4)">汽车</li>
+                    <li onclick="casePoint(5)">科技</li>
+                    <li onclick="casePoint(6)">地产</li>
+                </ul>
+                <div class="all-box">
+                    <ul class="case_type"></ul>
+                </div>
+                <div id="test1"></div>
+            </div>
+        </div>
+
+        <!-- 轻产品与服务 -->
+        <div id="product">
+            <div class="layui-container">
+                <h2 class="title">「轻」产品与服务</h2>
+                <div class="product-content">
+                    <div class="product-item">
+                        <div class="item-head">
+                            <img src="/static/image/index1/chanping.svg" alt="">
+                            <h5>产品与服务</h5>
+                        </div>
+                        <div class="item-body">
+                            <p>轻直播平台全球化部署的企业级云视频平台 ，支持数百万并发，支持8K、4K、1080P 清晰度直播，300+增强功能，稳定可靠， 便捷易用。</p>
+                        </div>
+                        <div class="item-footer">
+                            <button class="more"><a href="{:url('/index/video_cloud/index')}">了解更多</a></button>
+                            <button class="free"><a href="http://login.lighos.com/signUp"
+                                    target="_blank">免费试用</a></button>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="item-head">
+                            <img src="/static/image/index1/dingzhihua.svg" alt="">
+                            <h5>定制化服务</h5>
+                        </div>
+                        <div class="item-body">
+                            <p>快捷响应，为用户提供深度定制服务，支持 与用户既有OA、CRM、视频会议系统等集 成化开发，打造用户专属直播平台。</p>
+                        </div>
+                        <div class="item-footer">
+                            <button class="more"><a href="{:url('/index/customized_service/index')}">了解更多</a></button>
+                            <button class="free"><a href="http://login.lighos.com/signUp"
+                                    target="_blank">免费试用</a></button>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="item-head">
+                            <img src="/static/image/index1/fuwu.svg" alt="">
+                            <h5>现场服务</h5>
+                        </div>
+                        <div class="item-body">
+                            <p>基于长期深耕于企业直播领域的服务经验，
+                                从方案设计到现场硬件支持，全程跟进方
+                                案落地，为用户提供一站式的直播解决方
+                                案。</p>
+                        </div>
+                        <div class="item-footer">
+                            <button class="more"><a href="{:url('/index/site_service/index')}">了解更多</a></button>
+                            <button class="free"><a href="http://login.lighos.com/signUp"
+                                    target="_blank">免费试用</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 轻直播为您提供一站式企业视频解决方案 -->
+        <div id="jiejue">
+            <div class="hover"></div>
+            <div class="layui-container">
+                <div class="jiejue-content">
+                    <h2>轻直播为您提供一站式企业视频解决方案</h2>
+                    <button>立即咨询</button>
+                </div>
+            </div>
+        </div>
+
+        {include file="common/footer"}
+    </div>
 
 </body>
 
@@ -212,7 +211,7 @@
     function casePoint(index, curr = 1) {
         $.ajax({
             url: "{:url('/index/case_center/getCaseByWhere')}",
-            data: {'pid': index, 'curr': curr},
+            data: { 'pid': index, 'curr': curr },
             type: 'get',
             success: function (res) {
                 if (res.status === 200) {
@@ -224,7 +223,7 @@
                                 label_html += '<span>' + label + '</span><i>|</i>';
                             }
                         }
-                        $('.case_type').append('<li style="cursor: pointer"><a href="/index/case_center/caseDetail?type_id=4&id='+item.id+'"><img src="' + item.cover_img_url + '" alt=""><div class="text"><h5>' + item.title + '</h5><p>' + item.second_title + '</p><div class="biaoqian">' + label_html + '</div></div></a></li>');
+                        $('.case_type').append('<li style="cursor: pointer"><a href="/index/case_center/caseDetail?type_id=4&id=' + item.id + '"><img src="' + item.cover_img_url + '" alt=""><div class="text"><h5>' + item.title + '</h5><p>' + item.second_title + '</p><div class="biaoqian">' + label_html + '</div></div></a></li>');
                     }
                     layPage(res.data);      //请求成功调用分页方法
                 }

@@ -4,10 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>轻直播_客户案例_直播定制化服务</title>
-    <meta name="keywords"  content="轻直播,经典案例"/>
-    <meta name="description"
-           content="轻直播提供私有化部署,全方位全场景直播一站式服务,服务范围涵盖医疗、教育、金融、科技等各行业,已获得上海医师协会、瀚晖制药、四川大学、等国内知名企业的高度认可。"/>
+    <title>直播百科_轻直播学院_企业直播入门指南</title>
+    <meta name="keywords"  content=""/>
+    <meta name="description"  content=""/>
     <link rel="stylesheet" href="/static/layui/css/layui.css">
     <link rel="stylesheet" href="/static/css/style.css">
     <script type='text/javascript' src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
@@ -227,6 +226,7 @@
                 margin-top: 26px;
                 min-height: 500px;
             }
+           
 
             /* 搜索结果 */
             .listGuideContent {
@@ -1024,12 +1024,21 @@
             width: 30%;
         }
 
-        .hidden{
+        .hidden {
             display: none;
         }
-        .show{
+
+        .display {
             display: block;
         }
+
+        .show {
+            display: flex;
+        }
+        .article-body img {
+            max-width: 100% !important;
+        }
+
     </style>
 </head>
 
@@ -1073,21 +1082,23 @@
                             <i class="layui-icon layui-icon-search"></i>
                         </div>
                     </div>
-                    <ul class="listContainerBread {$article_f == 1?'show':'hidden'}">
+                    <ul class="listContainerBread {$article_f == 1?'display':'hidden'}">
                         <li>
                             <a href="javascript:;" class="hoverstyle">直播百科</a>
                             <span>>></span>
                         </li>
                         <li>
-                            <a href="javascript:;" class="hoverstyle pid_name">{$article_f == 1?$article_info['pid_name']:''}</a>
+                            <a href="javascript:;" class="hoverstyle pid_name">{$article_f ==
+                                1?$article_info['pid_name']:''}</a>
                             <span>>></span>
                         </li>
                         <li>
-                            <a href="javascript:void(0)" class="article_title">{$article_f == 1?$article_info['title']:''}</a>
+                            <a href="javascript:void(0)" class="article_title">{$article_f ==
+                                1?$article_info['title']:''}</a>
                         </li>
                     </ul>
                     <!-- 文章显示区域 -->
-                    <div class="articleCon {$article_f == 1?'show':'hidden'}">
+                    <div class="articleCon {$article_f == 1?'display':'hidden'}">
                         <h2 class="content_title">
                             {$article_f == 1?$article_info['title']:''}
                         </h2>
@@ -1103,7 +1114,7 @@
                         </p>
                     </div>
                     <!-- 搜索结果 -->
-                    <div class="listGuideContent hidden">
+                    <div class="listGuideContent {$article_f == 0?'show':'hidden'}">
                         {if(isset($article_list))}
                         {foreach($article_list as $item)}
                         <a href="javascript:;" onclick="articleInfo({$item.id})">
