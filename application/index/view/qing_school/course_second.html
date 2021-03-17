@@ -102,7 +102,7 @@
             </div>
             <a href="/">轻直播首页</a>
             <div class="login flexs">
-                <a href="{:url('/login')}">登录</a>
+                <a href="{:url('/login')}" target="_blank">登录</a>
                 <span>|</span>
                 <a href="http://login.lighos.com/signUp" target="_blank">注册</a>
             </div>
@@ -410,7 +410,7 @@
                 localStorage.removeItem('tvInfo')
                 layer.msg('您已退出登录');
                 setTimeout(() => {
-                    window.location.href = "/index/login/login.html"
+                    window.location.href = "/login"
                 }, 500);
             }
         });
