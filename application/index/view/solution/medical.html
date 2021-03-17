@@ -1906,6 +1906,11 @@
 <div id="conporate-container">
     <!-- 头部 -->
     {include file="common/header"}
+
+     <!--演示演示弹出框 -->
+     {include file="common/order_box"}
+     <!-- 咨询版块 -->
+     {include file="common/siderbar-right"}
     <!-- banner区域 -->
     <div id="banner">
         <div class="layui-carousel" id="banners">
@@ -1922,7 +1927,7 @@
                         <h5 style=' color: {$item.in_color};
                         opacity: .8;
                         font-size: {$item.in_size}px;
-                        width: 50%;
+                        width: 55%;
                         margin: 78px auto 103px;
                         text-align: {$item.format};
                         line-height: 1.5;'>{$item.introduction}</h5>
@@ -2263,10 +2268,11 @@
         })
     }
 
-    // 预约按钮
-    $('.banner-a').click(function(){
-         console.log(123)
-     })
+    //   显示预约演示弹出框
+    $('.banner-a').on('click', function () {
+        $('#order-container').show();
+        $('.q-modal').show();
+    })
 
 </script>
 </html>
