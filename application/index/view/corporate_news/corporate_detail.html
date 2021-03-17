@@ -2144,40 +2144,13 @@
         {include file="common/order_box"}
         <!-- 咨询版块 -->
         {include file="common/siderbar-right"}
-        <!-- 导航栏 -->
-        <!-- <nav>
-        <div class="layui-container school-nav">
-            <a href="{:url('qing_school/index')}">
-                <i class="icon-nav-item icon-nav-home"></i>
-                 <span>医疗</span>
-            </a>
-            <a href="{:url('qing_school/case')}">
-                <i class="icon-nav-item icon-nav-home"></i>
-                <span>教育</span>
-            </a>
-            <a href="{:url('qing_school/products')}">
-                <i class="icon-nav-item icon-nav-home"></i>
-                <span>产品动态</span>
-            </a>
-            <a href="{:url('qing_school/liveNews')}">
-                <i class="icon-nav-item icon-nav-home"></i>
-                <span>直播资讯</span>
-            </a>
-            <a href="">
-                <span>视频学院</span>
-            </a>
-        </div>
-    </nav> -->
         <!-- 内容区域 -->
         <section id="content-center">
             <!-- 文章面包屑导航 -->
             <div class="layui-container">
                 <div class="single-breadcrumb">
-                    <a href="{:url('/index/case_center/index')}" class="breadcrumb-link">案例中心 ></a>
-                    <a href="{$pid['pid_url']}" class="breadcrumb-link">
-                        {$pid['pid_name']} >
-                    </a>
-                    {$info['title']}
+                    <a href="{:url('/index/corporate_news/categoryNews')}" class="breadcrumb-link">企业新闻 ></a>
+                    {$info['info']['title']}
                 </div>
             </div>
             <div class="layui-container flex-space-between">
@@ -2187,14 +2160,14 @@
                         <!-- 文章标题 -->
                         <div class="article-head">
                             <div class="article-head-title">
-                                <h2> {$info['title']}</h2>
+                                <h2> {$info['info']['title']}</h2>
                             </div>
                             <div class="article-head-desc">
-                                <span class="time">{$info['time']}</span>
+                                <span class="time">{$info['info']['time']}</span>
                                 <i class="vertical-bar">|</i>
                                 <div class="tags-box">
-                                    {if !empty($info['label'])}
-                                    {foreach($info['label'] as $item)}
+                                    {if !empty($info['info']['label'])}
+                                    {foreach($info['info']['label'] as $item)}
                                     <a href="" class="tag-item">{$item}</a>
                                     {/foreach}
                                     {/if}
@@ -2209,32 +2182,32 @@
                         <div class="article-excerpt">
                             <p>
                                 <span>摘要：</span>
-                                {$info['second_title']}
+                                {$info['info']['second_title']}
                             </p>
                         </div>
                         <!-- 文章内容 -->
                         <div class="article-body">
-                            {$info['content']}
+                            {$info['info']['content']}
                         </div>
                         <!-- 分割线 -->
                         <div class="divider"></div>
                         <!-- 上一篇下一篇 -->
                         <div class="article-link">
-                            {if($pre_and_nex['pre_btn'] == 1)}
+                            {if($info['pre_nex']['pre_btn'] == 1)}
                             <div class="article-link-item">
                                 上一篇
                                 <a
-                                    href="/index/case_center/caseDetail?id={$pre_and_nex['pre_case']['id']}&type_id={$pre_and_nex['type_id']}">
-                                    {$pre_and_nex['pre_case']['title']}
+                                    href="/index/corporate_news/corporateDetail?id={$info['pre_nex']['pre_article']['id']}">
+                                    {$info['pre_nex']['pre_article']['title']}
                                 </a>
                             </div>
                             {/if}
-                            {if($pre_and_nex['nex_btn'] == 1)}
+                            {if($info['pre_nex']['nex_btn'] == 1)}
                             <div class="article-link-item">
                                 下一篇
                                 <a
-                                    href="/index/case_center/caseDetail?id={$pre_and_nex['nex_case']['id']}&type_id={$pre_and_nex['type_id']}">
-                                    {$pre_and_nex['nex_case']['title']}
+                                    href="/index/corporate_news/corporateDetail?id={$info['pre_nex']['nex_article']['id']}">
+                                    {$info['pre_nex']['nex_article']['title']}
                                 </a>
                             </div>
                             {/if}
@@ -2243,10 +2216,9 @@
                 </div>
                 <div class="school-right-con">
                     <div class="siderbar-item siderbar-item-search">
-                        <form action="/index/case_center/{$pid.action}" class="search-form" id="search-form">
-                            <input type="text" name="word" class="searchInput" placeholder="输入关键词" autocomplete="off">
+                        <form action="/index/corporate_news/categoryNews" class="search-form" id="search-form">
+                            <input type="text" name="word" class="searchInput" value="{:request()->param('word')}" placeholder="输入关键词" autocomplete="off">
                             <input type="submit" class="submitInput" alt="search">
-                            <input type="hidden" name="pid" value="{$info['pid']}">
                         </form>
                     </div>
 
@@ -2262,7 +2234,7 @@
                         <ul class="hot-tags-list">
                             {if(!empty($label_list))}
                             {foreach($label_list as $item)}
-                            <li><a href="" class="hot-tag-item">{$item.name}</a></li>
+                            <li><a href="/index/corporate_news/categoryNews?label={$item.name}" class="hot-tag-item">{$item.name}</a></li>
                             {/foreach}
                             {/if}
                         </ul>
@@ -2280,11 +2252,10 @@
 
                         </div>
                         <ul class="hot-article-list active" data-name="hot">
-                            {if($hot_and_rem['hot_case'])}
-                            {foreach($hot_and_rem['hot_case'] as $item)}
+                            {if(isset($list))}
+                            {foreach($list['hot_article'] as $item)}
                             <li class="article-item">
-                                <a href="/index/case_center/caseDetail?type_id=2&id={$item.id}" class="link"
-                                    title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
+                                <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>11])}" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
                                     <p>{$item.title}</p>
                                     <span class="time">{$item.time}</span>
                                 </a>
@@ -2293,11 +2264,10 @@
                             {/if}
                         </ul>
                         <ul class="hot-article-list" data-name="recommend">
-                            {if($hot_and_rem['recommend_case'])}
-                            {foreach($hot_and_rem['recommend_case'] as $item)}
+                            {if(isset($list))}
+                            {foreach($list['recommend'] as $item)}
                             <li class="article-item">
-                                <a href="/index/case_center/caseDetail?type_id=2&id={$item.id}" class="link"
-                                    title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
+                                <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>12])}" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
                                     <p>{$item.title}</p>
                                     <span class="time">{$item.time}</span>
                                 </a>

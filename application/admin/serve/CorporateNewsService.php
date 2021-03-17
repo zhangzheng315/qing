@@ -225,4 +225,31 @@ class CorporateNewsService extends Common{
         $this->setMessage('查询成功');
         return $search_list;
     }
+
+    /**
+     * 企业新闻
+     * @return array
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
+    public function corporateLimit()
+    {
+        $where = [
+            'deleted_time' => 0,
+            'status' => 1,
+        ];
+        $top_list = $this->corporate->where($where)->order('order', 'desc')->limit(0,2)->select();
+        $bottom_list = $this->corporate->where($where)->order('order', 'desc')->limit(2,4)->select();
+        foreach ($top_list as &$value) {
+            $value['label'] = explode(',', $value['label']);
+            $value['time'] = date('Y-m-d', $value['updated_time']);
+        }
+        foreach ($bottom_list as &$item) {
+            $item['day'] = date('d', $item['updated_time']);
+            $item['month'] = date('M', $item['updated_time']);
+        }
+        return ['top_list' => $top_list, 'bottom_list' => $bottom_list];
+    }
+
 }
