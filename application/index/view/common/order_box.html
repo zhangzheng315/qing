@@ -641,7 +641,7 @@
                         </span>
                         <span>
                             <span>同意并遵守</span>
-                            <a href="" style="color:#00A67C">轻直播平台服务条款</a>
+                            <a href="{:url('/index/index/serviceAgreement')}" style="color:#00A67C">轻直播平台服务条款</a>
                         </span>
                     </label>
                     <button class="order-btn" type="button">
@@ -653,6 +653,9 @@
     </div>
     <div class="q-modal"></div>
     <script>
+        layui.use('layer', function () {
+        var layer = layui.layer;
+      });
         let isAgree = false;
         $('.order-checkbox').on('click', function () {
             $(this).toggleClass('order-checkbox-checked');
@@ -701,6 +704,8 @@
                         // console.log(res);
                         if(res.status == 200) {
                             layer.msg(res.message);
+                            $('#order-container').hide();
+                            $('.q-modal').hide();
                         } else {
                             layer.msg(res.message);
                         }
