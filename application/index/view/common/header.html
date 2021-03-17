@@ -690,13 +690,15 @@
                 justify-content: space-around;
             }
 
-            .login-nav>li {
+            .login-nav>a {
+                display: inline-block;
                 width: 90px;
                 height: 36px;
                 line-height: 36px;
                 text-align: center;
                 border-radius: 18px;
                 cursor: pointer;
+                box-sizing: border-box;
             }
 
             .mobile-freeuse {
@@ -828,7 +830,8 @@
                 justify-content: space-around;
             }
 
-            .login-nav>li {
+            .login-nav>a {
+                display: inline-block;
                 width: 80px;
                 height: 30px;
                 line-height: 30px;
@@ -836,6 +839,7 @@
                 border-radius: 15px;
                 cursor: pointer;
                 font-size: 12px;
+                box-sizing: border-box;
             }
 
             .mobile-freeuse {
@@ -1104,7 +1108,7 @@
                 </ul>
             </div>
             <div class="nav-btn">
-                <a class="login" href="{:url('/index/login/login')}">
+                <a class="login" href="{:url('/login')}">
                     登录
                 </a>
                 <a class="free-use" href="http://login.lighos.com/signUp" target="_blank">
@@ -1170,12 +1174,12 @@
             </li> -->
             </ul>
             <ul class="login-nav">
-                <li class="mobile-login">
+                <a class="mobile-login" href="{:url('/index/login/login')}">
                     登录
-                </li>
-                <li class="mobile-freeuse">
+                </a>
+                <a class="mobile-freeuse" href="http://login.lighos.com/signUp">
                     免费试用
-                </li>
+                </a>
             </ul>
         </div>
 
@@ -1292,7 +1296,7 @@
                                 '</li>');
                         } else {
                             $('.menu_nav').append('<li class="menu-item ' + active + '">\n' +
-                                '                    <a style="cursor: pointer;display: block" href="' + item.route + '">' + item.menu_name + '</a>\n' +
+                                '                    <a style="cursor: pointer;display: block" href="' + item.url_action + '">' + item.menu_name + '</a>\n' +
                                 '                </li>');
                         }
                     }
@@ -1365,7 +1369,7 @@
                     active = 'p-active';
                 }
                 sun += '<dd class="dd' + item.id + '">\n' +
-                    '       <a href="' + item.route + '" class="pink-item">\n' +
+                    '       <a href="' + item.url_action + '" class="pink-item">\n' +
                     '           <p class="' + active + '">' + item.menu_name + '</p>\n' +
                     // '           <span>企业级视频云直播平台</span>\n' +
                     '       </a>\n' +
@@ -1403,7 +1407,7 @@
                     active = 'p-active';
                 }
 
-                son += '<li><a href="' + item.route + '" class="' + active + '">' + item.menu_name + '</a></li>'
+                son += '<li><a href="' + item.url_action + '" class="' + active + '">' + item.menu_name + '</a></li>'
             }
             return son;
         }

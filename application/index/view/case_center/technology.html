@@ -27,10 +27,10 @@
             <div class="head-right">
                 <div class="text">
                     <a href="{:url('/')}">轻直播首页</a>
-                    <a href="{:url('case_center/index')}">案例中心</a>
+                    <a href="{:url('/case')}">案例中心</a>
                 </div>
                 <div class="btns">
-                    <a class="login" href="{:url('/index/login/login')}">登录</a>
+                    <a class="login" href="{:url('/login')}">登录</a>
                     <a class="free-btn" href="http://login.lighos.com/signUp" target="_blank">免费试用</a>
                 </div>
                 <ul class="layui-nav" lay-filter="leftNav">
@@ -53,26 +53,26 @@
     <!-- 导航栏 -->
     <nav>
         <div class="layui-container school-nav">
-            <a href="{:url('case_center/medical')}">
-                <!-- <i class="icon-nav-item icon-nav-home"></i> -->
-                <span>医疗</span>
-            </a>
-            <a href="{:url('case_center/education')}">
+            <a href="{:url('/case/medical')}">
+            <!-- <i class="icon-nav-item icon-nav-home"></i> -->
+            <span>医疗</span>
+        </a>
+            <a href="{:url('/case/education')}">
                 <!-- <i class="icon-nav-item icon-nav-home"></i> -->
                 <span>教育</span>
             </a>
-            <a href="{:url('case_center/finance')}">
+            <a href="{:url('/case/finance')}">
                 <!-- <i class="icon-nav-item icon-nav-home"></i> -->
                 <span>金融</span>
             </a>
-            <a href="{:url('case_center/car')}">
+            <a href="{:url('/case/car')}">
                 <!-- <i class="icon-nav-item icon-nav-home"></i> -->
                 <span>汽车</span>
             </a>
-            <a href="{:url('case_center/technology')}" class="active">
+            <a href="{:url('/case/technology')}" class="active">
                 <span>科技</span>
             </a>
-            <a href="{:url('case_center/property')}">
+            <a href="{:url('/case/property')}">
                 <span>地产</span>
             </a>
         </div>
@@ -88,7 +88,7 @@
                         {if($case_list)}
                         {foreach($case_list as $item)}
                         <li class="cause-item">
-                            <a href="/index/case_center/caseDetail?type_id=4&id={$item.id}" class="cause-cover"
+                            <a href="/case/detail?type_id=4&id={$item.id}" class="cause-cover"
                                target="_blank"
                                style="background: url({$item.cover_img_url});background-size: cover;background-position: center;">
                             </a>
@@ -129,7 +129,7 @@
                         {if($case_list)}
                         {foreach($case_list as $item)}
                         <li class="cause-item">
-                            <a href="/index/case_center/caseDetail?type_id=4&id={$item.id}">
+                            <a href="/case/detail?type_id=4&id={$item.id}">
                                 <h3>
                                     {$item.title}
                                 </h3>
@@ -144,7 +144,7 @@
                                 {/foreach}
                                 {/if}
                             </div>
-                            <a href="" class="cause-item-desc">
+                            <a href="/case/detail?type_id=4&id={$item.id}" class="cause-item-desc">
                                 <img src="{$item.cover_img_url}" alt="">
                                 <p>{$item.second_title}</p>
                             </a>
@@ -159,7 +159,7 @@
             </div>
             <div class="school-right-con">
                 <div class="siderbar-item siderbar-item-search">
-                    <form action="/index/case_center/{$action}" class="search-form" id="search-form">
+                    <form action="{$action}" class="search-form" id="search-form">
                         <input type="text" name="word" value="{:request()->param('word')}" class="searchInput" placeholder="输入关键词" autocomplete="off">
                         <input type="submit" class="submitInput" alt="search">
                         <input type="hidden" name="'pid" value="{$pid}">
@@ -181,7 +181,7 @@
                         {if($hot_and_rem['hot_case'])}
                         {foreach($hot_and_rem['hot_case'] as $item)}
                         <li class="article-item">
-                            <a href="/index/case_center/caseDetail?type_id=2&id={$item.id}" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
+                            <a href="/case/detail?type_id=2&id={$item.id}" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
                                 <p>{$item.title}</p>
                                 <span class="time">{$item.time}</span>
                             </a>
@@ -193,7 +193,7 @@
                         {if($hot_and_rem['recommend_case'])}
                         {foreach($hot_and_rem['recommend_case'] as $item)}
                         <li class="article-item">
-                            <a href="/index/case_center/caseDetail?type_id=2&id={$item.id}" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
+                            <a href="/case/detail?type_id=3&id={$item.id}" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
                                 <p>{$item.title}</p>
                                 <span class="time">{$item.time}</span>
                             </a>
@@ -253,7 +253,7 @@
                     <ul class="hot-tags-list">
                         {if(!empty($label_list))}
                         {foreach($label_list as $item)}
-                        <li><a href="/index/case_center/{$action}?pid={$pid}&label={$item.name}" class="hot-tag-item">{$item.name}</a></li>
+                        <li><a href="{$action}?pid={$pid}&label={$item.name}" class="hot-tag-item">{$item.name}</a></li>
                         {/foreach}
                         {/if}
                     </ul>

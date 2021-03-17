@@ -2115,7 +2115,7 @@
                     <a href="{:url('/')}">产品功能</a>
                 </div>
                 <div class="btns">
-                    <a class="login" href="{:url('/index/login/login')}">登录</a>
+                    <a class="login" href="{:url('/login')}">登录</a>
                     <a class="free-btn" href="http://login.lighos.com/signUp" target="_blank">免费试用</a>
                 </div>
                 <ul class="layui-nav" lay-filter="leftNav">
@@ -2138,28 +2138,27 @@
     <!-- 导航栏 -->
     <nav>
         <div class="layui-container school-nav">
-            <a href="{:url('qing_school/index')}" class="{$pid == 0 ? 'active' : ''}">
-                <!-- <img src="/static/image/qingschool/school-home.png" alt=""> -->
+            <a href="{:url('/blog')}">
                 <i class="icon-nav-item icon-nav-home"></i>
                 <span>内容中心</span>
             </a>
-            <a href="{:url('qing_school/caseAn')}" class="{$pid == 1 ? 'active' : ''}">
+            <a href="{:url('/blog/demo')}">
                 <i class="icon-nav-item icon-nav-case"></i>
                 <span>案例解析</span>
             </a>
-            <a href="{:url('qing_school/products')}" class="{$pid == 2 ? 'active' : ''}">
+            <a href="{:url('/blog/dynamic')}">
                 <i class="icon-nav-item icon-nav-product"></i>
                 <span>产品动态</span>
             </a>
-            <a href="{:url('qing_school/liveNews')}" class="{$pid == 3 ? 'active' : ''}">
+            <a href="{:url('/blog/archives')}" class="active">
                 <i class="icon-nav-item icon-nav-live"></i>
                 <span>直播资讯</span>
             </a>
-            <a href="{:url('index/qing_school/videoCourse')}">
+            <a href="{:url('/video')}">
                 <i class="icon-nav-item icon-nav-video"></i>
                 <span>视频学院</span>
             </a>
-            <a href="{:url('qing_school/article')}">
+            <a href="{:url('/guide')}">
                 <i class="icon-nav-item icon-nav-case"></i>
                 <span>直播百科</span>
             </a>

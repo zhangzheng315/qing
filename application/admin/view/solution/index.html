@@ -59,6 +59,12 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">静态url</label>
+            <div class="layui-input-block">
+                <input type="text" name="url_action" placeholder="请输入" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
             <label class="layui-form-label">启用</label>
             <div class="layui-input-block">
                 <input name="status" value="1" type="checkbox" checked lay-skin="switch">
@@ -121,6 +127,12 @@
             <label class="layui-form-label">跳转链接</label>
             <div class="layui-input-block">
                 <input type="text" name="link" id="link" placeholder="请输入(/index/solution/corporate)" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">静态url</label>
+            <div class="layui-input-block">
+                <input type="text" name="url_action" id="url_action" placeholder="请输入" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
@@ -221,6 +233,7 @@
 
                 , {field: 'img_url', title: '缩略图', templet:'#imgtmp'}
                 , {field: 'title', title: '标题'}
+                , {field: 'url_action', title: '静态url'}
                 , {field: 'type', title: '类别'}
                 , {field: 'order', title: '排序'}
                 , {field: 'status', title: '当前状态'}
@@ -252,6 +265,7 @@
                         $('.img_url').val(res.data.img_url);
                         $('#introduction').val(res.data.introduction);
                         $('#link').val(res.data.link);
+                        $('#url_action').val(res.data.url_action);
 
                         if (res.data.status === 0) {
                             $('#status').removeAttr('checked');

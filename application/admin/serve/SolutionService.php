@@ -27,6 +27,7 @@ class SolutionService extends Common{
             'introduction' => $param['introduction'],
             'type' => $param['type'],
             'link' => $param['link'] ?: '',
+            'url_action' => $param['url_action'] ?: '',
             'status' => $param['status'],
             'order' => $param['order'] ?: 0,
             'created_time' => time(),
