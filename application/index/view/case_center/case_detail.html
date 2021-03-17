@@ -2159,7 +2159,7 @@
             <!-- 文章面包屑导航 -->
             <div class="layui-container">
                 <div class="single-breadcrumb">
-                    <a href="{:url('/index/case_center/index')}" class="breadcrumb-link">案例中心 ></a>
+                    <a href="{:url('/case')}" class="breadcrumb-link">案例中心 ></a>
                     <a href="{$pid['pid_url']}" class="breadcrumb-link">
                         {$pid['pid_name']} >
                     </a>
@@ -2210,7 +2210,7 @@
                             <div class="article-link-item">
                                 上一篇
                                 <a
-                                    href="/index/case_center/caseDetail?id={$pre_and_nex['pre_case']['id']}&type_id={$pre_and_nex['type_id']}">
+                                    href="/case/detail?id={$pre_and_nex['pre_case']['id']}&type_id={$pre_and_nex['type_id']}">
                                     {$pre_and_nex['pre_case']['title']}
                                 </a>
                             </div>
@@ -2219,7 +2219,7 @@
                             <div class="article-link-item">
                                 下一篇
                                 <a
-                                    href="/index/case_center/caseDetail?id={$pre_and_nex['nex_case']['id']}&type_id={$pre_and_nex['type_id']}">
+                                    href="/case/detail?id={$pre_and_nex['nex_case']['id']}&type_id={$pre_and_nex['type_id']}">
                                     {$pre_and_nex['nex_case']['title']}
                                 </a>
                             </div>
@@ -2229,7 +2229,7 @@
                 </div>
             <div class="school-right-con">
                 <div class="siderbar-item siderbar-item-search">
-                    <form action="/index/case_center/{$pid.action}" class="search-form" id="search-form">
+                    <form action="{$pid['pid_url']}" class="search-form" id="search-form">
                         <input type="text" name="word" class="searchInput" placeholder="输入关键词" autocomplete="off">
                         <input type="submit" class="submitInput" alt="search">
                         <input type="hidden" name="pid" value="{$info['pid']}">
@@ -2248,7 +2248,7 @@
                         <ul class="hot-tags-list">
                             {if(!empty($label_list))}
                             {foreach($label_list as $item)}
-                            <li><a href="" class="hot-tag-item">{$item.name}</a></li>
+                            <li><a href="{$pid['pid_url']}?pid={$info['pid']}&label={$item.name}" class="hot-tag-item">{$item.name}</a></li>
                             {/foreach}
                             {/if}
                         </ul>

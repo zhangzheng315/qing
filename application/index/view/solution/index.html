@@ -80,7 +80,7 @@
                     {if isset($solution_list['ind_res'])}
                     {foreach($solution_list['ind_res'] as $item)}
                     <li>
-                        <a href="{$item.link}" class="turn">
+                        <a href="{$item.url_action}" class="turn">
                         <img src="{$item.img_url}" alt="">
                         <div class="text">
                             <h6>{$item.title}</h6>
@@ -102,7 +102,7 @@
                     {if isset($solution_list['sce_res'])}
                     {foreach($solution_list['sce_res'] as $item)}
                     <li>
-                        <a href="{$item.link}" class="turn">
+                        <a href="{$item.url_action}" class="turn">
                             <img class="bg-img" src="{$item.img_url}" alt="">
                             <div>
                                 <p>{$item.title}</p>

@@ -66,7 +66,7 @@ class CaseCenter extends Controller
         $param = request()->param();
         $param['pid'] = $pid;
         $case_list = $this->case_service->caseByWhere($param);
-        $action = 'medical';
+        $action = '/case/medical';
         return $this->fetch('',compact('case_list','pid','action'));
     }
     /* 案例详情 */
@@ -87,36 +87,30 @@ class CaseCenter extends Controller
         switch ($info['pid']) {
             case 1:
                 $pid_name = '医疗';
-                $pid_url = '/index/case_center/medical';
-                $action = 'medical';
+                $pid_url = '/case/medical';
                 break;
             case 2:
                 $pid_name = '教育';
-                $pid_url = '/index/case_center/education';
-                $action = 'education';
+                $pid_url = '/case/education';
                 break;
             case 3:
                 $pid_name = '金融';
-                $pid_url = '/index/case_center/finance';
-                $action = 'finance';
+                $pid_url = '/case/finance';
                 break;
             case 4:
                 $pid_name = '汽车';
-                $pid_url = '/index/case_center/car';
-                $action = 'car';
+                $pid_url = '/case/car';
                 break;
             case 5:
                 $pid_name = '科技';
-                $pid_url = '/index/case_center/technology';
-                $action = 'technology';
+                $pid_url = '/case/technology';
                 break;
             case 6:
                 $pid_name = '地产';
-                $pid_url = '/index/case_center/property';
-                $action = 'property';
+                $pid_url = '/case/property';
                 break;
         }
-        $pid = ['pid_name' => $pid_name, 'pid_url' => $pid_url,'action'=>$action];
+        $pid = ['pid_name' => $pid_name, 'pid_url' => $pid_url];
         $pre_and_nex = $this->case_service->preAndNext($id, $type_id, $info['pid']);
 
         return $this->fetch('',compact('info','pid','pre_and_nex'));
@@ -128,7 +122,7 @@ class CaseCenter extends Controller
         $param = request()->param();
         $param['pid'] = $pid;
         $case_list = $this->case_service->caseByWhere($param);
-        $action = 'finance';
+        $action = '/case/finance';
         return $this->fetch('',compact('case_list','pid','action'));
     }
     /* 教育案例 */
@@ -138,7 +132,7 @@ class CaseCenter extends Controller
         $param = request()->param();
         $param['pid'] = $pid;
         $case_list = $this->case_service->caseByWhere($param);
-        $action = 'education';
+        $action = '/case/education';
         return $this->fetch('',compact('case_list','pid','action'));
     }
     /* 汽车案例 */
@@ -148,7 +142,7 @@ class CaseCenter extends Controller
         $param = request()->param();
         $param['pid'] = $pid;
         $case_list = $this->case_service->caseByWhere($param);
-        $action = 'car';
+        $action = '/case/car';
         return $this->fetch('',compact('case_list','pid','action'));
     }
     /* 科技案例*/
@@ -158,7 +152,7 @@ class CaseCenter extends Controller
         $param = request()->param();
         $param['pid'] = $pid;
         $case_list = $this->case_service->caseByWhere($param);
-        $action = 'technology';
+        $action = '/case/technology';
         return $this->fetch('',compact('case_list','pid','action'));
     }
     /* 地产案例*/
@@ -168,7 +162,7 @@ class CaseCenter extends Controller
         $param = request()->param();
         $param['pid'] = $pid;
         $case_list = $this->case_service->caseByWhere($param);
-        $action = 'property';
+        $action = '/case/property';
         return $this->fetch('',compact('case_list','pid','action'));
     }
 }
