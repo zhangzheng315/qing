@@ -199,18 +199,18 @@
             font-size: 14px;
             border-radius: 15px;
             outline: none;
-            border: none;
             cursor: pointer;
         }
         .btns>a.login {
             background: #fff;
             border: 1px solid #00cc99;
             color: #00cc99;
-            margin-right: 25px;
+            margin-right: 20px;
         }
         .btns>a.free-btn {
             background: #00cc99;
             color: #ffffff;
+            border: 1px solid #00cc99;
         }
 
         /* 导航栏 */
@@ -723,7 +723,6 @@
             font-size: 14px;
             border-radius: 15px;
             outline: none;
-            border: none;
             cursor: pointer;
         }
         .btns>a.login {
@@ -735,6 +734,7 @@
         .btns>a.free-btn {
             background: #00cc99;
             color: #ffffff;
+            border: 1px solid #00cc99;
         }
 
         /* 导航栏 */
@@ -1239,7 +1239,6 @@
             font-size: 14px;
             border-radius: 15px;
             outline: none;
-            border: none;
             cursor: pointer;
         }
         .btns>a.login {
@@ -1251,6 +1250,7 @@
         .btns>a.free-btn {
             background: #00cc99;
             color: #ffffff;
+            border: 1px solid #00cc99;
         }
 
         /* 导航栏 */
@@ -1478,7 +1478,6 @@
             font-size: 14px;
             border-radius: 15px;
             outline: none;
-            border: none;
             cursor: pointer;
         }
         .btns>a.login {
@@ -1490,7 +1489,8 @@
         .btns>a.free-btn {
             background: #00cc99;
             color: #ffffff;
-            margin-left: 20px;
+            margin-left: 15px;
+            border: 1px solid #00cc99;
         }
 
         /* 导航栏 */

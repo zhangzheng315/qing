@@ -118,6 +118,9 @@
             background-color: #00cc99;
             color: #fff
         }
+        .btns>a {
+            box-sizing: border-box;
+        }
 
         @media screen and (min-width: 1300px) {
 
@@ -157,7 +160,6 @@
                 font-size: 14px;
                 border-radius: 15px;
                 outline: none;
-                border: none;
                 cursor: pointer;
             }
 
@@ -165,12 +167,13 @@
                 background: #fff;
                 border: 1px solid #00cc99;
                 color: #00cc99;
-                margin-right: 25px;
+                margin-right: 20px;
             }
 
             .btns>a.free-btn {
                 background: #00cc99;
                 color: #ffffff;
+                border: 1px solid #00cc99;
             }
 
             /* 导航栏 */
@@ -2396,7 +2399,7 @@
 
     // 登录成功后显示个人信息
     var tvInfo = JSON.parse(localStorage.getItem('tvInfo'))
-        if (tvInfo.token) {
+        if (tvInfo) {
             $('.layui-nav').show()
             // 隐藏登录按钮
             $('.btns').hide();
@@ -2415,13 +2418,15 @@
                 var id = ele.attr('data-id');
                 // console.log(id);
                 // 退出登录
-                if (id == 2) {
-                    localStorage.removeItem('tvInfo')
-                    layer.msg('您已退出登录');
-                    setTimeout(() => {
-                        window.location.href = "/login"
-                    }, 500);
-                }
+                if (id == 2) {
+                localStorage.removeItem('tvInfo')
+                layer.msg('您已退出登录');
+                setTimeout(() => {
+                    window.location.href = "/login"
+                }, 500);
+            } else if (id == 1) {
+                window.open('http://login.lighos.com/upload-userInfo')
+            }
             });
         });
 

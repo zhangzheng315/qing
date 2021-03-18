@@ -36,17 +36,14 @@
                     {if(isset($banner_list) && $banner_list)}
                     {foreach $banner_list as $item}
                     <div class="banner-item">
-                        <a href="{$item.img_link}" target="_blank">
+                        <a href="{$item.img_link}">
                             <img class="banner-img" src="{$item.img_url}" alt="">
                         </a>
                         <div class="text-{$item.format}">
                             <h2 style='font-size: {$item.title_size}px;
                             font-weight: bold;
                             color:{$item.title_color};
-                            background: linear-gradient(257deg, #73FFE0 0%, #3EC0A5 100%);
-                            -webkit-background-clip: text;
-                            text-align: {$item.format};
-                            -webkit-text-fill-color: transparent;'>{$item.title}</h2>
+                            text-align: {$item.format};'>{$item.title}</h2>
 
                             <h5 style=' color: {$item.in_color};
                             opacity: .8;
@@ -65,7 +62,6 @@
                             color: {$item.button_color};
                             text-align: center;
                             line-height: 44px;
-                            float: {$item.float};
                             font-size: {$item.button_size}px;'>{$item.button_text}</a>
                             {/if}
                         </div>
@@ -296,6 +292,7 @@
 </body>
 
 <script src="/static/common/js/header-footer.js"></script>
+<script src="/static/common/js/onlineService.js"></script>
 <script type="text/javascript">
     layui.use('carousel', function () {
         var carousel = layui.carousel;
@@ -320,6 +317,5 @@
         daovoice('show')
     })
 </script>
-<script src="/static/common/js/onlineService.js"></script>
 
 </html>

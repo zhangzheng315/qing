@@ -4,9 +4,6 @@
     padding: 0 !important;
   }
 }
-#advantage {
-  position: absolute;
-}
 #advantage .title {
   font-size: 30px;
   color: #333;
@@ -284,13 +281,17 @@
   border-radius: 10px;
   cursor: pointer;
 }
-#advantage .case .layui-container .case-box ul li > img {
-  height: 67%;
+#advantage .case .layui-container .case-box ul li a {
+  display: block;
+  height: 100%;
+}
+#advantage .case .layui-container .case-box ul li a .case-img {
+  height: 57%;
   width: 100%;
   object-fit: cover;
   border-radius: 10px;
 }
-#advantage .case .layui-container .case-box ul li .type {
+#advantage .case .layui-container .case-box ul li a .type {
   position: absolute;
   top: 24px;
   right: 20px;
@@ -303,28 +304,28 @@
   text-align: center;
   font-size: 16px;
 }
-#advantage .case .layui-container .case-box ul li .text {
+#advantage .case .layui-container .case-box ul li a .text {
   padding: 0 16px;
   box-sizing: border-box;
 }
-#advantage .case .layui-container .case-box ul li .text h5 {
+#advantage .case .layui-container .case-box ul li a .text h5 {
   margin: 13px 0 10px;
   color: #333;
 }
-#advantage .case .layui-container .case-box ul li .text h6 {
+#advantage .case .layui-container .case-box ul li a .text h6 {
   margin-bottom: 12px;
   font-size: 14px;
   color: #666;
 }
-#advantage .case .layui-container .case-box ul li .text p {
+#advantage .case .layui-container .case-box ul li a .text p {
   color: #999;
   font-size: 12px;
   margin-bottom: 8px;
 }
-#advantage .case .layui-container .case-box ul li .text p .num {
+#advantage .case .layui-container .case-box ul li a .text p .num {
   float: right;
 }
-#advantage .case .layui-container .case-box ul li .text p .num img {
+#advantage .case .layui-container .case-box ul li a .text p .num img {
   width: auto;
   margin-right: 10px;
   vertical-align: middle;
@@ -534,6 +535,11 @@
   }
   #advantage .lianxi-free {
     height: 300px;
+  }
+}
+@media screen and (min-width: 820px) and (max-width: 992px) {
+  #advantage .recommend {
+    width: 99%;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
