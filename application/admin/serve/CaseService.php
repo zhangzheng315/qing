@@ -218,7 +218,7 @@ class CaseService extends Common{
             'deleted_time' => 0,
             'pid' => $pid,
         ];
-        $res = $this->case->where($where)->limit(0,9)->select();
+        $res = $this->case->where($where)->limit(0,6)->select();
         foreach ($res as &$item) {
             $item['time'] = $item['updated_time'] == 0 ? date('Y-m-d H:i', $item['updated_time']) : date('Y-m-d H:i', $item['created_time']);
         }
