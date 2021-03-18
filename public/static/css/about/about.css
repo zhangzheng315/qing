@@ -241,18 +241,25 @@
   color: #fff;
   margin-bottom: 50px;
 }
-#about .about-boxs section .fazhan .layui-container .year-story p {
+#about .about-boxs section .fazhan .layui-container .year-story div {
   width: 555px;
   display: flex;
   justify-content: space-between;
 }
-#about .about-boxs section .fazhan .layui-container .year-story p i {
+#about .about-boxs section .fazhan .layui-container .year-story div i {
   color: #00cc99;
   margin-right: 29px;
   margin-top: 4px;
   font-size: 20px;
 }
-#about .about-boxs section .fazhan .layui-container .year-story p span {
+#about .about-boxs section .fazhan .layui-container .year-story div span {
+  font-size: 20px;
+  color: #FFFFFF;
+  text-align: left;
+  letter-spacing: 3px;
+  line-height: 1.8;
+}
+#about .about-boxs section .fazhan .layui-container .year-story div span p {
   font-size: 20px;
   color: #FFFFFF;
   text-align: left;
@@ -300,6 +307,7 @@
 }
 #about .about-boxs section .recruit {
   padding: 70px 0 110px;
+  background-color: #fff;
 }
 #about .about-boxs section .recruit .layui-container .title {
   margin-bottom: 50px;
