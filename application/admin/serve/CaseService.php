@@ -41,7 +41,7 @@ class CaseService extends Common{
             'case_selected' => $case_selected,
             'order' => $param['order'] ?:0,
             'created_time' => time(),
-            'updated_time' => 0,
+            'updated_time' => time(),
             'deleted_time' => 0,
         ];
         $res = $this->case->insertGetId($data);
@@ -218,7 +218,7 @@ class CaseService extends Common{
             'deleted_time' => 0,
             'pid' => $pid,
         ];
-        $res = $this->case->where($where)->limit(0,9)->select();
+        $res = $this->case->where($where)->limit(0,6)->select();
         foreach ($res as &$item) {
             $item['time'] = $item['updated_time'] == 0 ? date('Y-m-d H:i', $item['updated_time']) : date('Y-m-d H:i', $item['created_time']);
         }
@@ -368,6 +368,29 @@ class CaseService extends Common{
             return $res = [];
         }
         $this->setMessage('查询成功');
+        return $res;
+    }
+
+    /**
+     * 我们的优势--案例
+     * @return array|bool|false|\PDOStatement|string|\think\Collection
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
+    public function caseAdvantage()
+    {
+        $where = [
+            'status'=>1,
+            'deleted_time' => 0,
+        ];
+        $res = $this->case->where($where)->order('browse','desc')->limit(0,4)->select();
+        if (!$res) {
+            return [];
+        }
+        foreach ($res as &$item) {
+            $item['time'] = date('Y-m-d H:i:s', $item['updated_time']);
+        }
         return $res;
     }
 }

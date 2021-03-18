@@ -118,12 +118,16 @@
 #advantage .recommend .layui-container .recommend-content ul li:nth-child(4) {
   margin-right: 0;
 }
-#advantage .recommend .layui-container .recommend-content ul li img {
+#advantage .recommend .layui-container .recommend-content ul li a {
+  display: block;
+  height: 100%;
+}
+#advantage .recommend .layui-container .recommend-content ul li a img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-#advantage .recommend .layui-container .recommend-content ul li .text {
+#advantage .recommend .layui-container .recommend-content ul li a .text {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -132,7 +136,7 @@
   display: flex;
   align-items: center;
 }
-#advantage .recommend .layui-container .recommend-content ul li .text .text-left {
+#advantage .recommend .layui-container .recommend-content ul li a .text .text-left {
   width: 75%;
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
@@ -140,14 +144,14 @@
   box-sizing: border-box;
   color: #fff;
 }
-#advantage .recommend .layui-container .recommend-content ul li .text .text-left h6 {
+#advantage .recommend .layui-container .recommend-content ul li a .text .text-left h6 {
   font-size: 14px;
   margin-bottom: 5px;
 }
-#advantage .recommend .layui-container .recommend-content ul li .text .text-left p {
+#advantage .recommend .layui-container .recommend-content ul li a .text .text-left p {
   font-size: 12px;
 }
-#advantage .recommend .layui-container .recommend-content ul li .text .text-right {
+#advantage .recommend .layui-container .recommend-content ul li a .text .text-right {
   width: 25%;
   height: 100%;
   background-color: #00ac81;
@@ -156,7 +160,7 @@
   color: #fff;
   line-height: 2.5;
 }
-#advantage .recommend .layui-container .recommend-content ul li .text .active {
+#advantage .recommend .layui-container .recommend-content ul li a .text .active {
   background-color: #888888;
 }
 #advantage .kehu {
@@ -281,13 +285,17 @@
   border-radius: 10px;
   cursor: pointer;
 }
-#advantage .case .layui-container .case-box ul li > img {
-  height: 67%;
+#advantage .case .layui-container .case-box ul li a {
+  display: block;
+  height: 100%;
+}
+#advantage .case .layui-container .case-box ul li a .case-img {
+  height: 57%;
   width: 100%;
   object-fit: cover;
   border-radius: 10px;
 }
-#advantage .case .layui-container .case-box ul li .type {
+#advantage .case .layui-container .case-box ul li a .type {
   position: absolute;
   top: 24px;
   right: 20px;
@@ -300,28 +308,28 @@
   text-align: center;
   font-size: 16px;
 }
-#advantage .case .layui-container .case-box ul li .text {
+#advantage .case .layui-container .case-box ul li a .text {
   padding: 0 16px;
   box-sizing: border-box;
 }
-#advantage .case .layui-container .case-box ul li .text h5 {
+#advantage .case .layui-container .case-box ul li a .text h5 {
   margin: 13px 0 10px;
   color: #333;
 }
-#advantage .case .layui-container .case-box ul li .text h6 {
+#advantage .case .layui-container .case-box ul li a .text h6 {
   margin-bottom: 12px;
   font-size: 14px;
   color: #666;
 }
-#advantage .case .layui-container .case-box ul li .text p {
+#advantage .case .layui-container .case-box ul li a .text p {
   color: #999;
   font-size: 12px;
   margin-bottom: 8px;
 }
-#advantage .case .layui-container .case-box ul li .text p .num {
+#advantage .case .layui-container .case-box ul li a .text p .num {
   float: right;
 }
-#advantage .case .layui-container .case-box ul li .text p .num img {
+#advantage .case .layui-container .case-box ul li a .text p .num img {
   width: auto;
   margin-right: 10px;
   vertical-align: middle;
