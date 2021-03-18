@@ -20,7 +20,7 @@ Route::rule('solution/banking', 'index/industry/banking');          // 行业-�
 Route::rule('solution/media', 'index/industry/media');              // 行业-传媒直播
 Route::rule('solution/train', 'index/solution/train');              // 场景-会议培训
 Route::rule('solution/market', 'index/solution/marketActivities');  // 场景-营销直播
-Route::rule('solution/online', 'index/solution/onlineRetailers');   // 场景-在线课堂
+Route::rule('solution/online', 'index/solution/onlineRetailers');   // 场景-电商直播
 Route::rule('solution/enterprise', '/index/solution/enterprise');   // 场景-空中宣讲会
 Route::rule('solution/medicine', '/index/solution/medical');        // 场景-医学会议
 Route::rule('solution/operation', 'index/solution/operation');      // 场景-手术示教
@@ -47,9 +47,6 @@ Route::rule('guide', 'index/qing_school/article');  // 直播百科
 Route::rule('blog/detail','index/qing_school/newsDetail'); // 轻学院内容详情页
 Route::rule('video/tutorial','index/tutorial/index'); // 轻学院视频详情
 Route::rule('video/second','index/qing_school/courseSecond');  // 轻学院视频二级页面
-// Route::rule('site','index/site_service/index'); // 现场服务
-
-
 
 // 关于轻直播
 Route::rule('about', 'index/about/index'); // 关于我们
@@ -61,18 +58,17 @@ Route::rule('contact', 'index/contact/contactUs'); // 联系我们
 Route::rule('news/detail', 'index/corporate_news/corporateDetail'); // 企业新闻详情
 Route::rule('news/list', 'index/corporate_news/categoryNews'); // 企业新闻详情
 
-
-
-// Route::rule('article','index/docs/article');  // 直播百科
-
-
-// 视频详情页
-// Route::rule('tutorial','index/tutorial/index');
-
 // 更多直播功能
 Route::rule('function', 'index/more_live/index');
 //登陆
 Route::rule('login', 'index/login/login');//登陆
+
+//footer
+Route::rule('statement', 'index/index/legalNotice');//法律声明
+Route::rule('licence', 'index/index/licence');//增值电信经营许可证
+Route::rule('privacy', 'index/index/privacy');//隐私协议
+Route::rule('protocol', 'index/index/serviceAgreement');//服务协议
+
 
 
 

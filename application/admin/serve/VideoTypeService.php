@@ -16,6 +16,13 @@ class VideoTypeService extends Common{
         $this->navigation = new Navigation();
     }
 
+    /**
+     * 视频全部分类
+     * @return bool|false|\PDOStatement|string|\think\Collection
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
     public function videoTypeList()
     {
         $where = [
@@ -25,6 +32,24 @@ class VideoTypeService extends Common{
         $video_type_list = $this->videoType->where($where)->select();
         return $video_type_list;
     }
+
+    /**
+     * 视频部分分类
+     * @return bool|false|\PDOStatement|string|\think\Collection
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
+    public function videoTypeLimitList()
+    {
+        $where = [
+            'deleted_time' => 0,
+            'status' => 1,
+        ];
+        $video_type_limit = $this->videoType->where($where)->limit(0,3)->select();
+        return $video_type_limit;
+    }
+
 
     /**
      * 创建视频分类

@@ -7,6 +7,7 @@
     <title>轻直播视频云解决方案_全行业直播解决方案_全场景直播解决方案</title>
     <meta name="keywords"  content="企业直播解决方案,活动直播方案,营销直播方案,医疗直播方案" />
     <meta name="description"  content="轻直播为企业提供一站式全场景直播解决方案,服务500强等10万+企业。" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11;IE=10;IE=9; IE8; IE=7; IE=EDGE">
     <link rel="stylesheet" href="/static/css/solution/index.css">
     <link rel="stylesheet" href="/static/layui/css/layui.css">
     <link rel="stylesheet" href="/static/css/style.css">
@@ -80,11 +81,11 @@
                     {foreach($solution_list['ind_res'] as $item)}
                     <li>
                         <a href="{$item.url_action}" class="turn">
-                        <img src="{$item.img_url}" alt="">
-                        <div class="text">
-                            <h6>{$item.title}</h6>
-                            <p>{$item.introduction}</p>
-                        </div>
+                            <img src="{$item.img_url}" alt="">
+                            <div class="text">
+                                <h6>{$item.title}</h6>
+                                <p>{$item.introduction}</p>
+                            </div>
                         </a>
                     </li>
                     {/foreach}
@@ -200,28 +201,64 @@
         })
     }
 
-</script>
-<script>
-    ; daovoice('init', {
-        app_id: '04cefad5',   // 必填，您的 APP 标识
-    }, {
-        // 可选
-        launcher: {
-            disableLauncherIcon: true, // 悬浮 ICON 是否显示
-            defaultEnterView: 'list', // 'list' 或 'new' 默认是 list(在对话列表是空的时候默认切换到 new)
-        },
-    });
-    daovoice('update');
-    $('#zixun').click(function () {
-        daovoice('show')
-    })
-
-
     //   显示预约演示弹出框
     $('.banner-a').on('click', function () {
         $('#order-container').show();
         $('.q-modal').show();
     })
+
+</script>
+<script>
+    var tvInfo = JSON.parse(localStorage.getItem('tvInfo'))
+    $('#zixun').click(function () {
+        // 已注册用户
+        if (tvInfo) {
+            daovoice('update', {
+                user_id: tvInfo.id, // 必填，用户id
+                name: tvInfo.name,  // 选填
+            });
+
+            ; daovoice('init', {
+                app_id: '04cefad5',   // 必填，您的 APP 标识
+                user_id: tvInfo.id, // 必填，用户id
+                email: tvInfo.email, // 选填，邮箱地址
+                name: tvInfo.name,  // 选填
+            }, {
+                // 可选
+                launcher: {
+                    disableLauncherIcon: true, // 悬浮 ICON 是否显示
+                    defaultEnterView: 'list', // 'list' 或 'new' 默认是 list(在对话列表是空的时候默认切换到 new)
+                },
+            });
+            daovoice('show');
+
+        } else {
+            daovoice('update');
+            // 未注册用户
+            ; daovoice('init', {
+                app_id: '04cefad5',   // 必填，您的 APP 标识
+            }, {
+                launcher: {
+                    disableLauncherIcon: true,
+                    defaultEnterView: 'list',
+                },
+            });
+            daovoice('show');
+
+        }
+
+    })
+
+    function Registered() {
+
+    }
+
+    function Unregistered() {
+
+    }
+
+
+
 </script>
 
 </html>
