@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/static/css/qingschool/coursesecond.css">
     <link rel="stylesheet" href="/static/layui/css/layui.css">
     <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/layui/layui.js"></script>
     <script type='text/javascript' src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <style>
         .layui-nav {
@@ -68,7 +69,8 @@
             background-color: #00cc99;
             color: #fff
         }
-        .null-data{
+
+        .null-data {
             position: relative;
             top: 16%;
             left: 50%;
@@ -118,15 +120,15 @@
             </ul>
         </div>
     </header>
-   <!--演示演示弹出框 -->
-   {include file="common/order_box"}
-   <!-- 咨询版块 -->
-   {include file="common/siderbar-right"}
+    <!--演示演示弹出框 -->
+    {include file="common/order_box"}
+    <!-- 咨询版块 -->
+    {include file="common/siderbar-right"}
     <nav class="nav-second flexs">
         <div class="layui-container">
             <a href="/video">首页</a>
             <i class="layui-icon layui-icon-right"></i>
-            <span >全部课程</span>
+            <span>全部课程</span>
             <i class="layui-icon layui-icon-right"></i>
             <span>{$pid_name}</span>
         </div>
@@ -142,12 +144,13 @@
                     <li><a href="">直播新用户快速入门</a></li>
                     <li><a href="">直播进阶课程</a></li>
                     <li><a href="">企培用户专区</a></li>
+
                 </ul>
             </div>
             <div class="direction-item flexs">
                 <div class="item-title">课程类型</div>
                 <ul class="flex study-ul">
-                    <li class="active"><a href="" >全部</a></li>
+                    <li class="active"><a href="">全部</a></li>
                     <li><a href="">视频直播</a></li>
                     <li><a href="">视频点播</a></li>
                 </ul>
@@ -199,6 +202,7 @@
             </ul>
         </div>
     </div>
+
     <div class="price-box">
         <div class="price">
             <div class="layui-container">
@@ -232,82 +236,14 @@
                         {/if}
                     </ul>
                 </div>
-                <!--<div class="study-item">
-                    <ul class="study-box">
-                        <li>
-                            <a href="{:url('/index/tutorial/index')}">
-                                <img src="/static/image/qingschool/bg_small.png" alt="">
-                                <div class="txt">
-                                    <h6>轻直播客户端2.0入门教程</h6>
-                                    <p><span>免费</span><span>1000人已学习</span></p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{:url('/index/tutorial/index')}">
-                                <img src="/static/image/qingschool/bg_small.png" alt="">
-                                <div class="txt">
-                                    <h6>轻直播客户端2.0入门教程</h6>
-                                    <p><span>免费</span><span>1000人已学习</span></p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{:url('/index/tutorial/index')}">
-                                <img src="/static/image/qingschool/bg_small.png" alt="">
-                                <div class="txt">
-                                    <h6>轻直播客户端2.0入门教程</h6>
-                                    <p><span>免费</span><span>1000人已学习</span></p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{:url('/index/tutorial/index')}">
-                                <img src="/static/image/qingschool/bg_small.png" alt="">
-                                <div class="txt">
-                                    <h6>轻直播客户端2.0入门教程</h6>
-                                    <p><span>免费</span><span>1000人已学习</span></p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{:url('/index/tutorial/index')}">
-                                <img src="/static/image/qingschool/bg_small.png" alt="">
-                                <div class="txt">
-                                    <h6>轻直播客户端2.0入门教程</h6>
-                                    <p><span>免费</span><span>1000人已学习</span></p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{:url('/index/tutorial/index')}">
-                                <img src="/static/image/qingschool/bg_small.png" alt="">
-                                <div class="txt">
-                                    <h6>轻直播客户端2.0入门教程</h6>
-                                    <p><span>免费</span><span>1000人已学习</span></p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{:url('/index/tutorial/index')}">
-                                <img src="/static/image/qingschool/bg_small.png" alt="">
-                                <div class="txt">
-                                    <h6>轻直播客户端2.0入门教程</h6>
-                                    <p><span>免费</span><span>1000人已学习</span></p>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>-->
-                <div id="test1" class="hid-sho"></div>
             </div>
         </div>
     </div>
     {include file="common/footer"}
+
 </div>
 </body>
 <script src="/static/common/js/header-footer.js"></script>
-<script src="/static/layui/layui.js"></script>
 
 <script>
     // 案例教程模块导航栏切换
@@ -349,7 +285,7 @@
                 elem: 'test1'       //注意，这里的 test1 是分页容器ID，不用加 # 号
                 , count: data.count //数据总数
                 , curr: data.curr   //当前页
-                , limit:12
+                , limit: 12
                 , prev: '<'         // 上一页按钮内容
                 , next: '>'         // 下一页按钮内容
                 , theme: '#00cc99'
@@ -363,27 +299,27 @@
         });
     }
 
-    function videoPage(index, word='', curr = 1) {
+    function videoPage(index, word = '', curr = 1) {
         $.ajax({
             url: "{:url('/index/qing_school/videoListByPage')}",
-            data: {'pid': index, 'word':word, 'curr': curr},
+            data: {'pid': index, 'word': word, 'curr': curr},
             type: 'get',
             success: function (res) {
                 $('.study-box').empty()
                 if (res.status === 200) {
                     for (let item of res.data.data) {
                         $('.study-box').append('<li>\n' +
-                            '                            <a href="/video/tutorial?browse=1&id='+item.id+'">\n' +
-                            '                                <img src="'+item.cover_img_url+'" alt="">\n' +
+                            '                            <a href="/video/tutorial?browse=1&id=' + item.id + '">\n' +
+                            '                                <img src="' + item.cover_img_url + '" alt="">\n' +
                             '                                <div class="txt">\n' +
-                            '                                    <h6>'+item.title+'</h6>\n' +
-                            '                                    <p><span>免费</span><span>'+item.browse+'人已学习</span></p>\n' +
+                            '                                    <h6>' + item.title + '</h6>\n' +
+                            '                                    <p><span>免费</span><span>' + item.browse + '人已学习</span></p>\n' +
                             '                                </div>\n' +
                             '                            </a>\n' +
                             '                        </li>')
                     }
                     layPage(res.data);
-                }else{
+                } else {
                     $('.study-box').append('<img class="null-data" src="/static/image/null_data.svg" alt="">');
                     $('.hid-sho').hide();
                 }
@@ -392,7 +328,7 @@
     }
 
     //搜索
-    $('#icon_search').on('click',function () {
+    $('#icon_search').on('click', function () {
         let word = $('#word').val();
         videoPage('', word);
     })
@@ -400,8 +336,7 @@
 <script>
     // 登录成功后显示个人信息
     var tvInfo = JSON.parse(localStorage.getItem('tvInfo'))
-    console.log(tvInfo);
-    if (tvInfo.token) {
+    if (tvInfo) {
         $('.layui-nav').show()
         // 隐藏登录按钮
         $('.login').hide();

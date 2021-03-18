@@ -1416,8 +1416,7 @@
     <script>
         // 登录成功后显示个人信息
         var tvInfo = JSON.parse(localStorage.getItem('tvInfo'))
-        console.log(tvInfo);
-        if (tvInfo.token) {
+        if (tvInfo) {
             $('.layui-nav').show()
             // 隐藏登录按钮
             $('.nav-btn').hide();
