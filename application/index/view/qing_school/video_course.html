@@ -412,13 +412,15 @@
             var id = ele.attr('data-id');
             // console.log(id);
             // 退出登录
-            if (id == 2) {
-                localStorage.removeItem('tvInfo')
-                layer.msg('您已退出登录');
-                setTimeout(() => {
-                    window.location.href = "/login"
-                }, 500);
-            }
+            if (id == 2) {
+                localStorage.removeItem('tvInfo')
+                layer.msg('您已退出登录');
+                setTimeout(() => {
+                    window.location.href = "/login"
+                }, 500);
+            } else if (id == 1) {
+                window.open('http://login.lighos.com/upload-userInfo')
+            }
         });
     });
 </script>

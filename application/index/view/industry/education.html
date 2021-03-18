@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/static/css/common/banner_common.css">
     <script type='text/javascript' src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="/static/layui/layui.js"></script>
+    <script>(function (i, s, o, g, r, a, m) { i["DaoVoiceObject"] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; a.charset = "utf-8"; m.parentNode.insertBefore(a, m) })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/04cefad5.js", "daovoice")</script>
     <style>
         #conporate-container nav {
             background: #ffffff;
@@ -2355,7 +2356,7 @@
                     <p>轻直播提供稳定可靠、多重鉴权的课堂直播平台，全球部署的CDN节点加速播放、自定义授权观看、大数据分析等丰富功能，助力机构获客，保障原创视频安全，支持课堂多元互动和数据分析，为您原景重现真实课堂。
                     </p>
                     <div class="live-group-btn">
-                        <a href="">咨询详情</a>
+                        <a href="javascript:;" class="kefu_btn">咨询详情</a>
                         <a href="http://login.lighos.com/signUp" target="_blank" class="q-ml--36">免费试用</a>
                     </div>
                 </div>
@@ -2374,7 +2375,7 @@
                 <p>轻直播提供稳定可靠、多重鉴权的课堂直播平台，全球部署的CDN节点加速播放、自定义授权观看、大数据分析等丰富功能，助力机构获客，保障原创视频安全，支持课堂多元互动和数据分析，为您原景重现真实课堂。
                 </p>
                 <div class="live-group-btn">
-                    <a href="">咨询详情</a>
+                    <a href="javascript:;" class="kefu_btn">咨询详情</a>
                     <a href="http://login.lighos.com/signUp" target="_blank" class="q-ml--36">免费试用</a>
                 </div>
             </div>
@@ -2574,7 +2575,7 @@
         <div class="layui-container">
             <div class="kefu-content">
                 <h2>轻直播为您提供一站式企业视频解决方案</h2>
-                <button>立即咨询</button>
+                <button class="getcase">获取方案</button>
             </div>
 
         </div>
@@ -2583,6 +2584,7 @@
     {include file="common/footer"}
 </div>
 </body>
+<script src="/static/common/js/onlineService.js"></script>
 <script src="/static/common/js/header-footer.js"></script>
 <script src="/static/common/js/solution.js"></script>
 <script type="text/javascript">
@@ -2651,6 +2653,14 @@
         $('#order-container').show();
         $('.q-modal').show();
     })
+    $('.getcase').on('click', function() {
+        $('#order-container').show();
+        $('.q-modal').show();
+    })
+
+     $('.kefu_btn').click(function () {
+        daovoice('show');
+    })
 </script>
 
 </html>

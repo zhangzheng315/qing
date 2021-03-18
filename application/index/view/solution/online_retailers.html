@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="/static/layui/css/layui.css">
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/common/banner_common.css">
-
     <script type='text/javascript' src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="/static/layui/layui.js"></script>
+    <script>(function (i, s, o, g, r, a, m) { i["DaoVoiceObject"] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; a.charset = "utf-8"; m.parentNode.insertBefore(a, m) })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/04cefad5.js", "daovoice")</script>
     <style>
       
         #conporate-container nav {
@@ -321,7 +321,7 @@
              margin-top: 6px;
          } */
          .difficulty-right>.live-group-btn {
-             margin-top: 22px;
+             /* margin-top: 22px; */
              text-align: center;
          }
          .live-group-btn>a {
@@ -637,7 +637,7 @@
              background: linear-gradient(97deg, #87D2D0, #BBDCCA);
          }
          .kefu-content {
-             padding-top: 102px;
+             padding-top: 60px;
              text-align: center;
          }
          .kefu-content>h2 {
@@ -1083,7 +1083,7 @@
              background: linear-gradient(97deg, #87D2D0, #BBDCCA);
          }
          .kefu-content {
-             padding-top: 80px;
+             padding-top: 40px;
              text-align: center;
          }
          .kefu-content>h2 {
@@ -1109,7 +1109,7 @@
              font-size: 24px;
              color: #ffffff;
              cursor: pointer;
-             margin-top: 50px;
+             margin-top: 30px;
          }
          .kefu-content>button:hover {
             background-color: #00cc99;
@@ -1532,7 +1532,7 @@
              background: linear-gradient(97deg, #87D2D0, #BBDCCA);
          }
          .kefu-content {
-             padding-top: 60px;
+             padding-top: 40px;
              text-align: center;
          }
          .kefu-content>h2 {
@@ -1558,7 +1558,7 @@
              font-size: 20px;
              color: #ffffff;
              cursor: pointer;
-             margin-top: 36px;
+             margin-top: 30px;
          }
          .kefu-content>button:hover {
             background-color: #00cc99;
@@ -1944,7 +1944,7 @@
              background: linear-gradient(97deg, #87D2D0, #BBDCCA);
          }
          .kefu-content {
-             padding-top: 30px;
+             padding-top: 20px;
              text-align: center;
          }
          .kefu-content>h2 {
@@ -1957,10 +1957,10 @@
          .kefu-content>p {
             font-size: 14px;
             color: #fff;
-            margin-top: 20px;
+            margin-top: 10px;
          }
          .kefu-content>button {
-             width: 150px;
+             width: 110px;
              height: 30px;
              border: 0;
              border: 2px solid #ffffff;
@@ -1970,7 +1970,7 @@
              font-size: 14px;
              color: #ffffff;
              cursor: pointer;
-             margin-top: 28px;
+             margin-top: 20px;
          }
          .kefu-content>button:hover {
             background-color: #00cc99;
@@ -2099,7 +2099,7 @@
                     <p>1000+套全行业沉浸式场景应用，提供灵活的SDK/API第三方接口，全面打通企业办公应用，无缝对接主流社交平台，激活私域流量，通过新的直播形式为企业挖掘更多潜在商业价值，基于技术优势打造新兴电商模式。
                     </p>
                     <div class="live-group-btn">
-                        <a href="">咨询详情</a>
+                        <a href="javascript:;" class="kefu_btn">咨询详情</a>
                         <a href="http://login.lighos.com/signUp" target="_blank" class="q-ml--36">免费试用</a>
                     </div>
                 </div>
@@ -2117,7 +2117,7 @@
                 <h3>轻直播电商直播解决方案</h3>
                 <p>1000+套全行业沉浸式场景应用，提供灵活的SDK/API第三方接口，全面打通企业办公应用，无缝对接主流社交平台，激活私域流量，通过新的直播形式为企业挖掘更多潜在商业价值，基于技术优势打造新兴电商模式。</p>
                 <div class="live-group-btn">
-                    <a href="">咨询详情</a>
+                    <a href="javascript:;" class="kefu_btn">咨询详情</a>
                     <a href="http://login.lighos.com/signUp" target="_blank" class="q-ml--36">免费试用</a>
                 </div>
             </div>
@@ -2318,7 +2318,7 @@
             <div class="kefu-content">
                 <h2>轻直播，赋能电商营销更多可能</h2>
                 <p>粉丝沉淀 · 流量变现 · 从这里开始</p>
-                <!-- <button>立即咨询</button> -->
+                <button class="getcase">获取方案</button>
             </div>
 
         </div>
@@ -2374,7 +2374,7 @@
      }
 
     //   显示预约演示弹出框
-    $('.banner-a').on('click', function () {
+    $('.banner-a,.getcase').on('click', function () {
         $('#order-container').show();
         $('.q-modal').show();
     })

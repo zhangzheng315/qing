@@ -301,13 +301,7 @@
         });
     }
 
-<<<<<<< HEAD
-
-    videoPage(1);
-    function videoPage(index, word = '', curr = 1) {
-=======
     function videoPage(index, word='', curr = 1) {
->>>>>>> 277aff0f4fc6343c39e061358f0085850bfd9110
         $.ajax({
             url: "{:url('/index/qing_school/videoListByPage')}",
             data: { 'pid': index, 'word': word, 'curr': curr },
