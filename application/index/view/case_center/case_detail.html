@@ -2125,7 +2125,7 @@
                             <a id="img-a" href=""><img src="//t.cn/RCzsdCq" class="layui-nav-img"><span
                                     class="name">11</span></a>
                             <dl class="layui-nav-child">
-                                <dd><a href="javascript:;" data-id="1">账户中心</a></dd>
+                                <dd><a href="javascript:;" data-id="1">轻直播管理平台</a></dd>
                                 <dd><a href="javascript:;" data-id="2">退出登录</a></dd>
                             </dl>
                         </li>
@@ -2431,7 +2431,12 @@
                     window.location.href = "/login"
                 }, 500);
             } else if (id == 1) {
-                window.open('http://login.lighos.com/upload-userInfo')
+                     var token = tvInfo.token
+                var name = tvInfo.name
+                var avatar = tvInfo.avatar
+                window.open(`http://login.qingtv.com/Home?lighostoken=${token}
+                &lighosName${name}
+                &lighosHeadUrl=${avatar}`)
             }
             });
         });
