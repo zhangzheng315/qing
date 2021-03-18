@@ -503,7 +503,7 @@
                                 {if(isset($article_list))}
                                 {foreach($article_list[0] as $item)}
                                 <div class="lunbo-item">
-                                    <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>$item.pid])}">
+                                    <a href="/blog/detail?id={$item.id}&pid={$item.pid}">
                                         <img src="{$item.cover_img_url}" alt="">
                                         <div class="text-box">
                                             <h6>{$item.title}</h6>
@@ -526,7 +526,7 @@
                                     {foreach($article_list[$i]
                                     as $item)}
                                     <li>
-                                        <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>$item.pid])}"
+                                        <a href="/blog/detail?id={$item.id}&pid={$item.pid}"
                                             style="display: flex;width: 100%;">
                                             <div class="type">
                                                 {$item.pid_name}
