@@ -213,7 +213,11 @@
             <div class="study-content layui-container">
                 <div class="study-item active">
                     <ul class="study-box">
+                        {if(isset($video_list) && $video_list)}
+                        {foreach($video_list as $item)}
 
+                        {/foreach}
+                        {/if}
                     </ul>
                 </div>
                 <!--<div class="study-item">

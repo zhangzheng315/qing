@@ -102,12 +102,25 @@ class JoinUsService extends Common{
         return true;
     }
 
-    public function joinUsList()
+    public function joinUsList($param)
     {
         $where = [
             'status' => 1,
             'deleted_time' => 0,
         ];
+        if (isset($param['address']) && $param['address']) {
+            switch ($param['address']) {
+                case 1:
+                    $address = '上海';
+                    break;
+                case 2:
+                    $address = '北京';
+                    break;
+                case 3:
+                    $address = '深圳';
+                    break;
+            }
+        }
         $res = $this->joinUs->where($where)->order('order','desc')->select();
         foreach ($res as &$item) {
             $item['time'] = date('Y-m-d', $item['created_time']);
