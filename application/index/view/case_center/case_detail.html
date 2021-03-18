@@ -2102,15 +2102,15 @@
         <header>
             <div class="layui-container flex-center-space-between header-nav">
                 <div class="logo">
-                    <a href="{:url('/')}"><img src="/static/image/index1/logo_text.svg" alt=""></a>
+                    <a href="/"><img src="/static/image/index1/logo_text.svg" alt=""></a>
                 </div>
                 <div class="head-right">
                     <div class="text">
-                        <a href="{:url('/')}">轻直播首页</a>
-                        <a href="{:url('case_center/index')}">案例中心</a>
+                        <a href="/">轻直播首页</a>
+                        <a href="/case">案例中心</a>
                     </div>
                     <div class="btns">
-                        <a class="login" href="{:url('/index/login/login')}">登录</a>
+                        <a class="login" href="/login">登录</a>
                         <a class="free-btn" href="http://login.lighos.com/signUp" target="_blank">免费试用</a>
                     </div>
                     <ul class="layui-nav" lay-filter="leftNav">
@@ -2159,7 +2159,7 @@
             <!-- 文章面包屑导航 -->
             <div class="layui-container">
                 <div class="single-breadcrumb">
-                    <a href="{:url('/case')}" class="breadcrumb-link">案例中心 ></a>
+                    <a href="/case" class="breadcrumb-link">案例中心 ></a>
                     <a href="{$pid['pid_url']}" class="breadcrumb-link">
                         {$pid['pid_name']} >
                     </a>
@@ -2269,7 +2269,7 @@
                             {if($hot_and_rem['hot_case'])}
                             {foreach($hot_and_rem['hot_case'] as $item)}
                             <li class="article-item">
-                                <a href="/index/case_center/caseDetail?type_id=2&id={$item.id}" class="link"
+                                <a href="/case/detail?type_id=2&id={$item.id}" class="link"
                                     title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
                                     <p>{$item.title}</p>
                                     <span class="time">{$item.time}</span>
@@ -2282,7 +2282,7 @@
                             {if($hot_and_rem['recommend_case'])}
                             {foreach($hot_and_rem['recommend_case'] as $item)}
                             <li class="article-item">
-                                <a href="/index/case_center/caseDetail?type_id=2&id={$item.id}" class="link"
+                                <a href="/case/detail?type_id=2&id={$item.id}" class="link"
                                     title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
                                     <p>{$item.title}</p>
                                     <span class="time">{$item.time}</span>

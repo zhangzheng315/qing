@@ -56,7 +56,7 @@ Route::rule('partner', 'index/channel/index'); // 渠道合作
 Route::rule('join', 'index/join/joinUs'); // 加入我们
 Route::rule('contact', 'index/contact/contactUs'); // 联系我们
 Route::rule('news/detail', 'index/corporate_news/corporateDetail'); // 企业新闻详情
-Route::rule('news/list', 'index/corporate_news/categoryNews'); // 企业新闻详情
+Route::rule('news/list', 'index/corporate_news/categoryNews'); // 企业新闻列表
 
 // 更多直播功能
 Route::rule('function', 'index/more_live/index');

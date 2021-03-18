@@ -83,7 +83,7 @@
 <div id="course">
     <header>
         <div class="layui-container flexs">
-            <div class="logo"><a href="{:url('/')}"><img src="/static/image/index1/logo_text.svg" alt="首页"></a></div>
+            <div class="logo"><a href="/"><img src="/static/image/index1/logo_text.svg" alt="首页"></a></div>
             <ul class="flexs head-ul">
                 {if(isset($video_type))}
                 {foreach($video_type as $item)}
@@ -102,7 +102,7 @@
             </div>
             <a href="/">轻直播首页</a>
             <div class="login flexs">
-                <a href="{:url('/login')}" target="_blank">登录</a>
+                <a href="/login" target="_blank">登录</a>
                 <span>|</span>
                 <a href="http://login.lighos.com/signUp" target="_blank">注册</a>
             </div>
@@ -124,7 +124,7 @@
    {include file="common/siderbar-right"}
     <nav class="nav-second flexs">
         <div class="layui-container">
-            <a href="{:url('/video')}">首页</a>
+            <a href="/video">首页</a>
             <i class="layui-icon layui-icon-right"></i>
             <span >全部课程</span>
             <i class="layui-icon layui-icon-right"></i>
