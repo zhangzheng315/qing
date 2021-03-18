@@ -87,8 +87,8 @@
         <div class="layui-container flexs">
             <div class="logo"><a href="/"><img src="/static/image/index1/logo_text.svg" alt="首页"></a></div>
             <ul class="flexs head-ul">
-                {if(isset($video_type))}
-                {foreach($video_type as $item)}
+                {if(isset($video_type_limit))}
+                {foreach($video_type_limit as $item)}
                 <li onclick="videoPage({$item.id})">{$item.name}</li>
                 {/foreach}
                 {/if}
@@ -138,13 +138,12 @@
             <div class="direction-item flexs">
                 <div class="item-title">学习方向</div>
                 <ul class="flexs study-ul">
-                    <li class="active"><a href="">全部</a></li>
-                    <li><a href="">产品动态</a></li>
-                    <li><a href="">直播资讯</a></li>
-                    <li><a href="">直播新用户快速入门</a></li>
-                    <li><a href="">直播进阶课程</a></li>
-                    <li><a href="">企培用户专区</a></li>
-
+                    <li class="active" onclick="videoPage(0)"><a href="javascript:;">全部</a></li>
+                    {if(isset($video_type))}
+                    {foreach($video_type as $item)}
+                    <li onclick="videoPage({$item.id})"><a href="javascript:;">{$item.name}</a></li>
+                    {/foreach}
+                    {/if}
                 </ul>
             </div>
             <div class="direction-item flexs">

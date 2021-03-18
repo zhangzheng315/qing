@@ -1194,6 +1194,7 @@
         $('.listContainerBread').show();
     })
 
+    //分类文章列表
     function pointClick(index) {
         $.ajax({
             url: "{:url('/index/qing_school/articleByWhere')}",
@@ -1208,6 +1209,10 @@
                             '                        </a>')
                     }
                 }
+                $('.article_title').empty();
+                $('.content_title').empty();
+                $('.article-body').empty();
+
                 $('.listContainerBread').hide();
                 $('.articleCon').hide();
                 $('.listGuideContent').css({
@@ -1223,6 +1228,7 @@
         $(this).siblings().removeClass('active');
     })
 
+    //文章详情
     function articleInfo(id) {
         $.ajax({
             url: "{:url('/index/qing_school/articleInfo')}",
