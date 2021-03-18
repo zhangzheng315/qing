@@ -277,8 +277,8 @@
 }
 #case-center #jiejue {
   height: 260px;
-  background: url('/static/image/index/fiveG.png') no-repeat;
-  background-size: cover;
+  background: url('/static/image/solution1/jie.png') no-repeat;
+  background-size: 100% 100%;
   position: relative;
 }
 #case-center #jiejue .hover {
@@ -287,7 +287,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.2);
   z-index: 0;
 }
 #case-center #jiejue .jiejue-content {

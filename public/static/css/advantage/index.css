@@ -113,6 +113,7 @@
 #advantage .recommend .layui-container .recommend-content ul li {
   position: relative;
   width: 24%;
+  height: 160px;
   margin-right: 1%;
 }
 #advantage .recommend .layui-container .recommend-content ul li:nth-child(4) {
@@ -147,9 +148,16 @@
 #advantage .recommend .layui-container .recommend-content ul li a .text .text-left h6 {
   font-size: 14px;
   margin-bottom: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 #advantage .recommend .layui-container .recommend-content ul li a .text .text-left p {
   font-size: 12px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
 }
 #advantage .recommend .layui-container .recommend-content ul li a .text .text-right {
   width: 25%;
@@ -415,18 +423,19 @@
   }
   #advantage .recommend .layui-container .recommend-content ul li {
     width: 24%;
+    height: 140px;
   }
-  #advantage .recommend .layui-container .recommend-content ul li .text {
+  #advantage .recommend .layui-container .recommend-content ul li a .text {
     height: 40px;
   }
-  #advantage .recommend .layui-container .recommend-content ul li .text .text-left {
+  #advantage .recommend .layui-container .recommend-content ul li a .text .text-left {
     padding: 2px 0 0 8px;
   }
-  #advantage .recommend .layui-container .recommend-content ul li .text .text-left h6 {
+  #advantage .recommend .layui-container .recommend-content ul li a .text .text-left h6 {
     font-size: 14px;
     margin-bottom: 3px;
   }
-  #advantage .recommend .layui-container .recommend-content ul li .text .text-right {
+  #advantage .recommend .layui-container .recommend-content ul li a .text .text-right {
     width: 25%;
     font-size: 16px;
     line-height: 2.5;
@@ -569,21 +578,22 @@
   }
   #advantage .recommend .layui-container .recommend-content ul li {
     width: 24%;
+    height: 130px;
   }
-  #advantage .recommend .layui-container .recommend-content ul li .text {
+  #advantage .recommend .layui-container .recommend-content ul li a .text {
     height: 40px;
   }
-  #advantage .recommend .layui-container .recommend-content ul li .text .text-left {
+  #advantage .recommend .layui-container .recommend-content ul li a .text .text-left {
     padding: 2px 0 0 5px;
   }
-  #advantage .recommend .layui-container .recommend-content ul li .text .text-left h6 {
+  #advantage .recommend .layui-container .recommend-content ul li a .text .text-left h6 {
     font-size: 14px;
     margin-bottom: 3px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-  #advantage .recommend .layui-container .recommend-content ul li .text .text-right {
+  #advantage .recommend .layui-container .recommend-content ul li a .text .text-right {
     width: 25%;
     font-size: 14px;
     line-height: 2.8;
@@ -686,17 +696,17 @@
   #advantage .recommend .layui-container .recommend-content ul li:nth-child(4) {
     display: none;
   }
-  #advantage .recommend .layui-container .recommend-content ul li .text {
+  #advantage .recommend .layui-container .recommend-content ul li a .text {
     height: 45px;
   }
-  #advantage .recommend .layui-container .recommend-content ul li .text .text-left {
+  #advantage .recommend .layui-container .recommend-content ul li a .text .text-left {
     padding: 4px 0 0 8px;
   }
-  #advantage .recommend .layui-container .recommend-content ul li .text .text-left h6 {
+  #advantage .recommend .layui-container .recommend-content ul li a .text .text-left h6 {
     font-size: 14px;
     margin-bottom: 5px;
   }
-  #advantage .recommend .layui-container .recommend-content ul li .text .text-right {
+  #advantage .recommend .layui-container .recommend-content ul li a .text .text-right {
     width: 25%;
     font-size: 16px;
     line-height: 3;
