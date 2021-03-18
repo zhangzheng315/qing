@@ -3,7 +3,6 @@
 namespace app\index\controller;
 
 use app\admin\serve\CaseService;
-use app\admin\serve\ThemeService;
 use app\admin\serve\LogoWallService;
 use think\Controller;
 
@@ -12,8 +11,10 @@ class Advantage extends Controller
     public function index()
     {
         $logo_service = new LogoWallService();
+        $case_service = new CaseService();
         $advantage_logo = $logo_service->logoListAdvantage();
-        return $this->fetch('',compact('advantage_logo'));
+        $advantage_case = $case_service->caseAdvantage();
+        return $this->fetch('',compact('advantage_logo','advantage_case'));
     }
 
     public function caseListByTypeId($pid)
