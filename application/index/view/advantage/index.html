@@ -44,44 +44,16 @@
                     <h4>推荐活动</h4>
                     <ul>
                         <li>
-                            <img src="/static/image/advantage/kv1.png" alt="">
-                            <div class="text">
-                                <div class="text-left">
-                                    <h6>上海智慧城市大讲堂</h6>
-                                    <p>2022-08-20 08:00:02</p>
+                            <a href="">
+                                <img src="/static/image/advantage/kv1.png" alt="">
+                                <div class="text">
+                                    <div class="text-left">
+                                        <h6>上海智慧城市大讲堂</h6>
+                                        <p>2022-08-20 08:00:02</p>
+                                    </div>
+                                    <div class="text-right">案例</div>
                                 </div>
-                                <div class="text-right">案例</div>
-                            </div>
-                        </li>
-                        <li>
-                            <img src="/static/image/advantage/kv2.png" alt="">
-                            <div class="text">
-                                <div class="text-left">
-                                    <h6>上海智慧城市大讲堂</h6>
-                                    <p>2022-08-20 08:00:02</p>
-                                </div>
-                                <div class="text-right">案例</div>
-                            </div>
-                        </li>
-                        <li>
-                            <img src="/static/image/advantage/kv3.png" alt="">
-                            <div class="text">
-                                <div class="text-left">
-                                    <h6>上海智慧城市大讲堂</h6>
-                                    <p>2022-08-20 08:00:02</p>
-                                </div>
-                                <div class="text-right active">结束</div>
-                            </div>
-                        </li>
-                        <li>
-                            <img src="/static/image/advantage/kv2.png" alt="">
-                            <div class="text">
-                                <div class="text-left">
-                                    <h6>上海智慧城市大讲堂</h6>
-                                    <p>2022-08-20 08:00:02</p>
-                                </div>
-                                <div class="text-right">案例</div>
-                            </div>
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -156,28 +128,28 @@
     function casePoint(pid) {
         $.ajax({
             url: "{:url('/index/advantage/caseListByTypeId')}",
-            data:{'pid':pid},
-            type:'get',
-            success:function (res) {
+            data: { 'pid': pid },
+            type: 'get',
+            success: function (res) {
                 if (res.status === 200) {
                     $('.case_list').empty();
                     for (let item of res.data) {
                         $('.case_list').append('<li>\n' +
                             '<a href="/case/detail?type_id=4&id=' + item.id + '">\n' +
                             '                            <div class="type">案例</div>' +
-                            '                            <img class="case-img"  src="'+ item.cover_img_url +'" alt="">\n' +
+                            '                            <img class="case-img"  src="' + item.cover_img_url + '" alt="">\n' +
                             '                            <div class="text">\n' +
-                            '                                <h5>'+ item.title +'</h5>\n' +
-                            '                                <h6>'+ item.second_title +'</h6>\n' +
-                            '                                <p><span>'+ item.time +'</span><span class="num"><img\n' +
-                            '                                            src="/static/image/advantage/bofang.png" alt="">'+ item.browse +'</span></p>\n' +
+                            '                                <h5>' + item.title + '</h5>\n' +
+                            '                                <h6>' + item.second_title + '</h6>\n' +
+                            '                                <p><span>' + item.time + '</span><span class="num"><img\n' +
+                            '                                            src="/static/image/advantage/bofang.png" alt="">' + item.browse + '</span></p>\n' +
                             '                            </div>\n' +
                             '</a>\n' +
                             '                        </li>')
                     }
                 }
             },
-            error:function (err) {
+            error: function (err) {
                 console.log(err)
             }
         })
