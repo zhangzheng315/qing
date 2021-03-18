@@ -151,8 +151,10 @@ class LogoWallService extends Common{
         ];
         if ($param['type_id'] == 0) {
             unset($where['type_id']);
+            $res = $this->logoWall->where($where)->limit(0,24)->select();
+        }else{
+            $res = $this->logoWall->where($where)->select();
         }
-        $res = $this->logoWall->where($where)->select();
         if (!$res) {
             $this->setError('暂无数据');
             return false;
