@@ -1,5 +1,6 @@
 function init(){
     $('.nav-pro-con').attr('real-height', $('.nav-pro-con').height());
+    // alert($('.navbar-nav').find('.nav-pro-con').height());
     $('.footer-about-item').attr('real-height', $('.footer-about-item').height());
     $('.footer-service-item').attr('real-height', $('.footer-service-item').height());
     $('.footer-industry-item').attr('real-height', $('.footer-industry-item').height());
