@@ -107,10 +107,11 @@
 }
 #course .study-direction {
   height: 150px;
+  line-height: 65px;
+  background-color: #fff;
 }
 #course .study-direction .direction-item {
   padding: 0 20px;
-  margin: 26px 0 45px;
 }
 #course .study-direction .direction-item .item-title {
   width: 66px;
@@ -170,6 +171,7 @@
 #course .price {
   height: 107px;
   line-height: 107px;
+  background: #fff;
 }
 #course .price .layui-container ul li {
   height: 107px;
