@@ -199,6 +199,7 @@
     .kehu {
         padding: 294px 0 66px;
         background-color: #fff;
+
         .layui-container {
             .title {
                 margin-bottom: 147px;
@@ -344,17 +345,18 @@
                     li {
                         position: relative;
                         width: 31%;
-                        // margin: 0 auto;
                         padding: 9px;
                         background-color: #fff;
                         margin-bottom: 45px;
                         margin-right: 40px;
                         border-radius: 10px;
                         cursor: pointer;
+
                         a {
-                           display: block;
-                            &>img {
-                                height: 67%;
+                            display: block;
+                            height: 100%;
+                            .case-img {
+                                height: 57%;
                                 width: 100%;
                                 object-fit: cover;
                                 border-radius: 10px;
@@ -407,9 +409,10 @@
                                 }
                             }
 
-                            &:nth-child(3n) {
-                                margin-right: 0;
-                            }
+                           
+                        }
+                        &:nth-child(3n) {
+                            margin-right: 0;
                         }
 
 
@@ -427,8 +430,9 @@
                 margin: 0 auto;
                 cursor: pointer;
                 margin-top: 34px;
+
                 a {
-                color: #00cc99;
+                    color: #00cc99;
 
                 }
             }
@@ -700,6 +704,7 @@
             height: 300px;
         }
     }
+
     @media screen and (min-width: 820px) and (max-width: 992px) {
         .recommend {
             width: 99%;
@@ -982,9 +987,11 @@
             .layui-container {
                 .logo-title {
                     width: auto;
+
                     &::-webkit-scrollbar {
                         display: none;
                     }
+
                     li {
                         flex-shrink: 0;
                         width: 14%;
