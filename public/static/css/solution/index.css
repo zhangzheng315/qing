@@ -214,9 +214,9 @@
   display: block;
 }
 #solution #kefu {
-  height: 260px;
-  background: url('/static/image/index/fiveG.png') no-repeat;
-  background-size: cover;
+  height: 300px;
+  background: url('/static/image/solution1/jie.png') no-repeat;
+  background-size: 100% 100%;
   position: relative;
 }
 #solution #kefu .hover {
@@ -232,7 +232,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 49px 0 0;
+  padding: 69px 0 0;
   box-sizing: border-box;
 }
 #solution #kefu .kefu-content h2 {
