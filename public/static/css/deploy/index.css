@@ -158,9 +158,9 @@
   margin-right: 0px;
 }
 #deploy #fiveG {
-  height: 450px;
-  background: url('/static/image/index/fiveG.png') no-repeat;
-  background-size: cover;
+  height: 400px;
+  background: url('/static/image/deploy/deploy.png') no-repeat;
+  background-size: 100% 100%;
   position: relative;
 }
 #deploy #fiveG .hover {
@@ -169,23 +169,23 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 47, 35, 0.7);
+  background-color: rgba(0, 0, 0, 0.2);
   z-index: 0;
 }
 #deploy #fiveG .fiveg-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 80px 0 0;
+  padding: 60px 0 0;
   box-sizing: border-box;
 }
 #deploy #fiveG .fiveg-content h2 {
-  font-size: 50px;
+  font-size: 45px;
   color: #fff;
   text-align: center;
 }
 #deploy #fiveG .fiveg-content h5 {
-  font-size: 35px;
+  font-size: 30px;
   color: #fff;
   font-weight: 400;
   margin: 45px auto 68px;

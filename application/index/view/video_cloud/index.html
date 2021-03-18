@@ -27,8 +27,6 @@
         {include file="common/order_box"}
         <!-- 咨询版块 -->
         {include file="common/siderbar-right"}
-        <!-- 免费试用版块 -->
-        {include file="common/free_box"}
 
         <!-- banner -->
         <div id="banner">
@@ -117,7 +115,7 @@
                 </ul>
                 <div class="btns">
                     <a href="http://login.lighos.com/signUp" target="_blank">立即试用</a>
-                    <button>报价咨询</button>
+                    <button id="zixun-btn">报价咨询</button>
                 </div>
             </div>
         </div>
@@ -456,7 +454,7 @@
     })
 
     // 在线客服弹出
-    $('#zixun').click(function () {
+    $('#zixun,#zixun-btn').click(function () {
         daovoice('show');
     })
 </script>

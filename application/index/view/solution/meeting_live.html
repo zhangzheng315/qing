@@ -1976,31 +1976,34 @@
                 {if(isset($banner_list) && $banner_list)}
                 {foreach $banner_list as $item}
                 <div class="banner-item">
-                    <img class="banner-img" src="{$item.img_url}" alt="">
+                    <a href="{$item.img_link}">
+                        <img class="banner-img" src="{$item.img_url}" alt="">
+                    </a>
                     <div class="text-{$item.format}">
                         <h2 style='font-size: {$item.title_size}px;
-                        font-weight: bold;
-                        color:{$item.title_color};
-                        text-align: {$item.format};'>{$item.title}</h2>
+                            font-weight: bold;
+                            color:{$item.title_color};
+                            text-align: {$item.format};'>{$item.title}</h2>
+
                         <h5 style=' color: {$item.in_color};
-                        opacity: .8;
-                        font-size: {$item.in_size}px;
-                        width: 90%;
-                        margin: 78px auto 103px;
-                        text-align: {$item.format};
-                        line-height: 1.5;'>{$item.introduction}</h5>
+                            opacity: .8;
+                            font-size: {$item.in_size}px;
+                            width: 90%;
+                            margin: 78px auto 103px;
+                            text-align: {$item.format};
+                            line-height: 1.5;'>{$item.introduction}</h5>
 
                         {if($item.button_status == 1)}
                         <a class="banner-a" href="javascript:;" style='z-index: 10;
                             display: block;
-                            margin: 0 auto;
-                            width: 189px;
-                            height: 42px;
-                            background: #00CC99;
+                            width: 167px;
+                            height: 44px;
+                            background:#00cc99;
+                            border-radius: 25px;
                             color: {$item.button_color};
                             text-align: center;
                             line-height: 44px;
-                            border-radius:21px;
+                            margin:0 auto;
                             font-size: {$item.button_size}px;'>{$item.button_text}</a>
                         {/if}
                     </div>
