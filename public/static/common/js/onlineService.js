@@ -8,7 +8,7 @@ $(function () {
     }, {
         // 可选
         launcher: {
-            disableLauncherIcon: true, // 悬浮 ICON 是否显示
+            disableLauncherIcon: false, // 悬浮 ICON 是否显示
             defaultEnterView: 'list', // 'list' 或 'new' 默认是 list(在对话列表是空的时候默认切换到 new)
         },
     });
