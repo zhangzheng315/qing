@@ -102,7 +102,7 @@
                 <div class="layui-container">
                     <ul class="stars">
                         <li>
-                            <a href="">
+                            <a href="/solution/medical">
                                 <div>
                                     <img src="/static/image/index1/fangan.svg" alt="">
                                     <h6>医疗直播方案</h6>
@@ -111,7 +111,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{:url('/index/more_live/index')}">
+                            <a href="/function">
                                 <div>
                                     <img src="/static/image/index1/daquan.svg" alt="">
                                     <h6>视频功能大全</h6>
@@ -138,7 +138,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{:url('/index/qing_school/videoCourse')}">
+                            <a href="">
                                 <div>
                                     <img src="/static/image/index1/blog.svg" alt="">
                                     <h6>线上发布会直播</h6>
@@ -175,7 +175,7 @@
                             </p>
                         </div>
                         <div class="item-footer">
-                            <button class="more"><a href="{:url('/index/video_cloud/index')}">了解更多</a>
+                            <button class="more"><a href="/live">了解更多</a>
                             </button>
                             <button class="free"><a href="http://login.lighos.com/signUp"
                                     target="_blank">免费试用</a></button>
@@ -191,7 +191,7 @@
                             </p>
                         </div>
                         <div class="item-footer">
-                            <button class="more"><a href="{:url('/index/customized_service/index')}">了解更多</a></button>
+                            <button class="more"><a href="/develop">了解更多</a></button>
                             <button class="free"><a href="http://login.lighos.com/signUp"
                                     target="_blank">免费试用</a></button>
                         </div>
@@ -205,7 +205,7 @@
                             <p>基于用户角度触发，超万次直播服务经验，从方案设计到现场执行，重现每一个细节的把控，致力于为用户提供全行业场景直播解决方案。</p>
                         </div>
                         <div class="item-footer">
-                            <button class="more"><a href="{:url('/index/site_service/index')}">了解更多</a></button>
+                            <button class="more"><a href="/service">了解更多</a></button>
                             <button class="free"><a href="http://login.lighos.com/signUp"
                                     target="_blank">免费试用</a></button>
                         </div>
@@ -384,7 +384,7 @@
                 <h2 class="title">「全行业」解决方案</h2>
                 <div class="solve-content">
                     <div class="solve-item">
-                        <a href="/index/solution/train">
+                        <a href="/solution/train">
                             <img src="/static/image/index/func1.png" alt="">
                             <div class="text">
                                 <h6>会议培训</h6>
@@ -394,7 +394,7 @@
                         </a>
                     </div>
                     <div class="solve-item">
-                        <a href="/index/solution/marketActivities">
+                        <a href="/solution/market">
                             <img src="/static/image/index/func2.png" alt="">
                             <div class="text">
                                 <h6>营销直播</h6>
@@ -404,7 +404,7 @@
                         </a>
                     </div>
                     <div class="solve-item">
-                        <a href="/index/solution/onlineRetailers">
+                        <a href="/solution/online">
                             <img src="/static/image/index/func3.png" alt="">
                             <div class="text">
                                 <h6>电商直播</h6>
@@ -414,7 +414,7 @@
                         </a>
                     </div>
                     <div class="solve-item">
-                        <a href="/index/solution/enterprise">
+                        <a href="/solution/enterprise">
                             <img src="/static/image/index/func4.png" alt="">
                             <div class="text">
                                 <h6>空中宣讲会</h6>
@@ -424,7 +424,7 @@
                         </a>
                     </div>
                     <div class="solve-item">
-                        <a href="/index/solution/medical">
+                        <a href="/solution/medicine">
                             <img src="/static/image/index/func5.png" alt="">
                             <div class="text">
                                 <h6>医学会议</h6>
@@ -435,7 +435,7 @@
                         </a>
                     </div>
                     <div class="solve-item">
-                        <a href="/index/solution/operation">
+                        <a href="/solution/operation">
                             <img src="/static/image/index/func6.png" alt="">
                             <div class="text">
                                 <h6>手术示教</h6>
@@ -445,7 +445,7 @@
                         </a>
                     </div>
                     <div class="solve-item">
-                        <a href="/index/solution/meetingLive">
+                        <a href="/solution/meeting">
                             <img src="/static/image/index/func7.png" alt="">
                             <div class="text">
                                 <h6>大会直播</h6>
@@ -455,7 +455,7 @@
                         </a>
                     </div>
                     <div class="solve-item">
-                        <a href="/index/solution/annualMeeting">
+                        <a href="/solution/annual">
                             <img src="/static/image/index/func8.png" alt="">
                             <div class="text">
                                 <h6>年会直播</h6>
@@ -504,7 +504,7 @@
                                 {if(isset($article_list))}
                                 {foreach($article_list[0] as $item)}
                                 <div class="lunbo-item">
-                                    <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>$item.pid])}">
+                                    <a href="/blog/detail?id={$item.id}&pid={$item.pid}">
                                         <img src="{$item.cover_img_url}" alt="">
                                         <div class="text-box">
                                             <h6>{$item.title}</h6>
@@ -527,7 +527,7 @@
                                     {foreach($article_list[$i]
                                     as $item)}
                                     <li>
-                                        <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>$item.pid])}"
+                                        <a href="/blog/detail?id={$item.id}&pid={$item.pid}"
                                             style="display: flex;width: 100%;">
                                             <div class="type">
                                                 {$item.pid_name}

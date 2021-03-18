@@ -96,7 +96,8 @@ class QingSchool extends Controller
         $param = request()->param();
         $pid = $param['pid'];
         $pid_name = $this->videoTypeService->videoTypeName($param['pid']);
-        return $this->fetch('',compact('pid_name'));
+        $video_list = $this->videoService->getVideoListByWhere($param);
+        return $this->fetch('',compact('pid_name','video_list'));
     }
 
     /* 新闻详情页 */

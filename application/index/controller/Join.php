@@ -11,11 +11,10 @@ class Join extends Controller
     
     public function joinUs()
     {
+        $param = request()->param();
         $joinUsService = new JoinUsService();
-        $contactService = new ContactService();
-        $join_list = $joinUsService->joinUsList();
-        $contact_list = $contactService->contactList();
-        return $this->fetch('',compact('join_list','contact_list'));
+        $join_list = $joinUsService->joinUsList($param);
+        return $this->fetch('',compact('join_list'));
     }
     
 }
