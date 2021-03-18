@@ -2247,18 +2247,24 @@
                 {if(isset($banner_list) && $banner_list)}
                 {foreach $banner_list as $item}
                 <div class="banner-item">
-                    <img class="banner-img" src="{$item.img_url}" alt="">
+                    <a href="{$item.img_link}" target="_blank">
+                        <img class="banner-img" src="{$item.img_url}" alt="">
+                    </a>
                     <div class="text-{$item.format}">
                         <h2 style='font-size: {$item.title_size}px;
                             font-weight: bold;
                             color:{$item.title_color};
-                            text-align: {$item.format};'>{$item.title}</h2>
+                            background: linear-gradient(257deg, #73FFE0 0%, #3EC0A5 100%);
+                            -webkit-background-clip: text;
+                            text-align: {$item.format};
+                            -webkit-text-fill-color: transparent;'>{$item.title}</h2>
 
                         <h5 style=' color: {$item.in_color};
                             opacity: .8;
                             font-size: {$item.in_size}px;
-                            width: 45%;
+                            width: {$item.width};
                             margin: 78px 0 103px;
+                            text-align: {$item.format};
                             line-height: 1.5;'>{$item.introduction}</h5>
 
                         {if($item.button_status == 1)}
