@@ -37,7 +37,9 @@
                     {if(isset($banner_list) && $banner_list)}
                     {foreach $banner_list as $item}
                     <div class="banner-item">
-                        <img class="banner-img" src="{$item.img_url}" alt="">
+                        <a href="{$item.img_link}" target="_blank">
+                            <img class="banner-img" src="{$item.img_url}" alt="">
+                        </a>
                         <div class="text-{$item.format}">
                             <h2 style='font-size: {$item.title_size}px;
                             font-weight: bold;
@@ -322,7 +324,7 @@
                 </ul>
                 <div class="btns">
                     <button id="zixun">在线咨询</button>
-                    <button class="a-btn"><a href="{:url('/function')}">更多直播功能</a></button>
+                    <button class="a-btn"><a href="/function">更多直播功能</a></button>
                 </div>
             </div>
         </div>
@@ -458,4 +460,5 @@
         daovoice('show');
     })
 </script>
+
 </html>

@@ -104,12 +104,12 @@
                             {if($new_list)}
                             {foreach($new_list as $item)}
                             <li class="cause-item">
-                                <a href="{:url('/index/corporate_news/corporateDetail',['id'=>$item.id])}"
+                                <a href="/news/detail?id={$item.id}"
                                     class="cause-cover"
                                     style="background: url({$item.cover_img_url});background-size: cover">
                                 </a>
                                 <div class="cause-des">
-                                    <a href="{:url('/index/corporate_news/corporateDetail',['id'=>$item.id])}"
+                                    <a href="/news/detail?id={$item.id}"
                                         class="cause-title">
                                         <h3>
                                             <i class="cause-icon icon-item-solution"></i>
@@ -150,7 +150,7 @@
                             {if($new_list)}
                             {foreach($new_list as $item)}
                             <li class="cause-item">
-                                <a href="{:url('/index/corporate_news/corporateDetail',['id'=>$item.id])}">
+                                <a href="/news/detail?id={$item.id}">
                                     <h3>
                                         {$item.title}
                                     </h3>
@@ -160,7 +160,7 @@
                                     <span class="post-time">{$item.time}</span>
                                     <i class="vertical-bar">|</i>
                                 </div>
-                                <a href="{:url('/index/corporate_news/corporateDetail',['id'=>$item.id])}"
+                                <a href="/news/detail?id={$item.id}"
                                     class="cause-item-desc">
                                     <img src="{$item.cover_img_url}" alt="">
                                     <p>{$item.second_title}</p>
@@ -176,7 +176,7 @@
                 </div>
                 <div class="school-right-con">
                     <div class="siderbar-item siderbar-item-search">
-                        <form action="/index/corporate_news/categoryNews" class="search-form" id="search-form">
+                        <form action="/news/list" class="search-form" id="search-form">
                             <input type="text" name="word" value="{:request()->param('word')}" class="searchInput"
                                 placeholder="输入关键词" autocomplete="off">
                             <input type="submit" class="submitInput" alt="search">
@@ -198,7 +198,7 @@
                             {if(isset($list))}
                             {foreach($list['hot_article'] as $item)}
                             <li class="article-item">
-                                <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>11])}"
+                                <a href="/blog/detail?id={$item.id}&pid=11"
                                     class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
                                     <p>{$item.title}</p>
                                     <span class="time">{$item.time}</span>
@@ -211,7 +211,7 @@
                             {if(isset($list))}
                             {foreach($list['recommend'] as $item)}
                             <li class="article-item">
-                                <a href="{:url('/index/qing_school/newsDetail',['id'=>$item.id,'pid'=>12])}"
+                                <a href="/blog/detail?id={$item.id}&pid=12"
                                     class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
                                     <p>{$item.title}</p>
                                     <span class="time">{$item.time}</span>
@@ -233,7 +233,7 @@
                         </div>
                         <ul class="hot-products-list">
                             <li>
-                                <a href="{:url('/index/video_cloud/index')}" class="hot-products-item" target="_blank">
+                                <a href="/live" class="hot-products-item" target="_blank">
                                     <i class="icon-hot-product icon-hot-product_1"></i>
                                     <span>企业直播</span>
                                 </a>
@@ -271,7 +271,7 @@
                         <ul class="hot-tags-list">
                             {if(!empty($label_list))}
                             {foreach($label_list as $item)}
-                            <li><a href="/index/corporate_news/categoryNews?label={$item.name}" class="hot-tag-item">{$item.name}</a></li>
+                            <li><a href="/news/list?label={$item.name}" class="hot-tag-item">{$item.name}</a></li>
                             {/foreach}
                             {/if}
                         </ul>

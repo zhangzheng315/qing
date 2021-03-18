@@ -74,6 +74,12 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">图片跳转地址</label>
+            <div class="layui-input-block">
+                <input type="text" name="img_link" placeholder="选填，用于点击banner跳转" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
             <label class="layui-form-label">启用按钮</label>
             <div class="layui-input-block">
                 <input name="button_status" value="1" type="checkbox" lay-skin="switch">
@@ -183,6 +189,12 @@
                 <div class="layui-inline">
                     <input type="number" id="in_size" min="12" name="in_size" placeholder="推荐16px" autocomplete="off" class="layui-input edit_in_size">
                 </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">图片跳转地址</label>
+            <div class="layui-input-block">
+                <input type="text" name="img_link" id="img_link" placeholder="选填，用于点击banner跳转" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
@@ -450,6 +462,7 @@
                         $('.edit_button_size').val(res.data.button_size);
                         $('.format').empty();
                         $('#button_link').val(res.data.button_link);
+                        $('#img_link').val(res.data.img_link);
 
                         selected = res.data.pid;
                         if (res.data.status === 0) {

@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>轻直播视频云解决方案_全行业直播解决方案_全场景直播解决方案</title>
-    <meta name="keywords"  content="企业直播解决方案,活动直播方案,营销直播方案,医疗直播方案" />
-    <meta name="description"  content="轻直播为企业提供一站式全场景直播解决方案,服务500强等10万+企业。" />
+    <meta name="keywords"  content="企业直播解决方案,活动直播方案,营销直播方案,医疗直播方案"/>
+    <meta name="description"  content="轻直播为企业提供一站式全场景直播解决方案,服务500强等10万+企业。"/>
     <meta http-equiv="X-UA-Compatible" content="IE=11;IE=10;IE=9; IE8; IE=7; IE=EDGE">
     <link rel="stylesheet" href="/static/css/solution/index.css">
     <link rel="stylesheet" href="/static/layui/css/layui.css">
@@ -14,7 +14,17 @@
     <link rel="stylesheet" href="/static/css/common/banner_common.css">
     <script type='text/javascript' src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="/static/layui/layui.js"></script>
-    <script>(function (i, s, o, g, r, a, m) { i["DaoVoiceObject"] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; a.charset = "utf-8"; m.parentNode.insertBefore(a, m) })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/04cefad5.js", "daovoice")</script>
+    <script>(function (i, s, o, g, r, a, m) {
+        i["DaoVoiceObject"] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        a.charset = "utf-8";
+        m.parentNode.insertBefore(a, m)
+    })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/04cefad5.js", "daovoice")</script>
     <style>
         .turn {
             display: block;
@@ -24,27 +34,32 @@
 </head>
 
 <body>
-    <div id="solution">
-        <!-- 头部 -->
-        {include file="common/header"}
-        <!--演示演示弹出框 -->
-        {include file="common/order_box"}
-        <!-- 咨询版块 -->
-        {include file="common/siderbar-right"}
-        <div id="banner">
-            <div class="layui-carousel" id="banners">
-                <div carousel-item class="lunbo-box">
-                    {if(isset($banner_list) && $banner_list)}
-                    {foreach $banner_list as $item}
-                    <div class="banner-item">
+<div id="solution">
+    <!-- 头部 -->
+    {include file="common/header"}
+    <!--演示演示弹出框 -->
+    {include file="common/order_box"}
+    <!-- 咨询版块 -->
+    {include file="common/siderbar-right"}
+    <div id="banner">
+        <div class="layui-carousel" id="banners">
+            <div carousel-item class="lunbo-box">
+                {if(isset($banner_list) && $banner_list)}
+                {foreach $banner_list as $item}
+                <div class="banner-item">
+                    <a href="{$item.img_link}" target="_blank">
                         <img class="banner-img" src="{$item.img_url}" alt="">
-                        <div class="text-{$item.format}">
-                            <h2 style='font-size: {$item.title_size}px;
+                    </a>
+                    <div class="text-{$item.format}">
+                        <h2 style='font-size: {$item.title_size}px;
                             font-weight: bold;
                             color:{$item.title_color};
-                            text-align: {$item.format};'>{$item.title}</h2>
+                            background: linear-gradient(257deg, #73FFE0 0%, #3EC0A5 100%);
+                            -webkit-background-clip: text;
+                            text-align: {$item.format};
+                            -webkit-text-fill-color: transparent;'>{$item.title}</h2>
 
-                            <h5 style=' color: {$item.in_color};
+                        <h5 style=' color: {$item.in_color};
                             opacity: .8;
                             font-size: {$item.in_size}px;
                             width: {$item.width};
@@ -52,108 +67,109 @@
                             text-align: {$item.format};
                             line-height: 1.5;'>{$item.introduction}</h5>
 
-                            {if($item.button_status == 1)}
-                            <a class="banner-a" href="{$item.button_link}" style='z-index: 10;
+                        {if($item.button_status == 1)}
+                        <a class="banner-a" href="{$item.button_link}" style='z-index: 10;
                             display: block;
-                            width: 189px;
-                            height: 42px;
-                            color: {$item.button_color};
+                            width: 167px;
+                            height: 44px;
                             border: 1px solid {$item.button_color};
+                            color: {$item.button_color};
                             text-align: center;
                             line-height: 44px;
+                            float: {$item.float};
                             font-size: {$item.button_size}px;'>{$item.button_text}</a>
-                            {/if}
-                        </div>
+                        {/if}
                     </div>
-                    {/foreach}
-                    {/if}
                 </div>
-            </div>
-
-        </div>
-
-        <!-- 行业解决方案 -->
-        <div id="industry">
-            <div class="layui-container">
-                <h2 class="title">行业解决方案</h2>
-                <ul class="industry-content">
-                    {if isset($solution_list['ind_res'])}
-                    {foreach($solution_list['ind_res'] as $item)}
-                    <li>
-                        <a href="{$item.url_action}" class="turn">
-                            <img src="{$item.img_url}" alt="">
-                            <div class="text">
-                                <h6>{$item.title}</h6>
-                                <p>{$item.introduction}</p>
-                            </div>
-                        </a>
-                    </li>
-                    {/foreach}
-                    {/if}
-                </ul>
+                {/foreach}
+                {/if}
             </div>
         </div>
 
-        <!-- 场景解决方案 -->
-        <div id="scene">
-            <div class="layui-container">
-                <h2 class="title">场景解决方案</h2>
-                <ul class="scene-content">
-                    {if isset($solution_list['sce_res'])}
-                    {foreach($solution_list['sce_res'] as $item)}
-                    <li>
-                        <a href="{$item.url_action}" class="turn">
-                            <img class="bg-img" src="{$item.img_url}" alt="">
-                            <div>
-                                <p>{$item.title}</p>
-                                <img src="/static/image/solution/jiantou.png" alt="">
-                            </div>
-                        </a>
-                    </li>
-                    {/foreach}
-                    {/if}
-
-                </ul>
-            </div>
-        </div>
-
-        <!-- 赋能「100,000+」企业 -->
-        <div id="qiye">
-            <div class="layui-container">
-                <h2 class="title">赋能「100,000+」企业</h2>
-                <nav>
-                    <ul class="logo-title">
-                        <li class="active" onclick="logoPoint(0)"><span>全部</span></li>
-                        <li onclick="logoPoint(1)"><span>医疗</span></li>
-                        <li onclick="logoPoint(2)"><span>教育</span></li>
-                        <li onclick="logoPoint(3)"><span>金融</span></li>
-                        <li onclick="logoPoint(4)"><span>汽车</span></li>
-                        <li onclick="logoPoint(5)"><span>科技</span></li>
-                        <li onclick="logoPoint(6)"><span>地产</span></li>
-                    </ul>
-                </nav>
-                <div class="logo-box">
-                    <ul class="logo-imgs active">
-
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- 联系客服 -->
-        <!-- “轻”装上阵，玩转企业数字营销5G时代 -->
-        <div id="kefu">
-            <div class="hover"></div>
-            <div class="layui-container">
-                <div class="kefu-content">
-                    <h2>联系客服，为您推荐专属解决方案</h2>
-                    <button id="zixun">立即咨询</button>
-                </div>
-            </div>
-        </div>
-        <!-- 底部 -->
-        {include file="common/footer"}
     </div>
+
+    <!-- 行业解决方案 -->
+    <div id="industry">
+        <div class="layui-container">
+            <h2 class="title">行业解决方案</h2>
+            <ul class="industry-content">
+                {if isset($solution_list['ind_res'])}
+                {foreach($solution_list['ind_res'] as $item)}
+                <li>
+                    <a href="{$item.url_action}" class="turn">
+                        <img src="{$item.img_url}" alt="">
+                        <div class="text">
+                            <h6>{$item.title}</h6>
+                            <p>{$item.introduction}</p>
+                        </div>
+                    </a>
+                </li>
+                {/foreach}
+                {/if}
+            </ul>
+        </div>
+    </div>
+
+    <!-- 场景解决方案 -->
+    <div id="scene">
+        <div class="layui-container">
+            <h2 class="title">场景解决方案</h2>
+            <ul class="scene-content">
+                {if isset($solution_list['sce_res'])}
+                {foreach($solution_list['sce_res'] as $item)}
+                <li>
+                    <a href="{$item.url_action}" class="turn">
+                        <img class="bg-img" src="{$item.img_url}" alt="">
+                        <div>
+                            <p>{$item.title}</p>
+                            <img src="/static/image/solution/jiantou.png" alt="">
+                        </div>
+                    </a>
+                </li>
+                {/foreach}
+                {/if}
+
+            </ul>
+        </div>
+    </div>
+
+    <!-- 赋能「100,000+」企业 -->
+    <div id="qiye">
+        <div class="layui-container">
+            <h2 class="title">赋能「100,000+」企业</h2>
+            <nav>
+                <ul class="logo-title">
+                    <li class="active" onclick="logoPoint(0)"><span>全部</span></li>
+                    <li onclick="logoPoint(1)"><span>医疗</span></li>
+                    <li onclick="logoPoint(2)"><span>教育</span></li>
+                    <li onclick="logoPoint(3)"><span>金融</span></li>
+                    <li onclick="logoPoint(4)"><span>汽车</span></li>
+                    <li onclick="logoPoint(5)"><span>科技</span></li>
+                    <li onclick="logoPoint(6)"><span>地产</span></li>
+                </ul>
+            </nav>
+            <div class="logo-box">
+                <ul class="logo-imgs active">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 联系客服 -->
+    <!-- “轻”装上阵，玩转企业数字营销5G时代 -->
+    <div id="kefu">
+        <div class="hover"></div>
+        <div class="layui-container">
+            <div class="kefu-content">
+                <h2>联系客服，为您推荐专属解决方案</h2>
+                <button id="zixun">立即咨询</button>
+            </div>
+        </div>
+    </div>
+    <!-- 底部 -->
+    {include file="common/footer"}
+</div>
 </body>
 <script src="/static/common/js/header-footer.js"></script>
 <script src="/static/common/js/onlineService.js"></script>
@@ -180,14 +196,17 @@
             if (obj.find('.logo-box').children().eq($(this).index()).length > 0)
                 obj.find('.logo-box').children().hide().eq($(this).index()).show();
         });
-        setTimeout(function () { obj.find('.logo-title .active').trigger('li'); }, 100);
+        setTimeout(function () {
+            obj.find('.logo-title .active').trigger('li');
+        }, 100);
     });
 
     logoPoint(0);
+
     function logoPoint(index) {
         $.ajax({
             url: "{:url('/index/logo_wall/getLogoByWhere')}",
-            data: { 'pid': 3, 'type_id': index },
+            data: {'pid': 3, 'type_id': index},
             type: 'get',
             success: function (res) {
                 if (res.status === 200) {

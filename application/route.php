@@ -18,6 +18,7 @@ Route::rule('solution/medical', 'index/industry/medicalCare');      // 行业-�
 Route::rule('solution/education', 'index/industry/education');      // 行业-教育直播
 Route::rule('solution/banking', 'index/industry/banking');          // 行业-金融直播
 Route::rule('solution/media', 'index/industry/media');              // 行业-传媒直播
+
 Route::rule('solution/train', 'index/solution/train');              // 场景-会议培训
 Route::rule('solution/market', 'index/solution/marketActivities');  // 场景-营销直播
 Route::rule('solution/online', 'index/solution/onlineRetailers');   // 场景-电商直播
@@ -56,7 +57,7 @@ Route::rule('partner', 'index/channel/index'); // 渠道合作
 Route::rule('join', 'index/join/joinUs'); // 加入我们
 Route::rule('contact', 'index/contact/contactUs'); // 联系我们
 Route::rule('news/detail', 'index/corporate_news/corporateDetail'); // 企业新闻详情
-Route::rule('news/list', 'index/corporate_news/categoryNews'); // 企业新闻详情
+Route::rule('news/list', 'index/corporate_news/categoryNews'); // 企业新闻列表
 
 // 更多直播功能
 Route::rule('function', 'index/more_live/index');

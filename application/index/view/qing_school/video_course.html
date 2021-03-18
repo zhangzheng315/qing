@@ -120,8 +120,8 @@
         <nav class="video-nav ">
             <div class="layui-container box" style="display: flex;align-items: center;justify-content: flex-start">
                 <a href="/video" class="active">首页</a>
-                {if(isset($video_type))}
-                {foreach($video_type as $item)}
+                {if(isset($video_type_limit))}
+                {foreach($video_type_limit as $item)}
                 <a href="/video/second?all=1&pid={$item.id}">{$item.name}</a>
                 {/foreach}
                 {/if}
@@ -161,8 +161,8 @@
         <div class="case-study">
             <div class="layui-container">
                 <ul class="study-nav" style="display: flex;align-items: center;justify-content: flex-start">
-                    {if(isset($video_type))}
-                    {foreach($video_type as $item)}
+                    {if(isset($video_type_limit))}
+                    {foreach($video_type_limit as $item)}
                     <li class="{$item.id == $id ? 'active' : ''}">
                         <p onclick="videoPoint({$item.id})">{$item.name}</p>
                         <div></div>

@@ -30,12 +30,10 @@ class CorporateNews extends Controller
     
     public function news()
     {
-        $joinUsService = new JoinUsService();
         $contactService = new ContactService();
-        $join_list = $joinUsService->joinUsList();
         $contact_list = $contactService->contactList();
         $limit_list = $this->corporateService->corporateLimit();
-        return $this->fetch('',compact('join_list','contact_list','limit_list'));
+        return $this->fetch('',compact('contact_list','limit_list'));
     }
     public function corporateDetail()
     {
