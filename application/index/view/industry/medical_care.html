@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/static/css/common/banner_common.css">
     <script type='text/javascript' src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="/static/layui/layui.js"></script>
+    <script>(function (i, s, o, g, r, a, m) { i["DaoVoiceObject"] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; a.charset = "utf-8"; m.parentNode.insertBefore(a, m) })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/04cefad5.js", "daovoice")</script>
     <style>
         #conporate-container nav {
             background: #ffffff;
@@ -2174,7 +2175,7 @@
                     <p>轻直播为行业客户提供手术直播、医学学术峰会、医学研讨会、医学培训、远程会诊等专业级场景解决方案，助力行业机构数字化转型。</p>
                     <!-- <p>咨询详情 免费试用</p> -->
                     <div class="live-group-btn">
-                        <a href="">咨询详情</a>
+                        <a href="javascript:;" class="kefu_btn">咨询详情</a>
                         <a href="http://login.lighos.com/signUp" target="_blank" class="q-ml--36">免费试用</a>
                     </div>
                 </div>
@@ -2193,7 +2194,7 @@
                 <p>轻直播为行业客户提供手术直播、医学学术峰会、医学研讨会、医学培训、远程会诊等专业级场景解决方案，助力行业机构数字化转型。</p>
                 <!-- <p>咨询详情 免费试用</p> -->
                 <div class="live-group-btn">
-                    <a href="">咨询详情</a>
+                    <a href="javascript:;" class="kefu_btn">咨询详情</a>
                     <a href="http://login.lighos.com/signUp" target="_blank" class="q-ml--36">免费试用</a>
                 </div>
             </div>
@@ -2451,7 +2452,7 @@
         <div class="layui-container">
             <div class="kefu-content">
                 <h2>轻直播为您提供一站式企业视频解决方案</h2>
-                <button>立即咨询</button>
+                <button class="getcase">获取方案</button>
             </div>
 
         </div>
@@ -2460,6 +2461,7 @@
     {include file="common/footer"}
 </div>
 </body>
+<script src="/static/common/js/onlineService.js"></script>
 <script src="/static/common/js/header-footer.js"></script>
 <script src="/static/common/js/solution.js"></script>
 <script type="text/javascript">
@@ -2475,6 +2477,7 @@
             , interval: 3000 // 轮播间隔时间
         });
     });
+
 </script>
 <script>
     var _hmt = _hmt || [];
@@ -2520,10 +2523,15 @@
 
 
     //   显示预约演示弹出框
-    $('.banner-a').on('click', function () {
+    $('.banner-a,.getcase').on('click', function () {
         $('#order-container').show();
         $('.q-modal').show();
     })
+
+     $('.kefu_btn').click(function () {
+        daovoice('show');
+    })
+   
 </script>
 
 </html>
