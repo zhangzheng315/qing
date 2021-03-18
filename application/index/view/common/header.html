@@ -1105,7 +1105,7 @@
                 </ul>
             </div>
             <div class="nav-btn">
-                <a class="login" href="/login">
+                <a class="login" href="{:url('/login')}">
                     登录
                 </a>
                 <a class="free-use" href="http://login.qingtv.com/signUp" target="_blank">
@@ -1316,7 +1316,7 @@
                         }
                     }
                     $('.navbar-nav').append(m_menu);
-                    $('.nav-pro-con').attr('real-height', $('.nav-pro-con').height());
+                    $('.nav-pro-con').prop('real-height', $('.nav-pro-con').height());
                     $('.nav-pro-con').css({
                         'height': '0px'
                     });
@@ -1433,13 +1433,20 @@
                 var id = ele.attr('data-id');
                 // console.log(id);
                 // 退出登录
-                if (id == 2) {
-                    localStorage.removeItem('tvInfo')
-                    layer.msg('您已退出登录');
-                    setTimeout(() => {
-                        window.location.href = "/login"
-                    }, 500);
-                }
+                if (id == 2) {
+                localStorage.removeItem('tvInfo')
+                layer.msg('您已退出登录');
+                setTimeout(() => {
+                    window.location.href = "/login"
+                }, 500);
+              } else if (id == 1) {
+                var token = tvInfo.token
+                var name = tvInfo.name
+                var avatar = tvInfo.avatar
+                window.open(`http://login.lighos.com/Home?lighostoken=${token}
+                &lighosName${name}
+                &lighosHeadUrl=${avatar}`)
+            }
             });
         });
     </script>

@@ -1535,11 +1535,21 @@
   #qiye nav .logo-title li:hover:before {
     width: 100%;
   }
+  #qiye .logo-box .logo-imgs {
+    display: flex;
+    flex-wrap: wrap;
+  }
   #qiye .logo-box .logo-imgs li {
-    width: 19%;
+    width: 24%;
     height: 50px;
-    margin-right: 20px;
+    margin-right: 1%;
     margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #qiye .logo-box .logo-imgs li:nth-child(4n) {
+    margin-right: 0;
   }
   #college {
     padding: 40px 0 50px;
