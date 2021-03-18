@@ -142,7 +142,6 @@
                 font-size: 14px;
                 border-radius: 15px;
                 outline: none;
-                border: none;
                 cursor: pointer;
             }
 
@@ -150,12 +149,13 @@
                 background: #fff;
                 border: 1px solid #00cc99;
                 color: #00cc99;
+                margin-right: 20px;
             }
 
             .btns > a.free-btn {
                 background: #00cc99;
                 color: #ffffff;
-                margin-left: 41px;
+                border: 1px solid #00cc99;
             }
 
             /* 导航栏 */
@@ -813,7 +813,6 @@
                 font-size: 14px;
                 border-radius: 15px;
                 outline: none;
-                border: none;
                 cursor: pointer;
             }
 
@@ -821,12 +820,13 @@
                 background: #fff;
                 border: 1px solid #00cc99;
                 color: #00cc99;
+                margin-right: 18px;
             }
 
             .btns > a.free-btn {
                 background: #00cc99;
                 color: #ffffff;
-                margin-left: 20px;
+                border: 1px solid #00cc99;
             }
 
             /* 导航栏 */
@@ -1491,7 +1491,6 @@
                 font-size: 14px;
                 border-radius: 15px;
                 outline: none;
-                border: none;
                 cursor: pointer;
             }
 
@@ -1499,12 +1498,13 @@
                 background: #fff;
                 border: 1px solid #00cc99;
                 color: #00cc99;
+                margin-right: 16px;
             }
 
             .btns > a.free-btn {
                 background: #00cc99;
                 color: #ffffff;
-                margin-left: 20px;
+                border: 1px solid #00cc99;
             }
 
             /* 导航栏 */
@@ -1843,7 +1843,6 @@
                 font-size: 14px;
                 border-radius: 15px;
                 outline: none;
-                border: none;
                 cursor: pointer;
             }
 
@@ -1857,6 +1856,7 @@
                 background: #00cc99;
                 color: #ffffff;
                 margin-left: 20px;
+                border: 1px solid #00cc99;
             }
 
             /* 导航栏 */
