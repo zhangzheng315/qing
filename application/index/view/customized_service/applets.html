@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APP/小程序开发_轻直播平台</title>
     <meta name="keywords"  content="" />
-    <meta name="description"
-         content="" />
+    <meta name="description"  content="" />
     <link rel="stylesheet" href="/static/css/customized_service/index.css">
     <link rel="stylesheet" href="/static/layui/css/layui.css">
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/common/banner_common.css">
-
     <script type='text/javascript' src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="/static/layui/layui.js"></script>
+    <script>(function (i, s, o, g, r, a, m) { i["DaoVoiceObject"] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; a.charset = "utf-8"; m.parentNode.insertBefore(a, m) })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/04cefad5.js", "daovoice")</script>
+
 </head>
 
 <body>
@@ -38,7 +38,7 @@
                             font-weight: bold;
                             color:{$item.title_color};
                             text-align: {$item.format};'>{$item.title}</h2>
-    
+
                             <h5 style=' color: {$item.in_color};
                             opacity: .8;
                             font-size: {$item.in_size}px;
@@ -46,7 +46,7 @@
                             margin: 78px 0 103px;
                             text-align: {$item.format};
                             line-height: 1.5;'>{$item.introduction}</h5>
-    
+
                             {if($item.button_status == 1)}
                             <a class="banner-a" href="{$item.button_link}" style='z-index: 10;
                             display: block;
@@ -98,7 +98,7 @@
                                 <i></i>专属品牌化定制，海量DEMO模板可选
                             </li>
                         </ul>
-                        <button>了解更多</button>
+                        <button class="learn-more">了解更多</button>
                     </div>
                     <div class="item-img active">
                         <img src="/static/image/customized/bofangqi.png" alt="">
@@ -124,7 +124,7 @@
                                 <i></i>可搭载更多配套系统，具有更强的业务拓展性
                             </li>
                         </ul>
-                        <button>了解更多</button>
+                        <button class="learn-more">了解更多</button>
                     </div>
                 </div>
             </div>
@@ -143,7 +143,7 @@
                                 <i></i>满足商家、门店、平台日程高需求应用
                             </li>
                         </ul>
-                        <button>了解更多</button>
+                        <button class="learn-more">了解更多</button>
                     </div>
                     <div class="item-img small-img">
                         <img src="/static/image/customized/shouquan.png" alt="">
@@ -169,7 +169,7 @@
                                 <i></i>去中心化程度高，网络效应强，审核机制更安全
                             </li>
                         </ul>
-                        <button>了解更多</button>
+                        <button class="learn-more">了解更多</button>
                     </div>
                 </div>
 
@@ -190,7 +190,7 @@
                                 <i></i>双重认证、动态密钥、VPN技术、第三方认证
                             </li>
                         </ul>
-                        <button>了解更多</button>
+                        <button class="learn-more">了解更多</button>
                     </div>
                     <div class="item-img active">
                         <img src="/static/image/customized/dingzhi.png" alt="">
@@ -216,7 +216,7 @@
                                 <i></i>提供系统程序及二次开发文档，大大缩短开发进程
                             </li>
                         </ul>
-                        <button>了解更多</button>
+                        <button class="learn-more">了解更多</button>
                     </div>
                 </div>
             </div>
@@ -235,7 +235,7 @@
                                 <i></i>供需端口配置灵活，支付体系高效
                             </li>
                         </ul>
-                        <button>了解更多</button>
+                        <button class="learn-more">了解更多</button>
                     </div>
                     <div class="item-img small-img">
                         <img src="/static/image/customized/shouquan.png" alt="">
@@ -261,7 +261,7 @@
                                 <i></i>7x24小时快速响应
                             </li>
                         </ul>
-                        <button>了解更多</button>
+                        <button class="learn-more">了解更多</button>
                     </div>
                 </div>
 
@@ -276,8 +276,7 @@
                 <div class="fiveg-content">
                     <h2>开发出所有你想要的APP功能</h2>
                     <h5>提供原生APP开发、web APP开发及混合APP开发服务</h5>
-                    <button><a href="http://login.lighos.com/signUp" target="_blank">免费使用</a>
-                    </button>
+                    <button><a href="http://login.lighos.com/signUp" target="_blank">免费使用</a></button>
                 </div>
             </div>
         </div>
@@ -306,6 +305,11 @@
         $('#order-container').show();
         $('.q-modal').show();
     })
+
+    $('.learn-more').click(function () { 
+        daovoice('show')
+    })
 </script>
+<script src="/static/common/js/onlineService.js"></script>
 
 </html>

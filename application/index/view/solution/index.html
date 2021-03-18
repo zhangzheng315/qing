@@ -156,6 +156,8 @@
     </div>
 </body>
 <script src="/static/common/js/header-footer.js"></script>
+<script src="/static/common/js/onlineService.js"></script>
+
 <script type="text/javascript">
     layui.use('carousel', function () {
         var carousel = layui.carousel;
@@ -207,57 +209,9 @@
         $('.q-modal').show();
     })
 
-</script>
-<script>
-    var tvInfo = JSON.parse(localStorage.getItem('tvInfo'))
     $('#zixun').click(function () {
-        // 已注册用户
-        if (tvInfo) {
-            daovoice('update', {
-                user_id: tvInfo.id, // 必填，用户id
-                name: tvInfo.name,  // 选填
-            });
-
-            ; daovoice('init', {
-                app_id: '04cefad5',   // 必填，您的 APP 标识
-                user_id: tvInfo.id, // 必填，用户id
-                email: tvInfo.email, // 选填，邮箱地址
-                name: tvInfo.name,  // 选填
-            }, {
-                // 可选
-                launcher: {
-                    disableLauncherIcon: true, // 悬浮 ICON 是否显示
-                    defaultEnterView: 'list', // 'list' 或 'new' 默认是 list(在对话列表是空的时候默认切换到 new)
-                },
-            });
-            daovoice('show');
-
-        } else {
-            daovoice('update');
-            // 未注册用户
-            ; daovoice('init', {
-                app_id: '04cefad5',   // 必填，您的 APP 标识
-            }, {
-                launcher: {
-                    disableLauncherIcon: true,
-                    defaultEnterView: 'list',
-                },
-            });
-            daovoice('show');
-
-        }
-
+        daovoice('show');
     })
-
-    function Registered() {
-
-    }
-
-    function Unregistered() {
-
-    }
-
-
 
 </script>
 

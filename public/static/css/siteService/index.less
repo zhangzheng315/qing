@@ -53,6 +53,7 @@
                     line-height: 60px;
                     cursor: pointer;
                     box-sizing: border-box;
+
                     a {
                         // display: block;
                         // width: 100%;
@@ -109,6 +110,13 @@
                 box-shadow: 0px 0px 29px 0px rgba(50, 50, 50, 0.11);
                 margin: 0 30px 40px 0;
                 cursor: pointer;
+                border-radius: 10px;
+
+                img {
+                    width: 100%;
+
+                    border-radius: 10px 10px 0 0;
+                }
 
                 .text {
                     padding: 24px 30px 0;
@@ -130,18 +138,19 @@
             }
         }
 
-        button {
+        a {
             width: 133px;
             height: 40px;
+            line-height: 40px;
+            text-align: center;
             display: block;
             background: #00CC99;
             border-radius: 20px;
             font-size: 14px;
             margin: 30px auto 0;
-            border: none;
-            outline: none;
             color: #fff;
             cursor: pointer;
+            box-sizing: border-box;
 
             &:hover {
                 color: #00cc99;
@@ -198,9 +207,11 @@
             }
         }
 
-        button {
+        a {
             width: 133px;
             height: 40px;
+            line-height: 40px;
+            text-align: center;
             display: block;
             background: transparent;
             border-radius: 20px;
@@ -344,14 +355,22 @@
                 border-radius: 30px;
                 outline: none;
                 background-color: transparent;
-                font-size: 28px;
-                color: #FFFFFF;
+
                 cursor: pointer;
+
+                a {
+                    font-size: 28px;
+                    color: #FFFFFF;
+                }
 
                 &:hover {
                     background-color: #00cc99;
-                    color: #fff;
                     border: 0;
+
+                    a {
+                        color: #fff;
+
+                    }
                 }
             }
         }
@@ -402,7 +421,7 @@
                     }
                 }
 
-                button {
+                a {
                     width: 90px;
                 }
             }
@@ -512,7 +531,11 @@
                 button {
                     width: 28%;
                     height: 50px;
-                    font-size: 25px;
+
+                    a {
+                        font-size: 25px;
+
+                    }
                 }
             }
         }
@@ -596,7 +619,11 @@
                 button {
                     width: 28%;
                     height: 45px;
-                    font-size: 18px;
+
+                    a {
+                        font-size: 18px;
+
+                    }
                 }
             }
         }
@@ -642,7 +669,7 @@
                     }
                 }
 
-                button {
+                a {
                     width: 90px;
                 }
             }
@@ -877,7 +904,10 @@
                 button {
                     width: 46%;
                     height: 40px;
-                    font-size: 14px;
+
+                    a {
+                        font-size: 14px;
+                    }
                 }
             }
         }

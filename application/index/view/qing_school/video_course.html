@@ -68,7 +68,8 @@
             background-color: #00cc99;
             color: #fff
         }
-        .null-data{
+
+        .null-data {
             position: relative;
             top: 16%;
             left: 50%;
@@ -379,7 +380,7 @@
                     }
                     $('.point_more').attr('href', '/video/second?all=1&pid=' + pid);
                     $('.hid-sho').show();
-                }else{
+                } else {
                     $('.study-box').append('<img class="null-data" src="/static/image/null_data.svg" alt="">');
                     $('.hid-sho').hide();
                 }
@@ -418,6 +419,8 @@
                 setTimeout(() => {
                     window.location.href = "/login"
                 }, 500);
+            } else if (id == 1) {
+                window.open('http://login.lighos.com/upload-userInfo')
             }
         });
     });
