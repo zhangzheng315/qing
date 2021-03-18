@@ -68,7 +68,8 @@
             background-color: #00cc99;
             color: #fff
         }
-        .null-data{
+
+        .null-data {
             position: relative;
             top: 16%;
             left: 50%;
@@ -119,8 +120,8 @@
         <nav class="video-nav ">
             <div class="layui-container box" style="display: flex;align-items: center;justify-content: flex-start">
                 <a href="/video" class="active">首页</a>
-                {if(isset($video_type))}
-                {foreach($video_type as $item)}
+                {if(isset($video_type_limit))}
+                {foreach($video_type_limit as $item)}
                 <a href="/video/second?all=1&pid={$item.id}">{$item.name}</a>
                 {/foreach}
                 {/if}
@@ -160,8 +161,8 @@
         <div class="case-study">
             <div class="layui-container">
                 <ul class="study-nav" style="display: flex;align-items: center;justify-content: flex-start">
-                    {if(isset($video_type))}
-                    {foreach($video_type as $item)}
+                    {if(isset($video_type_limit))}
+                    {foreach($video_type_limit as $item)}
                     <li class="{$item.id == $id ? 'active' : ''}">
                         <p onclick="videoPoint({$item.id})">{$item.name}</p>
                         <div></div>
@@ -379,7 +380,7 @@
                     }
                     $('.point_more').attr('href', '/video/second?all=1&pid=' + pid);
                     $('.hid-sho').show();
-                }else{
+                } else {
                     $('.study-box').append('<img class="null-data" src="/static/image/null_data.svg" alt="">');
                     $('.hid-sho').hide();
                 }
@@ -412,15 +413,15 @@
             var id = ele.attr('data-id');
             // console.log(id);
             // 退出登录
-            if (id == 2) {
-                localStorage.removeItem('tvInfo')
-                layer.msg('您已退出登录');
-                setTimeout(() => {
-                    window.location.href = "/login"
-                }, 500);
-            } else if (id == 1) {
-                window.open('http://login.lighos.com/upload-userInfo')
-            }
+            if (id == 2) {
+                localStorage.removeItem('tvInfo')
+                layer.msg('您已退出登录');
+                setTimeout(() => {
+                    window.location.href = "/login"
+                }, 500);
+            } else if (id == 1) {
+                window.open('http://login.lighos.com/upload-userInfo')
+            }
         });
     });
 </script>

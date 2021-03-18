@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>企业会议解决方案-员工大会_部门协调会_网络研讨会_空中宣讲会</title>
-    <meta name="keywords"  content="企业直播解决方案,活动直播方案,营销直播方案" />
-    <meta name="description"  content="轻直播特有的沉浸式应用场景解决方案,符合多行业用户选择，独特双语直播模式，服务全球用户。" />
+    <meta name="keywords"  content="企业直播解决方案,活动直播方案,营销直播方案"/>
+    <meta name="description"  content="轻直播特有的沉浸式应用场景解决方案,符合多行业用户选择，独特双语直播模式，服务全球用户。"/>
     <link rel="stylesheet" href="/static/layui/css/layui.css">
     <link rel="stylesheet" href="/static/css/style.css">
+    <!-- banner部分的轮播样式 -->
+    <link rel="stylesheet" href="/static/css/common/banner_common.css">
     <script type='text/javascript' src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="/static/layui/layui.js"></script>
-    <script>(function (i, s, o, g, r, a, m) { i["DaoVoiceObject"] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; a.charset = "utf-8"; m.parentNode.insertBefore(a, m) })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/04cefad5.js", "daovoice")</script>
     <style>
         #conporate-container nav {
             background: #ffffff;
@@ -27,7 +28,7 @@
             z-index: 999;
         }
 
-        .nav-content>li {
+        .nav-content > li {
             position: relative;
             height: 60px;
             line-height: 60px;
@@ -38,15 +39,15 @@
             cursor: pointer;
         }
 
-        .nav-content>li>a {
+        .nav-content > li > a {
             color: #333;
         }
 
-        .nav-content>li:hover a {
+        .nav-content > li:hover a {
             color: #00cc99;
         }
 
-        .nav-content>li.active::after {
+        .nav-content > li.active::after {
             content: '';
             position: absolute;
             width: 100%;
@@ -56,7 +57,7 @@
             background-color: #00cc99;
         }
 
-        .nav-content>li.active a {
+        .nav-content > li.active a {
             color: #00cc99;
 
         }
@@ -147,35 +148,35 @@
         }
 
         /* hover */
-        .advantage-con>li:hover .p-icon_item_fugai {
+        .advantage-con > li:hover .p-icon_item_fugai {
             background-image: url(/static/image/solution1/fugai_white.svg);
         }
 
-        .advantage-con>li:hover .p-icon_item_bushu {
+        .advantage-con > li:hover .p-icon_item_bushu {
             background-image: url(/static/image/solution1/bushu_white.svg);
         }
 
-        .advantage-con>li:hover .p-icon_item_quanxian {
+        .advantage-con > li:hover .p-icon_item_quanxian {
             background-image: url(/static/image/solution1/quanxian_white.svg);
         }
 
-        .advantage-con>li:hover .p-icon_item_jiagou {
+        .advantage-con > li:hover .p-icon_item_jiagou {
             background-image: url(/static/image/solution1/jiagou_white.svg);
         }
 
-        .advantage-con>li:hover .p-icon_item_anquan {
+        .advantage-con > li:hover .p-icon_item_anquan {
             background-image: url(/static/image/solution1/anquan_white.svg);
         }
 
-        .advantage-con>li:hover .p-icon_item_hudong {
+        .advantage-con > li:hover .p-icon_item_hudong {
             background-image: url(/static/image/solution1/hudong_white.svg);
         }
 
-        .advantage-con>li:hover .p-icon_item_fenxi {
+        .advantage-con > li:hover .p-icon_item_fenxi {
             background-image: url(/static/image/solution1/fenxi_white.svg);
         }
 
-        .advantage-con>li:hover .p-icon_item_kaifa {
+        .advantage-con > li:hover .p-icon_item_kaifa {
             background-image: url(/static/image/solution1/kaifa_white.svg);
         }
 
@@ -185,48 +186,50 @@
             background: #236762;
         }
 
-        .func-con>li:nth-of-type(1) {
-            background-image: url('/static/image/solution/medical/func1.png');
+        .func-con > li:nth-of-type(1) {
+            background-image: url('/static/image/solution1/medical_care/qianwan.svg');
         }
 
-        .func-con>li:nth-of-type(2) {
-            background-image: url('/static/image/solution/medical/func2.png');
+        .func-con > li:nth-of-type(2) {
+            background-image: url('/static/image/solution1/medical_care/wending.svg');
         }
 
-        .func-con>li:nth-of-type(3) {
-            background-image: url('/static/image/solution/medical/func3.png');
+        .func-con > li:nth-of-type(3) {
+            background-image: url('/static/image/solution1/medical_care/zhuanshu.svg');
         }
 
-        .func-con>li:nth-of-type(4) {
-            background-image: url('/static/image/solution/medical/func4.png');
+        .func-con > li:nth-of-type(4) {
+            background-image: url('/static/image/solution1/medical_care/hudong.svg');
         }
 
-        .func-con>li:nth-of-type(5) {
-            background-image: url('/static/image/solution/medical/func5.png');
+        .func-con > li:nth-of-type(5) {
+            background-image: url('/static/image/solution1/medical_care/zhichi.svg');
         }
 
-        .func-con>li:nth-of-type(6) {
-            background-image: url('/static/image/solution/medical/func6.png');
+        .func-con > li:nth-of-type(6) {
+            background-image: url('/static/image/solution1/medical_care/guankan.svg');
         }
 
-        .func-con>li:nth-of-type(7) {
-            background-image: url('/static/image/solution/medical/func7.png');
+        .func-con > li:nth-of-type(7) {
+            background-image: url('/static/image/solution1/medical_care/yonghu.svg');
         }
 
-        .func-con>li:nth-of-type(8) {
-            background-image: url('/static/image/solution/medical/func8.png');
+        .func-con > li:nth-of-type(8) {
+            background-image: url('/static/image/solution1/medical_care/tongbu.svg');
         }
-         /* 客户案例品牌 */
-         .case-nav>li.active {
+
+        /* 客户案例品牌 */
+        .case-nav > li.active {
             background: #00cc99;
             border-radius: 20px;
         }
 
-        .case-nav>li.active>span {
+        .case-nav > li.active > span {
             color: #ffffff;
         }
-        .case-nav>li::after,
-        .case-nav>li::before {
+
+        .case-nav > li::after,
+        .case-nav > li::before {
             content: '';
             position: absolute;
             left: 0;
@@ -236,19 +239,24 @@
             border-radius: 20px;
             z-index: 2;
         }
-        .case-nav>li::before {
+
+        .case-nav > li::before {
             transition: .4s;
             background: #00cc99;
             z-index: -1;
         }
-        .case-nav>li:hover::before,.case-nav>li:hover::after {
+
+        .case-nav > li:hover::before,
+        .case-nav > li:hover::after {
             width: 100%;
         }
-        .case-nav>li:hover {
-                z-index: 1;
-                background: transparent;
-            }
-        .case-nav>li:hover>span {
+
+        .case-nav > li:hover {
+            z-index: 1;
+            background: transparent;
+        }
+
+        .case-nav > li:hover > span {
             color: #ffffff;
         }
 
@@ -280,7 +288,7 @@
                 justify-content: space-between;
             }
 
-            .difficulty-left>li {
+            .difficulty-left > li {
                 height: 80px;
                 background: #FFFFFF;
                 box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.06);
@@ -289,7 +297,7 @@
                 display: flex;
             }
 
-            .difficulty-left>li>div {
+            .difficulty-left > li > div {
                 width: 116px;
                 height: 80px;
                 line-height: 80px;
@@ -302,7 +310,7 @@
                 text-align: center;
             }
 
-            .difficulty-left>li>p {
+            .difficulty-left > li > p {
                 padding-left: 24px;
                 height: 80px;
                 line-height: 80px;
@@ -323,16 +331,16 @@
                 box-sizing: border-box;
             }
 
-            .difficulty-right>.right-imgcon {
+            .difficulty-right > .right-imgcon {
                 margin-top: 11px;
             }
 
-            .difficulty-right>.right-imgcon>img {
+            .difficulty-right > .right-imgcon > img {
                 width: 100%;
                 border-radius: 2px;
             }
 
-            .difficulty-right>h3 {
+            .difficulty-right > h3 {
                 text-align: center;
                 font-size: 20px;
                 font-family: 'Microsoft YaHei';
@@ -340,26 +348,26 @@
                 margin-top: 9px;
             }
 
-            .difficulty-right>p {
+            .difficulty-right > p {
                 font-size: 14px;
                 color: #666666;
                 font-family: 'Microsoft YaHei';
             }
 
-            .difficulty-right>p:nth-of-type(1) {
+            .difficulty-right > p:nth-of-type(1) {
                 margin-top: 12px;
             }
 
-            .difficulty-right>p:nth-of-type(2) {
+            .difficulty-right > p:nth-of-type(2) {
                 margin-top: 6px;
             }
 
-            .difficulty-right>.live-group-btn {
+            .difficulty-right > .live-group-btn {
                 margin-top: 18px;
                 text-align: center;
             }
 
-            .live-group-btn>a {
+            .live-group-btn > a {
                 display: inline-block;
                 width: 120px;
                 height: 36px;
@@ -381,14 +389,14 @@
                 justify-content: space-between;
             }
 
-            .scene-left>.scene-left-con {
+            .scene-left > .scene-left-con {
                 width: 420px;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
             }
 
-            .scene-left-con>h3 {
+            .scene-left-con > h3 {
                 font-size: 24px;
                 color: #333333;
                 font-family: 'Microsoft YaHei';
@@ -396,7 +404,7 @@
                 margin-bottom: 20px;
             }
 
-            .scene-left-con>h6 {
+            .scene-left-con > h6 {
                 font-size: 16px;
                 margin-bottom: 10px;
                 font-weight: 400;
@@ -406,11 +414,11 @@
                 padding: 59px 0;
             }
 
-            .scene-des>dl {
+            .scene-des > dl {
                 margin-top: 8px;
             }
 
-            .scene-des>dl>dt {
+            .scene-des > dl > dt {
                 padding-left: 8px;
                 font-size: 14px;
                 color: #333333;
@@ -419,7 +427,7 @@
                 position: relative;
             }
 
-            .scene-des>dl>dt::before {
+            .scene-des > dl > dt::before {
                 content: '.';
                 position: absolute;
                 left: 0px;
@@ -427,7 +435,7 @@
                 font-size: 20px;
             }
 
-            .scene-des>dl>dd {
+            .scene-des > dl > dd {
                 padding-left: 8px;
                 font-size: 14px;
                 color: #666666;
@@ -435,7 +443,7 @@
                 margin-top: 6px;
             }
 
-            .scene-left>.scene-btn {
+            .scene-left > .scene-btn {
                 display: inline-block;
                 width: 120px;
                 height: 40px;
@@ -457,7 +465,7 @@
                 padding-bottom: 80px;
             }
 
-            .advantage-con>li {
+            .advantage-con > li {
                 width: 285px;
                 height: 254px;
                 background: #ffffff;
@@ -467,7 +475,7 @@
                 cursor: pointer;
             }
 
-            .advantage-con>li>.p-icon {
+            .advantage-con > li > .p-icon {
                 text-align: center;
                 margin-top: 40px;
             }
@@ -477,7 +485,7 @@
                 height: 58px;
             }
 
-            .advantage-con>li>h3 {
+            .advantage-con > li > h3 {
                 font-size: 20px;
                 font-weight: 500;
                 color: #333333;
@@ -486,24 +494,28 @@
                 margin-top: 30px;
             }
 
-            .advantage-con>li>.p-text {
+            .advantage-con > li > .p-text {
                 padding: 0 36px;
                 text-align: center;
                 margin-top: 26px;
                 font-size: 14px;
                 color: #666666;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3;
+                overflow: hidden;
             }
 
-            .advantage-con>li:hover {
+            .advantage-con > li:hover {
                 transform: scale(1.05);
                 background: linear-gradient(155deg, #95FAD8, #00CC99);
             }
 
-            .advantage-con>li:hover>.p-text {
+            .advantage-con > li:hover > .p-text {
                 color: #ffffff;
             }
 
-            .advantage-con>li:hover>h3 {
+            .advantage-con > li:hover > h3 {
                 color: #ffffff;
             }
 
@@ -515,7 +527,7 @@
                 padding-bottom: 80px;
             }
 
-            .func-con>li {
+            .func-con > li {
                 width: 40%;
                 padding-left: 74px;
                 box-sizing: border-box;
@@ -525,14 +537,14 @@
                 margin-top: 90px;
             }
 
-            .func-con>li>h3 {
+            .func-con > li > h3 {
                 font-size: 25px;
                 font-family: Microsoft YaHei;
                 font-weight: bold;
                 color: #FFFFFF;
             }
 
-            .func-con>li>p {
+            .func-con > li > p {
                 margin-top: 23px;
                 font-size: 14px;
                 font-family: Microsoft YaHei;
@@ -542,15 +554,15 @@
 
             }
 
-           /* 客户案例 */
-         .case-nav {
+            /* 客户案例 */
+            .case-nav {
                 display: flex;
                 justify-content: space-around;
                 align-items: center;
                 margin-top: 90px;
             }
 
-            .case-nav>li {
+            .case-nav > li {
                 position: relative;
                 cursor: pointer;
                 height: 32px;
@@ -561,7 +573,7 @@
                 padding: 0 15px;
             }
 
-            .case-nav>li>span {
+            .case-nav > li > span {
                 font-size: 18px;
                 font-family: 'Microsoft YaHei';
                 font-weight: 400;
@@ -579,7 +591,7 @@
                 flex-wrap: wrap;
             }
 
-            .case-imgs>li {
+            .case-imgs > li {
                 margin-bottom: 50px;
                 width: 16.66%;
                 text-align: center;
@@ -588,7 +600,7 @@
             /* .case-imgs>li:not(:nth-of-type(6n+1)) {
              padding-right: 36px;
          } */
-            .case-imgs>li>img {
+            .case-imgs > li > img {
                 width: 165px;
                 height: 67px;
             }
@@ -599,7 +611,7 @@
                 margin-top: 66px;
             }
 
-            .service-con>li {
+            .service-con > li {
                 width: 340px;
                 border-radius: 10px;
                 background: #ffffff;
@@ -607,21 +619,21 @@
                 box-shadow: 0px 4px 8px 0px rgba(193, 193, 193, 0.36);
             }
 
-            .service-con>li>.service-top {
+            .service-con > li > .service-top {
                 height: 60px;
                 display: flex;
                 align-items: center;
                 border-bottom: 1px solid #e5e5e5;
             }
 
-            .service-top>img {
+            .service-top > img {
                 padding-left: 40px;
                 width: 30px;
                 height: 30px;
                 margin-right: 20px;
             }
 
-            .service-top>h3 {
+            .service-top > h3 {
                 width: 53%;
                 text-align: center;
                 font-size: 20px;
@@ -645,7 +657,7 @@
 
             }
 
-            .service-group-btn>a {
+            .service-group-btn > a {
                 width: 50%;
                 display: inline-block;
                 height: 44px;
@@ -656,13 +668,13 @@
 
             }
 
-            .service-group-btn>a.learn-btn {
+            .service-group-btn > a.learn-btn {
                 background: #e5e5e5;
                 color: #333333;
                 border-radius: 0px 0px 0px 10px;
             }
 
-            .service-group-btn>a.free-btn {
+            .service-group-btn > a.free-btn {
                 background: #00cc99;
                 color: #ffffff;
                 border-radius: 0px 0px 10px 0px;
@@ -678,7 +690,7 @@
                 text-align: center;
             }
 
-            .kefu-content>h2 {
+            .kefu-content > h2 {
                 font-size: 60px;
                 font-family: Microsoft YaHei;
                 font-weight: bold;
@@ -686,7 +698,7 @@
                 text-align: center;
             }
 
-            .kefu-content>button {
+            .kefu-content > button {
                 width: 328px;
                 height: 60px;
                 border: 0;
@@ -700,7 +712,7 @@
                 margin-top: 37px;
             }
 
-            .kefu-content>button:hover {
+            .kefu-content > button:hover {
                 background-color: #00cc99;
                 color: #fff;
                 border: 0;
@@ -735,7 +747,7 @@
                 justify-content: space-between;
             }
 
-            .difficulty-left>li {
+            .difficulty-left > li {
                 height: 70px;
                 background: #FFFFFF;
                 box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.06);
@@ -744,7 +756,7 @@
                 display: flex;
             }
 
-            .difficulty-left>li>div {
+            .difficulty-left > li > div {
                 width: 94px;
                 height: 70px;
                 line-height: 70px;
@@ -757,7 +769,7 @@
                 text-align: center;
             }
 
-            .difficulty-left>li>p {
+            .difficulty-left > li > p {
                 padding-left: 16px;
                 height: 70px;
                 line-height: 70px;
@@ -777,16 +789,16 @@
                 box-sizing: border-box;
             }
 
-            .difficulty-right>.right-imgcon {
+            .difficulty-right > .right-imgcon {
                 margin-top: 11px;
             }
 
-            .difficulty-right>.right-imgcon>img {
+            .difficulty-right > .right-imgcon > img {
                 width: 100%;
                 border-radius: 2px;
             }
 
-            .difficulty-right>h3 {
+            .difficulty-right > h3 {
                 text-align: center;
                 font-size: 18px;
                 font-family: 'Microsoft YaHei';
@@ -794,26 +806,26 @@
                 margin-top: 9px;
             }
 
-            .difficulty-right>p {
+            .difficulty-right > p {
                 font-size: 12px;
                 color: #666666;
                 font-family: 'Microsoft YaHei';
             }
 
-            .difficulty-right>p:nth-of-type(1) {
+            .difficulty-right > p:nth-of-type(1) {
                 margin-top: 10px;
             }
 
-            .difficulty-right>p:nth-of-type(2) {
+            .difficulty-right > p:nth-of-type(2) {
                 margin-top: 6px;
             }
 
-            .difficulty-right>.live-group-btn {
+            .difficulty-right > .live-group-btn {
                 margin-top: 18px;
                 text-align: center;
             }
 
-            .live-group-btn>a {
+            .live-group-btn > a {
                 display: inline-block;
                 width: 100px;
                 height: 30px;
@@ -840,17 +852,17 @@
                 width: 45%;
             }
 
-            .scene-right>img {
+            .scene-right > img {
                 width: 100%;
             }
 
-            .scene-left>.scene-left-con {
+            .scene-left > .scene-left-con {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
             }
 
-            .scene-left-con>h3 {
+            .scene-left-con > h3 {
                 font-size: 20px;
                 color: #333333;
                 font-family: 'Microsoft YaHei';
@@ -858,7 +870,7 @@
                 margin-bottom: 12px;
             }
 
-            .scene-left-con>h6 {
+            .scene-left-con > h6 {
                 font-size: 14px;
                 margin-bottom: 8px;
             }
@@ -867,11 +879,11 @@
                 padding: 38px 0;
             }
 
-            .scene-des>dl {
+            .scene-des > dl {
                 margin-top: 8px;
             }
 
-            .scene-des>dl>dt {
+            .scene-des > dl > dt {
                 padding-left: 8px;
                 font-size: 14px;
                 color: #333333;
@@ -880,7 +892,7 @@
                 position: relative;
             }
 
-            .scene-des>dl>dt::before {
+            .scene-des > dl > dt::before {
                 content: '.';
                 position: absolute;
                 left: 0px;
@@ -888,7 +900,7 @@
                 font-size: 16px;
             }
 
-            .scene-des>dl>dd {
+            .scene-des > dl > dd {
                 font-size: 14px;
                 padding-left: 8px;
                 color: #666666;
@@ -896,7 +908,7 @@
                 margin-top: 6px;
             }
 
-            .scene-left>.scene-btn {
+            .scene-left > .scene-btn {
                 display: inline-block;
                 width: 100px;
                 height: 34px;
@@ -917,7 +929,7 @@
                 padding-bottom: 50px;
             }
 
-            .func-con>li {
+            .func-con > li {
                 width: 40%;
                 padding-left: 74px;
                 box-sizing: border-box;
@@ -927,14 +939,14 @@
                 margin-top: 80px;
             }
 
-            .func-con>li>h3 {
+            .func-con > li > h3 {
                 font-size: 25px;
                 font-family: Microsoft YaHei;
                 font-weight: bold;
                 color: #FFFFFF;
             }
 
-            .func-con>li>p {
+            .func-con > li > p {
                 margin-top: 23px;
                 font-size: 14px;
                 font-family: Microsoft YaHei;
@@ -952,7 +964,7 @@
                 padding-bottom: 50px;
             }
 
-            .advantage-con>li {
+            .advantage-con > li {
                 /* width: 285px;
               */
                 width: 24%;
@@ -964,7 +976,7 @@
                 cursor: pointer;
             }
 
-            .advantage-con>li>.p-icon {
+            .advantage-con > li > .p-icon {
                 text-align: center;
                 margin-top: 20px;
             }
@@ -974,7 +986,7 @@
                 height: 58px;
             }
 
-            .advantage-con>li>h3 {
+            .advantage-con > li > h3 {
                 font-size: 16px;
                 font-weight: 500;
                 color: #333333;
@@ -983,7 +995,7 @@
                 margin-top: 20px;
             }
 
-            .advantage-con>li>.p-text {
+            .advantage-con > li > .p-text {
                 padding: 0 18px;
                 text-align: center;
                 margin-top: 20px;
@@ -991,16 +1003,16 @@
                 color: #666666;
             }
 
-            .advantage-con>li:hover {
+            .advantage-con > li:hover {
                 transform: scale(1.05);
                 background: linear-gradient(155deg, #95FAD8, #00CC99);
             }
 
-            .advantage-con>li:hover>.p-text {
+            .advantage-con > li:hover > .p-text {
                 color: #ffffff;
             }
 
-            .advantage-con>li:hover>h3 {
+            .advantage-con > li:hover > h3 {
                 color: #ffffff;
             }
 
@@ -1011,7 +1023,7 @@
                 align-items: center;
             }
 
-            .case-nav>li {
+            .case-nav > li {
                 position: relative;
                 cursor: pointer;
                 height: 32px;
@@ -1022,7 +1034,7 @@
                 padding: 0 15px;
             }
 
-            .case-nav>li>span {
+            .case-nav > li > span {
                 font-size: 16px;
                 font-family: 'Microsoft YaHei';
                 font-weight: 400;
@@ -1040,7 +1052,7 @@
                 flex-wrap: wrap;
             }
 
-            .case-imgs>li {
+            .case-imgs > li {
                 margin-bottom: 50px;
                 width: 16.66%;
                 text-align: center;
@@ -1049,7 +1061,7 @@
             /* .case-imgs>li:not(:nth-of-type(6n+1)) {
              padding-right: 36px;
          } */
-            .case-imgs>li>img {
+            .case-imgs > li > img {
                 width: 130px;
                 height: 50px;
             }
@@ -1060,7 +1072,7 @@
                 margin-top: 40px;
             }
 
-            .service-con>li {
+            .service-con > li {
                 /* width: 340px; */
                 width: 28.3%;
                 border-radius: 6px;
@@ -1068,21 +1080,21 @@
                 box-shadow: 0px 4px 8px 0px rgba(193, 193, 193, 0.36);
             }
 
-            .service-con>li>.service-top {
+            .service-con > li > .service-top {
                 height: 46px;
                 display: flex;
                 align-items: center;
                 border-bottom: 1px solid #e5e5e5;
             }
 
-            .service-top>img {
+            .service-top > img {
                 padding-left: 34px;
                 width: 30px;
                 height: 30px;
                 margin-right: 16px;
             }
 
-            .service-top>h3 {
+            .service-top > h3 {
                 font-size: 16px;
                 font-family: 'Microsoft YaHei';
                 font-weight: bold;
@@ -1104,7 +1116,7 @@
 
             }
 
-            .service-group-btn>a {
+            .service-group-btn > a {
                 width: 50%;
                 display: inline-block;
                 height: 44px;
@@ -1115,13 +1127,13 @@
 
             }
 
-            .service-group-btn>a.learn-btn {
+            .service-group-btn > a.learn-btn {
                 background: #e5e5e5;
                 color: #333333;
                 border-radius: 0px 0px 0px 6px;
             }
 
-            .service-group-btn>a.free-btn {
+            .service-group-btn > a.free-btn {
                 background: #00cc99;
                 color: #ffffff;
                 border-radius: 0px 0px 6px 0px;
@@ -1137,7 +1149,7 @@
                 text-align: center;
             }
 
-            .kefu-content>h2 {
+            .kefu-content > h2 {
                 font-size: 48px;
                 font-family: Microsoft YaHei;
                 font-weight: bold;
@@ -1145,7 +1157,7 @@
                 text-align: center;
             }
 
-            .kefu-content>button {
+            .kefu-content > button {
                 width: 280px;
                 height: 46px;
                 border: 0;
@@ -1159,7 +1171,7 @@
                 margin-top: 50px;
             }
 
-            .kefu-content>button:hover {
+            .kefu-content > button:hover {
                 background-color: #00cc99;
                 color: #fff;
                 border: 0;
@@ -1194,7 +1206,7 @@
                 justify-content: space-between;
             }
 
-            .difficulty-left>li {
+            .difficulty-left > li {
                 height: 70px;
                 background: #FFFFFF;
                 box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.06);
@@ -1203,7 +1215,7 @@
                 display: flex;
             }
 
-            .difficulty-left>li>div {
+            .difficulty-left > li > div {
                 width: 80px;
                 height: 70px;
                 line-height: 70px;
@@ -1216,7 +1228,7 @@
                 text-align: center;
             }
 
-            .difficulty-left>li>p {
+            .difficulty-left > li > p {
                 padding-left: 16px;
                 height: 70px;
                 line-height: 70px;
@@ -1239,16 +1251,16 @@
                 box-sizing: border-box;
             }
 
-            .difficulty-right>.right-imgcon {
+            .difficulty-right > .right-imgcon {
                 margin-top: 11px;
             }
 
-            .difficulty-right>.right-imgcon>img {
+            .difficulty-right > .right-imgcon > img {
                 width: 100%;
                 border-radius: 2px;
             }
 
-            .difficulty-right>h3 {
+            .difficulty-right > h3 {
                 text-align: center;
                 font-size: 18px;
                 font-family: 'Microsoft YaHei';
@@ -1256,26 +1268,26 @@
                 margin-top: 9px;
             }
 
-            .difficulty-right>p {
+            .difficulty-right > p {
                 font-size: 12px;
                 color: #666666;
                 font-family: 'Microsoft YaHei';
             }
 
-            .difficulty-right>p:nth-of-type(1) {
+            .difficulty-right > p:nth-of-type(1) {
                 margin-top: 10px;
             }
 
-            .difficulty-right>p:nth-of-type(2) {
+            .difficulty-right > p:nth-of-type(2) {
                 margin-top: 6px;
             }
 
-            .difficulty-right>.live-group-btn {
+            .difficulty-right > .live-group-btn {
                 margin-top: 18px;
                 text-align: center;
             }
 
-            .live-group-btn>a {
+            .live-group-btn > a {
                 display: inline-block;
                 width: 100px;
                 height: 30px;
@@ -1302,18 +1314,18 @@
                 width: 48%;
             }
 
-            .scene-right>img {
+            .scene-right > img {
                 width: 100%;
                 height: 270px;
             }
 
-            .scene-left>.scene-left-con {
+            .scene-left > .scene-left-con {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
             }
 
-            .scene-left-con>h3 {
+            .scene-left-con > h3 {
                 font-size: 18px;
                 color: #333333;
                 font-family: 'Microsoft YaHei';
@@ -1322,7 +1334,7 @@
 
             }
 
-            .scene-left-con>h6 {
+            .scene-left-con > h6 {
                 font-size: 14px;
                 margin-bottom: 6px;
             }
@@ -1331,11 +1343,11 @@
                 padding: 30px 0;
             }
 
-            .scene-des>dl {
+            .scene-des > dl {
                 margin-top: 8px;
             }
 
-            .scene-des>dl>dt {
+            .scene-des > dl > dt {
                 padding-left: 8px;
                 font-size: 14px;
                 color: #333333;
@@ -1344,7 +1356,7 @@
                 position: relative;
             }
 
-            .scene-des>dl>dt::before {
+            .scene-des > dl > dt::before {
                 content: '.';
                 position: absolute;
                 left: 0px;
@@ -1352,7 +1364,7 @@
                 font-size: 16px;
             }
 
-            .scene-des>dl>dd {
+            .scene-des > dl > dd {
                 font-size: 12px;
                 padding-left: 8px;
                 color: #666666;
@@ -1360,7 +1372,7 @@
                 margin-top: 4px;
             }
 
-            .scene-left>.scene-btn {
+            .scene-left > .scene-btn {
                 display: inline-block;
                 width: 80px;
                 height: 28px;
@@ -1381,7 +1393,7 @@
                 padding-bottom: 50px;
             }
 
-            .func-con>li {
+            .func-con > li {
                 width: 40%;
                 padding-left: 60px;
                 box-sizing: border-box;
@@ -1391,14 +1403,14 @@
                 margin-top: 65px;
             }
 
-            .func-con>li>h3 {
+            .func-con > li > h3 {
                 font-size: 22px;
                 font-family: Microsoft YaHei;
                 font-weight: bold;
                 color: #FFFFFF;
             }
 
-            .func-con>li>p {
+            .func-con > li > p {
                 margin-top: 23px;
                 font-size: 14px;
                 font-family: Microsoft YaHei;
@@ -1416,7 +1428,7 @@
                 padding-bottom: 50px;
             }
 
-            .advantage-con>li {
+            .advantage-con > li {
                 /* width: 285px;
               */
                 width: 24%;
@@ -1428,7 +1440,7 @@
                 cursor: pointer;
             }
 
-            .advantage-con>li>.p-icon {
+            .advantage-con > li > .p-icon {
                 text-align: center;
                 margin-top: 20px;
             }
@@ -1438,7 +1450,7 @@
                 height: 36px;
             }
 
-            .advantage-con>li>h3 {
+            .advantage-con > li > h3 {
                 font-size: 16px;
                 font-weight: 500;
                 color: #333333;
@@ -1447,7 +1459,7 @@
                 margin-top: 20px;
             }
 
-            .advantage-con>li>.p-text {
+            .advantage-con > li > .p-text {
                 padding: 0 18px;
                 text-align: center;
                 margin-top: 20px;
@@ -1455,16 +1467,16 @@
                 color: #666666;
             }
 
-            .advantage-con>li:hover {
+            .advantage-con > li:hover {
                 transform: scale(1.05);
                 background: linear-gradient(155deg, #95FAD8, #00CC99);
             }
 
-            .advantage-con>li:hover>.p-text {
+            .advantage-con > li:hover > .p-text {
                 color: #ffffff;
             }
 
-            .advantage-con>li:hover>h3 {
+            .advantage-con > li:hover > h3 {
                 color: #ffffff;
             }
 
@@ -1476,7 +1488,7 @@
                 align-items: center;
             }
 
-            .case-nav>li {
+            .case-nav > li {
                 position: relative;
                 cursor: pointer;
                 height: 30px;
@@ -1487,7 +1499,7 @@
                 padding: 0 12px;
             }
 
-            .case-nav>li>span {
+            .case-nav > li > span {
                 font-size: 16px;
                 font-family: 'Microsoft YaHei';
                 font-weight: 400;
@@ -1505,7 +1517,7 @@
                 flex-wrap: wrap;
             }
 
-            .case-imgs>li {
+            .case-imgs > li {
                 margin-bottom: 50px;
                 width: 16.66%;
                 text-align: center;
@@ -1514,7 +1526,7 @@
             /* .case-imgs>li:not(:nth-of-type(6n+1)) {
              padding-right: 36px;
          } */
-            .case-imgs>li>img {
+            .case-imgs > li > img {
                 width: 130px;
                 height: 50px;
             }
@@ -1525,7 +1537,7 @@
                 margin-top: 40px;
             }
 
-            .service-con>li {
+            .service-con > li {
                 /* width: 340px; */
                 width: 28.3%;
                 border-radius: 6px;
@@ -1533,21 +1545,21 @@
                 box-shadow: 0px 4px 8px 0px rgba(193, 193, 193, 0.36);
             }
 
-            .service-con>li>.service-top {
+            .service-con > li > .service-top {
                 height: 46px;
                 display: flex;
                 align-items: center;
                 border-bottom: 1px solid #e5e5e5;
             }
 
-            .service-top>img {
+            .service-top > img {
                 padding-left: 24px;
                 width: 24px;
                 height: 24px;
                 margin-right: 10px;
             }
 
-            .service-top>h3 {
+            .service-top > h3 {
                 font-size: 16px;
                 font-family: 'Microsoft YaHei';
                 font-weight: bold;
@@ -1569,7 +1581,7 @@
 
             }
 
-            .service-group-btn>a {
+            .service-group-btn > a {
                 width: 50%;
                 display: inline-block;
                 height: 44px;
@@ -1580,13 +1592,13 @@
 
             }
 
-            .service-group-btn>a.learn-btn {
+            .service-group-btn > a.learn-btn {
                 background: #e5e5e5;
                 color: #333333;
                 border-radius: 0px 0px 0px 6px;
             }
 
-            .service-group-btn>a.free-btn {
+            .service-group-btn > a.free-btn {
                 background: #00cc99;
                 color: #ffffff;
                 border-radius: 0px 0px 6px 0px;
@@ -1602,7 +1614,7 @@
                 text-align: center;
             }
 
-            .kefu-content>h2 {
+            .kefu-content > h2 {
                 font-size: 36px;
                 font-family: Microsoft YaHei;
                 font-weight: bold;
@@ -1610,7 +1622,7 @@
                 text-align: center;
             }
 
-            .kefu-content>button {
+            .kefu-content > button {
                 width: 240px;
                 height: 40px;
                 border: 0;
@@ -1624,14 +1636,14 @@
                 margin-top: 36px;
             }
 
-            .kefu-content>button:hover {
+            .kefu-content > button:hover {
                 background-color: #00cc99;
                 color: #fff;
                 border: 0;
             }
         }
 
-        @media screen and (max-width:768px) {
+        @media screen and (max-width: 768px) {
 
             /* .layui-container {
                 width: 750px !important;
@@ -1676,17 +1688,17 @@
                 margin: 0 auto;
             }
 
-            .m-difficulty-right>.right-imgcon {
+            .m-difficulty-right > .right-imgcon {
                 margin-top: 11px;
                 text-align: center;
             }
 
-            .m-difficulty-right>.right-imgcon>img {
+            .m-difficulty-right > .right-imgcon > img {
                 width: 100%;
                 border-radius: 2px;
             }
 
-            .m-difficulty-right>h3 {
+            .m-difficulty-right > h3 {
                 text-align: center;
                 font-size: 18px;
                 font-family: 'Microsoft YaHei';
@@ -1694,27 +1706,27 @@
                 margin-top: 9px;
             }
 
-            .m-difficulty-right>p {
+            .m-difficulty-right > p {
                 font-size: 12px;
                 color: #666666;
                 font-family: 'Microsoft YaHei';
             }
 
-            .m-difficulty-right>p:nth-of-type(1) {
+            .m-difficulty-right > p:nth-of-type(1) {
                 margin-top: 10px;
             }
 
-            .m-difficulty-right>p:nth-of-type(2) {
+            .m-difficulty-right > p:nth-of-type(2) {
                 margin-top: 6px;
             }
 
-            .m-difficulty-right>.live-group-btn {
+            .m-difficulty-right > .live-group-btn {
                 margin-top: 18px;
                 text-align: center;
                 padding-bottom: 20px;
             }
 
-            .live-group-btn>a {
+            .live-group-btn > a {
                 display: inline-block;
                 width: 100px;
                 height: 30px;
@@ -1734,71 +1746,6 @@
                 display: none;
             }
 
-            /* .scene-left {
-             width: 48%;
-             display: flex;
-             flex-direction: column;
-             justify-content: space-between;
-         }
-         .scene-right {
-             width: 48%;
-         }
-         .scene-right>img {
-             width: 100%;
-             height: 270px;
-         }
-         .scene-left>.scene-left-con {
-             display: flex;
-             flex-direction: column;
-             justify-content: space-between;
-         }
-         .scene-left-con>h3 {
-           font-size: 18px;
-           color: #333333;
-           font-family: 'Microsoft YaHei';
-           font-weight: bold;
-           margin-bottom: 6px;
-         }
-         .con-padding {
-             padding: 30px 0;
-         }
-         .scene-des>dl{
-             margin-top: 8px;
-         }
-         .scene-des>dl>dt {
-             padding-left: 8px;
-              font-size: 14px;
-              color: #333333;
-              font-family: 'Microsoft YaHei';
-              font-weight: 600;
-              position: relative;
-         }
-         .scene-des>dl>dt::before {
-            content: '.';
-            position: absolute;
-            left: 0px;
-            top: -7px;
-            font-size: 16px;
-         }
-         .scene-des>dl>dd {
-            font-size: 12px;
-            padding-left: 8px;
-            color: #666666;
-            font-family: 'Microsoft YaHei';
-            margin-top: 4px;
-         }
-         .scene-left>.scene-btn {
-             display: inline-block;
-             width: 80px;
-             height: 28px;
-             line-height: 28px;
-             font-size: 14px;
-             font-family: 'Microsoft YaHei';
-             text-align: center;
-             background: #00cc99;
-             color: #FFFFFF;
-             border-radius: 14px;
-         } */
 
             .func-con {
                 padding-top: 10px;
@@ -1808,7 +1755,7 @@
                 padding-bottom: 50px;
             }
 
-            .func-con>li {
+            .func-con > li {
                 width: 44%;
                 padding-left: 48px;
                 box-sizing: border-box;
@@ -1818,14 +1765,14 @@
                 margin-top: 50px;
             }
 
-            .func-con>li>h3 {
+            .func-con > li > h3 {
                 font-size: 16px;
                 font-family: Microsoft YaHei;
                 font-weight: bold;
                 color: #FFFFFF;
             }
 
-            .func-con>li>p {
+            .func-con > li > p {
                 margin-top: 18px;
                 font-size: 12px;
                 font-family: Microsoft YaHei;
@@ -1849,7 +1796,7 @@
                 padding-bottom: 50px;
             }
 
-            .advantage-con>li {
+            .advantage-con > li {
                 /* width: 285px;
               */
                 width: 48%;
@@ -1861,7 +1808,7 @@
                 cursor: pointer;
             }
 
-            .advantage-con>li>.p-icon {
+            .advantage-con > li > .p-icon {
                 text-align: center;
                 margin-top: 20px;
             }
@@ -1871,7 +1818,7 @@
                 height: 32px;
             }
 
-            .advantage-con>li>h3 {
+            .advantage-con > li > h3 {
                 font-size: 16px;
                 font-weight: 500;
                 color: #333333;
@@ -1880,7 +1827,7 @@
                 margin-top: 20px;
             }
 
-            .advantage-con>li>.p-text {
+            .advantage-con > li > .p-text {
                 padding: 0 18px;
                 text-align: center;
                 margin-top: 20px;
@@ -1888,16 +1835,16 @@
                 color: #666666;
             }
 
-            .advantage-con>li:hover {
+            .advantage-con > li:hover {
                 transform: scale(1.05);
                 background: linear-gradient(155deg, #95FAD8, #00CC99);
             }
 
-            .advantage-con>li:hover>.p-text {
+            .advantage-con > li:hover > .p-text {
                 color: #ffffff;
             }
 
-            .advantage-con>li:hover>h3 {
+            .advantage-con > li:hover > h3 {
                 color: #ffffff;
             }
 
@@ -1914,8 +1861,8 @@
                 align-items: center;
             }
 
-          
-            .case-nav>li {
+
+            .case-nav > li {
                 position: relative;
                 cursor: pointer;
                 height: 25px;
@@ -1926,7 +1873,7 @@
                 padding: 0;
             }
 
-            .case-nav>li>span {
+            .case-nav > li > span {
                 font-size: 12px;
                 font-family: 'Microsoft YaHei';
                 font-weight: 400;
@@ -1934,20 +1881,22 @@
                 position: relative;
                 cursor: pointer;
             }
-            .case-nav>li:hover>span {
+
+            .case-nav > li:hover > span {
                 color: #ffffff;
             }
-            .case-nav>li::after,
-            .case-nav>li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 0;
-            height: 25px;
-            border-radius: 20px;
-            /* background-color: #ffffff; */
-            z-index: 0;
+
+            .case-nav > li::after,
+            .case-nav > li::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 0;
+                height: 25px;
+                border-radius: 20px;
+                /* background-color: #ffffff; */
+                z-index: 0;
             }
 
 
@@ -1960,7 +1909,7 @@
                 flex-wrap: wrap;
             }
 
-            .case-imgs>li {
+            .case-imgs > li {
                 margin-bottom: 35px;
                 width: 24%;
                 text-align: center;
@@ -1969,7 +1918,7 @@
             /* .case-imgs>li:not(:nth-of-type(6n+1)) {
              padding-right: 36px;
          } */
-            .case-imgs>li>img {
+            .case-imgs > li > img {
                 /* width: 130px; */
                 width: 100%;
                 height: 50px;
@@ -1991,7 +1940,7 @@
 
             }
 
-            .service-con>li {
+            .service-con > li {
                 /* width: 340px; */
                 width: 90%;
                 border-radius: 6px;
@@ -2000,21 +1949,21 @@
                 margin-bottom: 20px;
             }
 
-            .service-con>li>.service-top {
+            .service-con > li > .service-top {
                 height: 46px;
                 display: flex;
                 align-items: center;
                 border-bottom: 1px solid #e5e5e5;
             }
 
-            .service-top>img {
+            .service-top > img {
                 padding-left: 40px;
                 width: 30px;
                 height: 30px;
                 margin-right: 20px;
             }
 
-            .service-top>h3 {
+            .service-top > h3 {
                 font-size: 18px;
                 font-family: 'Microsoft YaHei';
                 font-weight: bold;
@@ -2036,7 +1985,7 @@
 
             }
 
-            .service-group-btn>a {
+            .service-group-btn > a {
                 width: 50%;
                 display: inline-block;
                 height: 44px;
@@ -2046,13 +1995,13 @@
                 font-family: 'Microsoft YaHei';
             }
 
-            .service-group-btn>a.learn-btn {
+            .service-group-btn > a.learn-btn {
                 background: #e5e5e5;
                 color: #333333;
                 border-radius: 0px 0px 0px 6px;
             }
 
-            .service-group-btn>a.free-btn {
+            .service-group-btn > a.free-btn {
                 background: #00cc99;
                 color: #ffffff;
                 border-radius: 0px 0px 6px 0px;
@@ -2068,7 +2017,7 @@
                 text-align: center;
             }
 
-            .kefu-content>h2 {
+            .kefu-content > h2 {
                 font-size: 26px;
                 font-family: Microsoft YaHei;
                 font-weight: bold;
@@ -2076,7 +2025,7 @@
                 text-align: center;
             }
 
-            .kefu-content>button {
+            .kefu-content > button {
                 width: 180px;
                 height: 40px;
                 border: 0;
@@ -2090,7 +2039,7 @@
                 margin-top: 28px;
             }
 
-            .kefu-content>button:hover {
+            .kefu-content > button:hover {
                 background-color: #00cc99;
                 color: #fff;
                 border: 0;
@@ -2105,106 +2054,122 @@
 </head>
 
 <body>
-    <div id="conporate-container">
-        <!-- 头部 -->
-        {include file="common/header"}
-          <!--演示演示弹出框 -->
-          {include file="common/order_box"}
-          <!-- 咨询版块 -->
-          {include file="common/siderbar-right"}
-        <!-- banner区域 -->
-        <div id="banner">
-            <div class="layui-carousel" id="banners">
-                <div carousel-item class="lunbo-box">
-                    {if(isset($banner_list) && $banner_list)}
-                    {foreach $banner_list as $item}
-                    <img src="{$item.img_url}" alt="">
-                    {/foreach}
-                    {/if}
-                </div>
-            </div>
-        </div>
-        <!-- 导航栏 -->
-        <nav id="solution-nav">
-            <div class="layui-container">
-                <div class="nav-content">
-                    <li class="active">
-                        <a href="#section-1">痛点解析</a>
-                    </li>
-                    <li>
-                        <a href="#section-2">应用场景</a>
-                    </li>
-                    <li>
-                        <a href="#section-3">产品优势</a>
-                    </li>
-                    <li>
-                        <a href="#section-4">客户案例</a>
-                    </li>
-                    <li>
-                        <a href="#section-5">相关产品</a>
-                    </li>
-                </div>
-            </div>
-        </nav>
-        <!-- 痛点解析 -->
-        <section id="section-1" class="difficulty-analysis">
-            <div class="layui-container">
-                <h3 class="section-title">痛点解析</h3>
-                <div class="flex con-padding">
-                    <ul class="difficulty-left">
-                        <li>
-                            <div>
-                                痛点1
-                            </div>
-                            <p>
-                                手术示教场地有限，无法同时多人现场观摩学习
-                            </p>
-                        </li>
-                        <li>
-                            <div>
-                                痛点2
-                            </div>
-                            <p>
-                                线下医学研讨会/学术交流会人数限制，来回奔波
-                            </p>
-                        </li>
-                        <li>
-                            <div>
-                                痛点3
-                            </div>
-                            <p>
-                                医药和器械企业对外服务网络覆盖有限、展宣效果弱
-                            </p>
-                        </li>
-                        <li>
-                            <div>
-                                痛点4
-                            </div>
-                            <p>
-                                医疗资源分布不均，基层医院难以触达优质资源
-                            </p>
-                        </li>
-                    </ul>
-                    <div class="difficulty-right">
-                        <div class="right-imgcon">
-                            <img src="/static/image/solution/difficulty1.png" alt="">
-                        </div>
-                        <h3>功能特色</h3>
-                        <p>轻直播为行业客户提供手术直播、医学学术峰会、医学研讨会、医学培训、远程会诊等专业级场景解决方案，助力行业机构数字化转型。</p>
-                        <!-- <p>咨询详情 免费试用</p> -->
-                        <div class="live-group-btn">
-                            <a href="javascript:;" class="kefu_btn">咨询详情</a>
-                            <a href="http://login.lighos.com/signUp" target="_blank" class="q-ml--36">免费试用</a>
-                        </div>
+<div id="conporate-container">
+    <!-- 头部 -->
+    {include file="common/header"}
+
+    <!--演示演示弹出框 -->
+    {include file="common/order_box"}
+    <!-- 咨询版块 -->
+    {include file="common/siderbar-right"}
+    <!-- banner区域 -->
+    <div id="banner">
+        <div class="layui-carousel" id="banners">
+            <div carousel-item class="lunbo-box">
+                {if(isset($banner_list) && $banner_list)}
+                {foreach $banner_list as $item}
+                <div class="banner-item">
+                    <a href="{$item.img_link}" target="_blank">
+                        <img class="banner-img" src="{$item.img_url}" alt="">
+                    </a>
+                    <div class="text-{$item.format}">
+                        <h2 style='font-size: {$item.title_size}px;
+                            font-weight: bold;
+                            color:{$item.title_color};
+                            background: linear-gradient(257deg, #73FFE0 0%, #3EC0A5 100%);
+                            -webkit-background-clip: text;
+                            text-align: {$item.format};
+                            -webkit-text-fill-color: transparent;'>{$item.title}</h2>
+
+                        <h5 style=' color: {$item.in_color};
+                            opacity: .8;
+                            font-size: {$item.in_size}px;
+                            width: {$item.width};
+                            margin: 78px 0 103px;
+                            text-align: {$item.format};
+                            line-height: 1.5;'>{$item.introduction}</h5>
+
+                        {if($item.button_status == 1)}
+                        <a class="banner-a" href="{$item.button_link}" style='z-index: 10;
+                            display: block;
+                            width: 167px;
+                            height: 44px;
+                            border: 1px solid {$item.button_color};
+                            color: {$item.button_color};
+                            text-align: center;
+                            line-height: 44px;
+                            float: {$item.float};
+                            font-size: {$item.button_size}px;'>{$item.button_text}</a>
+                        {/if}
                     </div>
                 </div>
+                {/foreach}
+                {/if}
             </div>
-        </section>
-        <!-- 手机端痛点解析 -->
-        <section id="m-difficulty-analysis">
-            <div class="layui-container">
-                <h3 class="m-section-title">痛点解析</h3>
-                <div class="m-difficulty-right">
+        </div>
+    </div>
+    <!-- 导航栏 -->
+    <nav id="solution-nav">
+        <div class="layui-container">
+            <div class="nav-content">
+                <li class="active">
+                    <a href="#section-1">痛点解析</a>
+                </li>
+                <li>
+                    <a href="#section-2">应用场景</a>
+                </li>
+                <li>
+                    <a href="#section-3">功能特色</a>
+                </li>
+                <li>
+                    <a href="#section-4">客户案例</a>
+                </li>
+                <li>
+                    <a href="#section-5">相关产品</a>
+                </li>
+            </div>
+        </div>
+    </nav>
+    <!-- 痛点解析 -->
+    <section id="section-1" class="difficulty-analysis">
+        <div class="layui-container">
+            <h3 class="section-title">痛点解析</h3>
+            <div class="flex con-padding">
+                <ul class="difficulty-left">
+                    <li>
+                        <div>
+                            痛点1
+                        </div>
+                        <p>
+                            手术示教场地有限，无法同时多人现场观摩学习
+                        </p>
+                    </li>
+                    <li>
+                        <div>
+                            痛点2
+                        </div>
+                        <p>
+                            线下医学研讨会/学术交流会人数限制，来回奔波
+                        </p>
+                    </li>
+                    <li>
+                        <div>
+                            痛点3
+                        </div>
+                        <p>
+                            医药和器械企业对外服务网络覆盖有限、展宣效果弱
+                        </p>
+                    </li>
+                    <li>
+                        <div>
+                            痛点4
+                        </div>
+                        <p>
+                            医疗资源分布不均，基层医院难以触达优质资源
+                        </p>
+                    </li>
+                </ul>
+                <div class="difficulty-right">
                     <div class="right-imgcon">
                         <img src="/static/image/solution/difficulty1.png" alt="">
                     </div>
@@ -2217,277 +2182,287 @@
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- 应用场景 -->
-        <section id="section-2" class="use-scene">
-            <div class="layui-container">
-                <h3 class="section-title">应用场景</h3>
-                <div class="flex con-padding">
-                    <div class="scene-left">
-                        <div class="scene-left-con">
-                            <h3>手术示教</h3>
-                            <h6>适用于手术直播/转播、医疗器械培训</h6>
-                            <div class="scene-des">
-                                <dl>
-                                    <dt>超清画质：</dt>
-                                    <dd>4K超清手术转播画质，完美呈现细节画面</dd>
-                                </dl>
-                                <dl>
-                                    <dt>专业拍摄：</dt>
-                                    <dd>独家外科术野拍摄技术，更懂医疗需求</dd>
-                                </dl>
-                                <dl>
-                                    <dt>设备接入：</dt>
-                                    <dd>可视化医疗设备接入，术野更全面</dd>
-                                </dl>
-                                <dl>
-                                    <dt>互动丰富：</dt>
-                                    <dd>丰富的专业医疗互动，音视频连线，在线问答、远程会诊</dd>
-                                </dl>
-                                <dl>
-                                    <dt>课件录制：</dt>
-                                    <dd>支持录制回放，特殊津贴专家指定视频课件制作平台</dd>
-                                </dl>
-                            </div>
-                        </div>
-                        <a href="http://login.lighos.com/signUp" target="_blank" class="scene-btn">
-                            免费试用
-                        </a>
-                    </div>
-                    <div class="scene-right">
-                        <img src="/static/image/solution/scene1.png" alt="">
-                    </div>
+        </div>
+    </section>
+    <!-- 手机端痛点解析 -->
+    <section id="m-difficulty-analysis">
+        <div class="layui-container">
+            <h3 class="m-section-title">痛点解析</h3>
+            <div class="m-difficulty-right">
+                <div class="right-imgcon">
+                    <img src="/static/image/solution/difficulty1.png" alt="">
                 </div>
-                <div class="flex con-padding">
-                    <div class="scene-right">
-                        <img src="/static/image/solution/scene1.png" alt="">
-                    </div>
-                    <div class="scene-left">
-                        <div class="scene-left-con">
-                            <h3>医学会议</h3>
-                            <h6>适用于医疗峰会论坛、专家讲座、医学研斑会、科室会、医疗博览会</h6>
-                            <div class="scene-des">
-                                <dl>
-                                    <dt>高清稳定流畅直播：</dt>
-                                    <dd>超高清画质，尊享国际高端论坛级别同步直播</dd>
-                                </dl>
-                                <dl>
-                                    <dt>3D影院级转播技术：</dt>
-                                    <dd>左右信号同步传输，带来好莱坞大片级视觉效果</dd>
-                                </dl>
-                                <dl>
-                                    <dt>私有化品牌定制：</dt>
-                                    <dd>支持引导图、暖场视频、Iogo设置,广告管理、权限管理</dd>
-                                </dl>
-                                <dl>
-                                    <dt>精英团队现场服务：</dt>
-                                    <dd>资深直播工程师拍摄团队，支持单机位/多机位，支持会议系统对接</dd>
-                                </dl>
-                                <dl>
-                                    <dt>营销推广裂变：</dt>
-                                    <dd>支持报名观看、微信分享、邀请榜等营销传播，支持用户画像数据分析</dd>
-                                </dl>
-                            </div>
-                        </div>
-                        <a href="http://login.lighos.com/signUp" target="_blank" class="scene-btn">
-                            免费试用
-                        </a>
-                    </div>
-
-                </div>
-                <div class="flex con-padding">
-                    <div class="scene-left">
-                        <div class="scene-left-con">
-                            <h3>医学培训</h3>
-                            <h6>200+直播功能和定制服务 全面提升培训效率</h6>
-                            <div class="scene-des">
-                                <dl>
-                                    <dt>多种直播模式：</dt>
-                                    <dd>支持文档/白板，照片/视频插播，PPT、绿幕抠像、屏幕共享</dd>
-                                </dl>
-                                <dl>
-                                    <dt>互动功能丰富：</dt>
-                                    <dd>评论聊天、多人音视频连麦、红包打赏、问卷/答题/投票等</dd>
-                                </dl>
-                                <dl>
-                                    <dt>营销数据分析：</dt>
-                                    <dd>直播实时数据，全方位观看行为分析，精准掌握用户画像</dd>
-                                </dl>
-                                <dl>
-                                    <dt>安全存储回放：</dt>
-                                    <dd>视频加密，授权观看、防录屏，点播回放提升培训效率</dd>
-                                </dl>
-                            </div>
-                        </div>
-                        <a href="http://login.lighos.com/signUp" target="_blank" class="scene-btn">
-                            免费试用
-                        </a>
-                    </div>
-                    <div class="scene-right">
-                        <img src="/static/image/solution/scene1.png" alt="">
-                    </div>
-                </div>
-                <div class="flex con-padding">
-                    <div class="scene-right">
-                        <img src="/static/image/solution/scene1.png" alt="">
-                    </div>
-                    <div class="scene-left">
-                        <div class="scene-left-con">
-                            <h3>远程医疗直播</h3>
-                            <h6>国内前100三甲医院定点合作 医疗直播我们更专业</h6>
-                            <div class="scene-des">
-                                <dl>
-                                    <dt>多终端接入：</dt>
-                                    <dd>支持电脑客户端/手机/小程序/iPad等多终端接入，方便医护/病患进入场景，随时随地发起会诊</dd>
-                                </dl>
-                                <dl>
-                                    <dt>实时会诊：</dt>
-                                    <dd>远程直播延时低于800ms，医生与病患会诊画面实时传输，保障直播会诊及时流畅</dd>
-                                </dl>
-                                <dl>
-                                    <dt>多人连麦会诊：</dt>
-                                    <dd>支持PC端/H5/小程序连麦，多点连麦，多师会诊一个病患，或同类病患同时会诊，提升会诊效率</dd>
-                                </dl>
-                                <dl>
-                                    <dt>互动问诊：</dt>
-                                    <dd>公聊、私聊、1对1问答、图文直播、问卷、答题等问诊互动形式，多维了解病患病情，同时保护患者隐私</dd>
-                                </dl>
-                            </div>
-                        </div>
-                        <a href="http://login.lighos.com/signUp" target="_blank" class="scene-btn">
-                            免费试用
-                        </a>
-                    </div>
-
+                <h3>功能特色</h3>
+                <p>轻直播为行业客户提供手术直播、医学学术峰会、医学研讨会、医学培训、远程会诊等专业级场景解决方案，助力行业机构数字化转型。</p>
+                <!-- <p>咨询详情 免费试用</p> -->
+                <div class="live-group-btn">
+                    <a href="">咨询详情</a>
+                    <a href="http://login.lighos.com/signUp" target="_blank" class="q-ml--36">免费试用</a>
                 </div>
             </div>
-
-        </section>
-
-        <!-- 功能特色 -->
-        <section id="section-3" class="pro-func">
-            <div class="layui-container">
-                <h3 class="section-title" style="color: #FFFFFF;">功能特色</h3>
-                <ul class="func-con">
-                    <li>
-                        <h3>千万级并发</h3>
-                        <p>千万级直播并发支撑，可动态扩展的直播技术架构，全球节点支撑，可满足国际级医学大会千万观众流畅观看直播内容</p>
-                    </li>
-                    <li>
-                        <h3>系统安全稳定</h3>
-                        <p>支持多种防录屏技术，支持观看者ID水印，有效追踪盗录视频。支持HTTPS数据防劫持，网页防篡改，禁止网页广告插件，保护直播视频版权。</p>
-                    </li>
-                    <li>
-                        <h3>专属定制</h3>
-                        <p>支持直播间UI、域名和底层定制服务，支持微信端及移动APP定制，保护用户自有品牌一体化，业内率先提供快捷定制服务，承诺72小时交付。</p>
-                    </li>
-                    <li>
-                        <h3>多功能互动</h3>
-                        <p>支持聊天弹幕、私聊提问、抽奖互动等直播互动方式，满足多样化的场景应用，提供多线音视频连麦互动、 红包打赏等互动工具，有效提高直播活跃度</p>
-                    </li>
-
-                    <li>
-                        <h3>深度集成开发支持</h3>
-                        <p>提供丰富的外部授权功能和API&SDK，嵌入APP/小程序/网页，与企业系统无缝融合，满足医疗直播各类场景二次开发需求</p>
-                    </li>
-                    <li>
-                        <h3>鉴权观看</h3>
-                        <p>支持付费观看、密码观看、注册观看、白名单观看、手机验证观看等多种授权观看模式，支持开发定制权限，覆盖医疗直播全场景的安全需求。</p>
-                    </li>
-                    <li>
-                        <h3>大数据用户画像</h3>
-                        <p>自定义大数据中心，强大的数据统计功能，精准分析形成用户画像，多维实时在线用户分析、热度解析、终端分析、观看行为分析、用户关注度分析。 </p>
-                    </li>
-                    <li>
-                        <h3>全球双语同步</h3>
-                        <p>独特双语/多语直播模式，服务全球用户，可满足国际性医疗会议直播场景需求，提高直播效果。</p>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- 客户案列 -->
-        <section id="section-4" class="custome-case">
-            <div class="layui-container">
-                <h3 class="section-title">客户案例</h3>
-                <div class="case-nav">
-                    <li class="active" onclick="logoPoint(0)"><span>全部</span></li>
-                    <li onclick="logoPoint(1)"><span>医疗</span></li>
-                    <li onclick="logoPoint(2)"><span>教育</span></li>
-                    <li onclick="logoPoint(3)"><span>金融</span></li>
-                    <li onclick="logoPoint(4)"><span>汽车</span></li>
-                    <li onclick="logoPoint(5)"><span>科技</span></li>
-                    <li onclick="logoPoint(6)"><span>地产</span></li> 
+        </div>
+    </section>
+    <!-- 应用场景 -->
+    <section id="section-2" class="use-scene">
+        <div class="layui-container">
+            <h3 class="section-title">应用场景</h3>
+            <div class="flex con-padding">
+                <div class="scene-left">
+                    <div class="scene-left-con">
+                        <h3>手术示教</h3>
+                        <h6>适用于手术直播/转播、医疗器械培训</h6>
+                        <div class="scene-des">
+                            <dl>
+                                <dt>超清画质：</dt>
+                                <dd>4K超清手术转播画质，完美呈现细节画面</dd>
+                            </dl>
+                            <dl>
+                                <dt>专业拍摄：</dt>
+                                <dd>独家外科术野拍摄技术，更懂医疗需求</dd>
+                            </dl>
+                            <dl>
+                                <dt>设备接入：</dt>
+                                <dd>可视化医疗设备接入，术野更全面</dd>
+                            </dl>
+                            <dl>
+                                <dt>互动丰富：</dt>
+                                <dd>丰富的专业医疗互动，音视频连线，在线问答、远程会诊</dd>
+                            </dl>
+                            <dl>
+                                <dt>课件录制：</dt>
+                                <dd>支持录制回放，特殊津贴专家指定视频课件制作平台</dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <a href="http://login.lighos.com/signUp" target="_blank" class="scene-btn">
+                        免费试用
+                    </a>
                 </div>
-                <div class="case-con">
-                    <ul class="case-imgs active">
-
-                    </ul>
+                <div class="scene-right">
+                    <img src="/static/image/solution/scene1.png" alt="">
                 </div>
             </div>
-        </section>
+            <div class="flex con-padding">
+                <div class="scene-right">
+                    <img src="/static/image/solution/scene1.png" alt="">
+                </div>
+                <div class="scene-left">
+                    <div class="scene-left-con">
+                        <h3>医学会议</h3>
+                        <h6>适用于医疗峰会论坛、专家讲座、医学研斑会、科室会、医疗博览会</h6>
+                        <div class="scene-des">
+                            <dl>
+                                <dt>高清稳定流畅直播：</dt>
+                                <dd>超高清画质，尊享国际高端论坛级别同步直播</dd>
+                            </dl>
+                            <dl>
+                                <dt>3D影院级转播技术：</dt>
+                                <dd>左右信号同步传输，带来好莱坞大片级视觉效果</dd>
+                            </dl>
+                            <dl>
+                                <dt>私有化品牌定制：</dt>
+                                <dd>支持引导图、暖场视频、Iogo设置,广告管理、权限管理</dd>
+                            </dl>
+                            <dl>
+                                <dt>精英团队现场服务：</dt>
+                                <dd>资深直播工程师拍摄团队，支持单机位/多机位，支持会议系统对接</dd>
+                            </dl>
+                            <dl>
+                                <dt>营销推广裂变：</dt>
+                                <dd>支持报名观看、微信分享、邀请榜等营销传播，支持用户画像数据分析</dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <a href="http://login.lighos.com/signUp" target="_blank" class="scene-btn">
+                        免费试用
+                    </a>
+                </div>
 
-        <!-- 轻产品与服务 -->
-        <section id="section-5" class="product-service">
-            <div class="layui-container">
-                <h3 class="section-title">「轻」产品与服务</h3>
-                <ul class="service-con">
-                    <li>
-                        <div class="service-top">
-                            <img src="/static/image/index1/chanping.svg" alt="">
-                            <h3>视频云服务</h3>
-                        </div>
-                        <p class="service-des">
-                            企业级分布式混合云部署，自有第三代直播云技术加持，全球3000+的直播节点，具备8K直播能力，全新网页发起直播，千万级高并发无延迟。
-                        </p>
-                        <div class="service-group-btn">
-                            <a href="{:url('/index/video_cloud/index')}" class="learn-btn">了解产品</a>
-                            <a href="http://login.lighos.com/signUp" target="_blank" class="free-btn">免费试用</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="service-top">
-                            <img src="/static/image/index1/dingzhihua.svg" alt="">
-                            <h3>定制化服务</h3>
-                        </div>
-                        <p class="service-des">
-                            7x24小时响应，深度品牌专属定制，提供灵活、可拓展的API/SDK接口，支持二次开发和接入第三方OA、ERP、CRM等企业办公应用集成服务。
-                        </p>
-                        <div class="service-group-btn">
-                            <a href="{:url('/index/customized_service/index')}" class="learn-btn">了解产品</a>
-                            <a href="http://login.lighos.com/signUp" target="_blank" class="free-btn">免费试用</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="service-top">
-                            <img src="/static/image/index1/fuwu.svg" alt="">
-                            <h3>现场服务</h3>
-                        </div>
-                        <p class="service-des">
-                            基于用户角度触发，超万次直播服务经验，从方案设计到现场执行，重现每一个细节的把控，致力于为用户提供全行业场景直播解决方案。
-                        </p>
-                        <div class="service-group-btn">
-                            <a href="{:url('/index/site_service/index')}" class="learn-btn">了解产品</a>
-                            <a href="http://login.lighos.com/signUp" target="_blank" class="free-btn">免费试用</a>
-                        </div>
-                    </li>
-                </ul>
             </div>
-        </section>
-        <div id="kefu">
-            <div class="layui-container">
-                <div class="kefu-content">
-                    <h2>轻直播为您提供一站式企业视频解决方案</h2>
-                    <button class="getcase">获取方案</button>
+            <div class="flex con-padding">
+                <div class="scene-left">
+                    <div class="scene-left-con">
+                        <h3>医学培训</h3>
+                        <h6>200+直播功能和定制服务 全面提升培训效率</h6>
+                        <div class="scene-des">
+                            <dl>
+                                <dt>多种直播模式：</dt>
+                                <dd>支持文档/白板，照片/视频插播，PPT、绿幕抠像、屏幕共享</dd>
+                            </dl>
+                            <dl>
+                                <dt>互动功能丰富：</dt>
+                                <dd>评论聊天、多人音视频连麦、红包打赏、问卷/答题/投票等</dd>
+                            </dl>
+                            <dl>
+                                <dt>营销数据分析：</dt>
+                                <dd>直播实时数据，全方位观看行为分析，精准掌握用户画像</dd>
+                            </dl>
+                            <dl>
+                                <dt>安全存储回放：</dt>
+                                <dd>视频加密，授权观看、防录屏，点播回放提升培训效率</dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <a href="http://login.lighos.com/signUp" target="_blank" class="scene-btn">
+                        免费试用
+                    </a>
+                </div>
+                <div class="scene-right">
+                    <img src="/static/image/solution/scene1.png" alt="">
+                </div>
+            </div>
+            <div class="flex con-padding">
+                <div class="scene-right">
+                    <img src="/static/image/solution/scene1.png" alt="">
+                </div>
+                <div class="scene-left">
+                    <div class="scene-left-con">
+                        <h3>远程医疗直播</h3>
+                        <h6>国内前100三甲医院定点合作 医疗直播我们更专业</h6>
+                        <div class="scene-des">
+                            <dl>
+                                <dt>多终端接入：</dt>
+                                <dd>支持电脑客户端/手机/小程序/iPad等多终端接入，方便医护/病患进入场景，随时随地发起会诊</dd>
+                            </dl>
+                            <dl>
+                                <dt>实时会诊：</dt>
+                                <dd>远程直播延时低于800ms，医生与病患会诊画面实时传输，保障直播会诊及时流畅</dd>
+                            </dl>
+                            <dl>
+                                <dt>多人连麦会诊：</dt>
+                                <dd>支持PC端/H5/小程序连麦，多点连麦，多师会诊一个病患，或同类病患同时会诊，提升会诊效率</dd>
+                            </dl>
+                            <dl>
+                                <dt>互动问诊：</dt>
+                                <dd>公聊、私聊、1对1问答、图文直播、问卷、答题等问诊互动形式，多维了解病患病情，同时保护患者隐私</dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <a href="http://login.lighos.com/signUp" target="_blank" class="scene-btn">
+                        免费试用
+                    </a>
                 </div>
 
             </div>
         </div>
-        <!-- 底部 -->
-        {include file="common/footer"}
+
+    </section>
+
+    <!-- 功能特色 -->
+    <section id="section-3" class="pro-func">
+        <div class="layui-container">
+            <h3 class="section-title" style="color: #FFFFFF;">功能特色</h3>
+            <ul class="func-con">
+                <li>
+                    <h3>千万级并发</h3>
+                    <p>千万级直播并发支撑，可动态扩展的直播技术架构，全球节点支撑，可满足国际级医学大会千万观众流畅观看直播内容</p>
+                </li>
+                <li>
+                    <h3>系统安全稳定</h3>
+                    <p>支持多种防录屏技术，支持观看者ID水印，有效追踪盗录视频。支持HTTPS数据防劫持，网页防篡改，禁止网页广告插件，保护直播视频版权。</p>
+                </li>
+                <li>
+                    <h3>专属定制</h3>
+                    <p>支持直播间UI、域名和底层定制服务，支持微信端及移动APP定制，保护用户自有品牌一体化，业内率先提供快捷定制服务，承诺72小时交付。</p>
+                </li>
+                <li>
+                    <h3>多功能互动</h3>
+                    <p>支持聊天弹幕、私聊提问、抽奖互动等直播互动方式，满足多样化的场景应用，提供多线音视频连麦互动、 红包打赏等互动工具，有效提高直播活跃度</p>
+                </li>
+
+                <li>
+                    <h3>深度集成开发支持</h3>
+                    <p>提供丰富的外部授权功能和API&SDK，嵌入APP/小程序/网页，与企业系统无缝融合，满足医疗直播各类场景二次开发需求</p>
+                </li>
+                <li>
+                    <h3>鉴权观看</h3>
+                    <p>支持付费观看、密码观看、注册观看、白名单观看、手机验证观看等多种授权观看模式，支持开发定制权限，覆盖医疗直播全场景的安全需求。</p>
+                </li>
+                <li>
+                    <h3>大数据用户画像</h3>
+                    <p>自定义大数据中心，强大的数据统计功能，精准分析形成用户画像，多维实时在线用户分析、热度解析、终端分析、观看行为分析、用户关注度分析。 </p>
+                </li>
+                <li>
+                    <h3>全球双语同步</h3>
+                    <p>独特双语/多语直播模式，服务全球用户，可满足国际性医疗会议直播场景需求，提高直播效果。</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 客户案列 -->
+    <section id="section-4" class="custome-case">
+        <div class="layui-container">
+            <h3 class="section-title">客户案例</h3>
+
+            <div class="case-con">
+                <ul class="case-imgs active">
+
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 轻产品与服务 -->
+    <section id="section-5" class="product-service">
+        <div class="layui-container">
+            <h3 class="section-title">「轻」产品与服务</h3>
+            <ul class="service-con">
+                <li>
+                    <div class="service-top">
+                        <img src="/static/image/index1/chanping.svg" alt="">
+                        <h3>视频云服务</h3>
+                    </div>
+                    <p class="service-des">
+                        企业级分布式混合云部署，自有第三代直播云技术加持，全球3000+的直播节点，具备8K直播能力，全新网页发起直播，千万级高并发无延迟。
+                    </p>
+                    <div class="service-group-btn">
+                        <a href="/live" class="learn-btn">了解产品</a>
+                        <a href="http://login.lighos.com/signUp" target="_blank" class="free-btn">免费试用</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="service-top">
+                        <img src="/static/image/index1/dingzhihua.svg" alt="">
+                        <h3>定制化服务</h3>
+                    </div>
+                    <p class="service-des">
+                        7x24小时响应，深度品牌专属定制，提供灵活、可拓展的API/SDK接口，支持二次开发和接入第三方OA、ERP、CRM等企业办公应用集成服务。
+                    </p>
+                    <div class="service-group-btn">
+                        <a href="/develop" class="learn-btn">了解产品</a>
+                        <a href="http://login.lighos.com/signUp" target="_blank" class="free-btn">免费试用</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="service-top">
+                        <img src="/static/image/index1/fuwu.svg" alt="">
+                        <h3>现场服务</h3>
+                    </div>
+                    <p class="service-des">
+                        基于用户角度触发，超万次直播服务经验，从方案设计到现场执行，重现每一个细节的把控，致力于为用户提供全行业场景直播解决方案。
+                    </p>
+                    <div class="service-group-btn">
+                        <a href="/service" class="learn-btn">了解产品</a>
+                        <a href="http://login.lighos.com/signUp" target="_blank" class="free-btn">免费试用</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <div id="kefu">
+        <div class="layui-container">
+            <div class="kefu-content">
+                <h2>轻直播为您提供一站式企业视频解决方案</h2>
+                <button>立即咨询</button>
+            </div>
+
+        </div>
     </div>
+    <!-- 底部 -->
+    {include file="common/footer"}
+</div>
 </body>
-<script src="/static/common/js/onlineService.js"></script>
 <script src="/static/common/js/header-footer.js"></script>
 <script src="/static/common/js/solution.js"></script>
 <script type="text/javascript">
@@ -2520,14 +2495,17 @@
             if (obj.find('.case-con').children().eq($(this).index()).length > 0)
                 obj.find('.case-con').children().hide().eq($(this).index()).show();
         });
-        setTimeout(function () { obj.find('.case-nav .active').trigger('li'); }, 100);
+        setTimeout(function () {
+            obj.find('.case-nav .active').trigger('li');
+        }, 100);
     });
 
     logoPoint(0);
+
     function logoPoint(index) {
         $.ajax({
             url: "{:url('/index/logo_wall/getLogoByWhere')}",
-            data: { 'pid': 30, 'type_id': index },
+            data: {'pid': 30, 'type_id': index},
             type: 'get',
             success: function (res) {
                 if (res.status === 200) {
@@ -2541,17 +2519,14 @@
                 console.log(err)
             }
         })
-    }
+    };
 
-    $('.getcase').on('click', function() {
+
+    //   显示预约演示弹出框
+    $('.banner-a').on('click', function () {
         $('#order-container').show();
         $('.q-modal').show();
     })
-
-    
- $('.kefu_btn').click(function () {
-        daovoice('show');
-    })
 </script>
 
 </html>

@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>轻直播私有云部署_企业直播定制服务</title>
-    <meta name="keywords"  content="私有云部署,企业直播,企业直播定制,直播定制服务"/>
-    <meta name="description"
-           content="轻直播助力全球企业用户定制私有化直播部署，提供专业一站式营销直播解决方案。"/>
+    <meta name="keywords"  content="私有云部署,企业直播,企业直播定制,直播定制服务" />
+    <meta name="description"  content="轻直播助力全球企业用户定制私有化直播部署，提供专业一站式营销直播解决方案。" />
     <link rel="stylesheet" href="/static/css/deploy/index.css">
     <link rel="stylesheet" href="/static/layui/css/layui.css">
     <link rel="stylesheet" href="/static/css/style.css">
@@ -18,37 +17,39 @@
 </head>
 
 <body>
-<div id="deploy">
-    <!-- 头部 -->
-    {include file="common/header"}
-       <!--预约演示弹出框 -->
-    {include file="common/order_box"}
-    <!-- 咨询版块 -->
-    {include file="common/siderbar-right"}
-    <!-- 免费试用版块 -->
-    {include file="common/free_box"}
-    <!-- banner -->
-    <div id="banner">
-        <div class="layui-carousel" id="banners">
-            <div carousel-item class="lunbo-box">
-                {if isset($banner_list)}
-                {foreach $banner_list as $item}
-                <div class="banner-item">
-                    <img class="banner-img" src="{$item.img_url}" alt="">
-                    <div class="text-left">
-                        <h2 style='color: #fff;font-size: {$item.title_size}px;font-weight: bold;
+    <div id="deploy">
+        <!-- 头部 -->
+        {include file="common/header"}
+        <!--预约演示弹出框 -->
+        {include file="common/order_box"}
+        <!-- 咨询版块 -->
+        {include file="common/siderbar-right"}
+        <!-- 免费试用版块 -->
+        {include file="common/free_box"}
+        <!-- banner -->
+        <div id="banner">
+            <div class="layui-carousel" id="banners">
+                <div carousel-item class="lunbo-box">
+                    {if isset($banner_list)}
+                    {foreach $banner_list as $item}
+                    <div class="banner-item">
+                        <a href="{$item.img_link}">
+                            <img class="banner-img" src="{$item.img_url}" alt="">
+                        </a>
+                        <div class="text-left">
+                            <h2 style='color: #fff;font-size: {$item.title_size}px;font-weight: bold;
                             color:{$item.title_color};
                             text-align: left;'>{$item.title}</h2>
 
-                        <h5 style=' color: {$item.in_color};
+                            <h5 style=' color: {$item.in_color};
                             opacity: .8;
                             font-size: {$item.in_size}px;
                             width: 100%;
                             margin: 78px 0 103px;
                             line-height: 1.5;'>{$item.introduction}</h5>
 
-                        {if($item.button_status == 1)}
-                        <a class="banner-a" href="{$item.button_link}" style='z-index: 10;
+                            {if($item.button_status == 1)}
+                            <a class="banner-a" href="{$item.button_link}" style='z-index: 10;
                             display: block;
                             width: 167px;
                             height: 44px;
@@ -56,161 +57,161 @@
                             color: {$item.button_color};
                             text-align: center;
                             line-height: 44px;
-                            float: {$item.float};
                             font-size: {$item.button_size}px;'>{$item.button_text}</a>
-                        {/if}
+                            {/if}
+                        </div>
                     </div>
-                </div>
-                {/foreach}
-                {/if}
-            </div>
-        </div>
-    </div>
-
-    <!-- 点播私有化部署 -->
-    <div id="dianbo">
-        <div class="layui-container">
-            <div class="title">点播私有化部署</div>
-            <ul class="dianbo-content">
-                <li class="dianbo-item">
-                    <div class="item-left">
-                        <img src="/static/image/deploy/bushu1.svg" alt="">
-                    </div>
-                    <div class="item-right">
-                        <h5>分布式存储</h5>
-                        <p>分布式云架构存储，轻松应对云迁移的存储挑战，确保视频文件本地和云端安全</p>
-                    </div>
-                </li>
-                <li class="dianbo-item">
-                    <div class="item-left">
-                        <img src="/static/image/deploy/bushu2.svg" alt="">
-                    </div>
-                    <div class="item-right">
-                        <h5>HTTPS安全加速</h5>
-                        <p>防劫持、防篡改、防泄密，稳定可靠的HTTPS加速服务，最大限度保护用户内容安全</p>
-                    </div>
-                </li>
-                <li class="dianbo-item">
-                    <div class="item-left">
-                        <img src="/static/image/deploy/bushu3.svg" alt="">
-                    </div>
-                    <div class="item-right">
-                        <h5>多云架构混合云部署</h5>
-                        <p>针对集中性高并发观看事件的区域，ECND定向部署回调数据服务包，降低网络拥塞</p>
-                    </div>
-                </li>
-                <li class="dianbo-item">
-                    <div class="item-left">
-                        <img src="/static/image/deploy/bushu4.svg" alt="">
-                    </div>
-                    <div class="item-right">
-                        <h5>云盾加密技术</h5>
-                        <p>数据云盾加密技术，refer黑白名单，保护资源不被其它网站盗链的同时拥有30天数据误删找回</p>
-                    </div>
-                </li>
-                <li class="dianbo-item">
-                    <div class="item-left">
-                        <img src="/static/image/deploy/bushu5.svg" alt="">
-                    </div>
-                    <div class="item-right">
-                        <h5>高性能云计算</h5>
-                        <p>队列转码运算机制，负载均衡调度智能动态，确保系统实时处于高效运作状态</p>
-                    </div>
-                </li>
-                <li class="dianbo-item">
-                    <div class="item-left">
-                        <img src="/static/image/deploy/bushu6.svg" alt="">
-                    </div>
-                    <div class="item-right">
-                        <h5>多重播出观看授权机制</h5>
-                        <p>AI播出审核机制，0程序风险，更加精准和私密，提供灵活的接口验证逻辑</p>
-                    </div>
-                </li>
-                <li class="dianbo-item">
-                    <div class="item-left">
-                        <img src="/static/image/deploy/bushu7.svg" alt="">
-                    </div>
-                    <div class="item-right">
-                        <h5>带宽优化</h5>
-                        <p>200T带宽能力储备，支持主流运营商，从源站以较低的带宽获取分发数据</p>
-                    </div>
-                </li>
-                <li class="dianbo-item">
-                    <div class="item-left">
-                        <img src="/static/image/deploy/bushu8.svg" alt="">
-                    </div>
-                    <div class="item-right">
-                        <h5>多终端兼容</h5>
-                        <p>提供RTMP/FLV/HLS等格式的播放流，支持多终端的解码播放，自匹配适应码流</p>
-                    </div>
-                </li>
-            </ul>
-            <div class="dianbo-bottom" style="display: none;">
-                <div class="bottom-left">
-                    <img src="/static/image/site_service/people.png" alt="">
-                </div>
-                <div class="bottom-right">
-                    <h4>金融机构</h4>
-                    <p>快速部署一站式金融体系直播系统，简便易用、数据稳定安全，满足多场景金融、投资、证券类直播需求</p>
+                    {/foreach}
+                    {/if}
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- 轻视云 -->
-    <div id="qingshiyun">
-        <div class="layui-container">
-            <div class="title">私有化部署优势</div>
-            <ul class="qing-content">
-                <li>
-                    <img src="/static/image/deploy/youshi1.svg" alt="">
-                    <h5>掌握数据主动权</h5>
-                    <p>云盾加密数据传输和存储，备份数据分级保存，多重身份校验，构建安全、经济的多级数据管理体系</p>
-                </li>
-                <li>
-                    <img src="/static/image/deploy/youshi2.svg" alt="">
-                    <h5>集成化管理</h5>
-                    <p>提供灵活、可操作的集成化管理接口，无缝对接企业办公软件OA、CRM、ERP等主流应用</p>
-                </li>
-                <li>
-                    <img src="/static/image/deploy/youshi3.svg" alt="">
-                    <h5>深度定制服务</h5>
-                    <p>结合企业品牌深度定制服务，包括LOGO、域名、信息采集等内容，助力打造企业专属IP</p>
-                </li>
-                <li>
-                    <img src="/static/image/deploy/youshi4.svg" alt="">
-                    <h5>多重鉴权机制</h5>
-                    <p>覆盖用户全场景的安全需求，通过多重授权机制，定向验证用户身份，保护内容的安全性</p>
-                </li>
-                <li>
-                    <img src="/static/image/deploy/youshi5.svg" alt="">
-                    <h5>多端社交整合</h5>
-                    <p>可将直播嵌入至微信公众号、小程序等主流社交平台，锁定兴趣用户，助力企业快速构建私域流量</p>
-                </li>
-                <li>
-                    <img src="/static/image/deploy/youshi6.svg" alt="">
-                    <h5>全场景营销展示推广</h5>
-                    <p>全方位提供专业的营销全案服务，有效提升企业品牌营销能力，加速转化和变现能力</p>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- “轻”装上阵，玩转企业数字营销5G时代 -->
-    <div id="fiveG">
-        <div class="hover"></div>
-        <div class="layui-container">
-            <div class="fiveg-content">
-                <h2>顶级视频部署架构</h2>
-                <h5>更符合政企、金融机构、学校、新媒体等的视频应用</h5>
-                <button class="free_button"><a href="http://login.lighos.com/signUp" target="_blank">免费使用</a></button>
+        <!-- 点播私有化部署 -->
+        <div id="dianbo">
+            <div class="layui-container">
+                <div class="title">点播私有化部署</div>
+                <ul class="dianbo-content">
+                    <li class="dianbo-item">
+                        <div class="item-left">
+                            <img src="/static/image/deploy/bushu1.svg" alt="">
+                        </div>
+                        <div class="item-right">
+                            <h5>分布式存储</h5>
+                            <p>分布式云架构存储，轻松应对云迁移的存储挑战，确保视频文件本地和云端安全</p>
+                        </div>
+                    </li>
+                    <li class="dianbo-item">
+                        <div class="item-left">
+                            <img src="/static/image/deploy/bushu2.svg" alt="">
+                        </div>
+                        <div class="item-right">
+                            <h5>HTTPS安全加速</h5>
+                            <p>防劫持、防篡改、防泄密，稳定可靠的HTTPS加速服务，最大限度保护用户内容安全</p>
+                        </div>
+                    </li>
+                    <li class="dianbo-item">
+                        <div class="item-left">
+                            <img src="/static/image/deploy/bushu3.svg" alt="">
+                        </div>
+                        <div class="item-right">
+                            <h5>多云架构混合云部署</h5>
+                            <p>针对集中性高并发观看事件的区域，ECND定向部署回调数据服务包，降低网络拥塞</p>
+                        </div>
+                    </li>
+                    <li class="dianbo-item">
+                        <div class="item-left">
+                            <img src="/static/image/deploy/bushu4.svg" alt="">
+                        </div>
+                        <div class="item-right">
+                            <h5>云盾加密技术</h5>
+                            <p>数据云盾加密技术，refer黑白名单，保护资源不被其它网站盗链的同时拥有30天数据误删找回</p>
+                        </div>
+                    </li>
+                    <li class="dianbo-item">
+                        <div class="item-left">
+                            <img src="/static/image/deploy/bushu5.svg" alt="">
+                        </div>
+                        <div class="item-right">
+                            <h5>高性能云计算</h5>
+                            <p>队列转码运算机制，负载均衡调度智能动态，确保系统实时处于高效运作状态</p>
+                        </div>
+                    </li>
+                    <li class="dianbo-item">
+                        <div class="item-left">
+                            <img src="/static/image/deploy/bushu6.svg" alt="">
+                        </div>
+                        <div class="item-right">
+                            <h5>多重播出观看授权机制</h5>
+                            <p>AI播出审核机制，0程序风险，更加精准和私密，提供灵活的接口验证逻辑</p>
+                        </div>
+                    </li>
+                    <li class="dianbo-item">
+                        <div class="item-left">
+                            <img src="/static/image/deploy/bushu7.svg" alt="">
+                        </div>
+                        <div class="item-right">
+                            <h5>带宽优化</h5>
+                            <p>200T带宽能力储备，支持主流运营商，从源站以较低的带宽获取分发数据</p>
+                        </div>
+                    </li>
+                    <li class="dianbo-item">
+                        <div class="item-left">
+                            <img src="/static/image/deploy/bushu8.svg" alt="">
+                        </div>
+                        <div class="item-right">
+                            <h5>多终端兼容</h5>
+                            <p>提供RTMP/FLV/HLS等格式的播放流，支持多终端的解码播放，自匹配适应码流</p>
+                        </div>
+                    </li>
+                </ul>
+                <div class="dianbo-bottom" style="display: none;">
+                    <div class="bottom-left">
+                        <img src="/static/image/site_service/people.png" alt="">
+                    </div>
+                    <div class="bottom-right">
+                        <h4>金融机构</h4>
+                        <p>快速部署一站式金融体系直播系统，简便易用、数据稳定安全，满足多场景金融、投资、证券类直播需求</p>
+                    </div>
+                </div>
             </div>
-
         </div>
-    </div>
 
-    {include file="common/footer"}
-</div>
+        <!-- 轻视云 -->
+        <div id="qingshiyun">
+            <div class="layui-container">
+                <div class="title">私有化部署优势</div>
+                <ul class="qing-content">
+                    <li>
+                        <img src="/static/image/deploy/youshi1.svg" alt="">
+                        <h5>掌握数据主动权</h5>
+                        <p>云盾加密数据传输和存储，备份数据分级保存，多重身份校验，构建安全、经济的多级数据管理体系</p>
+                    </li>
+                    <li>
+                        <img src="/static/image/deploy/youshi2.svg" alt="">
+                        <h5>集成化管理</h5>
+                        <p>提供灵活、可操作的集成化管理接口，无缝对接企业办公软件OA、CRM、ERP等主流应用</p>
+                    </li>
+                    <li>
+                        <img src="/static/image/deploy/youshi3.svg" alt="">
+                        <h5>深度定制服务</h5>
+                        <p>结合企业品牌深度定制服务，包括LOGO、域名、信息采集等内容，助力打造企业专属IP</p>
+                    </li>
+                    <li>
+                        <img src="/static/image/deploy/youshi4.svg" alt="">
+                        <h5>多重鉴权机制</h5>
+                        <p>覆盖用户全场景的安全需求，通过多重授权机制，定向验证用户身份，保护内容的安全性</p>
+                    </li>
+                    <li>
+                        <img src="/static/image/deploy/youshi5.svg" alt="">
+                        <h5>多端社交整合</h5>
+                        <p>可将直播嵌入至微信公众号、小程序等主流社交平台，锁定兴趣用户，助力企业快速构建私域流量</p>
+                    </li>
+                    <li>
+                        <img src="/static/image/deploy/youshi6.svg" alt="">
+                        <h5>全场景营销展示推广</h5>
+                        <p>全方位提供专业的营销全案服务，有效提升企业品牌营销能力，加速转化和变现能力</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- “轻”装上阵，玩转企业数字营销5G时代 -->
+        <div id="fiveG">
+            <div class="hover"></div>
+            <div class="layui-container">
+                <div class="fiveg-content">
+                    <h2>极速部署 开放兼容 实时同步</h2>
+                    <h5>时刻为您的企业数字资产保驾护航</h5>
+                    <button class="free_button"><a href="http://login.lighos.com/signUp"
+                            target="_blank">免费使用</a></button>
+                </div>
+
+            </div>
+        </div>
+
+        {include file="common/footer"}
+    </div>
 </body>
 
 <script src="/static/common/js/header-footer.js"></script>

@@ -11,34 +11,38 @@
     <link rel="stylesheet" href="/static/css/common/banner_common.css">
     <script type='text/javascript' src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="/static/layui/layui.js"></script>
+    <script>(function (i, s, o, g, r, a, m) { i["DaoVoiceObject"] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; a.charset = "utf-8"; m.parentNode.insertBefore(a, m) })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/04cefad5.js", "daovoice")</script>
+
 </head>
 
 <body>
-<div id="service">
-    <!-- 头部 -->
-    {include file="common/header"}
-    <!-- banner -->
-    <div id="banner">
-        <div class="layui-carousel" id="banners">
-            <div carousel-item class="lunbo-box">
-                {if isset($banner_list)}
-                {foreach $banner_list as $item}
-                <div class="banner-item">
-                    <img class="banner-img" src="{$item.img_url}" alt="">
-                    <div class="text-left">
-                        <h2 style='color: #fff;font-size: {$item.title_size}px;font-weight: bold;
+    <div id="service">
+        <!-- 头部 -->
+        {include file="common/header"}
+        <!-- banner -->
+        <div id="banner">
+            <div class="layui-carousel" id="banners">
+                <div carousel-item class="lunbo-box">
+                    {if isset($banner_list)}
+                    {foreach $banner_list as $item}
+                    <div class="banner-item">
+                        <a href="{$item.img_link}" target="_blank">
+                            <img class="banner-img" src="{$item.img_url}" alt="">
+                        </a>
+                        <div class="text-left">
+                            <h2 style='color: #fff;font-size: {$item.title_size}px;font-weight: bold;
                             color:{$item.title_color};
                             text-align: left;'>{$item.title}</h2>
 
-                        <h5 style=' color: {$item.in_color};
+                            <h5 style=' color: {$item.in_color};
                             opacity: .8;
                             font-size: {$item.in_size}px;
                             width: 100%;
                             margin: 78px 0 103px;
                             line-height: 1.5;'>{$item.introduction}</h5>
 
-                        {if($item.button_status == 1)}
-                        <a class="banner-a" href="{$item.button_link}" style='z-index: 10;
+                            {if($item.button_status == 1)}
+                            <a class="banner-a" href="{$item.button_link}" style='z-index: 10;
                             display: block;
                             width: 167px;
                             height: 44px;
@@ -48,204 +52,206 @@
                             line-height: 44px;
                             float: {$item.float};
                             font-size: {$item.button_size}px;'>{$item.button_text}</a>
-                        {/if}
+                            {/if}
+                        </div>
                     </div>
+                    {/foreach}
+                    {/if}
                 </div>
-                {/foreach}
-                {/if}
             </div>
         </div>
+
+        <!-- 导航栏 -->
+        <nav class="site-nav">
+            <div class="layui-container">
+                <ul class="nav-content">
+                    <li class="active"><a class="transition" href="#section-1">服务范围</a></li>
+                    <li><a class="transition" href="#section-2">方案设计</a></li>
+                    <li><a class="transition" href="#section-3">搭建支持</a></li>
+                    <li><a class="transition" href="#section-4">现场保障</a></li>
+                    <li><a class="transition" href="#section-5">数据报告</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- 6大服务模块 -->
+        <div id="section-1" class="module">
+            <div class="layui-container">
+                <h2 class="title">轻直播现场六大服务模块</h2>
+                <ul class="module-content">
+                    <li>
+                        <img src="/static/image/site_service/live.png" alt="">
+                        <div class="text">
+                            <h5>直播策划</h5>
+                            <p>提供从活动预热、活动进行、活动落地后的全套专属活动解决方案和完整的运营数据分析报告</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="/static/image/site_service/activity.png" alt="">
+                        <div class="text">
+                            <h5>活动拍摄</h5>
+                            <p>超百万场活动拍摄经验的星级团队驻场提供拍摄服务，支持单机位/多机位的拍摄内容</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="/static/image/site_service/technical.png" alt="">
+                        <div class="text">
+                            <h5>技术保障</h5>
+                            <p>资深网络工程师7x24小时提供技术响应，从直播间的创建到直播推流与分发，实时监控数据流</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="/static/image/site_service/scene.png" alt="">
+                        <div class="text">
+                            <h5>现场执行</h5>
+                            <p>经验丰富的导播、运营指导、高级工程师、拍摄团队现场执行，严格把控每一个细节</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="/static/image/site_service/video.png" alt="">
+                        <div class="text">
+                            <h5>视频制作</h5>
+                            <p>提供视频剪辑、内容策划服务，用创新的内容形式，增强观众体验，从而取得更好的二次传播效果</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="/static/image/site_service/channel.png" alt="">
+                        <div class="text">
+                            <h5>渠道宣发</h5>
+                            <p>全平台1500+优质网络媒体资源支持，优酷、腾讯、爱奇艺等主流媒体推流，达成传播量目标</p>
+                        </div>
+                    </li>
+                </ul>
+                <a href="http://login.lighos.com/signUp" target="_blank">立即试用</a>
+            </div>
+        </div>
+
+        <!-- 轻直播为您创造价值 -->
+        <div id="light-live">
+            <div class="layui-container">
+                <h2 class="title">轻量不轻质，简约不简单</h2>
+                <div class="live-content">
+                    <div class="live-item">
+                        <div class="item-top">
+                            <div class="nums">8</div>
+                            <span>年</span>
+                        </div>
+                        <p class="item-bottom">行业经验</p>
+                    </div>
+                    <div class="live-item">
+                        <div class="item-top">
+                            <div class="nums">10</div>
+                            <span>万</span>
+                            <span>+</span>
+                        </div>
+                        <p class="item-bottom">服务企业</p>
+                    </div>
+                    <div class="live-item">
+                        <div class="item-top">
+                            <div class="nums">100</div>
+                            <span>+</span>
+                        </div>
+                        <p class="item-bottom">行业解决方案</p>
+                    </div>
+                    <div class="live-item">
+                        <div class="item-top">
+                            <div class="nums">10</div>
+                            <!-- <div class="nums">%</div> -->
+                            <span>万</span>
+                            <span>+</span>
+                        </div>
+                        <p class="item-bottom">现场服务经验</p>
+                    </div>
+                </div>
+                <a href="http://login.lighos.com/signUp" target="_blank">立即试用</a>
+            </div>
+        </div>
+
+        <!-- 四个方案 -->
+        <div id="section-2" class="plans">
+            <div class="layui-container">
+                <div class="plans-text">
+                    <div class="text-head">
+                        <img src="/static/image/site_service/sheji_icon.svg" alt="">
+                        <h6>方案设计</h6>
+                    </div>
+                    <p>基于用户视角，从需求分析到方案的部署，每一细节都由资深策划精心雕琢，致力于为用户带来不一样的体验</p>
+                    <button class="zixun">在线咨询</button>
+                </div>
+                <div class="plans-img">
+                    <img src="/static/image/site_service/sheji.svg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div id="section-3" class="plans">
+            <div class="layui-container">
+                <div class="plans-img">
+                    <img src="/static/image/site_service/zhichi.svg" alt="">
+                </div>
+                <div class="plans-text">
+                    <div class="text-head">
+                        <img src="/static/image/site_service/zhichi_icon.svg" alt="">
+                        <h6>搭建支持</h6>
+                    </div>
+                    <p>拥有完全自主自建的直播系统和先进的拍摄服务设备，具备8K千万级直播并发能力，从调试到正式上线，注重每一个环节</p>
+                    <button class="zixun">在线咨询</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="section-4" class="plans">
+            <div class="layui-container">
+                <div class="plans-text">
+                    <div class="text-head">
+                        <img src="/static/image/site_service/baozhang_icon.svg" alt="">
+                        <h6>现场保障</h6>
+                    </div>
+                    <p>团队成员均为10年以上的现场执行经验，每场活动都会由资深的导播、运营指导、高级工程师及网络工程师共同督导</p>
+                    <button class="zixun">在线咨询</button>
+                </div>
+                <div class="plans-img">
+                    <img src="/static/image/site_service/baozhang.svg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div id="section-5" class="plans">
+            <div class="layui-container">
+                <div class="plans-img">
+                    <img src="/static/image/site_service/baogao.svg" alt="">
+                </div>
+                <div class="plans-text">
+                    <div class="text-head">
+                        <img src="/static/image/site_service/shuju.svg" alt="">
+                        <h6>数据报告</h6>
+                    </div>
+                    <p>直播结束提供完整的结案报告，实时数据流水、多维信息汇总，系统刻画用户行为画像，更有利于用户后期对数据的追踪于分析</p>
+                    <button class="zixun">在线咨询</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- “轻”装上阵，玩转企业数字营销5G时代 -->
+        <div id="fiveG">
+            <div class="hover"></div>
+            <div class="layui-container">
+                <div class="fiveg-content">
+                    <h2>即刻开启一场不一样的直播体验</h2>
+                    <h5>全程保障服务，精心“导演”每一部剧情</h5>
+                    <button><a href="http://login.lighos.com/signUp" target="_blank">免费使用</a></button>
+                </div>
+
+            </div>
+        </div>
+        <!-- 底部 -->
+        {include file="common/footer"}
     </div>
-
-    <!-- 导航栏 -->
-    <nav class="site-nav">
-        <div class="layui-container">
-            <ul class="nav-content">
-                <li class="active"><a class="transition" href="#section-1">服务范围</a></li>
-                <li><a class="transition" href="#section-2">方案设计</a></li>
-                <li><a class="transition" href="#section-3">搭建支持</a></li>
-                <li><a class="transition" href="#section-4">现场保障</a></li>
-                <li><a class="transition" href="#section-5">数据报告</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- 6大服务模块 -->
-    <div id="section-1" class="module">
-        <div class="layui-container">
-            <h2 class="title">轻直播现场六大服务模块</h2>
-            <ul class="module-content">
-                <li>
-                    <img src="/static/image/site_service/live.png" alt="">
-                    <div class="text">
-                        <h5>直播策划</h5>
-                        <p>提供从活动预热、活动进行、活动落地后的全套专属活动解决方案和完整的运营数据分析报告</p>
-                    </div>
-                </li>
-                <li>
-                    <img src="/static/image/site_service/activity.png" alt="">
-                    <div class="text">
-                        <h5>活动拍摄</h5>
-                        <p>超百万场活动拍摄经验的星级团队驻场提供拍摄服务，支持单机位/多机位的拍摄内容</p>
-                    </div>
-                </li>
-                <li>
-                    <img src="/static/image/site_service/technical.png" alt="">
-                    <div class="text">
-                        <h5>技术保障</h5>
-                        <p>资深网络工程师7x24小时提供技术响应，从直播间的创建到直播推流与分发，实时监控数据流</p>
-                    </div>
-                </li>
-                <li>
-                    <img src="/static/image/site_service/scene.png" alt="">
-                    <div class="text">
-                        <h5>现场执行</h5>
-                        <p>经验丰富的导播、运营指导、高级工程师、拍摄团队现场执行，严格把控每一个细节</p>
-                    </div>
-                </li>
-                <li>
-                    <img src="/static/image/site_service/video.png" alt="">
-                    <div class="text">
-                        <h5>视频制作</h5>
-                        <p>提供视频剪辑、内容策划服务，用创新的内容形式，增强观众体验，从而取得更好的二次传播效果</p>
-                    </div>
-                </li>
-                <li>
-                    <img src="/static/image/site_service/channel.png" alt="">
-                    <div class="text">
-                        <h5>渠道宣发</h5>
-                        <p>全平台1500+优质网络媒体资源支持，优酷、腾讯、爱奇艺等主流媒体推流，达成传播量目标</p>
-                    </div>
-                </li>
-            </ul>
-            <button>立即试用</button>
-        </div>
-    </div>
-
-    <!-- 轻直播为您创造价值 -->
-    <div id="light-live">
-        <div class="layui-container">
-            <h2 class="title">轻量不轻质，简约不简单</h2>
-            <div class="live-content">
-                <div class="live-item">
-                    <div class="item-top">
-                        <div class="nums">8</div>
-                        <span>年</span>
-                    </div>
-                    <p class="item-bottom">行业经验</p>
-                </div>
-                <div class="live-item">
-                    <div class="item-top">
-                        <div class="nums">10</div>
-                        <span>万</span>
-                        <span>+</span>
-                    </div>
-                    <p class="item-bottom">服务企业</p>
-                </div>
-                <div class="live-item">
-                    <div class="item-top">
-                        <div class="nums">100</div>
-                        <span>+</span>
-                    </div>
-                    <p class="item-bottom">行业解决方案</p>
-                </div>
-                <div class="live-item">
-                    <div class="item-top">
-                        <div class="nums">10</div>
-                        <!-- <div class="nums">%</div> -->
-                        <span>万</span>
-                        <span>+</span>
-                    </div>
-                    <p class="item-bottom">现场服务经验</p>
-                </div>
-            </div>
-            <button>立即试用</button>
-        </div>
-    </div>
-
-    <!-- 四个方案 -->
-    <div id="section-2" class="plans">
-        <div class="layui-container">
-            <div class="plans-text">
-                <div class="text-head">
-                    <img src="/static/image/site_service/sheji_icon.svg" alt="">
-                    <h6>方案设计</h6>
-                </div>
-                <p>基于用户视角，从需求分析到方案的部署，每一细节都由资深策划精心雕琢，致力于为用户带来不一样的体验</p>
-                <button>在线咨询</button>
-            </div>
-            <div class="plans-img">
-                <img src="/static/image/site_service/sheji.svg" alt="">
-            </div>
-        </div>
-    </div>
-
-    <div id="section-3" class="plans">
-        <div class="layui-container">
-            <div class="plans-img">
-                <img src="/static/image/site_service/zhichi.svg" alt="">
-            </div>
-            <div class="plans-text">
-                <div class="text-head">
-                    <img src="/static/image/site_service/zhichi_icon.svg" alt="">
-                    <h6>搭建支持</h6>
-                </div>
-                <p>拥有完全自主自建的直播系统和先进的拍摄服务设备，具备8K千万级直播并发能力，从调试到正式上线，注重每一个环节</p>
-                <button>在线咨询</button>
-            </div>
-        </div>
-    </div>
-
-    <div id="section-4" class="plans">
-        <div class="layui-container">
-            <div class="plans-text">
-                <div class="text-head">
-                    <img src="/static/image/site_service/baozhang_icon.svg" alt="">
-                    <h6>现场保障</h6>
-                </div>
-                <p>团队成员均为10年以上的现场执行经验，每场活动都会由资深的导播、运营指导、高级工程师及网络工程师共同督导</p>
-                <button>在线咨询</button>
-            </div>
-            <div class="plans-img">
-                <img src="/static/image/site_service/baozhang.svg" alt="">
-            </div>
-        </div>
-    </div>
-
-    <div id="section-5" class="plans">
-        <div class="layui-container">
-            <div class="plans-img">
-                <img src="/static/image/site_service/baogao.svg" alt="">
-            </div>
-            <div class="plans-text">
-                <div class="text-head">
-                    <img src="/static/image/site_service/shuju.svg" alt="">
-                    <h6>数据报告</h6>
-                </div>
-                <p>直播结束提供完整的结案报告，实时数据流水、多维信息汇总，系统刻画用户行为画像，更有利于用户后期对数据的追踪于分析</p>
-                <button>在线咨询</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- “轻”装上阵，玩转企业数字营销5G时代 -->
-    <div id="fiveG">
-        <div class="hover"></div>
-        <div class="layui-container">
-            <div class="fiveg-content">
-                <h2>即刻开启一场不一样的直播体验</h2>
-                <h5>全程保障服务，精心“导演”每一部剧情</h5>
-                <button>免费使用</button>
-            </div>
-
-        </div>
-    </div>
-    <!-- 底部 -->
-    {include file="common/footer"}
-</div>
 </body>
 <script src="/static/common/js/header-footer.js"></script>
 <script src="/static/common/js/site_service.js"></script>
+<script src="/static/common/js/onlineService.js"></script>
+
 <script type="text/javascript">
     layui.use('carousel', function () {
         var carousel = layui.carousel;
@@ -267,7 +273,7 @@
             $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');
             if ($target.length) {
                 var targetOffset = $target.offset().top;
-                $('html,body').animate({scrollTop: targetOffset}, 400);
+                $('html,body').animate({ scrollTop: targetOffset }, 400);
                 return false;
             }
         }
@@ -285,6 +291,11 @@
             obj.find('.nav-content .active').trigger('li');
         }, 100);
     });
+
+    $('.zixun').click(function () {
+        daovoice('show')
+    })
 </script>
+
 
 </html>

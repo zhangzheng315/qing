@@ -346,11 +346,13 @@
   background: linear-gradient(90deg, #009CA9, #39D6AF);
   border-radius: 20px;
   border: 0;
-  color: #fff;
-  font-size: 20px;
   display: block;
   margin: 0 auto;
   cursor: pointer;
+}
+#channel .join .layui-container button a {
+  color: #fff;
+  font-size: 20px;
 }
 @media screen and (min-width: 768px) and (max-width: 1300px) {
   #channel .title {
@@ -619,6 +621,8 @@
   #channel .join .layui-container button {
     width: 148px;
     height: 40px;
+  }
+  #channel .join .layui-container button a {
     font-size: 16px;
   }
 }
@@ -885,6 +889,8 @@
   #channel .join .layui-container button {
     width: 108px;
     height: 26px;
+  }
+  #channel .join .layui-container button a {
     font-size: 12px;
   }
 }

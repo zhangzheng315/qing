@@ -60,6 +60,8 @@
   line-height: 1.5;
 }
 #banner .layui-carousel .text-left .banner-a {
+  position: absolute;
+  left: 0;
   z-index: 10;
   display: block;
   width: 167px;
@@ -127,7 +129,8 @@
   line-height: 1.5;
 }
 #banner .layui-carousel .text-right .banner-a {
-  float: left;
+  position: absolute;
+  right: 0;
 }
 #banner .layui-carousel .layui-carousel-ind {
   display: none !important;

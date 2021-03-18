@@ -30,7 +30,9 @@
                     {if(isset($banner_list) && $banner_list)}
                     {foreach($banner_list as $item)}
                     <div class="banner-item">
-                        <img class="banner-img" src="{$item.img_url}" alt="">
+                        <a href="{$item.img_link}">
+                            <img class="banner-img" src="{$item.img_url}" alt="">
+                        </a>
                         <div class="text-{$item.format}">
                             <h2 style='font-size: {$item.title_size}px;
                             font-weight: bold;
@@ -54,7 +56,7 @@
                             color: {$item.button_color};
                             text-align: center;
                             line-height: 44px;
-                            float: {$item.float};
+                            
                             font-size: {$item.button_size}px;'>{$item.button_text}</a>
                             {/if}
                         </div>
@@ -122,7 +124,7 @@
                             <p>轻直播平台全球化部署的企业级云视频平台 ，支持数百万并发，支持8K、4K、1080P 清晰度直播，300+增强功能，稳定可靠， 便捷易用。</p>
                         </div>
                         <div class="item-footer">
-                            <button class="more"><a href="{:url('/index/video_cloud/index')}">了解更多</a></button>
+                            <button class="more"><a href="/live">了解更多</a></button>
                             <button class="free"><a href="http://login.lighos.com/signUp"
                                     target="_blank">免费试用</a></button>
                         </div>
@@ -136,7 +138,7 @@
                             <p>快捷响应，为用户提供深度定制服务，支持 与用户既有OA、CRM、视频会议系统等集 成化开发，打造用户专属直播平台。</p>
                         </div>
                         <div class="item-footer">
-                            <button class="more"><a href="{:url('/index/customized_service/index')}">了解更多</a></button>
+                            <button class="more"><a href="/develop">了解更多</a></button>
                             <button class="free"><a href="http://login.lighos.com/signUp"
                                     target="_blank">免费试用</a></button>
                         </div>
@@ -153,7 +155,7 @@
                                 案。</p>
                         </div>
                         <div class="item-footer">
-                            <button class="more"><a href="{:url('/index/site_service/index')}">了解更多</a></button>
+                            <button class="more"><a href="/service">了解更多</a></button>
                             <button class="free"><a href="http://login.lighos.com/signUp"
                                     target="_blank">免费试用</a></button>
                         </div>
@@ -162,16 +164,18 @@
             </div>
         </div>
 
+
         <!-- 轻直播为您提供一站式企业视频解决方案 -->
         <div id="jiejue">
             <div class="hover"></div>
             <div class="layui-container">
                 <div class="jiejue-content">
                     <h2>轻直播为您提供一站式企业视频解决方案</h2>
-                    <button>立即咨询</button>
+                    <button class="get-func">获取方案</button>
                 </div>
             </div>
         </div>
+
 
         {include file="common/footer"}
     </div>
@@ -260,7 +264,7 @@
     };
 
     //   显示预约演示弹出框
-    $('.banner-a').on('click', function () {
+    $('.get-func,.banner-a').on('click', function () {
         $('#order-container').show();
         $('.q-modal').show();
     })

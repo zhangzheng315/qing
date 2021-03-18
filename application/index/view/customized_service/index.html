@@ -5,52 +5,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>企业直播集成开发_轻直播平台</title>
-    <meta name="keywords"  content="企业直播开发,企业直播定制,企业直播外包"/>
-    <meta name="description"
-           content="轻直播为企业用户提供开放式的直播集成开发服务，完整的API/SDK支持和丰富的外部授权，满足企业直播私有化部署。"/>
+    <meta name="keywords"  content="企业直播开发,企业直播定制,企业直播外包" />
+    <meta name="description"  content="轻直播为企业用户提供开放式的直播集成开发服务，完整的API/SDK支持和丰富的外部授权，满足企业直播私有化部署。" />
     <link rel="stylesheet" href="/static/css/customized_service/index.css">
     <link rel="stylesheet" href="/static/layui/css/layui.css">
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/common/banner_common.css">
-
     <script type='text/javascript' src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="/static/layui/layui.js"></script>
+    <script>(function (i, s, o, g, r, a, m) { i["DaoVoiceObject"] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; a.charset = "utf-8"; m.parentNode.insertBefore(a, m) })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/04cefad5.js", "daovoice")</script>
+
 </head>
 
 <body>
-<div id="customized">
-    <!-- 头部 -->
-    {include file="common/header"}
+    <div id="customized">
+        <!-- 头部 -->
+        {include file="common/header"}
 
-    <!--预约演示弹出框 -->
-    {include file="common/order_box"}
-    <!-- 咨询版块 -->
-    {include file="common/siderbar-right"}
-    <!-- 免费试用版块 -->
-    {include file="common/free_box"}
+        <!--预约演示弹出框 -->
+        {include file="common/order_box"}
+        <!-- 咨询版块 -->
+        {include file="common/siderbar-right"}
+        <!-- 免费试用版块 -->
+        {include file="common/free_box"}
 
-    <!-- banner -->
-    <div id="banner">
-        <div class="layui-carousel" id="banners">
-            <div carousel-item class="lunbo-box">
-                {if isset($banner_list)}
-                {foreach $banner_list as $item}
-                <div class="banner-item">
-                    <img class="banner-img" src="{$item.img_url}" alt="">
-                    <div class="text-left">
-                        <h2 style='color: #fff;font-size: {$item.title_size}px;font-weight: bold;
+        <!-- banner -->
+        <div id="banner">
+            <div class="layui-carousel" id="banners">
+                <div carousel-item class="lunbo-box">
+                    {if(isset($banner_list) && $banner_list)}
+                    {foreach $banner_list as $item}
+                    <div class="banner-item">
+                        <a href="{$item.img_link}">
+                            <img class="banner-img" src="{$item.img_url}" alt="">
+                        </a>
+                        <div class="text-{$item.format}">
+                            <h2 style='font-size: {$item.title_size}px;
+                            font-weight: bold;
                             color:{$item.title_color};
-                            text-align: left;'>{$item.title}</h2>
+                            text-align: {$item.format};'>{$item.title}</h2>
 
-                        <h5 style=' color: {$item.in_color};
+                            <h5 style=' color: {$item.in_color};
                             opacity: .8;
                             font-size: {$item.in_size}px;
-                            width: 100%;
+                            width: {$item.width};
                             margin: 78px 0 103px;
+                            text-align: {$item.format};
                             line-height: 1.5;'>{$item.introduction}</h5>
 
-                        {if($item.button_status == 1)}
-                        <a class="banner-a" href="{$item.button_link}" style='z-index: 10;
+                            {if($item.button_status == 1)}
+                            <a class="banner-a" href="{$item.button_link}" style='z-index: 10;
                             display: block;
                             width: 167px;
                             height: 44px;
@@ -58,237 +62,237 @@
                             color: {$item.button_color};
                             text-align: center;
                             line-height: 44px;
-                            float: {$item.float};
                             font-size: {$item.button_size}px;'>{$item.button_text}</a>
-                        {/if}
+                            {/if}
+                        </div>
+                    </div>
+                    {/foreach}
+                    {/if}
+                </div>
+            </div>
+        </div>
+
+        <!-- nav导航栏 -->
+        <nav>
+            <div class="layui-container">
+                <ul>
+                    <li class="active"><a href="{:url('/index/customized_service/index')}">直播集成开发</a></li>
+                    <li><a href="{:url('/index/customized_service/applets')}">APP/小程序开发</a></li>
+                    <!-- <li><a href="">自助会议系统</a></li> -->
+                </ul>
+            </div>
+        </nav>
+
+        <!-- 直播集成开发 -->
+        <div id="zhibo">
+            <div class="layui-container">
+                <div class="title">直播集成开发</div>
+            </div>
+            <div class="zhibo-item">
+                <div class="layui-container">
+                    <div class="item-text">
+                        <h5>播放器、聊天室iframe嵌入</h5>
+                        <ul>
+                            <li>
+                                <i></i>支持播放器、聊天室嵌入到第三方开发者系统中
+                            </li>
+                            <li>
+                                <i></i>为企业用户提供专业的运维服务
+                            </li>
+                            <li>
+                                <i></i>减少企业用户的系统开发成本
+                            </li>
+                        </ul>
+                        <button class="learn-more">了解更多</button>
+                    </div>
+                    <div class="item-img active">
+                        <img src="/static/image/customized/bofangqi.png" alt="">
                     </div>
                 </div>
-                {/foreach}
-                {/if}
+
             </div>
-        </div>
-    </div>
-
-    <!-- nav导航栏 -->
-    <nav>
-        <div class="layui-container">
-            <ul>
-                <li class="active"><a href="{:url('/index/customized_service/index')}">直播集成开发</a></li>
-                <li><a href="{:url('/index/customized_service/applets')}">APP/小程序开发</a></li>
-                <!-- <li><a href="">自助会议系统</a></li> -->
-            </ul>
-        </div>
-    </nav>
-
-    <!-- 直播集成开发 -->
-    <div id="zhibo">
-        <div class="layui-container">
-            <div class="title">直播集成开发</div>
-        </div>
-        <div class="zhibo-item">
-            <div class="layui-container">
-                <div class="item-text">
-                    <h5>播放器、聊天室iframe嵌入</h5>
-                    <ul>
-                        <li>
-                            <i></i>支持播放器、聊天室嵌入到第三方开发者系统中
-                        </li>
-                        <li>
-                            <i></i>为企业用户提供专业的运维服务
-                        </li>
-                        <li>
-                            <i></i>减少企业用户的系统开发成本
-                        </li>
-                    </ul>
-                    <button>了解更多</button>
-                </div>
-                <div class="item-img active">
-                    <img src="/static/image/customized/bofangqi.png" alt="">
+            <div class="zhibo-item">
+                <div class="layui-container">
+                    <div class="item-img active">
+                        <img src="/static/image/customized/ercikaifa.png" alt="">
+                    </div>
+                    <div class="item-text">
+                        <h5>提供二次开发支持</h5>
+                        <ul>
+                            <li>
+                                <i></i>提供完整的API&SDK支持
+                            </li>
+                            <li>
+                                <i></i>支持系统集成融合
+                            </li>
+                            <li>
+                                <i></i>即调即用
+                            </li>
+                        </ul>
+                        <button class="learn-more">了解更多</button>
+                    </div>
                 </div>
             </div>
+            <div class="zhibo-item">
+                <div class="layui-container">
+                    <div class="item-text">
+                        <h5>丰富的外部授权</h5>
+                        <ul>
+                            <li>
+                                <i></i>支持播放器、聊天室嵌入到第三方开发者系统中
+                            </li>
+                            <li>
+                                <i></i>为企业用户提供专业的运维服务
+                            </li>
+                            <li>
+                                <i></i>减少企业用户的系统开发成本
+                            </li>
+                        </ul>
+                        <button class="learn-more">了解更多</button>
+                    </div>
+                    <div class="item-img small-img">
+                        <img src="/static/image/customized/shouquan.png" alt="">
+                    </div>
+                </div>
 
-        </div>
-        <div class="zhibo-item">
-            <div class="layui-container">
-                <div class="item-img active">
-                    <img src="/static/image/customized/ercikaifa.png" alt="">
-                </div>
-                <div class="item-text">
-                    <h5>提供二次开发支持</h5>
-                    <ul>
-                        <li>
-                            <i></i>提供完整的API&SDK支持
-                        </li>
-                        <li>
-                            <i></i>支持系统集成融合
-                        </li>
-                        <li>
-                            <i></i>即调即用
-                        </li>
-                    </ul>
-                    <button>了解更多</button>
-                </div>
             </div>
-        </div>
-        <div class="zhibo-item">
-            <div class="layui-container">
-                <div class="item-text">
-                    <h5>丰富的外部授权</h5>
-                    <ul>
-                        <li>
-                            <i></i>支持播放器、聊天室嵌入到第三方开发者系统中
-                        </li>
-                        <li>
-                            <i></i>为企业用户提供专业的运维服务
-                        </li>
-                        <li>
-                            <i></i>减少企业用户的系统开发成本
-                        </li>
-                    </ul>
-                    <button>了解更多</button>
-                </div>
-                <div class="item-img small-img">
-                    <img src="/static/image/customized/shouquan.png" alt="">
-                </div>
-            </div>
-
-        </div>
-        <div class="zhibo-item">
-            <div class="layui-container">
-                <div class="item-img active">
-                    <img src="/static/image/customized/jingli.png" alt="">
-                </div>
-                <div class="item-text">
-                    <h5>专属开发支持经理</h5>
-                    <ul>
-                        <li>
-                            <i></i>提供1v1服务对接开发
-                        </li>
-                        <li>
-                            <i></i>支持从0到1快速构建专属企业直播间
-                        </li>
-                        <!-- <li>
+            <div class="zhibo-item">
+                <div class="layui-container">
+                    <div class="item-img active">
+                        <img src="/static/image/customized/jingli.png" alt="">
+                    </div>
+                    <div class="item-text">
+                        <h5>专属开发支持经理</h5>
+                        <ul>
+                            <li>
+                                <i></i>提供1v1服务对接开发
+                            </li>
+                            <li>
+                                <i></i>支持从0到1快速构建专属企业直播间
+                            </li>
+                            <!-- <li>
                             <i></i>减少企业用户的系统开发成本
                         </li> -->
-                    </ul>
-                    <button>了解更多</button>
+                        </ul>
+                        <button class="learn-more">了解更多</button>
+                    </div>
                 </div>
-            </div>
 
 
-        </div>
-        <div class="zhibo-item">
-            <div class="layui-container">
-                <div class="item-text">
-                    <h5>支持深度整合与定制</h5>
-                    <ul>
-                        <li>
-                            <i></i>支持企业私有化部署
-                        </li>
-                        <li>
-                            <i></i>源代码及控制权授权给企业用户
-                        </li>
-                        <li>
-                            <i></i>让用户更加便捷高效的使用轻直播
-                        </li>
-                    </ul>
-                    <button>了解更多</button>
-                </div>
-                <div class="item-img active">
-                    <img src="/static/image/customized/dingzhi.png" alt="">
-                </div>
             </div>
+            <div class="zhibo-item">
+                <div class="layui-container">
+                    <div class="item-text">
+                        <h5>支持深度整合与定制</h5>
+                        <ul>
+                            <li>
+                                <i></i>支持企业私有化部署
+                            </li>
+                            <li>
+                                <i></i>源代码及控制权授权给企业用户
+                            </li>
+                            <li>
+                                <i></i>让用户更加便捷高效的使用轻直播
+                            </li>
+                        </ul>
+                        <button class="learn-more">了解更多</button>
+                    </div>
+                    <div class="item-img active">
+                        <img src="/static/image/customized/dingzhi.png" alt="">
+                    </div>
+                </div>
 
-        </div>
-        <div class="zhibo-item">
-            <div class="layui-container">
-                <div class="item-img active">
-                    <img src="/static/image/customized/jingli.png" alt="">
-                </div>
-                <div class="item-text">
-                    <h5>播放器、聊天室iframe嵌入</h5>
-                    <ul>
-                        <li>
-                            <i></i>支持播放器、聊天室嵌入到第三方开发者系统中
-                        </li>
-                        <li>
-                            <i></i>为企业用户提供专业的运维服务
-                        </li>
-                        <li>
-                            <i></i>减少企业用户的系统开发成本
-                        </li>
-                    </ul>
-                    <button>了解更多</button>
+            </div>
+            <div class="zhibo-item">
+                <div class="layui-container">
+                    <div class="item-img active">
+                        <img src="/static/image/customized/jingli.png" alt="">
+                    </div>
+                    <div class="item-text">
+                        <h5>播放器、聊天室iframe嵌入</h5>
+                        <ul>
+                            <li>
+                                <i></i>支持播放器、聊天室嵌入到第三方开发者系统中
+                            </li>
+                            <li>
+                                <i></i>为企业用户提供专业的运维服务
+                            </li>
+                            <li>
+                                <i></i>减少企业用户的系统开发成本
+                            </li>
+                        </ul>
+                        <button class="learn-more">了解更多</button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="zhibo-item">
-            <div class="layui-container">
-                <div class="item-text">
-                    <h5>丰富的外部授权</h5>
-                    <ul>
-                        <li>
-                            <i></i>支持播放器、聊天室嵌入到第三方开发者系统中
-                        </li>
-                        <li>
-                            <i></i>为企业用户提供专业的运维服务
-                        </li>
-                        <li>
-                            <i></i>减少企业用户的系统开发成本
-                        </li>
-                    </ul>
-                    <button>了解更多</button>
+            <div class="zhibo-item">
+                <div class="layui-container">
+                    <div class="item-text">
+                        <h5>丰富的外部授权</h5>
+                        <ul>
+                            <li>
+                                <i></i>支持播放器、聊天室嵌入到第三方开发者系统中
+                            </li>
+                            <li>
+                                <i></i>为企业用户提供专业的运维服务
+                            </li>
+                            <li>
+                                <i></i>减少企业用户的系统开发成本
+                            </li>
+                        </ul>
+                        <button class="learn-more">了解更多</button>
+                    </div>
+                    <div class="item-img small-img">
+                        <img src="/static/image/customized/shouquan.png" alt="">
+                    </div>
                 </div>
-                <div class="item-img small-img">
-                    <img src="/static/image/customized/shouquan.png" alt="">
-                </div>
-            </div>
 
-        </div>
-        <div class="zhibo-item">
-            <div class="layui-container">
-                <div class="item-img active">
-                    <img src="/static/image/customized/jingli.png" alt="">
-                </div>
-                <div class="item-text">
-                    <h5>专属开发支持经理</h5>
-                    <ul>
-                        <li>
-                            <i></i>提供1v1服务对接开发
-                        </li>
-                        <li>
-                            <i></i>支持从0到1快速构建专属企业直播间
-                        </li>
-                        <!-- <li>
+            </div>
+            <div class="zhibo-item">
+                <div class="layui-container">
+                    <div class="item-img active">
+                        <img src="/static/image/customized/jingli.png" alt="">
+                    </div>
+                    <div class="item-text">
+                        <h5>专属开发支持经理</h5>
+                        <ul>
+                            <li>
+                                <i></i>提供1v1服务对接开发
+                            </li>
+                            <li>
+                                <i></i>支持从0到1快速构建专属企业直播间
+                            </li>
+                            <!-- <li>
                             <i></i>减少企业用户的系统开发成本
                         </li> -->
-                    </ul>
-                    <button>了解更多</button>
+                        </ul>
+                        <button class="learn-more">了解更多</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- “轻”装上阵，玩转企业数字营销5G时代 -->
+        <div id="fiveG">
+            <div class="hover"></div>
+            <div class="layui-container">
+                <div class="fiveg-content">
+                    <h2>“轻”装上阵，玩转企业数字营销5G时代</h2>
+                    <h5>「轻直播」为您提供一站式企业直播解决方案</h5>
+                    <button><a href="http://login.lighos.com/signUp" target="_blank">免费使用</a>
+                    </button>
                 </div>
             </div>
-
-
         </div>
-    </div>
 
-    <!-- “轻”装上阵，玩转企业数字营销5G时代 -->
-    <div id="fiveG">
-        <div class="hover"></div>
-        <div class="layui-container">
-            <div class="fiveg-content">
-                <h2>“轻”装上阵，玩转企业数字营销5G时代</h2>
-                <h5>「轻直播」为您提供一站式企业直播解决方案</h5>
-                <button><a href="http://login.lighos.com/signUp" target="_blank">免费使用</a>
-                </button>
-            </div>
-        </div>
+        {include file="common/footer"}
     </div>
-
-    {include file="common/footer"}
-</div>
 </body>
 
 <script src="/static/common/js/header-footer.js"></script>
+<script src="/static/common/js/onlineService.js"></script>
 <script type="text/javascript">
     layui.use('carousel', function () {
         var carousel = layui.carousel;
@@ -307,6 +311,10 @@
     $('.banner-a').on('click', function () {
         $('#order-container').show();
         $('.q-modal').show();
+    })
+
+    $('.learn-more').click(function () {
+        daovoice('show')
     })
 </script>
 

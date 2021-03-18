@@ -6,7 +6,6 @@
 }
 
 #advantage {
-    position: absolute;
 
     .title {
         font-size: 30px;
@@ -352,64 +351,67 @@
                         margin-right: 40px;
                         border-radius: 10px;
                         cursor: pointer;
-
-                        &>img {
-                            height: 67%;
-                            width: 100%;
-                            object-fit: cover;
-                            border-radius: 10px;
-                        }
-
-                        .type {
-                            position: absolute;
-                            top: 24px;
-                            right: 20px;
-                            width: 86px;
-                            height: 40px;
-                            background: rgba(37, 37, 37, .5);
-                            border-radius: 20px;
-                            color: rgba(255, 255, 255, .7);
-                            line-height: 40px;
-                            text-align: center;
-                            font-size: 16px
-                        }
-
-                        .text {
-                            padding: 0 16px;
-                            box-sizing: border-box;
-
-                            h5 {
-                                margin: 13px 0 10px;
-                                color: #333;
+                        a {
+                           display: block;
+                            &>img {
+                                height: 67%;
+                                width: 100%;
+                                object-fit: cover;
+                                border-radius: 10px;
                             }
 
-                            h6 {
-                                margin-bottom: 12px;
-                                font-size: 14px;
-                                color: #666;
+                            .type {
+                                position: absolute;
+                                top: 24px;
+                                right: 20px;
+                                width: 86px;
+                                height: 40px;
+                                background: rgba(37, 37, 37, .5);
+                                border-radius: 20px;
+                                color: rgba(255, 255, 255, .7);
+                                line-height: 40px;
+                                text-align: center;
+                                font-size: 16px
                             }
 
-                            p {
-                                color: #999;
-                                font-size: 12px;
-                                margin-bottom: 8px;
+                            .text {
+                                padding: 0 16px;
+                                box-sizing: border-box;
 
-                                .num {
-                                    float: right;
-
-                                    img {
-                                        width: auto;
-                                        margin-right: 10px;
-                                        vertical-align: middle;
-                                    }
+                                h5 {
+                                    margin: 13px 0 10px;
+                                    color: #333;
                                 }
 
+                                h6 {
+                                    margin-bottom: 12px;
+                                    font-size: 14px;
+                                    color: #666;
+                                }
+
+                                p {
+                                    color: #999;
+                                    font-size: 12px;
+                                    margin-bottom: 8px;
+
+                                    .num {
+                                        float: right;
+
+                                        img {
+                                            width: auto;
+                                            margin-right: 10px;
+                                            vertical-align: middle;
+                                        }
+                                    }
+
+                                }
+                            }
+
+                            &:nth-child(3n) {
+                                margin-right: 0;
                             }
                         }
 
-                        &:nth-child(3n) {
-                            margin-right: 0;
-                        }
 
                     }
                 }
@@ -696,6 +698,11 @@
 
         .lianxi-free {
             height: 300px;
+        }
+    }
+    @media screen and (min-width: 820px) and (max-width: 992px) {
+        .recommend {
+            width: 99%;
         }
     }
 

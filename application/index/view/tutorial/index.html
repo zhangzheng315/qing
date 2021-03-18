@@ -81,10 +81,10 @@
 <body>
     <div id="tutorial">
 
-         <!--演示演示弹出框 -->
-         {include file="common/order_box"}
-         <!-- 咨询版块 -->
-         {include file="common/siderbar-right"}
+        <!--演示演示弹出框 -->
+        {include file="common/order_box"}
+        <!-- 咨询版块 -->
+        {include file="common/siderbar-right"}
         <header>
             <div class="layui-container flex-box">
                 <div class="logo">
@@ -97,9 +97,9 @@
 
                     </div>
                 </div>
-                <a class="shouye" href="{:url('/')}">轻直播首页</a>
+                <a class="shouye" href="/">轻直播首页</a>
                 <div class="login flex-box">
-                    <a href="{:url('/login')}" target="_blank">登录</a>
+                    <a href="/login" target="_blank">登录</a>
                     <a href="http://login.lighos.com/signUp" target="_blank">注册</a>
                 </div>
                 <ul class="layui-nav" lay-filter="leftNav">
@@ -114,14 +114,13 @@
                 </ul>
             </div>
         </header>
-       
+
 
         <nav class="nav-second flex-box">
             <div class="layui-container">
-                <a class="active" href="{:url('/video')}">首页</a>
+                <a class="active" href="/video">首页</a>
                 <i class="layui-icon layui-icon-right"></i>
-                <a class="active"
-                    href="/video/second?pid={$info['pid']}">{$info['pid_name']}</a>
+                <a class="active" href="/video/second?pid={$info['pid']}">{$info['pid_name']}</a>
                 <i class="layui-icon layui-icon-right"></i>
                 <span>{$info['theme_name']}</span>
             </div>
@@ -352,8 +351,7 @@
 <script>
     // 登录成功后显示个人信息
     var tvInfo = JSON.parse(localStorage.getItem('tvInfo'))
-    console.log(tvInfo);
-    if (tvInfo.token) {
+    if (tvInfo) {
         $('.layui-nav').show()
         // 隐藏登录按钮
         $('.login').hide();
@@ -378,6 +376,8 @@
                 setTimeout(() => {
                     window.location.href = "/login"
                 }, 500);
+            } else if (id == 1) {
+                window.open('http://login.lighos.com/upload-userInfo')
             }
         });
     });

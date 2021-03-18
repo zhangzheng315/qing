@@ -35,9 +35,11 @@ class QingSchool extends Controller
         $list = $this->articleService->hotArticleList();
         $hot_label = $this->labelService->hotLabelList();
         $video_type = $this->videoTypeService->videoTypeList();
+        $video_type_limit = $this->videoTypeService->videoTypeLimitList();
         $this->assign('list', $list);
         $this->assign('hot_label', $hot_label);
         $this->assign('video_type', $video_type);
+        $this->assign('video_type_limit', $video_type_limit);
     }
 
     /* 内容中心*/
@@ -97,7 +99,7 @@ class QingSchool extends Controller
         $pid = $param['pid'];
         $pid_name = $this->videoTypeService->videoTypeName($param['pid']);
         $video_list = $this->videoService->getVideoListByWhere($param);
-        return $this->fetch('',compact('pid_name','video_list'));
+        return $this->fetch('',compact('pid_name','video_list','pid'));
     }
 
     /* 新闻详情页 */
@@ -247,7 +249,6 @@ class QingSchool extends Controller
         if(!$validate->check($request->param())){
             return show(401,$validate->getError());
         }
-
         $res = $this->videoService->videoListByPage($request->param());
         if($res){
             return show(200,$this->videoService->message,$res);

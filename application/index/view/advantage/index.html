@@ -134,7 +134,7 @@
                     <ul class="case_list">
                     </ul>
                 </div>
-                <button><a href="/index/case_center/index">查看更多案例</a></button>
+                <button><a href="/case">查看更多案例</a></button>
             </div>
         </div>
 
@@ -163,7 +163,8 @@
                     $('.case_list').empty();
                     for (let item of res.data) {
                         $('.case_list').append('<li>\n' +
-                            '                            <div class="type">案例</div>\n' +
+                            '<a href="/case/detail?type_id=4&id=' + item.id + '">\n' +
+                            '                            <div class="type">案例</div>' +
                             '                            <img src="'+ item.cover_img_url +'" alt="">\n' +
                             '                            <div class="text">\n' +
                             '                                <h5>'+ item.title +'</h5>\n' +
@@ -171,6 +172,7 @@
                             '                                <p><span>'+ item.time +'</span><span class="num"><img\n' +
                             '                                            src="/static/image/advantage/bofang.png" alt="">'+ item.browse +'</span></p>\n' +
                             '                            </div>\n' +
+                            '</a>\n' +
                             '                        </li>')
                     }
                 }
