@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>轻直播_企业直播服务平台,医疗直播领军者,营销直播定制服务商</title>
-    <meta name="keywords"  content="企业直播平台,医疗直播,营销直播,活动直播,直播定制服务"/>
+    <meta name="keywords"  content="企业直播平台,医疗直播,营销直播,活动直播,直播定制服务" />
     <meta name="description"
-           content="轻直播是国内知名的企业级直播定制化服务平台,服务全球500强,为企业提供医疗直播、手术直播、活动直播、会议直播、营销直播、年会直播等全场景解决方案,热线:400-920-1599。"/>
+         content="轻直播是国内知名的企业级直播定制化服务平台,服务全球500强,为企业提供医疗直播、手术直播、活动直播、会议直播、营销直播、年会直播等全场景解决方案,热线:400-920-1599。" />
     <link rel="stylesheet" href="/static/css/qingschool/coursesecond.css">
     <link rel="stylesheet" href="/static/layui/css/layui.css">
     <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/layui/layui.js"></script>
     <script type='text/javascript' src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <style>
         .layui-nav {
@@ -68,7 +69,8 @@
             background-color: #00cc99;
             color: #fff
         }
-        .null-data{
+
+        .null-data {
             position: relative;
             top: 16%;
             left: 50%;
@@ -79,144 +81,145 @@
 </head>
 
 <body>
-<!-- 视频教程二级页面 -->
-<div id="course">
-    <header>
-        <div class="layui-container flexs">
-            <div class="logo"><a href="{:url('/')}"><img src="/static/image/index1/logo_text.svg" alt="首页"></a></div>
-            <ul class="flexs head-ul">
-                {if(isset($video_type))}
-                {foreach($video_type as $item)}
-                <li onclick="videoPage({$item.id})">{$item.name}</li>
-                {/foreach}
-                {/if}
-            </ul>
-            <div class="layui-form-item">
-                <div class="layui-input-block flexs">
-                    <input type="text" name="word" id="word" required lay-verify="required" placeholder="课程/关键词"
-                           autocomplete="off" class="layui-input">
-                    <div class="icons" id="icon_search">
-                        <img src="/static/image/qingschool1/search_white.svg" alt="">
+    <!-- 视频教程二级页面 -->
+    <div id="course">
+        <header>
+            <div class="layui-container flexs">
+                <div class="logo"><a href="{:url('/')}"><img src="/static/image/index1/logo_text.svg" alt="首页"></a>
+                </div>
+                <ul class="flexs head-ul">
+                    {if(isset($video_type))}
+                    {foreach($video_type as $item)}
+                    <li onclick="videoPage({$item.id})">{$item.name}</li>
+                    {/foreach}
+                    {/if}
+                </ul>
+                <div class="layui-form-item">
+                    <div class="layui-input-block flexs">
+                        <input type="text" name="word" id="word" required lay-verify="required" placeholder="课程/关键词"
+                            autocomplete="off" class="layui-input">
+                        <div class="icons" id="icon_search">
+                            <img src="/static/image/qingschool1/search_white.svg" alt="">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <a href="/">轻直播首页</a>
-            <div class="login flexs">
-                <a href="{:url('/login')}" target="_blank">登录</a>
-                <span>|</span>
-                <a href="http://login.lighos.com/signUp" target="_blank">注册</a>
-            </div>
-            <ul class="layui-nav" lay-filter="leftNav">
-                <li class="layui-nav-item">
-                    <a id="img-a" href=""><img src="//t.cn/RCzsdCq" class="layui-nav-img"><span
-                            class="name">11</span></a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="javascript:;" data-id="1">账户中心</a></dd>
-                        <dd><a href="javascript:;" data-id="2">退出登录</a></dd>
-                    </dl>
-                </li>
-            </ul>
-        </div>
-    </header>
-   <!--演示演示弹出框 -->
-   {include file="common/order_box"}
-   <!-- 咨询版块 -->
-   {include file="common/siderbar-right"}
-    <nav class="nav-second flexs">
-        <div class="layui-container">
-            <a href="{:url('/video')}">首页</a>
-            <i class="layui-icon layui-icon-right"></i>
-            <span >全部课程</span>
-            <i class="layui-icon layui-icon-right"></i>
-            <span>{$pid_name}</span>
-        </div>
-    </nav>
-    <div class="study-direction">
-        <div class="layui-container">
-            <div class="direction-item flexs">
-                <div class="item-title">学习方向</div>
-                <ul class="flexs study-ul">
-                    <li class="active"><a href="">全部</a></li>
-                    <li><a href="">产品动态</a></li>
-                    <li><a href="">直播资讯</a></li>
-                    <li><a href="">直播新用户快速入门</a></li>
-                    <li><a href="">直播进阶课程</a></li>
-                    <li><a href="">企培用户专区</a></li>
+                <a href="/">轻直播首页</a>
+                <div class="login flexs">
+                    <a href="{:url('/login')}" target="_blank">登录</a>
+                    <span>|</span>
+                    <a href="http://login.lighos.com/signUp" target="_blank">注册</a>
+                </div>
+                <ul class="layui-nav" lay-filter="leftNav">
+                    <li class="layui-nav-item">
+                        <a id="img-a" href=""><img src="//t.cn/RCzsdCq" class="layui-nav-img"><span
+                                class="name">11</span></a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;" data-id="1">账户中心</a></dd>
+                            <dd><a href="javascript:;" data-id="2">退出登录</a></dd>
+                        </dl>
+                    </li>
                 </ul>
             </div>
-            <div class="direction-item flexs">
-                <div class="item-title">课程类型</div>
-                <ul class="flex study-ul">
-                    <li class="active"><a href="" >全部</a></li>
-                    <li><a href="">视频直播</a></li>
-                    <li><a href="">视频点播</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="checkbox">
-        <div class="layui-container">
-            <ul class="checkboxs flexs">
-                <li>
-                    <label for="mianfei">
-                        <input id="mianfei" type="checkbox">
-                        <span>免费</span>
-                    </label>
-                    <!-- <input type="checkbox" name="" title="发呆" lay-skin="primary"> -->
-                    <i>|</i>
-                </li>
-                <li>
-                    <label for="fufei">
-                        <input id="fufei" type="checkbox">
-                        <span>付费</span>
-                    </label>
-                    <!-- <input type="checkbox" name="" title="发呆" lay-skin="primary"> -->
-                    <i>|</i>
-                </li>
-                <li>
-                    <label for="lubo">
-                        <input id="lubo" type="checkbox">
-                        <span>录播</span>
-                    </label>
-                    <!-- <input type="checkbox" name="" title="发呆" lay-skin="primary"> -->
-                    <i>|</i>
-                </li>
-                <li>
-                    <label for="zhibo">
-                        <input id="zhibo" type="checkbox">
-                        <span>直播</span>
-                    </label>
-                    <!-- <input type="checkbox" name="" title="发呆" lay-skin="primary"> -->
-                    <i>|</i>
-                </li>
-                <li>
-                    <label for="vip">
-                        <input id="vip" type="checkbox">
-                        <span>VIP免费</span>
-                    </label>
-                    <!-- <input type="checkbox" name="" title="发呆" lay-skin="primary"> -->
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="price-box">
-        <div class="price">
+        </header>
+        <!--演示演示弹出框 -->
+        {include file="common/order_box"}
+        <!-- 咨询版块 -->
+        {include file="common/siderbar-right"}
+        <nav class="nav-second flexs">
             <div class="layui-container">
-                <ul class="price-nav flexs">
-                    <li class="active">热门</li>
-                    <li>最新</li>
-                    <li class="price-num">价格<i></i></li>
-                </ul>
+                <a href="{:url('/video')}">首页</a>
+                <i class="layui-icon layui-icon-right"></i>
+                <span>全部课程</span>
+                <i class="layui-icon layui-icon-right"></i>
+                <span>{$pid_name}</span>
             </div>
-        </div>
-        <div class="price-content">
-            <div class="study-content layui-container">
-                <div class="study-item active">
-                    <ul class="study-box">
-
+        </nav>
+        <div class="study-direction">
+            <div class="layui-container">
+                <div class="direction-item flexs">
+                    <div class="item-title">学习方向</div>
+                    <ul class="flexs study-ul">
+                        <li class="active"><a href="">全部</a></li>
+                        <li><a href="">产品动态</a></li>
+                        <li><a href="">直播资讯</a></li>
+                        <li><a href="">直播新用户快速入门</a></li>
+                        <li><a href="">直播进阶课程</a></li>
+                        <li><a href="">企培用户专区</a></li>
                     </ul>
                 </div>
-                <!--<div class="study-item">
+                <div class="direction-item flexs">
+                    <div class="item-title">课程类型</div>
+                    <ul class="flex study-ul">
+                        <li class="active"><a href="">全部</a></li>
+                        <li><a href="">视频直播</a></li>
+                        <li><a href="">视频点播</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="checkbox">
+            <div class="layui-container">
+                <ul class="checkboxs flexs">
+                    <li>
+                        <label for="mianfei">
+                            <input id="mianfei" type="checkbox">
+                            <span>免费</span>
+                        </label>
+                        <!-- <input type="checkbox" name="" title="发呆" lay-skin="primary"> -->
+                        <i>|</i>
+                    </li>
+                    <li>
+                        <label for="fufei">
+                            <input id="fufei" type="checkbox">
+                            <span>付费</span>
+                        </label>
+                        <!-- <input type="checkbox" name="" title="发呆" lay-skin="primary"> -->
+                        <i>|</i>
+                    </li>
+                    <li>
+                        <label for="lubo">
+                            <input id="lubo" type="checkbox">
+                            <span>录播</span>
+                        </label>
+                        <!-- <input type="checkbox" name="" title="发呆" lay-skin="primary"> -->
+                        <i>|</i>
+                    </li>
+                    <li>
+                        <label for="zhibo">
+                            <input id="zhibo" type="checkbox">
+                            <span>直播</span>
+                        </label>
+                        <!-- <input type="checkbox" name="" title="发呆" lay-skin="primary"> -->
+                        <i>|</i>
+                    </li>
+                    <li>
+                        <label for="vip">
+                            <input id="vip" type="checkbox">
+                            <span>VIP免费</span>
+                        </label>
+                        <!-- <input type="checkbox" name="" title="发呆" lay-skin="primary"> -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="price-box">
+            <div class="price">
+                <div class="layui-container">
+                    <ul class="price-nav flexs">
+                        <li class="active">热门</li>
+                        <li>最新</li>
+                        <li class="price-num">价格<i></i></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="price-content">
+                <div class="study-content layui-container">
+                    <div class="study-item active">
+                        <ul class="study-box">
+
+                        </ul>
+                    </div>
+                    <!--<div class="study-item">
                     <ul class="study-box">
                         <li>
                             <a href="{:url('/index/tutorial/index')}">
@@ -283,15 +286,14 @@
                         </li>
                     </ul>
                 </div>-->
-                <div id="test1" class="hid-sho"></div>
+                    <div id="test1" class="hid-sho"></div>
+                </div>
             </div>
         </div>
+        {include file="common/footer"}
     </div>
-    {include file="common/footer"}
-</div>
 </body>
 <script src="/static/common/js/header-footer.js"></script>
-<script src="/static/layui/layui.js"></script>
 
 <script>
     // 案例教程模块导航栏切换
@@ -333,7 +335,7 @@
                 elem: 'test1'       //注意，这里的 test1 是分页容器ID，不用加 # 号
                 , count: data.count //数据总数
                 , curr: data.curr   //当前页
-                , limit:12
+                , limit: 12
                 , prev: '<'         // 上一页按钮内容
                 , next: '>'         // 下一页按钮内容
                 , theme: '#00cc99'
@@ -349,27 +351,27 @@
 
 
     videoPage(1);
-    function videoPage(index, word='', curr = 1) {
+    function videoPage(index, word = '', curr = 1) {
         $.ajax({
             url: "{:url('/index/qing_school/videoListByPage')}",
-            data: {'pid': index, 'word':word, 'curr': curr},
+            data: { 'pid': index, 'word': word, 'curr': curr },
             type: 'get',
             success: function (res) {
                 $('.study-box').empty()
                 if (res.status === 200) {
                     for (let item of res.data.data) {
                         $('.study-box').append('<li>\n' +
-                            '                            <a href="/video/tutorial?browse=1&id='+item.id+'">\n' +
-                            '                                <img src="'+item.cover_img_url+'" alt="">\n' +
+                            '                            <a href="/video/tutorial?browse=1&id=' + item.id + '">\n' +
+                            '                                <img src="' + item.cover_img_url + '" alt="">\n' +
                             '                                <div class="txt">\n' +
-                            '                                    <h6>'+item.title+'</h6>\n' +
-                            '                                    <p><span>免费</span><span>'+item.browse+'人已学习</span></p>\n' +
+                            '                                    <h6>' + item.title + '</h6>\n' +
+                            '                                    <p><span>免费</span><span>' + item.browse + '人已学习</span></p>\n' +
                             '                                </div>\n' +
                             '                            </a>\n' +
                             '                        </li>')
                     }
                     layPage(res.data);
-                }else{
+                } else {
                     $('.study-box').append('<img class="null-data" src="/static/image/null_data.svg" alt="">');
                     $('.hid-sho').hide();
                 }
@@ -378,7 +380,7 @@
     }
 
     //搜索
-    $('#icon_search').on('click',function () {
+    $('#icon_search').on('click', function () {
         let word = $('#word').val();
         videoPage('', word);
     })
@@ -386,8 +388,7 @@
 <script>
     // 登录成功后显示个人信息
     var tvInfo = JSON.parse(localStorage.getItem('tvInfo'))
-    console.log(tvInfo);
-    if (tvInfo.token) {
+    if (tvInfo) {
         $('.layui-nav').show()
         // 隐藏登录按钮
         $('.login').hide();
