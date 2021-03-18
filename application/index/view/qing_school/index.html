@@ -300,7 +300,6 @@
 </div>
 
 </body>
-<!-- <script src="/static/common/js/onlineService.js"></script> -->
 <script src="/static/common/js/onlineService.js"></script>
 <script src="/static/common/js/header-footer.js"></script>
 <script>
@@ -361,7 +360,12 @@
                     window.location.href = "/login"
                 }, 500);
             } else if (id == 1) {
-                window.open('http://login.lighos.com/upload-userInfo')
+                var token = tvInfo.token
+                var name = tvInfo.name
+                var avatar = tvInfo.avatar
+                window.open(`http://login.qingtv.com/Home?lighostoken=${token}
+                &lighosName${name}
+                &lighosHeadUrl=${avatar}`)
             }
             });
         });
