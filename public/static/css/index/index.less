@@ -618,7 +618,9 @@
 
             &:hover {
                 background-color: #00cc99;
-                h6,p {
+
+                h6,
+                p {
                     color: #fff;
 
                 }
@@ -1704,10 +1706,12 @@
             top: 19% !important;
             left: 50%;
             transform: translateX(-50%);
+
             h2 {
                 font-size: 22px !important;
                 text-align: center !important;
             }
+
             h5 {
                 width: 80% !important;
                 margin: 38px auto 43px !important;
@@ -2027,12 +2031,24 @@
         }
 
         .logo-box {
+            
+
             .logo-imgs {
+                display: flex;
+            flex-wrap: wrap;
                 li {
-                    width: 19%;
+                    width: 24%;
                     height: 50px;
-                    margin-right: 20px;
+                    margin-right: 1%;
                     margin-bottom: 22px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    &:nth-child(4n) {
+                        margin-right: 0;
+                    }
+
                 }
             }
         }
