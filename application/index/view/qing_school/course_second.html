@@ -215,8 +215,20 @@
                     <ul class="study-box">
                         {if(isset($video_list) && $video_list)}
                         {foreach($video_list as $item)}
-
+                        <li>
+                            <a href="/video/tutorial?browse=1&id={$item.id}">
+                                <img src="{$item.cover_img_url}" alt="">
+                                <div class="txt">
+                                    <h6>{$item.title}</h6>
+                                    <p>
+                                        <span>免费</span><span>{$item.browse}人已学习</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
                         {/foreach}
+                        {else}
+                        <img class="null-data" src="/static/image/null_data.svg" alt="">
                         {/if}
                     </ul>
                 </div>
@@ -351,8 +363,6 @@
         });
     }
 
-
-    videoPage(1);
     function videoPage(index, word='', curr = 1) {
         $.ajax({
             url: "{:url('/index/qing_school/videoListByPage')}",
