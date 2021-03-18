@@ -40,8 +40,11 @@ class VideoService extends Common{
         }
         $pid_name = $this->videoType->where(['id' => $param['pid']])->value('name');
         $theme_name = $this->theme->where(['id' => $param['theme_id']])->value('theme_name');
+        $video_time = $this->getTime($param['video_url']);
+
         $data = [
             'video_url' => $param['video_url'],
+            'video_time'=> $video_time,
             'cover_img_url' => $param['cover_img_url'],
             'pid' => $param['pid'],
             'pid_name' => $pid_name,
@@ -131,8 +134,11 @@ class VideoService extends Common{
         $where = ['id' => $data['id']];
         $pid_name = $this->videoType->where(['id' => $data['pid']])->value('name');
         $theme_name = $this->theme->where(['id' => $data['theme_id']])->value('theme_name');
+        $video_time = $this->getTime($data['video_url']);
+
         $data['pid_name'] = $pid_name;
         $data['theme_name'] = $theme_name;
+        $data['video_time'] = $video_time;
         $data['updated_time'] = time();
         $add_id = $this->video->update($data,$where);
         if(!$add_id){
@@ -300,11 +306,8 @@ class VideoService extends Common{
         $catalog = $this->video->where($where)->order('order', 'desc')->select();
         $all_dur = 0;
         foreach ($catalog as $item) {
-            $data = $this->liveCurl($item['video_url'].'?avinfo');
-            $json = json_decode($data);
-            $duration = (int)$json->format->duration;
-            $all_dur += $duration;
-            $item['duration'] = $this->getDuration($duration);
+            $all_dur += $item['video_time'];
+            $item['duration'] = $this->getDuration($item['video_time']);
         }
         $all_dur = $this->getDuration($all_dur);
         return ['catalog'=>$catalog,'all_dur'=>$all_dur];
@@ -331,6 +334,26 @@ class VideoService extends Common{
             $result = $hour.':'.$minute.':'.$second;
         }
         return $result;
+    }
+
+    /**
+     * 获取视频秒数
+     * @param $url
+     * @return int
+     */
+    public function getTime($url)
+    {
+        $data = $this->liveCurl($url.'?avinfo');
+        if (!$data) {
+            $duration = 0;
+            return $duration;
+        }
+        $json = json_decode($data);
+        $duration = (int)$json->format->duration;
+        if (!$duration) {
+            $duration = 0;
+        }
+        return $duration;
     }
 
 
