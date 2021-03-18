@@ -34,7 +34,7 @@
                     {if(isset($banner_list) && $banner_list)}
                     {foreach $banner_list as $item}
                     <div class="banner-item">
-                        <a href="{$item.img_link}" target="_blank">
+                        <a href="{$item.img_link}">
                             <img class="banner-img" src="{$item.img_url}" alt="">
                         </a>
                         <div class="text-{$item.format}">
@@ -63,7 +63,6 @@
                             color: {$item.button_color};
                             text-align: center;
                             line-height: 44px;
-                            float: {$item.float};
                             font-size: {$item.button_size}px;'>{$item.button_text}</a>
                             {/if}
                         </div>

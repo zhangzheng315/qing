@@ -4,9 +4,6 @@
     padding: 0 !important;
   }
 }
-#advantage {
-  position: absolute;
-}
 #advantage .title {
   font-size: 30px;
   color: #333;
@@ -534,6 +531,11 @@
   }
   #advantage .lianxi-free {
     height: 300px;
+  }
+}
+@media screen and (min-width: 820px) and (max-width: 992px) {
+  #advantage .recommend {
+    width: 99%;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
