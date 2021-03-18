@@ -68,6 +68,13 @@
             background-color: #00cc99;
             color: #fff
         }
+        .null-data{
+            position: relative;
+            top: 16%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 35%;
+        }
     </style>
 </head>
 
@@ -114,7 +121,7 @@
                 <a href="{:url('/video')}" class="active">首页</a>
                 {if(isset($video_type))}
                 {foreach($video_type as $item)}
-                <a href="/video/course?all=1&pid={$item.id}">{$item.name}</a>
+                <a href="/video/second?all=1&pid={$item.id}">{$item.name}</a>
                 {/foreach}
                 {/if}
 
@@ -130,10 +137,10 @@
                         <h6>大家都在看：</h6>
                         <div class="underline"></div>
                     </div>
-                    <a class="more" href="{:url('/index/qing_school/courseSecond')}">更多···</a>
+                    <a class="more" href="{:url('/video/second')}">更多···</a>
                 </div>
                 <div class="watch-content">
-                    <a href="{:url('/index/tutorial/index',['browse'=>1,'id'=>$first_video['id']])}">
+                    <a href="/video/tutorial?browse=1&id={$first_video['id']}">
                         <img class="all-img" src="{$first_video['cover_img_url']}" alt="">
                     </a>
                     <div class="content-text">
@@ -167,8 +174,8 @@
                         <ul class="study-box">
 
                         </ul>
-                        <button>
-                            <a href="/index/qing_school/courseSecond?all=1&pid=1" class="point_more">点击加载更多</a>
+                        <button class="hid-sho">
+                            <a href="/video/second?all=1&pid=1" class="point_more">点击加载更多</a>
                         </button>
                     </div>
                 </div>
@@ -356,11 +363,11 @@
             data: { 'pid': pid },
             type: 'get',
             success: function (res) {
+                $('.study-box').empty();
                 if (res.status === 200) {
-                    $('.study-box').empty();
                     for (let item of res.data) {
                         $('.study-box').append('<li>\n' +
-                            '                        <a href="/index/tutorial/index?browse=1&id=' + item.id + '">\n' +
+                            '                        <a href="/video/tutorial?browse=1&id=' + item.id + '">\n' +
                             '                              <img src="' + item.cover_img_url + '" alt="">\n' +
                             '                              <div class="txt">\n' +
                             '                                   <h6>' + item.title + '</h6>\n' +
@@ -370,7 +377,11 @@
                             '                         </a>\n' +
                             '                    </li>')
                     }
-                    $('.point_more').attr('href', '/index/qing_school/courseSecond?all=1&pid=' + pid);
+                    $('.point_more').attr('href', '/video/second?all=1&pid=' + pid);
+                    $('.hid-sho').show();
+                }else{
+                    $('.study-box').append('<img class="null-data" src="/static/image/null_data.svg" alt="">');
+                    $('.hid-sho').hide();
                 }
             },
             error: function (err) {
@@ -406,7 +417,7 @@
                 localStorage.removeItem('tvInfo')
                 layer.msg('您已退出登录');
                 setTimeout(() => {
-                    window.location.href = "/index/login/login.html"
+                    window.location.href = "/login"
                 }, 500);
             }
         });
