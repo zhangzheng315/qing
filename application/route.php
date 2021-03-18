@@ -6,9 +6,14 @@ use think\Route;
 //视频云服务
 Route::rule('private', 'index/deploy/index');                       //私有化部署
 Route::rule('live', 'index/video_cloud/index');                     //轻直播平台
+
+// 更多直播功能
+Route::rule('function', 'index/more_live/index');                   //功能大全
+
 //定制化服务
 Route::rule('develop', 'index/customized_service/index');           //直播集成开发
 Route::rule('develop/app', 'index/customized_service/applets');     //APP/小程序开发
+
 //现场服务
 Route::rule('service', 'index/site_service/index');                 //现场服务
 
@@ -39,36 +44,34 @@ Route::rule('case/technology','index/case_center/technology');      // 科技案
 Route::rule('case/property','index/case_center/property');          // 地产案例
 
 // 轻学院
-Route::rule('blog', 'index/qing_school/index');  // 轻学院内容中心
-Route::rule('blog/demo', 'index/qing_school/caseAn');  // 轻学院案例解析
-Route::rule('blog/dynamic', 'index/qing_school/products');  // 轻学院产品动态
-Route::rule('blog/archives', 'index/qing_school/liveNews');  // 轻学院直播资讯
-Route::rule('video', 'index/qing_school/videoCourse');  // 轻学院视频
-Route::rule('guide', 'index/qing_school/article');  // 直播百科
-Route::rule('blog/detail','index/qing_school/newsDetail'); // 轻学院内容详情页
-Route::rule('video/tutorial','index/tutorial/index'); // 轻学院视频详情
-Route::rule('video/second','index/qing_school/courseSecond');  // 轻学院视频二级页面
+Route::rule('blog', 'index/qing_school/index');                     // 轻学院内容中心
+Route::rule('blog/demo', 'index/qing_school/caseAn');               // 轻学院案例解析
+Route::rule('blog/dynamic', 'index/qing_school/products');          // 轻学院产品动态
+Route::rule('blog/archives', 'index/qing_school/liveNews');         // 轻学院直播资讯
+Route::rule('video', 'index/qing_school/videoCourse');              // 轻学院视频
+Route::rule('guide', 'index/qing_school/article');                  // 直播百科
+Route::rule('blog/detail','index/qing_school/newsDetail');          // 轻学院内容详情页
+Route::rule('video/tutorial','index/tutorial/index');               // 轻学院视频详情
+Route::rule('video/second','index/qing_school/courseSecond');       // 轻学院视频二级页面
 
 // 关于轻直播
-Route::rule('about', 'index/about/index'); // 关于我们
-Route::rule('advantage', 'index/advantage/index'); // 我们的优势
-Route::rule('news', 'index/corporate_news/news'); // 企业新闻
-Route::rule('partner', 'index/channel/index'); // 渠道合作
-Route::rule('join', 'index/join/joinUs'); // 加入我们
-Route::rule('contact', 'index/contact/contactUs'); // 联系我们
+Route::rule('about', 'index/about/index');                          // 关于我们
+Route::rule('advantage', 'index/advantage/index');                  // 我们的优势
+Route::rule('news', 'index/corporate_news/news');                   // 企业新闻
+Route::rule('partner', 'index/channel/index');                      // 渠道合作
+Route::rule('join', 'index/join/joinUs');                           // 加入我们
+Route::rule('contact', 'index/contact/contactUs');                  // 联系我们
 Route::rule('news/detail', 'index/corporate_news/corporateDetail'); // 企业新闻详情
-Route::rule('news/list', 'index/corporate_news/categoryNews'); // 企业新闻列表
+Route::rule('news/list', 'index/corporate_news/categoryNews');      // 企业新闻列表
 
-// 更多直播功能
-Route::rule('function', 'index/more_live/index');
 //登陆
-Route::rule('login', 'index/login/login');//登陆
+Route::rule('login', 'index/login/login');                          //登陆
 
 //footer
-Route::rule('statement', 'index/index/legalNotice');//法律声明
-Route::rule('licence', 'index/index/licence');//增值电信经营许可证
-Route::rule('privacy', 'index/index/privacy');//隐私协议
-Route::rule('protocol', 'index/index/serviceAgreement');//服务协议
+Route::rule('statement', 'index/index/legalNotice');                //法律声明
+Route::rule('licence', 'index/index/licence');                      //增值电信经营许可证
+Route::rule('privacy', 'index/index/privacy');                      //隐私协议
+Route::rule('protocol', 'index/index/serviceAgreement');            //服务协议
 
 
 
