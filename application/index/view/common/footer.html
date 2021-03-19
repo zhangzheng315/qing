@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1, minimum-scale=1,user-scalable=no">
     <title>Document</title>
     <style>
         body {
@@ -178,7 +178,7 @@
                 left: 0;
                 bottom: 100%;
                 z-index: 99;
-                width: 144px;
+                width: 120px;
                 background: #333333;
                 border-radius: 5px;
                 display: none;
@@ -243,6 +243,8 @@
 
             .pc-footer-bottom-left {
                 width: 375px;
+                display: flex;
+                align-items: center;
             }
 
             .pc-footer-bottom-right {
@@ -257,6 +259,7 @@
             }
             .pc-footer-bottom-left>a {
                 font-size: 12px;
+                margin-right: 10px;
             }
 
             .pc-footer-bottom-right>span,.pc-footer-bottom-right>a {
@@ -266,7 +269,7 @@
                 height: 50px;
             }
             .pc-footer-bottom-right>a {
-                margin-right: 20px;
+                margin-right: 60px;
             }
         }
 
@@ -498,12 +501,12 @@
             
 
             .pc-footer-bottom-left {
-                /* width: 336px; */
-                flex: 5;
+                width: 336px;
+                /* flex: 2; */
             }
 
             .pc-footer-bottom-right {
-                /* width: 825px; */
+                width: 800px;
                 /* flex: 5; */
                 justify-content: flex-start;
             }
@@ -520,6 +523,7 @@
                 font-size: 12px;
                 line-height: 50px;
                 height: 50px;
+                margin-right: 48px;
             }
             .pc-footer-bottom-right>span:nth-child(1){
                 margin-right: 10px;
@@ -754,7 +758,7 @@
             }
 
             .pc-footer-bottom-left {
-                /* width: 250px; */
+                width: 265px;
                 /* flex: 5; */
             }
 
@@ -763,7 +767,8 @@
             }
 
             .pc-footer-bottom-right {
-                /* width: 500px; */
+                width: 555px;
+                margin-left: 8px;
                 /* flex: 5; */
             }
 
@@ -1192,10 +1197,10 @@
             <div class="layui-container flex">
                 <div class="pc-footer-bottom-left">
                     <a href="/licence" target="_blank">增值电信经营许可证</a>
-                    <span class="map-span">网站地图</span>
-                    <a  href="/statement" target="_blank">法律声明</a>
-                    <a  href="/privacy" target="_blank">隐私协议</a>
-                    <a  href="/protocol" target="_blank">服务协议</a>
+                    <!-- <span class="map-span">网站地图</span> -->
+                    <a  href="/guide?id=31" target="_blank">法律声明</a>
+                    <a  href="/guide?id=32" target="_blank">隐私协议</a>
+                    <a  href="/guide?id=33" target="_blank">服务协议</a>
                 </div>
                 <div class="pc-footer-bottom-right flex">
                     <span>©2021 Copyright SHANGHAI BONWEY TECHNOLOGY CO. LTD；. All right</span>
@@ -1315,10 +1320,10 @@
             <li style="font-size: 12px;">
                 <!-- 增值电信经营许可证 -->
                 <a style="color: #fff;" href="/licence" target="_blank">增值电信经营许可证</a>
-                    <span class="map-span">网站地图</span>
-                    <a style="color: #fff;" href="/statement" target="_blank">法律声明</a>
-                    <a style="color: #fff;" href="/privacy" target="_blank">隐私协议</a>
-                    <a style="color: #fff;" href="/protocol" target="_blank">服务协议</a>
+                    <!-- <span class="map-span">网站地图</span> -->
+                    <a style="color: #fff;" href="/guide?id=31" target="_blank">法律声明</a>
+                    <a style="color: #fff;" href="/guide?id=32" target="_blank">隐私协议</a>
+                    <a style="color: #fff;" href="/guide?id=33" target="_blank">服务协议</a>
             </li>
             <li style="font-size: 12px;">
                 ©2021 Copyright SHANGHAI BONWEY TECHNOLOGY CO., LTD；. All rights reserved. <a style="color: #fff;" href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank"> 沪ICP备16029097号-7</a>
