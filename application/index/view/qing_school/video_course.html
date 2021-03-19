@@ -75,7 +75,20 @@
             top: 16%;
             left: 50%;
             transform: translateX(-50%);
-            width: 20%;
+            width: 18%;
+        }
+
+        .layui-nav.layui-nav-item #img-a {
+            display: flex;
+            align-items: center;
+        }
+
+        .layui-nav.layui-nav-item #img-a .name {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 50%;
+            display: inline-block;
         }
     </style>
 </head>
@@ -102,8 +115,9 @@
                     </div>
                     <ul class="layui-nav" lay-filter="leftNav">
                         <li class="layui-nav-item">
-                            <a id="img-a" href=""><img src="//t.cn/RCzsdCq" class="layui-nav-img"><span
-                                    class="name">11</span></a>
+                            <a id="img-a" href=""><img src="//t.cn/RCzsdCq" class="layui-nav-img">
+                                <!-- <span class="name">11</span> -->
+                            </a>
                             <dl class="layui-nav-child">
                                 <dd><a href="javascript:;" data-id="1">轻直播管理平台</a></dd>
                                 <dd><a href="javascript:;" data-id="2">退出登录</a></dd>
@@ -422,7 +436,7 @@
                     window.location.href = "/login"
                 }, 500);
             } else if (id == 1) {
-                 var token = tvInfo.token
+                var token = tvInfo.token
                 var name = tvInfo.name
                 var avatar = tvInfo.avatar
                 window.open(`http://login.qingtv.com/Home?lighostoken=${token}

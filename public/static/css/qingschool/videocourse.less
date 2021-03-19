@@ -340,6 +340,9 @@
                         cursor: pointer;
 
                         a {
+                            display: block;
+                            height: 100%;
+                            line-height: 40px;
                             color: #00cc99;
                         }
 
@@ -718,7 +721,12 @@
                         button {
                             width: 125px;
                             height: 35px;
-                            font-size: 14px;
+
+                            a {
+                                font-size: 14px;
+                                line-height: 40px;
+
+                            }
                         }
                     }
 
@@ -916,8 +924,12 @@
                         button {
                             width: 115px;
                             height: 32px;
-                            font-size: 12px;
                             margin: 37px auto 0;
+
+                            a {
+                                font-size: 12px;
+                                line-height: 32px;
+                            }
                         }
                     }
 
@@ -1038,10 +1050,11 @@
                     width: 100%;
                     height: 303px;
                     margin-top: 25px;
-                    padding: 15px 10px 0;
+                    padding: 15px 10px;
 
-                    img {
+                    .all-img {
                         width: 100%;
+                        max-height: 54%;
                     }
 
                     .content-text {
@@ -1139,8 +1152,11 @@
                         button {
                             width: 115px;
                             height: 30px;
-                            font-size: 12px;
                             margin: 20px auto 0;
+                            a {
+                                line-height: 30px;
+                                font-size: 12px;
+                            }
                         }
                     }
 
