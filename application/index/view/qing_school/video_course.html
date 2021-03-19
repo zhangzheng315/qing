@@ -83,11 +83,29 @@
             align-items: center;
         }
 
-        .layui-nav.layui-nav-item #img-a .name {
+        .layui-nav {
+            width: 180px;
+        }
+
+        .layui-nav .layui-nav-item {
+            width: 100%;
+        }
+
+        .layui-nav .layui-nav-item #img-a .layui-nav-img {
+            margin-right: 6px;
+        }
+
+        .layui-nav .layui-nav-item #img-a {
+            display: flex;
+            align-items: center;
+            padding: 0 5px;
+        }
+
+        .layui-nav .layui-nav-item #img-a .name {
             text-overflow: ellipsis;
             white-space: nowrap;
             overflow: hidden;
-            width: 50%;
+            width: 65%;
             display: inline-block;
         }
     </style>
@@ -116,7 +134,7 @@
                     <ul class="layui-nav" lay-filter="leftNav">
                         <li class="layui-nav-item">
                             <a id="img-a" href=""><img src="//t.cn/RCzsdCq" class="layui-nav-img">
-                                <!-- <span class="name">11</span> -->
+                                <span class="name">11</span>
                             </a>
                             <dl class="layui-nav-child">
                                 <dd><a href="javascript:;" data-id="1">轻直播管理平台</a></dd>
