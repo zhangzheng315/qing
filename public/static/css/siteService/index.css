@@ -286,6 +286,9 @@
   cursor: pointer;
 }
 #service #fiveG .fiveg-content button a {
+  display: block;
+  height: 100%;
+  line-height: 60px;
   font-size: 28px;
   color: #FFFFFF;
 }
@@ -410,6 +413,7 @@
     height: 50px;
   }
   #service #fiveG .fiveg-content button a {
+    line-height: 50px;
     font-size: 25px;
   }
 }
@@ -470,6 +474,7 @@
     height: 45px;
   }
   #service #fiveG .fiveg-content button a {
+    line-height: 45px;
     font-size: 18px;
   }
 }
@@ -678,6 +683,7 @@
     height: 40px;
   }
   #service #fiveG .fiveg-content button a {
+    line-height: 40px;
     font-size: 14px;
   }
 }

@@ -30,6 +30,11 @@
             display: block;
             height: 100%;
         }
+        @media screen and (min-width: 1300px){
+            #banner .layui-carousel .text-left {
+                top: 18%;
+            }
+        }
     </style>
 </head>
 
@@ -59,8 +64,8 @@
                             <h5 style=' color: {$item.in_color};
                             opacity: .8;
                             font-size: {$item.in_size}px;
-                            width: {$item.width};
-                            margin: 78px 0 103px;
+                            width: 45%;
+                            margin: 49px 0 85px;
                             text-align: {$item.format};
                             line-height: 1.5;'>{$item.introduction}</h5>
 

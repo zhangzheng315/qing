@@ -290,6 +290,9 @@
   cursor: pointer;
 }
 #product .product-content .product-item .item-footer button a {
+  display: block;
+  height: 100%;
+  line-height: 45px;
   color: #333;
 }
 #product .product-content .product-item .item-footer .more {
@@ -460,6 +463,9 @@
   float: right;
 }
 #advantage .advantage-content .content-right .right-item button a {
+  display: block;
+  height: 100%;
+  line-height: 40px;
   font-size: 14px;
   color: #fff;
 }
@@ -504,6 +510,12 @@
 #solve .solve-content .solve-item:hover p {
   color: #fff;
 }
+#solve .solve-content .solve-item:hover .text img {
+  display: none;
+}
+#solve .solve-content .solve-item:hover .text .white {
+  display: block;
+}
 #solve .solve-content .solve-item:nth-child(4n) {
   margin-right: 0;
 }
@@ -528,6 +540,9 @@
   height: 10px;
   float: right;
   margin-bottom: 13px;
+}
+#solve .solve-content .solve-item .text .white {
+  display: none;
 }
 #solve button {
   width: 15%;
@@ -817,6 +832,9 @@
   cursor: pointer;
 }
 #fiveG .fiveg-content button a {
+  display: block;
+  height: 100%;
+  line-height: 60px;
   font-size: 30px;
   color: #FFFFFF;
 }
@@ -957,6 +975,9 @@
   #product .product-content .product-item .item-footer {
     height: calc(100% - 186px);
   }
+  #product .product-content .product-item .item-footer button a {
+    line-height: 3.5;
+  }
   #light-live {
     padding-top: 50px;
   }
@@ -1044,6 +1065,9 @@
     width: 28%;
     height: 50px;
     font-size: 25px;
+  }
+  #fiveG .fiveg-content button a {
+    line-height: 50px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1150px) {
@@ -1188,6 +1212,9 @@
     width: 28%;
     height: 45px;
     font-size: 18px;
+  }
+  #fiveG .fiveg-content button a {
+    line-height: 45px;
   }
 }
 @media screen and (min-width: 992px) and (max-width: 1195px) {
@@ -1413,6 +1440,9 @@
   #product .product-content .product-item .item-footer {
     height: calc(100% - 171px);
   }
+  #product .product-content .product-item .item-footer button a {
+    line-height: 3.5;
+  }
   #light-live {
     padding-top: 40px;
   }
@@ -1612,5 +1642,6 @@
   }
   #fiveG .fiveg-content button a {
     font-size: 14px;
+    line-height: 40px;
   }
 }
