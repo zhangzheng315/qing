@@ -224,9 +224,11 @@
                                 <section class="section">
                                     <h5 class="flex-box"><i></i><span>介绍说明</span></h5>
                                     <p class="flex-box active">
-                                        <img src="/static/image/tutorial/video_b.png" alt="">
-                                        <span>{$info['theme_name']}</span>
-                                        <span>{$info['catalog']['all_dur']}</span>
+                                        <a href="/video/tutorial?browse=1&id={$item.id}">
+                                            <img src="/static/image/tutorial/video_b.png" alt="">
+                                            <span>{$info['theme_name']}</span>
+                                            <span>{$info['catalog']['all_dur']}</span>
+                                        </a>
                                     </p>
                                 </section>
                                 <!--<section class="section">
@@ -250,9 +252,11 @@
                                 <section class="section">
                                     {foreach $info['catalog']['catalog'] as $item}
                                     <p class="flex-box">
-                                        <img src="/static/image/tutorial/video_b.png" alt="">
-                                        <span>{$item['title']}</span>
-                                        <span>{$item.duration}</span>
+                                        <a href="/video/tutorial?browse=1&id={$item.id}">
+                                            <img src="/static/image/tutorial/video_b.png" alt="">
+                                            <span>{$item['title']}</span>
+                                            <span>{$item.duration}</span>
+                                        </a>
                                     </p>
                                     {/foreach}
                                 </section>
@@ -286,7 +290,7 @@
 
         <div class="func-free">
             <h3>全功能免费试用，0成本体验轻直播带来的改变</h3>
-            <button>免费体验</button>
+            <a href="http://login.qingtv.com/signUp" target="_blank">免费体验</a>
         </div>
 
         {include file="common/footer"}

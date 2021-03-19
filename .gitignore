@@ -2,6 +2,8 @@
 *.log
 thinkphp
 runtime/
-
 public/.htaccess
 public/nginx.htaccess
+application/database.php
+application/config.php
+vendor/

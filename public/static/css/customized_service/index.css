@@ -150,6 +150,9 @@
   cursor: pointer;
 }
 #customized #fiveG .fiveg-content button a {
+  display: block;
+  height: 100%;
+  line-height: 60px;
   font-size: 28px;
   color: #FFFFFF;
 }
@@ -204,6 +207,7 @@
   }
   #customized #fiveG .fiveg-content button a {
     font-size: 25px;
+    line-height: 50px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 995px) {
@@ -247,6 +251,7 @@
   }
   #customized #fiveG .fiveg-content button a {
     font-size: 18px;
+    line-height: 45px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -336,5 +341,6 @@
   }
   #customized #fiveG .fiveg-content button a {
     font-size: 14px;
+    line-height: 40px;
   }
 }

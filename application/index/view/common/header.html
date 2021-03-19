@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1, minimum-scale=1,user-scalable=no">
     <title>Document</title>
     <!-- jQuery and JavaScript Bundle with Popper -->
     <style>
@@ -1114,8 +1114,9 @@
             </div>
             <ul class="layui-nav" lay-filter="leftNav">
                 <li class="layui-nav-item">
-                    <a id="img-a" href=""><img src="//t.cn/RCzsdCq" class="layui-nav-img"><span
-                            class="name">11</span></a>
+                    <a id="img-a" href=""><img src="//t.cn/RCzsdCq" class="layui-nav-img">
+                        <!-- <span class="name">11</span> -->
+                    </a>
                     <dl class="layui-nav-child">
                         <dd><a href="javascript:;" data-id="1">轻直播管理平台</a></dd>
                         <dd><a href="javascript:;" data-id="2">退出登录</a></dd>
@@ -1316,7 +1317,7 @@
                         }
                     }
                     $('.navbar-nav').append(m_menu);
-                    $('.nav-pro-con').prop('real-height', $('.nav-pro-con').height());
+                    $('.nav-pro-con').attr('real-height', $('.nav-pro-con').height());
                     $('.nav-pro-con').css({
                         'height': '0px'
                     });
@@ -1330,7 +1331,7 @@
             for (let item_child of item_sub) {
                 if (item_child.sub.length > 0) {
                     for (let item_son of item_child.sub) {
-                        m_son += '<span><a href="' + item_son.route + '">' + item_son.menu_name + '</a></span>';
+                        m_son += '<span><a href="' + item_son.url_action + '">' + item_son.menu_name + '</a></span>';
                     }
                 }
             };

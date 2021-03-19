@@ -36,8 +36,9 @@
                 </div>
                 <ul class="layui-nav" lay-filter="leftNav">
                     <li class="layui-nav-item">
-                        <a id="img-a" href=""><img src="//t.cn/RCzsdCq" class="layui-nav-img"><span
-                                class="name">11</span></a>
+                        <a id="img-a" href=""><img src="//t.cn/RCzsdCq" class="layui-nav-img">
+                            <!-- <span class="name">11</span> -->
+                        </a>
                         <dl class="layui-nav-child">
                             <dd><a href="javascript:;" data-id="1">轻直播管理平台</a></dd>
                             <dd><a href="javascript:;" data-id="2">退出登录</a></dd>
@@ -280,7 +281,7 @@
         <div class="layui-container">
             <div class="kefu-content">
                 <h2>轻直播为您提供一站式企业视频解决方案</h2>
-                <button>立即咨询</button>
+                <button id="zixun">立即咨询</button>
             </div>
 
         </div>
@@ -358,6 +359,9 @@
             }
             });
         });
+        $('#zixun').click(function(){
+            daovoice('openMessages')
+        })
 </script>
 
 </html>

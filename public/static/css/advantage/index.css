@@ -373,17 +373,19 @@
   margin-bottom: 90px;
   text-align: center;
 }
-#advantage .free .layui-container button {
+#advantage .free .layui-container a {
+  display: block;
   width: 168px;
   height: 40px;
   background: linear-gradient(90deg, #009CA9, #39D6AF);
   border-radius: 20px;
   border: none;
   color: #fff;
-  display: block;
   margin: 0 auto;
   font-size: 20px;
   cursor: pointer;
+  line-height: 40px;
+  text-align: center;
 }
 #advantage .lianxi-free {
   background: url(/static/image/about/ditu.png) no-repeat;
@@ -541,7 +543,7 @@
     font-size: 30px;
     margin-bottom: 50px;
   }
-  #advantage .free .layui-container button {
+  #advantage .free .layui-container a {
     width: 168px;
     height: 40px;
     font-size: 16px;
@@ -855,7 +857,7 @@
     font-size: 22px;
     margin-bottom: 40px;
   }
-  #advantage .free .layui-container button {
+  #advantage .free .layui-container a {
     width: 138px;
     height: 35px;
     font-size: 14px;

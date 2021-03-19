@@ -2,6 +2,8 @@
 namespace app\admin\serve;
 use app\admin\model\AboutUs;
 use app\admin\model\Consulting;
+use PHPMailer\PHPMailer\PHPMailer;
+use think\Exception;
 use think\Request;
 
 
@@ -38,6 +40,44 @@ class ConsultingService extends Common{
             $this->setError('预约失败');
             return false;
         }
+
+        //发送邮件
+        $mail = new PHPMailer();
+        //服务器配置
+        $mail->CharSet ="UTF-8";                     //设定邮件编码
+        $mail->SMTPDebug = 0;                        // 调试模式输出
+        $mail->isSMTP();                             // 使用SMTP
+        $mail->Host = 'smtp.qq.com';                // SMTP服务器
+        $mail->SMTPAuth = true;                      // 允许 SMTP 认证
+        $mail->Username = '1711149525@qq.com'; // SMTP 用户名  即邮箱的用户名
+        $mail->Password = 'tcolrmsdoxnhjdai';             // SMTP 密码  部分邮箱是授权码(例如163邮箱)
+        $mail->SMTPSecure = 'ssl';                    // 允许 TLS 或者ssl协议
+        $mail->Port = 465;                            // 服务器端口 25 或者465 具体要看邮箱服务器支持
+
+        $mail->setFrom('1711149525@qq.com', '行邦总管');  //发件人
+        $mail->addAddress("frank.fu@sicbon.com", "付总");  //收件人（用户输入的邮箱）
+        $mail->addAddress("neal.tang@sicbon.com", "小唐总");  //收件人（用户输入的邮箱）
+        $mail->addAddress("collen@sicbon.com", "Collen总");  //收件人（用户输入的邮箱）
+        $mail->addAddress("steven@sicbon.com", "朱总");  //收件人（用户输入的邮箱）
+
+        //发送附件
+        // $mail->addAttachment('../xy.zip');         // 添加附件
+        // $mail->addAttachment('../thumb-1.jpg', 'new.jpg');    // 发送附件并且重命名
+
+        //Content
+        $mail->isHTML(true);                                  // 是否以HTML文档格式发送  发送后客户端可直接显示对应HTML内容
+        $mail->Subject = '官网有新的预约';
+        $mail->Body    = '姓名:'.$param['name'].
+            ',<br>手机号:'.$param['phone'].
+            ',<br>邮箱:'.$param['email'].
+            ',<br>手机号:'.$param['phone'].
+            ',<br>公司名:'.$param['company'].
+            ',<br>行业:'.$param['industry'].
+            ',<br>描述:'.$param['describe'].
+            ',<br>该访客有新的资讯消息,请及时处理';
+
+        $mail->send();
+
         $this->setMessage('预约成功');
         return true;
     }

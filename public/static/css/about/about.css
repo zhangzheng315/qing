@@ -469,6 +469,9 @@
   margin: 0 auto;
 }
 #about .about-boxs section .free .layui-container button a {
+  display: block;
+  height: 100%;
+  line-height: 40px;
   color: #fff;
   font-size: 20px;
 }
@@ -586,10 +589,13 @@
   display: none;
 }
 #about .about-boxs section .fenbu .layui-container .fenbu-content .fenbu-right a img {
-  width: 769px;
+  display: block;
+  width: 98%;
   height: 409px;
   object-fit: cover;
   transition: all 0.3s;
+  margin: 0 auto;
+  border-radius: 10px;
 }
 #about .about-boxs section .fenbu .layui-container .fenbu-content .fenbu-right a img:hover {
   transform: scale(1.05);
@@ -751,6 +757,9 @@
   line-height: 40px;
 }
 #about .about-boxs section .dongtai .layui-container .look-more a {
+  display: block;
+  height: 100%;
+  line-height: 40px;
   color: #00cc99;
 }
 #about .about-boxs section .dongtai .layui-container .look-more:hover {
@@ -1071,6 +1080,7 @@
     height: 40px;
   }
   #about .about-boxs section .free .layui-container button a {
+    line-height: 40px;
     font-size: 16px;
   }
   #about .about-boxs section .lianxi {
@@ -1138,7 +1148,7 @@
     width: 68%;
     padding: 40px 45px;
   }
-  #about .about-boxs section .fenbu .layui-container .fenbu-content .fenbu-right img {
+  #about .about-boxs section .fenbu .layui-container .fenbu-content .fenbu-right a img {
     width: 100%;
     height: 270px;
     object-fit: cover;
@@ -1232,6 +1242,9 @@
     height: 35px;
     margin-top: 50px;
     line-height: 35px;
+  }
+  #about .about-boxs section .dongtai .layui-container .look-more a {
+    line-height: 36px;
   }
   #about .about-boxs section .news {
     padding: 48px 0 37px;
@@ -1665,6 +1678,7 @@
     height: 35px;
   }
   #about .about-boxs section .free .layui-container button a {
+    line-height: 35px;
     font-size: 14px;
   }
   #about .about-boxs section .lianxi-free {
@@ -1763,7 +1777,7 @@
     width: 62%;
     padding: 12px;
   }
-  #about .about-boxs section .fenbu .layui-container .fenbu-content .fenbu-right img {
+  #about .about-boxs section .fenbu .layui-container .fenbu-content .fenbu-right a img {
     width: 100%;
     height: 150px;
     object-fit: cover;
