@@ -19,11 +19,20 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '53630798b9d31ac8e1c0d69ecd6a3296171668cf',
+    'reference' => 'c6b0e53365252b763969c701cebdf1475e7b01a9',
     'name' => 'topthink/think',
   ),
   'versions' => 
   array (
+    'phpmailer/phpmailer' => 
+    array (
+      'pretty_version' => 'v6.3.0',
+      'version' => '6.3.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '4a08cf4cdd2c38d12ee2b9fa69e5d235f37a6dcb',
+    ),
     'qiniu/php-sdk' => 
     array (
       'pretty_version' => 'v7.3.0',
@@ -49,7 +58,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '53630798b9d31ac8e1c0d69ecd6a3296171668cf',
+      'reference' => 'c6b0e53365252b763969c701cebdf1475e7b01a9',
     ),
     'topthink/think-installer' => 
     array (
