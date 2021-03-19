@@ -353,6 +353,9 @@
                     cursor: pointer;
 
                     a {
+                        display: block;
+                        height: 100%;
+                        line-height: 45px;
                         color: #333;
 
                     }
@@ -567,6 +570,9 @@
                     float: right;
 
                     a {
+                        display: block;
+                        height: 100%;
+                        line-height: 40px;
                         font-size: 14px;
                         color: #fff;
                     }
@@ -624,6 +630,17 @@
                     color: #fff;
 
                 }
+
+                .text {
+                    img {
+                        display: none;
+                    }
+
+                    .white {
+                        display: block;
+                    }
+                }
+
             }
 
             &:nth-child(4n) {
@@ -655,6 +672,10 @@
                     height: 10px;
                     float: right;
                     margin-bottom: 13px;
+                }
+
+                .white {
+                    display: none;
                 }
             }
         }
@@ -1016,6 +1037,9 @@
             cursor: pointer;
 
             a {
+                display: block;
+                height: 100%;
+                line-height: 60px;
                 font-size: 30px;
                 color: #FFFFFF;
             }
@@ -1209,6 +1233,13 @@
 
                 .item-footer {
                     height: calc(100% - 186px);
+
+                    button {
+                        a {
+                            line-height: 3.5;
+
+                        }
+                    }
                 }
             }
         }
@@ -1292,6 +1323,12 @@
                             }
                         }
                     }
+
+                    // button {
+                    //     a {
+                    //         line-height: 40px;
+                    //     }
+                    // }
                 }
             }
         }
@@ -1346,6 +1383,11 @@
                 width: 28%;
                 height: 50px;
                 font-size: 25px;
+
+                a {
+                    line-height: 50px;
+
+                }
             }
         }
     }
@@ -1565,6 +1607,10 @@
                 width: 28%;
                 height: 45px;
                 font-size: 18px;
+                a {
+                line-height: 45px;
+
+                }
             }
         }
     }
@@ -1868,6 +1914,13 @@
 
                 .item-footer {
                     height: calc(100% - 171px);
+
+                    button {
+                        a {
+                            line-height: 3.5;
+
+                        }
+                    }
                 }
             }
         }
@@ -2031,11 +2084,12 @@
         }
 
         .logo-box {
-            
+
 
             .logo-imgs {
                 display: flex;
-            flex-wrap: wrap;
+                flex-wrap: wrap;
+
                 li {
                     width: 24%;
                     height: 50px;
@@ -2141,6 +2195,7 @@
 
                 a {
                     font-size: 14px;
+                    line-height: 40px;
                 }
             }
         }

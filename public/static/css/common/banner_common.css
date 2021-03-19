@@ -30,7 +30,7 @@
   opacity: 0.8;
   font-size: 16px;
   width: 70%;
-  margin: 78px 0 103px;
+  margin: 49px 0 85px;
   line-height: 1.5;
 }
 #banner .layui-carousel .text-left .banner-a {
@@ -68,7 +68,7 @@
   opacity: 0.8;
   font-size: 16px;
   width: 100%;
-  margin: 78px 0 103px;
+  margin: 49px 0 85px;
   line-height: 1.5;
   text-align: center;
 }
@@ -92,7 +92,7 @@
 #banner .layui-carousel .text-right h5 {
   width: 80%;
   margin-left: 100%;
-  margin: 78px 0 103px;
+  margin: 49px 0 85px;
   text-align: left;
   color: #fff;
   opacity: 0.8;

@@ -283,7 +283,7 @@
         <div class="layui-container">
             <div class="kefu-content">
                 <h2>轻直播为您提供一站式企业视频解决方案</h2>
-                <button>立即咨询</button>
+                <button id="zixun">立即咨询</button>
             </div>
 
         </div>
@@ -361,6 +361,10 @@
             }
             });
         });
+
+        $('#zixun').click(function(){
+            daovoice('openMessages')
+        })
 </script>
 
 </html>
