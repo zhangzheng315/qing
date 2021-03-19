@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1, minimum-scale=1,user-scalable=no">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0,maximum-scale=1, minimum-scale=1,user-scalable=no">
     <title>Document</title>
     <!-- jQuery and JavaScript Bundle with Popper -->
     <style>
@@ -16,19 +17,51 @@
         body {
             overflow-x: hidden;
         }
+
         .nav-btn>a {
             box-sizing: border-box;
             text-align: center;
         }
-        .nav-btn>a.login, .nav-btn>a.free-use {
+
+        .nav-btn>a.login,
+        .nav-btn>a.free-use {
             border: 1px solid #00cc99;
         }
+
         .nav-btn>a.login:hover {
             color: #00cc99;
         }
+
         .nav-btn>a.free-use:hover {
             color: #ffffff;
         }
+
+        .layui-nav {
+            width: 180px;
+        }
+
+        .layui-nav .layui-nav-item {
+            width: 100%;
+        }
+
+        .layui-nav .layui-nav-item #img-a .layui-nav-img {
+            margin-right: 6px;
+        }
+
+        .layui-nav .layui-nav-item #img-a {
+            display: flex;
+            align-items: center;
+            padding: 0 5px;
+        }
+
+        .layui-nav .layui-nav-item #img-a .name {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 65%;
+            display: inline-block;
+        }
+
         @media screen and (min-width: 1200px) {
 
             /* .layui-container {
@@ -1115,7 +1148,7 @@
             <ul class="layui-nav" lay-filter="leftNav">
                 <li class="layui-nav-item">
                     <a id="img-a" href=""><img src="//t.cn/RCzsdCq" class="layui-nav-img">
-                        <!-- <span class="name">11</span> -->
+                        <span class="name">11</span>
                     </a>
                     <dl class="layui-nav-child">
                         <dd><a href="javascript:;" data-id="1">轻直播管理平台</a></dd>
@@ -1434,20 +1467,20 @@
                 var id = ele.attr('data-id');
                 // console.log(id);
                 // 退出登录
-                if (id == 2) {
-                localStorage.removeItem('tvInfo')
-                layer.msg('您已退出登录');
-                setTimeout(() => {
-                    window.location.href = "/login"
-                }, 500);
-              } else if (id == 1) {
-                var token = tvInfo.token
-                var name = tvInfo.name
-                var avatar = tvInfo.avatar
-                window.open(`http://login.qingtv.com/Home?lighostoken=${token}
+                if (id == 2) {
+                    localStorage.removeItem('tvInfo')
+                    layer.msg('您已退出登录');
+                    setTimeout(() => {
+                        window.location.href = "/login"
+                    }, 500);
+                } else if (id == 1) {
+                    var token = tvInfo.token
+                    var name = tvInfo.name
+                    var avatar = tvInfo.avatar
+                    window.open(`http://login.qingtv.com/Home?lighostoken=${token}
                 &lighosName${name}
                 &lighosHeadUrl=${avatar}`)
-            }
+                }
             });
         });
     </script>
