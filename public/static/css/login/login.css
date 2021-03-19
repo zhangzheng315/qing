@@ -108,7 +108,7 @@
 #login section .layui-container .sec-right form input:nth-child(-n + 2) {
   height: 42px;
 }
-#login section .layui-container .sec-right form input:nth-child(4) {
+#login section .layui-container .sec-right form #login-btn {
   margin: 26px 0;
   height: 42px;
   background-color: #00cc99;

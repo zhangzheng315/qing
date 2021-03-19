@@ -339,10 +339,10 @@
   }
   #course .study-direction {
     height: 105px;
+    line-height: 45px;
   }
   #course .study-direction .direction-item {
     padding: 0 20px;
-    margin: 20px 0 32px;
   }
   #course .study-direction .direction-item .item-title {
     width: 63px;
@@ -528,10 +528,11 @@
   }
   #course .study-direction {
     height: 95px;
+    line-height: 32px;
   }
   #course .study-direction .direction-item {
     padding: 0px;
-    margin: 10px 0 16px;
+    margin: 0 0 6px 0;
   }
   #course .study-direction .direction-item .item-title {
     width: 71px;
