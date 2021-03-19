@@ -239,9 +239,9 @@ class VideoService extends Common{
             'pid' => $param['pid'],
         ];
         if (isset($param['all'])) {
-            $list = $this->video->where($where)->order('order', 'desc')->select();
+            $list = $this->video->where($where)->order('browse', 'desc')->select();
         }else{
-            $list = $this->video->where($where)->order('order', 'desc')->limit(0, 8)->select();
+            $list = $this->video->where($where)->order('browse', 'desc')->limit(0, 8)->select();
         }
         foreach ($list as &$item) {
             $item['time'] = date('Y-m-d', $item['created_time']);
@@ -271,13 +271,33 @@ class VideoService extends Common{
             'deleted_time' => 0,
             'status' => 1,
         ];
-        if (isset($param['word']) && $param['word']) {
-            $where['title'] = ['like', '%' . $param['word'] . '%'];
+        $param_where = isset($param['where']) ? $param['where'] : [];
+        //关键字搜索
+        if ($param_where && isset($param_where['word'])) {
+            $where['title'] = ['like', '%' . $param_where['word'] . '%'];
         }
+        //视频分类
         if (isset($param['pid']) && $param['pid']) {
             $where['pid'] = $param['pid'];
         }
-        $res = $this->video->where($where)->limit($offset,$limit)->select();
+        //视频直播视频点播
+        if (isset($param_where['video']) && $param_where['video'] == 2) {
+            $this->setError('暂无数据');
+            return false;
+        }
+        //付费免费
+        if ((isset($param_where['pay']) && $param_where['pay'] == 1) ||
+            (isset($param_where['live']) && $param_where['live'] == 1) ||
+            (isset($param_where['vip']) && $param_where['vip'] == 1))
+        {
+            $this->setError('暂无数据');
+            return false;
+        }
+        if (isset($param_where['screen']) && $param_where['screen'] == 2) {
+            $res = $this->video->where($where)->limit($offset,$limit)->order('created_time','desc')->select();
+        }else{
+            $res = $this->video->where($where)->limit($offset,$limit)->order('browse','desc')->select();
+        }
         if (!$res) {
             $this->setError('暂无数据');
             return false;
@@ -285,7 +305,7 @@ class VideoService extends Common{
 
         $count = $this->video->where($where)->count('id');
         $this->setMessage('查询成功');
-        return ['data'=>$res,'count'=>$count,'index'=>$param['pid'],'word'=>$param['word'],'curr'=>$param['curr']];
+        return ['data'=>$res,'count'=>$count,'index'=>$param['pid'],'where'=>$param_where,'curr'=>$param['curr']];
     }
 
     /**
