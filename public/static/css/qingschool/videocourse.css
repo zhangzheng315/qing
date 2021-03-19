@@ -248,6 +248,9 @@
   cursor: pointer;
 }
 #video .case-study .layui-container .study-content .study-item button a {
+  display: block;
+  height: 100%;
+  line-height: 40px;
   color: #00cc99;
 }
 #video .case-study .layui-container .study-content .study-item button:hover {
@@ -527,7 +530,10 @@
   #video .case-study .layui-container .study-content .study-item button {
     width: 125px;
     height: 35px;
+  }
+  #video .case-study .layui-container .study-content .study-item button a {
     font-size: 14px;
+    line-height: 40px;
   }
   #video .product-zixun {
     padding: 25px 20px 60px;
@@ -675,8 +681,11 @@
   #video .case-study .layui-container .study-content .study-item button {
     width: 115px;
     height: 32px;
-    font-size: 12px;
     margin: 37px auto 0;
+  }
+  #video .case-study .layui-container .study-content .study-item button a {
+    font-size: 12px;
+    line-height: 32px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -759,10 +768,11 @@
     width: 100%;
     height: 303px;
     margin-top: 25px;
-    padding: 15px 10px 0;
+    padding: 15px 10px;
   }
-  #video .all-watch .layui-container .watch-content img {
+  #video .all-watch .layui-container .watch-content .all-img {
     width: 100%;
+    max-height: 54%;
   }
   #video .all-watch .layui-container .watch-content .content-text {
     margin-top: 15px;
@@ -836,8 +846,11 @@
   #video .case-study .layui-container .study-content .study-item button {
     width: 115px;
     height: 30px;
-    font-size: 12px;
     margin: 20px auto 0;
+  }
+  #video .case-study .layui-container .study-content .study-item button a {
+    line-height: 30px;
+    font-size: 12px;
   }
   #video .product-zixun {
     padding: 21px 10px 20px;
