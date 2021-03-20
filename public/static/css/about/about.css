@@ -1666,36 +1666,36 @@
     margin-right: 0;
   }
   #about .about-boxs section .free {
-    height: 160px;
-    padding-top: 35px;
+    height: 240px;
+    padding-top: 75px;
   }
   #about .about-boxs section .free .layui-container h3 {
-    font-size: 20px;
-    margin-bottom: 30px;
+    font-size: 22px;
+    margin-bottom: 40px;
   }
   #about .about-boxs section .free .layui-container button {
-    width: 110px;
-    height: 30px;
+    width: 138px;
+    height: 35px;
   }
   #about .about-boxs section .free .layui-container button a {
-    line-height: 30px;
+    line-height: 35px;
     font-size: 14px;
   }
   #about .about-boxs section .lianxi-free {
-    height: 160px;
-    background-size: cover;
+    height: 240px;
+    background-size: contain;
   }
   #about .about-boxs section .lianxi {
-    padding: 32px 0 0px;
+    padding: 32px 0 20px;
   }
   #about .about-boxs section .lianxi .layui-container .title {
-    margin-bottom: 22px;
+    margin-bottom: 24px;
   }
   #about .about-boxs section .lianxi .layui-container .lianxi-content {
     flex-direction: column;
   }
   #about .about-boxs section .lianxi .layui-container .lianxi-content .content-left li {
-    width: 32%;
+    width: 45%;
     padding: 10px;
     margin: 0 30px 16px 0;
   }
@@ -1705,8 +1705,7 @@
     align-items: center;
   }
   #about .about-boxs section .lianxi .layui-container .lianxi-content .content-left li .imgs img {
-    width: 35px;
-    height: 37px;
+    width: 38px;
     object-fit: cover;
     order: -1;
   }
