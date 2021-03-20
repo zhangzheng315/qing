@@ -1623,25 +1623,25 @@
     margin-bottom: 9px;
   }
   #fiveG {
-    height: 260px;
+    height: 180px;
   }
   #fiveG .fiveg-content {
-    padding: 35px 0 0;
+    padding: 30px 0 0;
   }
   #fiveG .fiveg-content h2 {
-    font-size: 22px;
+    font-size: 20px;
   }
   #fiveG .fiveg-content h5 {
-    font-size: 18px;
+    font-size: 15px;
     text-align: center;
-    margin: 35px auto 20px;
+    margin: 25px auto 28px;
   }
   #fiveG .fiveg-content button {
-    width: 42%;
-    height: 40px;
+    width: 32%;
+    height: 30px;
   }
   #fiveG .fiveg-content button a {
     font-size: 14px;
-    line-height: 40px;
+    line-height: 30px;
   }
 }

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1, minimum-scale=1,user-scalable=no">
     <title>轻直播_企业直播服务平台,医疗直播领军者,营销直播定制服务商</title>
     <meta name="keywords"  content="企业直播平台,医疗直播,营销直播,活动直播,直播定制服务" />
     <meta name="description"
@@ -78,6 +78,32 @@
             transform: translateX(-50%);
             width: 18%;
         }
+
+        .layui-nav {
+            width: 180px;
+        }
+
+        .layui-nav .layui-nav-item {
+            width: 100%;
+        }
+
+        .layui-nav .layui-nav-item #img-a .layui-nav-img {
+            margin-right: 6px;
+        }
+
+        .layui-nav .layui-nav-item #img-a {
+            display: flex;
+            align-items: center;
+            padding: 0 5px;
+        }
+
+        .layui-nav .layui-nav-item #img-a .name {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 65%;
+            display: inline-block;
+        }
     </style>
 </head>
 
@@ -112,7 +138,7 @@
                 <ul class="layui-nav" lay-filter="leftNav">
                     <li class="layui-nav-item">
                         <a id="img-a" href=""><img src="//t.cn/RCzsdCq" class="layui-nav-img">
-                            <!-- <span class="name">11</span> -->
+                            <span class="name">11</span>
                             </a>
                         <dl class="layui-nav-child">
                             <dd><a href="javascript:;" data-id="1">轻直播管理平台</a></dd>
@@ -140,10 +166,10 @@
                 <div class="direction-item flexs">
                     <div class="item-title">学习方向</div>
                     <ul class="flexs study-ul">
-                        <li class="active" onclick="videoPage(0)"><a href="javascript:;">全部</a></li>
+                        <li class="active" onclick="pid(0)"><a href="javascript:;">全部</a></li>
                         {if(isset($video_type))}
                         {foreach($video_type as $item)}
-                        <li onclick="videoPage({$item.id})"><a href="javascript:;">{$item.name}</a></li>
+                        <li onclick="pid({$item.id})"><a href="javascript:;">{$item.name}</a></li>
                         {/foreach}
                         {/if}
                     </ul>
@@ -151,9 +177,9 @@
                 <div class="direction-item flexs">
                     <div class="item-title">课程类型</div>
                     <ul class="flex study-ul">
-                        <li class="active"><a href="">全部</a></li>
-                        <li><a href="">视频直播</a></li>
-                        <li><a href="">视频点播</a></li>
+                        <li class="active" onclick="video(0)"><a href="javascript:;">全部</a></li>
+                        <li onclick="video(1)"><a href="javascript:;">视频直播</a></li>
+                        <li onclick="video(2)"><a href="javascript:;">视频点播</a></li>
                     </ul>
                 </div>
             </div>
@@ -208,8 +234,8 @@
             <div class="price">
                 <div class="layui-container">
                     <ul class="price-nav flexs">
-                        <li class="active">热门</li>
-                        <li>最新</li>
+                        <li class="active" onclick="screen(1)">热门</li>
+                        <li onclick="screen(2)">最新</li>
                         <li class="price-num">价格<i></i></li>
                     </ul>
                 </div>
@@ -294,17 +320,21 @@
                 , jump: function (obj, first) {
                     currPage = obj.curr; //这里是后台返回给前端的当前页数
                     if (!first) {         //点击跳页触发函数自身，并传递当前页：obj.curr  ajax 再次请求
-                        videoPage(data.index, data.word, currPage);     //调用ajax请求数据
+                        videoPage(data.index, data.where, currPage);     //调用ajax请求数据
                     }
                 }
             });
         });
     }
 
-    function videoPage(index, word = '', curr = 1) {
+    var where = {};
+    var index = 0;
+    var curr = 1;
+
+    function videoPage(index = window.index, where = window.where, curr = window.curr) {
         $.ajax({
             url: "{:url('/index/qing_school/videoListByPage')}",
-            data: { 'pid': index, 'word': word, 'curr': curr },
+            data: { 'pid': index, 'curr': curr, 'where': where},
             type: 'get',
             success: function (res) {
                 $('.study-box').empty()
@@ -332,8 +362,50 @@
     //搜索
     $('#icon_search').on('click', function () {
         let word = $('#word').val();
-        videoPage('', word);
+        window.where['word'] = word;
+        videoPage();
     })
+    //最新最热
+    function screen(screen) {
+        window.where['screen'] = screen;
+        videoPage();
+    }
+    //视频分类ID
+    function pid(pid) {
+        window.index = pid;
+        videoPage();
+    }
+    //视频直播 视频点播
+    function video(type_id) {
+        window.where['video'] = type_id;
+        videoPage();
+    }
+    //免费
+    $('#mianfei').on('click', function () {
+        window.where['free'] = $('#mianfei').is(':checked') ? 1 : 0;
+        videoPage();
+    })
+    //付费
+    $('#fufei').on('click', function () {
+        window.where['pay'] = $('#fufei').is(':checked') ? 1 : 0;
+        videoPage();
+    })
+    //录播
+    $('#lubo').on('click', function () {
+        window.where['record'] = $('#lubo').is(':checked') ? 1 : 0;
+        videoPage();
+    })
+    //直播
+    $('#zhibo').on('click', function () {
+        window.where['live'] = $('#zhibo').is(':checked') ? 1 : 0;
+        videoPage();
+    })
+    //VIP免费
+    $('#vip').on('click', function () {
+        window.where['vip'] = $('#vip').is(':checked') ? 1 : 0;
+        videoPage();
+    })
+
 </script>
 <script>
     // 登录成功后显示个人信息

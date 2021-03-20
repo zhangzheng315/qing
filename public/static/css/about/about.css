@@ -1705,8 +1705,7 @@
     align-items: center;
   }
   #about .about-boxs section .lianxi .layui-container .lianxi-content .content-left li .imgs img {
-    width: 35px;
-    height: 37px;
+    width: 38px;
     object-fit: cover;
     order: -1;
   }

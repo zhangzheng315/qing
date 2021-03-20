@@ -322,25 +322,25 @@
     font-size: 12px;
   }
   #customized #fiveG {
-    height: 260px;
+    height: 180px;
   }
   #customized #fiveG .fiveg-content {
-    padding: 30px 0 20px;
+    padding: 30px 0 0;
   }
   #customized #fiveG .fiveg-content h2 {
-    font-size: 22px;
+    font-size: 20px;
   }
   #customized #fiveG .fiveg-content h5 {
-    font-size: 18px;
+    font-size: 16px;
     text-align: center;
-    margin: 31px auto 40px;
+    margin: 25px auto 28px;
   }
   #customized #fiveG .fiveg-content button {
-    width: 46%;
-    height: 40px;
+    width: 32%;
+    height: 30px;
   }
   #customized #fiveG .fiveg-content button a {
     font-size: 14px;
-    line-height: 40px;
+    line-height: 30px;
   }
 }

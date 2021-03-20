@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1, minimum-scale=1,user-scalable=no">
     <meta name="renderer" content="webkit">
     <title>轻直播_企业直播服务平台,医疗直播领军者,营销直播定制服务商</title>
     <meta name="keywords"  content="企业直播平台,医疗直播,营销直播,活动直播,直播定制服务" />
@@ -67,11 +67,13 @@
         .m-cause-con {
             display: none;
         }
+
         .article-body img {
             max-width: 100%;
         }
-         /* 登录成功，显示头像样式 */
-         .layui-nav {
+
+        /* 登录成功，显示头像样式 */
+        .layui-nav {
             background-color: #f2f4f7;
             display: none;
         }
@@ -101,6 +103,7 @@
             display: none;
             background-color: #fff;
         }
+
         .layui-nav-child dd a {
             text-align: center;
         }
@@ -119,8 +122,35 @@
             background-color: #00cc99;
             color: #fff
         }
+
         .btns>a {
             box-sizing: border-box;
+        }
+
+        .layui-nav {
+            width: 180px;
+        }
+
+        .layui-nav .layui-nav-item {
+            width: 100%;
+        }
+
+        .layui-nav .layui-nav-item #img-a .layui-nav-img {
+            margin-right: 6px;
+        }
+
+        .layui-nav .layui-nav-item #img-a {
+            display: flex;
+            align-items: center;
+            padding: 0 5px;
+        }
+
+        .layui-nav .layui-nav-item #img-a .name {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 65%;
+            display: inline-block;
         }
 
         @media screen and (min-width: 1300px) {
@@ -133,10 +163,12 @@
             .header-nav {
                 height: 65px;
             }
+
             .logo img {
-            width: 124px;
-            height: 45px;
+                width: 124px;
+                height: 45px;
             }
+
             .head-right>.text {
                 margin-right: 64px;
                 height: 30px;
@@ -773,10 +805,11 @@
                 border: 0;
             }
 
-             /* 登录成功后，显示头像样式 */
+            /* 登录成功后，显示头像样式 */
             .layui-nav>.layui-nav-item {
                 line-height: 65px;
             }
+
             .layui-nav-child {
                 left: 16%;
                 top: 62px;
@@ -793,10 +826,12 @@
             .header-nav {
                 height: 65px;
             }
+
             .logo img {
                 width: 100px;
                 height: 40px;
-              }
+            }
+
             .head-right>.text {
                 margin-right: 40px;
                 height: 30px;
@@ -1433,10 +1468,11 @@
                 border: 0;
             }
 
-             /* 登录成功后，显示头像样式 */
+            /* 登录成功后，显示头像样式 */
             .layui-nav>.layui-nav-item {
                 line-height: 65px;
             }
+
             .layui-nav-child {
                 left: 16%;
                 top: 62px;
@@ -1453,10 +1489,12 @@
             .header-nav {
                 height: 65px;
             }
+
             .logo img {
                 width: 90px;
                 height: 36px;
             }
+
             .head-right>.text {
                 margin-right: 40px;
                 height: 30px;
@@ -1766,10 +1804,11 @@
                 border: 0;
             }
 
-                /* 登录成功后，显示头像样式 */
+            /* 登录成功后，显示头像样式 */
             .layui-nav>.layui-nav-item {
                 line-height: 56px;
             }
+
             .layui-nav-child {
                 left: 16%;
                 top: 62px;
@@ -1789,6 +1828,7 @@
                 height: 45px;
                 padding: 0 15px;
             }
+
             .logo img {
                 width: 82.67px;
                 height: 30px;
@@ -2087,15 +2127,17 @@
                 transition: all .25s ease-in-out;
             }
 
-             /* 登录成功后，显示头像样式 */
+            /* 登录成功后，显示头像样式 */
             .layui-nav>.layui-nav-item {
                 line-height: 45px;
             }
+
             .layui-nav-child {
                 left: 16%;
                 top: 62px;
                 min-width: 85%;
             }
+
             .layui-nav {
                 display: none !important;
             }
@@ -2123,7 +2165,7 @@
                     <ul class="layui-nav" lay-filter="leftNav">
                         <li class="layui-nav-item">
                             <a id="img-a" href=""><img src="//t.cn/RCzsdCq" class="layui-nav-img">
-                                <!-- <span class="name">11</span> -->
+                                <span class="name">11</span>
                             </a>
                             <dl class="layui-nav-child">
                                 <dd><a href="javascript:;" data-id="1">轻直播管理平台</a></dd>
@@ -2134,10 +2176,10 @@
                 </div>
             </div>
         </header>
-      <!--演示演示弹出框 -->
-    {include file="common/order_box"}
-    <!-- 咨询版块 -->
-    {include file="common/siderbar-right"}
+        <!--演示演示弹出框 -->
+        {include file="common/order_box"}
+        <!-- 咨询版块 -->
+        {include file="common/siderbar-right"}
         <!-- 导航栏 -->
         <!-- <nav>
         <div class="layui-container school-nav">
@@ -2235,14 +2277,14 @@
                         </div>
                     </div>
                 </div>
-            <div class="school-right-con">
-                <div class="siderbar-item siderbar-item-search">
-                    <form action="{$pid['pid_url']}" class="search-form" id="search-form">
-                        <input type="text" name="word" class="searchInput" placeholder="输入关键词" autocomplete="off">
-                        <input type="submit" class="submitInput" alt="search">
-                        <input type="hidden" name="pid" value="{$info['pid']}">
-                    </form>
-                </div>
+                <div class="school-right-con">
+                    <div class="siderbar-item siderbar-item-search">
+                        <form action="{$pid['pid_url']}" class="search-form" id="search-form">
+                            <input type="text" name="word" class="searchInput" placeholder="输入关键词" autocomplete="off">
+                            <input type="submit" class="submitInput" alt="search">
+                            <input type="hidden" name="pid" value="{$info['pid']}">
+                        </form>
+                    </div>
 
                     <!-- 热门标签 -->
                     <div class="siderbar-item siderbar-item-label">
@@ -2256,29 +2298,30 @@
                         <ul class="hot-tags-list">
                             {if(!empty($label_list))}
                             {foreach($label_list as $item)}
-                            <li><a href="{$pid['pid_url']}?pid={$info['pid']}&label={$item.name}" class="hot-tag-item">{$item.name}</a></li>
+                            <li><a href="{$pid['pid_url']}?pid={$info['pid']}&label={$item.name}"
+                                    class="hot-tag-item">{$item.name}</a></li>
                             {/foreach}
                             {/if}
                         </ul>
                     </div>
-                <!-- 热门文章 -->
-                <div class="siderbar-item siderbar-item-article">
-                    <div class="siderbar-item-head">
-                        <h2>
-                            <span>热门文章</span>
-                            <div class="switch-article">
-                                <div class="switch-article-btn active" data-name="hot">热门</div>
-                                <div class="switch-article-btn" data-name="recommend">推荐</div>
-                            </div>
-                        </h2>
+                    <!-- 热门文章 -->
+                    <div class="siderbar-item siderbar-item-article">
+                        <div class="siderbar-item-head">
+                            <h2>
+                                <span>热门文章</span>
+                                <div class="switch-article">
+                                    <div class="switch-article-btn active" data-name="hot">热门</div>
+                                    <div class="switch-article-btn" data-name="recommend">推荐</div>
+                                </div>
+                            </h2>
 
                         </div>
                         <ul class="hot-article-list active" data-name="hot">
                             {if($hot_and_rem['hot_case'])}
                             {foreach($hot_and_rem['hot_case'] as $item)}
                             <li class="article-item">
-                                <a href="/case/detail?type_id=2&id={$item.id}" class="link"
-                                    title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
+                                <a href="/case/detail?type_id=2&id={$item.id}" class="link" title="{$item.second_title}"
+                                    target="_blank" rel="noopener noreferrer">
                                     <p>{$item.title}</p>
                                     <span class="time">{$item.time}</span>
                                 </a>
@@ -2290,8 +2333,8 @@
                             {if($hot_and_rem['recommend_case'])}
                             {foreach($hot_and_rem['recommend_case'] as $item)}
                             <li class="article-item">
-                                <a href="/case/detail?type_id=2&id={$item.id}" class="link"
-                                    title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
+                                <a href="/case/detail?type_id=2&id={$item.id}" class="link" title="{$item.second_title}"
+                                    target="_blank" rel="noopener noreferrer">
                                     <p>{$item.title}</p>
                                     <span class="time">{$item.time}</span>
                                 </a>
@@ -2368,8 +2411,8 @@
                 </div>
             </div>
         </div>
-          <!-- 底部 -->
-      {include file="common/footer"}
+        <!-- 底部 -->
+        {include file="common/footer"}
     </div>
 
 </body>
@@ -2406,45 +2449,45 @@
 
     // 登录成功后显示个人信息
     var tvInfo = JSON.parse(localStorage.getItem('tvInfo'))
-        if (tvInfo) {
-            $('.layui-nav').show()
-            // 隐藏登录按钮
-            $('.btns').hide();
-            $('.layui-nav-img').attr('src', tvInfo.avatar) // 头像
-            $('#img-a .name').html(tvInfo.name) // 昵称
-        }
+    if (tvInfo) {
+        $('.layui-nav').show()
+        // 隐藏登录按钮
+        $('.btns').hide();
+        $('.layui-nav-img').attr('src', tvInfo.avatar) // 头像
+        $('#img-a .name').html(tvInfo.name) // 昵称
+    }
 
-        // 提示框
-        layui.use('layer', function () {
-            var layer = layui.layer;
-        });
+    // 提示框
+    layui.use('layer', function () {
+        var layer = layui.layer;
+    });
 
-        layui.use('element', function () {
-            var element = layui.element;
-            element.on('nav(leftNav)', function (ele) {
-                var id = ele.attr('data-id');
-                // console.log(id);
-                // 退出登录
-                if (id == 2) {
-                localStorage.removeItem('tvInfo')
-                layer.msg('您已退出登录');
-                setTimeout(() => {
-                    window.location.href = "/login"
-                }, 500);
-            } else if (id == 1) {
-                     var token = tvInfo.token
+    layui.use('element', function () {
+        var element = layui.element;
+        element.on('nav(leftNav)', function (ele) {
+            var id = ele.attr('data-id');
+            // console.log(id);
+            // 退出登录
+            if (id == 2) {
+                localStorage.removeItem('tvInfo')
+                layer.msg('您已退出登录');
+                setTimeout(() => {
+                    window.location.href = "/login"
+                }, 500);
+            } else if (id == 1) {
+                var token = tvInfo.token
                 var name = tvInfo.name
                 var avatar = tvInfo.avatar
                 window.open(`http://login.qingtv.com/Home?lighostoken=${token}
                 &lighosName${name}
                 &lighosHeadUrl=${avatar}`)
-            }
-            });
+            }
         });
+    });
 
-        $('#zixun').click(function(){
-            daovoice('openMessages')
-        })
+    $('#zixun').click(function () {
+        daovoice('openMessages')
+    })
 
 </script>
 

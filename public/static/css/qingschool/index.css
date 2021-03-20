@@ -167,6 +167,32 @@
             background-color: #00cc99;
             color: #fff
         }
+
+        .layui-nav {
+            width: 180px;
+        }
+        
+        .layui-nav .layui-nav-item {
+            width: 100%;
+        }
+        
+        .layui-nav .layui-nav-item #img-a .layui-nav-img {
+            margin-right: 6px;
+        }
+        
+        .layui-nav .layui-nav-item #img-a {
+            display: flex;
+            align-items: center;
+            padding: 0 5px;
+        }
+        
+        .layui-nav .layui-nav-item #img-a .name {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 65%;
+            display: inline-block;
+        }
     @media screen and (min-width: 1300px){
         .layui-container {
             width: 1200px !important;
