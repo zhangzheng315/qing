@@ -1666,36 +1666,36 @@
     margin-right: 0;
   }
   #about .about-boxs section .free {
-    height: 240px;
-    padding-top: 75px;
+    height: 160px;
+    padding-top: 35px;
   }
   #about .about-boxs section .free .layui-container h3 {
-    font-size: 22px;
-    margin-bottom: 40px;
+    font-size: 20px;
+    margin-bottom: 30px;
   }
   #about .about-boxs section .free .layui-container button {
-    width: 138px;
-    height: 35px;
+    width: 110px;
+    height: 30px;
   }
   #about .about-boxs section .free .layui-container button a {
-    line-height: 35px;
+    line-height: 30px;
     font-size: 14px;
   }
   #about .about-boxs section .lianxi-free {
-    height: 240px;
-    background-size: contain;
+    height: 160px;
+    background-size: cover;
   }
   #about .about-boxs section .lianxi {
-    padding: 32px 0 20px;
+    padding: 32px 0 0px;
   }
   #about .about-boxs section .lianxi .layui-container .title {
-    margin-bottom: 24px;
+    margin-bottom: 22px;
   }
   #about .about-boxs section .lianxi .layui-container .lianxi-content {
     flex-direction: column;
   }
   #about .about-boxs section .lianxi .layui-container .lianxi-content .content-left li {
-    width: 45%;
+    width: 32%;
     padding: 10px;
     margin: 0 30px 16px 0;
   }
