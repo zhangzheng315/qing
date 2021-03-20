@@ -22,6 +22,31 @@
         .cause-con {
             margin-top: 0;
         }
+        .layui-nav {
+            width: 180px;
+        }
+
+        .layui-nav .layui-nav-item {
+            width: 100%;
+        }
+
+        .layui-nav .layui-nav-item #img-a .layui-nav-img {
+            margin-right: 6px;
+        }
+
+        .layui-nav .layui-nav-item #img-a {
+            display: flex;
+            align-items: center;
+            padding: 0 5px;
+        }
+
+        .layui-nav .layui-nav-item #img-a .name {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 65%;
+            display: inline-block;
+        }
     </style>
 </head>
 
@@ -365,6 +390,13 @@
                 setTimeout(() => {
                     window.location.href = "/login"
                 }, 500);
+            } else if (id == 1) {
+                 var token = tvInfo.token
+                var name = tvInfo.name
+                var avatar = tvInfo.avatar
+                window.open(`http://login.qingtv.com/Home?lighostoken=${token}
+                &lighosName=${name}
+                &lighosHeadUrl=${avatar}`)
             }
         });
     });
