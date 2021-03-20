@@ -886,19 +886,19 @@
     content: '' !important;
   }
   #channel .join {
-    height: 200px;
-    padding: 52px 0 0;
+    height: 160px;
+    padding: 30px 0 0;
   }
   #channel .join .layui-container h3 {
-    font-size: 24px;
-    margin-bottom: 37px;
+    font-size: 22px;
+    margin-bottom: 30px;
   }
   #channel .join .layui-container button {
-    width: 108px;
-    height: 26px;
+    width: 118px;
+    height: 30px;
   }
   #channel .join .layui-container button a {
-    line-height: 26px;
-    font-size: 12px;
+    line-height: 30px;
+    font-size: 14px;
   }
 }
