@@ -104,6 +104,10 @@ class Live extends Controller
         return show(401,$res['error']);
     }
 
+    /**
+     * 发送手机验证码
+     * @return \think\response\Json
+     */
     public function liveSendCode()
     {
         $data = input('post.');
@@ -120,11 +124,43 @@ class Live extends Controller
             return show(401, $validate->getError());
         }
         $data['type'] = 0;
-        $url = 'https://login.lighos.com/api/v1/common/send_captcha';
+        $url = 'https://test-login.lighos.com//api/v1/common/send_captcha';
         $res = $this->liveCurl($data, $url);
         $res = json_decode($res, true);
         if ($res['code'] == '200') {
-            return show(200,$res['message'],$res['data']);
+            return show(200,$res['message']);
+        }
+        return show(401,$res['message']);
+    }
+
+    /**
+     * 验证验证码
+     * @return \think\response\Json
+     */
+    public function checkCode()
+    {
+        $data = input('post.');
+        $rules = [
+            'mobile' => 'require|regex:/^1[3456789][0-9]{9}$/',
+            'code' => 'require|max:4|min:4',
+        ];
+        $message = [
+            'mobile.require' => '手机号不能为空',
+            'mobile.regex' => '手机号类型不正确',
+            'code.require' => '验证码不能为空！',
+            'code.max' => '验证码长度为4位！',
+            'code.min' => '验证码长度为4位！',
+        ];
+        $validate = new Validate($rules, $message);
+        if (!$validate->check($data)) {
+            return show(401, $validate->getError());
+        }
+        $data['type'] = 0;
+        $url = 'https://test-login.lighos.com/api/v1/common/check_code';
+        $res = $this->liveCurl($data, $url);
+        $res = json_decode($res, true);
+        if ($res['code'] == '200') {
+            return show(200,$res['message']);
         }
         return show(401,$res['error']);
     }
