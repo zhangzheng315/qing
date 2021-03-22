@@ -207,7 +207,7 @@ class JoinUsService extends Common{
         $mail->Body    = '姓名:'.$data['name'].
             ',<br>手机号:'.$data['mobile'].
             ',<br>邮箱:'.$data['email'].
-            ',<br>手机号:'.$data['position'].
+            ',<br>职位:'.$data['position'].
             ',<br>该访客投递了简历,请及时处理';
 
         $mail->send();
