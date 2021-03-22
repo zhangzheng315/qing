@@ -446,24 +446,24 @@
   margin-right: 0;
 }
 #about .about-boxs section .free {
-  height: 400px;
+  height: 300px;
   background: url('/static/image/about/banner-b.png') no-repeat;
   background-size: cover;
-  padding-top: 100px;
+  padding-top: 60px;
   box-sizing: border-box;
 }
 #about .about-boxs section .free .layui-container h3 {
-  font-size: 50px;
+  font-size: 45px;
   font-weight: bold;
   color: #FFFFFF;
-  margin-bottom: 90px;
+  margin-bottom: 60px;
   text-align: center;
 }
 #about .about-boxs section .free .layui-container button {
-  width: 168px;
-  height: 40px;
-  background: linear-gradient(90deg, #009CA9, #39D6AF);
-  border-radius: 20px;
+  width: 280px;
+  height: 60px;
+  background: #00cc99;
+  border-radius: 30px;
   border: none;
   display: block;
   margin: 0 auto;
@@ -471,9 +471,14 @@
 #about .about-boxs section .free .layui-container button a {
   display: block;
   height: 100%;
-  line-height: 40px;
+  line-height: 60px;
   color: #fff;
-  font-size: 20px;
+  font-size: 28px;
+}
+#about .about-boxs section .free .layui-container button:hover a {
+  color: #fff;
+  background: transparent;
+  border-color: #fff;
 }
 #about .about-boxs section .lianxi {
   padding: 102px 0 39px;
