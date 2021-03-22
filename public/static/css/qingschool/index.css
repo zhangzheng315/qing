@@ -691,19 +691,19 @@
           #free-banner {
             height: 300px;
             padding: 60px 0;
-            margin-top: 100px;
+            margin-top: 75px;
         }
         #free-banner>h2 {
             color: #ffffff;
-            font-size: 50px;
+            font-size: 45px;
         }
         #free-banner>.free_btn {
-            width: 168px;
-            height: 40px;
-            line-height: 40px;
-            margin-top: 60px;
-            font-size: 20px;
-            border-radius: 20px;
+            width: 280px;
+            height: 60px;
+            line-height: 60px;
+            margin-top: 37px;
+            font-size: 28px;
+            border-radius: 30px;
         }
 
         /* 登录成功后，显示头像样式 */
@@ -1211,15 +1211,15 @@
         }
         #free-banner>h2 {
             color: #ffffff;
-            font-size: 40px;
+            font-size: 42px;
         }
         #free-banner>.free_btn {
-            width: 158px;
-            height: 40px;
-            line-height: 40px;
+            width: 250px;
+            height: 50px;
+            line-height: 50px;
             margin-top: 60px;
-            font-size: 20px;
-            border-radius: 20px;
+            font-size: 25px;
+            border-radius: 25px;
         }
 
           /* 登录成功后，显示头像样式 */
@@ -1455,7 +1455,7 @@
             font-size: 30px;
         }
         #free-banner>.free_btn {
-            width: 148px;
+            width: 180px;
             height: 34px;
             line-height: 34px;
             margin-top: 40px;
@@ -1739,7 +1739,7 @@
             font-size: 16px;
         }
         #free-banner>.free_btn {
-            width: 110px;
+            width: 140px;
             height: 30px;
             line-height: 30px;
             margin-top: 28px;
