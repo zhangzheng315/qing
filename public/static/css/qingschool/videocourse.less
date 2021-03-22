@@ -494,35 +494,41 @@
     }
 
     .video-free {
-        height: 400px;
+        height: 300px;
         background: url('/static/image/qingschool/banner_bottom.png') no-repeat;
         background-size: cover;
-        padding-top: 111px;
+        padding-top: 81px;
         box-sizing: border-box;
 
         .layui-container {
             h3 {
-                font-size: 50px;
+                font-size: 45px;
                 font-weight: bold;
                 color: #333;
-                margin-bottom: 90px;
+                margin-bottom: 50px;
                 text-align: center;
             }
 
             button {
-                width: 168px;
-                height: 40px;
-                background: linear-gradient(90deg, #009CA9, #39D6AF);
-                border-radius: 20px;
-                border: none;
+                width: 23.5%;
+                height: 60px;
+                border-radius: 30px;
+                background: #00cc99;
                 display: block;
                 margin: 0 auto;
                 cursor: pointer;
-
+                border: 2px solid transparent;
                 a {
                     color: #fff;
-                    font-size: 20px;
-
+                    font-size: 28px;
+                    line-height: 60px;
+                }
+                &:hover {
+                    border: 2px solid #fff;
+                    background: transparent;
+                    a {
+                        color: #fff;
+                    }
                 }
             }
         }

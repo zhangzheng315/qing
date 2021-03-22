@@ -763,18 +763,18 @@
                 background: linear-gradient(97deg, #87D2D0, #BBDCCA);
             }
             .kefu-content {
-                padding-top: 102px;
+                padding-top: 100px;
                 text-align: center;
             }
             .kefu-content>h2 {
-               font-size: 50px;
+               font-size: 45px;
                font-family: Microsoft YaHei;
                font-weight: bold;
                color: #FFFFFF;
                text-align: center;
             }
             .kefu-content>button {
-                width: 300px;
+                width: 280px;
                 height: 60px;
                 border: 0;
                 border: 2px solid #ffffff;

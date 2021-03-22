@@ -361,14 +361,14 @@
                 var name = tvInfo.name
                 var avatar = tvInfo.avatar
                 window.open(`http://login.qingtv.com/Home?lighostoken=${token}
-                &lighosName${name}
+                &lighosName=${name}
                 &lighosHeadUrl=${avatar}`)
             }
             });
         });
 
         $('#zixun').click(function(){
-            daovoice('openMessages')
+            daovoice('show');
         })
 </script>
 

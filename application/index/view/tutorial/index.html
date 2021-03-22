@@ -80,6 +80,7 @@
 
         .layui-nav {
             width: 180px;
+            padding: 0 10px;
         }
 
         .layui-nav .layui-nav-item {
@@ -100,7 +101,7 @@
             text-overflow: ellipsis;
             white-space: nowrap;
             overflow: hidden;
-            width: 65%;
+            width: 67%;
             display: inline-block;
         }
     </style>
@@ -126,6 +127,7 @@
                     </div>
                 </div>
                 <a class="shouye" href="/">轻直播首页</a>
+                <a class="shouye" href="/blog">轻学院</a>
                 <div class="login flex-box">
                     <a href="/login" target="_blank">登录</a>
                     <a href="http://login.qingtv.com/signUp" target="_blank">注册</a>
@@ -414,7 +416,7 @@
                 var name = tvInfo.name
                 var avatar = tvInfo.avatar
                 window.open(`http://login.qingtv.com/Home?lighostoken=${token}
-                &lighosName${name}
+                &lighosName=${name}
                 &lighosHeadUrl=${avatar}`)
             }
         });

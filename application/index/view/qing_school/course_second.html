@@ -81,6 +81,7 @@
 
         .layui-nav {
             width: 180px;
+            padding: 0 10px;
         }
 
         .layui-nav .layui-nav-item {
@@ -101,7 +102,7 @@
             text-overflow: ellipsis;
             white-space: nowrap;
             overflow: hidden;
-            width: 65%;
+            width: 67%;
             display: inline-block;
         }
     </style>
@@ -440,7 +441,7 @@
                 var name = tvInfo.name
                 var avatar = tvInfo.avatar
                 window.open(`http://login.qingtv.com/Home?lighostoken=${token}
-                &lighosName${name}
+                &lighosName=${name}
                 &lighosHeadUrl=${avatar}`)
             }
         });

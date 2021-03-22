@@ -236,13 +236,13 @@
   box-sizing: border-box;
 }
 #solution #kefu .kefu-content h2 {
-  font-size: 50px;
+  font-size: 45px;
   color: #fff;
   text-align: center;
   margin: 0 auto 38px;
 }
 #solution #kefu .kefu-content button {
-  width: 31%;
+  width: 25%;
   height: 60px;
   border: 0;
   border: 2px solid #FFFFFF;
@@ -256,7 +256,7 @@
 #solution #kefu .kefu-content button:hover {
   background-color: #00cc99;
   color: #fff;
-  border: 0;
+  border-color: transparent;
 }
 @media screen and (min-width: 768px) and (max-width: 1300px) {
   #solution #banner {

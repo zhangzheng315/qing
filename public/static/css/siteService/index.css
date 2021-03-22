@@ -180,9 +180,6 @@
 #service .plans {
   padding: 70px 0;
 }
-#service .plans:nth-child(2n - 1) {
-  background-color: #F9F9F9;
-}
 #service .plans .layui-container {
   display: flex;
   align-items: center;
@@ -236,8 +233,17 @@
   height: 100%;
   object-fit: cover;
 }
+#service .plans:nth-child(2n) .layui-container .plans-text {
+  margin-left: 150px;
+}
+#service .plans:nth-child(2n) .layui-container .plans-img {
+  margin-right: 0px;
+}
+#service .plans:nth-child(2n - 1) {
+  background-color: #F9F9F9;
+}
 #service .plans:nth-child(2n - 1) .layui-container .plans-text {
-  margin-right: 150px;
+  margin-left: 0px;
 }
 #service .plans:nth-child(2n - 1) .layui-container .plans-img {
   margin-right: 150px;
@@ -261,43 +267,37 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 60px 0 0;
+  padding: 70px 0 0;
   box-sizing: border-box;
 }
 #service #fiveG .fiveg-content h2 {
-  font-size: 50px;
+  font-size: 45px;
   color: #fff;
   text-align: center;
 }
 #service #fiveG .fiveg-content h5 {
-  font-size: 35px;
+  font-size: 32px;
   color: #fff;
   font-weight: 400;
-  margin: 45px auto 68px;
+  margin: 40px auto 60px;
 }
-#service #fiveG .fiveg-content button {
+#service #fiveG .fiveg-content a {
+  display: block;
   width: 31%;
   height: 60px;
-  border: 0;
-  border: 2px solid #FFFFFF;
-  border-radius: 30px;
-  outline: none;
-  background-color: transparent;
-  cursor: pointer;
-}
-#service #fiveG .fiveg-content button a {
-  display: block;
-  height: 100%;
   line-height: 60px;
   font-size: 28px;
   color: #FFFFFF;
+  cursor: pointer;
+  border: 2px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 30px;
+  text-align: center;
 }
-#service #fiveG .fiveg-content button:hover {
-  background-color: #00cc99;
-  border: 0;
-}
-#service #fiveG .fiveg-content button:hover a {
+#service #fiveG .fiveg-content a:hover {
   color: #fff;
+  background-color: #00cc99;
+  border-color: transparent;
 }
 @media screen and (min-width: 768px) and (max-width: 1300px) {
   #service #banner {
@@ -665,25 +665,25 @@
     margin-right: 0px;
   }
   #service #fiveG {
-    height: 180px;
+    height: 260px;
   }
   #service #fiveG .fiveg-content {
-    padding: 30px 0 0;
+    padding: 30px 0 20px;
   }
   #service #fiveG .fiveg-content h2 {
-    font-size: 20px;
+    font-size: 22px;
   }
   #service #fiveG .fiveg-content h5 {
-    font-size: 16px;
+    font-size: 18px;
     text-align: center;
-    margin: 25px auto 28px;
+    margin: 31px auto 40px;
   }
   #service #fiveG .fiveg-content button {
-    width: 32%;
-    height: 30px;
+    width: 46%;
+    height: 40px;
   }
   #service #fiveG .fiveg-content button a {
-    line-height: 30px;
+    line-height: 40px;
     font-size: 14px;
   }
 }

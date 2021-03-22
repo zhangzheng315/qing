@@ -227,9 +227,7 @@
     .plans {
         padding: 70px 0;
 
-        &:nth-child(2n - 1) {
-            background-color: #F9F9F9;
-        }
+
 
         .layui-container {
             display: flex;
@@ -294,10 +292,26 @@
             }
         }
 
-        &:nth-child(2n - 1) {
+        &:nth-child(2n) {
             .layui-container {
                 .plans-text {
-                    margin-right: 150px;
+                    margin-left: 150px;
+
+                }
+
+                .plans-img {
+                    margin-right: 0px;
+                }
+            }
+
+        }
+
+        &:nth-child(2n - 1) {
+            background-color: #F9F9F9;
+
+            .layui-container {
+                .plans-text {
+                    margin-left: 0px;
 
                 }
 
@@ -305,7 +319,6 @@
                     margin-right: 150px;
                 }
             }
-
         }
 
     }
@@ -331,51 +344,43 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 60px 0 0;
+            padding: 70px 0 0;
             box-sizing: border-box;
 
             h2 {
-                font-size: 50px;
+                font-size: 45px;
                 color: #fff;
                 text-align: center;
             }
 
             h5 {
-                font-size: 35px;
+                font-size: 32px;
                 color: #fff;
                 font-weight: 400;
-                margin: 45px auto 68px;
+                margin: 40px auto 60px;
             }
 
-            button {
+            a {
+                display: block;
                 width: 31%;
                 height: 60px;
-                border: 0;
-                border: 2px solid #FFFFFF;
-                border-radius: 30px;
-                outline: none;
-                background-color: transparent;
-
+                line-height: 60px;
+                font-size: 28px;
+                color: #FFFFFF;
                 cursor: pointer;
-
-                a {
-                    display: block;
-                    height: 100%;
-                    line-height: 60px;
-                    font-size: 28px;
-                    color: #FFFFFF;
-                }
-
+                border: 2px solid #FFFFFF;
+                box-sizing: border-box;
+                border-radius: 30px;
+                text-align: center;
                 &:hover {
+                    color: #fff;
                     background-color: #00cc99;
-                    border: 0;
-
-                    a {
-                        color: #fff;
-
-                    }
+                    border-color:transparent;
                 }
+
             }
+
+           
         }
 
     }
