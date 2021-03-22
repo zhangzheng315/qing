@@ -193,6 +193,15 @@
             width: 65%;
             display: inline-block;
         }
+        .cause-title>h3 .cause-icon.icon-item-case {
+            background-image: url(/static/image/qingschool1/case_icon.svg);
+        }
+        .cause-title>h3 .cause-icon.icon-item-product {
+            background-image: url(/static/image/qingschool1/product_icon.svg);
+        }
+        .cause-title>h3 .cause-icon.icon-item-livenews {
+            background-image: url(/static/image/qingschool1/livenews_icon.svg);
+        }
     @media screen and (min-width: 1300px){
         .layui-container {
             width: 1200px !important;
@@ -206,7 +215,7 @@
             height: 45px;
         }
         .head-right>.text{
-          margin-right: 64px;
+          /* margin-right: 64px; */
           height: 30px;
           line-height: 30px;
       }
@@ -215,7 +224,7 @@
           color: #999999; 
       }
       .head-right>.text>a:first-child {
-          margin-right: 48px;
+          /* margin-right: 48px; */
       }
         .btns>a {
             display: inline-block;
@@ -730,7 +739,7 @@
             height: 40px;
         }
         .head-right>.text{
-          margin-right: 40px;
+          /* margin-right: 40px; */
           height: 30px;
           line-height: 30px;
       }
@@ -739,7 +748,7 @@
           color: #999999; 
       }
       .head-right>.text>a:first-child {
-          margin-right: 24px;
+          /* margin-right: 24px; */
       }
         .btns>a {
             display: inline-block;
@@ -1246,7 +1255,7 @@
             height: 36px;
         }
         .head-right>.text{
-          margin-right: 40px;
+          /* margin-right: 40px; */
           height: 30px;
           line-height: 30px;
       }
@@ -1255,7 +1264,7 @@
           color: #999999; 
       }
       .head-right>.text>a:first-child {
-          margin-right: 32px;
+          /* margin-right: 32px; */
       }
         .btns>a {
             display: inline-block;
@@ -1491,7 +1500,7 @@
           color: #999999; 
       }
       .head-right>.text>a:first-child {
-          margin-right: 32px;
+          /* margin-right: 32px; */
       }
       .btns {
           display: none;
