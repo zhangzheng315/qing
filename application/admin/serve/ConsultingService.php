@@ -69,10 +69,10 @@ class ConsultingService extends Common{
         $mail->Subject = '官网有新的预约';
         $mail->Body    = '姓名:'.$param['name'].
             ',<br>手机号:'.$param['phone'].
-            ',<br>邮箱:'.$param['email'].
-            ',<br>公司名:'.$param['company'].
-            ',<br>行业:'.$param['industry'].
-            ',<br>描述:'.$param['describe'].
+            ',<br>邮箱:'.$param['email']?:'暂无'.
+            ',<br>公司名:'.$param['company']?:'暂无'.
+//            ',<br>行业:'.$param['industry'].
+            ',<br>描述:'.$param['describe']?:'暂无'.
             ',<br>该访客有新的资讯消息,请及时处理';
 
         $mail->send();
