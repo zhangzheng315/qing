@@ -19,21 +19,12 @@ class Consulting extends Controller
             [
                 'phone' => 'require|regex:/^1[3456789][0-9]{9}$/',
                 'name' => 'require',
-                'email' => 'require|email',
-                'company' => 'require',
-                'industry' => 'require',
-                'describe' => 'require',
             ];
         $msg =
             [
                 'phone.require' => '请填写手机号',
                 'phone.regex' => '手机号类型不正确',
                 'name.require' => '请填写姓名',
-                'email.require' => '请填写邮箱',
-                'email.email' => '邮箱格式不正确',
-                'company.require' => '请填写公司名称',
-                'industry.require' => '请填写所在行业',
-                'describe.require' => '请填写描述',
             ];
         $validate = new Validate($rules,$msg);
         if(!$validate->check($data)){
