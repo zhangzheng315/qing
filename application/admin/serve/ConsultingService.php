@@ -59,6 +59,7 @@ class ConsultingService extends Common{
         $mail->addAddress("neal.tang@sicbon.com", "小唐总");  //收件人（用户输入的邮箱）
         $mail->addAddress("collen@sicbon.com", "Collen总");  //收件人（用户输入的邮箱）
         $mail->addAddress("steven@sicbon.com", "朱总");  //收件人（用户输入的邮箱）
+//        $mail->addAddress("zhangzheng315324@163.com", "groot");  //收件人（用户输入的邮箱）
 
         //发送附件
         // $mail->addAttachment('../xy.zip');         // 添加附件
