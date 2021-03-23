@@ -710,7 +710,7 @@
             //     layer.msg('请阅读并同意注册协议和版权声明');
             //     return false;
             // }
-            if(name == '' || phone == '' || company == '' || email == '' || describe == '') {
+            if(name == '' || phone == '') {
                 layer.msg('请输入完整信息');
                 return false;
             }
@@ -718,7 +718,7 @@
                 layer.msg('请输入正确格式的手机号');
                 return false;
             }
-            if(phone && company && name && email && industry && describe) {
+            if(phone && name ) {
                 $.ajax({
                     url: "{:url('/index/consulting/consultingAdd')}",
                     data: {
@@ -726,7 +726,6 @@
                         'name': name,
                         'company': company,
                         'email': email,
-                        'industry': industry,
                         'describe': describe,
                     },
                     type: 'post',
@@ -753,7 +752,7 @@
            $('#order_phone').val('');
            $('#order_company').val('');
            $('#order_email').val('');
-           $('#order_industry').val('');
+        //    $('#order_industry').val('');
            $('#order_describe').val('');
         }
 
