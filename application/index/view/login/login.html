@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1, minimum-scale=1,user-scalable=no">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0,maximum-scale=1, minimum-scale=1,user-scalable=no">
     <title>轻直播用户登录窗口</title>
     <meta name="keywords"  content="轻直播" />
     <meta name="description"  content="" />
@@ -61,6 +62,9 @@
                         href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">沪ICP备16029097号-7</a></p>
             </div>
         </footer>
+        <div class="hover">
+            <i class="layui-icon layui-icon-loading"></i>
+        </div>
     </div>
 </body>
 <!-- 引入cookie插件 -->
@@ -117,6 +121,8 @@
             layer.msg('请输入正确格式的手机号');
             return false
         }
+        $('.hover').show()
+        $("#bt1").attr("disabled",false); // 禁止点击登录按钮
         if (phone && pwd && phoneReg.test(phone)) {
             $.ajax({
                 url: "{:url('/index/live/liveLogin')}",
@@ -124,6 +130,8 @@
                 type: 'post',
                 success: function (res) {
                     if (res.status == 200) {
+                        $('.hover').hide()
+                        $("#bt1").attr("disabled",true);
                         layer.msg('登录成功');
                         // 存cookie的方法
                         save(phone, pwd)
@@ -132,11 +140,14 @@
                             window.location.href = "/index/index.html"
                         }, 500);
                     } else {
+                        $('.hover').hide()
+                        $("#bt1").attr("disabled",true);
                         layer.msg(res.message);
                     }
                 },
                 error: function (err) {
                     layer.msg(err);
+                    $("#bt1").attr("disabled",true);
                 }
             })
         }

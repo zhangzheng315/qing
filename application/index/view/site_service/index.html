@@ -18,6 +18,11 @@
     <div id="service">
         <!-- 头部 -->
         {include file="common/header"}
+
+         <!--预约演示弹出框 -->
+         {include file="common/order_box"}
+         <!-- 咨询版块 -->
+         {include file="common/siderbar-right"}
         <!-- banner -->
         <div id="banner">
             <div class="layui-carousel" id="banners">
@@ -121,7 +126,7 @@
                         </div>
                     </li>
                 </ul>
-                <a href="http://login.qingtv.com/signUp" target="_blank">立即试用</a>
+                <a href="javascript:;" class="yuyue">预约体验</a>
             </div>
         </div>
 
@@ -162,7 +167,7 @@
                         <p class="item-bottom">现场服务经验</p>
                     </div>
                 </div>
-                <a href="http://login.qingtv.com/signUp" target="_blank">立即试用</a>
+                <a href="javascript:;" class="yuyue">预约体验</a>
             </div>
         </div>
 
@@ -238,7 +243,7 @@
                 <div class="fiveg-content">
                     <h2>即刻开启一场不一样的直播体验</h2>
                     <h5>全程保障服务，精心“导演”每一部剧情</h5>
-                    <button><a href="http://login.qingtv.com/signUp" target="_blank">免费试用</a></button>
+                    <a href="http://login.qingtv.com/signUp" target="_blank">免费试用</a>
                 </div>
 
             </div>
@@ -293,6 +298,11 @@
 
     $('.zixun').click(function () {
         daovoice('show')
+    })
+
+    $('.yuyue').on('click', function () {
+        $('#order-container').show();
+        $('.q-modal').show();
     })
 </script>
 

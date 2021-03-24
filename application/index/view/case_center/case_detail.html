@@ -772,12 +772,12 @@
             }
 
             .kefu-content {
-                padding-top: 90px;
+                padding-top: 75px;
                 text-align: center;
             }
 
             .kefu-content>h2 {
-                font-size: 50px;
+                font-size: 45px;
                 font-family: Microsoft YaHei;
                 font-weight: bold;
                 color: #FFFFFF;
@@ -785,7 +785,7 @@
             }
 
             .kefu-content>button {
-                width: 240px;
+                width: 280px;
                 height: 60px;
                 border: 0;
                 border: 2px solid #ffffff;
@@ -2231,7 +2231,7 @@
                                 <div class="tags-box">
                                     {if !empty($info['label'])}
                                     {foreach($info['label'] as $item)}
-                                    <a href="" class="tag-item">{$item}</a>
+                                    <a href="javascript:;" class="tag-item">{$item}</a>
                                     {/foreach}
                                     {/if}
                                 </div>
@@ -2486,7 +2486,7 @@
     });
 
     $('#zixun').click(function () {
-        daovoice('openMessages')
+        daovoice('show');
     })
 
 </script>

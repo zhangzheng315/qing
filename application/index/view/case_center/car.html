@@ -96,7 +96,7 @@
  background-position: center;">
                             </a>
                             <div class="cause-des">
-                                <a href="" class="cause-title">
+                                <a href="/case/detail?type_id=2&id={$item.id}" class="cause-title">
                                     <h3>
                                         <i class="cause-icon icon-item-solution"></i>
                                         {$item.title}
@@ -361,7 +361,7 @@
         });
 
         $('#zixun').click(function(){
-            daovoice('openMessages')
+            daovoice('show');
         })
 
 </script>

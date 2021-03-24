@@ -89,6 +89,8 @@
             background-color: #fff;
             border: 1px solid #e5e5e5;
             transition: all .3s;
+            -webkit-appearance: none; /*去除系统默认的样式*/
+	        -webkit-tap-highlight-color: transparent; /* 点击高亮的颜色*/
         }
 
         .order-input:focus {
@@ -197,8 +199,8 @@
         @media screen and (min-width: 1300px) {
             .order-box {
                 width: 920px;
-                height: 570px;
-                padding-bottom: 10px;
+                /* height: 570px; */
+                padding: 30px 0;
                 font-size: 18px;
                 box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
                 top: calc(50% - 275px);
@@ -206,7 +208,7 @@
             }
 
             .order-box>.left-pic {
-                margin-top: 47px;
+                /* margin-top: 47px; */
                 margin-left: 35px;
             }
 
@@ -285,8 +287,8 @@
         @media screen and (min-width: 992px) and (max-width: 1299px) {
             .order-box {
                 width: 800px;
-                height: 520px;
-                padding-bottom: 10px;
+                /* height: 520px; */
+                padding: 30px 0;
                 font-size: 18px;
                 box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
                 top: calc(50% - 260px);
@@ -294,7 +296,7 @@
             }
 
             .order-box>.left-pic {
-                margin-top: 64px;
+                /* margin-top: 64px; */
                 margin-left: 30px;
             }
 
@@ -371,9 +373,9 @@
 
         @media screen and (min-width: 821px) and (max-width: 993px) {
             .order-box {
-                width: 500px;
-                height: 520px;
-                padding-bottom: 10px;
+                width: 460px;
+                /* height: 520px; */
+                padding: 30px 0;
                 font-size: 18px;
                 box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
                 top: calc(50% - 260px);
@@ -381,21 +383,21 @@
             }
 
             .order-box>.left-pic {
-                margin-top: 64px;
+                /* margin-top: 64px; */
                 margin-left: 30px;
                 display: none;
             }
 
             .left-pic>img {
                 width: 330px;
-                height: 300px;
+                /* height: 300px; */
                 padding-right: 30px;
                 padding-top: 23px;
                 padding-bottom: 26px;
             }
 
             #apply-demo-form-wrapper {
-                margin-left: 75px;
+                margin-left: 55px;
                 margin-top: 35px;
                 width: 350px;
             }
@@ -458,16 +460,16 @@
         @media screen and (min-width: 768px) and (max-width: 820px) {
             .order-box {
                 width: 500px;
-                height: 520px;
-                padding-bottom: 10px;
+                /* height: 520px; */
+                padding: 25px 0;
                 font-size: 18px;
                 box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
-                top: calc(50% - 260px);
+                top: calc(50% - 240px);
                 border-radius: 6px;
             }
 
             .order-box>.left-pic {
-                margin-top: 64px;
+                /* margin-top: 64px; */
                 margin-left: 30px;
                 display: none;
             }
@@ -482,7 +484,7 @@
 
             #apply-demo-form-wrapper {
                 margin-left: 75px;
-                margin-top: 35px;
+                margin-top: 25px;
                 width: 350px;
             }
 
@@ -544,11 +546,11 @@
         @media screen and (max-width: 767px){
             .order-box {
                 width: 350px;
-                height: 530px;
-                /* padding-bottom: 10px; */
+                /* height: 530px; */
+                padding: 25px 0;
                 font-size: 18px;
                 box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
-                top: calc(50% - 260px);
+                top: calc(50% - 240px);
                 border-radius: 6px;
                 /* text-align: center; */
             }
@@ -569,7 +571,7 @@
 
             #apply-demo-form-wrapper {
                 margin-left: 35px;
-                margin-top: 35px;
+                margin-top: 20px;
                 width: 280px;
             }
 
@@ -643,16 +645,16 @@
             </div>
             <div id="apply-demo-form-wrapper">
                 <form action="" class="order-form" name="orderForm">
-                    <div class="header">获得预约演示</div>
+                    <div class="header">预约演示</div>
                     <div class="order-row order-form-item">
                         <input type="text" placeholder="请填写您的姓名" class="order-input" id="order_name" name="name">
                     </div>
                     <div class="order-row order-form-item">
                         <input type="text" placeholder="请填写公司名称" class="order-input" id="order_company" name="company">
                     </div>
-                    <div class="order-row order-form-item">
+                    <!-- <div class="order-row order-form-item">
                         <input type="text" placeholder="请填写所在行业" class="order-input" id="order_industry" name="industry">
-                    </div>
+                    </div> -->
                     <div class="order-row order-form-item">
                         <input type="text" placeholder="请填写邮箱" class="order-input" id="order_email" name="email">
                     </div>
@@ -662,7 +664,7 @@
                     <div class="order-row order-form-item">
                         <textarea rows="3" placeholder="需求描述" class="order-input" id="order_describe" name="describe"></textarea>
                     </div>
-                    <label class="order-checkbox-wrapper">
+                    <!-- <label class="order-checkbox-wrapper">
                         <span class="order-checkbox">
                             <input type="checkbox" class="order-checkbox-input">
                             <span class="order-check-inner"></span>
@@ -671,9 +673,9 @@
                             <span>同意并遵守</span>
                             <a href="/protocol" target="_blank" style="color:#00A67C">轻直播平台服务条款</a>
                         </span>
-                    </label>
+                    </label> -->
                     <button class="order-btn" type="button">
-                        <span>申请演示</span>
+                        <span>提交</span>
                     </button>
                 </form>
             </div>
@@ -700,15 +702,15 @@
             let phone = $('#order_phone').val();
             let company = $('#order_company').val();
             let email = $('#order_email').val();
-            let industry = $('#order_industry').val();
+            // let industry = $('#order_industry').val();
             let describe = $('#order_describe').val();
             let phoneReg = /^1[0-9]{10}$/; // 校验手机号码
             
-            if(!$('.order-checkbox').hasClass('order-checkbox-checked')) {
-                layer.msg('请阅读并同意注册协议和版权声明');
-                return false;
-            }
-            if(name == '' || phone == '' || company == '' || email == '' || industry == '' || describe == '') {
+            // if(!$('.order-checkbox').hasClass('order-checkbox-checked')) {
+            //     layer.msg('请阅读并同意注册协议和版权声明');
+            //     return false;
+            // }
+            if(name == '' || phone == '') {
                 layer.msg('请输入完整信息');
                 return false;
             }
@@ -716,7 +718,7 @@
                 layer.msg('请输入正确格式的手机号');
                 return false;
             }
-            if(phone && company && name && email && industry && describe) {
+            if(phone && name ) {
                 $.ajax({
                     url: "{:url('/index/consulting/consultingAdd')}",
                     data: {
@@ -724,7 +726,6 @@
                         'name': name,
                         'company': company,
                         'email': email,
-                        'industry': industry,
                         'describe': describe,
                     },
                     type: 'post',
@@ -751,7 +752,7 @@
            $('#order_phone').val('');
            $('#order_company').val('');
            $('#order_email').val('');
-           $('#order_industry').val('');
+        //    $('#order_industry').val('');
            $('#order_describe').val('');
         }
 

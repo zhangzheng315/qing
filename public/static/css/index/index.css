@@ -228,7 +228,7 @@
   border-right: 0;
 }
 #product {
-  padding-top: 129px;
+  padding-top: 60px;
   box-sizing: border-box;
 }
 #product .product-content {
@@ -807,23 +807,24 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 60px 0 0;
+  padding: 70px 0 0;
   box-sizing: border-box;
 }
 #fiveG .fiveg-content h2 {
-  font-size: 50px;
+  font-size: 45px;
   color: #fff;
   text-align: center;
 }
 #fiveG .fiveg-content h5 {
-  font-size: 40px;
+  font-size: 32px;
   color: #fff;
   font-weight: 400;
   margin: 31px auto 68px;
 }
 #fiveG .fiveg-content button {
-  width: 31%;
+  width: 23.5%;
   height: 60px;
+  line-height: 60px;
   border: 0;
   border: 2px solid #FFFFFF;
   border-radius: 30px;
@@ -840,7 +841,7 @@
 }
 #fiveG .fiveg-content button:hover {
   background-color: #00cc99;
-  border: 0;
+  border-color: transparent;
 }
 #fiveG .fiveg-content button:hover a {
   color: #fff;
@@ -951,7 +952,7 @@
     letter-spacing: 0;
   }
   #product {
-    padding-top: 141px;
+    padding-top: 60px;
   }
   #product .product-content {
     margin: 50px auto 70px;
@@ -1411,7 +1412,8 @@
     margin-bottom: 12px;
   }
   #product {
-    margin-top: 150px;
+    margin-top: 0px;
+    padding-top: 40px;
   }
   #product .product-content {
     width: 93%;
@@ -1623,25 +1625,25 @@
     margin-bottom: 9px;
   }
   #fiveG {
-    height: 180px;
+    height: 260px;
   }
   #fiveG .fiveg-content {
-    padding: 30px 0 0;
+    padding: 35px 0 0;
   }
   #fiveG .fiveg-content h2 {
-    font-size: 20px;
+    font-size: 22px;
   }
   #fiveG .fiveg-content h5 {
-    font-size: 15px;
+    font-size: 18px;
     text-align: center;
-    margin: 25px auto 28px;
+    margin: 35px auto 20px;
   }
   #fiveG .fiveg-content button {
-    width: 32%;
-    height: 30px;
+    width: 42%;
+    height: 40px;
   }
   #fiveG .fiveg-content button a {
     font-size: 14px;
-    line-height: 30px;
+    line-height: 40px;
   }
 }

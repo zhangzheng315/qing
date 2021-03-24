@@ -101,8 +101,11 @@
   display: none;
 }
 #case-center #jingxuan .layui-container .anlis li .hover .logo-img {
+  position: absolute;
+  top: 55%;
+  left: 55%;
+  transform: translate(-50%, -50%);
   display: block;
-  margin: 25% auto 0;
   width: 160px;
 }
 #case-center #jingxuan .layui-container .anlis li:nth-child(3n) {
@@ -205,7 +208,7 @@
   box-sizing: border-box;
 }
 #case-center #product .product-content {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   margin-top: 46px;
   display: flex;
@@ -303,14 +306,15 @@
   box-sizing: border-box;
 }
 #case-center #jiejue .jiejue-content h2 {
-  font-size: 50px;
+  font-size: 45px;
   color: #fff;
   text-align: center;
   margin-bottom: 30px;
 }
 #case-center #jiejue .jiejue-content button {
-  width: 31%;
+  width: 23.5%;
   height: 60px;
+  line-height: 60px;
   border: 0;
   border: 2px solid #FFFFFF;
   border-radius: 30px;
@@ -323,7 +327,7 @@
 #case-center #jiejue .jiejue-content button:hover {
   background-color: #00cc99;
   color: #fff;
-  border: 0;
+  border-color: transparent;
 }
 @media screen and (min-width: 768px) and (max-width: 1300px) {
   #case-center .title {

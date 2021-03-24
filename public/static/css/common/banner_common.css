@@ -195,7 +195,7 @@
   #banner .text-left h5 {
     font-size: 12px !important;
     width: 70%;
-    margin: 28px 0 33px !important;
+    margin: 23px 0 33px !important;
     line-height: 1.5;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -221,7 +221,7 @@
   }
   #banner .text-center h5 {
     width: 80% !important;
-    margin: 38px auto 43px !important;
+    margin: 23px auto 33px !important;
     text-align: center !important;
     font-size: 12px !important;
     display: -webkit-box;
@@ -249,7 +249,7 @@
   #banner .text-right h5 {
     width: 100% !important;
     margin-left: 100%;
-    margin: 38px 0 43px !important;
+    margin: 23px 0 33px !important;
     text-align: right !important;
     font-size: 12px !important;
     display: -webkit-box;

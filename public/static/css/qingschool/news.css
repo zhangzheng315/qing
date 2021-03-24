@@ -180,7 +180,7 @@ nav {
         height: 45px;
     }
     .head-right>.text{
-      margin-right: 64px;
+      /* margin-right: 64px; */
       height: 30px;
       line-height: 30px;
   }
@@ -189,7 +189,7 @@ nav {
       color: #999999; 
   }
   .head-right>.text>a:first-child {
-      margin-right: 48px;
+      /* margin-right: 48px; */
   }
     .btns>a {
         display: inline-block;
@@ -726,15 +726,15 @@ nav {
     }
     #free-banner>h2 {
         color: #ffffff;
-        font-size: 50px;
+        font-size: 45px;
     }
     #free-banner>.free_btn {
-        width: 168px;
-        height: 40px;
-        line-height: 40px;
-        margin-top: 60px;
-        font-size: 20px;
-        border-radius: 20px;
+        width: 280px;
+        height: 60px;
+        line-height: 60px;
+        margin-top: 37px;
+        font-size: 28px;
+        border-radius: 30px;
     }
      /* 登录成功后，显示头像样式 */
      .layui-nav>.layui-nav-item {
@@ -760,7 +760,7 @@ nav {
         height: 40px;
     }
     .head-right>.text{
-      margin-right: 40px;
+      /* margin-right: 40px; */
       height: 30px;
       line-height: 30px;
   }
@@ -769,7 +769,7 @@ nav {
       color: #999999; 
   }
   .head-right>.text>a:first-child {
-      margin-right: 24px;
+      /* margin-right: 24px; */
   }
     .btns>a {
         width: 96px;
@@ -1301,15 +1301,15 @@ nav {
     }
     #free-banner>h2 {
         color: #ffffff;
-        font-size: 40px;
+        font-size: 42px;
     }
     #free-banner>.free_btn {
-        width: 158px;
-        height: 40px;
-        line-height: 40px;
+        width: 250px;
+        height: 50px;
+        line-height: 50px;
         margin-top: 60px;
-        font-size: 20px;
-        border-radius: 20px;
+        font-size: 25px;
+        border-radius: 25px;
     }
 
     /* 登录成功后，显示头像样式 */
@@ -1336,7 +1336,7 @@ nav {
         height: 36px;
     }
     .head-right>.text{
-      margin-right: 40px;
+      /* margin-right: 40px; */
       height: 30px;
       line-height: 30px;
   }
@@ -1345,7 +1345,7 @@ nav {
       color: #999999; 
   }
   .head-right>.text>a:first-child {
-      margin-right: 32px;
+      /* margin-right: 32px; */
   }
     .btns>a {
         width: 103px;
@@ -1594,7 +1594,7 @@ nav {
         font-size: 30px;
     }
     #free-banner>.free_btn {
-        width: 148px;
+        width: 180px;
         height: 34px;
         line-height: 34px;
         margin-top: 40px;
@@ -1631,7 +1631,7 @@ nav {
       color: #999999; 
   }
   .head-right>.text>a:first-child {
-      margin-right: 32px;
+      /* margin-right: 32px; */
   }
   .btns {
       display: none;
@@ -1883,7 +1883,7 @@ nav {
         font-size: 16px;
     }
     #free-banner>.free_btn {
-        width: 110px;
+        width: 140px;
         height: 30px;
         line-height: 30px;
         margin-top: 28px;

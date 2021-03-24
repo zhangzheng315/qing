@@ -25,10 +25,10 @@ class ConsultingService extends Common{
         $data = [
             'name' => $param['name'],
             'phone' => $param['phone'],
-            'email' => $param['email'],
-            'company' => $param['company'],
-            'industry' => $param['industry'],
-            'describe' => $param['describe'],
+            'email' => $param['email'] ?: '',
+            'company' => $param['company'] ?: '',
+            'industry' => '',
+            'describe' => $param['describe'] ?: '',
             'status' => 0,
             'created_time' => time(),
             'updated_time' => 0,
@@ -59,6 +59,7 @@ class ConsultingService extends Common{
         $mail->addAddress("neal.tang@sicbon.com", "小唐总");  //收件人（用户输入的邮箱）
         $mail->addAddress("collen@sicbon.com", "Collen总");  //收件人（用户输入的邮箱）
         $mail->addAddress("steven@sicbon.com", "朱总");  //收件人（用户输入的邮箱）
+//        $mail->addAddress("zhangzheng315324@163.com", "groot");  //收件人（用户输入的邮箱）
 
         //发送附件
         // $mail->addAttachment('../xy.zip');         // 添加附件
@@ -69,11 +70,10 @@ class ConsultingService extends Common{
         $mail->Subject = '官网有新的预约';
         $mail->Body    = '姓名:'.$param['name'].
             ',<br>手机号:'.$param['phone'].
-            ',<br>邮箱:'.$param['email'].
-            ',<br>手机号:'.$param['phone'].
-            ',<br>公司名:'.$param['company'].
-            ',<br>行业:'.$param['industry'].
-            ',<br>描述:'.$param['describe'].
+            ',<br>邮箱:'.$param['email']?:'暂无'.
+            ',<br>公司名:'.$param['company']?:'暂无'.
+//            ',<br>行业:'.$param['industry'].
+            ',<br>描述:'.$param['describe']?:'暂无'.
             ',<br>该访客有新的资讯消息,请及时处理';
 
         $mail->send();
