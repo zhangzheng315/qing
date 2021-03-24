@@ -228,7 +228,7 @@
   border-right: 0;
 }
 #product {
-  padding-top: 129px;
+  padding-top: 60px;
   box-sizing: border-box;
 }
 #product .product-content {
@@ -952,7 +952,7 @@
     letter-spacing: 0;
   }
   #product {
-    padding-top: 141px;
+    padding-top: 60px;
   }
   #product .product-content {
     margin: 50px auto 70px;
@@ -1412,7 +1412,8 @@
     margin-bottom: 12px;
   }
   #product {
-    margin-top: 150px;
+    margin-top: 0px;
+    padding-top: 40px;
   }
   #product .product-content {
     width: 93%;
