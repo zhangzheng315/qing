@@ -358,7 +358,7 @@ class CaseService extends Common{
         if (isset($param['label']) && $param['label']) {
             $where['label'] = ['like', '%' . $param['label'] . '%',];
         }
-        $res = $this->case->where($where)->order('order','desc')->select();
+        $res = $this->case->where($where)->order(['order'=>'desc', 'created_time'=>'desc'])->select();
         foreach ($res as &$item) {
             $item['time'] = $item['updated_time'] == 0 ? date('Y-m-d H:i', $item['updated_time']) : date('Y-m-d H:i', $item['created_time']);
             $item['label'] = explode(',', $item['label']);
