@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="240.613" height="80" viewBox="0 0 240.613 80">
+  <defs>
+    <filter id="联合_2" x="0" y="0" width="240.613" height="80" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="组_2" data-name="组 2" transform="translate(-409.5 -505.5)">
+    <g transform="matrix(1, 0, 0, 1, 409.5, 505.5)" filter="url(#联合_2)">
+      <path id="联合_2-2" data-name="联合 2" d="M10,65A10,10,0,0,1,0,55V10A10,10,0,0,1,10,0H200a10,10,0,0,1,10,10V20.483l13.142,7.7a5,5,0,0,1,0,8.627L210,44.517V55a10,10,0,0,1-10,10Z" transform="translate(7.5 4.5)" fill="#fff"/>
+    </g>
+    <text id="_400-920-1599" data-name="400-920-1599" transform="translate(463 551)" fill="#707070" font-size="20" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">400-920-1599</tspan></text>
+  </g>
+</svg>
