@@ -188,7 +188,7 @@
                         <ul>
                             {foreach $info['catalog']['catalog'] as $item}
                             <li class="{$info['id'] == $item['id'] ? 'active':''}">
-                                <a href="/video/tutorial?browse=1&id={$item['id']}">
+                                <a href="/video/tutorial?browse=1&id={$item['id']}" title="{$item['title']}">
                                     <img src="/static/image/tutorial/video_btn.png" alt="">
                                     <span>{$item['title']}</span>
                                     <i>{$item['duration']}</i>

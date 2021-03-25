@@ -225,8 +225,12 @@
   color: #00cc99;
 }
 #tutorial .video-box .layui-container .video-list .list-content ul li a span {
+  display: inline-block;
   color: #b6b6b6;
-  margin: 0 30px 0 7px;
+  width: 117px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 #tutorial .video-box .layui-container .video-list .list-content ul li a i {
   color: #b6b6b6;
@@ -395,7 +399,7 @@
   color: #fff;
   font-size: 28px;
   text-align: center;
-  border: 2px solid  transparent;
+  border: 2px solid transparent;
 }
 #tutorial .func-free a:hover {
   color: #fff;
@@ -524,11 +528,11 @@
     padding-bottom: 7px;
     margin-bottom: 12px;
   }
-  #tutorial .video-box .layui-container .video-list .list-content ul li img {
+  #tutorial .video-box .layui-container .video-list .list-content ul li a img {
     width: 15px;
   }
-  #tutorial .video-box .layui-container .video-list .list-content ul li span {
-    margin: 0 25px 0 7px;
+  #tutorial .video-box .layui-container .video-list .list-content ul li a span {
+    width: 100px;
   }
   #tutorial .nav-tab {
     padding: 0 0 150px;
@@ -773,11 +777,11 @@
     padding-bottom: 7px;
     margin-bottom: 12px;
   }
-  #tutorial .video-box .layui-container .video-list .list-content ul li img {
+  #tutorial .video-box .layui-container .video-list .list-content ul li a img {
     width: 15px;
   }
-  #tutorial .video-box .layui-container .video-list .list-content ul li span {
-    margin: 0 25px 0 7px;
+  #tutorial .video-box .layui-container .video-list .list-content ul li a span {
+    width: 90px;
   }
   #tutorial .nav-tab {
     padding: 0 0 60px;
