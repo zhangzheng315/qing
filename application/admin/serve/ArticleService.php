@@ -61,6 +61,7 @@ class ArticleService extends Common{
         $id = $this->article->insertGetId($data);
         unset($data['hot_article']);
         unset($data['content_center']);
+        unset($data['first_home']);
         $data['id'] = $id;
         //热门文章
         if ($hot_article) {
