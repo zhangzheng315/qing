@@ -167,111 +167,93 @@
         }
     }
 
-    .icons {
-        position: absolute;
-        top: 63%;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 35%;
-
-        ul {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-
-            li {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-
-                div {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    width: 60px;
-                    height: 60px;
-                    border-radius: 50%;
-                    background-color: #fff;
-                    margin-bottom: 5px;
-
-                    img {
-                        width: 28px;
-                        height: 28px;
-                        object-fit: cover;
-                    }
-                }
-
-                p {
-                    font-size: 18px;
-                    color: #fff;
-                }
-            }
-        }
-    }
-
     // 亮点功能
     #high-lights {
         position: absolute;
-        bottom: -9.5%;
+        bottom: 0;
         left: 50%;
         transform: translateX(-50%);
-        height: 110px;
-        background: #FFFFFF;
-        box-shadow: 0px 4px 8px 0px rgba(193, 193, 193, 0.36);
-        border-radius: 10px;
+        background: rgba(0, 0, 0, .35);
 
         .stars {
             display: flex;
-            padding: 30px 20px;
             box-sizing: border-box;
 
             li {
                 width: 16.6%;
-                border-right: 1px solid #E5E5E5;
+                height: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 cursor: pointer;
+                padding: 20px 0;
+                box-sizing: border-box;
 
                 a {
                     float: left;
                     display: flex;
-                    flex-direction: column;
                     align-items: center;
-                    justify-content: space-between;
+                    justify-content: space-around;
+
+                    img {
+                        width: 40px;
+                        object-fit: cover;
+                        margin-right: 10px;
+                    }
+
+                    .img-active {
+                        display: none;
+                    }
 
                     div {
                         display: flex;
-                        align-items: center;
-
-                        img {
-                            width: 27px;
-                            object-fit: cover;
-                            margin-right: 8px;
-                        }
+                        align-items: flex-start;
+                        flex-direction: column;
+                        justify-content: flex-start;
 
                         h6 {
-                            color: #333;
+                            color: #fff;
                             font-size: 14px;
                             font-weight: bold;
                         }
-                    }
 
-                    p {
-                        color: #999;
-                        font-size: 12px;
-                        margin-top: 16px;
-                        letter-spacing: 1px;
-                    }
+                        .line {
+                            width: 47px;
+                            height: 1px;
+                            background-color: #00cc99;
+                            margin: 8px 0;
+                        }
 
-
-
-                    &:hover {
-
-                        h6 {
-                            color: #00cc99;
+                        p {
+                            color: #fff;
+                            font-size: 12px;
+                            letter-spacing: 1px;
                         }
                     }
+
+                }
+
+                &:hover {
+                    background-color: #fff;
+
+                    a {
+                        h6 {
+                            color: #000;
+                        }
+
+                        p {
+                            color: #999;
+                        }
+
+                        .img-active {
+                            display: block;
+                        }
+
+                        .img-show {
+                            display: none;
+                        }
+                    }
+
                 }
 
                 &:nth-child(6) {
@@ -1148,56 +1130,36 @@
             }
         }
 
-
-        .icons {
-            width: 51%;
-
-            ul {
-                li {
-                    div {
-                        width: 40px;
-                        height: 40px;
-
-                        img {
-                            width: 20px;
-                            height: 20px;
-                        }
-                    }
-
-                    p {
-                        font-size: 14px;
-                    }
-
-                }
-            }
-
-        }
-
         #high-lights {
-            height: 90px;
             width: 80%;
-            bottom: -11.5%;
 
             .layui-container {
                 width: 100% !important;
 
                 .stars {
-                    padding: 18px 20px;
+                    padding: 0px;
 
                     li {
+                        padding: 14px 0;
+
                         a {
+                            height: 100%;
+                            img {
+                                width: 32px;
+                                margin-right: 5px;
+                            }
+
                             div {
-                                img {
-                                    width: 22px;
+
+                                .line {
+                                    width: 40px;
+                                    margin: 6px 0;
+                                }
+                                p {
+                                    letter-spacing: 0px;
                                 }
                             }
-
-                            p {
-                                margin-top: 12px;
-                                letter-spacing: 0;
-                            }
                         }
-
                     }
                 }
             }
@@ -1206,7 +1168,7 @@
     }
 
     #product {
-        padding-top: 60px;
+        padding-top: 100px;
 
         .product-content {
             margin: 50px auto 70px;
@@ -1398,12 +1360,13 @@
     #banner {
         #high-lights {
             width: 70%;
-            height: 145px;
+            height: 160px;
             bottom: -20%;
 
             .layui-container {
+                height: 100%;
                 .stars {
-                    padding: 15px 10px;
+                    padding: 0px;
                     flex-wrap: wrap;
 
                     li {
@@ -1411,12 +1374,16 @@
                         margin: 0 auto;
                         border-right: 0;
                         border-bottom: 1px solid #E5E5E5;
-                        padding-bottom: 12px;
-                        margin-bottom: 12px;
+                        padding-bottom: 6px;
+                        margin-bottom: 5px;
 
                         a {
+                            padding: 5px 0;
+                            .line {
+                                margin: 3px 0;
+                            }
                             p {
-                                margin-top: 8px;
+                                margin-top: 0px;
                             }
                         }
 
@@ -1607,8 +1574,9 @@
                 width: 28%;
                 height: 45px;
                 font-size: 18px;
+
                 a {
-                line-height: 45px;
+                    line-height: 45px;
 
                 }
             }
@@ -1805,77 +1773,55 @@
             }
         }
 
-        .icons {
-            top: 93%;
-            width: 95%;
-
-            ul {
-                li {
-                    div {
-                        width: 40px;
-                        height: 40px;
-                        background-color: #00cc99;
-
-                        img {
-                            width: 50%;
-                            height: 50%;
-                        }
-                    }
-
-                    p {
-                        font-size: 14px;
-                        color: #666;
-                    }
-                }
-            }
-        }
-
         #high-lights {
             width: 92%;
-            bottom: -78%;
-            height: 215px;
-
+            bottom: -45%;
+            height: 185px;
             .layui-container {
                 padding: 0px;
-
                 .stars {
-                    padding: 12px 7px;
+                    padding: 0px;
                     flex-wrap: wrap;
-
                     li {
                         width: 30%;
+                        height: 87px;
                         margin: 0 auto;
                         border-right: 0;
                         border-bottom: 1px solid #E5E5E5;
-                        padding-bottom: 12px;
                         margin-bottom: 12px;
-
+                        padding: 0px 2px 3px;
                         a {
+                            width: 100%;
+                            height: 100%;
                             justify-content: flex-start;
-
+                            flex-direction: column;
+                            img {
+                                width: 20px;
+                                margin-right: 0px;
+                                margin-bottom: 3px;
+                            }
                             div {
+                                align-items: center;
                                 flex-direction: column;
-
-                                img {
-                                    width: 21px;
-                                    margin-bottom: 3px;
+                                h6 {
+                                    font-size: 12px;
+                                }
+                                .line {
+                                    margin: 3px 0;
+                                }
+                                p {
+                                    margin-top: 0px;
+                                    text-align: center;
+                                    letter-spacing: 0px;
                                 }
                             }
-
-                            p {
-                                margin-top: 5px;
-                                text-align: center;
-                            }
                         }
-
-
                         &:nth-child(n + 4) {
                             border-bottom: 0;
                             padding-bottom: 0;
                             margin-bottom: 12px;
                         }
                     }
-
                 }
             }
         }
@@ -1883,42 +1829,34 @@
 
     #product {
         margin-top: 0px;
-        padding-top: 40px;
+        padding-top: 160px;
         .product-content {
             width: 93%;
             margin-top: 36px;
             flex-direction: column;
             margin-bottom: 40px;
-
             .product-item {
                 width: 100%;
                 height: 220px;
                 margin-bottom: 25px;
-
                 .item-head {
                     height: 50px;
-
                     img {
                         width: 23px;
                     }
-
                     h5 {
                         font-size: 16px;
                     }
                 }
-
                 .item-body {
                     height: 121px;
                     padding: 21px 20px 0;
                 }
-
                 .item-footer {
                     height: calc(100% - 171px);
-
                     button {
                         a {
                             line-height: 3.5;
-
                         }
                     }
                 }
