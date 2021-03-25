@@ -1342,6 +1342,7 @@
     font-size: 12px !important;
   }
   #banner #high-lights {
+    display: none;
     width: 92%;
     bottom: -45%;
     height: 185px;
@@ -1395,7 +1396,7 @@
   }
   #product {
     margin-top: 0px;
-    padding-top: 160px;
+    padding-top: 40px;
   }
   #product .product-content {
     width: 93%;
