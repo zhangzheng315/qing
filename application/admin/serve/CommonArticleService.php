@@ -251,7 +251,7 @@ class CommonArticleService extends Common{
         if (isset($param['word']) && $param['word']) {
             $where['title'] = ['like', ['%' . $param['word'] . '%']];
         }
-        $article_list = $this->commonArticle->field(['id','icon_img_url','title'])->where($where)->order('order', 'desc')->select();
+        $article_list = $this->commonArticle->field(['id','icon_img_url','title'])->where($where)->order(['order'=>'desc', 'created_time'=>'desc'])->select();
         if (!$article_list) {
             $this->setError('暂无数据');
             return false;

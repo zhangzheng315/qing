@@ -259,7 +259,7 @@ class ArticleService extends Common{
             $where['label'] = ['like', '%' . $param['label'] . '%'];
         }
         $content_center = new ContentCenter();
-        $res = $content_center->where($where)->order('order', 'desc')->select();
+        $res = $content_center->where($where)->order(['order'=>'desc', 'created_time'=>'desc'])->select();
         foreach ($res as &$item) {
             $item['browse'] = $this->article->where(['id' => $item['id']])->value('browse');
             $item['label'] = explode(',', $item['label']);
@@ -430,7 +430,7 @@ class ArticleService extends Common{
         if (isset($param['label']) && $param['label']) {
             $where['label'] = ['like', '%' . $param['label'] . '%'];
         }
-        $search_list = $this->article->where($where)->order('order', 'desc')->select();
+        $search_list = $this->article->where($where)->order(['order'=>'desc', 'created_time'=>'desc'])->select();
         if (!$search_list) {
             $this->setError('暂无数据');
             return false;
