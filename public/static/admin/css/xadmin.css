@@ -258,18 +258,21 @@ body{
     left: 220px;
     /*overflow: hidden;*/
     z-index: 1;
+    height: 100%;
 }
-.page-content-bg{
+.page-content-bg {
     position: fixed;
     top: 0px;
     right: 0;
     /*bottom: 42px;*/
     bottom: 0px;
     left: 220px;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     /*overflow: hidden;*/
     z-index: 100;
     display: none;
+
+
 }
 
 .page-content .tab{
