@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1, minimum-scale=1,user-scalable=no">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0,maximum-scale=1, minimum-scale=1,user-scalable=no">
     <title>轻直播_企业直播服务平台,医疗直播领军者,营销直播定制服务商</title>
     <meta name="keywords"  content="企业直播平台,医疗直播,营销直播,活动直播,直播定制服务" />
     <meta name="description"
@@ -80,7 +81,8 @@
         }
 
         .layui-nav {
-            width: 180px;
+            max-width: 180px;
+            min-width: 145px;
             padding: 0 10px;
         }
 
@@ -102,7 +104,7 @@
             text-overflow: ellipsis;
             white-space: nowrap;
             overflow: hidden;
-            width: 67%;
+            max-width: 67%;
             display: inline-block;
         }
     </style>
@@ -149,7 +151,7 @@
                     <li class="layui-nav-item">
                         <a id="img-a" href=""><img src="//t.cn/RCzsdCq" class="layui-nav-img">
                             <span class="name">11</span>
-                            </a>
+                        </a>
                         <dl class="layui-nav-child">
                             <dd><a href="javascript:;" data-id="1">轻直播管理平台</a></dd>
                             <dd><a href="javascript:;" data-id="2">退出登录</a></dd>
@@ -344,7 +346,7 @@
     function videoPage(index = window.index, where = window.where, curr = window.curr) {
         $.ajax({
             url: "{:url('/index/qing_school/videoListByPage')}",
-            data: { 'pid': index, 'curr': curr, 'where': where},
+            data: { 'pid': index, 'curr': curr, 'where': where },
             type: 'get',
             success: function (res) {
                 $('.study-box').empty()
@@ -446,7 +448,7 @@
                     window.location.href = "/login"
                 }, 500);
             } else if (id == 1) {
-                 var token = tvInfo.token
+                var token = tvInfo.token
                 var name = tvInfo.name
                 var avatar = tvInfo.avatar
                 window.open(`http://login.qingtv.com/Home?lighostoken=${token}
