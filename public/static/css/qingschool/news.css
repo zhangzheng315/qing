@@ -7,6 +7,9 @@
     display: flex;
     justify-content: space-between;
 }
+#qingschool header {
+    background-color: #ffffff;
+}
 nav {
     background: #ffffff;
     box-shadow: 0px 4px 6px 0px rgba(193, 193, 193, 0.28);
@@ -82,7 +85,7 @@ nav {
 }
   /* 登录成功，显示头像样式 */
   .layui-nav {
-    background-color: #f2f4f7;
+    background-color: #ffffff;
     display: none;
 }
 
