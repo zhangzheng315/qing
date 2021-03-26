@@ -146,7 +146,8 @@ nav {
     background-image: url(/static/image/qingschool1/livenews_icon.svg);
 }
 .layui-nav {
-    width: 180px;
+    max-width: 180px;
+    min-width: 145px;
 }
 
 .layui-nav .layui-nav-item {
@@ -167,7 +168,7 @@ nav {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    width: 65%;
+    max-width: 65%;
     display: inline-block;
 }
 @media screen and (min-width: 1300px){

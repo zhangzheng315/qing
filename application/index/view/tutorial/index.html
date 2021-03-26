@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1, minimum-scale=1,user-scalable=no">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0,maximum-scale=1, minimum-scale=1,user-scalable=no">
     <title>轻直播_视频教程</title>
     <meta name="keywords"  content="轻直播,直播视频教程" />
     <meta name="description"
@@ -79,7 +80,8 @@
 
 
         .layui-nav {
-            width: 180px;
+            max-width: 180px;
+            min-width: 145px;
             padding: 0 10px;
         }
 
@@ -101,7 +103,7 @@
             text-overflow: ellipsis;
             white-space: nowrap;
             overflow: hidden;
-            width: 67%;
+            max-width: 67%;
             display: inline-block;
         }
     </style>
@@ -109,7 +111,7 @@
         var _hmt = _hmt || [];
         (function () {
             var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?1ceca10e8f570a044c292d9b35be38f5";
+            hm.src = "https://hm.baidu.com/hm.js?92c6dedc52f21878f099f29a26b190a0";
             var s = document.getElementsByTagName("script")[0];
             s.parentNode.insertBefore(hm, s);
         })();
@@ -188,7 +190,7 @@
                         <ul>
                             {foreach $info['catalog']['catalog'] as $item}
                             <li class="{$info['id'] == $item['id'] ? 'active':''}">
-                                <a href="/video/tutorial?browse=1&id={$item['id']}">
+                                <a href="/video/tutorial?browse=1&id={$item['id']}" title="{$item['title']}">
                                     <img src="/static/image/tutorial/video_btn.png" alt="">
                                     <span>{$item['title']}</span>
                                     <i>{$item['duration']}</i>

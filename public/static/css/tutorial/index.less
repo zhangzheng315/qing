@@ -267,7 +267,6 @@
                             color: #B6B6B6;
                             font-size: 16px;
                             margin-bottom: 15px;
-
                         }
 
                         li {
@@ -287,8 +286,13 @@
                                 }
 
                                 span {
+                                    display: inline-block;
                                     color: #b6b6b6;
-                                    margin: 0 30px 0 7px;
+                                    // margin: 0 25px 0 7px;
+                                    width: 117px;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    white-space: nowrap;
                                 }
 
                                 i {
@@ -405,21 +409,23 @@
                                     margin-bottom: 13px;
                                     border-bottom: 1px solid #E5E5E5;
                                     cursor: pointer;
+
                                     a {
                                         color: #666;
 
                                         img {
                                             margin-right: 17px;
                                         }
-    
+
                                         span {
                                             margin-right: 26px;
                                         }
+
                                         &:hover {
                                             color: #00cc99;
                                         }
                                     }
-                                
+
                                     &:last-child {
                                         border: 0;
                                     }
@@ -520,11 +526,11 @@
             color: #fff;
             font-size: 28px;
             text-align: center;
-            border:2px solid  transparent;
+            border: 2px solid transparent;
 
             &:hover {
                 color: #fff;
-                border:2px solid  #fff;
+                border: 2px solid #fff;
                 background: transparent;
             }
         }
@@ -692,12 +698,15 @@
                                 padding-bottom: 7px;
                                 margin-bottom: 12px;
 
-                                img {
-                                    width: 15px;
-                                }
+                                a {
+                                    img {
+                                        width: 15px;
+                                    }
 
-                                span {
-                                    margin: 0 25px 0 7px;
+                                    span {
+                                        // margin: 0 25px 0 7px;
+                                        width: 100px;
+                                    }
                                 }
                             }
                         }
@@ -1035,12 +1044,15 @@
                                 padding-bottom: 7px;
                                 margin-bottom: 12px;
 
-                                img {
-                                    width: 15px;
-                                }
+                                a {
+                                    img {
+                                        width: 15px;
+                                    }
 
-                                span {
-                                    margin: 0 25px 0 7px;
+                                    span {
+                                        // margin: 0 25px 0 7px;
+                                        width: 90px;
+                                    }
                                 }
                             }
                         }

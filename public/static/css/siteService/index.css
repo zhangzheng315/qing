@@ -179,6 +179,7 @@
 }
 #service .plans {
   padding: 70px 0;
+  background-color: #fff;
 }
 #service .plans .layui-container {
   display: flex;
@@ -226,11 +227,10 @@
 }
 #service .plans .layui-container .plans-img {
   width: 470px;
-  height: 450px;
+  height: 300px;
 }
 #service .plans .layui-container .plans-img img {
   width: 100%;
-  height: 100%;
   object-fit: cover;
 }
 #service .plans:nth-child(2n) .layui-container .plans-text {
@@ -379,11 +379,10 @@
   }
   #service .plans .layui-container .plans-img {
     width: 350px;
-    height: 330px;
+    height: 255px;
   }
   #service .plans .layui-container .plans-img img {
     width: 100%;
-    height: 100%;
     object-fit: cover;
   }
   #service .plans:nth-child(2n) .layui-container .plans-text {
@@ -432,7 +431,7 @@
   }
   #service .plans .layui-container .plans-img {
     width: 370px;
-    height: 350px;
+    height: 290px;
   }
   #service .plans:nth-child(2n) .layui-container .plans-text {
     margin-right: 140px;

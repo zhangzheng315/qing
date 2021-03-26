@@ -503,7 +503,6 @@
   margin-right: 0;
 }
 #solve .solve-content .solve-item img {
-  height: 130px;
   width: 100%;
 }
 #solve .solve-content .solve-item .text {
@@ -1212,9 +1211,6 @@
     width: 23%;
     margin-right: 2%;
   }
-  #solve .layui-container .solve-content .solve-item img {
-    height: 110px;
-  }
   #solve .layui-container .solve-content .solve-item .text {
     padding: 10px 20px 0;
   }
@@ -1342,6 +1338,7 @@
     font-size: 12px !important;
   }
   #banner #high-lights {
+    display: none;
     width: 92%;
     bottom: -45%;
     height: 185px;
@@ -1395,7 +1392,7 @@
   }
   #product {
     margin-top: 0px;
-    padding-top: 160px;
+    padding-top: 40px;
   }
   #product .product-content {
     width: 93%;
@@ -1470,9 +1467,6 @@
   #solve .solve-content .solve-item {
     width: 49%;
     margin-right: 2%;
-  }
-  #solve .solve-content .solve-item img {
-    height: 90px;
   }
   #solve .solve-content .solve-item .text {
     padding: 10px 15px 0;

@@ -73,6 +73,9 @@ Route::rule('licence', 'index/index/licence');                      //增值电�
 Route::rule('privacy', 'index/index/privacy');                      //隐私协议
 Route::rule('protocol', 'index/index/serviceAgreement');            //服务协议
 
+//统计
+Route::rule('tj','admin/bai_du_controller/getData');                //百度统计
+
 
 
 
