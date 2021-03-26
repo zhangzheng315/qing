@@ -26,7 +26,7 @@ class Live extends Controller
             return false;
         }
         curl_close($curl); // 关闭CURL会话
-        return json_decode($res, true);;
+        return json_decode($res, true);
     }
 
     /**

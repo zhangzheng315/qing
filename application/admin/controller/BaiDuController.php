@@ -1,4 +1,5 @@
 <?php
+
 namespace app\admin\controller;
 
 
@@ -20,6 +21,19 @@ class BaiDuController
     public function getData(Request $request)
     {
         $param = $request->param();
+        $cycle = [];
+        $time = 3600 * 24;
+        $cycle[] = date('m/d', strtotime($param['start_date']));
+        $start = (int)$param['start_date'];
+        for ($i = 0; $i >= 0; $i++) {
+            $start = date('Ymd', strtotime($start) + $time);
+
+            if ((int)$start > (int)$param['end_date']) {
+                break;
+            }
+
+            $cycle[] = date('m/d', strtotime($start));
+        }
         //网站概况
         $data = [
             'header' => [
@@ -37,7 +51,7 @@ class BaiDuController
             ]
         ];
         $url = 'https://api.baidu.com/json/tongji/v1/ReportService/getData';
-        $res = $this->liveController->liveCurl(json_encode($data,JSON_UNESCAPED_UNICODE), $url);
+        $res = $this->liveController->liveCurl(json_encode($data, JSON_UNESCAPED_UNICODE), $url);
         //地域分布
         $list = [
             'header' => [
@@ -78,14 +92,15 @@ class BaiDuController
         $trenddata = $this->liveController->liveCurl(json_encode($trend), $url);
 
         $getData['overview'] = $res['body']['data'][0]['result']['items'][1];
+        $getData['cycle'] = $cycle;
         $getData['terrain'] = $result['body']['data'][0]['result']['items'];
         $terrain = [];
         foreach ($getData['terrain'][0] as $k => $v) {
-            $terrain[] = ['name' => $getData['terrain'][0][$k][0], 'value' => $getData['terrain'][1][$k][0], 'prop'=>$getData['terrain'][1][$k][1]];
+            $terrain[] = ['name' => $getData['terrain'][0][$k][0], 'value' => $getData['terrain'][1][$k][0], 'prop' => $getData['terrain'][1][$k][1]];
         }
-//        foreach ($getData['terrain'][0] as $k => $v) {
-//            $terrain[] = ['name' => $getData['terrain'][0][$k][0], 'value' => $getData['terrain'][1][$k][0], 'prop'=>$getData['terrain'][1][$k][1]];
-//        }
+        //        foreach ($getData['terrain'][0] as $k => $v) {
+        //            $terrain[] = ['name' => $getData['terrain'][0][$k][0], 'value' => $getData['terrain'][1][$k][0], 'prop'=>$getData['terrain'][1][$k][1]];
+        //        }
         $getData['terrain'] = $terrain;
         $getData['trend'] = $trenddata['body']['data'][0]['result']['items'];
         $trendData = [];
@@ -175,14 +190,13 @@ class BaiDuController
             $sourceList[] = ['link' => $getData['sourse'][0][$k][0]['name'], 'value' => $getData['sourse'][1][$k][0]];
         }
         $getData['sourse'] = $sourceList;
-//        unset($getData['terrain'][2]);
-//        unset($getData['terrain'][3]);
+        //        unset($getData['terrain'][2]);
+        //        unset($getData['terrain'][3]);
         sort($getData['terrain']);
-//        pd($getData);
+        //        pd($getData);
         if ($res) {
-            return show(200,'请求成功',$getData);
+            return show(200, '请求成功', $getData);
         }
-        return show(401,'暂无数据');
-
+        return show(401, '暂无数据');
     }
 }
