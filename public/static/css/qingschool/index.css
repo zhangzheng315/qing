@@ -228,7 +228,7 @@
           color: #999999; 
       }
       .head-right>.text>a:first-child {
-          /* margin-right: 48px; */
+          margin-right: 30px;
       }
         .btns>a {
             display: inline-block;
@@ -752,7 +752,7 @@
           color: #999999; 
       }
       .head-right>.text>a:first-child {
-          /* margin-right: 24px; */
+          margin-right: 20px;
       }
         .btns>a {
             display: inline-block;
@@ -1268,7 +1268,7 @@
           color: #999999; 
       }
       .head-right>.text>a:first-child {
-          /* margin-right: 32px; */
+          margin-right: 16px;
       }
         .btns>a {
             display: inline-block;
