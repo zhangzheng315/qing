@@ -3,19 +3,22 @@
 <style>
     .echart-body {
         display: flex;
+        flex-wrap: wrap;
     }
 
     #main {
-        flex: 5;
+        /* flex: 5; */
+        width: 50%;
     }
 
     #column {
-        flex: 4;
+        /* flex: 4; */
+        width: 50%;
         height: 400px;
     }
 
     table {
-        width: 520px;
+        width: 40%;
         margin: 30px;
     }
 
@@ -39,6 +42,16 @@
 
     .title {
         font-size: 20px;
+    }
+
+    #china {
+        width: 50%;
+        height: 600px;
+    }
+
+    #time-slot {
+        width: 80%;
+        height: 400px;
     }
 </style>
 <div class="page-content" class="index">
@@ -161,22 +174,25 @@
                     <div class="layui-card-body echart-body">
                         <div id="main" style="height:400px;"></div>
                         <div id="column"></div>
-                    </div>
-                    <!-- 动态表格 -->
-                    <table border="1" cellspacing="1" cellpadding="1">
-                        <thead>
-                            <th class="title">页面访问量统计</th>
-                            <tr>
-                                <th id="paiId">链接</th>
-                                <th>访问量</th>
-                                <th>排名</th>
-                            </tr>
-                        </thead>
-                        <tbody>
 
-                        </tbody>
-                    </table>
-                    <div id="china"></div>
+                        <!-- 动态表格 -->
+                        <table border="1" cellspacing="1" cellpadding="1">
+                            <thead>
+                                <th class="title">页面访问量统计</th>
+                                <tr>
+                                    <th id="paiId">链接</th>
+                                    <th>访问量</th>
+                                    <th>排名</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                        <div id="china"></div>
+                        <div id="time-slot"></div>
+                    </div>
+
                 </div>
             </div>
             <style id="welcome_style"></style>
@@ -187,8 +203,9 @@
         </div>
     </div>
 </div>
-
+<script src="/static/common/js/china.js"></script>
 <script type="text/javascript">
+
     // 开始时间
     function getStartTime() {
         let yy = new Date().getFullYear()
@@ -210,14 +227,6 @@
         return yy + "" + mm + "" + dd
     }
 
-    var chart = echarts.init(document.getElementById('china'));
-    chart.setOption({
-        series: [{
-            type: 'map',
-            map: 'china'
-        }]
-    });
-    // chart.setOption(option);
 
 
     var pvlist = []
@@ -276,6 +285,60 @@
         ]
     };
     myChart.setOption(option);
+
+
+    var timeChart = echarts.init(document.getElementById('time-slot'));
+    var option = {
+        title: {
+            text: '24小时访问量'
+        },
+        tooltip: {
+            trigger: 'axis'
+        },
+        legend: {
+            data: ['pv数量', 'uv数量', 'ip数量']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        toolbox: {
+            feature: {
+                saveAsImage: {}
+            }
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: ['00:00-00:59', '01:00-01:59', '02:00-02:59', '03:00-03:59', '04:00-04:59', '05:00-05:59', '06:00-06:59']
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [
+            {
+                name: 'pv数量',
+                type: 'line',
+                stack: '总量',
+                data: [14, 45, 32, 2, 54, 556, 65]
+            },
+            {
+                name: 'uv数量',
+                type: 'line',
+                stack: '总量',
+                data: [12, 56, 90, 45, 51, 67, 10]
+            },
+            {
+                name: 'ip数量',
+                type: 'line',
+                stack: '总量',
+                data: [32, '-', '-', 56, 98, 44, 19]
+            }
+        ]
+    };
+    timeChart.setOption(option);
 
     var columnBar = echarts.init(document.getElementById('column'))
     var columnOption = {
@@ -376,6 +439,8 @@
                     ]
                 };
                 myChart.setOption(option);
+
+
                 let columnlink = res.data.sourse.map(v => {
                     return v.link
                 })
@@ -407,17 +472,88 @@
                     }
                 };
                 columnBar.setOption(columnOption);
+
+
                 let tbodydata = res.data.visited
                 for (let i = 0; i < tbodydata.length; i++) {
                     tbodydata[i].id = i + 1
                 }
                 createtbody(res.data.visited)
+
+
+
+                let timep = res.data.trend.pv_count
+                let timeu = res.data.trend.visitor_count
+                let timeip = res.data.trend.ip_count
+                let timeList = res.data.trend.time
+
+                var timeChart = echarts.init(document.getElementById('time-slot'));
+                var option = {
+                    title: {
+                        text: '24小时访问量'
+                    },
+                    tooltip: {
+                        trigger: 'axis'
+                    },
+                    legend: {
+                        data: ['pv数量', 'uv数量', 'ip数量']
+                    },
+                    grid: {
+                        left: '3%',
+                        right: '4%',
+                        bottom: '3%',
+                        containLabel: true
+                    },
+                    toolbox: {
+                        feature: {
+                            saveAsImage: {}
+                        }
+                    },
+                    xAxis: {
+                        type: 'category',
+                        boundaryGap: false,
+                        data: timeList
+                    },
+                    yAxis: [
+                        {
+                            type: 'value',
+                            splitNumber: 5
+                        }
+                    ],
+                    series: [
+                        {
+                            name: 'pv数量',
+                            type: 'line',
+                            stack: '总量',
+                            data: timep
+                        },
+                        {
+                            name: 'uv数量',
+                            type: 'line',
+                            stack: '总量',
+                            data: timeu
+                        },
+                        {
+                            name: 'ip数量',
+                            type: 'line',
+                            stack: '总量',
+                            data: timeip
+                        }
+                    ]
+                };
+                timeChart.setOption(option);
+
+
+                var visit = res.data.terrain // 地区数据
+                map(visit)
             }
         },
         error: (err) => {
             console.log(err);
         }
     })
+
+    // 渲染表格
     function createtbody(data) {
         var tbody = document.querySelector("tbody");
         for (var i = 0; i < data.length; i++) {
@@ -434,6 +570,133 @@
             }
         }
     }
+
+
+    // 地图渲染
+    function map(visits) {
+        var mapChart = echarts.init(document.getElementById('china'));
+        $.get('/static/common/json/china.json', function (res) {
+            // console.log(res);
+            // 全国的地区
+            var dataMap = res.features.map(v => {
+                return v.properties.name
+            })
+            echarts.registerMap('chinaMap', res)
+
+            let convertData = []
+            // 后台有数据的地区
+            convertData = visits.map(v => {
+                return { name: v.name, value: v.value, selected: true }
+            })
+            // for (var i = 0; i < convertData.length; i++) {
+            //     for (var j = 0; j < dataMap.length; j++) {
+            //         if (convertData[i] == dataMap[j].name) {
+            //             dataMap[j].selected = true;
+            //             break;
+            //         }
+            //     }
+            // }
+            mapChart.setOption({
+                tooltip: {
+                    formatter: function (params) {
+                        var value = params.value ? params.value : 0
+                        var info = `<p style="font-size:18px">${params.name}</p>
+                        <p style="font-size:14px">访问数量：${value} </p>`
+                        return info;
+                    },
+                    backgroundColor: "#00cc99",//提示标签背景颜色
+                    textStyle: { color: "#fff" } //提示标签字体颜色
+                },
+                geo: {
+                    show: true,
+                    type: 'map',
+                    map: 'chinaMap', // 需和register中的第一个参数保持一致
+                    roam: true, // 允许拖动和缩放
+                    label: {
+                        // show: true
+                    },
+                    itemStyle: {
+                        normal: {
+                            areaColor: '#e5faf5',
+                            borderColor: '#eae8e8'
+                        },
+                        emphasis: {
+                            areaColor: '#00cc99'
+                        }
+                    }
+                },
+                series: [
+                    {
+                        name: "散点",
+                        type: "scatter",
+                        coordinateSystem: "geo",
+                        data: convertData,
+                        hoverAnimation: false,
+                        label: {
+                            normal: {
+                                formatter: "{b}",
+                                position: "right",
+                                show: true
+                            },
+                            emphasis: {
+                                show: false
+                            }
+                        },
+                        itemStyle: {
+                            normal: {
+                                color: "#FF555B" // 地区名字颜色
+                            }
+                        }
+                    },
+                    {
+                        type: 'map',
+                        geoIndex: 0,
+                        aspectScale: 0.75,
+                        selectedMode: 'multiple',
+                        showLegendSymbol: false,
+                        label: {
+                            normal: {
+                                show: true
+                            },
+                            emphasis: {
+                                show: true,
+                                textStyle: {
+                                    color: '#00cc99'
+                                }
+                            }
+                        },
+                        roam: true,
+                        itemStyle: {
+                            normal: {
+                                areaColor: '#031525',
+                                borderColor: '#3b5077'
+                            },
+                            emphasis: {
+                                areaColor: '#2b91b7'
+                            }
+                        },
+                        animation: false,
+                        data: convertData,
+                    }
+                ],
+                visuaMap: {
+                    show: true,
+                    left: 20,
+                    bottom: 20,
+                    min: 0,
+                    max: 500,
+                    text: ['高', '低'],
+                    inRange: {
+                        color: ['#c7f3f5', '#00cc99']
+                    },
+                    calculable: true,
+                    serviesIndex: [1],
+                }
+            })
+        })
+
+    }
+    map()
 </script>
 
 {/block}
