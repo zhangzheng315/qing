@@ -146,10 +146,9 @@ nav {
     background-image: url(/static/image/qingschool1/livenews_icon.svg);
 }
 .layui-nav {
-    max-width: 180px;
-    min-width: 145px;
+    width: 180px;
+    padding: 0 20px;
 }
-
 .layui-nav .layui-nav-item {
     width: 100%;
 }
