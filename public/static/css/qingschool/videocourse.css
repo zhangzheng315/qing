@@ -638,6 +638,7 @@
   }
   #video .video-free .layui-container button a {
     font-size: 16px;
+    line-height: 35px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
@@ -950,5 +951,6 @@
   }
   #video .video-free .layui-container button a {
     font-size: 14px;
+    line-height: 30px;
   }
 }

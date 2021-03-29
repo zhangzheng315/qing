@@ -22,9 +22,11 @@ class Live extends Controller
         curl_setopt($curl, CURLOPT_HEADER, 0); // 显示返回的Header区域内容
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1); // 获取的信息以文件流的形式返回
         $res = curl_exec($curl); // 执行操作
-
+        if(curl_errno($curl)) {
+            return false;
+        }
         curl_close($curl); // 关闭CURL会话
-        return $res;
+        return json_decode($res, true);
     }
 
     /**
@@ -55,7 +57,6 @@ class Live extends Controller
         ];
         $url = 'https://login.lighos.com/api/v1/admin/login';
         $res = $this->liveCurl($data, $url);
-        $res = json_decode($res, true);
         if ($res['code'] == '200') {
             return show(200,$res['message'],$res['data']);
         }
@@ -97,7 +98,6 @@ class Live extends Controller
         }
         $url = 'https://login.lighos.com/api/v1/admin/register';
         $res = $this->liveCurl($data, $url);
-        $res = json_decode($res, true);
         if ($res['code'] == '200') {
             return show(200,$res['message'],$res['data']);
         }
@@ -126,7 +126,6 @@ class Live extends Controller
         $data['type'] = 0;
         $url = 'https://test-login.lighos.com//api/v1/common/send_captcha';
         $res = $this->liveCurl($data, $url);
-        $res = json_decode($res, true);
         if ($res['code'] == '200') {
             return show(200,$res['message']);
         }
@@ -158,7 +157,6 @@ class Live extends Controller
         $data['type'] = 0;
         $url = 'https://test-login.lighos.com/api/v1/common/check_code';
         $res = $this->liveCurl($data, $url);
-        $res = json_decode($res, true);
         if ($res['code'] == '200') {
             return show(200,$res['message']);
         }

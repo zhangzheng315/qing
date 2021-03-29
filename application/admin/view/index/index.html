@@ -1,7 +1,58 @@
 {extend name="common::layout"/}
 {block name="main-content"}
 <style>
+    .echart-body {
+        display: flex;
+        flex-wrap: wrap;
+    }
 
+    #main {
+        /* flex: 5; */
+        width: 50%;
+    }
+
+    #column {
+        /* flex: 4; */
+        width: 50%;
+        height: 400px;
+    }
+
+    table {
+        width: 40%;
+        margin: 30px;
+    }
+
+    tr {
+        height: 50px;
+        text-align: center;
+    }
+
+    th {
+        background: #00cc99;
+        color: #fff;
+        height: 50px;
+        text-align: center;
+    }
+
+    td {
+        padding: 0 30px;
+        text-align: center;
+        word-break: normal !important;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    #china {
+        width: 50%;
+        height: 600px;
+    }
+
+    #time-slot {
+        width: 80%;
+        height: 400px;
+    }
 </style>
 <div class="page-content" class="index">
     <div class="layui-fluid">
@@ -39,7 +90,8 @@
             <div class="layui-col-sm6 layui-col-md2">
                 <a class="layui-card" style="display: block" href="/admin/consulting/index">
                     <div class="layui-card-header">预约提示
-                        <span class="layui-badge layui-bg-cyan layuiadmin-badge">预</span></div>
+                        <span class="layui-badge layui-bg-cyan layuiadmin-badge">预</span>
+                    </div>
                     <div class="layui-card-body">
                         <p style="color: red;font-size: 16px;">未处理
                             <span class="layuiadmin-span-color">{$consulting['un_pro_num']}</span>
@@ -56,19 +108,20 @@
             <div class="layui-col-sm6 layui-col-md2">
                 <div class="layui-card">
                     <div class="layui-card-header">文章浏览排行
-                        <span class="layui-badge layui-bg-cyan layuiadmin-badge">文</span></div>
+                        <span class="layui-badge layui-bg-cyan layuiadmin-badge">文</span>
+                    </div>
                     <div class="layui-card-body  ">
                         <p>新下载
                             <span class="layuiadmin-span-color">10%
-                                        <i class="layui-inline layui-icon layui-icon-face-smile-b"></i></span>
+                                <i class="layui-inline layui-icon layui-icon-face-smile-b"></i></span>
                         </p>
                         <p>新下载
                             <span class="layuiadmin-span-color">10%
-                                        <i class="layui-inline layui-icon layui-icon-face-smile-b"></i></span>
+                                <i class="layui-inline layui-icon layui-icon-face-smile-b"></i></span>
                         </p>
                         <p>新下载
                             <span class="layuiadmin-span-color">10%
-                                        <i class="layui-inline layui-icon layui-icon-face-smile-b"></i></span>
+                                <i class="layui-inline layui-icon layui-icon-face-smile-b"></i></span>
                         </p>
                     </div>
                 </div>
@@ -76,19 +129,20 @@
             <div class="layui-col-sm6 layui-col-md2">
                 <div class="layui-card">
                     <div class="layui-card-header">案例浏览排行
-                        <span class="layui-badge layui-bg-cyan layuiadmin-badge">案</span></div>
+                        <span class="layui-badge layui-bg-cyan layuiadmin-badge">案</span>
+                    </div>
                     <div class="layui-card-body ">
                         <p>新下载
                             <span class="layuiadmin-span-color">10%
-                                        <i class="layui-inline layui-icon layui-icon-face-smile-b"></i></span>
+                                <i class="layui-inline layui-icon layui-icon-face-smile-b"></i></span>
                         </p>
                         <p>新下载
                             <span class="layuiadmin-span-color">10%
-                                        <i class="layui-inline layui-icon layui-icon-face-smile-b"></i></span>
+                                <i class="layui-inline layui-icon layui-icon-face-smile-b"></i></span>
                         </p>
                         <p>新下载
                             <span class="layuiadmin-span-color">10%
-                                        <i class="layui-inline layui-icon layui-icon-face-smile-b"></i></span>
+                                <i class="layui-inline layui-icon layui-icon-face-smile-b"></i></span>
                         </p>
                     </div>
                 </div>
@@ -96,19 +150,20 @@
             <div class="layui-col-sm6 layui-col-md2">
                 <div class="layui-card">
                     <div class="layui-card-header">视频播放排行
-                        <span class="layui-badge layui-bg-cyan layuiadmin-badge">月</span></div>
+                        <span class="layui-badge layui-bg-cyan layuiadmin-badge">月</span>
+                    </div>
                     <div class="layui-card-body ">
                         <p>新下载
                             <span class="layuiadmin-span-color">10%
-                                        <i class="layui-inline layui-icon layui-icon-face-smile-b"></i></span>
+                                <i class="layui-inline layui-icon layui-icon-face-smile-b"></i></span>
                         </p>
                         <p>新下载
                             <span class="layuiadmin-span-color">10%
-                                        <i class="layui-inline layui-icon layui-icon-face-smile-b"></i></span>
+                                <i class="layui-inline layui-icon layui-icon-face-smile-b"></i></span>
                         </p>
                         <p>新下载
                             <span class="layuiadmin-span-color">10%
-                                        <i class="layui-inline layui-icon layui-icon-face-smile-b"></i></span>
+                                <i class="layui-inline layui-icon layui-icon-face-smile-b"></i></span>
                         </p>
                     </div>
                 </div>
@@ -116,9 +171,28 @@
             <div class="layui-col-md12">
                 <div class="layui-card">
                     <div class="layui-card-header">统计</div>
-                    <div class="layui-card-body ">
-                        <div id="main" style="width: 900px;height:400px;"></div>
+                    <div class="layui-card-body echart-body">
+                        <div id="main" style="height:400px;"></div>
+                        <div id="column"></div>
+
+                        <!-- 动态表格 -->
+                        <table border="1" cellspacing="1" cellpadding="1">
+                            <thead>
+                                <th class="title">页面访问量统计</th>
+                                <tr>
+                                    <th id="paiId">链接</th>
+                                    <th>访问量</th>
+                                    <th>排名</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                        <div id="china"></div>
+                        <div id="time-slot"></div>
                     </div>
+
                 </div>
             </div>
             <style id="welcome_style"></style>
@@ -129,20 +203,46 @@
         </div>
     </div>
 </div>
-
+<script src="/static/common/js/china.js"></script>
 <script type="text/javascript">
 
+    // 开始时间
+    function getStartTime() {
+        let yy = new Date().getFullYear()
+        let mm = new Date().getMonth() + 1
+        mm = mm < 10 ? '0' + mm : mm
+        let dd = new Date().getDate() < 10 ? '0' + new Date().getDate() : new Date().getDate()
+        return yy + mm + dd
+    };
 
-    let myChart = echarts.init(document.getElementById('main'));
-    let option = {
+    // 往前推七天的结束时间
+    function getEndTime() {
+        let nowDate = new Date();
+        nowDate.setDate(nowDate.getDate() - 6);
+        let yy = nowDate.getFullYear();
+        let mm = nowDate.getMonth() + 1;
+        mm = mm < 10 ? '0' + mm : mm
+        let dd = nowDate.getDate();
+        dd = dd < 10 ? '0' + dd : dd
+        return yy + "" + mm + "" + dd
+    }
+
+
+
+    var pvlist = []
+    var uvlist = []
+    var iplist = []
+    var datelist = []
+    var myChart = echarts.init(document.getElementById('main'));
+    var option = {
         title: {
-            text: '折线图堆叠'
+            text: '一周访问概况'
         },
         tooltip: {
             trigger: 'axis'
         },
         legend: {
-            data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
+            data: ['pv数量', 'uv数量', 'ip数量']
         },
         grid: {
             left: '3%',
@@ -158,45 +258,441 @@
         xAxis: {
             type: 'category',
             boundaryGap: false,
-            data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+            data: ['1/11', '1/12', '1/13', '1/14', '1/15', '1/16', '1/17']
         },
         yAxis: {
             type: 'value'
         },
         series: [
             {
-                name: '邮件营销',
+                name: 'pv数量',
                 type: 'line',
                 stack: '总量',
-                data: [120, 132, 101, 134, 90, 230, 210]
+                data: [112, 123, 454, 656, 34, 767, 88]
             },
             {
-                name: '联盟广告',
+                name: 'uv数量',
                 type: 'line',
                 stack: '总量',
-                data: [220, 182, 191, 234, 290, 330, 310]
+                data: [12, 56, 878, 45, 234, 67, 453]
             },
             {
-                name: '视频广告',
+                name: 'ip数量',
                 type: 'line',
                 stack: '总量',
-                data: [150, 232, 201, 154, 190, 330, 410]
-            },
-            {
-                name: '直接访问',
-                type: 'line',
-                stack: '总量',
-                data: [320, 332, 301, 334, 390, 330, 320]
-            },
-            {
-                name: '搜索引擎',
-                type: 'line',
-                stack: '总量',
-                data: [820, 932, 901, 934, 1290, 1330, 1320]
+                data: [342, '-', '-', 56, 904, 44, 341]
             }
         ]
     };
     myChart.setOption(option);
+
+
+    var timeChart = echarts.init(document.getElementById('time-slot'));
+    var option = {
+        title: {
+            text: '24小时访问量'
+        },
+        tooltip: {
+            trigger: 'axis'
+        },
+        legend: {
+            data: ['pv数量', 'uv数量', 'ip数量']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        toolbox: {
+            feature: {
+                saveAsImage: {}
+            }
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: ['00:00-00:59', '01:00-01:59', '02:00-02:59', '03:00-03:59', '04:00-04:59', '05:00-05:59', '06:00-06:59']
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [
+            {
+                name: 'pv数量',
+                type: 'line',
+                stack: '总量',
+                data: [14, 45, 32, 2, 54, 556, 65]
+            },
+            {
+                name: 'uv数量',
+                type: 'line',
+                stack: '总量',
+                data: [12, 56, 90, 45, 51, 67, 10]
+            },
+            {
+                name: 'ip数量',
+                type: 'line',
+                stack: '总量',
+                data: [32, '-', '-', 56, 98, 44, 19]
+            }
+        ]
+    };
+    timeChart.setOption(option);
+
+    var columnBar = echarts.init(document.getElementById('column'))
+    var columnOption = {
+        title: {
+            text: '访问方式概况'
+        },
+        xAxis: {
+            type: 'category',
+            data: ['直接', '间接', '转推']
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [{
+            data: [123, 564, 34],
+            type: 'bar',
+            barWidth: '25%',
+            itemStyle: {
+                color: '#00cc99' // 修改柱状图背景色
+            }
+        }],
+        tooltip: { // 鼠标悬停显示具体数据
+            show: true
+        }
+    };
+    columnBar.setOption(columnOption);
+    $.ajax({
+        url: "{:url('/tj')}",
+        data: {
+            start_date: getEndTime(),
+            end_date: getStartTime()
+        },
+        type: 'post',
+        success: (res) => {
+            console.log(res);
+            if (res.status == 200) {
+                let arr = res.data.overview
+                datelist = res.data.cycle
+                pvlist = arr.reduce((pre, cur) => {
+                    return pre.concat(cur[0])
+                }, [])
+                uvlist = arr.reduce((pre, cur) => {
+                    return pre.concat(cur[1])
+                }, [])
+                iplist = arr.reduce((pre, cur) => {
+                    return pre.concat(cur[2])
+                }, [])
+                let myChart = echarts.init(document.getElementById('main'));
+
+                option = {
+                    title: {
+                        text: '网站近一周概况'
+                    },
+                    tooltip: {
+                        trigger: 'axis'
+                    },
+                    legend: {
+                        data: ['pv数量', 'uv数量', 'ip数量']
+                    },
+                    grid: {
+                        left: '3%',
+                        right: '4%',
+                        bottom: '3%',
+                        containLabel: true
+                    },
+                    toolbox: {
+                        feature: {
+                            saveAsImage: {}
+                        }
+                    },
+                    xAxis: {
+                        type: 'category',
+                        boundaryGap: false,
+                        data: datelist
+                    },
+                    yAxis: {
+                        type: 'value'
+                    },
+                    series: [
+                        {
+                            name: 'pv数量',
+                            type: 'line',
+                            stack: '总量',
+                            data: pvlist
+                        },
+                        {
+                            name: 'uv数量',
+                            type: 'line',
+                            stack: '总量',
+                            data: uvlist
+                        },
+                        {
+                            name: 'ip数量',
+                            type: 'line',
+                            stack: '总量',
+                            data: iplist
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+
+
+                let columnlink = res.data.sourse.map(v => {
+                    return v.link
+                })
+                let columnvalue = res.data.sourse.map(v => {
+                    return v.value
+                })
+                let columnBar = echarts.init(document.getElementById('column'))
+                columnOption = {
+                    title: {
+                        text: '访问方式概况'
+                    },
+                    xAxis: {
+                        type: 'category',
+                        data: columnlink
+                    },
+                    yAxis: {
+                        type: 'value'
+                    },
+                    series: [{
+                        data: columnvalue,
+                        type: 'bar',
+                        barWidth: '25%',
+                        itemStyle: {
+                            color: '#00cc99' // 修改柱状图背景色
+                        }
+                    }],
+                    tooltip: { // 鼠标悬停显示具体数据
+                        show: true
+                    }
+                };
+                columnBar.setOption(columnOption);
+
+
+                let tbodydata = res.data.visited
+                for (let i = 0; i < tbodydata.length; i++) {
+                    tbodydata[i].id = i + 1
+                }
+                createtbody(res.data.visited)
+
+
+
+                let timep = res.data.trend.pv_count
+                let timeu = res.data.trend.visitor_count
+                let timeip = res.data.trend.ip_count
+                let timeList = res.data.trend.time
+
+                var timeChart = echarts.init(document.getElementById('time-slot'));
+                var option1 = {
+                    title: {
+                        text: '24小时访问量'
+                    },
+                    tooltip: {
+                        trigger: 'axis'
+                    },
+                    legend: {
+                        data: ['pv数量', 'uv数量', 'ip数量']
+                    },
+                    grid: {
+                        left: '3%',
+                        right: '4%',
+                        bottom: '3%',
+                        containLabel: true
+                    },
+                    toolbox: {
+                        feature: {
+                            saveAsImage: {}
+                        }
+                    },
+                    xAxis: {
+                        type: 'category',
+                        boundaryGap: false,
+                        data: timeList
+                    },
+                    yAxis: [
+                        {
+                            type: 'category',
+                        }
+                    ],
+                    series: [
+                        {
+                            name: 'pv数量',
+                            type: 'line',
+                            stack: '总量',
+                            data: timep
+                        },
+                        {
+                            name: 'uv数量',
+                            type: 'line',
+                            stack: '总量',
+                            data: timeu
+                        },
+                        {
+                            name: 'ip数量',
+                            type: 'line',
+                            stack: '总量',
+                            data: timeip
+                        }
+                    ]
+                };
+                timeChart.setOption(option1);
+
+
+                var visit = res.data.terrain // 地区数据
+                map(visit)
+            }
+        },
+        error: (err) => {
+            console.log(err);
+        }
+    })
+
+    // 渲染表格
+    function createtbody(data) {
+        var tbody = document.querySelector("tbody");
+        for (var i = 0; i < data.length; i++) {
+            // 1.创建tr
+            var tr = document.createElement("tr");
+            tbody.appendChild(tr);
+            // 2.创建tr内的td，循环一个tr内的所有td
+            for (var k in data[i]) {
+                // 创建单元格
+                var td = document.createElement("td")
+                // 把对象的属性值复制给对象
+                td.innerHTML = data[i][k];
+                tr.appendChild(td);
+            }
+        }
+    }
+
+
+    // 地图渲染
+    function map(visits) {
+        var mapChart = echarts.init(document.getElementById('china'));
+        $.get('/static/common/json/china.json', function (res) {
+            // console.log(res);
+            // 全国的地区
+            var dataMap = []
+            dataMap = res.features.map(v => {
+                return v.properties.name
+            })
+            echarts.registerMap('chinaMap', res)
+
+            let convertData = []
+            // 后台有数据的地区
+            convertData = visits.map(v => {
+                return { name: v.name, value: v.value, selected: true }
+            })
+            mapChart.setOption({
+                title: {
+                    text: '地区访问数量概况'
+                },
+                tooltip: {
+                    formatter: function (params) {
+                        var value = params.value ? params.value : 0
+                        var info = `<p style="font-size:18px">${params.name}</p>
+                        <p style="font-size:14px">访问数量：${value} </p>`
+                        return info;
+                    },
+                    backgroundColor: "#00cc99",//提示标签背景颜色
+                    textStyle: { color: "#fff" } //提示标签字体颜色
+                },
+                geo: {
+                    show: true,
+                    type: 'map',
+                    map: 'chinaMap', // 需和register中的第一个参数保持一致
+                    roam: true, // 允许拖动和缩放
+                    label: {
+                        // show: true
+                    },
+                    itemStyle: {
+                        normal: {
+                            areaColor: '#e5faf5',
+                            borderColor: '#eae8e8'
+                        },
+                        emphasis: {
+                            areaColor: '#00cc99'
+                        }
+                    }
+                },
+                series: [
+                    {
+                        name: "散点",
+                        type: "scatter",
+                        coordinateSystem: "geo",
+                        data: convertData,
+                        hoverAnimation: false,
+                        label: {
+                            normal: {
+                                formatter: "{b}",
+                                position: "right",
+                                show: true
+                            },
+                            emphasis: {
+                                show: false
+                            }
+                        },
+                        itemStyle: {
+                            normal: {
+                                color: "#FF555B" // 地区名字颜色
+                            }
+                        }
+                    },
+                    {
+                        type: 'map',
+                        geoIndex: 0,
+                        aspectScale: 0.75,
+                        selectedMode: 'multiple',
+                        showLegendSymbol: false,
+                        label: {
+                            normal: {
+                                show: true
+                            },
+                            emphasis: {
+                                show: true,
+                                textStyle: {
+                                    color: '#00cc99'
+                                }
+                            }
+                        },
+                        roam: true,
+                        itemStyle: {
+                            normal: {
+                                areaColor: '#031525',
+                                borderColor: '#3b5077'
+                            },
+                            emphasis: {
+                                areaColor: '#2b91b7'
+                            }
+                        },
+                        animation: false,
+                        data: convertData,
+                    }
+                ],
+                visuaMap: {
+                    show: true,
+                    left: 20,
+                    bottom: 20,
+                    min: 0,
+                    max: 500,
+                    text: ['高', '低'],
+                    inRange: {
+                        color: ['#c7f3f5', '#00cc99']
+                    },
+                    calculable: true,
+                    serviesIndex: [1],
+                }
+            })
+        })
+
+    }
+    map()
 </script>
+
 
 {/block}
