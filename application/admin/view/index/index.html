@@ -390,7 +390,7 @@
 
                 option = {
                     title: {
-                        text: '网站概况'
+                        text: '网站近一周概况'
                     },
                     tooltip: {
                         trigger: 'axis'
@@ -488,7 +488,7 @@
                 let timeList = res.data.trend.time
 
                 var timeChart = echarts.init(document.getElementById('time-slot'));
-                var option = {
+                var option1 = {
                     title: {
                         text: '24小时访问量'
                     },
@@ -516,8 +516,7 @@
                     },
                     yAxis: [
                         {
-                            type: 'value',
-                            splitNumber: 5
+                            type: 'category',
                         }
                     ],
                     series: [
@@ -541,7 +540,7 @@
                         }
                     ]
                 };
-                timeChart.setOption(option);
+                timeChart.setOption(option1);
 
 
                 var visit = res.data.terrain // 地区数据
@@ -578,7 +577,8 @@
         $.get('/static/common/json/china.json', function (res) {
             // console.log(res);
             // 全国的地区
-            var dataMap = res.features.map(v => {
+            var dataMap = []
+            dataMap = res.features.map(v => {
                 return v.properties.name
             })
             echarts.registerMap('chinaMap', res)
@@ -588,14 +588,6 @@
             convertData = visits.map(v => {
                 return { name: v.name, value: v.value, selected: true }
             })
-            // for (var i = 0; i < convertData.length; i++) {
-            //     for (var j = 0; j < dataMap.length; j++) {
-            //         if (convertData[i] == dataMap[j].name) {
-            //             dataMap[j].selected = true;
-            //             break;
-            //         }
-            //     }
-            // }
             mapChart.setOption({
                 title: {
                     text: '地区访问数量概况'
@@ -701,5 +693,6 @@
     }
     map()
 </script>
+
 
 {/block}
