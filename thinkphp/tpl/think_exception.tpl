@@ -440,9 +440,72 @@
     <?php } ?>
 
     <?php if(\think\App::$debug === false) { ?>
-    <div>
-        <iframe src='/static/error.html' frameborder="0" scrolling="no" width="100%" height="800px"></iframe>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+
+            #error {
+                padding: 50px 0 0 100px;
+            }
+
+            h2 {
+                font-size: 50px;
+                color: black;
+            }
+
+            p {
+                margin: 30px 0 20px;
+                font-size: 20px;
+            }
+
+            button {
+                border: none;
+                width: 110px;
+                height: 40px;
+                font-size: 16px;
+                color: #fff;
+                background-color: #00cc99;
+                cursor: pointer;
+                outline: none;
+            }
+        </style>
+    </head>
+
+    <body>
+    <div id="error">
+        <h2>哎呀！一不小心跑丢了~</h2>
+        <p><span id="num">5</span>秒后自动跳转上一页</p>
+        <button id="btn">立即跳转</button>
     </div>
+    </body>
+    <script src="/static/jquery-3.2.1.min.js"></script>
+    <script>
+        console.log(window.location.host);
+        var num = 4
+        var timer = setInterval(() => {
+            if (num === 0) {
+                window.location.replace("http://"+window.location.host);
+                clearInterval(timer)
+                return
+            }
+            $('#num').html(num)
+            num--
+        }, 1000);
+
+        $('#btn').click(function () {
+            window.location.replace();
+        })
+    </script>
+
+    </html>
     <?php } ?>
 
 </body>
