@@ -482,7 +482,7 @@
     <body>
     <div id="error">
         <h2>哎呀！一不小心跑丢了~</h2>
-        <p><span id="num">5</span>秒后自动跳转上一页</p>
+        <p><span id="num">5</span>秒后自动跳转到首页</p>
         <button id="btn">立即跳转</button>
     </div>
     </body>
@@ -501,7 +501,7 @@
         }, 1000);
 
         $('#btn').click(function () {
-            window.location.replace();
+            window.location.replace("http://"+window.location.host);
         })
     </script>
 
