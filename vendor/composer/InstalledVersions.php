@@ -19,19 +19,19 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'c6b0e53365252b763969c701cebdf1475e7b01a9',
+    'reference' => '980be44d6b589cfc0a800d5c8626671c9737d01a',
     'name' => 'topthink/think',
   ),
   'versions' => 
   array (
     'phpmailer/phpmailer' => 
     array (
-      'pretty_version' => 'v6.3.0',
-      'version' => '6.3.0.0',
+      'pretty_version' => 'v6.4.0',
+      'version' => '6.4.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '4a08cf4cdd2c38d12ee2b9fa69e5d235f37a6dcb',
+      'reference' => '050d430203105c27c30efd1dce7aa421ad882d01',
     ),
     'qiniu/php-sdk' => 
     array (
@@ -58,16 +58,16 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'c6b0e53365252b763969c701cebdf1475e7b01a9',
+      'reference' => '980be44d6b589cfc0a800d5c8626671c9737d01a',
     ),
     'topthink/think-installer' => 
     array (
-      'pretty_version' => 'v1.0.13',
-      'version' => '1.0.13.0',
+      'pretty_version' => 'v1.0.14',
+      'version' => '1.0.14.0',
       'aliases' => 
       array (
       ),
-      'reference' => '532dc02efb3d8332b36fd8f63fc4f56aeb1987e7',
+      'reference' => 'eae1740ac264a55c06134b6685dfb9f837d004d1',
     ),
   ),
 );
