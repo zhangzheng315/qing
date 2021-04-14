@@ -141,4 +141,30 @@ class Banner extends Common{
             return show($this->fail,$this->bannerService->error);
         }
     }
+
+    /**
+     * 广告页面
+     * @return mixed
+     */
+    public function adIndex()
+    {
+        $add_url = '/admin/banner/bannerCreate'; //添加
+        $edit_url = '/admin/banner/bannerEdit';  //修改
+        $del_url = '/admin/banner/bannerDelete'; //删除
+        return $this->fetch('',compact('add_url','edit_url','del_url'));
+    }
+
+    /**
+     * 广告分页
+     */
+    public function getAdBannerList(){
+        $data = input('get.');
+        $data['deleted_time'] = 0;
+        $data['pid'] = 10000;
+        $str = BannerService::data_paging($data,'banner','order');
+        foreach ($str['data'] as &$value) {
+            $value['status'] = $value['status'] == 1 ? '显示' : '不显示';
+        }
+        return layshow($this->code,'ok',$str['data'],$str['count']);
+    }
 }

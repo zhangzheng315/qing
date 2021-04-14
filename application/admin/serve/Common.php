@@ -22,6 +22,9 @@ class Common extends Controller{
         if (isset($data['video_selected'])) {
             $contion['video_selected'] = $data['video_selected'];
         }
+        if (isset($data['pid'])) {
+            $contion['pid'] = $data['pid'];
+        }
         $page = !empty($data['page']) ? $data['page'] : 1;
         $size = !empty($data['limit']) ? $data['limit'] : 20;
         $form = ($page - 1) * $size;

@@ -27,24 +27,27 @@ class BannerService extends Common{
     public function bannerCreate($param){
         if(!isset($param['status'])) $param['status'] = 0;
         if(!isset($param['button_status'])) $param['button_status'] = 0;
-        $pid_name = $this->navigation->where(['id' => $param['pid']])->value('menu_name');
+        $pid_name = '首页';
+        if ($param['pid'] != 10000) {
+            $pid_name = $this->navigation->where(['id' => $param['pid']])->value('menu_name');
+        }
         $data = [
             'img_url' => $param['img_url'],
             'pid' => $param['pid'],
             'pid_name' => $pid_name,
-            'title' => $param['title'] ?: '',
-            'title_color' => $param['title_color'] ?: '',
-            'title_size' => $param['title_size'] ?: 12,
-            'introduction' => $param['introduction'],
-            'in_color' => $param['in_color'] ?: '',
-            'in_size' => $param['in_size'] ?: 12,
-            'button_status' => $param['button_status'],
-            'button_link' => $param['button_link'] ?: '',
-            'button_text' => $param['button_text'] ?: '',
-            'button_color' => $param['button_color'] ?: '',
-            'button_size' => $param['button_size'] ?: 12,
-            'format' => $param['format'] ?: 'left',
-            'img_link' => $param['img_link'] ?: '',
+            'title' => (isset($param['title']) && $param['title']) ? $param['title'] : '',
+            'title_color' => (isset($param['title_color']) && $param['title_color']) ? $param['title_color'] : '',
+            'title_size' => (isset($param['title_size']) && $param['title_size']) ? $param['title_size'] : 12,
+            'introduction' => (isset($param['introduction']) && $param['introduction']) ? $param['introduction'] : '',
+            'in_color' => (isset($param['in_color']) && $param['in_color']) ? $param['in_color'] : '',
+            'in_size' => (isset($param['in_size']) && $param['in_size']) ? $param['in_size'] : 12,
+            'button_status' => (isset($param['button_status']) && $param['button_status']) ? $param['button_status'] : '',
+            'button_link' => (isset($param['button_link']) && $param['button_link']) ? $param['button_link'] : '',
+            'button_text' => (isset($param['button_text']) && $param['button_text']) ? $param['button_text'] : '',
+            'button_color' => (isset($param['button_color']) && $param['button_color']) ? $param['button_color'] : '',
+            'button_size' => (isset($param['button_size']) && $param['button_size']) ? $param['button_size'] : 12,
+            'format' => (isset($param['format']) && $param['format']) ? $param['format'] : 'left',
+            'img_link' => (isset($param['img_link']) && $param['img_link']) ? $param['img_link'] : '',
             'status' => $param['status'],
             'order' => $param['order'] ?: 0,
             'created_time' => time(),
@@ -98,10 +101,12 @@ class BannerService extends Common{
             unset($data['file']);
         }
         $where = ['id' => $data['id']];
-        $pid_name = $this->navigation->where(['id' => $data['pid']])->value('menu_name');
+        $pid_name = '首页';
+        if ($data['pid'] != 10000) {
+            $pid_name = $this->navigation->where(['id' => $data['pid']])->value('menu_name');
+        }
         $data['pid_name'] = $pid_name;
         $data['updated_time'] = time();
-
         $add_id = $this->banner->update($data,$where);
         if(!$add_id){
             $this->setError('修改失败');
