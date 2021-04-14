@@ -33,6 +33,7 @@ class JoinUsService extends Common{
             'years' => $param['years'],
             'status' => $status,
             'order' => $param['order'] ?:0,
+            'jump_link' => $param['jump_link'],
             'created_time' => time(),
             'updated_time' => time(),
             'deleted_time' => 0,
