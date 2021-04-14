@@ -45,6 +45,7 @@ class JoinUs extends Common{
                 'region' => 'require',
                 'education' => 'require',
                 'years' => 'require',
+                'jump_link' => 'require',
             ];
         $msg =
             [
@@ -53,6 +54,7 @@ class JoinUs extends Common{
                 'region' => '缺少参数@region',
                 'education' => '缺少参数@education',
                 'years' => '缺少参数@years',
+                'jump_link' => '缺少参数@jump_link',
             ];
         $validate = new Validate($rules,$msg);
         if(!$validate->check($request->param())){
@@ -104,6 +106,7 @@ class JoinUs extends Common{
                 'region' => 'require',
                 'education' => 'require',
                 'years' => 'require',
+                'jump_link' => 'require',
             ];
         $msg =
             [
@@ -112,6 +115,7 @@ class JoinUs extends Common{
                 'region' => '缺少参数@region',
                 'education' => '缺少参数@education',
                 'years' => '缺少参数@years',
+                'jump_link' => '缺少参数@jump_link',
             ];
         $validate = new Validate($rules,$msg);
         if(!$validate->check($data)){
