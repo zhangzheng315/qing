@@ -78,6 +78,12 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">跳转链接</label>
+            <div class="layui-input-block">
+                <input type="text" name="jump_link" placeholder="智联职位链接" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
             <div class="layui-input-block">
                 <button class="layui-btn" lay-submit lay-filter="add">保存</button>
             </div>
@@ -128,6 +134,12 @@
             <div class="layui-input-block">
                 <input type="text" name="order" id="order" placeholder="请输入(数值越大，排序越靠前)" autocomplete="off" class="layui-input">
                 <input type="hidden" name="id" id="id" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">跳转链接</label>
+            <div class="layui-input-block">
+                <input type="text" name="jump_link" id="jump_link" placeholder="智联职位链接" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
@@ -192,6 +204,7 @@
                         $('#education').val(res.data.education);
                         $('#years').val(res.data.years);
                         $('#order').val(res.data.order);
+                        $('#jump_link').val(res.data.jump_link);
 
                         if (res.data.status === 0) {
                             $('#status').removeAttr('checked');

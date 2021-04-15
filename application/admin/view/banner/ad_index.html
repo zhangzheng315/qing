@@ -1,0 +1,382 @@
+{extend name="common::layout"/}
+{block name="main-content"}
+<style>
+    .layui-btn {
+        margin-top: 8px;
+        margin-left: 5px;
+    }
+
+    .btn {
+        margin-top: 0 !important;
+    }
+    .layui-table-cell {
+        text-align: center;
+        height:auto;
+        white-space: normal;
+    }
+</style>
+<!-- 右侧主体开始 -->
+<div class="page-content">
+    <div class="layui-fluid">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+                <div class="layui-card">
+                    <button class="layui-btn" onclick="add()"><i class="layui-icon"></i>增加</button>
+                    <!-- 动态表格 -->
+                    <table id="table-rule" lay-filter="table-rule"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- 中部结束 -->
+<div id="add" style="display: none;">
+    <form class="layui-form"> <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
+        <div class="layui-form-item">
+            <label class="layui-form-label">选择父级</label>
+            <div class="layui-input-block">
+                <select name="pid" class="pid">
+                    <option value="10000">首页</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">图片跳转地址</label>
+            <div class="layui-input-block">
+                <input type="text" name="img_link" placeholder="选填，用于点击banner跳转" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">启用</label>
+            <div class="layui-input-block">
+                <input name="status" value="1" type="checkbox" checked lay-skin="switch">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">排序</label>
+            <div class="layui-input-block">
+                <input type="text" name="order" placeholder="请输入(数值越大，排序越靠前)" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"></label>
+            <div class="layui-input-block">
+                <input type="hidden" name="img_url" class="layui-upload-file">
+                <button type="button" class="layui-btn fileUp">
+                    <i class="layui-icon">&#xe67c;</i>上传图片
+                </button>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"></label>
+            <div class="layui-input-block">
+                <input type="hidden" name="img_url" class="img_url">
+                <img src="" alt="" width="200px" class="img-show">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="add">保存</button>
+            </div>
+        </div>
+        <!-- 更多表单结构排版请移步文档左侧【页面元素-表单】一项阅览 -->
+    </form>
+</div>
+
+
+<div id="edit" style="display: none;">
+    <form class="layui-form"> <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
+        <div class="layui-form-item">
+            <label class="layui-form-label">选择父级</label>
+            <div class="layui-input-block">
+                <select name="pid" class="pid">
+                    <option value="10000">首页</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">图片跳转地址</label>
+            <div class="layui-input-block">
+                <input type="text" name="img_link" id="img_link" placeholder="选填，用于点击banner跳转" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">启用</label>
+            <div class="layui-input-block">
+                <input name="status" id="status" value="1" type="checkbox" checked lay-skin="switch">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">排序</label>
+            <div class="layui-input-block">
+                <input type="text" id="order" name="order" placeholder="请输入(数值越大，排序越靠前)" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"></label>
+            <div class="layui-input-block">
+                <button type="button" class="layui-btn fileUp">
+                    <i class="layui-icon">&#xe67c;</i>上传图片
+                </button>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"></label>
+            <div class="layui-input-block">
+                <input type="hidden" name="id" id="id">
+                <input type="hidden" name="img_url" class="img_url" value="">
+                <img src="" alt="" width="200px" class="img-show">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="edit">保存</button>
+            </div>
+        </div>
+        <!-- 更多表单结构排版请移步文档左侧【页面元素-表单】一项阅览 -->
+    </form>
+</div>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn btn layui-btn-xs" lay-event="info">编辑</a>
+    <a class="layui-btn btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+<!--图片弹出-->
+<script type="text/html" id="imgtmp">
+    <div id="layer-photos-demo" style="cursor:pointer;">
+        <img onclick="imgPoint(this)" src="{{d.img_url}}" alt="">
+    </div>
+</script>
+<script>
+    var child_num = 0;
+    var selected = 0;
+    // $.ajax({
+    //     url: "/admin/navigation/navigationListClass",
+    //     success:function (res) {
+    //         if (res.status === 200) {
+    //             for (let item of res.data) {
+    //                 $('.pid').append('<option value="'+item.id+'">'+item.menu_name+'</option>')
+    //                 if (item.sub.length !== 0) {
+    //                     child_num = 0;
+    //                     childSub(item.sub)
+    //                 }
+    //             }
+    //         }
+    //         layui.form.render();
+    //     }
+    //
+    // })
+    // //无限分类递归
+    // function childSub(arr) {
+    //     if(arr.length === 0) return false;
+    //     child_num++;
+    //     let aa = '';
+    //     for (let n = 0; n < child_num; n++) {
+    //         aa += '——'
+    //     }
+    //     for (let item of arr) {
+    //         if (item.id === selected) {
+    //             $('.pid').append('<option value="'+item.id+'" selected>'+aa+item.menu_name+'</option>');
+    //         }else{
+    //             $('.pid').append('<option value="'+item.id+'">'+aa+item.menu_name+'</option>');
+    //         }
+    //         if (item.sub.length !== 0) {
+    //             child_num = 1;
+    //             childSub(item.sub)
+    //         }
+    //     }
+    // }
+</script>
+<script>
+    //图片弹出
+    function imgPoint(obj) {
+        var img = new Image();
+        img.src = obj.src;
+        var imgHtml = "<img src='" + obj.src + "' style='margin-left:45px' width='800px'/>";
+        //弹出层
+        layer.open({
+            type: 1,
+            shade: 0.8,
+            offset: 'auto',
+            area: [900 + 'px',800+'px'],
+            shadeClose:true,
+            scrollbar: false,
+            title: "图片预览", //不显示标题
+            content: imgHtml, //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+            cancel: function () {
+                //layer.msg('捕获就是从页面已经存在的元素上，包裹layer的结构', { time: 5000, icon: 6 });
+            }
+        });
+    }
+
+    layui.use(['form', 'table','upload','colorpicker'], function () {
+        var form = layui.form;
+        var table = layui.table;
+        var upload = layui.upload;
+        var colorpicker = layui.colorpicker;
+        //添加--标题颜色选择器
+        colorpicker.render({
+            elem: '#add_title_colorpicker'  //绑定元素
+            ,predefine: true
+            ,colors: ['#F00','#0F0','#00F','rgb(255, 69, 0)','rgba(255, 69, 0, 0.5)']
+            ,done:function (color) {
+                $('.add_title_colorpicker').val(color);
+            }
+        });
+        //添加--简介颜色选择器
+        colorpicker.render({
+            elem: '#add_in_colorpicker'  //绑定元素
+            ,predefine: true
+            ,colors: ['#F00','#0F0','#00F','rgb(255, 69, 0)','rgba(255, 69, 0, 0.5)']
+            ,done:function (color) {
+                $('.add_in_colorpicker').val(color);
+            }
+        });
+        //添加--按钮颜色选择器
+        colorpicker.render({
+            elem: '#add_button_colorpicker'  //绑定元素0            ,predefine: true
+            ,colors: ['#F00','#0F0','#00F','rgb(255, 69, 0)','rgba(255, 69, 0, 0.5)']
+            ,done:function (color) {
+                $('.add_button_colorpicker').val(color);
+            }
+        });
+        //修改--标题颜色选择器
+        colorpicker.render({
+            elem: '#edit_title_colorpicker'  //绑定元素
+            ,predefine: true
+            ,colors: ['#F00','#0F0','#00F','rgb(255, 69, 0)','rgba(255, 69, 0, 0.5)']
+            ,done:function (color) {
+                $('.edit_title_colorpicker').val(color);
+            }
+        });
+        //修改--简介颜色选择器
+        colorpicker.render({
+            elem: '#edit_in_colorpicker'  //绑定元素
+            ,predefine: true
+            ,colors: ['#F00','#0F0','#00F','rgb(255, 69, 0)','rgba(255, 69, 0, 0.5)']
+            ,done:function (color) {
+                $('.edit_in_colorpicker').val(color);
+            }
+        });
+        //修改--按钮颜色选择器
+        colorpicker.render({
+            elem: '#edit_button_colorpicker'  //绑定元素
+            ,predefine: true
+            ,colors: ['#F00','#0F0','#00F','rgb(255, 69, 0)','rgba(255, 69, 0, 0.5)']
+            ,done:function (color) {
+                $('.edit_button_colorpicker').val(color);
+            }
+        });
+        //图片上传接口
+        upload.render({
+            elem:'.fileUp'
+            ,url: "{:url('admin/common_file/uploadFile')}"
+            ,accept:'file'
+            ,ext: 'jpg|jpeg|svg|png|gif'
+            ,done: function(res){
+                $('.img-show').attr('src',res.data.src);
+                $('.img_url').val(res.data.src);
+                layer.msg(res.msg);
+            }
+        });
+        //创建动态表格
+        table.render({
+            elem: '#table-rule'
+            , height: 850
+            , url: '/admin/banner/getAdBannerList' //数据接口
+            , page: true //开启分页
+            , cols: [[ //表头
+                {field: 'id', title: 'ID', width: 80, sort: true}
+
+                , {field: 'img_url', title: '缩略图', templet:'#imgtmp'}
+                , {field: 'pid_name',title:'所属分类'}
+                , {field: 'title', title: '标题'}
+                , {field: 'order', title: '排序'}
+                , {field: 'status', title: '当前状态'}
+                , {width: 160, title: '操作', align: 'center', toolbar: '#barDemo'}
+            ]]
+
+        });
+
+        //监听工具条
+        table.on('tool(table-rule)', function (obj) { //注：tool 是工具条事件名，test 是 table 原始容器的属性 lay-filter="对应的值"
+            var data = obj.data; //获得当前行数据
+            var layEvent = obj.event; //获得 lay-event 对应的值（也可以是表头的 event 参数对应的值）
+            var tr = obj.tr; //获得当前行 tr 的 DOM 对象（如果有的话）
+
+            if (layEvent === 'info') { //查看
+                $.post('/admin/banner/bannerInfo', {id: data.id}, (res) => {
+                    if (res.status === 200) {
+                        layer.open({
+                            type: 1,
+                            title: '详情',
+                            area: ['1000px', '900px'],
+                            content: $('#edit'),
+                        });
+
+                        $('#title').val(res.data.title);
+                        $('#order').val(res.data.order);
+                        $('#id').val(res.data.id);
+                        $('.img-show').attr('src',res.data.img_url);
+                        $('.img_url').val(res.data.img_url);
+                        $('.pid').empty();
+                        $('#introduction').val(res.data.introduction);
+                        $('.edit_title_colorpicker').val(res.data.title_color);
+                        $('.edit_title_size').val(res.data.title_size);
+                        $('.edit_in_colorpicker').val(res.data.in_color);
+                        $('.edit_in_size').val(res.data.in_size);
+                        $('.button_text').val(res.data.button_text);
+                        $('.edit_button_colorpicker').val(res.data.button_color);
+                        $('.edit_button_size').val(res.data.button_size);
+                        $('.format').empty();
+                        $('#button_link').val(res.data.button_link);
+                        $('#img_link').val(res.data.img_link);
+
+                        selected = res.data.pid;
+                        if (res.data.status === 0) {
+                            $('#status').removeAttr('checked');
+                        } else {
+                            $('#status').attr('checked', true);
+                        }
+                        if (res.data.button_status === 0) {
+                            $('#button_status').removeAttr('checked');
+                        } else {
+                            $('#button_status').attr('checked', true);
+                        }
+
+                        $('.pid').append('<option value="10000" selected>首页</option>')
+
+
+                        $('.format').append(`<input type="radio" name="format" value=left title="居左" ${res.data.format==="left" ? "checked" : "" }>
+                                            <input type="radio" name="format" value="center" title="居中" ${res.data.format==="center" ? "checked" : ""}>
+                                            <input type="radio" name="format" value="right" title="居右" ${res.data.format==="right" ? "checked" : ""}>`)
+
+                        form.render();
+                    }
+                })
+
+            }else if (layEvent === 'del') { //删除
+                layer.confirm('真的要删除吗？', {
+                        btn:['确定吧','取消'],
+                    },function () {
+                        $.post('/admin/banner/bannerDelete',{id: data.id}, (res) => {
+                            if (res.status === 200) {
+                                layer.msg(res.message);
+                                setTimeout(()=>{
+                                    window.location.reload()
+                                },500)
+                            }else{
+                                layer.msg(res.message);
+                            }
+                        })
+                    }
+                );
+            }
+        });
+
+    });
+
+</script>
+{/block}

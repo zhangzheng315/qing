@@ -81,7 +81,9 @@
 
 <script type="text/html" id="barDemo">
     <a class="layui-btn btn layui-btn-xs" lay-event="info">详情</a>
+    {{# if(d.status == 0){ }}
     <a class="layui-btn btn layui-btn-danger layui-btn-xs" lay-event="pro">处理</a>
+    {{# } }}
 </script>
 <script>
 
@@ -104,7 +106,7 @@
                 , {field: 'company', title: '公司名称'}
                 , {field: 'industry', title: '所在行业'}
                 , {field: 'status_c', title: '状态'}
-                , {width: 160, title: '操作', align: 'center', toolbar: '#barDemo'}
+                , {width: 160, title: '操作', align: 'left', toolbar: '#barDemo'}
             ]]
         });
 

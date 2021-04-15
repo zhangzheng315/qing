@@ -54,6 +54,7 @@ class Live extends Controller
         $data = [
             'mobile' => $data['phone'],
             'password' => $data['password'],
+            'type' => 1,
         ];
         $url = 'https://login.lighos.com/api/v1/admin/login';
         $res = $this->liveCurl($data, $url);

@@ -16,6 +16,8 @@ class Index extends Controller
         $data = request()->param();
         $pid = isset($data['id']) ? $data['id'] : 1;
         $banner_list = $banner_service->bannerListByPid($pid);
+        $ad_list = $banner_service->bannerListByPid(10000); //广告
+        $banner_list = array_merge($ad_list, $banner_list);
         $article_list = $article_service->getFirstHome();
         return $this->fetch('', compact('banner_list', 'article_list'));
     }
