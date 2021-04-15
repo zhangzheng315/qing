@@ -70,6 +70,7 @@ Route::rule('login', 'index/login/login');                          //登陆
 //footer
 Route::rule('statement', 'index/index/legalNotice');                //法律声明
 Route::rule('licence', 'index/index/licence');                      //增值电信经营许可证
+Route::rule('certificate', 'index/index/licence');                  //一系列证书
 Route::rule('privacy', 'index/index/privacy');                      //隐私协议
 Route::rule('protocol', 'index/index/serviceAgreement');            //服务协议
 

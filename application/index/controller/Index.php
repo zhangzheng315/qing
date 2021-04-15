@@ -42,6 +42,25 @@ class Index extends Controller
     // 增值电信经营许可证
     public function licence()
     {
-        return $this->fetch();
+        $type = input('get.type');
+        $img = '';
+        $title = '';
+        if($type == 'licence'){
+            $img = '/static/image/index1/licence.jpg';
+            $title = '增值电信经营许可证';
+        }else if($type == 'Weblog'){
+            $img = '/static/image/index1/weblog.jpg';
+            $title = '沪网文【2020】3647-260号';
+        }else if($type == 'television'){
+            $img = '/static/image/index1/television.jpeg';
+            $title = '广播电视节目制作经营许可证（沪）字第04046号';
+        }else if($type == 'ICP1'){
+            $img = '/static/image/index1/ICP1.png';
+            $title = 'ICP沪B2-20200997 [信息服务]';
+        }else if($type == 'ICP2'){
+            $img = '/static/image/index1/ICP2.png';
+            $title = 'ICP B2-20200715 [多方通信]';
+        }
+        return $this->fetch('',['img'=>$img,'title'=>$title]);
     }
 }
