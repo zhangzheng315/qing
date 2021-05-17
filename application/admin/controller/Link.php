@@ -84,14 +84,14 @@ class Link extends Common{
         }
         $id = $request->param('id');
 //        $where = ['id' => $id];
-        $linkinfo = Db::table('think_link')->select();
+        $info = Db::table('think_link')->where('id',$id)->find();
 //        $navigation =Db::table('think_navigation')->where(['deleted_time' => 0])->select();
-//        $info['navigation_list'] = $navigation;where('id',$id)->
-        if(!$linkinfo){
-            return show($this->fail,'获取失败',$this->error());
+//        $info['navigation_list'] = $navigation;
+        if(!$info){
+            return show($this->ok,'ok',$info);
         }else{
-            return show($this->ok,'获取成功',$linkinfo);
-            return $linkinfo;
+            return show($this->ok,'ok',$info);
+
         }
     }
 
