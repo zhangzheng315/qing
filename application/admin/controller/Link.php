@@ -58,9 +58,9 @@ class Link extends Common{
         }
         $res = Db::name('link')->insertGetId($rules);
         if($res){
-            return show($this->ok,'添加友链成功！',$this->linkService->message);
+            return show($this->ok,'添加友链成功！');
         }else{
-            return show($this->fail,'添加友链失败！',$this->linkService->error);
+            return show($this->fail,'添加友链失败！');
             return false;
         }
     }
