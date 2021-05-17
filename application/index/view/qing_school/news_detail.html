@@ -2348,7 +2348,9 @@
                     <ul class="hot-tags-list">
                         {if(isset($hot_label))}
                         {foreach($hot_label as $item)}
+                        {dede:tag type:current}
                         <li><a href="{$top_url}?label={$item.name}" class="hot-tag-item">{$item.name}</a></li>
+                        {/dede:tag}
                         {/foreach}
                         {/if}
                     </ul>
