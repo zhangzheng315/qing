@@ -113,10 +113,10 @@
                         {if($article_list)}
                         {foreach($article_list as $item)}
                         <li class="cause-item">
-                            <a href="/blog/detail?id={$item.id}&pid=0" class="cause-cover" style="background: url({$item.cover_img_url});background-size: cover">
+                            <a href="/blog-detail/{$item.id}/0.html" class="cause-cover" style="background: url({$item.cover_img_url});background-size: cover">
                             </a>
                             <div class="cause-des">
-                                <a href="/blog/detail?id={$item.id}&pid=0" class="cause-title">
+                                <a href="/blog-detail/{$item.id}/0.html" class="cause-title">
                                     <h3>
                                         {if($item.pid == 1)}
                                             <i class="cause-icon icon-item-case"></i>
@@ -163,7 +163,7 @@
                         {if($article_list)}
                         {foreach($article_list as $item)}
                         <li class="cause-item">
-                            <a href="/blog/detail?id={$item.id}&pid=0">
+                            <a href="/blog-detail/{$item.id}/0.html">
                                 <h3>
                                     {$item.title}
                                 </h3>
@@ -174,7 +174,7 @@
                                 <i class="vertical-bar">|</i>
                                 <span class="category">{$item.pid_name}</span>
                             </div>
-                            <a href="/blog/detail?id={$item.id}&pid=0" class="cause-item-desc">
+                            <a href="/blog-detail/{$item.id}/0.html" class="cause-item-desc">
                                 <img src="{$item.cover_img_url}" alt="">
                                 <p>{$item.second_title}</p>
                             </a>
@@ -209,7 +209,7 @@
                         {if(isset($list))}
                         {foreach($list['hot_article'] as $item)}
                         <li class="article-item">
-                            <a href="/blog/detail?id={$item.id}&pid=11" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
+                            <a href="/blog-detail/{$item.id}/11.html" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
                                 <p>{$item.title}</p>
                                 <span class="time">{$item.time}</span>
                             </a>
@@ -221,7 +221,7 @@
                         {if(isset($list))}
                         {foreach($list['recommend'] as $item)}
                         <li class="article-item">
-                            <a href="/blog/detail?id={$item.id}&pid=12" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
+                            <a href="/blog-detail/{$item.id}/12.html" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
                                 <p>{$item.title}</p>
                                 <span class="time">{$item.time}</span>
                             </a>
@@ -280,7 +280,7 @@
                     <ul class="hot-tags-list">
                         {if(isset($hot_label))}
                         {foreach($hot_label as $item)}
-                        <li><a href="/blog?label={$item.name}" class="hot-tag-item">{$item.name}</a></li>
+                        <li><a href="/blog/label/{$item.name}" class="hot-tag-item">{$item.name}</a></li>
                         {/foreach}
                         {/if}
                     </ul>

@@ -1308,7 +1308,7 @@
                                 var child = pingChild(item.sub, res.nav_id.id);
                             }
                             $('.menu_nav').append('<li class="menu-item  menu-item-product ' + active + '">\n' +
-                                '                    <a style="cursor: pointer;display: block">' + item.menu_name + '</a>\n' +
+                                '                    <a style="cursor: pointer;display: block" href="/private.html">' + item.menu_name + '</a>\n' +
                                 '                    <div class="pull-down-pannel pull-down-pannel-product">\n' +
                                 '                        <div class="product-pannel">\n' +
                                 child +
@@ -1320,7 +1320,7 @@
                                 var child = aboutChild(item.sub, res.nav_id.id);
                             }
                             $('.menu_nav').append('<li class="menu-item  menu-item-about ' + active + '">\n' +
-                                '                    <a style="cursor: pointer;display: block">' + item.menu_name + '</a>\n' +
+                                '                    <a style="cursor: pointer;display: block" href="/about.html">' + item.menu_name + '</a>\n' +
                                 '                    <div class="pull-down-pannel pull-down-pannel-about">\n' +
                                 '                        <div class="drop-pannel-content">\n' +
                                 '<div class="panel-left">\n' +
@@ -1331,7 +1331,7 @@
                                 '</li>');
                         } else {
                             $('.menu_nav').append('<li class="menu-item ' + active + '">\n' +
-                                '                    <a style="cursor: pointer;display: block" href="' + item.url_action + '">' + item.menu_name + '</a>\n' +
+                                '                    <a style="cursor: pointer;display: block" href="' + item.url_action + '.html'+'">' + item.menu_name + '</a>\n' +
                                 '                </li>');
                         }
                     }

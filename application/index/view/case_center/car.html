@@ -99,13 +99,13 @@
                         {if($case_list)}
                         {foreach($case_list as $item)}
                         <li class="cause-item">
-                            <a href="/case/detail?type_id=2&id={$item.id}" class="cause-cover"
+                            <a href="/case-detail/type_id=2/id/{$item.id}.html" class="cause-cover"
                                target="_blank"
                                style="background: url({$item.cover_img_url});background-size: cover;
  background-position: center;">
                             </a>
                             <div class="cause-des">
-                                <a href="/case/detail?type_id=2&id={$item.id}" class="cause-title">
+                                <a href="/case-detail/type_id/2/id/{$item.id}.html" class="cause-title">
                                     <h3>
                                         <i class="cause-icon icon-item-solution"></i>
                                         {$item.title}
@@ -140,7 +140,7 @@
                         {if(isset($case_list))}
                         {foreach($case_list as $item)}
                         <li class="cause-item">
-                            <a href="/case/detail?type_id=2&id={$item.id}">
+                            <a href="/case-detail/type_id/2/id/{$item.id}.html">
                                 <h3>
                                     {$item.title}
                                 </h3>
@@ -155,7 +155,7 @@
                                 {/foreach}
                                 {/if}
                             </div>
-                            <a href="/case/detail?type_id=2&id={$item.id}" class="cause-item-desc">
+                            <a href="/case-detail/type_id/2/id/{$item.id}.html" class="cause-item-desc">
                                 <img src="{$item.cover_img_url}" alt="">
                                 <p>{$item.second_title}</p>
                             </a>
@@ -189,7 +189,7 @@
                         {if($hot_and_rem['hot_case'])}
                         {foreach($hot_and_rem['hot_case'] as $item)}
                         <li class="article-item">
-                            <a href="/case/detail?type_id=2&id={$item.id}" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
+                            <a href="/case-detail/type_id/2/id/{$item.id}.html" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
                                 <p>{$item.title}</p>
                                 <span class="time">{$item.time}</span>
                             </a>
@@ -201,7 +201,7 @@
                         {if($hot_and_rem['recommend_case'])}
                         {foreach($hot_and_rem['recommend_case'] as $item)}
                         <li class="article-item">
-                            <a href="/case/detail?type_id=3&id={$item.id}" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
+                            <a href="/case-detail/type_id/3/id/{$item.id}.html" class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
                                 <p>{$item.title}</p>
                                 <span class="time">{$item.time}</span>
                             </a>
@@ -261,7 +261,7 @@
                     <ul class="hot-tags-list">
                         {if(!empty($label_list))}
                         {foreach($label_list as $item)}
-                        <li><a href="{$action}?pid={$pid}&label={$item.name}" class="hot-tag-item">{$item.name}</a></li>
+                        <li><a href="{$action}/pid/{$pid}/label/{$item.name}.html" class="hot-tag-item">{$item.name}</a></li>
                         {/foreach}
                         {/if}
                     </ul>
