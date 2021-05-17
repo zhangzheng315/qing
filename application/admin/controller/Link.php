@@ -52,16 +52,15 @@ class Link extends Common{
             [
                 'name' => '缺少参数@name',
             ];
-        $validate = new Validate($rules,$msg);
-        if(!$validate->check($request->param())){
-            return show($this->fail,$validate->getError());
-        }
+//        $validate = new Validate($rules,$msg);
+//        if(!$validate->check($request->param())){
+//            return show($this->fail,$validate->getError());
+//        }
         $res = Db::name('link')->insertGetId($rules);
         if($res){
-            return show($this->ok,'添加友链成功！');
+            return show($this->ok,'添加友链成功！',$res);
         }else{
-            return show($this->fail,'添加友链失败！');
-            return false;
+            return show($this->fail,'添加友链失败！',$res);
         }
     }
 
