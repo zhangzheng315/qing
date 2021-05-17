@@ -41,7 +41,7 @@
                     </div>
                     <div class="btns">
                         <a class="login" href="/login">登录</a>
-                        <a class="free-btn" href="http://login.qingtv.com/signUp" target="_blank">免费试用</a>
+                        <a class="free-btn" href="http://login.qingtv.com/signUp.html" target="_blank">免费试用</a>
                     </div>
                     <ul class="layui-nav" lay-filter="leftNav">
                         <li class="layui-nav-item">
@@ -294,8 +294,9 @@
                     <ul class="hot-tags-list">
                         {if(isset($hot_label))}
                         {foreach($hot_label as $item)}
+<<<<<<< HEAD
                         {dede:tag row='30' sort='month}
-                        <li><a href="/blog-dynamic/2/{$item.name}" class="hot-tag-item">{$item.name}</a></li>
+                        <li><a href="/blog-dynamic/2/{$item.name}.html" class="hot-tag-item">{$item.name}</a></li>
                         {/dede:tag}
 <!--                        <li><a href="/blog/dynamic?pid=2&label={$item.name}" class="hot-tag-item">{$item.name}</a></li>-->
                         {/foreach}
@@ -325,7 +326,7 @@
        <!-- 免费试用 -->
        <div id="free-banner">
         <h2>全功能免费试用，0成本体验轻直播带来的改变</h2>
-        <a href="http://login.qingtv.com/signUp" target="_blank" class="free_btn">免费试用</a>
+        <a href="http://login.qingtv.com/signUp.html" target="_blank" class="free_btn">免费试用</a>
      </div>
      <!-- 底部 -->
      {include file="common/footer"}

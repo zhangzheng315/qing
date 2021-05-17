@@ -58,9 +58,9 @@ class Link extends Common{
         }
         $res = Db::name('link')->insertGetId($rules);
         if($res){
-            return show($this->ok,'添加友链成功！',$this->linkService->message);
+            return show($this->ok,'添加友链成功！');
         }else{
-            return show($this->fail,'添加友链失败！',$this->linkService->error);
+            return show($this->fail,'添加友链失败！');
             return false;
         }
     }
@@ -84,14 +84,14 @@ class Link extends Common{
         }
         $id = $request->param('id');
 //        $where = ['id' => $id];
-        $linkinfo = Db::table('think_link')->select();
+        $info = Db::table('think_link')->where('id',$id)->find();
 //        $navigation =Db::table('think_navigation')->where(['deleted_time' => 0])->select();
-//        $info['navigation_list'] = $navigation;where('id',$id)->
-        if(!$linkinfo){
-            return show($this->fail,'获取失败',$this->error());
+//        $info['navigation_list'] = $navigation;
+        if(!$info){
+            return show($this->ok,'ok',$info);
         }else{
-            return show($this->ok,'获取成功',$linkinfo);
-            return $linkinfo;
+            return show($this->ok,'ok',$info);
+
         }
     }
 
@@ -105,10 +105,10 @@ class Link extends Common{
                 'id' => $_POST["id"],
             ];
         $data =[
-                'linkname' => $_POST["linkname"],
-                'link_url' => $_POST["linkurl"],
-                'order' =>  $_POST['order'],
-                'status' => $_POST['status']
+                'linkname' => $_POST["linkname"] ?? '',
+                'link_url' => $_POST["linkurl"] ?? '',
+                'order' =>  $_POST['order'] ?? 0,
+                'status' => $_POST['status'] ?? 0
         ];
         $msg =
             [
@@ -122,7 +122,7 @@ class Link extends Common{
         if($res){
             return show($this->ok,'修改成功',$res);
         }else{
-            return show($this->fail,'修改失败',error);
+            return show($this->ok,'数据未更改',$res);
         }
     }
 

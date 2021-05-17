@@ -41,7 +41,7 @@
                 </div>
                 <div class="btns">
                     <a class="login" href="/login">登录</a>
-                    <a class="free-btn" href="http://login.qingtv.com/signUp" target="_blank">免费试用</a>
+                    <a class="free-btn" href="http://login.qingtv.com/signUp.html" target="_blank">免费试用</a>
                 </div>
                 <ul class="layui-nav" lay-filter="leftNav">
                     <li class="layui-nav-item">
@@ -64,27 +64,27 @@
     <!-- 导航栏 -->
     <nav>
         <div class="layui-container school-nav">
-            <a href="/blog" class="active">
+            <a href="/blog.html" class="active">
                 <i class="icon-nav-item icon-nav-home"></i>
                 <span>内容中心</span>
             </a>
-            <a href="/blog/demo">
+            <a href="/blog/demo.html">
                 <i class="icon-nav-item icon-nav-case"></i>
                 <span>案例解析</span>
             </a>
-            <a href="/blog/dynamic">
+            <a href="/blog/dynamic.html">
                 <i class="icon-nav-item icon-nav-product"></i>
                 <span>产品动态</span>
             </a>
-            <a href="/blog/archives">
+            <a href="/blog/archives.html">
                 <i class="icon-nav-item icon-nav-live"></i>
                 <span>直播资讯</span>
             </a>
-            <a href="/video">
+            <a href="/video.html">
                 <i class="icon-nav-item icon-nav-video"></i>
                 <span>视频学院</span>
             </a>
-            <a href="/guide">
+            <a href="/guide.html">
                 <i class="icon-nav-item icon-nav-case"></i>
                 <span>直播百科</span>
             </a>
@@ -244,7 +244,7 @@
                     </div>
                     <ul class="hot-products-list">
                         <li>
-                            <a href="/live" class="hot-products-item" target="_blank">
+                            <a href="/live.html" class="hot-products-item" target="_blank">
                                 <i class="icon-hot-product icon-hot-product_1"></i>
                                 <span>企业直播</span>
                             </a>
@@ -283,7 +283,7 @@
                         {if(isset($hot_label))}
                         {foreach($hot_label as $item)}
                         {dede:tag row='30' sort='month}
-                        <li><a href="/blog/label/{$item.name}" class="hot-tag-item">{$item.name}</a></li>
+                        <li><a href="/blog/label/{$item.name}.html" class="hot-tag-item">{$item.name}</a></li>
                         {/dede:tag}
 <!--                        <li><a href="/blog?label={$item.name}" class="hot-tag-item">{$item.name}</a></li>-->
                         {/foreach}
@@ -313,7 +313,7 @@
     <!-- 免费试用 -->
     <div id="free-banner">
        <h2>全功能免费试用，0成本体验轻直播带来的改变</h2>
-       <a href="http://login.qingtv.com/signUp" target="_blank" class="free_btn">免费试用</a>
+       <a href="http://login.qingtv.com/signUp.html" target="_blank" class="free_btn">免费试用</a>
     </div>
     <!-- 底部 -->
     {include file="common/footer"}

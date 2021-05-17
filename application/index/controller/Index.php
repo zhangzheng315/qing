@@ -26,7 +26,7 @@ class Index extends Controller
     public function linkList()
     {
         $where = [ 'status' => 1 ];
-        $link_list = Db::name('link')->where($where)->select();
+        $link_list = Db::name('link')->where($where)->order(['order'=>'desc'])->select();
         return $link_list;
     }
 
