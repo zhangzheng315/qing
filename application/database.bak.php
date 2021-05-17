@@ -1,25 +1,16 @@
 <?php
-// +----------------------------------------------------------------------
-// | ThinkPHP [ WE CAN DO IT JUST THINK ]
-// +----------------------------------------------------------------------
-// | Copyright (c) 2006~2018 http://thinkphp.cn All rights reserved.
-// +----------------------------------------------------------------------
-// | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
-// +----------------------------------------------------------------------
-// | Author: liu21st <liu21st@gmail.com>
-// +----------------------------------------------------------------------
 
 return [
     // 数据库类型
     'type'            => 'mysql',
     // 服务器地址
-    'hostname'        => '172.16.160.251',
+    'hostname'        => '127.0.0.1',
     // 数据库名
-    'database'        => 'qingtv_www',
+    'database'        => 'qingtv_com',
     // 用户名
-    'username'        => 'qingtv_www',
+    'username'        => 'qingtv_com',
     // 密码
-    'password'        => '19861016',
+    'password'        => 'z19861016',
     // 端口
     'hostport'        => '3306',
     // 连接dsn
