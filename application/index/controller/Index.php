@@ -19,6 +19,7 @@ class Index extends Controller
         $banner_list = array_merge($ad_list, $banner_list);
         $article_list = $article_service->getFirstHome();
         $linkInfo = $this->linkList();
+
         return $this->fetch('', compact('banner_list', 'article_list','linkInfo'));
     }
 
