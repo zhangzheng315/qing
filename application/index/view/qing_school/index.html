@@ -138,7 +138,9 @@
                                     <i class="vertical-bar">|</i>
                                     {if(!empty($item.label))}
                                     {foreach($item.label as $label)}
-                                    <a href="" class="cause-tag-item">{$label}</a>
+                                    {dede:tag type:current}
+                                    <a href="/blog/label/{$label}" class="cause-tag-item">{$label}</a>
+                                    {/dede:tag}
                                     {/foreach}
                                     {/if}
                                     <span class="post-views">
@@ -280,7 +282,10 @@
                     <ul class="hot-tags-list">
                         {if(isset($hot_label))}
                         {foreach($hot_label as $item)}
+                        {dede:tag row='30' sort='month}
                         <li><a href="/blog/label/{$item.name}.html" class="hot-tag-item">{$item.name}</a></li>
+                        {/dede:tag}
+<!--                        <li><a href="/blog?label={$item.name}" class="hot-tag-item">{$item.name}</a></li>-->
                         {/foreach}
                         {/if}
                     </ul>

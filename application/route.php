@@ -52,26 +52,28 @@ Route::rule('case', 'index/case_center/index');                     // 案例中
 Route::rule('case-detail/[:id]/[:type_id]','index/case_center/caseDetail');          // 案例详情
 Route::rule('case/detail','index/case_center/caseDetail');          // 案例详情
 Route::rule('case/medical','index/case_center/medical');            // 医疗案例
-Route::rule('case-medical','index/case_center/medical');            // 医疗案例
-Route::rule('case/education','index/case_center/education');        // 教育案例教育案例
-Route::rule('case-education/[:label]','index/case_center/education');        // 教育案例
+
+Route::rule('case-medical/[:pid]/[:label]','index/case_center/medical');            // 医疗案例
+Route::rule('case/education','index/case_center/education');        // 教育案例
+Route::rule('case-education/[:pid]/[:label]','index/case_center/education');        // 教育案例
+
 Route::rule('case/finance','index/case_center/finance');            // 金融案例
 Route::rule('case-finance/[:pid]/[:label]','index/case_center/finance');            // 金融案例
 Route::rule('case/car','index/case_center/car');                    // 汽车案例
-Route::rule('case-car','index/case_center/car');                    // 汽车案例
+Route::rule('case-car/[:pid]/[:label]','index/case_center/car');                    // 汽车案例
 Route::rule('case/technology','index/case_center/technology');      // 科技案例
-Route::rule('case-technology','index/case_center/technology');      // 科技案例
+Route::rule('case-technology/[:pid]/[:label]','index/case_center/technology');      // 科技案例
 Route::rule('case/property','index/case_center/property');          // 地产案例
-Route::rule('case-property','index/case_center/property');          // 地产案例
+Route::rule('case-property/[:pid]/[:label]','index/case_center/property');          // 地产案例
 
 // 轻学院
 Route::rule('blog', 'index/qing_school/index');                     // 轻学院内容中心
 Route::rule('blog/demo', 'index/qing_school/caseAn');               // 轻学院案例解析
-Route::rule('blog-demo', 'index/qing_school/caseAn');               // 轻学院案例解析
+Route::rule('blog-demo/[:pid]/[:label]', 'index/qing_school/caseAn');               // 轻学院案例解析
 Route::rule('blog/dynamic', 'index/qing_school/products');          // 轻学院产品动态
-Route::rule('blog-dynamic', 'index/qing_school/products');          // 轻学院产品动态
+Route::rule('blog-dynamic/[:pid]/[:label]', 'index/qing_school/products');          // 轻学院产品动态
 Route::rule('blog/archives', 'index/qing_school/liveNews');         // 轻学院直播资讯
-Route::rule('blog-archives', 'index/qing_school/liveNews');         // 轻学院直播资讯
+Route::rule('blog-archives/[:pid]/[:label]', 'index/qing_school/liveNews');         // 轻学院直播资讯
 Route::rule('video', 'index/qing_school/videoCourse');              // 轻学院视频
 Route::rule('guide', 'index/qing_school/article');                  // 直播百科
 Route::rule('blog/detail','index/qing_school/newsDetail');          // 轻学院内容详情页

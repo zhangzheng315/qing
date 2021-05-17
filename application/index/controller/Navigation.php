@@ -13,7 +13,7 @@ class Navigation extends Controller
         $nav_list = $navigation_service->navigationListClass();
 
         $url = request()->param()['url'];
-        $url = rtrim($url, '/');
+        $url = rtrim($url, '/.html');
         $last = substr($url, -1);
         $url_arr = explode('/', $url);
         $last_url = $url_arr[count($url_arr)-1];

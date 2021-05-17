@@ -119,7 +119,9 @@
 
                                     {if(!empty($item['label']))}
                                     {foreach($item['label'] as $val)}
-                                    <a href="" class="cause-tag-item">{$val}</a>
+                                    {dede:tag type:current}
+                                    <a href="{$action}/{$pid}/{$val}.html" class="cause-tag-item">{$val}</a>
+                                    {/dede:tag}
                                     {/foreach}
                                     {/if}
 
@@ -151,7 +153,9 @@
                                 <i class="vertical-bar">|</i>
                                 {if(!empty($item['label']))}
                                 {foreach($item['label'] as $val)}
-                                <a href="" class="cause-tag-item">{$val}</a>
+                                {dede:tag type:current}
+                                <a href="{$action}?pid={$pid}&label={$val}" class="cause-tag-item">{$val}</a>
+                                {/dede:tag}
                                 {/foreach}
                                 {/if}
                             </div>
@@ -264,7 +268,10 @@
                     <ul class="hot-tags-list">
                         {if(!empty($label_list))}
                         {foreach($label_list as $item)}
-                        <li><a href="{$action}/pid/{$pid}/label/{$item.name}.html" class="hot-tag-item">{$item.name}</a></li>
+                        {dede:tag row='30' sort='month}
+                        <li><a href="{$action}/{$pid}/{$item.name}.html" class="hot-tag-item">{$item.name}</a></li>
+                        {/dede:tag}
+<!--                        <li><a href="{$action}?pid={$pid}&label={$item.name}" class="hot-tag-item">{$item.name}</a></li>-->
                         {/foreach}
                         {/if}
                     </ul>
