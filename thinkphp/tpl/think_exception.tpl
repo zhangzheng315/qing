@@ -488,7 +488,6 @@
     </body>
     <script src="/static/jquery-3.2.1.min.js"></script>
     <script>
-        console.log(window.location.host);
         var num = 4
         var timer = setInterval(() => {
             if (num === 0) {

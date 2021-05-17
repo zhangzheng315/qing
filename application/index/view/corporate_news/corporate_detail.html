@@ -2161,7 +2161,7 @@
                     </div>
                     <div class="btns">
                         <a class="login" href="/login">登录</a>
-                        <a class="free-btn" href="http://login.qingtv.com/signUp" target="_blank">免费试用</a>
+                        <a class="free-btn" href="http://login.qingtv.com/signUp.html" target="_blank">免费试用</a>
                     </div>
                     <ul class="layui-nav" lay-filter="leftNav">
                         <li class="layui-nav-item">
@@ -2264,7 +2264,7 @@
                             <div class="article-link-item">
                                 上一篇
                                 <a
-                                    href="/news/detail?id={$info['pre_nex']['pre_article']['id']}">
+                                    href="/news/detail/id={$info['pre_nex']['pre_article']['id'].html}">
                                     {$info['pre_nex']['pre_article']['title']}
                                 </a>
                             </div>
@@ -2273,7 +2273,7 @@
                             <div class="article-link-item">
                                 下一篇
                                 <a
-                                    href="/news/detail?id={$info['pre_nex']['nex_article']['id']}">
+                                    href="/news/detail?id={$info['pre_nex']['nex_article']['id'].html}">
                                     {$info['pre_nex']['nex_article']['title']}
                                 </a>
                             </div>

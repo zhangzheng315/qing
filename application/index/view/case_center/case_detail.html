@@ -2171,7 +2171,7 @@
                     </div>
                     <div class="btns">
                         <a class="login" href="/login">登录</a>
-                        <a class="free-btn" href="http://login.qingtv.com/signUp" target="_blank">免费试用</a>
+                        <a class="free-btn" href="http://login.qingtv.com/signUp.html.html" target="_blank">免费试用</a>
                     </div>
                     <ul class="layui-nav" lay-filter="leftNav">
                         <li class="layui-nav-item">
@@ -2271,7 +2271,7 @@
                             <div class="article-link-item">
                                 上一篇
                                 <a
-                                    href="/case/detail?id={$pre_and_nex['pre_case']['id']}&type_id={$pre_and_nex['type_id']}">
+                                    href="/case-detail/{$pre_and_nex['pre_case']['id']}/{$pre_and_nex['type_id']}.html">
                                     {$pre_and_nex['pre_case']['title']}
                                 </a>
                             </div>
@@ -2280,7 +2280,7 @@
                             <div class="article-link-item">
                                 下一篇
                                 <a
-                                    href="/case/detail?id={$pre_and_nex['nex_case']['id']}&type_id={$pre_and_nex['type_id']}">
+                                    href="/case-detail/{$pre_and_nex['nex_case']['id']}/{$pre_and_nex['type_id']}.html">
                                     {$pre_and_nex['nex_case']['title']}
                                 </a>
                             </div>
@@ -2309,8 +2309,7 @@
                         <ul class="hot-tags-list">
                             {if(!empty($label_list))}
                             {foreach($label_list as $item)}
-                            <li><a href="{$pid['pid_url']}?pid={$info['pid']}&label={$item.name}"
-                                    class="hot-tag-item">{$item.name}</a></li>
+                            <li><a href="/case-education/{$info['pid']}/{$item.name}.html" class="hot-tag-item">{$item.name}</a></li>
                             {/foreach}
                             {/if}
                         </ul>
@@ -2331,7 +2330,7 @@
                             {if($hot_and_rem['hot_case'])}
                             {foreach($hot_and_rem['hot_case'] as $item)}
                             <li class="article-item">
-                                <a href="/case/detail?type_id=2&id={$item.id}" class="link" title="{$item.second_title}"
+                                <a href="/case-detail/{$item.id}/2.html" class="link" title="{$item.second_title}"
                                     target="_blank" rel="noopener noreferrer">
                                     <p>{$item.title}</p>
                                     <span class="time">{$item.time}</span>
@@ -2344,7 +2343,7 @@
                             {if($hot_and_rem['recommend_case'])}
                             {foreach($hot_and_rem['recommend_case'] as $item)}
                             <li class="article-item">
-                                <a href="/case/detail?type_id=2&id={$item.id}" class="link" title="{$item.second_title}"
+                                <a href="/case-detail/{$item.id}/2.html" class="link" title="{$item.second_title}"
                                     target="_blank" rel="noopener noreferrer">
                                     <p>{$item.title}</p>
                                     <span class="time">{$item.time}</span>
