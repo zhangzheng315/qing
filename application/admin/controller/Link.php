@@ -46,7 +46,8 @@ class Link extends Common{
                 'linkname' => $_POST['name'],
                 'link_url' => $_POST['link_url'],
                 'order' =>    $_POST['order'],
-                'status' =>   $_POST['status']
+                'status' =>   $_POST['status'],
+                'link_rel' => $_POST['link_rel']
             ];
         $msg =
             [
@@ -107,7 +108,8 @@ class Link extends Common{
                 'linkname' => $_POST["linkname"] ?? '',
                 'link_url' => $_POST["linkurl"] ?? '',
                 'order' =>  $_POST['order'] ?? 0,
-                'status' => $_POST['status'] ?? 0
+                'status' => $_POST['status'] ?? 0,
+                'link_rel' => $_POST['link_rel'] ?? 1
         ];
         $msg =
             [
