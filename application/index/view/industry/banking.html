@@ -1912,10 +1912,10 @@
                 {if(isset($banner_list) && $banner_list)}
                 {foreach $banner_list as $item}
                 <div class="banner-item">
-                    <a href="{$item.img_link}">
+                    <a href="{$item.img_link}.html">
                         <img class="banner-img" src="{$item.img_url}" alt="">
                     </a>
-                    <div class="text-{$item.format}">
+                    <div class="text-{$item.format}.html">
                         <h2 style='font-size: {$item.title_size}px;
                             font-weight: bold;
                             color:{$item.title_color};
@@ -1930,7 +1930,7 @@
                             line-height: 1.5;'>{$item.introduction}</h5>
 
                         {if($item.button_status == 1)}
-                        <a class="banner-a" href="{$item.button_link}" style='z-index: 10;
+                        <a class="banner-a" href="{$item.button_link}.html" style='z-index: 10;
                             display: block;
                             width: 167px;
                             height: 44px;
