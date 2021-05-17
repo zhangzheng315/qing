@@ -1,8 +1,7 @@
 <?php
 
 namespace app\index\controller;
-
-use app\admin\model\Banner;
+use think\Db;
 use app\admin\serve\ArticleService;
 use app\admin\serve\BannerService;
 use think\Controller;
@@ -19,8 +18,20 @@ class Index extends Controller
         $ad_list = $banner_service->bannerListByPid(10000); //广告
         $banner_list = array_merge($ad_list, $banner_list);
         $article_list = $article_service->getFirstHome();
-        return $this->fetch('', compact('banner_list', 'article_list'));
+        //
+        $linkInfo = $this->linkList();
+
+        return $this->fetch('', compact('banner_list', 'article_list','linkInfo'));
     }
+
+    //获取友链数据
+    public function linkList()
+    {
+        $where = [ 'status' => 1 ];
+        $link_list = Db::name('link')->where($where)->select();
+        return $link_list;
+    }
+
     // 法律声明
     public function legalNotice()
     {

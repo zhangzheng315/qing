@@ -2236,7 +2236,7 @@
                         {if($article_info['pre_nex']['pre_btn'] == 1)}
                         <div class="article-link-item">
                             上一篇
-                            <a href="/blog/detail?id={$article_info['pre_nex']['pre_article']['id']}&pid=>{$pid}">
+                            <a href="/blog-detail/{$article_info['pre_nex']['pre_article']['id']}/{$pid}.html">
                                 {$article_info['pre_nex']['pre_article']['title']}
                             </a>
                         </div>
@@ -2244,7 +2244,7 @@
                         {if($article_info['pre_nex']['nex_btn'] == 1)}
                         <div class="article-link-item">
                             下一篇
-                            <a href="/blog/detail?id={$article_info['pre_nex']['nex_article']['id']}&pid=>{$pid}">
+                            <a href="/blog-detail/{$article_info['pre_nex']['nex_article']['id']}/{$pid}.html">
                                 {$article_info['pre_nex']['nex_article']['title']}
                             </a>
                         </div>
@@ -2275,7 +2275,7 @@
                         {if(isset($list))}
                         {foreach($list['hot_article'] as $item)}
                         <li class="article-item">
-                            <a href="/blog/detail?id={$item.id}&pid=>11" class="link" title="{$item.second_title}" target="_blank"
+                            <a href="/blog-detail/{$item.id}/11.html" class="link" title="{$item.second_title}" target="_blank"
                                rel="noopener noreferrer">
                                 <p>{$item.title}</p>
                                 <span class="time">{$item.time}</span>
@@ -2288,7 +2288,7 @@
                         {if(isset($list))}
                         {foreach($list['recommend'] as $item)}
                         <li class="article-item">
-                            <a href="/blog/detail?id={$item.id}&pid=>12" class="link" title="{$item.second_title}" target="_blank"
+                            <a href="/blog-detail/{$item.id}/12.html" class="link" title="{$item.second_title}" target="_blank"
                                rel="noopener noreferrer">
                                 <p>{$item.title}</p>
                                 <span class="time">{$item.time}</span>

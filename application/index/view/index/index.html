@@ -1064,7 +1064,8 @@
                             opacity: .8;
                             font-size: {$item.in_size}px;
                             width: {$item.width};
-                            margin: 49px 0 85px;
+                            margin: 40px 0 85px;
+                            margin-bottom: 100px;
                             text-align: {$item.format};
                             line-height: 1.5;'>{$item.introduction}</h5>
 
@@ -1795,11 +1796,10 @@
                 </div>
             </div>
             <div class="layui-container flex-left link-friend">
-                <div class="home-footer-link"><a class="home-footer-link-item" target="_blank" href="http://www.sicbon.com/">行邦通讯</a></div>
-                <!-- <div class="home-footer-link"><a class="home-footer-link-item" target="_blank" href="http://www.sicbon.com/">斗鱼TV</a></div> -->
-                <!-- <div class="home-footer-link"><a class="home-footer-link-item" target="_blank" href="http://www.sicbon.com/">天美工作室</a></div> -->
-                <!-- <div class="home-footer-link"><a class="home-footer-link-item" target="_blank" href="http://www.sicbon.com/">语文企业文化</a></div> -->
-                <!-- <div class="home-footer-link"><a class="home-footer-link-item" target="_blank" href="http://www.sicbon.com/">咔吧咔吧传媒</a></div> -->
+
+                {foreach($linkInfo as $item)}
+                <div class="home-footer-link"><a class="home-footer-link-item" target="_blank" href="{$item.link_url}">{$item.linkname}</a></div>
+                {/foreach}
             </div>
 
             <div class="pc-footer-bottom" style="height: auto;margin-top: 40px;">
