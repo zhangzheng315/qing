@@ -21,7 +21,7 @@ Route::rule('service', 'index/site_service/index');                 //现场服�
 // 解决方案
 Route::rule('solution', 'index/solution/index');                    // 解决方案首页
 Route::rule('solution/medical', 'index/industry/medicalCare');      // 行业-医疗直播
-Route::rule('solution-medical', 'index/industry/medicalCare');      // 行业-医疗直播
+Route::rule('solution-medical/[:pid]/[:label]', 'index/industry/medicalCare');      // 行业-医疗直播
 Route::rule('solution/education', 'index/industry/education');      // 行业-教育直播
 Route::rule('solution-education', 'index/industry/education');      // 行业-教育直播
 Route::rule('solution/banking', 'index/industry/banking');          // 行业-金融直播
@@ -53,8 +53,8 @@ Route::rule('case-detail/[:id]/[:type_id]','index/case_center/caseDetail');     
 Route::rule('case/detail','index/case_center/caseDetail');          // 案例详情
 Route::rule('case/medical','index/case_center/medical');            // 医疗案例
 Route::rule('case-medical','index/case_center/medical');            // 医疗案例
-Route::rule('case/education','index/case_center/education');        // 教育案例
-Route::rule('case-education','index/case_center/education');        // 教育案例
+Route::rule('case/education','index/case_center/education');        // 教育案例教育案例
+Route::rule('case-education/[:label]','index/case_center/education');        // 教育案例
 Route::rule('case/finance','index/case_center/finance');            // 金融案例
 Route::rule('case-finance/[:pid]/[:label]','index/case_center/finance');            // 金融案例
 Route::rule('case/car','index/case_center/car');                    // 汽车案例

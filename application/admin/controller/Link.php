@@ -105,10 +105,10 @@ class Link extends Common{
                 'id' => $_POST["id"],
             ];
         $data =[
-                'linkname' => $_POST["linkname"],
-                'link_url' => $_POST["linkurl"],
-                'order' =>  $_POST['order'],
-                'status' => $_POST['status']
+                'linkname' => $_POST["linkname"] ?? '',
+                'link_url' => $_POST["linkurl"] ?? '',
+                'order' =>  $_POST['order'] ?? 0,
+                'status' => $_POST['status'] ?? 0
         ];
         $msg =
             [
@@ -122,7 +122,7 @@ class Link extends Common{
         if($res){
             return show($this->ok,'修改成功',$res);
         }else{
-            return show($this->fail,'修改失败',error);
+            return show($this->ok,'数据未更改',$res);
         }
     }
 
