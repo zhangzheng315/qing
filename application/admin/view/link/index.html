@@ -104,7 +104,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">rel状态</label>
             <div class="layui-input-block">
-                <input name="link_rel" id="link_rel" value="1" type="checkbox" checked lay-skin="switch">
+                <input name="link_rel" id="link_rel" value=""   type="checkbox" checked lay-skin="switch">
             </div>
         </div>
         <div class="layui-form-item">
@@ -177,7 +177,12 @@
                             $('#status').removeAttr('checked');
                         } else {
                             $('#status').attr('checked', true);
+                        }if (res.data.link_rel === 0) {
+                            $('#link_rel').removeAttr('checked');
+                        } else {
+                            $('#link_rel').attr('checked', true);
                         }
+
 
                         form.render();
                     }
