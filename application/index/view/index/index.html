@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0,maximum-scale=1, minimum-scale=1,user-scalable=no">
-    <title>轻直播_企业直播服务平台,医疗直播领军者,云视频定制服务商</title>
-    <meta name="keywords" content="企业直播,云视频通讯,医疗直播,营销直播,活动直播,直播定制服务"/>
+    <title>云视频直播平台_企业活动、医疗直播间-轻直播首页</title>
+    <meta name="keywords" content="企业直播平台,活动直播,医疗直播,云视频,营销直播,直播定制服务"/>
     <meta name="description"
           content="轻直播是国内知名的企业级云视频定制服务平台,服务全球500强,为企业提供医疗直播、手术直播、活动直播、会议直播、营销直播、年会直播等全场景解决方案,热线:400-920-1599。"/>
     <link rel="stylesheet" href="/static/css/index/index.css">
@@ -15,6 +15,1011 @@
     <script type="text/javascript" src="/static/jquery/jquery.min.js"></script>
     <script src="/static/layui/layui.js"></script>
     <script>(function (i, s, o, g, r, a, m) { i["DaoVoiceObject"] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; a.charset = "utf-8"; m.parentNode.insertBefore(a, m) })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/04cefad5.js", "daovoice")</script>
+    <!--底部文件的样式-->
+    <style>
+        body {
+            background-color: #f2f4f7;
+        }
+        .pc-footer-bottom-left>a {
+            color: #f3f3f3;
+        }
+        .pc-footer-bottom-left>span:hover, .pc-footer-bottom-left>a:hover {
+            color: #00cc99;
+        }
+        .footer-left-img {
+            display: inline-block;
+
+        }
+        @media screen and (min-width:1300px) {
+            .mobile-footer-top {
+                display: none;
+            }
+
+            .mobile-footer-bottom {
+                display: none;
+            }
+
+            .pc-footer-top {
+                padding-bottom: 15px;
+                padding-top: 40px;
+            }
+
+            .footer-left-img {
+                width: 180px;
+                height: 67px;
+            }
+
+            .footer-left-phone {
+                margin-top: 30px;
+            }
+
+            .span-dot {
+                display: inline-block;
+                font-size: 12px;
+                font-family: Microsoft YaHei;
+                font-weight: 400;
+                color: #ebebeb;
+                height: 30px;
+                display: flex;
+                align-items: center;
+            }
+            .span-dot>span, .span-doot>span {
+                margin-left: 8px;
+            }
+
+            .span-doot {
+                display: inline-block;
+                font-size: 12px;
+                font-family: 'Microsoft YaHei';
+                font-weight: 400;
+                color: #ebebeb;
+                /* margin-top: 22px; */
+                height: 30px;
+                display: flex;
+                align-items: center;
+            }
+
+            .yuyue {
+                margin-top: 60px;
+                display: flex;
+            }
+
+            .yanshi {
+                width: 120px;
+                height: 36px;
+                line-height: 36px;
+                text-align: center;
+                border: 1px solid #f3f3f3;
+                box-sizing: border-box;
+                border-radius: 18px;
+                color: #f3f3f3;
+                font-size: 12px;
+                font-family: 'Microsoft YaHei';
+                cursor: pointer;
+            }
+
+            /* .language {
+            width: 130px;
+            height: 40px;
+            line-height: 40px;
+            border: 1px solid #f3f3f3;
+            border-radius: 20px;
+            color: #f3f3f3;
+            font-size: 16px;
+            font-family: 'Microsoft YaHei';
+            cursor: pointer;
+            margin-left: 50px;
+            position: relative;
+        }
+
+        .language>span.language-map {
+            margin-left: 10px;
+        }
+        .language>span.select-down {
+            margin-left: 10px;
+        } */
+
+            /* 语言选择 */
+            .footer-select-language {
+                width: 120px;
+                z-index: 99;
+                position: relative;
+                margin-left: 30px;
+            }
+
+            .footer-select-language .footer-select-trigger {
+                display: block;
+                position: relative;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+                padding: 0 30px;
+                border-radius: 18px;
+                width: 120px;
+                height: 36px;
+                font-size: 12px;
+                border: 1px solid #f3f3f3;
+                white-space: nowrap;
+                overflow: hidden;
+                /* -o-text-overflow: ellipsis; */
+                /* text-overflow: ellipsis; */
+                line-height: 36px;
+                color: #f3f3f3;
+                cursor: pointer;
+            }
+            .footer-select-text {
+                font-size: 12px;
+                display: inline-block;
+                text-align: center;
+                width: 60px;
+            }
+
+            .footer-select-language:hover .footer-dropdown {
+                display: block;
+            }
+
+            .footer-select-language .footer-select-trigger::before {
+                content: "";
+                background-image: url(/static/image/index1/diqiu.svg);
+                background-size: contain;
+                width: 16px;
+                height: 16px;
+                display: block;
+                position: absolute;
+                top: 10px;
+                left: 16px;
+            }
+
+            .footer-select-language .footer-select-trigger::after {
+                content: "";
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                margin-top: -2px;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 6px 6px 0;
+                border-color: #f3f3f3 transparent;
+                -webkit-transition: transform .2s ease, -webkit-transform .2s ease;
+                transition: transform .2s ease, -webkit-transform .2s ease;
+            }
+
+            .footer-select-language:hover .footer-select-trigger::after {
+                transform: rotate(-180deg);
+            }
+
+            .footer-select-language .footer-dropdown {
+                position: absolute;
+                left: 0;
+                bottom: 100%;
+                z-index: 99;
+                width: 120px;
+                background: #333333;
+                border-radius: 5px;
+                display: none;
+            }
+
+            .footer-dropdown .footer-dropdown-option {
+                display: block;
+                padding: 0 12px;
+                height: 34px;
+                line-height: 34px;
+                font-size: 12px;
+                color: #fff;
+                -webkit-transition: all .25s ease;
+                -o-transition: all .25s ease;
+                transition: all .25s ease;
+            }
+
+            .footer-dropdown-option:hover {
+                color: #00cc99;
+            }
+
+            .footer-right>dl {
+                color: #f3f3f3;
+                width: 116px;
+                margin-left: 25px;
+            }
+
+            .footer-right>dl>dt {
+                font-size: 18px;
+                font-family: Microsoft YaHei;
+                font-weight: 400;
+                color: #f3f3f3;
+                margin-bottom: 16px;
+            }
+
+            .footer-right>dl>dd>a {
+                display: inline-block;
+                font-size: 12px;
+                font-family: Microsoft YaHei;
+                font-weight: 400;
+                color: #ebebeb;
+                line-height: 30px;
+                height: 30px;
+            }
+
+            .watchus {
+                margin-top: 100px;
+                color: #f3f3f3;
+                margin-left: 40px;
+            }
+
+            .watchus>h3 {
+                font-size: 24px;
+                font-family: Microsoft YaHei;
+                font-weight: 400;
+                color: #f3f3f3;
+            }
+
+            .pc-footer-bottom {
+                height: 50px;
+            }
+
+            .pc-footer-bottom-left {
+                width: 375px;
+                display: flex;
+                align-items: center;
+            }
+
+            .pc-footer-bottom-right {
+                width: 755px;
+            }
+
+            .pc-footer-bottom-left>span {
+                color: #f3f3f3;
+                font-size: 12px;
+                line-height: 50px;
+                height: 50px;
+            }
+            .pc-footer-bottom-left>a {
+                font-size: 12px;
+                margin-right: 10px;
+            }
+
+            .pc-footer-bottom-right>span,.pc-footer-bottom-right>a {
+                color: #f3f3f3;
+                font-size: 12px;
+                line-height: 50px;
+                height: 50px;
+            }
+            .pc-footer-bottom-right>a {
+                margin-right: 60px;
+            }
+        }
+
+        @media screen and (max-width: 1300px) and (min-width: 992px) {
+            .mobile-footer-top {
+                display: none;
+            }
+
+            .mobile-footer-bottom {
+                display: none;
+            }
+
+            .pc-footer-top {
+                padding-bottom: 15px;
+                padding-top: 30px;
+            }
+
+            .footer-left-img {
+                width: 160px;
+                height: 55px;
+            }
+
+            .footer-left-phone {
+                margin-top: 20px;
+            }
+
+            .span-dot {
+                display: inline-block;
+                font-size: 12px;
+                font-family: Microsoft YaHei;
+                font-weight: 400;
+                color: #ebebeb;
+                display: flex;
+                height: 30px;
+                align-items: center;
+            }
+            .span-dot>span, .span-doot>span {
+                margin-left: 6px;
+            }
+
+            .span-doot {
+                display: inline-block;
+                font-size: 12px;
+                font-family: 'Microsoft YaHei';
+                font-weight: 400;
+                color: #ebebeb;
+                display: flex;
+                height: 30px;
+                align-items: center;
+            }
+
+            .yuyue {
+                margin-top: 40px;
+                display: flex;
+            }
+
+            .yanshi {
+                width: 110px;
+                height: 32px;
+                line-height: 32px;
+                text-align: center;
+                border: 1px solid #f3f3f3;
+                border-radius: 16px;
+                color: #f3f3f3;
+                font-size: 12px;
+                font-family: 'Microsoft YaHei';
+                cursor: pointer;
+                box-sizing: border-box;
+            }
+
+            .language {
+                width: 110px;
+                height: 32px;
+                line-height: 32px;
+                /* text-align: center; */
+                border: 1px solid #f3f3f3;
+                border-radius: 16px;
+                color: #f3f3f3;
+                font-size: 12px;
+                font-family: 'Microsoft YaHei';
+                cursor: pointer;
+                margin-left: 20px;
+                position: relative;
+            }
+
+            .language>span.language-map {
+                margin-left: 10px;
+            }
+
+            .language>span.select-down {
+                margin-left: 10px;
+            }
+
+            /* 语言选择 */
+            .footer-select-language {
+                width: 112px;
+                z-index: 99;
+                position: relative;
+                margin-left: 20px;
+            }
+
+            .footer-select-language .footer-select-trigger {
+                display: block;
+                position: relative;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+                padding: 0 30px;
+                border-radius: 16px;
+                width: 112px;
+                height: 32px;
+                font-size: 12px;
+                border: 1px solid #f3f3f3;
+                white-space: nowrap;
+                overflow: hidden;
+                line-height: 32px;
+                color: #f3f3f3;
+                cursor: pointer;
+            }
+
+            .footer-select-text {
+                font-size: 12px;
+                display: inline-block;
+                text-align: center;
+                width: 52px;
+            }
+
+            .footer-select-language:hover .footer-dropdown {
+                display: block;
+            }
+
+            .footer-select-language .footer-select-trigger::before {
+                content: "";
+                background-image: url(/static/image/map.png);
+                background-size: contain;
+                width: 14px;
+                height: 14px;
+                display: block;
+                position: absolute;
+                top: 8px;
+                left: 15px;
+            }
+
+            .footer-select-language .footer-select-trigger::after {
+                content: "";
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                margin-top: -2px;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 5px 5px 0;
+                border-color: #f3f3f3 transparent;
+                -webkit-transition: transform .2s ease, -webkit-transform .2s ease;
+                transition: transform .2s ease, -webkit-transform .2s ease;
+            }
+
+            .footer-select-language:hover .footer-select-trigger::after {
+                transform: rotate(-180deg);
+            }
+
+            .footer-select-language .footer-dropdown {
+                position: absolute;
+                left: 0;
+                bottom: 100%;
+                z-index: 99;
+                width: 112px;
+                background: #333333;
+                border-radius: 5px;
+                display: none;
+            }
+
+            .footer-dropdown .footer-dropdown-option {
+                display: block;
+                padding: 0 8px;
+                height: 30px;
+                line-height: 30px;
+                font-size: 12px;
+                color: #fff;
+                -webkit-transition: all .25s ease;
+                -o-transition: all .25s ease;
+                transition: all .25s ease;
+            }
+
+            .footer-dropdown-option:hover {
+                color: #00cc99;
+            }
+
+
+            .footer-right>dl {
+                color: #f3f3f3;
+                width: 100px;
+                margin-left: 20px;
+            }
+
+            .footer-right>dl>dt {
+                font-size: 17px;
+                font-family: Microsoft YaHei;
+                font-weight: 400;
+                color: #f3f3f3;
+                margin-bottom: 16px;
+            }
+
+            .footer-right>dl>dd>a {
+                font-size: 12px;
+                font-family: Microsoft YaHei;
+                font-weight: 400;
+                color: #ebebeb;
+                line-height: 30px;
+                height: 30px;
+            }
+
+            .watchus {
+                margin-top: 60px;
+                color: #f3f3f3;
+                margin-left: 30px;
+            }
+
+            .watchus>h3 {
+                font-size: 20px;
+                font-family: Microsoft YaHei;
+                font-weight: 400;
+                color: #f3f3f3;
+            }
+
+            .pc-footer-bottom {
+                height: 50px;
+            }
+
+
+            .pc-footer-bottom-left {
+                width: 336px;
+                /* flex: 2; */
+            }
+
+            .pc-footer-bottom-right {
+                width: 800px;
+                /* flex: 5; */
+                justify-content: flex-start;
+            }
+
+            .pc-footer-bottom-left>span,.pc-footer-bottom-left>a {
+                color: #f3f3f3;
+                font-size: 12px;
+                line-height: 50px;
+                height: 50px;
+            }
+
+            .pc-footer-bottom-right>span,.pc-footer-bottom-right>a {
+                color: #f3f3f3;
+                font-size: 12px;
+                line-height: 50px;
+                height: 50px;
+                margin-right: 48px;
+            }
+            .pc-footer-bottom-right>span:nth-child(1){
+                margin-right: 10px;
+            }
+
+        }
+
+        @media screen and (max-width: 992px) and (min-width: 820px) {
+            .layui-container {
+                width: 97% !important;
+                padding: 0 !important;
+            }
+            .mobile-footer-top {
+                display: none;
+            }
+
+            .mobile-footer-bottom {
+                display: none;
+            }
+
+            .pc-footer-top {
+                padding-bottom: 20px;
+                padding-top: 40px;
+            }
+
+            .footer-left-img {
+                width: 100px;
+            }
+
+            .footer-left-phone {
+                margin-top: 20px;
+            }
+
+            .span-dot {
+                display: inline-block;
+                font-size: 12px;
+                font-family: Microsoft YaHei;
+                font-weight: 400;
+                color: #ebebeb;
+                display: flex;
+                height: 30px;
+                align-items: center;
+            }
+            .span-dot>span, .span-doot>span {
+                margin-left: 6px;
+            }
+
+            .span-doot {
+                display: inline-block;
+                font-size: 12px;
+                font-family: 'Microsoft YaHei';
+                font-weight: 400;
+                color: #ebebeb;
+                display: flex;
+                height: 30px;
+                align-items: center;
+            }
+
+            .yuyue {
+                margin-top: 40px;
+                display: flex;
+            }
+
+            .yanshi {
+                width: 100px;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                border: 1px solid #f3f3f3;
+                border-radius: 15px;
+                color: #f3f3f3;
+                font-size: 12px;
+                font-family: 'Microsoft YaHei';
+                cursor: pointer;
+            }
+
+            .language {
+                width: 100px;
+                height: 30px;
+                line-height: 30px;
+                /* text-align: center; */
+                border: 1px solid #f3f3f3;
+                border-radius: 15px;
+                color: #f3f3f3;
+                font-size: 12px;
+                font-family: 'Microsoft YaHei';
+                cursor: pointer;
+                margin-left: 15px;
+                position: relative;
+            }
+
+            .language>span.language-map {
+                margin-left: 8px;
+            }
+
+            .language>span.select-down {
+                margin-left: 8px;
+            }
+
+            /* 语言选择 */
+            .footer-select-language {
+                width: 100px;
+                z-index: 99;
+                position: relative;
+                margin-left: 35px;
+            }
+
+            .footer-select-language .footer-select-trigger {
+                display: block;
+                position: relative;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+                padding: 0 35px;
+                border-radius: 15px;
+                width: 100px;
+                height: 30px;
+                font-size: 12px;
+                border: 1px solid #f3f3f3;
+                white-space: nowrap;
+                overflow: hidden;
+                -o-text-overflow: ellipsis;
+                text-overflow: ellipsis;
+                line-height: 30px;
+                color: #f3f3f3;
+                cursor: pointer;
+            }
+            .footer-select-text {
+                font-size: 12px;
+            }
+
+            .footer-select-language:hover .footer-dropdown {
+                display: block;
+            }
+
+            .footer-select-language .footer-select-trigger::before {
+                content: "";
+                background-image: url(/static/image/map.png);
+                background-size: contain;
+                width: 14px;
+                height: 14px;
+                display: block;
+                position: absolute;
+                top: 7px;
+                left: 12px;
+                background-repeat: no-repeat;
+            }
+
+            .footer-select-language .footer-select-trigger::after {
+                content: "";
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                margin-top: -2px;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 4px 4px 0;
+                border-color: #f3f3f3 transparent;
+                -webkit-transition: transform .2s ease, -webkit-transform .2s ease;
+                transition: transform .2s ease, -webkit-transform .2s ease;
+            }
+
+            .footer-select-language:hover .footer-select-trigger::after {
+                transform: rotate(-180deg);
+            }
+
+            .footer-select-language .footer-dropdown {
+                position: absolute;
+                left: 0;
+                bottom: 100%;
+                z-index: 99;
+                width: 100px;
+                background: #333333;
+                border-radius: 5px;
+                display: none;
+            }
+
+            .footer-dropdown .footer-dropdown-option {
+                display: block;
+                padding: 0 8px;
+                height: 30px;
+                line-height: 30px;
+                font-size: 12px;
+                color: #fff;
+                -webkit-transition: all .25s ease;
+                -o-transition: all .25s ease;
+                transition: all .25s ease;
+            }
+
+            .footer-dropdown-option:hover {
+                color: #00cc99;
+            }
+
+            .footer-right>dl {
+                color: #f3f3f3;
+                width: 80px;
+                margin-left: 20px;
+            }
+
+            .footer-right>dl>dt {
+                font-size: 16px;
+                font-family: Microsoft YaHei;
+                font-weight: 400;
+                color: #f3f3f3;
+                margin-bottom: 20px;
+            }
+
+            .footer-right>dl>dd>a {
+                font-size: 12px;
+                font-family: Microsoft YaHei;
+                font-weight: 400;
+                color: #ebebeb;
+                line-height: 24px;
+                height: 24px;
+            }
+
+            .watchus {
+                margin-top: 35px;
+                color: #f3f3f3;
+                margin-left: 20px;
+            }
+
+            .watchus>h3 {
+                font-size: 16px;
+                font-family: Microsoft YaHei;
+                font-weight: 400;
+                color: #f3f3f3;
+            }
+
+            .pc-footer-bottom {
+                height: 40px;
+            }
+
+            .pc-footer-bottom-left {
+                width: 265px;
+                /* flex: 5; */
+            }
+
+            .map-span {
+                margin-left: 0px;
+            }
+
+            .pc-footer-bottom-right {
+                width: 555px;
+                margin-left: 8px;
+                /* flex: 5; */
+            }
+
+            .pc-footer-bottom-left>span,.pc-footer-bottom-left>a {
+                color: #f3f3f3;
+                font-size: 12px;
+                line-height: 40px;
+                height: 40px;
+            }
+
+            .pc-footer-bottom-right>span,.pc-footer-bottom-right>a {
+                color: #f3f3f3;
+                font-size: 12px;
+                line-height: 40px;
+                height: 40px;
+            }
+            .pc-footer-bottom-right>span:nth-child(1){
+                flex: 6;
+            }
+        }
+
+        /* 移动端 */
+        @media screen and (max-width: 820px) and (min-width: 768px) {
+            .pc-footer-top {
+                display: none !important;
+            }
+
+            .pc-footer-bottom {
+                display: none !important;
+            }
+
+            .mobile-footer-top {
+                padding: 20px 15px 20px;
+            }
+
+            .mobile-footer-nav>li {
+                border-bottom: 1px solid #353535;
+                color: #f3f3f3;
+                position: relative;
+            }
+
+            .mobile-footer-nav>li>span {
+                display: inline-block;
+                width: 100%;
+                height: 52px;
+                line-height: 52px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            .mobile-footer-nav>li>span>i {
+                position: absolute;
+                font-size: 24px;
+                top: 0px;
+                right: 15px;
+            }
+
+            .mobile-footer-bottom>li {
+                height: 40px;
+                text-align: center;
+                color: #f3f3f3;
+            }
+
+            .footer-item {
+                /* padding: 10px 0; */
+                padding-left: 16px;
+                /* display: none; */
+                overflow: hidden;
+                transition: height 0.5s;
+            }
+
+            .footer-item.footer-item-show {
+                display: block;
+            }
+
+            .footer-item>a {
+                display: inline-block;
+                width: 100%;
+                height: 30px;
+                line-height: 30px;
+                font-size: 12px;
+                color: #afafaf;
+            }
+
+            .footer-item>a:hover {
+                color: #00cc99;
+            }
+
+
+        }
+
+        @media screen and (max-width: 768px) {
+            .pc-footer-top {
+                display: none !important;
+            }
+
+            .pc-footer-bottom {
+                display: none !important;
+            }
+
+            .mobile-footer-top {
+                padding: 20px 15px 20px;
+            }
+
+            .mobile-footer-nav>li {
+                border-bottom: 1px solid #353535;
+                color: #f3f3f3;
+                position: relative;
+            }
+
+            .mobile-footer-nav>li>span {
+                display: inline-block;
+                width: 100%;
+                height: 52px;
+                line-height: 52px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            .mobile-footer-nav>li>span>i {
+                position: absolute;
+                font-size: 24px;
+                top: 0px;
+                right: 15px;
+            }
+
+            .mobile-footer-bottom>li {
+                height: 40px;
+                text-align: center;
+                color: #f3f3f3;
+            }
+
+            .footer-item {
+                /* padding: 10px 0; */
+                /* display: none; */
+                padding-left: 16px;
+                overflow: hidden;
+                transition: height 0.5s;
+            }
+
+            .footer-item.footer-item-show {
+                display: block;
+            }
+
+            .footer-item>a {
+                display: inline-block;
+                width: 100%;
+                height: 30px;
+                line-height: 30px;
+                font-size: 12px;
+                color: #afafaf;
+            }
+
+            .footer-item>a:hover {
+                color: #00cc99;
+            }
+        }
+
+        .footer {
+            width: 100%;
+            box-sizing: border-box;
+            background: #252525;
+        }
+
+        /* .pc-footer-top {
+            padding-bottom: 30px;
+            padding-top: 75px;
+            border: 1px solid rgba(221, 218, 211, .3);
+        } */
+        .footer-left {
+            text-align: left;
+        }
+
+        .footer-left-img>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .yanshi:hover {
+            border: 1px solid #00cc99;
+            background: #00cc99;
+            color: #f3f3f3;
+        }
+
+        .language:hover {
+            background: #00cc99;
+            color: #f3f3f3;
+            border: 1px solid #00cc99;
+        }
+
+        .footer-right {
+            display: flex;
+        }
+
+        .footer-right>dl>dd:hover a {
+            color: #00cc99;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: space-between;
+        }
+        .pc-footer-bottom-left1 a,.pc-footer-bottom-left1 span{
+            line-height: 30px;
+            height: 30px;
+        }
+        .pc-footer-bottom-left1 span{
+            margin: 0 10px;
+        }
+        .link-friend-title {
+            color: white;
+            font-size: 16px;
+        }
+        .link-friend-title-wrap {
+            margin-top: 40px;
+        }
+        .link-friend {
+            margin-top: 20px;
+            color: #666666;
+            font-size: 16px;
+        }
+        .home-footer-link {
+            line-height: 50px;
+            height: 50px;
+        }
+        .home-footer-link-item {
+            color: #666666;
+            text-decoration: none;
+            padding-right: 20px;
+        }
+        .flex-left {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+
     <script>
         var _hmt = _hmt || [];
         (function () {
@@ -44,7 +1049,7 @@
                     {foreach $banner_list as $item}
                     <div class="banner-item">
                         <a href="{$item.img_link}">
-                            <img class="banner-img" src="{$item.img_url}" alt="">
+                            <img class="banner-img" src="{$item.img_url}" alt="企业直播">
                         </a>
                         <div class="text-{$item.format}">
                             <h2 style='font-size: {$item.title_size}px;
@@ -59,7 +1064,8 @@
                             opacity: .8;
                             font-size: {$item.in_size}px;
                             width: {$item.width};
-                            margin: 49px 0 85px;
+                            margin: 40px 0 85px;
+                            margin-bottom: 100px;
                             text-align: {$item.format};
                             line-height: 1.5;'>{$item.introduction}</h5>
 
@@ -87,8 +1093,8 @@
                     <ul class="stars">
                         <li>
                             <a href="/solution/medical">
-                                <img class="img-show" src="/static/image/index1/yiliao_w.svg" alt="">
-                                <img class="img-active" src="/static/image/index1/yiliao.svg" alt="">
+                                <img class="img-show" src="/static/image/index1/yiliao_w.svg" alt="医疗直播">
+                                <img class="img-active" src="/static/image/index1/yiliao.svg" alt="视频直播">
                                 <div>
                                     <h6>医疗直播方案</h6>
                                     <div class="line"></div>
@@ -98,8 +1104,8 @@
                         </li>
                         <li>
                             <a href="/function">
-                                <img class="img-show" src="/static/image/index1/daquan_w.svg" alt="">
-                                <img class="img-active" src="/static/image/index1/daquan.svg" alt="">
+                                <img class="img-show" src="/static/image/index1/daquan_w.svg" alt="活动直播">
+                                <img class="img-active" src="/static/image/index1/daquan.svg" alt="云视频">
                                 <div>
                                     <h6>视频功能大全</h6>
                                     <div class="line"></div>
@@ -109,8 +1115,8 @@
                         </li>
                         <li>
                             <a href="/service">
-                                <img class="img-show" src="/static/image/index1/xuanze_w.svg" alt="">
-                                <img class="img-active" src="/static/image/index1/xuanze.svg" alt="">
+                                <img class="img-show" src="/static/image/index1/xuanze_w.svg" alt="云视频">
+                                <img class="img-active" src="/static/image/index1/xuanze.svg" alt="直播平台">
                                 <div>
                                     <h6>为何选择我们</h6>
                                     <div class="line"></div>
@@ -163,7 +1169,7 @@
                 <div class="product-content">
                     <div class="product-item">
                         <div class="item-head">
-                            <img src="/static/image/index1/chanping.svg" alt="">
+                            <img src="/static/image/index1/chanping.svg" alt="云视频">
                             <h5>轻视云直播</h5>
                         </div>
                         <div class="item-body">
@@ -171,15 +1177,15 @@
                             </p>
                         </div>
                         <div class="item-footer">
-                            <button class="more"><a href="/live">了解更多</a>
+                            <button class="more"><a href="/live" rel="nofollow">了解更多</a>
                             </button>
                             <button class="free"><a href="http://login.qingtv.com/signUp"
-                                    target="_blank">免费试用</a></button>
+                                    target="_blank" rel="nofollow">免费试用</a></button>
                         </div>
                     </div>
                     <div class="product-item">
                         <div class="item-head">
-                            <img src="/static/image/index1/dingzhihua.svg" alt="">
+                            <img src="/static/image/index1/dingzhihua.svg" alt="企业直播">
                             <h5>定制化服务</h5>
                         </div>
                         <div class="item-body">
@@ -187,23 +1193,23 @@
                             </p>
                         </div>
                         <div class="item-footer">
-                            <button class="more"><a href="/develop">了解更多</a></button>
+                            <button class="more"><a href="/develop" rel="nofollow">了解更多</a></button>
                             <button class="free"><a href="http://login.qingtv.com/signUp"
-                                    target="_blank">预约体验</a></button>
+                                    target="_blank" rel="nofollow">预约体验</a></button>
                         </div>
                     </div>
                     <div class="product-item">
                         <div class="item-head">
-                            <img src="/static/image/index1/fuwu.svg" alt="">
+                            <img src="/static/image/index1/fuwu.svg" alt="活动直播">
                             <h5>现场服务</h5>
                         </div>
                         <div class="item-body">
                             <p>基于用户角度触发，超万次直播服务经验，从方案设计到现场执行，重现每一个细节的把控，致力于为用户提供全行业场景直播解决方案。</p>
                         </div>
                         <div class="item-footer">
-                            <button class="more"><a href="/service">了解更多</a></button>
+                            <button class="more"><a href="/service" rel="nofollow">了解更多</a></button>
                             <button class="free"><a href="http://login.qingtv.com/signUp"
-                                    target="_blank">预约体验</a></button>
+                                    target="_blank" rel="nofollow">预约体验</a></button>
                         </div>
                     </div>
                 </div>
@@ -259,25 +1265,25 @@
                     <div class="content-left">
                         <div class="left-item active">
                             <div>
-                                <img src="/static/image/index1/wending.svg" alt="">
+                                <img src="/static/image/index1/wending.svg" alt="企业直播平台图标">
                                 <h5>稳定</h5>
                             </div>
                         </div>
                         <div class="left-item">
                             <div>
-                                <img src="/static/image/index1/anquan.svg" alt="">
+                                <img src="/static/image/index1/anquan.svg" alt="活动直播平台图标">
                                 <h5>安全</h5>
                             </div>
                         </div>
                         <div class="left-item">
                             <div>
-                                <img src="/static/image/index1/kuaisu.svg" alt="">
+                                <img src="/static/image/index1/kuaisu.svg" alt="医疗直播平台图标">
                                 <h5>开放</h5>
                             </div>
                         </div>
                         <div class="left-item">
                             <div>
-                                <img src="/static/image/index1/chaoqing.svg" alt="">
+                                <img src="/static/image/index1/chaoqing.svg" alt="云视频图标">
                                 <h5>超清</h5>
                             </div>
                         </div>
@@ -331,19 +1337,19 @@
                             <h6>基于生态开发，具备模块化、灵活组合的aPaaS服务支持，进行快速搭建组合</h6>
                             <ul class="text-box">
                                 <li>
-                                    <img src="/static/image/index1/check_sign.svg" alt="">
+                                    <img src="/static/image/index1/check_sign.svg" alt="直播平台图标">
                                     <p>1. 提供API/SDK接口</p>
                                 </li>
                                 <li>
-                                    <img src="/static/image/index1/check_sign.svg" alt="">
+                                    <img src="/static/image/index1/check_sign.svg" alt="直播平台图标">
                                     <p>2. 自助式开放平台</p>
                                 </li>
                                 <li>
-                                    <img src="/static/image/index1/check_sign.svg" alt="">
+                                    <img src="/static/image/index1/check_sign.svg" alt="直播平台图标">
                                     <p>3. 支持集成化应用接入</p>
                                 </li>
                                 <li>
-                                    <img src="/static/image/index1/check_sign.svg" alt="">
+                                    <img src="/static/image/index1/check_sign.svg" alt="直播平台图标">
                                     <p>4. 多协议外部收权</p>
                                 </li>
                             </ul>
@@ -369,7 +1375,7 @@
                                     <p>4. RTMP/FLV/HLS等格式的播放流</p>
                                 </li>
                             </ul>
-                            <button><a href="http://login.qingtv.com/signUp" target="_blank">免费试用</a></button>
+                            <button><a href="http://login.qingtv.com/signUp" target="_blank" rel="nofollow">免费试用</a></button>
                         </div>
                     </div>
                 </div>
@@ -383,22 +1389,22 @@
                 <div class="solve-content">
                     <div class="solve-item">
                         <a href="/solution/train">
-                            <img src="/static/image/index/func1.png" alt="">
+                            <img src="/static/image/index/func1.png" alt="企业直播">
                             <div class="text">
                                 <h6>会议培训</h6>
                                 <p>身份认证、会议提问、回放学习多功能集于一身，量化培训效果，助力企业提高培训效率</p>
-                                <img src="/static/image/index1/jiantou-r.svg" alt="">
+                                <img src="/static/image/index1/jiantou-r.svg" alt="直播平台图标">
                                 <img class="white" src="/static/image/index1/jiantou_white.svg" alt="">
                             </div>
                         </a>
                     </div>
                     <div class="solve-item">
                         <a href="/solution/market">
-                            <img src="/static/image/index/func2.png" alt="">
+                            <img src="/static/image/index/func2.png" alt="企业直播">
                             <div class="text">
                                 <h6>营销直播</h6>
                                 <p>在线签到、广告引导、营销直播全案专属定制，从0到1快速搭建专属直播建，为品牌赋能</p>
-                                <img src="/static/image/index1/jiantou-r.svg" alt="">
+                                <img src="/static/image/index1/jiantou-r.svg" alt="直播平台图标">
                                 <img class="white" src="/static/image/index1/jiantou_white.svg" alt="">
 
                             </div>
@@ -406,68 +1412,68 @@
                     </div>
                     <div class="solve-item">
                         <a href="/solution/online">
-                            <img src="/static/image/index/func3.png" alt="">
+                            <img src="/static/image/index/func3.png" alt="活动直播">
                             <div class="text">
                                 <h6>电商直播</h6>
                                 <p>公聊、私聊、沉浸式场景体验，打造带货达人IP，万人同步在线，实时数据流分析监控</p>
-                                <img src="/static/image/index1/jiantou-r.svg" alt="">
+                                <img src="/static/image/index1/jiantou-r.svg" alt="直播平台图标">
                                 <img class="white" src="/static/image/index1/jiantou_white.svg" alt="">
                             </div>
                         </a>
                     </div>
                     <div class="solve-item">
                         <a href="/solution/enterprise">
-                            <img src="/static/image/index/func4.png" alt="">
+                            <img src="/static/image/index/func4.png" alt="视频直播">
                             <div class="text">
                                 <h6>空中宣讲会</h6>
                                 <p>异地视频连线，文档PPT展示、画中画等多种宣讲形式，15000+权威媒体资源曝光</p>
-                                <img src="/static/image/index1/jiantou-r.svg" alt="">
+                                <img src="/static/image/index1/jiantou-r.svg" alt="直播平台图标">
                                 <img class="white" src="/static/image/index1/jiantou_white.svg" alt="">
                             </div>
                         </a>
                     </div>
                     <div class="solve-item">
                         <a href="/solution/medicine">
-                            <img src="/static/image/index/func5.png" alt="">
+                            <img src="/static/image/index/func5.png" alt="医疗直播">
                             <div class="text">
                                 <h6>医学会议</h6>
                                 <p>多屏连麦、在线交流、远程接诊、急救指导等应用，让每一次的医学会议更有意义
                                 </p>
-                                <img src="/static/image/index1/jiantou-r.svg" alt="">
+                                <img src="/static/image/index1/jiantou-r.svg" alt="直播平台图标">
                                 <img class="white" src="/static/image/index1/jiantou_white.svg" alt="">
                             </div>
                         </a>
                     </div>
                     <div class="solve-item">
                         <a href="/solution/operation">
-                            <img src="/static/image/index/func6.png" alt="">
+                            <img src="/static/image/index/func6.png" alt="医疗直播">
                             <div class="text">
                                 <h6>手术示教</h6>
                                 <p>全科室线上直播，8K画质低延时，独家外科术野拍摄技术，赋能医疗事业更多可能</p>
-                                <img src="/static/image/index1/jiantou-r.svg" alt="">
+                                <img src="/static/image/index1/jiantou-r.svg" alt="直播平台图标">
                                 <img class="white" src="/static/image/index1/jiantou_white.svg" alt="">
                             </div>
                         </a>
                     </div>
                     <div class="solve-item">
                         <a href="/solution/meeting">
-                            <img src="/static/image/index/func7.png" alt="">
+                            <img src="/static/image/index/func7.png" alt="直播间">
                             <div class="text">
                                 <h6>大会直播</h6>
                                 <p>独具创新互动体验，支持现金打赏、礼包雨，让每一场大会直播都能绽放异彩</p>
-                                <img src="/static/image/index1/jiantou-r.svg" alt="">
+                                <img src="/static/image/index1/jiantou-r.svg" alt="直播平台图标">
                                 <img class="white" src="/static/image/index1/jiantou_white.svg" alt="">
                             </div>
                         </a>
                     </div>
                     <div class="solve-item">
                         <a href="/solution/annual">
-                            <img src="/static/image/index/func8.png" alt="">
+                            <img src="/static/image/index/func8.png" alt="直播间">
                             <div class="text">
                                 <h6>年会直播</h6>
                                 <p>同台PK、线上抽奖、竞猜红包等丰富的互动模式，让企业举办的年会盛典更有仪式感
                                 </p>
-                                <img src="/static/image/index1/jiantou-r.svg" alt="">
+                                <img src="/static/image/index1/jiantou-r.svg" alt="直播平台图标">
                                 <img class="white" src="/static/image/index1/jiantou_white.svg" alt="">
                             </div>
                         </a>
@@ -512,7 +1518,7 @@
                                 {foreach($article_list[0] as $item)}
                                 <div class="lunbo-item">
                                     <a href="/blog/detail?id={$item.id}&pid={$item.pid}">
-                                        <img src="{$item.cover_img_url}" alt="">
+                                        <img src="{$item.cover_img_url}" alt="云视频">
                                         <div class="text-box">
                                             <h6>{$item.title}</h6>
                                             <p>{$item.second_title}</p>
@@ -568,12 +1574,399 @@
                     <h2>私有化视频云部署架构</h2>
                     <h5>更符合政企、金融机构、学校、新媒体等的视频应用</h5>
                     <button class="free_button"><a href="http://login.qingtv.com/signUp"
-                            target="_blank">免费试用</a></button>
+                            target="_blank" rel="nofollow">免费试用</a></button>
 
                 </div>
             </div>
         </div>
-        {include file="common/footer"}
+        <div class="footer">
+            <div class="pc-footer-top">
+                <div class="layui-container flex">
+                    <div class="footer-left">
+                        <a class="footer-left-img" href="/">
+                            <img src="/static/image/index1/logo_white.svg" alt="云视频" />
+                        </a>
+                        <div class="footer-left-phone">
+                            <span class="span-dot">服务热线: <span style="color: #00cc99;font-size: 16px;">400-920-1599</span></span><br />
+                            <span class="span-doot">商务合作: <span style="font-size: 16px;">Marketing@sicbon.com</span></span><br />
+                            <span class="span-doot">投诉建议: <span style="font-size: 16px;">Service@sicbon.com</span></span>
+                        </div>
+                        <div class="yuyue">
+                            <div class="yanshi">
+                                预约上门演示 >
+                            </div>
+                            <div class="footer-select-language">
+                                <a href="javascript:;" class="footer-select-trigger">
+                                    <span class="footer-select-text">中文</span>
+                                </a>
+                                <div class="footer-dropdown">
+                                    <ul class="footer-dropdown-menu">
+                                        <li><a href="" class="footer-dropdown-option">中文</a></li>
+                                        <li><a href="" class="footer-dropdown-option">English</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="footer-right">
+                            <dl>
+                                <dt>关于轻直播</dt>
+                                <dd>
+                                    <a href="/about">公司介绍</a>
+                                </dd>
+                                <dd>
+                                    <a href="/advantage">
+                                        我们的优势
+                                    </a>
+                                </dd>
+                                <dd>
+                                    <a href="/news">
+                                        企业新闻
+                                    </a>
+                                </dd>
+                                <dd>
+                                    <a href="/partner">
+                                        渠道合作
+                                    </a>
+                                </dd>
+                                <dd>
+                                    <a href="/join">
+                                        加入我们
+                                    </a>
+                                </dd>
+                                <dd>
+                                    <a href="/contact">
+                                        联系我们
+                                    </a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    服务支持
+                                </dt>
+                                <dd>
+                                    <a href="/private">私有化部署</a>
+                                </dd>
+                                <dd>
+                                    <a href="/live">
+                                        轻直播平台
+                                    </a>
+                                </dd>
+                                <dd>
+                                    <a href="/develop">
+                                        直播集成开发
+                                    </a>
+                                </dd>
+                                <dd>
+                                    <a href="/develop/app">
+                                        APP/小程序开发
+                                    </a>
+                                </dd>
+                                <dd>
+                                    <a href="/service">
+                                        现场服务
+                                    </a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    行业方案
+                                </dt>
+                                <dd>
+                                    <a href="/solution/medical">医疗行业</a>
+                                </dd>
+                                <dd>
+                                    <a href="/solution/education">
+                                        教育行业
+                                    </a>
+                                </dd>
+                                <dd>
+                                    <a href="/solution/banking">金融行业</a>
+                                </dd>
+                                <dd>
+                                    <a href="/solution/media">传媒行业</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    场景方案
+                                </dt>
+                                <dd>
+                                    <a href="/solution/train">
+                                        会议培训
+                                    </a>
+                                </dd>
+                                <dd>
+                                    <a href="/solution/market">
+                                        营销直播
+                                    </a>
+                                </dd>
+                                <dd>
+                                    <a href="/solution/online">
+                                        电商直播
+                                    </a>
+                                </dd>
+                                <dd>
+                                    <a href="/solution/enterprise">
+                                        空中宣讲会
+                                    </a>
+                                </dd>
+                                <dd>
+                                    <a href="/solution/medicine">
+                                        医学会议
+                                    </a>
+                                </dd>
+                                <dd>
+                                    <a href="/solution/operation">
+                                        手术示教
+                                    </a>
+                                </dd>
+                                <dd>
+                                    <a href="/solution/meeting">
+                                        大会直播
+                                    </a>
+                                </dd>
+                                <dd>
+                                    <a href="/solution/annual">
+                                        年会直播
+                                    </a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    轻学院
+                                </dt>
+                                <dd>
+                                    <a href="/blog">
+                                        内容中心
+                                    </a>
+                                </dd>
+                                <dd>
+                                    <a href="/blog/demo">
+                                        案例解析
+                                    </a>
+                                </dd>
+                                <dd>
+                                    <a href="/blog/dynamic">
+                                        产品动态
+                                    </a>
+                                </dd>
+                                <dd>
+                                    <a href="/blog/archives">
+                                        直播资讯
+                                    </a>
+                                </dd>
+                                <dd>
+                                    <a href="/video">
+                                        视频学院
+                                    </a>
+                                </dd>
+                                <dd>
+                                    <a href="/guide">
+                                        直播百科
+                                    </a>
+                                </dd>
+                                <dd>
+                                    <a href="javascript:void(0)" class="footer-order">
+                                        预约演示
+                                    </a>
+                                </dd>
+                            </dl>
+                        </div>
+                        <!-- 关注我们 -->
+                        <!-- <div class="watchus">
+                     <h3>关注我们</h3>
+                     <span>
+                     </span>
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                </div> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 友情链接 -->
+            <div class="layui-container flex link-friend-title">
+                <div class="link-friend-title-wrap">
+                    友情链接：
+                </div>
+            </div>
+            <div class="layui-container flex-left link-friend">
+                {foreach($linkInfo as $item)}
+                <div class="home-footer-link"><a class="home-footer-link-item" target="_blank" href="{$item.link_url}" rel="nofollow">{$item.linkname}</a></div>
+                {/foreach}
+            </div>
+
+            <div class="pc-footer-bottom" style="height: auto;margin-top: 40px;">
+                <div class="layui-container flex">
+                    <div class="pc-footer-bottom-left pc-footer-bottom-left1" style="width: 100%;">
+                        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011402009282" rel="nofollow"><img src="https://images.innocomn.com/%E5%A4%87%E6%A1%88%E7%BC%96%E5%8F%B7%E5%9B%BE%E6%A0%87.png" style="float:left;margin-top: 5px;margin-right: 5px;" alt="云视频备案图标"/>沪公网安备 31011402009282号</a>
+                        <a href="/certificate?type=Weblog" target="_blank" rel="nofollow">沪网文【2020】3647-260号</a>
+                        <a href="/certificate?type=television" target="_blank" rel="nofollow">广播电视节目制作经营许可证（沪）字第04046号</a>
+                        <a href="/certificate?type=ICP1" target="_blank" rel="nofollow">ICP沪B2-20200997 [信息服务]</a>
+                        <a href="/certificate?type=ICP2" target="_blank" rel="nofollow">ICP B2-20200715 [多方通信]</a>
+                        <!--                    <span>法律顾问：易法通</span>-->
+                    </div>
+                </div>
+            </div>
+
+            <div class="pc-footer-bottom">
+                <div class="layui-container flex">
+                    <div class="pc-footer-bottom-left">
+                        <!--                    <a href="/certificate?type=licence" target="_blank">增值电信经营许可证</a>-->
+                        <!-- <span class="map-span">网站地图</span> -->
+                        <a  href="/guide?id=31" target="_blank" rel="nofollow">法律声明</a>
+                        <a  href="/guide?id=32" target="_blank" rel="nofollow">隐私协议</a>
+                        <a  href="/guide?id=33" target="_blank" rel="nofollow">服务协议</a>
+                    </div>
+                    <div class="pc-footer-bottom-right flex">
+                        <span>©2021 Copyright SHANGHAI BONWEY TECHNOLOGY CO. LTD；. All right</span>
+                        <a style="color: #fff;" href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" rel="nofollow"> 沪ICP备16029097号-8</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-footer-top">
+                <ul class="mobile-footer-nav">
+                    <li unfold='1'>
+                        <span>关于轻直播<i>+</i></span>
+                        <div class="footer-item footer-about-item">
+                            <a href="/about">公司介绍</a>
+                            <a href="/advantage">
+                                我们的优势
+                            </a>
+                            <a href="/news">
+                                企业新闻
+                            </a>
+                            <a href="/partner">
+                                渠道合作
+                            </a>
+                            <a href="/join">
+                                加入我们
+                            </a>
+                            <a href="/contact">
+                                联系我们
+                            </a>
+                        </div>
+                    </li>
+                    <li unfold='1'>
+                        <span>服务支持<i>+</i></span>
+                        <div class="footer-item footer-service-item">
+                            <a href="/private">私有化部署</a>
+                            <a href="/live">
+                                轻直播平台
+                            </a>
+                            <a href="/develop">
+                                直播集成开发
+                            </a>
+                            <a href="/develop/app">
+                                APP/小程序开发
+                            </a>
+                            <a href="/service">
+                                现场服务
+                            </a>
+                        </div>
+                    </li>
+                    <li unfold='1'>
+                        <span>行业方案<i>+</i></span>
+                        <div class="footer-item footer-industry-item">
+                            <a href="/solution/medical">医疗行业</a>
+                            <a href="/solution/education">
+                                教育行业
+                            </a>
+                            <a href="/solution/banking">金融行业</a>
+                            <a href="/solution/media">传媒行业</a>
+
+                        </div>
+                    </li>
+                    <li unfold='1'>
+                        <span>场景方案<i>+</i></span>
+                        <div class="footer-item footer-scene-item">
+                            <a href="/solution/train">
+                                会议培训
+                            </a>
+                            <a href="/solution/market">
+                                营销直播
+                            </a>
+                            <a href="/solution/online">
+                                电商直播
+                            </a>
+                            <a href="/solution/enterprise">
+                                空中宣讲会
+                            </a>
+                            <a href="/solution/medicine">
+                                医学会议
+                            </a>
+                            <a href="/solution/operation">
+                                手术示教
+                            </a>
+                            <a href="/solution/meeting">
+                                大会直播
+                            </a>
+                            <a href="/solution/annual">
+                                年会直播
+                            </a>
+                        </div>
+                    </li>
+                    <li unfold='1'>
+                        <span>轻学院<i>+</i></span>
+                        <div class="footer-item footer-college-item">
+                            <a href="/blog">
+                                内容中心
+                            </a>
+                            <a href="/blog/demo">
+                                案例解析
+                            </a>
+                            <a href="/blog/dynamic">
+                                产品动态
+                            </a>
+                            <a href="/blog/archives">
+                                直播资讯
+                            </a>
+                            <a href="/video">
+                                视频学院
+                            </a>
+                            <a href="/guide">
+                                直播百科
+                            </a>
+                            <a href="javascript:void(0)" class="footer-order">预约演示</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="mobile-footer-bottom">
+
+                <li style="font-size: 12px;height: auto;padding: 0 5px;margin: 5px 0">
+                    <a style="color: white" href="/certificate?type=television" target="_blank">广播电视节目制作经营许可证（沪）字第04046号</a>
+                    <!--                <span>法律顾问：易法通</span>-->
+                </li>
+                <li style="font-size: 12px;height: auto;padding: 0 5px;margin: 5px 0">
+                    <a style="color: white;margin-right: 8px" target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011402009282" ><img src="https://images.innocomn.com/%E5%A4%87%E6%A1%88%E7%BC%96%E5%8F%B7%E5%9B%BE%E6%A0%87.png" style="margin-right: 3px"/>沪公网安备 31011402009282号</a>
+                    <a style="color: white" href="/certificate?type=Weblog" target="_blank">沪网文【2020】3647-260号</a>
+                </li>
+                <li style="font-size: 12px;height: auto;padding: 0 5px;margin: 5px 0">
+                    <a style="color: white" href="/certificate?type=ICP1" target="_blank">ICP沪B2-20200997 [信息服务]</a>
+                    <a style="color: white" href="/certificate?type=ICP2" target="_blank">ICP B2-20200715 [多方通信]</a>
+                </li>
+            </div>
+            <div class="mobile-footer-bottom">
+                <li style="font-size: 12px;">
+                    <!-- 增值电信经营许可证 -->
+                    <!--                <a style="color: #fff;" href="/certificate?type=licence" target="_blank">增值电信经营许可证</a>-->
+                    <!-- <span class="map-span">网站地图</span> -->
+                    <a style="color: #fff;" href="/guide?id=31" target="_blank">法律声明</a>
+                    <a style="color: #fff;" href="/guide?id=32" target="_blank">隐私协议</a>
+                    <a style="color: #fff;" href="/guide?id=33" target="_blank">服务协议</a>
+                </li>
+                <li style="font-size: 12px;">
+                    ©2021 Copyright SHANGHAI BONWEY TECHNOLOGY CO., LTD；. All rights reserved. <a style="color: #fff;" href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank"> 沪ICP备16029097号-8</a>
+                </li>
+            </div>
+        </div>
+
     </div>
 </body>
 <script src="/static/common/js/header-footer.js"></script>
@@ -709,6 +2102,62 @@
 
     //   显示预约演示弹出框
     $('.banner-a').on('click', function () {
+        $('#order-container').show();
+        $('.q-modal').show();
+    })
+</script>
+<!--底部文件-->
+<script>
+    $('.mobile-footer-nav li').on('click', function () {
+        //  $(this).toggleClass('footer-item-show')
+        const unfold = $(this).attr('unfold');
+        const realHeight = $(this).find('.footer-item').attr('real-height');
+        //  if($(this).hasClass('footer-item-show')) {
+        // $(this).find('span>i')[0].innerText = '-';
+        // $(this).find('.footer-item').show();
+
+        //  } else {
+        //     $(this).find('span>i')[0].innerText = '+';
+        //     $(this).find('.footer-item').hide();
+        //  }
+
+        if (unfold && unfold == '1') {
+            $(this).find('span>i')[0].innerText = '-';
+            $(this).find('.footer-item').css({
+                'height': realHeight + 'px',
+            });
+        } else {
+            $(this).find('.footer-item').css({
+                'height': '0',
+            });
+            $(this).find('span>i')[0].innerText = '+';
+        }
+
+        $(this).attr('unfold', unfold === '0' ? '1' : '0');
+
+    })
+
+
+    //     function init(){
+    //      $('.footer-item').attr('real-height', $('.footer-about-item').height());
+    //      $('.footer-item').attr('real-height', $('.footer-service-item').height());
+    //      $('.footer-item').css({
+    //          'height': '0px'
+    //      })
+    //  }
+
+    //  $(document).ready(function() {
+    //     const deviceWidth = $(window).width();
+    //     if(deviceWidth < 820) {
+    //         init();
+    //     }
+    //  })
+    //   显示预约演示弹出框
+    $('.yanshi').on('click', function () {
+        $('#order-container').show();
+        $('.q-modal').show();
+    })
+    $('.footer-order').on('click', function () {
         $('#order-container').show();
         $('.q-modal').show();
     })

@@ -259,7 +259,7 @@
                             {if(isset($video_list) && $video_list)}
                             {foreach($video_list as $item)}
                             <li>
-                                <a href="/video/tutorial?browse=1&id={$item.id}">
+                                <a href="/video-tutorial/1/{$item.id}.html">
                                     <img src="{$item.cover_img_url}" alt="">
                                     <div class="txt">
                                         <h6>{$item.title}</h6>
@@ -353,7 +353,7 @@
                 if (res.status === 200) {
                     for (let item of res.data.data) {
                         $('.study-box').append('<li>\n' +
-                            '                            <a href="/video/tutorial?browse=1&id=' + item.id + '">\n' +
+                            '                            <a href="/video-tutorial/1/' + item.id + '.html' + '">\n' +
                             '                                <img src="' + item.cover_img_url + '" alt="">\n' +
                             '                                <div class="txt">\n' +
                             '                                    <h6>' + item.title + '</h6>\n' +

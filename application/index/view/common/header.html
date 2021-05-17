@@ -1130,7 +1130,7 @@
             <div class="q-logo">
                 <a href="/" style="display: block;height: 100%;">
                     <h1>
-                        <img src="/static/image/index1/logo_text.svg" alt="">
+                        <img src="/static/image/index1/logo_text.svg" alt="云视频">
                     </h1>
                 </a>
             </div>
@@ -1140,10 +1140,10 @@
                 </ul>
             </div>
             <div class="nav-btn">
-                <a class="login" href="{:url('/login')}">
+                <a class="login" href="{:url('/login')}" rel="nofollow">
                     登录
                 </a>
-                <a class="free-use" href="http://login.qingtv.com/signUp" target="_blank">
+                <a class="free-use" href="http://login.qingtv.com/signUp" target="_blank" rel="nofollow">
                     免费试用
                 </a>
             </div>
@@ -1165,7 +1165,7 @@
             <div class="q-logo">
                 <a href="/">
                 <h1>
-                    <img src="/static/image/index1/logo_text.svg" alt="">
+                    <img src="/static/image/index1/logo_text.svg" alt="云视频">
                 </h1>
             </a>
             </div>
@@ -1308,7 +1308,7 @@
                                 var child = pingChild(item.sub, res.nav_id.id);
                             }
                             $('.menu_nav').append('<li class="menu-item  menu-item-product ' + active + '">\n' +
-                                '                    <a style="cursor: pointer;display: block">' + item.menu_name + '</a>\n' +
+                                '                    <a style="cursor: pointer;display: block" href="/private.html">' + item.menu_name + '</a>\n' +
                                 '                    <div class="pull-down-pannel pull-down-pannel-product">\n' +
                                 '                        <div class="product-pannel">\n' +
                                 child +
@@ -1320,7 +1320,7 @@
                                 var child = aboutChild(item.sub, res.nav_id.id);
                             }
                             $('.menu_nav').append('<li class="menu-item  menu-item-about ' + active + '">\n' +
-                                '                    <a style="cursor: pointer;display: block">' + item.menu_name + '</a>\n' +
+                                '                    <a style="cursor: pointer;display: block" href="/about.html">' + item.menu_name + '</a>\n' +
                                 '                    <div class="pull-down-pannel pull-down-pannel-about">\n' +
                                 '                        <div class="drop-pannel-content">\n' +
                                 '<div class="panel-left">\n' +
@@ -1331,7 +1331,7 @@
                                 '</li>');
                         } else {
                             $('.menu_nav').append('<li class="menu-item ' + active + '">\n' +
-                                '                    <a style="cursor: pointer;display: block" href="' + item.url_action + '">' + item.menu_name + '</a>\n' +
+                                '                    <a style="cursor: pointer;display: block" href="' + item.url_action + '.html'+'">' + item.menu_name + '</a>\n' +
                                 '                </li>');
                         }
                     }

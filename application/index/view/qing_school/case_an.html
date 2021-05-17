@@ -98,7 +98,7 @@
             <span>大家都在看：</span>
             {if(isset($hot_label))}
             {foreach($hot_label as $item)}
-            <a href="/blog/demo?pid=1&label={$item.name}" class="category-look-tag">{$item.name}</a>
+            <a href="/blog-demo/1/{$item.name}" class="category-look-tag">{$item.name}</a>
             {/foreach}
             {/if}
         </div>
@@ -125,12 +125,12 @@
                     {if($article_list)}
                     {foreach($article_list as $item)}
                     <li class="cause-item">
-                        <a href="/blog/detail?id={$item.id}&pid=1"
+                        <a href="/blog-detail/{$item.id}/1.html"
                            class="cause-cover"
                            style="background: url({$item.cover_img_url});background-size: cover">
                         </a>
                         <div class="cause-des">
-                            <a href="/blog/detail?id={$item.id}&pid=1"
+                            <a href="/blog-detail/{$item.id}/1.html"
                                class="cause-title">
                                 <h3>
                                     <i class="cause-icon icon-item-case"></i>
@@ -148,7 +148,7 @@
                                 {if(!empty($item.label))}
                                 {foreach($item.label as $label)}
                                 {dede:tag type:current}
-                                <a href="/blog/demo?label={$label}" class="cause-tag-item">{$label}</a>
+                                <a href="/blog-demo/1/{$label}" class="cause-tag-item">{$label}</a>
                                 {/dede:tag}
                                 {/foreach}
                                 {/if}
@@ -173,7 +173,7 @@
                     {if($article_list)}
                     {foreach($article_list as $item)}
                     <li class="cause-item">
-                        <a href="/blog/detail?id={$item.id}&pid=1">
+                        <a href="/blog-detail/{$item.id}/1.html">
                             <h3>
                                 {$item.title}
                             </h3>
@@ -184,7 +184,7 @@
                             <i class="vertical-bar">|</i>
                             <span class="category">{$item.pid_name}</span>
                         </div>
-                        <a href="/blog/detail?id={$item.id}&pid=1"
+                        <a href="/blog-detail/{$item.id}/1.html"
                            class="cause-item-desc">
                             <img src="{$item.cover_img_url}" alt="">
                             <p>{$item.second_title}</p>
@@ -200,7 +200,7 @@
         </div>
         <div class="school-right-con">
             <div class="siderbar-item siderbar-item-search">
-                <form action="/blog/demo" class="search-form" id="search-form">
+                <form action="/blog-demo" class="search-form" id="search-form">
                     <input type="text" name="word" value="{:request()->param('word')}" class="searchInput"
                            placeholder="输入关键词" autocomplete="off">
                     <input type="hidden" name="pid" value="1">
@@ -223,7 +223,7 @@
                     {if(isset($list))}
                     {foreach($list['hot_article'] as $item)}
                     <li class="article-item">
-                        <a href="/blog/detail?id={$item.id}&pid=11"
+                        <a href="/blog-detail/{$item.id}/11.html"
                            class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
                             <p>{$item.title}</p>
                             <span class="time">{$item.time}</span>
@@ -236,7 +236,7 @@
                     {if(isset($list))}
                     {foreach($list['recommend'] as $item)}
                     <li class="article-item">
-                        <a href="/blog/detail?id={$item.id}&pid=12"
+                        <a href="/blog-detail/{$item.id}/12.html"
                            class="link" title="{$item.second_title}" target="_blank" rel="noopener noreferrer">
                             <p>{$item.title}</p>
                             <span class="time">{$item.time}</span>
@@ -297,7 +297,7 @@
                     {if(isset($hot_label))}
                     {foreach($hot_label as $item)}
                     {dede:tag row='30' sort='month}
-                    <li><a href="/blog/demo?pid=1&label={$item.name}" class="hot-tag-item">{$item.name}</a></li>
+                    <li><a href="/blog-demo/1/{$item.name}" class="hot-tag-item">{$item.name}</a></li>
                     {/dede:tag}
 <!--                    <li><a href="/blog/demo?pid=1&label={$item.name}" class="hot-tag-item">{$item.name}</a></li>-->
                     {/foreach}

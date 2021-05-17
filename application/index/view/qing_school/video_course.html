@@ -167,7 +167,7 @@
                 <a href="/video" class="active">首页</a>
                 {if(isset($video_type_limit))}
                 {foreach($video_type_limit as $item)}
-                <a href="/video/second?all=1&pid={$item.id}">{$item.name}</a>
+                <a href="/video-second/1/{$item.id}.html">{$item.name}</a>
                 {/foreach}
                 {/if}
 
@@ -183,10 +183,10 @@
                         <h6>大家都在看：</h6>
                         <div class="underline"></div>
                     </div>
-                    <a class="more" href="/video/second?all=1&pid=1">更多···</a>
+                    <a class="more" href="/video-second/1/1.html">更多···</a>
                 </div>
                 <div class="watch-content">
-                    <a href="/video/tutorial?browse=1&id={$first_video['id']}">
+                    <a href="/video-tutorial/1/{$first_video['id']}.html">
                         <img class="all-img" src="{$first_video['cover_img_url']}" alt="">
                     </a>
                     <div class="content-text">
@@ -221,7 +221,7 @@
 
                         </ul>
                         <button class="hid-sho">
-                            <a href="/video/second?all=1&pid=1" class="point_more">点击加载更多</a>
+                            <a href="/video-second/1/1.html" class="point_more">点击加载更多</a>
                         </button>
                     </div>
                 </div>
@@ -414,7 +414,7 @@
                 if (res.status === 200) {
                     for (let item of res.data) {
                         $('.study-box').append('<li>\n' +
-                            '                        <a href="/video/tutorial?browse=1&id=' + item.id + '">\n' +
+                            '                        <a href="/video-tutorial/1/' + item.id +'.html'+ '">\n' +
                             '                              <img src="' + item.cover_img_url + '" alt="">\n' +
                             '                              <div class="txt">\n' +
                             '                                   <h6>' + item.title + '</h6>\n' +
@@ -424,7 +424,7 @@
                             '                         </a>\n' +
                             '                    </li>')
                     }
-                    $('.point_more').attr('href', '/video/second?all=1&pid=' + pid);
+                    $('.point_more').attr('href', '/video-second/1/' + pid + '.html');
                     $('.hid-sho').show();
                 } else {
                     $('.study-box').append('<img class="null-data" src="/static/image/null_data.svg" alt="">');
