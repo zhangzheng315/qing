@@ -1341,7 +1341,7 @@
                     for (let item of res.nav_list) {
 
                         if (item.sub.length == 0) {
-                            m_menu += '<li><a href="' + item.route + '.html' +'">' + item.menu_name + '</a></li>';
+                            m_menu += '<li><a href="' + item.route + '">' + item.menu_name + '</a></li>';
                         }
                         if (item.sub.length !== 0) {
                             let child = mobileChild(item.sub);
