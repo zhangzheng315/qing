@@ -1796,10 +1796,28 @@
                 </div>
             </div>
             <div class="layui-container flex-left link-friend">
+                <!-- <div class="home-footer-link"><a class="home-footer-link-item" target="_blank" href="http://www.hzkjhrb.com/" >雕塑</a></div>
+                <div class="home-footer-link"><a class="home-footer-link-item" target="_blank" href="https://www.zhihu.com/question/49368980" rel="nofollow">企业直播</a></div>
+                <div class="home-footer-link"><a class="home-footer-link-item" target="_blank" href="https://zhidao.baidu.com/question/2080062615375208148.html/" rel="nofollow">企业直播平台</a></div>
+                <div class="home-footer-link"><a class="home-footer-link-item" target="_blank" href="https://www.zhihu.com/question/51287957" rel="nofollow">活动直播</a></div>
+                <div class="home-footer-link"><a class="home-footer-link-item" target="_blank" href="https://www.zhihu.com/question/305513930" rel="nofollow">医疗直播</a></div>
+                <div class="home-footer-link"><a class="home-footer-link-item" target="_blank" href="https://www.polyv.net/" rel="nofollow">云视频</a></div>
+                <div class="home-footer-link"><a class="home-footer-link-item" target="_blank" href="http://vcloud.163.com/education" rel="nofollow">视频云</a></div>
+                <div class="home-footer-link"><a class="home-footer-link-item" target="_blank" href="https://baike.baidu.com/item/%E8%81%94%E6%83%B3%E4%BA%91%E8%A7%86%E9%A2%91/6446036?fr=aladdin" rel="nofollow">联想云视频</a></div>
+                <div class="home-footer-link"><a class="home-footer-link-item" target="_blank" href="https://qf.56.com/" rel="nofollow">视频直播</a></div>
+                <div class="home-footer-link"><a class="home-footer-link-item" target="_blank" href="https://www.yy.com/" rel="nofollow">直播平台</a></div>
+                <div class="home-footer-link"><a class="home-footer-link-item" target="_blank" href="https://www.douyu.com/" rel="nofollow">直播间</a></div>
+                <div class="home-footer-link"><a class="home-footer-link-item" target="_blank" href="https://tv.cctv.com/live/cctv5/" rel="nofollow">直播</a></div> -->
                 {foreach($linkInfo as $item)}
-                <div class="home-footer-link"><a class="home-footer-link-item" target="_blank" href="{$item.link_url}" rel="nofollow">{$item.linkname}</a></div>
+                <div class="home-footer-link"><a class="home-footer-link-item" target="_blank" rel="{$item.link_rel ? 'nofollow':''}" href="{$item.link_url}" >{$item.linkname}</a></div>
                 {/foreach}
             </div>
+<!--            <div class="layui-container flex-left link-friend">-->
+<!--                <div class="home-footer-link"><a class="home-footer-link-item" target="_blank" href="http://www.hzkjhrb.com/" >雕塑</a></div>-->
+<!--                <div class="home-footer-link"><a class="home-footer-link-item" target="_blank" rel="nofollow"  href="https://www.yy.com" >直播平台</a></div>-->
+<!--                <div class="home-footer-link"><a class="home-footer-link-item" target="_blank" rel="nofollow"  href="https://tv.cctv.com/live/cctv5" >直播</a></div>-->
+<!--                <div class="home-footer-link"><a class="home-footer-link-item" target="_blank" rel="nofollow"  href="https://douyu.com" >直播间</a></div>-->
+<!--            </div>-->
 
             <div class="pc-footer-bottom" style="height: auto;margin-top: 40px;">
                 <div class="layui-container flex">

@@ -60,6 +60,12 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">rel状态</label>
+            <div class="layui-input-block">
+                <input name="link_rel" value="1" type="checkbox" checked lay-skin="switch">
+            </div>
+        </div>
+        <div class="layui-form-item">
             <div class="layui-input-block">
                 <button class="layui-btn" lay-submit lay-filter="add">保存</button>
             </div>
@@ -96,6 +102,12 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">rel状态</label>
+            <div class="layui-input-block">
+                <input name="link_rel" id="link_rel" value=""   type="checkbox" checked lay-skin="switch">
+            </div>
+        </div>
+        <div class="layui-form-item">
             <div class="layui-input-block">
                 <button class="layui-btn" lay-submit lay-filter="edit">保存</button>
             </div>
@@ -110,6 +122,8 @@
 </script>
 <script>
     layui.use(['form', 'table', 'layedit'], function () {
+        var table = layui.table;
+        var table = layui.table;
         var table = layui.table;
         var table = layui.table;
         var table = layui.table;
@@ -131,6 +145,7 @@
                 , {field: 'link_url', title: '链接'}
                 , {field: 'order', title: '排序'}
                 , {field: 'status', title: '状态'}
+                , {field: 'link_rel', title: 'rel状态'}
                 , {width: 160, title: '操作', align: 'center', toolbar: '#barDemo'}
             ]]
         });
@@ -157,11 +172,17 @@
                         $('#linkurl').val(res.data.link_url);
                         $('#order').val(res.data.order);
                         $('#status').val(res.data.status);
+                        $('#link_rel').val(res.data.link_rel);
                         if (res.data.status === 0) {
                             $('#status').removeAttr('checked');
                         } else {
                             $('#status').attr('checked', true);
+                        }if (res.data.link_rel === 0) {
+                            $('#link_rel').removeAttr('checked');
+                        } else {
+                            $('#link_rel').attr('checked', true);
                         }
+
 
                         form.render();
                     }
