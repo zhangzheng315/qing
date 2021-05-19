@@ -13,13 +13,17 @@ return [
     // 数据库类型
     'type'            => 'mysql',
     // 服务器地址
-    'hostname'        => '172.16.160.251',
+    //    'hostname'        => '172.16.160.251',
+    'hostname'        => '101.132.113.30',
     // 数据库名
-    'database'        => 'qingtv_www',
+//    'database'        => 'qingtv_www',
+    'database'        => 'qingtv_com',
     // 用户名
-    'username'        => 'qingtv_www',
+//    'username'        => 'qingtv_www',
+    'username'        => 'qingtv_com',
     // 密码
-    'password'        => '19861016',
+//    'password'        => '19861016',
+    'password'        => 'z19861016',
     // 端口
     'hostport'        => '3306',
     // 连接dsn
