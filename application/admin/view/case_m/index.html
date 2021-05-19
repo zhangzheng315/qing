@@ -86,6 +86,18 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">推荐案例</label>
+            <div class="layui-input-block">
+                <input name="case_recommend" value="1" type="checkbox" lay-skin="switch">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">推荐案例排序</label>
+            <div class="layui-input-block">
+                <input type="text" name="recommend_order" placeholder="请输入(数值越大，排序越靠前)" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
             <label class="layui-form-label">精选案例</label>
             <div class="layui-input-block">
                 <input name="case_selected" value="1" type="checkbox" lay-skin="switch">
@@ -169,6 +181,18 @@
             <div class="layui-input-block">
                 <input type="hidden" name="cover_img_url" class="img_url">
                 <img src="" alt="" width="200px" class="img-show">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">推荐案例</label>
+            <div class="layui-input-block">
+                <input name="case_recommend" id="case_recommend" value="1" type="checkbox" lay-skin="switch">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">推荐案例排序</label>
+            <div class="layui-input-block">
+                <input type="text" name="recommend_order" id="recommend_order" placeholder="请输入(数值越大，排序越靠前)" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
@@ -274,6 +298,7 @@
                 , {field: 'cover_img_url', title: '封面图', templet:'#imgtmp'}
                 , {field: 'belong', title: '所属分类'}
                 , {field: 'case_selected', title: '精选案例'}
+                , {field: 'case_recommend', title: '推荐案例'}
                 , {field: 'browse', title: '浏览量'}
                 , {field: 'order', title: '排序'}
                 , {field: 'status', title: '状态'}
@@ -338,6 +363,7 @@
                         $('#title').val(res.data.title);
                         $('#second_title').val(res.data.second_title);
                         $('#order').val(res.data.order);
+                        $('#recommend_order').val(res.data.recommend_order);
                         $('.img-show').attr('src', res.data.cover_img_url);
                         $('.img_url').val(res.data.cover_img_url);
                         $('#pid').empty();
@@ -351,6 +377,11 @@
                             $('#case_selected').removeAttr('checked');
                         } else {
                             $('#case_selected').attr('checked', true);
+                        }
+                        if (res.data.case_recommend === 0) {
+                            $('#case_recommend').removeAttr('checked');
+                        } else {
+                            $('#case_recommend').attr('checked', true);
                         }
                         for (let item of res.data.case_type) {
                             if (res.data.pid === item.id) {

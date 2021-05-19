@@ -4,6 +4,7 @@ namespace app\index\controller;
 
 use app\admin\serve\BannerService;
 use app\admin\serve\CaseService;
+use app\admin\serve\CaseTypeService;
 use app\admin\serve\LabelService;
 use think\Controller;
 use think\Request;
@@ -30,10 +31,12 @@ class CaseCenter extends Controller
         $case_selected = $this->case_service->getCaseSelected();
         //案例轮播图
         $banner_service = new BannerService();
+        $case_type = new CaseTypeService();
         $data = request()->param();
         $pid = isset($data['id']) ? $data['id'] : 4;
         $banner_list = $banner_service->bannerListByPid($pid);
-        return $this->fetch('',compact('case_selected', 'banner_list'));
+        $case_type_list = $case_type->caseTypeList();
+        return $this->fetch('',compact('case_selected', 'banner_list','case_type_list'));
     }
 
     public function getCaseByWhere(Request $request){
@@ -106,7 +109,7 @@ class CaseCenter extends Controller
                 $pid_url = '/case-technology';
                 break;
             case 6:
-                $pid_name = '地产';
+                $pid_name = '其他';
                 $pid_url = '/case-property';
                 break;
         }

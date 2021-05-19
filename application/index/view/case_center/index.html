@@ -106,12 +106,11 @@
                 <h2 class="title">全部案例</h2>
                 <ul class="all-nav">
                     <li class="active" onclick="casePoint(0)">全部</li>
-                    <li onclick="casePoint(1)">医疗</li>
-                    <li onclick="casePoint(2)">教育</li>
-                    <li onclick="casePoint(3)">金融</li>
-                    <li onclick="casePoint(4)">汽车</li>
-                    <li onclick="casePoint(5)">科技</li>
-                    <li onclick="casePoint(6)">其他</li>
+                    {if isset($case_type_list)}
+                    {foreach($case_type_list as $type)}
+                    <li onclick='casePoint("{$type.id}")'>{$type.name}</li>
+                    {/foreach}
+                    {/if}
                 </ul>
                 <div class="all-box">
                     <ul class="case_type"></ul>
@@ -262,7 +261,10 @@
                                 label_html += '<span>' + label + '</span><i>|</i>';
                             }
                         }
-                        $('.case_type').append('<li style="cursor: pointer"><a href="/case-detail/4/' + item.id + '.html' +'"><img src="' + item.cover_img_url + '" alt=""><div class="text"><h5>' + item.title + '</h5><p>' + item.second_title + '</p><div class="biaoqian">' + label_html + '</div></div></a></li>');
+                        $('.case_type').append('<li style="cursor: pointer"><a href="/case-detail/4/' + item.id + '.html' +'"><img src="' + item.cover_img_url + '" alt=""><div class="text"><h5>' + item.title + '</h5><p style="display: -webkit-box;\n' +
+                            '  -webkit-box-orient: vertical;\n' +
+                            '  -webkit-line-clamp: 1;\n' +
+                            '  overflow: hidden;">' + item.second_title + '</p><div class="biaoqian">' + label_html + '</div></div></a></li>');
                     }
                     layPage(res.data);      //请求成功调用分页方法
                 }

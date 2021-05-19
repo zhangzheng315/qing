@@ -39,6 +39,7 @@ class CaseM extends Common{
         foreach ($str['data'] as &$value) {
             $value['status'] = $value['status'] == 1 ? '显示' : '不显示';
             $value['case_selected'] = $value['case_selected'] == 1 ? '是' : '否';
+            $value['case_recommend'] = $value['case_recommend'] == 1 ? '是' : '否';
             foreach ($case_type_list as $item) {
                 if ($item['id'] == $value['pid']) {
                     $value['belong'] = $item['name'];
