@@ -21,8 +21,11 @@ class CaseCenter extends Controller
         $this->labelService = new LabelService();
         $hot_and_rem = $this->case_service->hotAndRem();
         $label_list = $this->labelService->labelList();
+        $case_type = new CaseTypeService();
+        $case_type_list = $case_type->caseTypeList();
         $this->assign('hot_and_rem', $hot_and_rem);
         $this->assign('label_list', $label_list);
+        $this->assign('case_type_list', $case_type_list);
     }
 
     public function index()
@@ -31,12 +34,11 @@ class CaseCenter extends Controller
         $case_selected = $this->case_service->getCaseSelected();
         //案例轮播图
         $banner_service = new BannerService();
-        $case_type = new CaseTypeService();
+
         $data = request()->param();
         $pid = isset($data['id']) ? $data['id'] : 4;
         $banner_list = $banner_service->bannerListByPid($pid);
-        $case_type_list = $case_type->caseTypeList();
-        return $this->fetch('',compact('case_selected', 'banner_list','case_type_list'));
+        return $this->fetch('',compact('case_selected', 'banner_list'));
     }
 
     public function getCaseByWhere(Request $request){
@@ -101,7 +103,7 @@ class CaseCenter extends Controller
                 $pid_url = '/case-finance';
                 break;
             case 4:
-                $pid_name = '汽车';
+                $pid_name = '电商';
                 $pid_url = '/case-car';
                 break;
             case 5:
@@ -109,7 +111,7 @@ class CaseCenter extends Controller
                 $pid_url = '/case-technology';
                 break;
             case 6:
-                $pid_name = '其他';
+                $pid_name = '峰会';
                 $pid_url = '/case-property';
                 break;
         }

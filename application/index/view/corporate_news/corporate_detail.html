@@ -2235,7 +2235,7 @@
                                 <div class="tags-box">
                                     {if !empty($info['info']['label'])}
                                     {foreach($info['info']['label'] as $item)}
-                                    <a href="" class="tag-item">{$item}</a>
+                                    <a href="javascript:;" class="tag-item">{$item}</a>
                                     {/foreach}
                                     {/if}
                                 </div>
@@ -2302,7 +2302,7 @@
                         <ul class="hot-tags-list">
                             {if(!empty($label_list))}
                             {foreach($label_list as $item)}
-                            <li><a href="/news/list?label={$item.name}"
+                            <li><a href="/news-list/{$item.name}"
                                     class="hot-tag-item">{$item.name}</a></li>
                             {/foreach}
                             {/if}

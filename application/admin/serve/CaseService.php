@@ -259,7 +259,7 @@ class CaseService extends Common{
             $case_list = $this->case->where($where)->order('recommend_order', 'desc')->limit(0, 5)->select();
         } else{
             $where['pid'] = $pid;
-            $case_list = $this->case->where($where)->order('order', 'desc')->select();
+            $case_list = $this->case->where($where)->order(['order'=>'desc', 'created_time'=>'desc'])->select();
         }
         $last_index = count($case_list) - 1;
         $index = 0;

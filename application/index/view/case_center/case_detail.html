@@ -2271,7 +2271,7 @@
                             <div class="article-link-item">
                                 上一篇
                                 <a
-                                    href="/case-detail/{$pre_and_nex['pre_case']['id']}/{$pre_and_nex['type_id']}.html">
+                                    href="/case-detail/{$pre_and_nex['type_id']}/{$pre_and_nex['pre_case']['id']}.html">
                                     {$pre_and_nex['pre_case']['title']}
                                 </a>
                             </div>
@@ -2280,7 +2280,7 @@
                             <div class="article-link-item">
                                 下一篇
                                 <a
-                                    href="/case-detail/{$pre_and_nex['nex_case']['id']}/{$pre_and_nex['type_id']}.html">
+                                    href="/case-detail/{$pre_and_nex['type_id']}/{$pre_and_nex['nex_case']['id']}.html">
                                     {$pre_and_nex['nex_case']['title']}
                                 </a>
                             </div>
@@ -2309,7 +2309,7 @@
                         <ul class="hot-tags-list">
                             {if(!empty($label_list))}
                             {foreach($label_list as $item)}
-                            <li><a href="/case-education/{$info['pid']}/{$item.name}.html" class="hot-tag-item">{$item.name}</a></li>
+                            <li><a href="{$pid['pid_url']}/{$info['pid']}/{$item.name}.html" class="hot-tag-item">{$item.name}</a></li>
                             {/foreach}
                             {/if}
                         </ul>
@@ -2330,7 +2330,7 @@
                             {if($hot_and_rem['hot_case'])}
                             {foreach($hot_and_rem['hot_case'] as $item)}
                             <li class="article-item">
-                                <a href="/case-detail/{$item.id}/2.html" class="link" title="{$item.second_title}"
+                                <a href="/case-detail/2/{$item.id}.html" class="link" title="{$item.second_title}"
                                     target="_blank" rel="noopener noreferrer">
                                     <p>{$item.title}</p>
                                     <span class="time">{$item.time}</span>
@@ -2343,7 +2343,7 @@
                             {if($hot_and_rem['recommend_case'])}
                             {foreach($hot_and_rem['recommend_case'] as $item)}
                             <li class="article-item">
-                                <a href="/case-detail/{$item.id}/2.html" class="link" title="{$item.second_title}"
+                                <a href="/case-detail/3/{$item.id}.html" class="link" title="{$item.second_title}"
                                     target="_blank" rel="noopener noreferrer">
                                     <p>{$item.title}</p>
                                     <span class="time">{$item.time}</span>
