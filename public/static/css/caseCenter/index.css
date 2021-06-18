@@ -400,11 +400,11 @@
   }
   #case-center #all-case .layui-container .all-box ul li .text p {
     font-size: 14px;
-    color: #666;
+    color: #ccc;
     line-height: 1.5;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     overflow: hidden;
   }
   #case-center #all-case .layui-container .all-box ul li .text .biaoqian {
@@ -572,7 +572,7 @@
     color: #666;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     overflow: hidden;
   }
   #case-center #all-case .layui-container .all-box ul li .text .biaoqian {

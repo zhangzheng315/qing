@@ -26,6 +26,7 @@ class CaseService extends Common{
     public function caseCreate($param){
         $status = isset($param['status']) ? $param['status'] : 0;
         $case_selected = isset($param['case_selected']) ? $param['case_selected'] : 0;
+        $case_recommend = isset($param['case_recommend']) ? $param['case_recommend'] : 0;
         $label = '';
         if (isset($param['label'])) {
             $label = implode(',', $param['label']);
@@ -39,7 +40,9 @@ class CaseService extends Common{
             'status' => $status,
             'label' => $label,
             'case_selected' => $case_selected,
+            'case_recommend' => $case_recommend,
             'order' => $param['order'] ?:0,
+            'recommend_order' => $param['recommend_order'] ?:0,
             'created_time' => time(),
             'updated_time' => time(),
             'deleted_time' => 0,
@@ -93,6 +96,7 @@ class CaseService extends Common{
     {
         if(!isset($data['status'])) $data['status'] = 0;
         if(!isset($data['case_selected'])) $data['case_selected'] = 0;
+        if(!isset($data['case_recommend'])) $data['case_recommend'] = 0;
         if (isset($data['file'])) {
             //layui富文本自带file参数
             unset($data['file']);

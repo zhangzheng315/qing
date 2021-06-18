@@ -40,7 +40,7 @@
                 </div>
                 <div class="btns">
                     <a class="login" href="/login">登录</a>
-                    <a class="free-btn" href="http://login.qingtv.com/signUp.html" target="_blank">免费试用</a>
+                    <a class="free-btn" href="http://login.qingtv.com/signUp" target="_blank">免费试用</a>
                 </div>
                 <ul class="layui-nav" lay-filter="leftNav">
                     <li class="layui-nav-item">
@@ -327,7 +327,7 @@
 <!-- 免费试用 -->
 <div id="free-banner">
     <h2>全功能免费试用，0成本体验轻直播带来的改变</h2>
-    <a href="http://login.qingtv.com/signUp.html" target="_blank" class="free_btn">免费试用</a>
+    <a href="http://login.qingtv.com/signUp" target="_blank" class="free_btn">免费试用</a>
 </div>
 <!-- 底部 -->
 {include file="common/footer"}
@@ -375,6 +375,18 @@
         $('#img-a .name').html(tvInfo.name) // 昵称
     }
 
+    let isshow = false;   // 下拉框是否显示
+    $('.layui-nav').click(function(){
+        $(".layui-nav-child").removeClass("layui-show")
+        if(isshow){
+            $('.layui-nav-item .layui-nav-child').css('display',"none")
+            isshow = false
+        }else{
+            $('.layui-nav-item .layui-nav-child').css('display',"block")
+            isshow = true
+        }
+    })
+
     // 提示框
     layui.use('layer', function () {
         var layer = layui.layer;
@@ -396,9 +408,13 @@
                 var token = tvInfo.token
                 var name = tvInfo.name
                 var avatar = tvInfo.avatar
-                window.open(`http://login.qingtv.com/Home?lighostoken=${token}
-                &lighosName=${name}
-                &lighosHeadUrl=${avatar}`)
+                if(navigator.userAgent.match(/pad|iPad/)){
+                    location.href = `http://login.qingtv.com/Home?lighostoken=${token}&lighosName=${name}&lighosHeadUrl=${avatar}`
+                }else{
+                    window.open(`http://login.qingtv.com/Home?lighostoken=${token}
+                    &lighosName=${name}
+                    &lighosHeadUrl=${avatar}`)
+                }
             }
         });
     });

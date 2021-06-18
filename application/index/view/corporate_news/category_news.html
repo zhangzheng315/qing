@@ -74,7 +74,7 @@
                     </div>
                     <div class="btns">
                         <a class="login" href="/login">登录</a>
-                        <a class="free-btn" href="http://login.qingtv.com/signUp.html" target="_blank">免费试用</a>
+                        <a class="free-btn" href="http://login.qingtv.com/signUp" target="_blank">免费试用</a>
                     </div>
                     <ul class="layui-nav" lay-filter="leftNav">
                         <li class="layui-nav-item">
@@ -372,6 +372,18 @@
         }
     })
 
+    let isshow = false;   // 下拉框是否显示
+    $('.layui-nav').click(function(){
+        $(".layui-nav-child").removeClass("layui-show")
+        if(isshow){
+            $('.layui-nav-item .layui-nav-child').css('display',"none")
+            isshow = false
+        }else{
+            $('.layui-nav-item .layui-nav-child').css('display',"block")
+            isshow = true
+        }
+    })
+
     // 登录成功后显示个人信息
     var tvInfo = JSON.parse(localStorage.getItem('tvInfo'))
     if (tvInfo.token) {
@@ -403,9 +415,13 @@
                  var token = tvInfo.token
                 var name = tvInfo.name
                 var avatar = tvInfo.avatar
-                window.open(`http://login.qingtv.com/Home?lighostoken=${token}
-                &lighosName=${name}
-                &lighosHeadUrl=${avatar}`)
+                if(navigator.userAgent.match(/pad|iPad/)){
+                    location.href = `http://login.qingtv.com/Home?lighostoken=${token}&lighosName=${name}&lighosHeadUrl=${avatar}`
+                }else{
+                    window.open(`http://login.qingtv.com/Home?lighostoken=${token}
+                    &lighosName=${name}
+                    &lighosHeadUrl=${avatar}`)
+                }
             }
         });
     });

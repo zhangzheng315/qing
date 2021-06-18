@@ -110,12 +110,13 @@
                 </ul> -->
 
                 <ul class="logo-title">
-                    <li class="active" onclick="casePoint(3)"><span>金融</span></li>
-                    <li onclick="casePoint(2)"><span>教育</span></li>
-                    <li onclick="casePoint(1)"><span>医疗</span></li>
-                    <li onclick="casePoint(4)"><span>汽车</span></li>
-                    <li onclick="casePoint(5)"><span>科技</span></li>
-                    <li onclick="casePoint(6)"><span>地产</span></li>
+
+<!--                    <li class="active" onclick="casePoint(0)"><span>全部</span></li>-->
+                    {if isset($case_type_list)}
+                    {foreach($case_type_list as $type)}
+                    <li onclick='casePoint("{$type.id}")'><span>{$type.name}</span></li>
+                    {/foreach}
+                    {/if}
                 </ul>
                 <div class="case-box">
                     <ul class="case_list">
@@ -129,7 +130,7 @@
         <div class="free lianxi-free">
             <div class="layui-container">
                 <h3>全功能免费试用，0成本体验轻直播带来的改变</h3>
-                <a href="http://login.qingtv.com/signUp.html" target="_blank">免费试用</a>
+                <a href="http://login.qingtv.com/signUp" target="_blank">免费试用</a>
             </div>
         </div>
 
@@ -140,7 +141,7 @@
 <script src="/static/common/js/header-footer.js"></script>
 
 <script>
-    casePoint(3)
+    casePoint(1)
     function casePoint(pid) {
         $.ajax({
             url: "{:url('/index/advantage/caseListByTypeId')}",
@@ -203,8 +204,7 @@
             $("html,body").animate({ scrollTop: 750 }, 300);
         }
     })
-
-
+    $('.logo-title li').first().addClass('active');
     // 案例切换
     $('.case').each(function (index, element) {
         var obj = $(this);

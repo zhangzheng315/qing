@@ -1143,7 +1143,7 @@
                 <a class="login" href="{:url('/login')}" rel="nofollow">
                     登录
                 </a>
-                <a class="free-use" href="http://login.qingtv.com/signUp.html" target="_blank" rel="nofollow">
+                <a class="free-use" href="http://login.qingtv.com/signUp" target="_blank" rel="nofollow">
                     免费试用
                 </a>
             </div>
@@ -1212,7 +1212,7 @@
                 <a class="mobile-login" href="/login">
                     登录
                 </a>
-                <a class="mobile-freeuse" href="http://login.qingtv.com/signUp.html">
+                <a class="mobile-freeuse" href="http://login.qingtv.com/signUp">
                     免费试用
                 </a>
             </ul>
@@ -1327,7 +1327,7 @@
                                 child +
                                 ' </div>\n' +
                                 '<div class="panel-right"><ul><h3>全国统一客服热线</h3><li>400-920-1599</li></ul>\n' +
-                                ' <ul><h3>服务邮箱</h3><li>frank.fu@sicbon.com</li></ul><ul><h3>商务合作</h3><li>frank.fu@sicbon.com</li></ul><ul><h3>简历合作</h3><li>lisa.wang@sicbon.com</li></ul></div></div>\n' +
+                                ' <ul><h3>服务邮箱</h3><li>Marketing@sicbon.com</li></ul><ul><h3>商务合作</h3><li>Marketing@sicbon.com</li></ul><ul><h3>简历投递</h3><li>Alina.xu@sicbon.com</li></ul></div></div>\n' +
                                 '</li>');
                         } else {
                             $('.menu_nav').append('<li class="menu-item ' + active + '">\n' +
@@ -1459,12 +1459,21 @@
             $('#img-a .name').html(tvInfo.name) // 昵称
             $('.login-nav').hide(); //移动端登录按钮
         }
-
+        let isshow = false;   // 下拉框是否显示
+        $('.layui-nav').click(function(){
+            $(".layui-nav-child").removeClass("layui-show")
+            if(isshow){
+                $('.layui-nav-item .layui-nav-child').css('display',"none")
+                isshow = false
+            }else{
+                $('.layui-nav-item .layui-nav-child').css('display',"block")
+                isshow = true
+            }
+        })
         // 提示框
         layui.use('layer', function () {
             var layer = layui.layer;
         });
-
         layui.use('element', function () {
             var element = layui.element;
             element.on('nav(leftNav)', function (ele) {
@@ -1481,9 +1490,13 @@
                     var token = tvInfo.token
                     var name = tvInfo.name
                     var avatar = tvInfo.avatar
-                    window.open(`http://login.qingtv.com/Home?lighostoken=${token}
-                &lighosName=${name}
-                &lighosHeadUrl=${avatar}`)
+                    if(navigator.userAgent.match(/pad|iPad/)){
+                        location.href = `http://login.qingtv.com/Home?lighostoken=${token}&lighosName=${name}&lighosHeadUrl=${avatar}`
+                    }else{
+                        window.open(`http://login.qingtv.com/Home?lighostoken=${token}
+                        &lighosName=${name}
+                        &lighosHeadUrl=${avatar}`)
+                    }
                 }
             });
         });
