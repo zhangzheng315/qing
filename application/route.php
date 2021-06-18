@@ -93,7 +93,7 @@ Route::rule('contact', 'index/contact/contactUs');                  // 联系我
 Route::rule('news/detail', 'index/corporate_news/corporateDetail'); // 企业新闻详情
 Route::rule('news-detail/[:id]', 'index/corporate_news/corporateDetail'); // 企业新闻详情
 Route::rule('news/list', 'index/corporate_news/categoryNews');      // 企业新闻列表
-Route::rule('news-list', 'index/corporate_news/categoryNews');      // 企业新闻列表
+Route::rule('news-list/[:label]', 'index/corporate_news/categoryNews');      // 企业新闻列表
 
 //登陆
 Route::rule('login', 'index/login/login');                          //登陆
