@@ -61,7 +61,7 @@
                             {if($limit_list['top_list'])}
                             {foreach($limit_list['top_list'] as $item)}
                             <div class="top-item">
-                                <a href="/news/detail?id={$item.id}">
+                                <a href="/news-detail/{$item.id}">
                                     <img src="{$item.cover_img_url}" alt="">
                                 </a>
                                 <div class="text">
@@ -88,7 +88,7 @@
                             {if($limit_list['bottom_list'])}
                             {foreach($limit_list['bottom_list'] as $item)}
                             <div class="bottom-item">
-                                <a href="/news/detail?id={$item.id}">
+                                <a href="/news-detail/{$item.id}">
                                     <div class="item-left">
                                         <span class="num">{$item.day}</span>
                                         <span class="name">{$item.month}</span>
