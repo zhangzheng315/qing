@@ -190,7 +190,7 @@
                         <ul>
                             {foreach $info['catalog']['catalog'] as $item}
                             <li class="{$info['id'] == $item['id'] ? 'active':''}">
-                                <a href="/video-tutorial/1/id/{$item['id']}.html" title="{$item['title']}">
+                                <a href="/video-tutorial/1/{$item['id']}.html" title="{$item['title']}">
                                     <img src="/static/image/tutorial/video_btn.png" alt="">
                                     <span>{$item['title']}</span>
                                     <i>{$item['duration']}</i>
@@ -303,24 +303,21 @@
                             </div>
                             <div class="item-right">
                                 <h6>猜你想学</h6>
+                                {if($more_video['new_video'])}
+                                {foreach($more_video['new_video'] as $item)}
                                 <div class="right-item">
-                                    <img src="/static/image/qingschool/bg_big.png" alt="">
-                                    <h5>如何在电脑上开启直播...</h5>
-                                    <p class="flex-box">
-                                        <span>轻直播</span>
-                                        <span>1217人在浏览</span>
-                                    </p>
-                                    <p class="free">免费</p>
+                                    <a href="/video-tutorial/1//{$item.id}.html">
+                                        <img src="{$item.cover_img_url}" alt="">
+                                        <h5>{$item.title}</h5>
+                                        <p class="flex-box">
+                                            <span>轻直播</span>
+                                            <span>{$item.browse}人在浏览</span>
+                                        </p>
+                                        <p class="free">免费</p>
+                                    </a>
                                 </div>
-                                <div class="right-item">
-                                    <img src="/static/image/qingschool/bg_big.png" alt="">
-                                    <h5>如何在电脑上开启直播...</h5>
-                                    <p class="flex-box">
-                                        <span>轻直播</span>
-                                        <span>1217人在浏览</span>
-                                    </p>
-                                    <p class="free">免费</p>
-                                </div>
+                                {/foreach}
+                                {/if}
                             </div>
                         </div>
                     </div>
