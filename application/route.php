@@ -79,7 +79,7 @@ Route::rule('guide', 'index/qing_school/article');                  // 直播百
 Route::rule('blog/detail','index/qing_school/newsDetail');          // 轻学院内容详情页
 Route::rule('blog-detail/[:id]/[:pid]','index/qing_school/newsDetail');          // 轻学院内容详情页
 Route::rule('video/tutorial','index/tutorial/index');               // 轻学院视频详情
-Route::rule('video-tutorial/[:id]/[:browse]','index/tutorial/index');               // 轻学院视频详情
+Route::rule('video-tutorial/[:browse]/[:id]','index/tutorial/index');               // 轻学院视频详情
 Route::rule('video/second','index/qing_school/courseSecond');       // 轻学院视频二级页面
 Route::rule('video-second/[:pid]','index/qing_school/courseSecond');       // 轻学院视频二级页面
 
