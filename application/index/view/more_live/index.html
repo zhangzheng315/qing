@@ -124,13 +124,13 @@
                 <div class="new-live">
                     <div class="title flex-box">
                         <h6>最新直播功能</h6>
-                        <a href="/video/second?all=1&pid=1">查看更多></a>
+                        <a href="/video-second/1/1.html">查看更多></a>
                     </div>
                     <ul class="video-box flex-box">
                         {if($more_video['new_video'])}
                         {foreach($more_video['new_video'] as $item)}
                         <li>
-                            <a href="/video/tutorial?browse=1&id={$item.id}" style="display: block;height: 100%;">
+                            <a href="/video-tutorial/1/{$item.id}.html" style="display: block;height: 100%;">
                                 <img class="video-logo" src="{$item.cover_img_url}" alt="">
                                 <p>{$item.title}</p>
                                 <img class="bofang" src="/static/image/morelive/bofang.png" alt="">
@@ -143,13 +143,13 @@
                 <div class="new-live">
                     <div class="title flex-box">
                         <h6>推荐直播教程</h6>
-                        <a href="/video/second?all=1&pid=1">查看更多></a>
+                        <a href="/video-second/1/1.html">查看更多></a>
                     </div>
                     <ul class="video-box flex-box">
                         {if($more_video['recommend_video'])}
                         {foreach($more_video['recommend_video'] as $item)}
                         <li>
-                            <a href="/video/tutorial?browse=1&id={$item.id}" style="display: block;height: 100%;">
+                            <a href="/video-tutorial/1/{$item.id}.html" style="display: block;height: 100%;">
                                 <img class="video-logo" src="{$item.cover_img_url}" alt="">
                                 <p>{$item.title}</p>
                                 <img class="bofang" src="/static/image/morelive/bofang.png" alt="">
